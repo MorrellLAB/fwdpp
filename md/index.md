@@ -20,5 +20,6 @@ If you use __fwdpp__ for yor research, either to develop simulations or you use 
 
 Early version of the code that eventually became __fwdpp__ were used in the following publications:
 
+* [foRward](https://github.com/molpopgen/foRward) is a testing ground for integrating fwdpp with [R](http:://r-projec.org) using [Rcpp](http://rcpp.org).
 * [Thornton et al.](http://www.plosgenetics.org/article/info%3Adoi%2F10.1371%2Fjournal.pgen.1003258) on modeling "rare alleles of large effect" and genome-wide association studies
 * [Baldwin-Brown et al.](http://mbe.oxfordjournals.org/content/31/4/1040.full) on modeling "evolve and resequence" experiments"

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.5</span>
+   &#160;<span id="projectnumber">0.2.6</span>
    </div>
   </td>
  </tr>
@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
     <ul class="tablist">
       <li><a href="../../index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="../../pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="../../modules.html"><span>Modules</span></a></li>
       <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="../../annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="../../files.html"><span>Files</span></a></li>
@@ -73,7 +74,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -102,18 +103,18 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a70ad8bb39915182fceeac0042dca8fb1"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename vector_type_allocator , template&lt; typename, typename &gt; class vector_type&gt; </td></tr>
-<tr class="memitem:a70ad8bb39915182fceeac0042dca8fb1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/dcc/structKTfwd_1_1push__back__gamete.html#a70ad8bb39915182fceeac0042dca8fb1">operator()</a> (const gamete_type &amp;ng, vector_type&lt; gamete_type, vector_type_allocator &gt; *gametes) const </td></tr>
-<tr class="separator:a70ad8bb39915182fceeac0042dca8fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1323b0b3210cd7a30c1b9c6bfcd83155"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename vector_type_allocator , template&lt; typename, typename &gt; class vector_type&gt; </td></tr>
+<tr class="memitem:a1323b0b3210cd7a30c1b9c6bfcd83155"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/dcc/structKTfwd_1_1push__back__gamete.html#a1323b0b3210cd7a30c1b9c6bfcd83155">operator()</a> (gamete_type &amp;&amp;ng, vector_type&lt; gamete_type, vector_type_allocator &gt; *gametes) const </td></tr>
+<tr class="separator:a1323b0b3210cd7a30c1b9c6bfcd83155"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An insertion policy for gametes. </p>
 <p>A common use of this policy will be when a mutation model always gives rise to a gamete that does not currently exist in the population, such as the infinitely-many sites model of mutations. For such models, it is sufficient to simply append the new gamete to the existing vector.</p>
 <p>Note: it is silly to pass ng to this function with ng.n = 0.</p>
-<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000003">Deprecated:</a></b></dt><dd></dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../dc/d1a/TFL2013_8cc-example.html#_a18">TFL2013.cc</a>.</dd>
+<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd></dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../dc/d1a/TFL2013_8cc-example.html#_a19">TFL2013.cc</a>.</dd>
 </dl></div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a70ad8bb39915182fceeac0042dca8fb1"></a>
+<a class="anchor" id="a1323b0b3210cd7a30c1b9c6bfcd83155"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -125,7 +126,7 @@ template&lt;typename gamete_type , typename vector_type_allocator , template&lt;
         <tr>
           <td class="memname">void KTfwd::push_back_gamete::operator() </td>
           <td>(</td>
-          <td class="paramtype">const gamete_type &amp;&#160;</td>
+          <td class="paramtype">gamete_type &amp;&amp;&#160;</td>
           <td class="paramname"><em>ng</em>, </td>
         </tr>
         <tr>
@@ -150,7 +151,7 @@ template&lt;typename gamete_type , typename vector_type_allocator , template&lt;
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/kevin/git/fwdpp.git/fwdpp/<a class="el" href="../../d0/d13/insertion__policies_8hpp_source.html">insertion_policies.hpp</a></li>
+<li>/home/kevin/src/fwdpp/fwdpp/<a class="el" href="../../d0/d13/insertion__policies_8hpp_source.html">insertion_policies.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

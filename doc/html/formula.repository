@@ -1,0 +1,44 @@
+\form#0:$\theta$
+\form#1:$\rho$
+\form#2:$r_{bw}$
+\form#3:\[\frac{AB}{ab}\]
+\form#4:\[\frac{Ab}{aB}\]
+\form#5:$[0,1)$
+\form#6:$[1,2)$
+\form#7:$(\mathrm{start},\mathrm{start}+1]$
+\form#8:$(0,1]$
+\form#9:$(1,2]$
+\form#10:$L-1$
+\form#11:$L$
+\form#12:$i$
+\form#13:$i-1$
+\form#14:$1 \leq i \leq L-1$
+\form#15:$r$
+\form#16:$n \ll N$
+\form#17:$\mu$
+\form#18:$\mu_s$
+\form#19:$s_m$
+\form#20:$s < 0$
+\form#21:$s > 0$
+\form#22:$1, 1+hs, 1+2s$
+\form#23:$e$
+\form#24:$\sigma_e$
+\form#25:$8N$
+\form#26:$4N$
+\form#27:$r=\rho/4N$
+\form#28:$p$
+\form#29:$1-p$
+\form#30:$a$
+\form#31:$b$
+\form#32:$x$
+\form#33:$\geq 1.5x$
+\form#34:$j$
+\form#35:$j = i$
+\form#36:$j \neq i$
+\form#37:$m$
+\form#38:$0 \leq i \leq 1$
+\form#39:$1, 1+sh, 1+s \times \mathrm{scaling}$
+\form#40:$scaling = 1$
+\form#41:$1$
+\form#42:$w = 1$
+\form#43:$w$

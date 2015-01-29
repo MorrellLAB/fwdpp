@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>fwdpp: /home/kevin/git/fwdpp.git/fwdpp/diploid_functions.hpp Source File</title>
+<title>fwdpp: /home/kevin/src/fwdpp/fwdpp/diploid_functions.hpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.5</span>
+   &#160;<span id="projectnumber">0.2.6</span>
    </div>
   </td>
  </tr>
@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
     <ul class="tablist">
       <li><a href="../../index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="../../pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="../../modules.html"><span>Modules</span></a></li>
       <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="../../annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="../../files.html"><span>Files</span></a></li>
@@ -72,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -115,36 +116,63 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">    \param g1 Iterator to the first gamete involved in the recombination event</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">    \param g2 Iterator to the second gamete involved in the recombination event</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">    \param mf Recombination policy which generates crossover positions</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">    \param gpolicy Policy determining how new gametes are added to population</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">    \note g1 and g2 will be changed</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">    \note The type of g1 and g2 is gamete_list_type&lt;gamete_type,list_type_allocator &gt;::iterator</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">    \note The return value may be 0 even if littler is large.  The code recognizes when crossovers could not modify the gametes, and the function returns when such cases are found</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">    \return The number of crossovers that happened between g1 and g2 (which is Poisson with mean littler)</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">template</span>&lt; <span class="keyword">typename</span> iterator_type,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="comment">//typename gamete_insertion_policy,</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keyword">typename</span> recombination_map,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keyword">typename</span> list_type_allocator,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keyword">template</span>&lt;<span class="keyword">typename</span>,<span class="keyword">typename</span>&gt; <span class="keyword">class </span>list_type&gt;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">unsigned</span> <a class="code" href="../../da/d8b/namespaceKTfwd.html#a8a46b107991548a40821e132496c1693">recombine_gametes</a>( gsl_rng * r,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                              <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; littler,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                              list_type&lt; typename iterator_type::value_type,list_type_allocator &gt; * gametes,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                              iterator_type &amp; g1,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                              iterator_type &amp; g2,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                              <span class="keyword">const</span> recombination_map &amp; mf);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="comment">//const gamete_insertion_policy &amp; gpolicy);</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="comment">//Multilocus models</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* _DIPLOID_FUNCTIONS_HPP_ */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;fwdpp/diploid_functions.tcc&gt;</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">    \note g1 and g2 will be changed</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">    \note The type of g1 and g2 is gamete_list_type&lt;gamete_type,list_type_allocator &gt;::iterator</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">    \note The return value may be 0 even if littler is large.  The code recognizes when crossovers could not modify the gametes, and the function returns when such cases are found</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">    \return The number of crossovers that happened between g1 and g2 (which is Poisson with mean littler)</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">template</span>&lt; <span class="keyword">typename</span> iterator_type,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keyword">typename</span> recombination_map,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keyword">typename</span> list_type_allocator,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keyword">template</span>&lt;<span class="keyword">typename</span>,<span class="keyword">typename</span>&gt; <span class="keyword">class </span>list_type&gt;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">unsigned</span> <a class="code" href="../../da/d8b/namespaceKTfwd.html#a8a46b107991548a40821e132496c1693">recombine_gametes</a>( gsl_rng * <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                              <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; littler,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                              list_type&lt; typename iterator_type::value_type,list_type_allocator &gt; * gametes,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                              iterator_type &amp; g1,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                              iterator_type &amp; g2,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                              <span class="keyword">const</span> recombination_map &amp; mf);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">  /*!</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">    Overload for fixed xover positions.</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">    Typically, this is called by the version taking </span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">    a recombination policy as an argument.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">    If you wish to call this version directly,</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">    only do so if length pos &gt; 1, pos is sorted</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">    in ascending order, and the last value in </span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">    pos is std::numeric_limits&lt;double&gt;::max(),</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">    which is assumed to be a terminating value </span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">    larger than any possible value for a mutation&#39;s position.</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">    \param pos A vector (with interface of std::vector) containing recombination breakpoints.  See note below.</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">    \param gametes A container of the gametes segregating in the population</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">    \param g1 An iterator, derived from gametes, representing one parental gamete.</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">    \param g2 An iterator, derived from gametes, representing the other parental gamete.</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">    \return The number of breakpoints, which equals pos.size() - 1, as that is fixed in this case.</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">    \note The vector pos must be sorted (ascending order) and must contain the value std::numeric_limits&lt;double&gt;::max() as a terminating value.</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">  */</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">template</span>&lt; <span class="keyword">typename</span> iterator_type,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keyword">typename</span> list_type_allocator,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keyword">typename</span> vector_type_allocator,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keyword">template</span>&lt;<span class="keyword">typename</span>,<span class="keyword">typename</span>&gt; <span class="keyword">class </span>vector_type,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keyword">template</span>&lt;<span class="keyword">typename</span>,<span class="keyword">typename</span>&gt; <span class="keyword">class </span>list_type&gt;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">unsigned</span> <a class="code" href="../../da/d8b/namespaceKTfwd.html#a8a46b107991548a40821e132496c1693">recombine_gametes</a>( <span class="keyword">const</span> vector_type&lt; double, vector_type_allocator &gt; &amp; pos,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                              list_type&lt; typename iterator_type::value_type,list_type_allocator &gt; * gametes,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                              iterator_type &amp; g1,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                              iterator_type &amp; g2);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="comment">//Multilocus models</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* _DIPLOID_FUNCTIONS_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;fwdpp/diploid_functions.tcc&gt;</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
 <div class="ttc" id="namespaceKTfwd_html_a8a46b107991548a40821e132496c1693"><div class="ttname"><a href="../../da/d8b/namespaceKTfwd.html#a8a46b107991548a40821e132496c1693">KTfwd::recombine_gametes</a></div><div class="ttdeci">unsigned recombine_gametes(gsl_rng *r, const double &amp;littler, list_type&lt; typename iterator_type::value_type, list_type_allocator &gt; *gametes, iterator_type &amp;g1, iterator_type &amp;g2, const recombination_map &amp;mf)</div><div class="ttdoc">recombination for individual-based forward simulations </div></div>
 <div class="ttc" id="diploid__individual__based__multilocus_8hpp_html"><div class="ttname"><a href="../../df/db7/diploid__individual__based__multilocus_8hpp.html">diploid_individual_based_multilocus.hpp</a></div></div>
 <div class="ttc" id="diploid__gamete__based_8hpp_html"><div class="ttname"><a href="../../d2/dd2/diploid__gamete__based_8hpp.html">diploid_gamete_based.hpp</a></div></div>
+<div class="ttc" id="mlocusCrossoverTest_8cc_html_a53b3e4bb1bd287d2150b9c128e15a316"><div class="ttname"><a href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a></div><div class="ttdeci">gsl_rng * r</div><div class="ttdef"><b>Definition:</b> mlocusCrossoverTest.cc:25</div></div>
 <div class="ttc" id="diploid__individual__based_8hpp_html"><div class="ttname"><a href="../../d9/da9/diploid__individual__based_8hpp.html">diploid_individual_based.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

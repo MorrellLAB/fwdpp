@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.5</span>
+   &#160;<span id="projectnumber">0.2.6</span>
    </div>
   </td>
  </tr>
@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
     <ul class="tablist">
       <li><a href="../../index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="../../pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="../../modules.html"><span>Modules</span></a></li>
       <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="../../annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="../../files.html"><span>Files</span></a></li>
@@ -67,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -102,9 +103,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="keyword">typedef</span> <a class="code" href="../../d5/df5/structmutation__with__origin.html">mutation_with_origin</a> <a name="a4"></a><a class="code" href="../../d7/d2d/RHH_8cc.html#aaefb1f9b03a19df1ea65923d82734880">mtype</a>;</div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d3/dab/common__gamete_8hpp.html">common_gamete.hpp</a>&gt;</span></div>
 <div class="line"></div>
-<div class="line"><a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">mtype</a> <a name="a5"></a><a class="code" href="../../d7/d2d/RHH_8cc.html#a1257511473444e8cd8c494f6cbf060c2">RHH_mutation_model</a>( gsl_rng * r, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; generation, <span class="keyword">const</span> <span class="keywordtype">double</span> mu_neutral, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; mu_selected,</div>
+<div class="line"><a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">mtype</a> <a name="a5"></a><a class="code" href="../../d7/d2d/RHH_8cc.html#a1257511473444e8cd8c494f6cbf060c2">RHH_mutation_model</a>( gsl_rng * <a name="a6"></a><a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; generation, <span class="keyword">const</span> <span class="keywordtype">double</span> mu_neutral, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; mu_selected,</div>
 <div class="line">                          <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; p_selected_within,</div>
-<div class="line">                          <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; s, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; h, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; maxd, <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> * lookup ) <span class="comment">//keep h (dominance) to 1 to match theory</span></div>
+<div class="line">                          <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; s, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; h, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; maxd, <a class="code" href="../../d3/dab/common__gamete_8hpp.html#a879096def42aa5e94c7443124fc1af30">lookup_table_type</a> * lookup ) <span class="comment">//keep h (dominance) to 1 to match theory</span></div>
 <div class="line">{</div>
 <div class="line">  <span class="comment">//Will the mutation be neutral, or a selected one?</span></div>
 <div class="line">  <span class="keywordtype">double</span> neutral = (gsl_rng_uniform(r) &lt;= mu_neutral/(mu_neutral+mu_selected)) ? <span class="keyword">true</span> : <span class="keyword">false</span>;</div>
@@ -154,7 +155,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">  <span class="keywordflow">return</span> <a class="code" href="../../d7/d2d/RHH_8cc.html#aaefb1f9b03a19df1ea65923d82734880">mtype</a>(generation,pos,smut,1,h);</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">double</span> <a name="a6"></a><a class="code" href="../../d7/d2d/RHH_8cc.html#a7f2ab292b02e86beea564ae35bf014cf">recurrent_sweep_genetic_map</a>(gsl_rng * r, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; littler_neut,</div>
+<div class="line"><span class="keywordtype">double</span> <a name="a7"></a><a class="code" href="../../d7/d2d/RHH_8cc.html#a7f2ab292b02e86beea564ae35bf014cf">recurrent_sweep_genetic_map</a>(gsl_rng * r, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; littler_neut,</div>
 <div class="line">                                   <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; ttl_rec_rate,</div>
 <div class="line">                                   <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; maxd)</div>
 <div class="line">{</div>
@@ -170,7 +171,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">  <span class="keywordflow">return</span> pos;</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> <a name="a7"></a><a class="code" href="../../d7/d2d/RHH_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv)</div>
+<div class="line"><span class="keywordtype">int</span> <a name="a8"></a><a class="code" href="../../d7/d2d/RHH_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv)</div>
 <div class="line">{</div>
 <div class="line">  <span class="keywordflow">if</span> ( argc != 12 )</div>
 <div class="line">    {</div>
@@ -226,29 +227,29 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">  <span class="keywordflow">while</span>(nreps--)</div>
 <div class="line">    {</div>
 <div class="line">      <span class="comment">//the population begins with 1 gamete with no mutations amd initial count 2N</span></div>
-<div class="line">      <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a21aa4d588f0cb7a1354d57c13ebd8438">gvector</a> gametes(1,<a name="a8"></a><a class="code" href="../../d1/dbe/crossoverTest_8cc.html#ace9428d4aa6205eaf777c2c9f398d9ea">gtype</a>(twoN));</div>
-<div class="line">      <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a> mutations;  <span class="comment">//the population is devoid of mutations</span></div>
+<div class="line">      <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#afd5b74e0108d624225532de98a470a36">gvector</a> gametes(1,<a name="a9"></a><a class="code" href="../../d1/dbe/crossoverTest_8cc.html#ace9428d4aa6205eaf777c2c9f398d9ea">gtype</a>(twoN));</div>
+<div class="line">      <a class="code" href="../../d3/dab/common__gamete_8hpp.html#a9e521309fd82791f8923f2caa97f264d">mlist</a> mutations;  <span class="comment">//the population is devoid of mutations</span></div>
 <div class="line">      std::vector&lt;mtype&gt; fixations;  <span class="comment">//store mutation that fix.  Passed to KTfwd::remove_fixed_lost</span></div>
 <div class="line">      std::vector&lt;unsigned&gt; fixation_times; <span class="comment">//store when they fix.  Passed to KTfwd::remove_fixed_lost</span></div>
 <div class="line">      <span class="keywordtype">unsigned</span> generation;</div>
 <div class="line">      <span class="keywordtype">double</span> wbar;</div>
-<div class="line">      <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> lookup;  <span class="comment">//this is our lookup table for the mutation model</span></div>
+<div class="line">      <a class="code" href="../../d3/dab/common__gamete_8hpp.html#a879096def42aa5e94c7443124fc1af30">lookup_table_type</a> lookup;  <span class="comment">//this is our lookup table for the mutation model</span></div>
 <div class="line"></div>
 <div class="line">      <span class="keywordflow">for</span>( generation = 0; generation &lt; burnin; ++generation )</div>
 <div class="line">        {</div>
-<div class="line">          wbar = <a name="a9"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a946efaa4a6095f4f2aadda44a809a477">KTfwd::sample_diploid</a>(r,&amp;gametes,twoN,</div>
-<div class="line">                                       std::bind(<a name="_a10"></a><a class="code" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html">KTfwd::multiplicative_diploid</a>(),std::placeholders::_1,std::placeholders::_2,2.),</div>
-<div class="line">                                       std::bind(<a name="_a11"></a><a class="code" href="../../d4/de8/structKTfwd_1_1mutation__remover.html">KTfwd::mutation_remover</a>(),std::placeholders::_1,0,twoN));       </div>
-<div class="line">          <a name="a12"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a84e666ea27d38bdfc539ffd23653eaa9">KTfwd::remove_fixed_lost</a>(&amp;mutations,&amp;fixations,&amp;fixation_times,&amp;lookup,generation,twoN);</div>
+<div class="line">          wbar = <a name="a10"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a946efaa4a6095f4f2aadda44a809a477">KTfwd::sample_diploid</a>(r,&amp;gametes,twoN,</div>
+<div class="line">                                       std::bind(<a name="_a11"></a><a class="code" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html">KTfwd::multiplicative_diploid</a>(),std::placeholders::_1,std::placeholders::_2,2.),</div>
+<div class="line">                                       std::bind(<a name="_a12"></a><a class="code" href="../../d4/de8/structKTfwd_1_1mutation__remover.html">KTfwd::mutation_remover</a>(),std::placeholders::_1,0,twoN));       </div>
+<div class="line">          <a name="a13"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a84e666ea27d38bdfc539ffd23653eaa9">KTfwd::remove_fixed_lost</a>(&amp;mutations,&amp;fixations,&amp;fixation_times,&amp;lookup,generation,twoN);</div>
 <div class="line">          assert( lookup.size() == mutations.size() );</div>
-<div class="line">          assert(<a name="a13"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a728e20cb60f82b818b5cc570722079a4">KTfwd::check_sum</a>(gametes,twoN));</div>
-<div class="line">          <span class="keywordtype">unsigned</span> nmuts = <a name="a14"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a9566be0bd568e2e75b02b1f46457c25c">KTfwd::mutate</a>(r,&amp;gametes,&amp;mutations,mu_neutral,</div>
+<div class="line">          assert(<a name="a14"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a728e20cb60f82b818b5cc570722079a4">KTfwd::check_sum</a>(gametes,twoN));</div>
+<div class="line">          <span class="keywordtype">unsigned</span> nmuts = <a name="a15"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a9566be0bd568e2e75b02b1f46457c25c">KTfwd::mutate</a>(r,&amp;gametes,&amp;mutations,mu_neutral,</div>
 <div class="line">                                         std::bind(<a class="code" href="../../d7/d2d/RHH_8cc.html#a1257511473444e8cd8c494f6cbf060c2">RHH_mutation_model</a>,r,generation,mu_neutral,0.,0.,0.,h,maxd,&amp;lookup),</div>
 <div class="line">                                         std::bind(KTfwd::push_at_end&lt;gtype,gvector &gt;,std::placeholders::_1,std::placeholders::_2),</div>
 <div class="line">                                         std::bind(KTfwd::insert_at_end&lt;mtype,mlist&gt;,std::placeholders::_1,std::placeholders::_2));</div>
 <div class="line">          assert( lookup.size() == mutations.size() );</div>
 <div class="line">          assert(<a class="code" href="../../da/d8b/namespaceKTfwd.html#a728e20cb60f82b818b5cc570722079a4">KTfwd::check_sum</a>(gametes,twoN));</div>
-<div class="line">          <span class="keywordtype">unsigned</span> nrec = <a name="a15"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a41bccb4fd1108616d626e371c3cf83c4">KTfwd::recombine</a>(r, </div>
+<div class="line">          <span class="keywordtype">unsigned</span> nrec = <a name="a16"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a41bccb4fd1108616d626e371c3cf83c4">KTfwd::recombine</a>(r, </div>
 <div class="line">                                           &amp;gametes,</div>
 <div class="line">                                           twoN, </div>
 <div class="line">                                           littler_neut, </div>
@@ -300,7 +301,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">      Sequence::SimData sdata;</div>
 <div class="line">      <span class="comment">//.first is the neutral data, .second the selected sites</span></div>
 <div class="line">      std::pair&lt; std::vector&lt;std::pair&lt;double,std::string&gt; &gt;,</div>
-<div class="line">        std::vector&lt;std::pair&lt;double,std::string&gt; &gt; &gt; mslike = <a name="a16"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#afe92f5f5c94285825e09978c03fe5a97">KTfwd::ms_sample_separate</a>(r,gametes,samplesize1,twoN,<span class="keyword">true</span>);</div>
+<div class="line">        std::vector&lt;std::pair&lt;double,std::string&gt; &gt; &gt; mslike = <a name="a17"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a0516afedc890764744b0f96b0048724f">KTfwd::ms_sample_separate</a>(r,&amp;gametes,samplesize1,twoN,<span class="keyword">true</span>);</div>
 <div class="line"></div>
 <div class="line">      <span class="comment">//Convert the results of KTfwd::ms_sample to a Sequence::SimData object and print to the screen</span></div>
 <div class="line">      <span class="keywordflow">if</span>(!mslike.first.empty())</div>

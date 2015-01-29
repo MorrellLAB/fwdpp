@@ -239,7 +239,7 @@ int main( int argc, char ** argv )
 
   //Write the metapop in binary format to outstream
   KTfwd::write_binary_metapop(&metapop,&mutations,&diploids,
-   			      std::bind(mwriter(),std::placeholders::_1,std::placeholders::_2),
+			      std::bind(mwriter(),std::placeholders::_1,std::placeholders::_2),
 			      outstream);
 
   //Write the "ms" blocks

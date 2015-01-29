@@ -1,4 +1,19 @@
-#0.2.5
+# FWDPP RELEASE NOTES
+
+## 0.2.6 
+
+* const mutation lists now passed to binary output routines
+* The library internals now fully support C++11 move semantics
+* Default policies now support C++11 "perfect forwarding"
+* The function KTfwd::recombine_gametes, which is provided for recombination in individual-based simulations, has an overloaded version.  This new version takes a fixed set of positions representing recombination breakpoints, allowing more modeling flexibility and making unit testing easier.
+* The mechanics of recombination in multilocus simulations moved to function multilocus_rec in namesapce KTfwd::fwdpp_internal.
+* A unit test for the function KTfwd::fwdpp_internal::multilocus_rec was added.
+* Added tutorial for multilocus simulation implmentation
+* Minor cleanups to the build system
+* Reorganization of fwdpp/IO.hpp and fwdpp/IO.tcc to reduce code duplication and provide output routines for multilocus simulations.  There are no longer separate read functions for gzFiles.  The necessary operations are handled automatically by overloads of template functions in namespace KTfwd::fwdpp_internal.
+* Reorganization of fwdpp/sampling_functions.tcc: overloads of ms_sample are now implemented via calls to ms_sample_separate.  The results from the latter function are then merged using C++11 move semantics.  This reduces code redundancy, reduces the possible locations of bugs, and should keep efficiency about the same.
+
+## 0.2.5
 
 The following changes:
 
@@ -17,7 +32,7 @@ The following changes:
 13. Boost's unit testing library is now used for unit testing.  To goal is to make sure that the stuff in fwdpp/internal all works.  The tests are compiled via "make check".
 14. Use config.h to manage preprocessor stuff
 
-#0.2.4
+## 0.2.4
 
 The following changes:
 

@@ -20,11 +20,11 @@ namespace KTfwd
      \param ff Policy calculating the fitness of a diploid
      \param mp Policy determining how to remove mutations from a diploid (e.g., removing fixed and/or lost mutations)
      \param f Probability that a mating is a selfing event
-
      \note diploids will be updated to reflect the new diploid genotypes post-sampling (the descedants).  Gametes will be changed by mutation, recombination, and sampling.  Mutations will be changed by mutation and sampling.
      \return The mean fitness of the parental generation
-     \example diploid_ind.cc
+     \example diploid_ind.cc 
      \example pfix.cc
+     \example diploid_fixed_sh_ind_lambda.cc
    */
   template< typename gamete_type,
 	  typename gamete_list_type_allocator,
@@ -74,8 +74,7 @@ namespace KTfwd
     
      \note diploids will be updated to reflect the new diploid genotypes post-sampling (the descedants).  Gametes will be changed by mutation, recombination, and sampling.  Mutations will be changed by mutation and sampling.
      \return The mean fitness of the parental generation
-     \example bneck_selection.cc 
-     \example TFL2013.cc
+     \example bneck_selection_ind.cc
    */
 template< typename gamete_type,
 	  typename gamete_list_type_allocator,

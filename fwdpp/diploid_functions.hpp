@@ -22,7 +22,6 @@ namespace KTfwd
     \param g1 Iterator to the first gamete involved in the recombination event
     \param g2 Iterator to the second gamete involved in the recombination event
     \param mf Recombination policy which generates crossover positions
-    \param gpolicy Policy determining how new gametes are added to population
 
     \note g1 and g2 will be changed
     \note The type of g1 and g2 is gamete_list_type<gamete_type,list_type_allocator >::iterator
@@ -30,7 +29,6 @@ namespace KTfwd
     \return The number of crossovers that happened between g1 and g2 (which is Poisson with mean littler)
    */
   template< typename iterator_type,
-	    //typename gamete_insertion_policy,
 	    typename recombination_map,
 	    typename list_type_allocator,
 	    template<typename,typename> class list_type>
@@ -40,7 +38,35 @@ namespace KTfwd
 			      iterator_type & g1,
 			      iterator_type & g2,
 			      const recombination_map & mf);
-  //const gamete_insertion_policy & gpolicy);
+
+  /*!
+    Overload for fixed xover positions.
+    Typically, this is called by the version taking 
+    a recombination policy as an argument.
+
+    If you wish to call this version directly,
+    only do so if length pos > 1, pos is sorted
+    in ascending order, and the last value in 
+    pos is std::numeric_limits<double>::max(),
+    which is assumed to be a terminating value 
+    larger than any possible value for a mutation's position.
+
+    \param pos A vector (with interface of std::vector) containing recombination breakpoints.  See note below.
+    \param gametes A container of the gametes segregating in the population
+    \param g1 An iterator, derived from gametes, representing one parental gamete.
+    \param g2 An iterator, derived from gametes, representing the other parental gamete.
+    \return The number of breakpoints, which equals pos.size() - 1, as that is fixed in this case.
+    \note The vector pos must be sorted (ascending order) and must contain the value std::numeric_limits<double>::max() as a terminating value.
+  */
+  template< typename iterator_type,
+	    typename list_type_allocator,
+	    typename vector_type_allocator,
+	    template<typename,typename> class vector_type,
+	    template<typename,typename> class list_type>
+  unsigned recombine_gametes( const vector_type< double, vector_type_allocator > & pos,
+			      list_type< typename iterator_type::value_type,list_type_allocator > * gametes,
+			      iterator_type & g1,
+			      iterator_type & g2);
 
   //Multilocus models
 

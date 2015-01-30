@@ -1,5 +1,10 @@
 # FWDPP RELEASE NOTES
 
+## 0.2.7 (unreleased)
+
+* Versions ms_sample and ms_sample_separate that took containers of gametes as arguments are now compatible with individual-based simulations.
+* The "devtools" stuff is greatly improved, and a new tutorial added on how to use it: @ref md_md_devtools
+
 ## 0.2.6 
 
 * const mutation lists now passed to binary output routines

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.6</span>
+   &#160;<span id="projectnumber">0.2.7</span>
    </div>
   </td>
  </tr>
@@ -109,6 +109,7 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a fitness of 1.  <a href="../../dc/d0b/structKTfwd_1_1no__selection.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html">site_dependent_fitness</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function object for fitness as a function of individual mutations in a diploid.  <a href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d99/structKTfwd_1_1haplotype__dependent__fitness.html">haplotype_dependent_fitness</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function object for fitness as a function of the two haplotypes in a diploid.  <a href="../../de/d99/structKTfwd_1_1haplotype__dependent__fitness.html#details">More...</a><br/></td></tr>
@@ -154,9 +155,8 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a33091eb3417c4c993f3964c278ff30a4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a33091eb3417c4c993f3964c278ff30a4">gamete</a> = <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a>&lt; <a class="el" href="../../d1/d7f/structKTfwd_1_1mutation.html">mutation</a> &gt;</td></tr>
-<tr class="memdesc:a33091eb3417c4c993f3964c278ff30a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The simplest gamete adds nothing to the interface of the base class.  <a href="#a33091eb3417c4c993f3964c278ff30a4">More...</a><br/></td></tr>
-<tr class="separator:a33091eb3417c4c993f3964c278ff30a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga33091eb3417c4c993f3964c278ff30a4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d07/group__basicTypes.html#ga33091eb3417c4c993f3964c278ff30a4">gamete</a> = <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a>&lt; <a class="el" href="../../d1/d7f/structKTfwd_1_1mutation.html">mutation</a> &gt;</td></tr>
+<tr class="separator:ga33091eb3417c4c993f3964c278ff30a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -313,47 +313,47 @@ Functions</h2></td></tr>
 <tr class="memitem:a2b4ac5932b4c1d311486946b2b6f612c"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type &gt; </td></tr>
 <tr class="memitem:a2b4ac5932b4c1d311486946b2b6f612c"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; unsigned &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a2b4ac5932b4c1d311486946b2b6f612c">population_sfs</a> (iterator_type beg, iterator_type end, const unsigned &amp;N)</td></tr>
 <tr class="separator:a2b4ac5932b4c1d311486946b2b6f612c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9a8a0218ff1f5dfc33268fd5243207b"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename vector_type_allocator , template&lt; typename, typename &gt; class vector_type&gt; </td></tr>
-<tr class="memitem:ad9a8a0218ff1f5dfc33268fd5243207b"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; unsigned &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#ad9a8a0218ff1f5dfc33268fd5243207b">sample_sfs</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const vector_type&lt; gamete_type, vector_type_allocator &gt; &amp;gametes, const unsigned &amp;n, const unsigned &amp;N)</td></tr>
-<tr class="separator:ad9a8a0218ff1f5dfc33268fd5243207b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8dd580f170b4acc0b339a94ca1529c2d"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename vector_type_allocator , template&lt; typename, typename &gt; class vector_type&gt; </td></tr>
-<tr class="memitem:a8dd580f170b4acc0b339a94ca1529c2d"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; double, <br class="typebreak"/>
-std::string &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a8dd580f170b4acc0b339a94ca1529c2d">ms_sample</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const vector_type&lt; gamete_type, vector_type_allocator &gt; *gametes, const unsigned &amp;n, const unsigned &amp;N, bool remove_fixed=true)</td></tr>
-<tr class="separator:a8dd580f170b4acc0b339a94ca1529c2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0516afedc890764744b0f96b0048724f"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename vector_type_allocator , template&lt; typename, typename &gt; class vector_type&gt; </td></tr>
-<tr class="memitem:a0516afedc890764744b0f96b0048724f"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; std::vector<br class="typebreak"/>
+<tr class="memitem:a9d9d58d1446e2d4a5aae1e5c4e7ba946"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename allocator_t , template&lt; typename, typename &gt; class container_t&gt; </td></tr>
+<tr class="memitem:a9d9d58d1446e2d4a5aae1e5c4e7ba946"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; unsigned &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a9d9d58d1446e2d4a5aae1e5c4e7ba946">sample_sfs</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const container_t&lt; gamete_type, allocator_t &gt; &amp;gametes, const unsigned &amp;n, const unsigned &amp;N)</td></tr>
+<tr class="separator:a9d9d58d1446e2d4a5aae1e5c4e7ba946"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae5656f2b4685348222718deff1f24997"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename allocator_t , template&lt; typename, typename &gt; class container_t&gt; </td></tr>
+<tr class="memitem:gae5656f2b4685348222718deff1f24997"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; double, <br class="typebreak"/>
+std::string &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/d86/group__samplingPopsGamete.html#gae5656f2b4685348222718deff1f24997">ms_sample</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const container_t&lt; gamete_type, allocator_t &gt; *gametes, const unsigned &amp;n, const unsigned &amp;N, bool remove_fixed=true)</td></tr>
+<tr class="separator:gae5656f2b4685348222718deff1f24997"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9aa3258399200b1f313ff3cfdb222a34"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename allocator_t , template&lt; typename, typename &gt; class container_t&gt; </td></tr>
+<tr class="memitem:ga9aa3258399200b1f313ff3cfdb222a34"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; std::vector<br class="typebreak"/>
 &lt; std::pair&lt; double, <br class="typebreak"/>
 std::string &gt; &gt;, std::vector<br class="typebreak"/>
 &lt; std::pair&lt; double, <br class="typebreak"/>
-std::string &gt; &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a0516afedc890764744b0f96b0048724f">ms_sample_separate</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const vector_type&lt; gamete_type, vector_type_allocator &gt; *gametes, const unsigned &amp;n, const unsigned &amp;N, bool remove_fixed=true)</td></tr>
-<tr class="separator:a0516afedc890764744b0f96b0048724f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa52e67c0735f3277e4800968a4f9fdc2"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename allocator , template&lt; typename, typename &gt; class vector_type&gt; </td></tr>
-<tr class="memitem:aa52e67c0735f3277e4800968a4f9fdc2"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; double, <br class="typebreak"/>
-std::string &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#aa52e67c0735f3277e4800968a4f9fdc2">ms_sample</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const vector_type&lt; std::pair&lt; iterator_type, iterator_type &gt;, allocator &gt; *diploids, const unsigned &amp;n, const bool &amp;remove_fixed=true)</td></tr>
-<tr class="memdesc:aa52e67c0735f3277e4800968a4f9fdc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling from a population in an individual-based simulation.  <a href="#aa52e67c0735f3277e4800968a4f9fdc2">More...</a><br/></td></tr>
-<tr class="separator:aa52e67c0735f3277e4800968a4f9fdc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fb4b96b8394d5df064690abc803bd64"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename allocator , template&lt; typename, typename &gt; class vector_type&gt; </td></tr>
-<tr class="memitem:a9fb4b96b8394d5df064690abc803bd64"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; std::vector<br class="typebreak"/>
+std::string &gt; &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/d86/group__samplingPopsGamete.html#ga9aa3258399200b1f313ff3cfdb222a34">ms_sample_separate</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const container_t&lt; gamete_type, allocator_t &gt; *gametes, const unsigned &amp;n, const unsigned &amp;N, bool remove_fixed=true)</td></tr>
+<tr class="separator:ga9aa3258399200b1f313ff3cfdb222a34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa52e67c0735f3277e4800968a4f9fdc2"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename allocator , template&lt; typename, typename &gt; class vector_type&gt; </td></tr>
+<tr class="memitem:gaa52e67c0735f3277e4800968a4f9fdc2"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; double, <br class="typebreak"/>
+std::string &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/de2/group__samplingPopsInd.html#gaa52e67c0735f3277e4800968a4f9fdc2">ms_sample</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const vector_type&lt; std::pair&lt; iterator_type, iterator_type &gt;, allocator &gt; *diploids, const unsigned &amp;n, const bool &amp;remove_fixed=true)</td></tr>
+<tr class="memdesc:gaa52e67c0735f3277e4800968a4f9fdc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling from a population in an individual-based simulation.  <a href="../../d7/de2/group__samplingPopsInd.html#gaa52e67c0735f3277e4800968a4f9fdc2">More...</a><br/></td></tr>
+<tr class="separator:gaa52e67c0735f3277e4800968a4f9fdc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9fb4b96b8394d5df064690abc803bd64"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename allocator , template&lt; typename, typename &gt; class vector_type&gt; </td></tr>
+<tr class="memitem:ga9fb4b96b8394d5df064690abc803bd64"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; std::vector<br class="typebreak"/>
 &lt; std::pair&lt; double, <br class="typebreak"/>
 std::string &gt; &gt;, std::vector<br class="typebreak"/>
 &lt; std::pair&lt; double, <br class="typebreak"/>
-std::string &gt; &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a9fb4b96b8394d5df064690abc803bd64">ms_sample_separate</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const vector_type&lt; std::pair&lt; iterator_type, iterator_type &gt;, allocator &gt; *diploids, const unsigned &amp;n, const bool &amp;remove_fixed=true)</td></tr>
-<tr class="memdesc:a9fb4b96b8394d5df064690abc803bd64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling from a population in an individual-based simulation. Selected and neutral mutations returned separately.  <a href="#a9fb4b96b8394d5df064690abc803bd64">More...</a><br/></td></tr>
-<tr class="separator:a9fb4b96b8394d5df064690abc803bd64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5d217904a664eb2bef96e47d5626320"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename allocator , typename outer_allocator , template&lt; typename, typename &gt; class vector_type, template&lt; typename, typename &gt; class outer_vector_type&gt; </td></tr>
-<tr class="memitem:ad5d217904a664eb2bef96e47d5626320"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::vector<br class="typebreak"/>
+std::string &gt; &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga9fb4b96b8394d5df064690abc803bd64">ms_sample_separate</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const vector_type&lt; std::pair&lt; iterator_type, iterator_type &gt;, allocator &gt; *diploids, const unsigned &amp;n, const bool &amp;remove_fixed=true)</td></tr>
+<tr class="memdesc:ga9fb4b96b8394d5df064690abc803bd64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling from a population in an individual-based simulation. Selected and neutral mutations returned separately.  <a href="../../d7/de2/group__samplingPopsInd.html#ga9fb4b96b8394d5df064690abc803bd64">More...</a><br/></td></tr>
+<tr class="separator:ga9fb4b96b8394d5df064690abc803bd64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad5d217904a664eb2bef96e47d5626320"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename allocator , typename outer_allocator , template&lt; typename, typename &gt; class vector_type, template&lt; typename, typename &gt; class outer_vector_type&gt; </td></tr>
+<tr class="memitem:gad5d217904a664eb2bef96e47d5626320"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::vector<br class="typebreak"/>
 &lt; std::pair&lt; double, <br class="typebreak"/>
-std::string &gt; &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#ad5d217904a664eb2bef96e47d5626320">ms_sample</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const outer_vector_type&lt; vector_type&lt; std::pair&lt; iterator_type, iterator_type &gt;, allocator &gt;, outer_allocator &gt; *diploids, const unsigned &amp;n, const bool &amp;remove_fixed)</td></tr>
-<tr class="memdesc:ad5d217904a664eb2bef96e47d5626320"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample from an individual-based, multi-locus simulation.  <a href="#ad5d217904a664eb2bef96e47d5626320">More...</a><br/></td></tr>
-<tr class="separator:ad5d217904a664eb2bef96e47d5626320"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcbaf4bb8e0f4e8dac5910f33c5c299d"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename allocator , typename outer_allocator , template&lt; typename, typename &gt; class vector_type, template&lt; typename, typename &gt; class outer_vector_type&gt; </td></tr>
-<tr class="memitem:abcbaf4bb8e0f4e8dac5910f33c5c299d"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::pair<br class="typebreak"/>
+std::string &gt; &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/de2/group__samplingPopsInd.html#gad5d217904a664eb2bef96e47d5626320">ms_sample</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const outer_vector_type&lt; vector_type&lt; std::pair&lt; iterator_type, iterator_type &gt;, allocator &gt;, outer_allocator &gt; *diploids, const unsigned &amp;n, const bool &amp;remove_fixed)</td></tr>
+<tr class="memdesc:gad5d217904a664eb2bef96e47d5626320"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample from an individual-based, multi-locus simulation.  <a href="../../d7/de2/group__samplingPopsInd.html#gad5d217904a664eb2bef96e47d5626320">More...</a><br/></td></tr>
+<tr class="separator:gad5d217904a664eb2bef96e47d5626320"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabcbaf4bb8e0f4e8dac5910f33c5c299d"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename allocator , typename outer_allocator , template&lt; typename, typename &gt; class vector_type, template&lt; typename, typename &gt; class outer_vector_type&gt; </td></tr>
+<tr class="memitem:gabcbaf4bb8e0f4e8dac5910f33c5c299d"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::pair<br class="typebreak"/>
 &lt; std::vector&lt; std::pair<br class="typebreak"/>
 &lt; double, std::string &gt;<br class="typebreak"/>
  &gt;, std::vector&lt; std::pair<br class="typebreak"/>
-&lt; double, std::string &gt; &gt; &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#abcbaf4bb8e0f4e8dac5910f33c5c299d">ms_sample_separate</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const outer_vector_type&lt; vector_type&lt; std::pair&lt; iterator_type, iterator_type &gt;, allocator &gt;, outer_allocator &gt; *diploids, const unsigned &amp;n, const bool &amp;remove_fixed)</td></tr>
-<tr class="memdesc:abcbaf4bb8e0f4e8dac5910f33c5c299d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample from an individual-based, multi-locus simulation.  <a href="#abcbaf4bb8e0f4e8dac5910f33c5c299d">More...</a><br/></td></tr>
-<tr class="separator:abcbaf4bb8e0f4e8dac5910f33c5c299d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+&lt; double, std::string &gt; &gt; &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/de2/group__samplingPopsInd.html#gabcbaf4bb8e0f4e8dac5910f33c5c299d">ms_sample_separate</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const outer_vector_type&lt; vector_type&lt; std::pair&lt; iterator_type, iterator_type &gt;, allocator &gt;, outer_allocator &gt; *diploids, const unsigned &amp;n, const bool &amp;remove_fixed)</td></tr>
+<tr class="memdesc:gabcbaf4bb8e0f4e8dac5910f33c5c299d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample from an individual-based, multi-locus simulation.  <a href="../../d7/de2/group__samplingPopsInd.html#gabcbaf4bb8e0f4e8dac5910f33c5c299d">More...</a><br/></td></tr>
+<tr class="separator:gabcbaf4bb8e0f4e8dac5910f33c5c299d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9beb352c8831c316862a18f3ebef4bbf"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename gamete_allocator_type , typename gamete_allocator_type2 , typename mutation_type , typename mutation_allocator_type , typename mutation_allocator_type2 , template&lt; typename, typename &gt; class source_gamete_container, template&lt; typename, typename &gt; class source_mut_container, template&lt; typename, typename &gt; class dest_gamete_container, template&lt; typename, typename &gt; class dest_mut_container&gt; </td></tr>
 <tr class="memitem:a9beb352c8831c316862a18f3ebef4bbf"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a9beb352c8831c316862a18f3ebef4bbf">valid_copy</a> (const source_gamete_container&lt; gamete_type, gamete_allocator_type &gt; &amp;gametes, const source_mut_container&lt; mutation_type, mutation_allocator_type &gt; &amp;mutations, dest_gamete_container&lt; gamete_type, gamete_allocator_type2 &gt; &amp;gametes_destination, dest_mut_container&lt; mutation_type, mutation_allocator_type2 &gt; &amp;mutations_destination)</td></tr>
 <tr class="separator:a9beb352c8831c316862a18f3ebef4bbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -396,22 +396,7 @@ vector_type_allocator &gt;<br class="typebreak"/>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The primary namespace defined by this library. </p>
-</div><h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="a33091eb3417c4c993f3964c278ff30a4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="../../da/d8b/namespaceKTfwd.html#a33091eb3417c4c993f3964c278ff30a4">KTfwd::gamete</a> = typedef <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a>&lt;<a class="el" href="../../d1/d7f/structKTfwd_1_1mutation.html">mutation</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The simplest gamete adds nothing to the interface of the base class. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a8636e0942d61b4d30bd60709b4bd2c10"></a>
 <div class="memitem">
 <div class="memproto">
@@ -470,7 +455,7 @@ template&lt;typename vector_type_allocator , typename gamete_type , template&lt;
 </div><div class="memdoc">
 
 <p>Returns true if the sum of counts in gametes equals twoN, false otherwise Returns true if the sum of counts in gametes equals twoN, false otherwise. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a7">bneck_selection_ind.cc</a>, <a class="el" href="../../db/d81/diploid_8cc-example.html#a16">diploid.cc</a>, <a class="el" href="../../d7/dd8/diploid_binaryIO_8cc-example.html#a25">diploid_binaryIO.cc</a>, <a class="el" href="../../d7/d24/diploid_fixed_sh_8cc-example.html#a11">diploid_fixed_sh.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a7">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a8">diploid_fixed_sh_ind_lambda.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a17">diploid_ind.cc</a>, <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a28">diploid_ind_2locus.cc</a>, <a class="el" href="../../dd/da1/diploid_twopop_mig_8cc-example.html#a19">diploid_twopop_mig.cc</a>, <a class="el" href="../../d3/d0a/RHH_8cc-example.html#a14">RHH.cc</a>, and <a class="el" href="../../dc/d1a/TFL2013_8cc-example.html#a17">TFL2013.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a7">bneck_selection_ind.cc</a>, <a class="el" href="../../db/d81/diploid_8cc-example.html#a16">diploid.cc</a>, <a class="el" href="../../d7/dd8/diploid_binaryIO_8cc-example.html#a25">diploid_binaryIO.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a7">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a8">diploid_fixed_sh_ind_lambda.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a17">diploid_ind.cc</a>, <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a28">diploid_ind_2locus.cc</a>, <a class="el" href="../../dd/da1/diploid_twopop_mig_8cc-example.html#a19">diploid_twopop_mig.cc</a>, <a class="el" href="../../d3/d0a/RHH_8cc-example.html#a14">RHH.cc</a>, and <a class="el" href="../../dc/d1a/TFL2013_8cc-example.html#a17">TFL2013.cc</a>.</dd>
 </dl>
 </div>
 </div>
@@ -866,273 +851,6 @@ template&lt;typename gamete_type , typename vector_type_allocator , template&lt;
 
 </div>
 </div>
-<a class="anchor" id="a8dd580f170b4acc0b339a94ca1529c2d"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename gamete_type , typename vector_type_allocator , template&lt; typename, typename &gt; class vector_type&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; std::pair&lt;double, std::string&gt; &gt; KTfwd::ms_sample </td>
-          <td>(</td>
-          <td class="paramtype">gsl_rng *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const vector_type&lt; gamete_type, vector_type_allocator &gt; *&#160;</td>
-          <td class="paramname"><em>gametes</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>N</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>remove_fixed</em> = <code>true</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Take a sample of size n from a larger population of N diploids </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d81/diploid_8cc-example.html#a19">diploid.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a18">diploid_ind.cc</a>, <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a30">diploid_ind_2locus.cc</a>, and <a class="el" href="../../dd/da1/diploid_twopop_mig_8cc-example.html#a23">diploid_twopop_mig.cc</a>.</dd>
-</dl>
-</div>
-</div>
-<a class="anchor" id="aa52e67c0735f3277e4800968a4f9fdc2"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename iterator_type , typename allocator , template&lt; typename, typename &gt; class vector_type&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; std::pair&lt;double,std::string&gt; &gt; KTfwd::ms_sample </td>
-          <td>(</td>
-          <td class="paramtype">gsl_rng *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const vector_type&lt; std::pair&lt; iterator_type, iterator_type &gt;, allocator &gt; *&#160;</td>
-          <td class="paramname"><em>diploids</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>remove_fixed</em> = <code>true</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sampling from a population in an individual-based simulation. </p>
-
-</div>
-</div>
-<a class="anchor" id="ad5d217904a664eb2bef96e47d5626320"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename iterator_type , typename allocator , typename outer_allocator , template&lt; typename, typename &gt; class vector_type, template&lt; typename, typename &gt; class outer_vector_type&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; std::vector&lt; std::pair&lt;double,std::string&gt; &gt; &gt; KTfwd::ms_sample </td>
-          <td>(</td>
-          <td class="paramtype">gsl_rng *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const outer_vector_type&lt; vector_type&lt; std::pair&lt; iterator_type, iterator_type &gt;, allocator &gt;, outer_allocator &gt; *&#160;</td>
-          <td class="paramname"><em>diploids</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>remove_fixed</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sample from an individual-based, multi-locus simulation. </p>
-<dl class="section return"><dt>Returns</dt><dd>A vector of vectors of variable sites. There is 1 vector per locus. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Neutral + selected mutations intermixed </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a0516afedc890764744b0f96b0048724f"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename gamete_type , typename vector_type_allocator , template&lt; typename, typename &gt; class vector_type&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::pair&lt; std::vector&lt; std::pair&lt;double, std::string&gt; &gt; , std::vector&lt; std::pair&lt;double, std::string&gt; &gt; &gt; KTfwd::ms_sample_separate </td>
-          <td>(</td>
-          <td class="paramtype">gsl_rng *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const vector_type&lt; gamete_type, vector_type_allocator &gt; *&#160;</td>
-          <td class="paramname"><em>gametes</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>N</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>remove_fixed</em> = <code>true</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a13">bneck_selection_ind.cc</a>, <a class="el" href="../../d7/d24/diploid_fixed_sh_8cc-example.html#a14">diploid_fixed_sh.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a13">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a15">diploid_fixed_sh_ind_lambda.cc</a>, <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a26">migsel_ind.cc</a>, and <a class="el" href="../../d3/d0a/RHH_8cc-example.html#a17">RHH.cc</a>.</dd>
-</dl>
-</div>
-</div>
-<a class="anchor" id="a9fb4b96b8394d5df064690abc803bd64"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename iterator_type , typename allocator , template&lt; typename, typename &gt; class vector_type&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::pair&lt;std::vector&lt; std::pair&lt;double,std::string&gt; &gt;, std::vector&lt; std::pair&lt;double,std::string&gt; &gt; &gt; KTfwd::ms_sample_separate </td>
-          <td>(</td>
-          <td class="paramtype">gsl_rng *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const vector_type&lt; std::pair&lt; iterator_type, iterator_type &gt;, allocator &gt; *&#160;</td>
-          <td class="paramname"><em>diploids</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>remove_fixed</em> = <code>true</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sampling from a population in an individual-based simulation. Selected and neutral mutations returned separately. </p>
-
-</div>
-</div>
-<a class="anchor" id="abcbaf4bb8e0f4e8dac5910f33c5c299d"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename iterator_type , typename allocator , typename outer_allocator , template&lt; typename, typename &gt; class vector_type, template&lt; typename, typename &gt; class outer_vector_type&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; std::pair&lt;std::vector&lt; std::pair&lt;double,std::string&gt; &gt;,std::vector&lt; std::pair&lt;double,std::string&gt; &gt; &gt; &gt; KTfwd::ms_sample_separate </td>
-          <td>(</td>
-          <td class="paramtype">gsl_rng *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const outer_vector_type&lt; vector_type&lt; std::pair&lt; iterator_type, iterator_type &gt;, allocator &gt;, outer_allocator &gt; *&#160;</td>
-          <td class="paramname"><em>diploids</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>remove_fixed</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sample from an individual-based, multi-locus simulation. </p>
-<dl class="section return"><dt>Returns</dt><dd>A vector of pairs of vectors of variable sites. There is 1 vector per locus. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>For each locus, the first member of the pair corresponds to neutral sites, the second to selected. </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a6a2696271f4be7ee04aa58c9253e18a3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1260,7 +978,7 @@ template&lt;typename gamete_type , typename mutation_model , typename gamete_ins
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d81/diploid_8cc-example.html#a17">diploid.cc</a>, <a class="el" href="../../d7/dd8/diploid_binaryIO_8cc-example.html#a26">diploid_binaryIO.cc</a>, <a class="el" href="../../d7/d24/diploid_fixed_sh_8cc-example.html#a12">diploid_fixed_sh.cc</a>, <a class="el" href="../../dd/da1/diploid_twopop_mig_8cc-example.html#a20">diploid_twopop_mig.cc</a>, <a class="el" href="../../d3/d0a/RHH_8cc-example.html#a15">RHH.cc</a>, and <a class="el" href="../../dc/d1a/TFL2013_8cc-example.html#a18">TFL2013.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d81/diploid_8cc-example.html#a17">diploid.cc</a>, <a class="el" href="../../d7/dd8/diploid_binaryIO_8cc-example.html#a26">diploid_binaryIO.cc</a>, <a class="el" href="../../dd/da1/diploid_twopop_mig_8cc-example.html#a20">diploid_twopop_mig.cc</a>, <a class="el" href="../../d3/d0a/RHH_8cc-example.html#a15">RHH.cc</a>, and <a class="el" href="../../dc/d1a/TFL2013_8cc-example.html#a18">TFL2013.cc</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1794,7 +1512,7 @@ template&lt;typename gamete_type , typename vector_type_allocator , template&lt;
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d81/diploid_8cc-example.html#a18">diploid.cc</a>, <a class="el" href="../../d7/dd8/diploid_binaryIO_8cc-example.html#a27">diploid_binaryIO.cc</a>, <a class="el" href="../../d7/d24/diploid_fixed_sh_8cc-example.html#a13">diploid_fixed_sh.cc</a>, <a class="el" href="../../dd/da1/diploid_twopop_mig_8cc-example.html#a21">diploid_twopop_mig.cc</a>, <a class="el" href="../../d3/d0a/RHH_8cc-example.html#a16">RHH.cc</a>, and <a class="el" href="../../dc/d1a/TFL2013_8cc-example.html#a20">TFL2013.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d81/diploid_8cc-example.html#a18">diploid.cc</a>, <a class="el" href="../../d7/dd8/diploid_binaryIO_8cc-example.html#a27">diploid_binaryIO.cc</a>, <a class="el" href="../../dd/da1/diploid_twopop_mig_8cc-example.html#a21">diploid_twopop_mig.cc</a>, <a class="el" href="../../d3/d0a/RHH_8cc-example.html#a16">RHH.cc</a>, and <a class="el" href="../../dc/d1a/TFL2013_8cc-example.html#a20">TFL2013.cc</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1968,7 +1686,7 @@ template&lt;typename mutation_type , typename vector_type_allocator1 , typename 
 </div><div class="memdoc">
 
 <p>Remove mutations from population Removes mutations that are fixed or lost. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a12">bneck_selection_ind.cc</a>, <a class="el" href="../../db/d81/diploid_8cc-example.html#a15">diploid.cc</a>, <a class="el" href="../../d7/dd8/diploid_binaryIO_8cc-example.html#a24">diploid_binaryIO.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a25">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../d7/d24/diploid_fixed_sh_8cc-example.html#a10">diploid_fixed_sh.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a12">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a14">diploid_fixed_sh_ind_lambda.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a16">diploid_ind.cc</a>, <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a29">diploid_ind_2locus.cc</a>, <a class="el" href="../../dd/da1/diploid_twopop_mig_8cc-example.html#a18">diploid_twopop_mig.cc</a>, <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a25">migsel_ind.cc</a>, <a class="el" href="../../d3/d0a/RHH_8cc-example.html#a13">RHH.cc</a>, and <a class="el" href="../../dc/d1a/TFL2013_8cc-example.html#a16">TFL2013.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a12">bneck_selection_ind.cc</a>, <a class="el" href="../../db/d81/diploid_8cc-example.html#a15">diploid.cc</a>, <a class="el" href="../../d7/dd8/diploid_binaryIO_8cc-example.html#a24">diploid_binaryIO.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a25">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a12">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a14">diploid_fixed_sh_ind_lambda.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a16">diploid_ind.cc</a>, <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a29">diploid_ind_2locus.cc</a>, <a class="el" href="../../dd/da1/diploid_twopop_mig_8cc-example.html#a18">diploid_twopop_mig.cc</a>, <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a25">migsel_ind.cc</a>, <a class="el" href="../../d3/d0a/RHH_8cc-example.html#a13">RHH.cc</a>, and <a class="el" href="../../dc/d1a/TFL2013_8cc-example.html#a16">TFL2013.cc</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2127,7 +1845,7 @@ template&lt;typename gamete_type , typename vector_type_allocator , template&lt;
         </tr>
       </table>
 </div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a8">bneck_selection_ind.cc</a>, <a class="el" href="../../db/d81/diploid_8cc-example.html#a12">diploid.cc</a>, <a class="el" href="../../d7/dd8/diploid_binaryIO_8cc-example.html#a21">diploid_binaryIO.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a21">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../d7/d24/diploid_fixed_sh_8cc-example.html#a7">diploid_fixed_sh.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a8">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a9">diploid_fixed_sh_ind_lambda.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a12">diploid_ind.cc</a>, <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a26">diploid_ind_2locus.cc</a>, <a class="el" href="../../dd/da1/diploid_twopop_mig_8cc-example.html#a16">diploid_twopop_mig.cc</a>, <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a22">migsel_ind.cc</a>, <a class="el" href="../../de/d58/pfix_8cc-example.html#a11">pfix.cc</a>, <a class="el" href="../../d3/d0a/RHH_8cc-example.html#a10">RHH.cc</a>, and <a class="el" href="../../dc/d1a/TFL2013_8cc-example.html#a14">TFL2013.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a8">bneck_selection_ind.cc</a>, <a class="el" href="../../db/d81/diploid_8cc-example.html#a12">diploid.cc</a>, <a class="el" href="../../d7/dd8/diploid_binaryIO_8cc-example.html#a21">diploid_binaryIO.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a21">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a8">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a9">diploid_fixed_sh_ind_lambda.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a12">diploid_ind.cc</a>, <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a26">diploid_ind_2locus.cc</a>, <a class="el" href="../../dd/da1/diploid_twopop_mig_8cc-example.html#a16">diploid_twopop_mig.cc</a>, <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a22">migsel_ind.cc</a>, <a class="el" href="../../de/d58/pfix_8cc-example.html#a11">pfix.cc</a>, <a class="el" href="../../d3/d0a/RHH_8cc-example.html#a10">RHH.cc</a>, and <a class="el" href="../../dc/d1a/TFL2013_8cc-example.html#a14">TFL2013.cc</a>.</dd>
 </dl>
 </div>
 </div>
@@ -3110,11 +2828,11 @@ template&lt;typename gamete_type , typename metapop_gamete_vector_type_allocator
 
 </div>
 </div>
-<a class="anchor" id="ad9a8a0218ff1f5dfc33268fd5243207b"></a>
+<a class="anchor" id="a9d9d58d1446e2d4a5aae1e5c4e7ba946"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename gamete_type , typename vector_type_allocator , template&lt; typename, typename &gt; class vector_type&gt; </div>
+template&lt;typename gamete_type , typename allocator_t , template&lt; typename, typename &gt; class container_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">std::vector&lt;unsigned&gt; KTfwd::sample_sfs </td>
@@ -3125,7 +2843,7 @@ template&lt;typename gamete_type , typename vector_type_allocator , template&lt;
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const vector_type&lt; gamete_type, vector_type_allocator &gt; &amp;&#160;</td>
+          <td class="paramtype">const container_t&lt; gamete_type, allocator_t &gt; &amp;&#160;</td>
           <td class="paramname"><em>gametes</em>, </td>
         </tr>
         <tr>

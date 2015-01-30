@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.6</span>
+   &#160;<span id="projectnumber">0.2.7</span>
    </div>
   </td>
  </tr>
@@ -125,8 +125,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="preprocessor"></span><span class="keyword">typedef</span> std::vector&lt; gvector &gt; <a class="code" href="../../dd/de1/diploid__twopop__mig_8cc.html#a1c358643ece4d029a3ffcf67619eb5c2">mpop_container</a>;</div>
 <div class="line"><span class="preprocessor">#endif</span></div>
 <div class="line"><span class="preprocessor"></span></div>
-<div class="line"><a class="code" href="../../de/d4d/structmutation__with__age.html">mutation_with_age</a> <a name="a8"></a><a class="code" href="../../dd/de1/diploid__twopop__mig_8cc.html#a864b38f6df519dfdcf7fa9edbad42c64">neutral_mutations_inf_sites</a>(gsl_rng * <a name="a9"></a><a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,<span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; generation,<a class="code" href="../../d3/dab/common__gamete_8hpp.html#a9e521309fd82791f8923f2caa97f264d">mlist</a> * mutations,</div>
-<div class="line">                                              <a class="code" href="../../d3/dab/common__gamete_8hpp.html#a879096def42aa5e94c7443124fc1af30">lookup_table_type</a> * lookup)</div>
+<div class="line"><a class="code" href="../../de/d4d/structmutation__with__age.html">mutation_with_age</a> <a name="a8"></a><a class="code" href="../../dd/de1/diploid__twopop__mig_8cc.html#a864b38f6df519dfdcf7fa9edbad42c64">neutral_mutations_inf_sites</a>(gsl_rng * <a name="a9"></a><a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,<span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; generation,<a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a> * mutations,</div>
+<div class="line">                                              <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> * lookup)</div>
 <div class="line">{</div>
 <div class="line">  <span class="keywordtype">double</span> pos = gsl_rng_uniform(r);</div>
 <div class="line">  <span class="keywordflow">while</span>(lookup-&gt;find(pos) != lookup-&gt;end())</div>
@@ -180,13 +180,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">    {</div>
 <div class="line">      <span class="comment">//the population begins with 1 gamete with no mutations</span></div>
 <div class="line">      <a class="code" href="../../dd/de1/diploid__twopop__mig_8cc.html#a1c358643ece4d029a3ffcf67619eb5c2">mpop_container</a> metapop(1,<a name="a14"></a><a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#afd5b74e0108d624225532de98a470a36">gvector</a>(1,<a name="a15"></a><a class="code" href="../../d1/dbe/crossoverTest_8cc.html#ace9428d4aa6205eaf777c2c9f398d9ea">gtype</a>(twoN)));</div>
-<div class="line">      <a class="code" href="../../d3/dab/common__gamete_8hpp.html#a9e521309fd82791f8923f2caa97f264d">mlist</a> mutations;</div>
+<div class="line">      <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a> mutations;</div>
 <div class="line">      std::vector&lt;mtype&gt; fixations;</div>
 <div class="line">      std::vector&lt;unsigned&gt; fixation_times;</div>
 <div class="line">      <span class="keywordtype">unsigned</span> generation;</div>
 <div class="line"></div>
 <div class="line">      <span class="keywordtype">double</span> wbar;</div>
-<div class="line">      <a class="code" href="../../d3/dab/common__gamete_8hpp.html#a879096def42aa5e94c7443124fc1af30">lookup_table_type</a> lookup;</div>
+<div class="line">      <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> lookup;</div>
 <div class="line">      <span class="keywordflow">for</span>( generation = 0; generation &lt; ngens1; ++generation )</div>
 <div class="line">        {</div>
 <div class="line"></div>
@@ -244,8 +244,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">        } </div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">//sample each pop, then merge the results into 1 &quot;ms&quot; block:</span></div>
-<div class="line">      std::vector&lt;std::pair&lt;double,std::string&gt; &gt; sample1 = <a name="a23"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a8dd580f170b4acc0b339a94ca1529c2d">KTfwd::ms_sample</a>(r,&amp;metapop[0],samplesize1,twoN,<span class="keyword">false</span>);</div>
-<div class="line">      std::vector&lt;std::pair&lt;double,std::string&gt; &gt; sample2 = <a class="code" href="../../da/d8b/namespaceKTfwd.html#a8dd580f170b4acc0b339a94ca1529c2d">KTfwd::ms_sample</a>(r,&amp;metapop[1],samplesize1,twoN,<span class="keyword">false</span>);</div>
+<div class="line">      std::vector&lt;std::pair&lt;double,std::string&gt; &gt; sample1 = <a name="a23"></a><a class="code" href="../../d7/d86/group__samplingPopsGamete.html#gae5656f2b4685348222718deff1f24997">KTfwd::ms_sample</a>(r,&amp;metapop[0],samplesize1,twoN,<span class="keyword">false</span>);</div>
+<div class="line">      std::vector&lt;std::pair&lt;double,std::string&gt; &gt; sample2 = <a class="code" href="../../d7/d86/group__samplingPopsGamete.html#gae5656f2b4685348222718deff1f24997">KTfwd::ms_sample</a>(r,&amp;metapop[1],samplesize1,twoN,<span class="keyword">false</span>);</div>
 <div class="line">      Sequence::SimData tsample=<a class="code" href="../../dd/de1/diploid__twopop__mig_8cc.html#ab7298240e8bb37b1cd8a9846c5421545">merge</a>(sample1,sample2,samplesize1);</div>
 <div class="line">      std::cout &lt;&lt; tsample &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line">    }</div>

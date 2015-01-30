@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.6</span>
+   &#160;<span id="projectnumber">0.2.7</span>
    </div>
   </td>
  </tr>
@@ -205,16 +205,16 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="fragment"><div class="line">./TFL2013 20000 0.000125 0.00125 0.00125 0.5 1 0.075 1 0 160000 msfile.gz phenotypes.gz effects.gz</div>
 </div><!-- fragment --><p>will simulate a mean effect size of 0.5 (exponentially-distributed). The above will take probably many hours to run.</p>
 <h4>diploid_ind_2locus</h4>
-<p>This program simulates a 2-locus neutral model. Mutations arise at rate <img class="formulaInl" alt="$\theta$" src="../../form_0.png"/> at each locus, and each locus recombines at rate <img class="formulaInl" alt="$\rho$" src="../../form_1.png"/>. The recombination rate between loci is <img class="formulaInl" alt="$r_{bw}$" src="../../form_2.png"/>, which corresponds to the probability a crossover is observed between loci. In other words, the genotypes at the two loci will switch from </p>
+<p>This program simulates a 2-locus neutral model. Mutations arise at rate <img class="formulaInl" alt="$\theta$" src="../../form_4.png"/> at each locus, and each locus recombines at rate <img class="formulaInl" alt="$\rho$" src="../../form_5.png"/>. The recombination rate between loci is <img class="formulaInl" alt="$r_{bw}$" src="../../form_6.png"/>, which corresponds to the probability a crossover is observed between loci. In other words, the genotypes at the two loci will switch from </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[\frac{AB}{ab}\]" src="../../form_3.png"/>
+<img class="formulaDsp" alt="\[\frac{AB}{ab}\]" src="../../form_7.png"/>
 </p>
 <p> to </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[\frac{Ab}{aB}\]" src="../../form_4.png"/>
+<img class="formulaDsp" alt="\[\frac{Ab}{aB}\]" src="../../form_8.png"/>
 </p>
-<p> with probability <img class="formulaInl" alt="$r_{bw}$" src="../../form_2.png"/>.</p>
-<p>The output of the simulation is an "ms"-style block for each locus. Positions are uniform on the interval <img class="formulaInl" alt="$[0,1)$" src="../../form_5.png"/> at locus 1, and uniform on the interval <img class="formulaInl" alt="$[1,2)$" src="../../form_6.png"/> at locus 2.</p>
+<p> with probability <img class="formulaInl" alt="$r_{bw}$" src="../../form_6.png"/>.</p>
+<p>The output of the simulation is an "ms"-style block for each locus. Positions are uniform on the interval <img class="formulaInl" alt="$[0,1)$" src="../../form_9.png"/> at locus 1, and uniform on the interval <img class="formulaInl" alt="$[1,2)$" src="../../form_10.png"/> at locus 2.</p>
 <p>The usage is:</p>
 <div class="fragment"><div class="line">Usage:</div>
 <div class="line">./diploid_ind_2locus N theta rho ngens n nreps seed</div>

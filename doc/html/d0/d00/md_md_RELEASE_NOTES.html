@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.6</span>
+   &#160;<span id="projectnumber">0.2.7</span>
    </div>
   </td>
  </tr>
@@ -82,14 +82,19 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="title">FWDPP RELEASE NOTES </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2>0.2.6</h2>
+<div class="textblock"><h2>0.2.7 (unreleased)</h2>
+<ul>
+<li>Versions ms_sample and ms_sample_separate that took containers of gametes as arguments are now compatible with individual-based simulations.</li>
+<li>The "devtools" stuff is greatly improved, and a new tutorial added on how to use it: <a class="el" href="../../d9/d5d/md_md_devtools.html">Tutorial 4: Starting projects based on fwdpp</a></li>
+</ul>
+<h2>0.2.6</h2>
 <ul>
 <li>const mutation lists now passed to binary output routines</li>
 <li>The library internals now fully support C++11 move semantics</li>
 <li>Default policies now support C++11 "perfect forwarding"</li>
 <li>The function <a class="el" href="../../da/d8b/namespaceKTfwd.html#a8a46b107991548a40821e132496c1693" title="recombination for individual-based forward simulations ">KTfwd::recombine_gametes</a>, which is provided for recombination in individual-based simulations, has an overloaded version. This new version takes a fixed set of positions representing recombination breakpoints, allowing more modeling flexibility and making unit testing easier.</li>
 <li>The mechanics of recombination in multilocus simulations moved to function multilocus_rec in namesapce <a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html" title="Nested namespace for nuts and bolts of certain library functions. ">KTfwd::fwdpp_internal</a>.</li>
-<li>A unit test for the function <a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a3c36902b6ee80be11577986d681e5df8">KTfwd::fwdpp_internal::multilocus_rec</a> was added.</li>
+<li>A unit test for the function <a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a3c36902b6ee80be11577986d681e5df8" title="The mechanics of recombination for multilocus simulations The mechanics of recombination for multiloc...">KTfwd::fwdpp_internal::multilocus_rec</a> was added.</li>
 <li>Added tutorial for multilocus simulation implmentation</li>
 <li>Minor cleanups to the build system</li>
 <li>Reorganization of <a class="el" href="../../df/d9f/IO_8hpp.html">fwdpp/IO.hpp</a> and fwdpp/IO.tcc to reduce code duplication and provide output routines for multilocus simulations. There are no longer separate read functions for gzFiles. The necessary operations are handled automatically by overloads of template functions in namespace <a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html" title="Nested namespace for nuts and bolts of certain library functions. ">KTfwd::fwdpp_internal</a>.</li>

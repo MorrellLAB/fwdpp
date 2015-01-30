@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['policies_20for_20calculating_20fitnesses_2e',['Policies for calculating fitnesses.',['../d7/d80/group__fitness.html',1,'']]],
   ['pfix_2ecc',['pfix.cc',['../db/d4f/pfix_8cc.html',1,'']]],
   ['pgam',['pgam',['../da/d8b/namespaceKTfwd.html#a9b3dab17dd143c95bd6de883e729aaa6',1,'KTfwd']]],
   ['policies_2emd',['policies.md',['../df/d75/policies_8md.html',1,'']]],

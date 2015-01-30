@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.6</span>
+   &#160;<span id="projectnumber">0.2.7</span>
    </div>
   </td>
  </tr>
@@ -105,7 +105,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"></div>
 <div class="line"><a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">mtype</a> <a name="a5"></a><a class="code" href="../../d7/d2d/RHH_8cc.html#a1257511473444e8cd8c494f6cbf060c2">RHH_mutation_model</a>( gsl_rng * <a name="a6"></a><a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; generation, <span class="keyword">const</span> <span class="keywordtype">double</span> mu_neutral, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; mu_selected,</div>
 <div class="line">                          <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; p_selected_within,</div>
-<div class="line">                          <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; s, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; h, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; maxd, <a class="code" href="../../d3/dab/common__gamete_8hpp.html#a879096def42aa5e94c7443124fc1af30">lookup_table_type</a> * lookup ) <span class="comment">//keep h (dominance) to 1 to match theory</span></div>
+<div class="line">                          <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; s, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; h, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; maxd, <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> * lookup ) <span class="comment">//keep h (dominance) to 1 to match theory</span></div>
 <div class="line">{</div>
 <div class="line">  <span class="comment">//Will the mutation be neutral, or a selected one?</span></div>
 <div class="line">  <span class="keywordtype">double</span> neutral = (gsl_rng_uniform(r) &lt;= mu_neutral/(mu_neutral+mu_selected)) ? <span class="keyword">true</span> : <span class="keyword">false</span>;</div>
@@ -228,12 +228,12 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">    {</div>
 <div class="line">      <span class="comment">//the population begins with 1 gamete with no mutations amd initial count 2N</span></div>
 <div class="line">      <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#afd5b74e0108d624225532de98a470a36">gvector</a> gametes(1,<a name="a9"></a><a class="code" href="../../d1/dbe/crossoverTest_8cc.html#ace9428d4aa6205eaf777c2c9f398d9ea">gtype</a>(twoN));</div>
-<div class="line">      <a class="code" href="../../d3/dab/common__gamete_8hpp.html#a9e521309fd82791f8923f2caa97f264d">mlist</a> mutations;  <span class="comment">//the population is devoid of mutations</span></div>
+<div class="line">      <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a> mutations;  <span class="comment">//the population is devoid of mutations</span></div>
 <div class="line">      std::vector&lt;mtype&gt; fixations;  <span class="comment">//store mutation that fix.  Passed to KTfwd::remove_fixed_lost</span></div>
 <div class="line">      std::vector&lt;unsigned&gt; fixation_times; <span class="comment">//store when they fix.  Passed to KTfwd::remove_fixed_lost</span></div>
 <div class="line">      <span class="keywordtype">unsigned</span> generation;</div>
 <div class="line">      <span class="keywordtype">double</span> wbar;</div>
-<div class="line">      <a class="code" href="../../d3/dab/common__gamete_8hpp.html#a879096def42aa5e94c7443124fc1af30">lookup_table_type</a> lookup;  <span class="comment">//this is our lookup table for the mutation model</span></div>
+<div class="line">      <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> lookup;  <span class="comment">//this is our lookup table for the mutation model</span></div>
 <div class="line"></div>
 <div class="line">      <span class="keywordflow">for</span>( generation = 0; generation &lt; burnin; ++generation )</div>
 <div class="line">        {</div>
@@ -301,7 +301,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">      Sequence::SimData sdata;</div>
 <div class="line">      <span class="comment">//.first is the neutral data, .second the selected sites</span></div>
 <div class="line">      std::pair&lt; std::vector&lt;std::pair&lt;double,std::string&gt; &gt;,</div>
-<div class="line">        std::vector&lt;std::pair&lt;double,std::string&gt; &gt; &gt; mslike = <a name="a17"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a0516afedc890764744b0f96b0048724f">KTfwd::ms_sample_separate</a>(r,&amp;gametes,samplesize1,twoN,<span class="keyword">true</span>);</div>
+<div class="line">        std::vector&lt;std::pair&lt;double,std::string&gt; &gt; &gt; mslike = <a name="a17"></a><a class="code" href="../../d7/d86/group__samplingPopsGamete.html#ga9aa3258399200b1f313ff3cfdb222a34">KTfwd::ms_sample_separate</a>(r,&amp;gametes,samplesize1,twoN,<span class="keyword">true</span>);</div>
 <div class="line"></div>
 <div class="line">      <span class="comment">//Convert the results of KTfwd::ms_sample to a Sequence::SimData object and print to the screen</span></div>
 <div class="line">      <span class="keywordflow">if</span>(!mslike.first.empty())</div>

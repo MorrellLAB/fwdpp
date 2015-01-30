@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.6</span>
+   &#160;<span id="projectnumber">0.2.7</span>
    </div>
   </td>
  </tr>
@@ -110,7 +110,7 @@ Policies in C++</h1>
 <div class="line"></div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">int</span> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> ( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv )</div>
+<div class="line"><span class="keywordtype">int</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> ( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv )</div>
 <div class="line">{</div>
 <div class="line">  vector&lt;unsigned&gt; vu{10,9,8,7,6,5,4,3,2,1};</div>
 <div class="line"></div>
@@ -203,14 +203,14 @@ Policy requirements in fwdpp</h1>
 <p>The example program <b>diploid_fixed_sh_lambda</b> is an example of writing all policies using lambda expressions&ndash;take a look there for a concrete example of these concepts. The lambda expressions are very nice in that they document the policy requirements completely, as one is required to write them in the lambda arguments.</p>
 <p>For the sake of this example, let's assume that we are using the following types in an individual-based simulation (in C++11, ``using'' statements replace typedefs.):</p>
 <div class="fragment"><div class="line"><span class="keyword">using</span> mtype = <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a>;</div>
-<div class="line"><span class="keyword">using</span> <a class="code" href="../../d3/dab/common__gamete_8hpp.html#a9e521309fd82791f8923f2caa97f264d">mlist</a> = std::list&lt;mtype&gt;;</div>
+<div class="line"><span class="keyword">using</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a> = std::list&lt;mtype&gt;;</div>
 <div class="line"><span class="keyword">using</span> <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gtype</a> = <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base&lt;mtype&gt;</a>;</div>
 <div class="line"><span class="keyword">using</span> <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a> = std::list&lt;gtype&gt;;</div>
 </div><!-- fragment --><p>A minimal mutation policy takes a non-const pointer to an <b>mlist</b> as an argument, and returns an <b>mtype</b>:</p>
 <div class="fragment"><div class="line"><span class="comment">//the [&amp;] is used to capture any things that may be needed</span></div>
-<div class="line"><span class="keyword">auto</span> mut_policy = [&amp;](<a class="code" href="../../d3/dab/common__gamete_8hpp.html#a9e521309fd82791f8923f2caa97f264d">mlist</a> * __mutations){ <span class="keywordflow">return</span> function_generating_new_type( arguments ); };</div>
+<div class="line"><span class="keyword">auto</span> mut_policy = [&amp;](<a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a> * __mutations){ <span class="keywordflow">return</span> function_generating_new_type( arguments ); };</div>
 </div><!-- fragment --><p>We then need to decide how to add a new mutation (the return value of the mutation policy) to the list of mutations. This ``mutation insertion policy'' takes a const reference to an <b>mtype</b> and a non-const pointer to an <b>mlist</b> as arguments, and returns an <b>mlist::iterator</b>. This is an example for the infinite-sites model. Under this model, we know that a new mutation is at a new position, therefore we simply insert it at the end of the mlist:</p>
-<div class="fragment"><div class="line"><span class="keyword">auto</span> mut_insertion_policy = [](<span class="keyword">const</span> mtype &amp; m,<a class="code" href="../../d3/dab/common__gamete_8hpp.html#a9e521309fd82791f8923f2caa97f264d">mlist</a> * __mutations) { </div>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> mut_insertion_policy = [](<span class="keyword">const</span> mtype &amp; m,<a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a> * __mutations) { </div>
 <div class="line"><span class="keywordflow">return</span> __mutations-&gt;insert(__mutations-&gt;end(),m); </div>
 <div class="line">};</div>
 </div><!-- fragment --><p>When a gamete is mutated, we need to decide how to insert it into the <b>glist</b>. This ``gamete insertion policy'' takes a const reference to an <b>gtype</b> and a non-const pointer to an <b>glist</b> as arguments, and returns an <b>glist::iterator</b>. Again, under the infinitely-many sites model, a gamete with a new mutation is guaranteed to be unique, so we can simply insert it:</p>
@@ -224,7 +224,7 @@ Policy requirements in fwdpp</h1>
 <div class="line">  <span class="keywordflow">return</span> 1.;</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>See the header file <b><a class="el" href="../../db/dd7/fitness__models_8hpp.html">fwdpp/fitness_models.hpp</a></b> for examples of fitness policies that I provide for ``standard'' cases.</p>
-<p>A recombination policy takes two non-const references to <b>glist::iterator</b>, scrambles up those gametes appropriately, and returns an unsigned integer representing the number of crossovers, etc., between the two gametes. Typically, this would work via a call to <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#a8a46b107991548a40821e132496c1693" title="recombination for individual-based forward simulations ">KTfwd::recombine_gametes</a></b>, or the convenience wrapper <b><a class="el" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a></b>. Here is an example of the former, where the genetic map is uniform on the interval <img class="formulaInl" alt="$(0,1]$" src="../../form_8.png"/>:</p>
+<p>A recombination policy takes two non-const references to <b>glist::iterator</b>, scrambles up those gametes appropriately, and returns an unsigned integer representing the number of crossovers, etc., between the two gametes. Typically, this would work via a call to <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#a8a46b107991548a40821e132496c1693" title="recombination for individual-based forward simulations ">KTfwd::recombine_gametes</a></b>, or the convenience wrapper <b><a class="el" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a></b>. Here is an example of the former, where the genetic map is uniform on the interval <img class="formulaInl" alt="$(0,1]$" src="../../form_12.png"/>:</p>
 <div class="fragment"><div class="line"><span class="comment">//These parameters will be captuered by reference ([&amp;] in the lambda </span></div>
 <div class="line"><span class="comment">//expression below), because their state will be modified</span></div>
 <div class="line">gsl_rng * <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>;</div>
@@ -285,17 +285,17 @@ Mutation policies</h2>
 </ol>
 <p>We will now implement this mutation model for the mutation type ``mutation'' defined above. In order to add some complexity to our mutation model, we will make the additional modeling assumptions:</p>
 <ol type="1">
-<li>Mutation positions are continuous on the interval <img class="formulaInl" alt="$[0,1)$" src="../../form_5.png"/>.</li>
-<li>Neutral mutations arise at rate <img class="formulaInl" alt="$\mu$" src="../../form_17.png"/> per gamete per generation</li>
-<li>Selected mutations arise at rate <img class="formulaInl" alt="$\mu_s$" src="../../form_18.png"/> per gamete per generation.</li>
-<li>The selection coefficient for a newly-arising mutation is exponentially-distributed with mean <img class="formulaInl" alt="$s_m$" src="../../form_19.png"/>. Further, half the time, selected mutations are deleterious ( <img class="formulaInl" alt="$s < 0$" src="../../form_20.png"/>). Otherwise, they are beneficial ( <img class="formulaInl" alt="$s > 0$" src="../../form_21.png"/>).</li>
-<li>Dominance will be uniform from 0 to 2. (We'll be scaling fitness as <img class="formulaInl" alt="$1, 1+hs, 1+2s$" src="../../form_22.png"/> for genotypes AA, Aa, and aa, respectively.)</li>
+<li>Mutation positions are continuous on the interval <img class="formulaInl" alt="$[0,1)$" src="../../form_9.png"/>.</li>
+<li>Neutral mutations arise at rate <img class="formulaInl" alt="$\mu$" src="../../form_21.png"/> per gamete per generation</li>
+<li>Selected mutations arise at rate <img class="formulaInl" alt="$\mu_s$" src="../../form_22.png"/> per gamete per generation.</li>
+<li>The selection coefficient for a newly-arising mutation is exponentially-distributed with mean <img class="formulaInl" alt="$s_m$" src="../../form_23.png"/>. Further, half the time, selected mutations are deleterious ( <img class="formulaInl" alt="$s < 0$" src="../../form_24.png"/>). Otherwise, they are beneficial ( <img class="formulaInl" alt="$s > 0$" src="../../form_25.png"/>).</li>
+<li>Dominance will be uniform from 0 to 2. (We'll be scaling fitness as <img class="formulaInl" alt="$1, 1+hs, 1+2s$" src="../../form_26.png"/> for genotypes AA, Aa, and aa, respectively.)</li>
 </ol>
 <p>From a programming point of view, we need a means to lookup all mutation positions currently segregating in the population. <b>fwdpp</b> provides support for lookup tables that conform to the behavior of the type <b>std::map</b>. While one could use a type like</p>
 <div class="fragment"><div class="line">std::map&lt;double,bool&gt;</div>
 </div><!-- fragment --><p>it is more efficient to use a hash table like</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;unordered_set&gt;</span> <span class="comment">//need this header</span></div>
-<div class="line"><span class="keyword">typedef</span> std::unordered_set&lt;double,std::hash&lt;double&gt;,<a class="code" href="../../dc/d8e/structKTfwd_1_1equal__eps.html">KTfwd::equal_eps</a> &gt; <a class="code" href="../../d3/dab/common__gamete_8hpp.html#a879096def42aa5e94c7443124fc1af30">lookup_table_type</a>;</div>
+<div class="line"><span class="keyword">typedef</span> std::unordered_set&lt;double,std::hash&lt;double&gt;,<a class="code" href="../../dc/d8e/structKTfwd_1_1equal__eps.html">KTfwd::equal_eps</a> &gt; <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>;</div>
 </div><!-- fragment --><p>The above code creates a new data type called <b>lookup_table_type</b> that hashes doubles with the data type <b><a class="el" href="../../dc/d8e/structKTfwd_1_1equal__eps.html" title="Returns true if std::max(lhs,rhs)-std::min(lhs,rhs) &lt;= std::numeric_limits&lt;T&gt;::epsilon() ...">KTfwd::equal_eps</a></b> as its comparison operator. That comparison operation is provided by the library and looks like this:</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>equal_eps</div>
 <div class="line">{</div>
@@ -317,9 +317,9 @@ Mutation policies</h2>
 <div class="line">  }</div>
 <div class="line">};</div>
 </div><!-- fragment --><p>We can now completely define our mutation model as a function (we could do it as a function object, too). In this example, We assume that we are using the boost list type and boost's memory pool allocator:</p>
-<div class="fragment"><div class="line"><span class="keyword">typedef</span> <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a08e697ef28ea008d75cc6de09f177dfa">mtype</a>;</div>
-<div class="line"><span class="keyword">typedef</span> boost::pool_allocator&lt;mtype&gt; mut_allocator;</div>
-<div class="line"><span class="keyword">typedef</span> boost::container::list&lt;mtype,mut_allocator &gt; <a class="code" href="../../d3/dab/common__gamete_8hpp.html#a9e521309fd82791f8923f2caa97f264d">mlist</a>;</div>
+<div class="fragment"><div class="line"><span class="keyword">typedef</span> <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a08e697ef28ea008d75cc6de09f177dfa">mtype</a>;</div>
+<div class="line"><span class="keyword">typedef</span> boost::pool_allocator&lt;mtype&gt; <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a8da95455b301321cb0a4a7064ed8fe3d">mut_allocator</a>;</div>
+<div class="line"><span class="keyword">typedef</span> boost::container::list&lt;mtype,mut_allocator &gt; <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a>;</div>
 <div class="line">mtype mutmodel( gsl_rng * r, mlist * mutations,</div>
 <div class="line">                <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; mu_neutral,</div>
 <div class="line">                <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; mu_selected,</div>
@@ -340,14 +340,14 @@ Mutation policies</h2>
 <div class="line">    <span class="keywordtype">bool</span> neutral = (gsl_rng_uniform(r) &lt;= (mu_neutral)/(mu_neutral+mu_selected)) ? <span class="keyword">true</span> : <span class="keyword">false</span>;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//return neutral mutation</span></div>
-<div class="line">    <span class="keywordflow">if</span> ( neutral ) { <span class="keywordflow">return</span> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a08e697ef28ea008d75cc6de09f177dfa">mtype</a>(pos,0,1,0); }</div>
+<div class="line">    <span class="keywordflow">if</span> ( neutral ) { <span class="keywordflow">return</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a08e697ef28ea008d75cc6de09f177dfa">mtype</a>(pos,0,1,0); }</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//get selection coefficient</span></div>
 <div class="line">    <span class="keywordtype">double</span> s = gsl_ran_exponential(r,mean_s);</div>
 <div class="line">    <span class="keywordflow">if</span>( gsl_ran_uniform(r) &lt;= 0.5 ) { s = -1.*s; }</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//the gsl_ran_flat call generates the dominance</span></div>
-<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a08e697ef28ea008d75cc6de09f177dfa">mtype</a>(pos,s,1,gsl_ran_flat(r,0.,2.));</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a08e697ef28ea008d75cc6de09f177dfa">mtype</a>(pos,s,1,gsl_ran_flat(r,0.,2.));</div>
 <div class="line">  }</div>
 </div><!-- fragment --><p>That is is&ndash;the mutation model is complete. We still need to deal with how mutations are entered into data structures representing the population, but we'll treat that later.</p>
 <p>The mutation policy is passed to any of the various <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#a946efaa4a6095f4f2aadda44a809a477">KTfwd::sample_diploid</a></b> functions in the library like this:</p>
@@ -359,7 +359,7 @@ Mutation policies</h2>
 <div class="line">  mu_selected,mean_s,&amp;lookup); }</div>
 </div><!-- fragment --><p>Note that several of the data types passed to the model are non-const pointers. Therefore, it is very likely that the data pointed to will be modified my the mutation model!</p>
 <h3>A model for quantitative trait simulations</h3>
-<p>Let's define a model where a mutation affecting fitness does so via its effect size, <img class="formulaInl" alt="$e$" src="../../form_23.png"/>, which is Gaussian-distributed with mean zero and standard deviation <img class="formulaInl" alt="$\sigma_e$" src="../../form_24.png"/>.</p>
+<p>Let's define a model where a mutation affecting fitness does so via its effect size, <img class="formulaInl" alt="$e$" src="../../form_27.png"/>, which is Gaussian-distributed with mean zero and standard deviation <img class="formulaInl" alt="$\sigma_e$" src="../../form_28.png"/>.</p>
 <p>We need a mutation class:</p>
 <div class="fragment"><div class="line"> <span class="keyword">struct </span>mut_e : <span class="keyword">public</span> <a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html">KTfwd::mutation_base</a></div>
 <div class="line"> {</div>
@@ -372,11 +372,11 @@ Mutation policies</h2>
 <div class="line">          }</div>
 <div class="line"> };</div>
 <div class="line"></div>
-<div class="line"><span class="keyword">typedef</span> mut_e <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a08e697ef28ea008d75cc6de09f177dfa">mtype</a>;</div>
+<div class="line"><span class="keyword">typedef</span> mut_e <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a08e697ef28ea008d75cc6de09f177dfa">mtype</a>;</div>
 </div><!-- fragment --><p>OK, our mutation model is going to be the following. It is infinitely-many sites with both neutral and non-neutral mutations:</p>
-<div class="fragment"><div class="line"><span class="keyword">typedef</span> <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a08e697ef28ea008d75cc6de09f177dfa">mtype</a>;</div>
-<div class="line"><span class="keyword">typedef</span> boost::pool_allocator&lt;mtype&gt; mut_allocator;</div>
-<div class="line"><span class="keyword">typedef</span> boost::container::list&lt;mtype,mut_allocator &gt; <a class="code" href="../../d3/dab/common__gamete_8hpp.html#a9e521309fd82791f8923f2caa97f264d">mlist</a>;</div>
+<div class="fragment"><div class="line"><span class="keyword">typedef</span> <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a08e697ef28ea008d75cc6de09f177dfa">mtype</a>;</div>
+<div class="line"><span class="keyword">typedef</span> boost::pool_allocator&lt;mtype&gt; <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a8da95455b301321cb0a4a7064ed8fe3d">mut_allocator</a>;</div>
+<div class="line"><span class="keyword">typedef</span> boost::container::list&lt;mtype,mut_allocator &gt; <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a>;</div>
 <div class="line">mtype mutmodel_Qtrait( gsl_rng * r, mlist * mutations,</div>
 <div class="line">                       <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; mu_neutral,</div>
 <div class="line">                       <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; mu_selected,</div>
@@ -397,23 +397,23 @@ Mutation policies</h2>
 <div class="line">   <span class="keywordtype">bool</span> neutral = (gsl_rng_uniform(r) &lt;= (mu_neutral)/(mu_neutral+mu_selected)) ? <span class="keyword">true</span> : <span class="keyword">false</span>;</div>
 <div class="line"></div>
 <div class="line">   <span class="comment">//return neutral mutation</span></div>
-<div class="line">   <span class="keywordflow">if</span> ( neutral ) { <span class="keywordflow">return</span> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a08e697ef28ea008d75cc6de09f177dfa">mtype</a>(pos,1,<span class="keyword">true</span>,0); }</div>
+<div class="line">   <span class="keywordflow">if</span> ( neutral ) { <span class="keywordflow">return</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a08e697ef28ea008d75cc6de09f177dfa">mtype</a>(pos,1,<span class="keyword">true</span>,0); }</div>
 <div class="line"></div>
 <div class="line">   <span class="comment">//the gsl_ran_gaussian call determines the effect size</span></div>
-<div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a08e697ef28ea008d75cc6de09f177dfa">mtype</a>(pos,1,gsl_ran_gaussian(r,sigma_e),<span class="keyword">false</span>);</div>
+<div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a08e697ef28ea008d75cc6de09f177dfa">mtype</a>(pos,1,gsl_ran_gaussian(r,sigma_e),<span class="keyword">false</span>);</div>
 <div class="line"> }</div>
 </div><!-- fragment --><h2><a class="anchor" id="TutRec"></a>
 Recombination</h2>
 <h3>How recombination is modeled in <b>fwdpp</b></h3>
-<p>Currently, recombination is modeled as follows. In a diploid, there number of crossovers between gametes is Poisson distributed with mean <img class="formulaInl" alt="$r$" src="../../form_15.png"/>. There is no notion of interference in establishing crossover positions. (However, that can be done with a clever policy.)</p>
-<p>Note: what I describe as <img class="formulaInl" alt="$r$" src="../../form_15.png"/> above is the usual definition in population genetics. However, gamete-based simulations (confusingly, I admit) use r/2, because the per-generation r is used to determine how many recombination events a gamete is involved in. In other words, it is treated as a "per-gamete'' parameter. There is more detail on this in the main library documentation, and you'll see in the example simulations that I divide <img class="formulaInl" alt="$\rho$" src="../../form_1.png"/> (the population-scaled rate of recombination) by <img class="formulaInl" alt="$8N$" src="../../form_25.png"/> to get ``littler'' rather than the more common <img class="formulaInl" alt="$4N$" src="../../form_26.png"/>. (Again, to be clear, <img class="formulaInl" alt="$r=\rho/4N$" src="../../form_27.png"/> for individual-based simulations.)</p>
+<p>Currently, recombination is modeled as follows. In a diploid, there number of crossovers between gametes is Poisson distributed with mean <img class="formulaInl" alt="$r$" src="../../form_19.png"/>. There is no notion of interference in establishing crossover positions. (However, that can be done with a clever policy.)</p>
+<p>Note: what I describe as <img class="formulaInl" alt="$r$" src="../../form_19.png"/> above is the usual definition in population genetics. However, gamete-based simulations (confusingly, I admit) use r/2, because the per-generation r is used to determine how many recombination events a gamete is involved in. In other words, it is treated as a "per-gamete'' parameter. There is more detail on this in the main library documentation, and you'll see in the example simulations that I divide <img class="formulaInl" alt="$\rho$" src="../../form_5.png"/> (the population-scaled rate of recombination) by <img class="formulaInl" alt="$8N$" src="../../form_29.png"/> to get ``littler'' rather than the more common <img class="formulaInl" alt="$4N$" src="../../form_30.png"/>. (Again, to be clear, <img class="formulaInl" alt="$r=\rho/4N$" src="../../form_31.png"/> for individual-based simulations.)</p>
 <h3>Recombination map functions</h3>
-<p>In <b>fwdpp</b>, a recombination map is a function or function object that returns a double and takes no additional arguments from the algorithm. The return value is the position of the crossing over event. The simplest recombination map is uniform. Here is how to implement such a map on the interval <img class="formulaInl" alt="$[0,1)$" src="../../form_5.png"/>:</p>
+<p>In <b>fwdpp</b>, a recombination map is a function or function object that returns a double and takes no additional arguments from the algorithm. The return value is the position of the crossing over event. The simplest recombination map is uniform. Here is how to implement such a map on the interval <img class="formulaInl" alt="$[0,1)$" src="../../form_9.png"/>:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;functional&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;gsl/gls_rng.h&gt;</span></div>
 <div class="line"><span class="comment">//gsl_rng * r assumed to be initialized already...</span></div>
 <div class="line">std::function&lt; double(void) &gt; recmap = std::bind( gsl_rng_uniform, r);</div>
-</div><!-- fragment --><p>Let us write a recombination map function that models a strong hotspot of crossing over. The positions will still be on the interval <img class="formulaInl" alt="$[0,1)$" src="../../form_5.png"/>. A fraction <img class="formulaInl" alt="$p$" src="../../form_28.png"/> of the recombination events will come from a uniform distribution and <img class="formulaInl" alt="$1-p$" src="../../form_29.png"/> will come from a beta distribution with parameters <img class="formulaInl" alt="$a$" src="../../form_30.png"/> and <img class="formulaInl" alt="$b$" src="../../form_31.png"/>. The genetic map looks like this:</p>
+</div><!-- fragment --><p>Let us write a recombination map function that models a strong hotspot of crossing over. The positions will still be on the interval <img class="formulaInl" alt="$[0,1)$" src="../../form_9.png"/>. A fraction <img class="formulaInl" alt="$p$" src="../../form_32.png"/> of the recombination events will come from a uniform distribution and <img class="formulaInl" alt="$1-p$" src="../../form_33.png"/> will come from a beta distribution with parameters <img class="formulaInl" alt="$a$" src="../../form_34.png"/> and <img class="formulaInl" alt="$b$" src="../../form_35.png"/>. The genetic map looks like this:</p>
 <div class="fragment"><div class="line"><span class="keywordtype">double</span> mixture_map(gsl_rng * r, </div>
 <div class="line">                   <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; p,</div>
 <div class="line">                   <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; a,</div>
@@ -470,12 +470,12 @@ Recombination</h2>
 <div class="line">           littler,                <span class="comment">//Avg. # of crossovers b/w two gametes per region per generation</span></div>
 <div class="line">           r,                      <span class="comment">//a gsl_rng *</span></div>
 <div class="line">           recmap)                 <span class="comment">//A genetic map policy like the one we made above</span></div>
-</div><!-- fragment --><p>Note: if you want to write a new recombination policy, you probably want to proceed by modifying how it interacts with the the recombination map policy. For example, if a recombination at position <img class="formulaInl" alt="$x$" src="../../form_32.png"/> means that the next position must be <img class="formulaInl" alt="$\geq 1.5x$" src="../../form_33.png"/> (in some model of interference). Doing so requires making a custom version of the <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#a8a46b107991548a40821e132496c1693" title="recombination for individual-based forward simulations ">KTfwd::recombine_gametes</a></b> function. If you read the code for that function, you will see where the recombination map policy is called. If you try to modify the code below that, then good luck to you. It isn't super-complicated, but tread with caution.</p>
+</div><!-- fragment --><p>Note: if you want to write a new recombination policy, you probably want to proceed by modifying how it interacts with the the recombination map policy. For example, if a recombination at position <img class="formulaInl" alt="$x$" src="../../form_36.png"/> means that the next position must be <img class="formulaInl" alt="$\geq 1.5x$" src="../../form_37.png"/> (in some model of interference). Doing so requires making a custom version of the <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#a8a46b107991548a40821e132496c1693" title="recombination for individual-based forward simulations ">KTfwd::recombine_gametes</a></b> function. If you read the code for that function, you will see where the recombination map policy is called. If you try to modify the code below that, then good luck to you. It isn't super-complicated, but tread with caution.</p>
 <h2><a class="anchor" id="TutMig"></a>
 Migration</h2>
 <p>Migration policies are only used in individual-based simulations. For gamete-based simulations, you may write a migration function (replacing <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#ad1d1af58a12e56b980a03b2056770370">KTfwd::migrate</a></b>) that does what you need it to and is implemented in terms of <b>KTfwdd::migrate_from_to</b>.</p>
-<p>For individual-based simulations involving a metapopulations, parent 1 comes from population <img class="formulaInl" alt="$i$" src="../../form_12.png"/> and may or not be a migrant. Parent two comes from population <img class="formulaInl" alt="$j$" src="../../form_34.png"/> and <img class="formulaInl" alt="$j = i$" src="../../form_35.png"/> in the case of no migration, otherwise <img class="formulaInl" alt="$j \neq i$" src="../../form_36.png"/>. Migration policies may be the trickiest to write effectively because spatial models of migration can be complicated. However, a migration policies requirements are simple. __A migration policy is a function or function object taking an argument if type size_t and returning a value of type size_t. The argument is the index of population <img class="formulaInl" alt="$i$" src="../../form_12.png"/>, and the return value is the index of population <img class="formulaInl" alt="$j$" src="../../form_34.png"/>.__</p>
-<p>For example, let's assume two demes with migration rate <img class="formulaInl" alt="$m$" src="../../form_37.png"/>. Here, <img class="formulaInl" alt="$m$" src="../../form_37.png"/> is the probability that a parent is a migrant. This migration rate is equal between the two demes. Because we are in a C-like language, the values allowed for the <b>size_t</b> are <img class="formulaInl" alt="$0 \leq i \leq 1$" src="../../form_38.png"/>. The migration policy is thus defined as follows:</p>
+<p>For individual-based simulations involving a metapopulations, parent 1 comes from population <img class="formulaInl" alt="$i$" src="../../form_16.png"/> and may or not be a migrant. Parent two comes from population <img class="formulaInl" alt="$j$" src="../../form_38.png"/> and <img class="formulaInl" alt="$j = i$" src="../../form_39.png"/> in the case of no migration, otherwise <img class="formulaInl" alt="$j \neq i$" src="../../form_40.png"/>. Migration policies may be the trickiest to write effectively because spatial models of migration can be complicated. However, a migration policies requirements are simple. __A migration policy is a function or function object taking an argument if type size_t and returning a value of type size_t. The argument is the index of population <img class="formulaInl" alt="$i$" src="../../form_16.png"/>, and the return value is the index of population <img class="formulaInl" alt="$j$" src="../../form_38.png"/>.__</p>
+<p>For example, let's assume two demes with migration rate <img class="formulaInl" alt="$m$" src="../../form_41.png"/>. Here, <img class="formulaInl" alt="$m$" src="../../form_41.png"/> is the probability that a parent is a migrant. This migration rate is equal between the two demes. Because we are in a C-like language, the values allowed for the <b>size_t</b> are <img class="formulaInl" alt="$0 \leq i \leq 1$" src="../../form_42.png"/>. The migration policy is thus defined as follows:</p>
 <div class="fragment"><div class="line"><span class="keywordtype">size_t</span> <a class="code" href="../../df/dfa/migsel__ind_8cc.html#a4862499cb62bfa43943001b59fe6dc0d">migpop</a>(<span class="keyword">const</span> <span class="keywordtype">size_t</span> &amp; source_pop, gsl_rng * r, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; mig_prob)</div>
 <div class="line">{</div>
 <div class="line">  <span class="comment">//if parent is a migrant</span></div>
@@ -497,7 +497,7 @@ Fitness</h2>
 <p>The ability to define custom fitness policies is perhaps the most useful feature of <b>fwdpp</b>. Broadly-speaking, there are two typical types of fitness models used in population genetics. The first are what I call site-based models, such as the model of multipicative fitness across sites. In this standard model, each non-neutral site is effectively its own gene. (A trans-heterozygotoe for two recessive mutations has wild-type fitness under the multiplicative assumption. That satisfies Benzer's definition of complementation, which is the operational definition of a gene.) The second class are models are haplotype- or region- based, in that fitness depends on the effect sizes of the maternal and paternal haplotypes that a diploid inherited. The library supports both types. Haplotype-based fitness models are often efficient to compute, but site-based models can be done badly. The library provides additional assistance for site-based models.</p>
 <p><b>A fitness policy is a function or function object taking two iterators pointing to gametes are arguments are returning a double. The pointers are the diploid's haplotypes, and the return value is the fitness.</b> </p>
 <h3>Site-dependent models of fitness</h3>
-<p>The library provides a fitness policy called <b><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html">KTfwd::site_dependent_fitness</a></b>. This function object requires two additional policies defining what to do with homozygous sites and heterozygous sites. These <code>homozygote'' and</code>heterozygote'' policies may be trivially defined as lambda expressions:</p>
+<p>The library provides a fitness policy called <b><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html" title="Function object for fitness as a function of individual mutations in a diploid. ">KTfwd::site_dependent_fitness</a></b>. This function object requires two additional policies defining what to do with homozygous sites and heterozygous sites. These <code>homozygote'' and</code>heterozygote'' policies may be trivially defined as lambda expressions:</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>multiplicative_diploid</div>
 <div class="line">{</div>
 <div class="line">  <span class="keyword">typedef</span> <span class="keywordtype">double</span> result_type;</div>
@@ -520,18 +520,18 @@ Fitness</h2>
 <div class="line">                                    1.);</div>
 <div class="line">  }</div>
 <div class="line">};</div>
-</div><!-- fragment --><p>That last variable, scaling, means that fitness is the product of <img class="formulaInl" alt="$1, 1+sh, 1+s \times \mathrm{scaling}$" src="../../form_39.png"/> over sites. This allows you to recreate results from the different parts of the literature that use <img class="formulaInl" alt="$scaling = 1$" src="../../form_40.png"/> and 2. Many classic results are based on a scaling of 2.</p>
+</div><!-- fragment --><p>That last variable, scaling, means that fitness is the product of <img class="formulaInl" alt="$1, 1+sh, 1+s \times \mathrm{scaling}$" src="../../form_43.png"/> over sites. This allows you to recreate results from the different parts of the literature that use <img class="formulaInl" alt="$scaling = 1$" src="../../form_44.png"/> and 2. Many classic results are based on a scaling of 2.</p>
 <p>To use the multiplicative fitness policy in your simulations, this goes to <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#a946efaa4a6095f4f2aadda44a809a477">KTfwd::sample_diploid</a></b>:</p>
 <div class="fragment"><div class="line">std::bind(multiplicative_diploid(),std::placeholders::_1,std::placeholders::_2,2.)</div>
 </div><!-- fragment --><p>If you wish to create your own site-dependent fitness policies, the recipe is:</p>
 <ol type="1">
 <li>Create your own versions of the policies determining what happens in diploids homozygous vs. heterozygous for a mutation. <b>These policies are passed the current fitness from the algorithm and an iterator to a mutation object.</b></li>
-<li>Write a wrapper function like multiplicative_diploid that passes these policies to __{KTfwd::site_dependent_fitness__, <em>which itself is a policy requiring that iterators to two gametes, the homozygote/heterozygote policies, and a starting value for fitness be passed to it.</em> In the example of the built-in multiplicative fitness policy, that value of <img class="formulaInl" alt="$1$" src="../../form_41.png"/> that is passed as the last argument to <b><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html">KTfwd::site_dependent_fitness</a></b> is the initial value of fitness for a diploid. In other words, <img class="formulaInl" alt="$w = 1$" src="../../form_42.png"/> initially, and <img class="formulaInl" alt="$w$" src="../../form_43.png"/> is then modified by <b>KTfwd::multiplicative_fitness_updater_het</b> or <b>KTfwd::multiplicative_fitness_updater_hom</b> as appropriate.</li>
+<li>Write a wrapper function like multiplicative_diploid that passes these policies to __{KTfwd::site_dependent_fitness__, <em>which itself is a policy requiring that iterators to two gametes, the homozygote/heterozygote policies, and a starting value for fitness be passed to it.</em> In the example of the built-in multiplicative fitness policy, that value of <img class="formulaInl" alt="$1$" src="../../form_45.png"/> that is passed as the last argument to <b><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html" title="Function object for fitness as a function of individual mutations in a diploid. ">KTfwd::site_dependent_fitness</a></b> is the initial value of fitness for a diploid. In other words, <img class="formulaInl" alt="$w = 1$" src="../../form_46.png"/> initially, and <img class="formulaInl" alt="$w$" src="../../form_47.png"/> is then modified by <b>KTfwd::multiplicative_fitness_updater_het</b> or <b>KTfwd::multiplicative_fitness_updater_hom</b> as appropriate.</li>
 <li>This wrapper function is your new fitness policy.</li>
 </ol>
-<p>Note: the implementation <b><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html">KTfwd::site_dependent_fitness</a></b> is a lot of iterator/pointer arithmetic.</p>
+<p>Note: the implementation <b><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html" title="Function object for fitness as a function of individual mutations in a diploid. ">KTfwd::site_dependent_fitness</a></b> is a lot of iterator/pointer arithmetic.</p>
 <h3>Haplotype based fitness policies</h3>
-<p>Here is one that assume a user-defined mutation type with effect size <img class="formulaInl" alt="$e$" src="../../form_23.png"/> associated with it. The effect of a haplotype is additive, the genetic model is recessive, and the phenotype is the genetic effect + a Gaussian random variable with standard deviation sigma. Finally, fitnesses are under Gaussian stabilizing selection with a standard deviation of 1 and mean 0.</p>
+<p>Here is one that assume a user-defined mutation type with effect size <img class="formulaInl" alt="$e$" src="../../form_27.png"/> associated with it. The effect of a haplotype is additive, the genetic model is recessive, and the phenotype is the genetic effect + a Gaussian random variable with standard deviation sigma. Finally, fitnesses are under Gaussian stabilizing selection with a standard deviation of 1 and mean 0.</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>hapfitness</div>
 <div class="line">{</div>
 <div class="line">  <span class="keyword">typedef</span> result_type double;</div>

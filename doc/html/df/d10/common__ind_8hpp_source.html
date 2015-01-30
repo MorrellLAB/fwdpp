@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>fwdpp: /home/kevin/src/fwdpp/examples/common_ind.hpp Source File</title>
+<title>fwdpp: /home/kevin/git/fwdpp.git/examples/common_ind.hpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.6</span>
+   &#160;<span id="projectnumber">0.2.7</span>
    </div>
   </td>
  </tr>
@@ -104,10 +104,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;boost/pool/pool_alloc.hpp&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;boost/unordered_set.hpp&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;boost/functional/hash.hpp&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">typedef</span> boost::pool_allocator&lt;mtype&gt; mut_allocator;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">typedef</span> boost::pool_allocator&lt;mtype&gt; <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a8da95455b301321cb0a4a7064ed8fe3d">mut_allocator</a>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">typedef</span> boost::container::list&lt;mtype,mut_allocator &gt; <a class="code" href="../../df/d10/common__ind_8hpp.html#a9e521309fd82791f8923f2caa97f264d">mlist</a>;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">typedef</span> <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base&lt;mtype,mlist&gt;</a> <a class="code" href="../../df/d10/common__ind_8hpp.html#a90644e8cfc025610c073f6057b60646b">gtype</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">typedef</span> boost::pool_allocator&lt;gtype&gt; gam_allocator;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">typedef</span> boost::pool_allocator&lt;gtype&gt; <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a63e240089b22ffeb3898435ca5e523c1">gam_allocator</a>;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">typedef</span> boost::container::list&lt;gtype,gam_allocator &gt; <a class="code" href="../../df/d10/common__ind_8hpp.html#add1137fce6a3719d5e34e36bcf708cdd">glist</a>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">typedef</span> boost::unordered_set&lt;double,boost::hash&lt;double&gt;,<a class="code" href="../../dc/d8e/structKTfwd_1_1equal__eps.html">KTfwd::equal_eps</a> &gt; <a class="code" href="../../df/d10/common__ind_8hpp.html#a879096def42aa5e94c7443124fc1af30">lookup_table_type</a>;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#else</span></div>
@@ -125,7 +125,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="structKTfwd_1_1equal__eps_html"><div class="ttname"><a href="../../dc/d8e/structKTfwd_1_1equal__eps.html">KTfwd::equal_eps</a></div><div class="ttdoc">Returns true if std::max(lhs,rhs)-std::min(lhs,rhs) &lt;= std::numeric_limits&lt;T&gt;::epsilon() ...</div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:54</div></div>
 <div class="ttc" id="common__ind_8hpp_html_a90644e8cfc025610c073f6057b60646b"><div class="ttname"><a href="../../df/d10/common__ind_8hpp.html#a90644e8cfc025610c073f6057b60646b">gtype</a></div><div class="ttdeci">KTfwd::gamete_base&lt; mtype, mlist &gt; gtype</div><div class="ttdef"><b>Definition:</b> common_ind.hpp:24</div></div>
 <div class="ttc" id="common__ind_8hpp_html_a879096def42aa5e94c7443124fc1af30"><div class="ttname"><a href="../../df/d10/common__ind_8hpp.html#a879096def42aa5e94c7443124fc1af30">lookup_table_type</a></div><div class="ttdeci">std::unordered_set&lt; double, std::hash&lt; double &gt;, KTfwd::equal_eps &gt; lookup_table_type</div><div class="ttdef"><b>Definition:</b> common_ind.hpp:26</div></div>
-<div class="ttc" id="structKTfwd_1_1gamete__base_html"><div class="ttname"><a href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a></div><div class="ttdoc">Base class for gametes. A gamete is a container of pointers (iterators) to mutations + a count in the...</div><div class="ttdef"><b>Definition:</b> forward_types.hpp:64</div></div>
+<div class="ttc" id="bneck__selection__dist_8cc_html_a8da95455b301321cb0a4a7064ed8fe3d"><div class="ttname"><a href="../../d8/d48/bneck__selection__dist_8cc.html#a8da95455b301321cb0a4a7064ed8fe3d">mut_allocator</a></div><div class="ttdeci">boost::pool_allocator&lt; mtype &gt; mut_allocator</div><div class="ttdef"><b>Definition:</b> bneck_selection_dist.cc:22</div></div>
+<div class="ttc" id="bneck__selection__dist_8cc_html_a63e240089b22ffeb3898435ca5e523c1"><div class="ttname"><a href="../../d8/d48/bneck__selection__dist_8cc.html#a63e240089b22ffeb3898435ca5e523c1">gam_allocator</a></div><div class="ttdeci">boost::pool_allocator&lt; gtype &gt; gam_allocator</div><div class="ttdef"><b>Definition:</b> bneck_selection_dist.cc:25</div></div>
+<div class="ttc" id="structKTfwd_1_1gamete__base_html"><div class="ttname"><a href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a></div><div class="ttdoc">Base class for gametes. A gamete is a container of pointers (iterators) to mutations + a count in the...</div><div class="ttdef"><b>Definition:</b> forward_types.hpp:80</div></div>
 <div class="ttc" id="common__ind_8hpp_html_a9e521309fd82791f8923f2caa97f264d"><div class="ttname"><a href="../../df/d10/common__ind_8hpp.html#a9e521309fd82791f8923f2caa97f264d">mlist</a></div><div class="ttdeci">std::list&lt; mtype &gt; mlist</div><div class="ttdef"><b>Definition:</b> common_ind.hpp:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

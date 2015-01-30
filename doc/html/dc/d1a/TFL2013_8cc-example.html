@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.6</span>
+   &#160;<span id="projectnumber">0.2.7</span>
    </div>
   </td>
  </tr>
@@ -181,8 +181,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">{</div>
 <div class="line">  <span class="keyword">typedef</span> <a name="_a11"></a><a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">mtype</a> result_type;</div>
 <div class="line">  <span class="keyword">inline</span> result_type operator()( gsl_rng * r, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp; ttl_generations,</div>
-<div class="line">                                 <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; s, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; ud, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; un, <span class="keyword">const</span>  <a class="code" href="../../d3/dab/common__gamete_8hpp.html#a9e521309fd82791f8923f2caa97f264d">mlist</a> * mutations,</div>
-<div class="line">                                 <a class="code" href="../../d3/dab/common__gamete_8hpp.html#a879096def42aa5e94c7443124fc1af30">lookup_table_type</a> * lookup,</div>
+<div class="line">                                 <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; s, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; ud, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; un, <span class="keyword">const</span>  <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a> * mutations,</div>
+<div class="line">                                 <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> * lookup,</div>
 <div class="line">                                 <span class="keyword">const</span> <span class="keywordtype">bool</span> dist_effects = <span class="keyword">false</span>)<span class="keyword"> const</span></div>
 <div class="line"><span class="keyword">  </span>{</div>
 <div class="line">    <span class="keywordtype">double</span> pos = gsl_rng_uniform(r);</div>
@@ -247,10 +247,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"></div>
 <div class="line">  <span class="keywordflow">while</span>(nreps--)</div>
 <div class="line">    {</div>
-<div class="line">      <a class="code" href="../../d3/dab/common__gamete_8hpp.html#a879096def42aa5e94c7443124fc1af30">lookup_table_type</a> lookup;</div>
+<div class="line">      <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> lookup;</div>
 <div class="line">      <span class="comment">//the population begins with 1 gamete with no mutations</span></div>
 <div class="line">      <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#afd5b74e0108d624225532de98a470a36">gvector</a> gametes(1,<a name="a13"></a><a class="code" href="../../d1/dbe/crossoverTest_8cc.html#ace9428d4aa6205eaf777c2c9f398d9ea">gtype</a>(2*N));</div>
-<div class="line">      <a class="code" href="../../d3/dab/common__gamete_8hpp.html#a9e521309fd82791f8923f2caa97f264d">mlist</a> mutations;</div>
+<div class="line">      <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a> mutations;</div>
 <div class="line">      <a class="code" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a> fixations;      </div>
 <div class="line">      <a class="code" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a> fixation_times;</div>
 <div class="line"></div>

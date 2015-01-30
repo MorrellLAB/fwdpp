@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.6</span>
+   &#160;<span id="projectnumber">0.2.7</span>
    </div>
   </td>
  </tr>
@@ -160,8 +160,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="comment">/*</span></div>
 <div class="line"><span class="comment">  This function generates neutral mutations under the infinitely-many sites assumption</span></div>
 <div class="line"><span class="comment">*/</span></div>
-<div class="line"><a class="code" href="../../de/d4d/structmutation__with__age.html">mutation_with_age</a> <a name="a16"></a><a class="code" href="../../de/dce/diploid__ind__2locus_8cc.html#afab61157d79924fce696607ed01554cc">neutral_mutations_inf_sites</a>(gsl_rng * <a name="a17"></a><a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,<span class="keyword">const</span> <span class="keywordtype">unsigned</span> * generation,<a class="code" href="../../d3/dab/common__gamete_8hpp.html#a9e521309fd82791f8923f2caa97f264d">mlist</a> * mutations,</div>
-<div class="line">                                              <a class="code" href="../../d3/dab/common__gamete_8hpp.html#a879096def42aa5e94c7443124fc1af30">lookup_table_type</a> * lookup, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; beg)</div>
+<div class="line"><a class="code" href="../../de/d4d/structmutation__with__age.html">mutation_with_age</a> <a name="a16"></a><a class="code" href="../../de/dce/diploid__ind__2locus_8cc.html#afab61157d79924fce696607ed01554cc">neutral_mutations_inf_sites</a>(gsl_rng * <a name="a17"></a><a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,<span class="keyword">const</span> <span class="keywordtype">unsigned</span> * generation,<a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a> * mutations,</div>
+<div class="line">                                              <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> * lookup, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; beg)</div>
 <div class="line">{</div>
 <div class="line">  <span class="comment">//Generate new mutation position on the interval [0,1)</span></div>
 <div class="line">  <span class="keywordtype">double</span> pos = gsl_ran_flat(r,beg,beg+1.);</div>
@@ -247,12 +247,12 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">      idip[1] = std::make_pair( gametes[1].begin(),gametes[1].begin() );</div>
 <div class="line">      std::vector&lt; std::vector&lt; std::pair&lt; glist::iterator, glist::iterator &gt; &gt; &gt; diploids(N,idip);</div>
 <div class="line"></div>
-<div class="line">      <a class="code" href="../../d3/dab/common__gamete_8hpp.html#a9e521309fd82791f8923f2caa97f264d">mlist</a> mutations;  <span class="comment">//the population is devoid of mutations</span></div>
+<div class="line">      <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a> mutations;  <span class="comment">//the population is devoid of mutations</span></div>
 <div class="line">      std::vector&lt;mtype&gt; fixations;  <span class="comment">//store mutation that fix.  Passed to KTfwd::remove_fixed_lost</span></div>
 <div class="line">      std::vector&lt;unsigned&gt; fixation_times; <span class="comment">//store when they fix.  Passed to KTfwd::remove_fixed_lost</span></div>
 <div class="line">      <span class="keywordtype">unsigned</span> generation=0;</div>
 <div class="line">      <span class="keywordtype">double</span> wbar;</div>
-<div class="line">      <a class="code" href="../../d3/dab/common__gamete_8hpp.html#a879096def42aa5e94c7443124fc1af30">lookup_table_type</a> lookup;  <span class="comment">//this is our lookup table for the mutation model</span></div>
+<div class="line">      <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> lookup;  <span class="comment">//this is our lookup table for the mutation model</span></div>
 <div class="line">      <span class="comment">//within-locus recombination policies -- one per locus</span></div>
 <div class="line">      <span class="keyword">auto</span> recpol0 = std::bind(<a name="_a25"></a><a class="code" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a>(),std::placeholders::_1,std::placeholders::_2,&amp;gametes[0],littler,r,recmap);</div>
 <div class="line">      <span class="keyword">auto</span> recpol1 = std::bind(<a class="code" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a>(),std::placeholders::_1,std::placeholders::_2,&amp;gametes[1],littler,r,recmap2);</div>
@@ -286,7 +286,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">          <a name="a29"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a84e666ea27d38bdfc539ffd23653eaa9">KTfwd::remove_fixed_lost</a>(&amp;mutations,&amp;fixations,&amp;fixation_times,&amp;lookup,generation,2*N);</div>
 <div class="line">        }</div>
 <div class="line">      <span class="comment">//Take a sample and print it to screen.</span></div>
-<div class="line">      <span class="keyword">auto</span> x = <a name="a30"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a8dd580f170b4acc0b339a94ca1529c2d">KTfwd::ms_sample</a>(r,&amp;diploids,samplesize1,<span class="keyword">true</span>);</div>
+<div class="line">      <span class="keyword">auto</span> x = <a name="a30"></a><a class="code" href="../../d7/d86/group__samplingPopsGamete.html#gae5656f2b4685348222718deff1f24997">KTfwd::ms_sample</a>(r,&amp;diploids,samplesize1,<span class="keyword">true</span>);</div>
 <div class="line">      Sequence::SimData l1(x[0].begin(),x[0].end()),</div>
 <div class="line">        l2(x[1].begin(),x[1].end());</div>
 <div class="line">      std::cout &lt;&lt; l1 &lt;&lt; <span class="charliteral">&#39;\n&#39;</span> &lt;&lt; l2 &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;    </div>

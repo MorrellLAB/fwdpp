@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.6</span>
+   &#160;<span id="projectnumber">0.2.7</span>
    </div>
   </td>
  </tr>
@@ -174,7 +174,7 @@ Data Fields</h2></td></tr>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"></div>
-<div class="line"><span class="keyword">typedef</span> <a class="code" href="../../d5/df5/structmutation__with__origin.html">mutation_with_origin</a> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a08e697ef28ea008d75cc6de09f177dfa">mtype</a>;</div>
+<div class="line"><span class="keyword">typedef</span> <a class="code" href="../../d5/df5/structmutation__with__origin.html">mutation_with_origin</a> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a08e697ef28ea008d75cc6de09f177dfa">mtype</a>;</div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d3/dab/common__gamete_8hpp.html">common_gamete.hpp</a>&gt;</span></div>
 <div class="line"></div>
 <div class="line">mtype <a class="code" href="../../d7/d2d/RHH_8cc.html#a1257511473444e8cd8c494f6cbf060c2">RHH_mutation_model</a>( gsl_rng * r, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; generation, <span class="keyword">const</span> <span class="keywordtype">double</span> mu_neutral, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; mu_selected,</div>
@@ -226,7 +226,7 @@ Data Fields</h2></td></tr>
 <div class="line">      smut=<a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html#a9a7e60b11eec95550d7fb26ad8d69b28">s</a>;</div>
 <div class="line">    }</div>
 <div class="line">  lookup-&gt;insert(pos);</div>
-<div class="line">  <span class="keywordflow">return</span> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a08e697ef28ea008d75cc6de09f177dfa">mtype</a>(generation,pos,smut,1,h);</div>
+<div class="line">  <span class="keywordflow">return</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a08e697ef28ea008d75cc6de09f177dfa">mtype</a>(generation,pos,smut,1,h);</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">double</span> <a class="code" href="../../d7/d2d/RHH_8cc.html#a7f2ab292b02e86beea564ae35bf014cf">recurrent_sweep_genetic_map</a>(gsl_rng * r, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; littler_neut,</div>
@@ -245,7 +245,7 @@ Data Fields</h2></td></tr>
 <div class="line">  <span class="keywordflow">return</span> <a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html#aed95181f38c8e17b19a7a9da4b373b03">pos</a>;</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv)</div>
+<div class="line"><span class="keywordtype">int</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv)</div>
 <div class="line">{</div>
 <div class="line">  <span class="keywordflow">if</span> ( argc != 12 )</div>
 <div class="line">    {</div>
@@ -375,7 +375,7 @@ Data Fields</h2></td></tr>
 <div class="line">      Sequence::SimData sdata;</div>
 <div class="line">      <span class="comment">//.first is the neutral data, .second the selected sites</span></div>
 <div class="line">      std::pair&lt; std::vector&lt;std::pair&lt;double,std::string&gt; &gt;,</div>
-<div class="line">        std::vector&lt;std::pair&lt;double,std::string&gt; &gt; &gt; mslike = <a class="code" href="../../da/d8b/namespaceKTfwd.html#a0516afedc890764744b0f96b0048724f">KTfwd::ms_sample_separate</a>(r,&amp;gametes,samplesize1,twoN,<span class="keyword">true</span>);</div>
+<div class="line">        std::vector&lt;std::pair&lt;double,std::string&gt; &gt; &gt; mslike = <a class="code" href="../../d7/d86/group__samplingPopsGamete.html#ga9aa3258399200b1f313ff3cfdb222a34">KTfwd::ms_sample_separate</a>(r,&amp;gametes,samplesize1,twoN,<span class="keyword">true</span>);</div>
 <div class="line"></div>
 <div class="line">      <span class="comment">//Convert the results of KTfwd::ms_sample to a Sequence::SimData object and print to the screen</span></div>
 <div class="line">      <span class="keywordflow">if</span>(!mslike.first.empty())</div>
@@ -478,7 +478,7 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/kevin/src/fwdpp/examples/<a class="el" href="../../d7/d2d/RHH_8cc.html">RHH.cc</a></li>
+<li>/home/kevin/git/fwdpp.git/examples/<a class="el" href="../../d7/d2d/RHH_8cc.html">RHH.cc</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

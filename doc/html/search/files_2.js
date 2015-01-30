@@ -1,6 +1,7 @@
 var searchData=
 [
   ['debug_2ehpp',['debug.hpp',['../da/d7b/debug_8hpp.html',1,'']]],
+  ['devtools_2emd',['devtools.md',['../d4/ddb/devtools_8md.html',1,'']]],
   ['diploid_2ecc',['diploid.cc',['../d8/df7/diploid_8cc.html',1,'']]],
   ['diploid_2ehh',['diploid.hh',['../df/df8/diploid_8hh.html',1,'']]],
   ['diploid_5fbinaryio_2ecc',['diploid_binaryIO.cc',['../db/d0c/diploid__binaryIO_8cc.html',1,'']]],

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.6</span>
+   &#160;<span id="projectnumber">0.2.7</span>
    </div>
   </td>
  </tr>
@@ -170,10 +170,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"></div>
-<div class="line"><a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">mutation</a> <a name="a9"></a><a class="code" href="../../df/dfa/migsel__ind_8cc.html#a5b74cc7958599ff5dcd019304db963b3">neutral_mutations_selection</a>(gsl_rng * <a name="a10"></a><a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,<a class="code" href="../../d3/dab/common__gamete_8hpp.html#a9e521309fd82791f8923f2caa97f264d">mlist</a> * mutations,</div>
+<div class="line"><a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">mutation</a> <a name="a9"></a><a class="code" href="../../df/dfa/migsel__ind_8cc.html#a5b74cc7958599ff5dcd019304db963b3">neutral_mutations_selection</a>(gsl_rng * <a name="a10"></a><a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,<a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a> * mutations,</div>
 <div class="line">                                            <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; mu_neutral, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; mu_selected,</div>
 <div class="line">                                            <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; s, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; h,</div>
-<div class="line">                                            <a class="code" href="../../d3/dab/common__gamete_8hpp.html#a879096def42aa5e94c7443124fc1af30">lookup_table_type</a> * lookup)</div>
+<div class="line">                                            <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> * lookup)</div>
 <div class="line">{</div>
 <div class="line">  <span class="comment">/*</span></div>
 <div class="line"><span class="comment">    Choose a mutation position [0,1) that does not currently exist in the population.</span></div>
@@ -270,11 +270,11 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">  gsl_rng * r =  gsl_rng_alloc(gsl_rng_taus2);</div>
 <div class="line">  gsl_rng_set(r,seed);</div>
 <div class="line"></div>
-<div class="line">  <a class="code" href="../../d3/dab/common__gamete_8hpp.html#a9e521309fd82791f8923f2caa97f264d">mlist</a> mutations; </div>
+<div class="line">  <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a> mutations; </div>
 <div class="line">  std::vector&lt;mtype&gt; fixations;</div>
 <div class="line">  std::vector&lt;unsigned&gt; fixation_times;</div>
 <div class="line"></div>
-<div class="line">  <a class="code" href="../../d3/dab/common__gamete_8hpp.html#a879096def42aa5e94c7443124fc1af30">lookup_table_type</a> lookup;</div>
+<div class="line">  <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> lookup;</div>
 <div class="line"><span class="preprocessor">#if defined(HAVE_BOOST_VECTOR) &amp;&amp; defined(HAVE_BOOST_LIST) &amp;&amp; defined(HAVE_BOOST_UNORDERED_SET) &amp;&amp; defined(HAVE_BOOST_POOL_ALLOC) &amp;&amp; defined(HAVE_BOOST_HASH) &amp;&amp; !defined(USE_STANDARD_CONTAINERS)</span></div>
 <div class="line"><span class="preprocessor"></span>  boost::container::vector&lt; glist &gt; metapop(2, <a name="a19"></a><a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>(1,<a name="a20"></a><a class="code" href="../../d1/dbe/crossoverTest_8cc.html#ace9428d4aa6205eaf777c2c9f398d9ea">gtype</a>(2*N)));</div>
 <div class="line">  <span class="keyword">typedef</span> boost::container::vector&lt; std::pair&lt; glist::iterator, glist::iterator &gt; &gt; diploid_bucket;</div>
@@ -333,10 +333,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">    }</div>
 <div class="line">  </div>
 <div class="line">  std::pair&lt; std::vector&lt;std::pair&lt;double,std::string&gt; &gt;,</div>
-<div class="line">             std::vector&lt;std::pair&lt;double,std::string&gt; &gt; &gt; spop1 = <a name="a26"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a0516afedc890764744b0f96b0048724f">ms_sample_separate</a>(r,&amp;diploids[0],n);</div>
+<div class="line">             std::vector&lt;std::pair&lt;double,std::string&gt; &gt; &gt; spop1 = <a name="a26"></a><a class="code" href="../../d7/d86/group__samplingPopsGamete.html#ga9aa3258399200b1f313ff3cfdb222a34">ms_sample_separate</a>(r,&amp;diploids[0],n);</div>
 <div class="line"></div>
 <div class="line">  std::pair&lt; std::vector&lt;std::pair&lt;double,std::string&gt; &gt;,</div>
-<div class="line">             std::vector&lt;std::pair&lt;double,std::string&gt; &gt; &gt; spop2 = <a class="code" href="../../da/d8b/namespaceKTfwd.html#a0516afedc890764744b0f96b0048724f">ms_sample_separate</a>(r,&amp;diploids[1],n);</div>
+<div class="line">             std::vector&lt;std::pair&lt;double,std::string&gt; &gt; &gt; spop2 = <a class="code" href="../../d7/d86/group__samplingPopsGamete.html#ga9aa3258399200b1f313ff3cfdb222a34">ms_sample_separate</a>(r,&amp;diploids[1],n);</div>
 <div class="line"></div>
 <div class="line">  SimData neutral = <a class="code" href="../../df/dfa/migsel__ind_8cc.html#ab7298240e8bb37b1cd8a9846c5421545">merge</a>( spop1.first,spop2.first,n );</div>
 <div class="line">  SimData selected = <a class="code" href="../../df/dfa/migsel__ind_8cc.html#ab7298240e8bb37b1cd8a9846c5421545">merge</a>( spop1.second,spop2.second,n );</div>
@@ -362,7 +362,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="preprocessor"></span>  std::vector&lt; glist &gt; metapop2;</div>
 <div class="line">  std::vector&lt; diploid_bucket &gt; diploids2;</div>
 <div class="line"><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="preprocessor"></span>  <a class="code" href="../../d3/dab/common__gamete_8hpp.html#a9e521309fd82791f8923f2caa97f264d">mlist</a> mutations2;</div>
+<div class="line"><span class="preprocessor"></span>  <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a> mutations2;</div>
 <div class="line">  Sequence::SimData neutral2,selected2;</div>
 <div class="line"></div>
 <div class="line">  ifstream in(outfilename);</div>

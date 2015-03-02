@@ -27,14 +27,11 @@ namespace KTfwd
   {	   
     static_assert( std::is_base_of<mutation_base,mutation_type>::value,
                    "mutation_type must inherit from KTfwd::mutation_base" );
-    typedef gamete_base< typename gamete_type::mutation_type, typename gamete_type::mutation_list_type > gamete_base_type;
+    using gamete_base_type = gamete_base< typename gamete_type::mutation_type, typename gamete_type::mutation_list_type >;
     static_assert( std::is_base_of<gamete_base_type,gamete_type>::value ||
                    std::is_same<gamete_base_type,gamete_type>::value,
                    "gamete_type must be, or inherit from, KTfwd::gamete_base<mutation_type,mutation_list_type>" );
-    typedef typename list_type< mutation_type, list_type_allocator >::const_iterator mlist_iterator;
-    //initiate a list with the mutation information by iterator
-    typedef std::vector< mlist_iterator > maptype;
-    std::pair< maptype, std::vector<unsigned> > mutdata = fwdpp_internal::write_mutations()( mutations,mw,buffer );
+    auto mutdata = fwdpp_internal::write_mutations()( mutations,mw,buffer );
     auto xx = fwdpp_internal::write_haplotypes()(gametes,mutdata.first,mutdata.second,buffer);
   }
 
@@ -56,20 +53,14 @@ namespace KTfwd
     static_assert( std::is_base_of<mutation_base,mutation_type>::value,
                    "mutation_type must inherit from KTfwd::mutation_base" );
     using gamete_t = gamete_type<mutation_type,list_type<mutation_type,list_type_allocator> >;
-    typedef gamete_base< typename gamete_t::mutation_type, typename gamete_t::mutation_list_type > gamete_base_type;
+    using gamete_base_type = gamete_base< typename gamete_t::mutation_type, typename gamete_t::mutation_list_type >;
     static_assert( std::is_base_of<gamete_base_type,gamete_t>::value ||
                    std::is_same<gamete_base_type,gamete_t>::value,
                    "gamete_type must be, or inherit from, KTfwd::gamete_base<mutation_type,mutation_list_type>" );
-    typedef typename list_type< mutation_type, list_type_allocator >::const_iterator mlist_iterator;
-    
-    //initiate a list with the mutation information by iterator
-    typedef std::vector< mlist_iterator > maptype;
-    std::pair< maptype, std::vector<unsigned> > mutdata = fwdpp_internal::write_mutations()( mutations,mw,buffer );
+    auto mutdata = fwdpp_internal::write_mutations()( mutations,mw,buffer );
     unsigned NPOPS = gametes->size();
     buffer.write( reinterpret_cast< char * >(&NPOPS), sizeof(unsigned) );
-    for( typename  vector_type2<vector_type< gamete_t, vector_type_allocator >, 
-	   vector_type_allocator2>::const_iterator pop = gametes->begin() ; 
-	 pop < gametes->end() ; ++pop )
+    for( auto pop = gametes->begin() ; pop != gametes->end() ; ++pop )
       {
 	auto xx = fwdpp_internal::write_haplotypes()(&*pop,mutdata.first,mutdata.second,buffer);
       }
@@ -93,14 +84,12 @@ namespace KTfwd
     
     static_assert( std::is_base_of<mutation_base,mutation_type>::value,
                    "mutation_type must inherit from KTfwd::mutation_base" );
-    typedef gamete_base< typename gamete_type::mutation_type, typename gamete_type::mutation_list_type > gamete_base_type;
+    using gamete_base_type = gamete_base< typename gamete_type::mutation_type, typename gamete_type::mutation_list_type >;
+
     static_assert( std::is_base_of<gamete_base_type,gamete_type>::value ||
                    std::is_same<gamete_base_type,gamete_type>::value,
                    "gamete_type must be, or inherit from, KTfwd::gamete_base<mutation_type,mutation_list_type>" );
-    typedef list_type< mutation_type, list_type_allocator > mlist;
-    typedef std::map<unsigned,typename mlist::iterator> mut_info;
-    
-    mut_info m = fwdpp_internal::read_mutations()(mutations,mr,in);
+    auto m = fwdpp_internal::read_mutations()(mutations,mr,in);
     fwdpp_internal::read_haplotypes()(gametes,m,in);
   }
 			 
@@ -124,20 +113,15 @@ namespace KTfwd
     
     static_assert( std::is_base_of<mutation_base,mutation_type>::value,
                    "mutation_type must inherit from KTfwd::mutation_base" );
-    typedef gamete_base< typename gamete_type<mutation_type,list_type<mutation_type,list_type_allocator> >::mutation_type, typename gamete_type<mutation_type,list_type<mutation_type,list_type_allocator> >::mutation_list_type > gamete_base_type;
+    using gamete_base_type = gamete_base< typename gamete_type<mutation_type,list_type<mutation_type,list_type_allocator> >::mutation_type, typename gamete_type<mutation_type,list_type<mutation_type,list_type_allocator> >::mutation_list_type >;
     static_assert( std::is_base_of<gamete_base_type,gamete_type<mutation_type,list_type<mutation_type,list_type_allocator> > >::value ||
                    std::is_same<gamete_base_type,gamete_type<mutation_type,list_type<mutation_type,list_type_allocator> > >::value,
                    "gamete_type must be, or inherit from, KTfwd::gamete_base<mutation_type,mutation_list_type>" );
-    typedef list_type< mutation_type, list_type_allocator > mlist;
-    typedef std::map<unsigned,typename mlist::iterator> mut_info;
-    
-    mut_info m = fwdpp_internal::read_mutations()(mutations,mr,in);
+    auto m = fwdpp_internal::read_mutations()(mutations,mr,in);
     unsigned NPOP = 0;
     fwdpp_internal::scalar_reader<unsigned>()(in,&NPOP);
     gametes->resize(NPOP);
-    for(typename vector_type2< vector_type< gamete_type<mutation_type,list_type<mutation_type,list_type_allocator> >, vector_type_allocator >, 
-	  vector_type_allocator2 >::iterator pop = gametes->begin() ; 
-	pop < gametes->end() ; ++pop)
+    for(auto pop = gametes->begin() ; pop != gametes->end() ; ++pop)
       {
 	pop->clear();
 	fwdpp_internal::read_haplotypes()(&*pop,m,in);
@@ -166,24 +150,11 @@ namespace KTfwd
 			  const mutation_writer_type & mw,
 			  ostreamtype & buffer)
   {
-    typedef typename mutation_list_type< mutation_type, mutation_list_type_allocator >::const_iterator mlist_iterator;
-    typedef typename gamete_list_type< gamete_type, gamete_list_type_allocator >::const_iterator glist_iterator;
-    //initiate a list with the mutation information by iterator
-    typedef std::vector< mlist_iterator > maptype;
-    std::pair< maptype, std::vector<unsigned> > mutdata = fwdpp_internal::write_mutations()( mutations,mw,buffer ); 
-    
-    typedef std::vector< glist_iterator > gmaptype;
-    
-    std::pair<gmaptype, std::vector<unsigned> > gamdata = fwdpp_internal::write_haplotypes()( gametes, mutdata.first, mutdata.second, buffer );
-    
-    //the diploids are now trivial to write
-    typedef typename  diploid_vector_type< std::pair< typename gamete_list_type< gamete_type, gamete_list_type_allocator >::iterator,
-						      typename gamete_list_type< gamete_type, gamete_list_type_allocator >::iterator >,
-					   vector_type_allocator >::const_iterator dptr;
-
+    auto mutdata = fwdpp_internal::write_mutations()( mutations,mw,buffer ); 
+    auto gamdata = fwdpp_internal::write_haplotypes()( gametes, mutdata.first, mutdata.second, buffer );
     unsigned NDIPS = unsigned(diploids->size());
     buffer.write( reinterpret_cast<char *>(&NDIPS), sizeof(unsigned) );
-    for( dptr dip = diploids->begin() ; dip != diploids->end() ; ++dip )
+    for( auto dip = diploids->cbegin() ; dip != diploids->cend() ; ++dip )
       {
 	unsigned c = gamdata.second[ std::vector<unsigned>::size_type(std::find( gamdata.first.begin(),gamdata.first.end(),dip->first ) - gamdata.first.begin()) ];
 	buffer.write( reinterpret_cast<char *>(&c), sizeof(unsigned) );
@@ -213,26 +184,12 @@ namespace KTfwd
     gametes->clear();
     mutations->clear();
     diploids->clear();
-    
-    typedef mutation_list_type< mutation_type, mutation_list_type_allocator > mlist;
-    typedef std::map<unsigned,typename mlist::iterator> mut_info;
-    
-    mut_info m = fwdpp_internal::read_mutations()(mutations,mr,in); 
-    
-    typedef gamete_list_type< gamete_type, gamete_list_type_allocator > glist;
-    typedef std::map<unsigned,typename glist::iterator> gam_info;
-    
-    gam_info g = fwdpp_internal::read_haplotypes()(gametes,m,in);
-    
+    auto m = fwdpp_internal::read_mutations()(mutations,mr,in); 
+    auto g = fwdpp_internal::read_haplotypes()(gametes,m,in);
     unsigned NDIPS,c;
     fwdpp_internal::scalar_reader<unsigned>()(in,&NDIPS);
-    
-    typedef typename  diploid_vector_type< std::pair< typename gamete_list_type< gamete_type, gamete_list_type_allocator >::iterator,
-						      typename gamete_list_type< gamete_type, gamete_list_type_allocator >::iterator >,
-					   vector_type_allocator >::iterator dptr;
-
     diploids->resize(NDIPS);
-    for( dptr dp = diploids->begin() ; dp != diploids->end() ; ++dp )
+    for( auto dp = diploids->begin() ; dp != diploids->end() ; ++dp )
       {
 	fwdpp_internal::scalar_reader<unsigned>()(in,&c);
 	dp->first = g[c];
@@ -386,37 +343,19 @@ namespace KTfwd
     unsigned NPOP = unsigned(metapop->size());
     
     buffer.write( reinterpret_cast<char *>(&NPOP), sizeof(unsigned) );
-    
-    typedef mutation_list_type< mutation_type, mutation_list_type_allocator > mlist;
-    typedef typename mlist::const_iterator mlist_iterator;
-    
-    typedef std::vector< mlist_iterator > maptype;
-    std::pair< maptype, std::vector<unsigned> > mutdata = fwdpp_internal::write_mutations()( mutations,mw,buffer ); 
-    
+    auto mutdata = fwdpp_internal::write_mutations()( mutations,mw,buffer );
     typename metapop_vector_type< gamete_list_type< gamete_type, gamete_list_type_allocator >,
 				  metapop_vector_type_allocator>::const_iterator pop_ptr = metapop->begin();
-  
-    typename diploid_vv_type < diploid_vector_type< std::pair< typename gamete_list_type< gamete_type, gamete_list_type_allocator >::iterator,
-							       typename gamete_list_type< gamete_type, gamete_list_type_allocator >::iterator >,
-						    vector_type_allocator >,
-			       diploid_vv_type_allocator >::const_iterator dip_ptr = diploids->begin();
-  
-    typedef typename diploid_vector_type< std::pair< typename gamete_list_type< gamete_type, gamete_list_type_allocator >::iterator,
-						     typename gamete_list_type< gamete_type, gamete_list_type_allocator >::iterator >,
-					  vector_type_allocator >::const_iterator dptr;
-  
-    typedef std::vector< typename gamete_list_type< gamete_type, gamete_list_type_allocator >::const_iterator > gmaptype;
-  
+    auto dip_ptr = diploids->begin();
     unsigned NDIPS,c;
     for( unsigned pop = 0 ; pop < NPOP ; ++pop,++pop_ptr,++dip_ptr )
       {
-	std::pair<gmaptype, std::vector<unsigned> > gamdata = fwdpp_internal::write_haplotypes()( &*pop_ptr, mutdata.first, mutdata.second, buffer );
+	auto gamdata = fwdpp_internal::write_haplotypes()( &*pop_ptr, mutdata.first, mutdata.second, buffer );
       
 	NDIPS = unsigned(dip_ptr->size());
       
 	buffer.write( reinterpret_cast<char *>(&NDIPS),sizeof(unsigned) );
-      
-	for( dptr dip = dip_ptr->begin() ; dip != dip_ptr->end() ; ++dip )
+	for( auto dip = dip_ptr->cbegin() ; dip != dip_ptr->cend() ; ++dip )
 	  {
 	    c = gamdata.second[ std::vector<unsigned>::size_type(std::find( gamdata.first.begin(), gamdata.first.end(), dip->first ) - gamdata.first.begin()) ];
 	    buffer.write( reinterpret_cast<char *>(&c),sizeof(unsigned) );
@@ -454,8 +393,8 @@ namespace KTfwd
     mutations->clear();
     diploids->clear();
     
-    typedef mutation_list_type< mutation_type, mutation_list_type_allocator > mlist;
-    typedef std::map<unsigned,typename mlist::iterator> mut_info;
+    using mlist = mutation_list_type< mutation_type, mutation_list_type_allocator >;
+    using mut_info = std::map<unsigned,typename mlist::iterator>;
     
     unsigned NPOP;
     fwdpp_internal::scalar_reader<unsigned>()(in,&NPOP);
@@ -467,17 +406,9 @@ namespace KTfwd
     typename metapop_vector_type< gamete_list_type< gamete_type, gamete_list_type_allocator >,
 				  metapop_vector_type_allocator>::iterator pop_ptr = metapop->begin();
   
-    typename diploid_vv_type < diploid_vector_type< std::pair< typename gamete_list_type< gamete_type, gamete_list_type_allocator >::iterator,
-							       typename gamete_list_type< gamete_type, gamete_list_type_allocator >::iterator >,
-						    vector_type_allocator >,
-			       diploid_vv_type_allocator >::iterator dip_ptr = diploids->begin();
-    
-    typedef typename diploid_vector_type< std::pair< typename gamete_list_type< gamete_type, gamete_list_type_allocator >::iterator,
-						     typename gamete_list_type< gamete_type, gamete_list_type_allocator >::iterator >,
-					  vector_type_allocator >::iterator dptr;
-
-    typedef gamete_list_type< gamete_type, gamete_list_type_allocator > glist;
-    typedef std::map<unsigned,typename glist::iterator> gam_info;
+    auto dip_ptr = diploids->begin();
+    using glist = gamete_list_type< gamete_type, gamete_list_type_allocator >;
+    using gam_info = std::map<unsigned,typename glist::iterator>;
   
     unsigned NDIPS,c;
     for( unsigned pop=0 ; pop < NPOP ; ++pop,++pop_ptr,++dip_ptr )
@@ -489,7 +420,7 @@ namespace KTfwd
       
 	dip_ptr->resize(NDIPS);
       
-	for( dptr dip = dip_ptr->begin() ; dip != dip_ptr->end() ; ++dip )
+	for( auto dip = dip_ptr->begin() ; dip != dip_ptr->end() ; ++dip )
 	  {
 	    fwdpp_internal::scalar_reader<unsigned>()(in,&c);
 	    dip->first = g[c];

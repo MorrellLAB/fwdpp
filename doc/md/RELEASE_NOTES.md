@@ -1,6 +1,14 @@
 # FWDPP RELEASE NOTES
 
-## 0.2.7 (unreleased)
+## 0.2.8
+
+* Fixed issue #5, which was a bug in migrating gametes in multi-population, individual-based simulations.
+* Fixed issue #6, which was a bug in how parents were copied in multi-population, individual-based simulations.
+* Fixed issue #7, which was a bug in when gametes were updated post-sampling in multi-population, individual-based simulations.
+* Two new example programs added: migsel_split_ind and migsel_split_ind_list
+* fwdpp/IO.tcc streamlined using C++11 "auto" instead of nasty typedefs
+
+## 0.2.7 
 
 * Versions ms_sample and ms_sample_separate that took containers of gametes as arguments are now compatible with individual-based simulations.
 * The "devtools" stuff is greatly improved, and a new tutorial added on how to use it: @ref md_md_devtools

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.7</span>
+   &#160;<span id="projectnumber">0.2.8</span>
    </div>
   </td>
  </tr>
@@ -122,11 +122,11 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                        vector_type&lt;gamete_type,vector_type_allocator&gt; * dest, </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                        <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; nmigrants)</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base&lt; typename gamete_type::mutation_type, typename gamete_type::mutation_list_type &gt;</a> gamete_base_type;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">using</span> gamete_base_type = <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base&lt; typename gamete_type::mutation_type, typename gamete_type::mutation_list_type &gt;</a>;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    static_assert( std::is_base_of&lt;gamete_base_type,gamete_type&gt;::value ||</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                   std::is_same&lt;gamete_base_type,gamete_type &gt;::value,</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                   <span class="stringliteral">&quot;gamete_type must be, or inherit from, KTfwd::gamete_base&lt;mutation_type,mutation_list_type&gt;&quot;</span> );</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">typename</span> vector_type&lt;gamete_type,vector_type_allocator&gt;::iterator vgitr;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">using</span> vgitr = <span class="keyword">typename</span> vector_type&lt;gamete_type,vector_type_allocator&gt;::iterator;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i = 0 ; i &lt; nmigrants ; ++i)</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        vgitr itr =  <a class="code" href="../../da/d8b/namespaceKTfwd.html#a9b3dab17dd143c95bd6de883e729aaa6">KTfwd::pgam</a>( r, source ); </div>
@@ -167,7 +167,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; twoN_1, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; twoN_2,</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; m)</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base&lt; typename gamete_type::mutation_type, typename gamete_type::mutation_list_type &gt;</a> gamete_base_type;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">using</span> gamete_base_type = <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base&lt; typename gamete_type::mutation_type, typename gamete_type::mutation_list_type &gt;</a>;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    static_assert( std::is_base_of&lt;gamete_base_type,gamete_type&gt;::value ||</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                   std::is_same&lt;gamete_base_type,gamete_type &gt;::value,</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                   <span class="stringliteral">&quot;gamete_type must be, or inherit from, KTfwd::gamete_base&lt;mutation_type,mutation_list_type&gt;&quot;</span> );</div>

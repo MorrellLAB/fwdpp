@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.7</span>
+   &#160;<span id="projectnumber">0.2.8</span>
    </div>
   </td>
  </tr>
@@ -132,7 +132,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                     list_type&lt;mutation_type,list_allocator_type&gt; * mutations,</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                     <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; max_chroms = std::numeric_limits&lt;unsigned&gt;::max())</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">typedef</span> list_type&lt;mutation_type,list_allocator_type&gt; MLIST_TYPE;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">using</span> MLIST_TYPE = list_type&lt;mutation_type,list_allocator_type&gt;;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">/*</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">      add the mutations to the list.</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">      We create a lookup table of position -&gt; pointer to mutations,</span></div>

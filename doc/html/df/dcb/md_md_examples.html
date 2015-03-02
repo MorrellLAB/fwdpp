@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.7</span>
+   &#160;<span id="projectnumber">0.2.8</span>
    </div>
   </td>
  </tr>
@@ -141,14 +141,23 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <p><em>Note that the two populations never share a common ancestor in this simulation! In other words, deme 1 is never founded by a sampling event from deme 0. This means that if you simulate for a short period of time, it is unlikely that there is a MRCA common to all individuals sampled. (See comment above about appropriateness of these examples for research...)</em></p>
 <p>Usage:</p>
 <div class="fragment"><div class="line">./migsel_ind N 4Nu_neut 4Nu_sel 4Nr 4Nm s h f1 f2 ngens n outfilename seed</div>
-</div><!-- fragment --><p>where: N = population number for each deme. 4Nu_neut = 4N times the neutral mutation rate per gamete 4Nu_sel = 4N times the mutation rate per gamete to selected mutations 4Nr = 4N times the recombination rate per diploid per region per generation 4Nm = 4N times the probability of migration per diploid per generation s = the selection coefficient of newly-arising selected mutations h = dominance of newly-arising selected mutations f1 and f2 are the probabilities of inbreeding in deme 1 and 2, respectively ngens = # of generations to simulate n = sample size to take from each deme @ end of simulation (must be even #) out filename = name of output file seed = random number seed.</p>
-<p>Notes: s is taken to be s in deme 1 and -s jn deme 2. This let’s me illustrate how different fitness functions can be passed to different demes using fwdpp.</p>
+</div><!-- fragment --><p>where: N = population number for each deme. 4Nu_neut = 4N times the neutral mutation rate per gamete 4Nu_sel = 4N times the mutation rate per gamete to selected mutations 4Nr = 4N times the recombination rate per diploid per region per generation 4Nm = 4N times the probability of migration per diploid per generation s = the selection coefficient of newly-arising selected mutations h = dominance of newly-arising selected mutations f1 and f2 are the probabilities of inbreeding in deme 1 and 2, respectively ngens = # of generations to simulate n = sample size to take from each deme @ end of simulation (must be even #) outfilename = name of output file seed = random number seed.</p>
+<p>Notes: s is taken to be s in deme 1 and -s in deme 2. This lets me illustrate how different fitness functions can be passed to different demes using fwdpp.</p>
 <p>The output file contains the following:</p>
 <ol type="1">
 <li>The metapopulation in binary format</li>
 <li>Two "ms"-format blocks of size 2*n. These are for neutral and selected mutations, respectively. Within each block, the first n haplotypes are from deme 1 and the second n are from deme 2.</li>
 </ol>
 <p>The program writes the data to the output file and then reads it in again. This is mainly to illustrate the binary I/O routines for individual-based metapopulation simulations.</p>
+<h4>migsel_split_ind and migsel_split_ind_list</h4>
+<p>Simulates a constant-sized population of N diploids with selection at strength s and dominance h for ngens generations. Then, a copy is made of the population, and the two demes are simulated with migration for another ngens2 generations.</p>
+<p>These two programs also serialize their data, read the copied data back, and make sure that input equals output.</p>
+<p>These two examples are hints on how to code up "IM"-like models.</p>
+<p>Usage:</p>
+<div class="fragment"><div class="line">./migsel_split_ind N 4Nu_neut 4Nu_sel 4Nr 4Nm s h f1 f2 ngens ngens2 n seed</div>
+</div><!-- fragment --><div class="fragment"><div class="line">./migsel_split_ind_list N 4Nu_neut 4Nu_sel 4Nr 4Nm s h f1 f2 ngens ngens2 n seed</div>
+</div><!-- fragment --><p>where: N = population number for each deme. 4Nu_neut = 4N times the neutral mutation rate per gamete 4Nu_sel = 4N times the mutation rate per gamete to selected mutations 4Nr = 4N times the recombination rate per diploid per region per generation 4Nm = 4N times the probability of migration per diploid per generation s = the selection coefficient of newly-arising selected mutations h = dominance of newly-arising selected mutations f1 and f2 are the probabilities of inbreeding in deme 1 and 2, respectively ngens = # of generations to simulate ngens2 = # of generations to simulate after the split n = sample size to take from each deme @ end of simulation (must be even #) seed = random number seed.</p>
+<p>Notes: s is taken to be s in deme 1 and -s in deme 2. This lets me illustrate how different fitness functions can be passed to different demes using fwdpp.</p>
 <h4>RHH</h4>
 <p>This program simulates the "recurrent hitch-hiking" model in which the expected number of fixations of beneficial codominant mutations per site per 4N generations is Lambda. The output is ms-format (just one block for neutral mutations). This model is one of the most thoroughly-studied models of the effect of selection on linked variation. See, for example:</p>
 <ol type="1">

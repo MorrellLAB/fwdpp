@@ -8,6 +8,8 @@ var searchData=
   ['gametetest_2ecc',['gameteTest.cc',['../d0/dbc/gameteTest_8cc.html',1,'']]],
   ['genetics101',['genetics101',['../d1/d5b/structKTfwd_1_1genetics101.html',1,'KTfwd']]],
   ['glist',['glist',['../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a',1,'glist():&#160;mlocusCrossoverTest.cc'],['../d8/d48/bneck__selection__dist_8cc.html#a4cacd5f42d23c852c8b8a072f49b83bd',1,'glist():&#160;bneck_selection_dist.cc'],['../df/d10/common__ind_8hpp.html#add1137fce6a3719d5e34e36bcf708cdd',1,'glist():&#160;common_ind.hpp'],['../db/d4f/pfix_8cc.html#add1137fce6a3719d5e34e36bcf708cdd',1,'glist():&#160;pfix.cc']]],
+  ['glist_5flist',['glist_list',['../d5/dcc/migsel__split__ind__list_8cc.html#a05c35d80b9c70f1cc6d0783915d8907f',1,'migsel_split_ind_list.cc']]],
+  ['glist_5fvec',['glist_vec',['../d8/d60/migsel__split__ind_8cc.html#abd1dee0750277f8d39db4301099016fa',1,'migsel_split_ind.cc']]],
   ['gsl_5fdiscrete_2ehpp',['gsl_discrete.hpp',['../d5/dba/gsl__discrete_8hpp.html',1,'']]],
   ['gsl_5fran_5fdiscrete_5ft_5fdeleter',['gsl_ran_discrete_t_deleter',['../dc/d4a/structKTfwd_1_1fwdpp__internal_1_1gsl__ran__discrete__t__deleter.html',1,'KTfwd::fwdpp_internal']]],
   ['gsl_5fran_5fdiscrete_5ft_5fptr',['gsl_ran_discrete_t_ptr',['../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a918c9bb71df790dfa5e93683339620f2',1,'KTfwd::fwdpp_internal']]],

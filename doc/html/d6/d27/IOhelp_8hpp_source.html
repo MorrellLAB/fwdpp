@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.7</span>
+   &#160;<span id="projectnumber">0.2.8</span>
    </div>
   </td>
  </tr>
@@ -131,9 +131,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                  <span class="keyword">const</span> mutation_writer_type &amp; mw,</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                  ostreamtype &amp; buffer)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">      </span>{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">typedef</span> <span class="keyword">typename</span> list_type&lt; mutation_type, list_type_allocator &gt;::const_iterator mlist_iterator;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">using</span> mlist_iterator = <span class="keyword">typename</span> list_type&lt; mutation_type, list_type_allocator &gt;::const_iterator;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="comment">//initiate a list with the mutation information by iterator</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keyword">typedef</span> std::vector&lt; mlist_iterator &gt; maptype;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keyword">using</span> maptype = std::vector&lt; mlist_iterator &gt;;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        std::vector&lt;unsigned&gt; indexes;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        maptype mut_info;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                </div>
@@ -172,7 +172,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                  const std::vector&lt; unsigned &gt; &amp; indexes,</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                  ostreamtype &amp; buffer) const</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keyword">typedef</span> <span class="keyword">typename</span> gamete_cont_t&lt; gamete_type, gamete_cont_t_details...&gt;::const_iterator glist_iterator;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keyword">using</span> glist_iterator = <span class="keyword">typename</span> gamete_cont_t&lt; gamete_type, gamete_cont_t_details...&gt;::const_iterator;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">unsigned</span> N = unsigned(gametes-&gt;size());</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        buffer.write( reinterpret_cast&lt; char * &gt;(&amp;N), <span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span>) );</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        std::vector&lt; glist_iterator &gt; gam_info;</div>
@@ -218,8 +218,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                 <span class="keyword">const</span> mutation_reader &amp; mr,</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                 istreamtype &amp; in)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword">      </span>{</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keyword">typedef</span> list_type&lt; mutation_type, list_type_allocator &gt; <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a>;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keyword">typedef</span> std::map&lt;unsigned,typename mlist::iterator&gt; mut_info;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keyword">using</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a> = list_type&lt; mutation_type, list_type_allocator &gt;;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keyword">using</span> mut_info = std::map&lt;unsigned,typename mlist::iterator&gt;;</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;      </div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        mut_info m;</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordtype">unsigned</span> NMUTS;</div>
@@ -242,8 +242,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                 <span class="keyword">const</span> mutation_reader &amp; mr,</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                 gzFile gzin)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="keyword">      </span>{</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keyword">typedef</span> list_type&lt; mutation_type, list_type_allocator &gt; <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a>;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keyword">typedef</span> std::map&lt;unsigned,typename mlist::iterator&gt; mut_info;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keyword">using</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a> = list_type&lt; mutation_type, list_type_allocator &gt;;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keyword">using</span> mut_info = std::map&lt;unsigned,typename mlist::iterator&gt;;</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      </div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        mut_info m;</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keywordtype">unsigned</span> NMUTS;</div>

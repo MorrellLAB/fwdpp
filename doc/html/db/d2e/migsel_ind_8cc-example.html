@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.7</span>
+   &#160;<span id="projectnumber">0.2.8</span>
    </div>
   </td>
  </tr>
@@ -277,13 +277,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">  <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> lookup;</div>
 <div class="line"><span class="preprocessor">#if defined(HAVE_BOOST_VECTOR) &amp;&amp; defined(HAVE_BOOST_LIST) &amp;&amp; defined(HAVE_BOOST_UNORDERED_SET) &amp;&amp; defined(HAVE_BOOST_POOL_ALLOC) &amp;&amp; defined(HAVE_BOOST_HASH) &amp;&amp; !defined(USE_STANDARD_CONTAINERS)</span></div>
 <div class="line"><span class="preprocessor"></span>  boost::container::vector&lt; glist &gt; metapop(2, <a name="a19"></a><a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>(1,<a name="a20"></a><a class="code" href="../../d1/dbe/crossoverTest_8cc.html#ace9428d4aa6205eaf777c2c9f398d9ea">gtype</a>(2*N)));</div>
-<div class="line">  <span class="keyword">typedef</span> boost::container::vector&lt; std::pair&lt; glist::iterator, glist::iterator &gt; &gt; diploid_bucket;</div>
+<div class="line">  <span class="keyword">typedef</span> boost::container::vector&lt; std::pair&lt; glist::iterator, glist::iterator &gt; &gt; <a name="a21"></a><a class="code" href="../../d8/d60/migsel__split__ind_8cc.html#a7a1ebf214c7f3565ff044aec9024a6fb">diploid_bucket</a>;</div>
 <div class="line">  boost::container::vector&lt; diploid_bucket &gt; diploids;</div>
 <div class="line">  boost::container::vector&lt;unsigned&gt; Ns(2,N);</div>
 <div class="line">  boost::container::vector&lt;double&gt; fs;</div>
 <div class="line"><span class="preprocessor">#else</span></div>
 <div class="line"><span class="preprocessor"></span>  std::vector&lt; glist &gt; metapop(2, <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>(1,<a class="code" href="../../d1/dbe/crossoverTest_8cc.html#ace9428d4aa6205eaf777c2c9f398d9ea">gtype</a>(2*N)));</div>
-<div class="line">  <span class="keyword">typedef</span> std::vector&lt; std::pair&lt; glist::iterator, glist::iterator &gt; &gt; diploid_bucket;</div>
+<div class="line">  <span class="keyword">typedef</span> std::vector&lt; std::pair&lt; glist::iterator, glist::iterator &gt; &gt; <a class="code" href="../../d8/d60/migsel__split__ind_8cc.html#a7a1ebf214c7f3565ff044aec9024a6fb">diploid_bucket</a>;</div>
 <div class="line">  std::vector&lt; diploid_bucket &gt; diploids;</div>
 <div class="line">  std::vector&lt;unsigned&gt; Ns(2,N);</div>
 <div class="line">  std::vector&lt;double&gt; fs;</div>
@@ -293,7 +293,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">  <span class="keywordflow">for</span> ( <span class="keyword">auto</span> i = metapop.begin() ;</div>
 <div class="line">        i != metapop.end() ; ++i )</div>
 <div class="line">    {</div>
-<div class="line">      diploids.push_back ( diploid_bucket(N,std::make_pair(i-&gt;begin(),i-&gt;begin())) );</div>
+<div class="line">      diploids.push_back ( <a class="code" href="../../d8/d60/migsel__split__ind_8cc.html#a7a1ebf214c7f3565ff044aec9024a6fb">diploid_bucket</a>(N,std::make_pair(i-&gt;begin(),i-&gt;begin())) );</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">  fs.push_back(f1);</div>
@@ -302,7 +302,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">  <span class="comment">//create a vector of fitness functions for each population</span></div>
 <div class="line">  std::vector&lt;std::function&lt;double (glist::const_iterator,</div>
 <div class="line">                                      glist::const_iterator)&gt; &gt; vbf;</div>
-<div class="line">  vbf.push_back(std::bind(<a name="_a21"></a><a class="code" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html">multiplicative_diploid</a>(),std::placeholders::_1,std::placeholders::_2,2.));</div>
+<div class="line">  vbf.push_back(std::bind(<a name="_a22"></a><a class="code" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html">multiplicative_diploid</a>(),std::placeholders::_1,std::placeholders::_2,2.));</div>
 <div class="line">  vbf.push_back(std::bind(<a class="code" href="../../de/d9f/structmultiplicative__diploid__minus.html">multiplicative_diploid_minus</a>(),std::placeholders::_1,std::placeholders::_2,2.));</div>
 <div class="line"></div>
 <div class="line">  <span class="comment">//recombination map is uniform[0,1)</span></div>
@@ -310,14 +310,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"></div>
 <div class="line">  <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> generation = 0 ; generation &lt; ngens ; ++generation )</div>
 <div class="line">    {</div>
-<div class="line">      std::vector&lt;double&gt; wbars = <a name="a22"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a946efaa4a6095f4f2aadda44a809a477">sample_diploid</a>(r,</div>
+<div class="line">      std::vector&lt;double&gt; wbars = <a name="a23"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a946efaa4a6095f4f2aadda44a809a477">sample_diploid</a>(r,</div>
 <div class="line">                                                 &amp;metapop,</div>
 <div class="line">                                                 &amp;diploids,</div>
 <div class="line">                                                 &amp;mutations,</div>
 <div class="line">                                                 &amp;Ns[0],</div>
 <div class="line">                                                 mu_neutral + mu_del,</div>
 <div class="line">                                                 std::bind(<a class="code" href="../../df/dfa/migsel__ind_8cc.html#a5b74cc7958599ff5dcd019304db963b3">neutral_mutations_selection</a>,r,std::placeholders::_1,mu_neutral,mu_del,s,h,&amp;lookup),</div>
-<div class="line">                                                 std::bind(<a name="_a23"></a><a class="code" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a>(),std::placeholders::_1,std::placeholders::_2,std::placeholders::_3,</div>
+<div class="line">                                                 std::bind(<a name="_a24"></a><a class="code" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a>(),std::placeholders::_1,std::placeholders::_2,std::placeholders::_3,</div>
 <div class="line">                                                             littler,</div>
 <div class="line">                                                             r,</div>
 <div class="line">                                                             recmap),</div>
@@ -325,15 +325,15 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">                                                 std::bind(insert_at_end&lt;gtype,glist&gt;,std::placeholders::_1,std::placeholders::_2),</div>
 <div class="line">                                                 vbf,</div>
 <div class="line">                                                 <span class="comment">//4*N b/c it needs to be fixed in the metapopulation</span></div>
-<div class="line">                                                 std::bind(<a name="_a24"></a><a class="code" href="../../d4/de8/structKTfwd_1_1mutation__remover.html">mutation_remover</a>(),std::placeholders::_1,0,4*N),</div>
+<div class="line">                                                 std::bind(<a name="_a25"></a><a class="code" href="../../d4/de8/structKTfwd_1_1mutation__remover.html">mutation_remover</a>(),std::placeholders::_1,0,4*N),</div>
 <div class="line">                                                 std::bind(<a class="code" href="../../df/dfa/migsel__ind_8cc.html#a4862499cb62bfa43943001b59fe6dc0d">migpop</a>,std::placeholders::_1,r,m),</div>
 <div class="line">                                                 &amp;fs[0]);</div>
 <div class="line">      <span class="comment">//4*N b/c it needs to be fixed in the metapopulation</span></div>
-<div class="line">      <a name="a25"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a84e666ea27d38bdfc539ffd23653eaa9">remove_fixed_lost</a>(&amp;mutations,&amp;fixations,&amp;fixation_times,&amp;lookup,generation,4*N);</div>
+<div class="line">      <a name="a26"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a84e666ea27d38bdfc539ffd23653eaa9">remove_fixed_lost</a>(&amp;mutations,&amp;fixations,&amp;fixation_times,&amp;lookup,generation,4*N);</div>
 <div class="line">    }</div>
 <div class="line">  </div>
 <div class="line">  std::pair&lt; std::vector&lt;std::pair&lt;double,std::string&gt; &gt;,</div>
-<div class="line">             std::vector&lt;std::pair&lt;double,std::string&gt; &gt; &gt; spop1 = <a name="a26"></a><a class="code" href="../../d7/d86/group__samplingPopsGamete.html#ga9aa3258399200b1f313ff3cfdb222a34">ms_sample_separate</a>(r,&amp;diploids[0],n);</div>
+<div class="line">             std::vector&lt;std::pair&lt;double,std::string&gt; &gt; &gt; spop1 = <a name="a27"></a><a class="code" href="../../d7/d86/group__samplingPopsGamete.html#ga9aa3258399200b1f313ff3cfdb222a34">ms_sample_separate</a>(r,&amp;diploids[0],n);</div>
 <div class="line"></div>
 <div class="line">  std::pair&lt; std::vector&lt;std::pair&lt;double,std::string&gt; &gt;,</div>
 <div class="line">             std::vector&lt;std::pair&lt;double,std::string&gt; &gt; &gt; spop2 = <a class="code" href="../../d7/d86/group__samplingPopsGamete.html#ga9aa3258399200b1f313ff3cfdb222a34">ms_sample_separate</a>(r,&amp;diploids[1],n);</div>
@@ -344,7 +344,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">  std::ofstream outstream(outfilename);</div>
 <div class="line"></div>
 <div class="line">  <span class="comment">//Write the metapop in binary format to outstream</span></div>
-<div class="line">  <a name="a27"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a21e90a90f379efd81081f3c07c9e5507">KTfwd::write_binary_metapop</a>(&amp;metapop,&amp;mutations,&amp;diploids,</div>
+<div class="line">  <a name="a28"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a21e90a90f379efd81081f3c07c9e5507">KTfwd::write_binary_metapop</a>(&amp;metapop,&amp;mutations,&amp;diploids,</div>
 <div class="line">                              std::bind(<a class="code" href="../../db/d91/structmwriter.html">mwriter</a>(),std::placeholders::_1,std::placeholders::_2),</div>
 <div class="line">                              outstream);</div>
 <div class="line"></div>
@@ -367,7 +367,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"></div>
 <div class="line">  ifstream in(outfilename);</div>
 <div class="line">  </div>
-<div class="line">  <a name="a28"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a2360771e6340d7ed72fb69a4d7869d0f">KTfwd::read_binary_metapop</a>(&amp;metapop2,&amp;mutations2,&amp;diploids2,</div>
+<div class="line">  <a name="a29"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a2360771e6340d7ed72fb69a4d7869d0f">KTfwd::read_binary_metapop</a>(&amp;metapop2,&amp;mutations2,&amp;diploids2,</div>
 <div class="line">                             std::bind(<a class="code" href="../../d9/d61/structmreader.html">mreader</a>(),std::placeholders::_1),</div>
 <div class="line">                             in);</div>
 <div class="line">  </div>

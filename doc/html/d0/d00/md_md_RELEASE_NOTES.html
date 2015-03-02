@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.7</span>
+   &#160;<span id="projectnumber">0.2.8</span>
    </div>
   </td>
  </tr>
@@ -82,7 +82,15 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="title">FWDPP RELEASE NOTES </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2>0.2.7 (unreleased)</h2>
+<div class="textblock"><h2>0.2.8</h2>
+<ul>
+<li>Fixed issue #5, which was a bug in migrating gametes in multi-population, individual-based simulations.</li>
+<li>Fixed issue #6, which was a bug in how parents were copied in multi-population, individual-based simulations.</li>
+<li>Fixed issue #7, which was a bug in when gametes were updated post-sampling in multi-population, individual-based simulations.</li>
+<li>Two new example programs added: migsel_split_ind and migsel_split_ind_list</li>
+<li>fwdpp/IO.tcc streamlined using C++11 "auto" instead of nasty typedefs</li>
+</ul>
+<h2>0.2.7</h2>
 <ul>
 <li>Versions ms_sample and ms_sample_separate that took containers of gametes as arguments are now compatible with individual-based simulations.</li>
 <li>The "devtools" stuff is greatly improved, and a new tutorial added on how to use it: <a class="el" href="../../d9/d5d/md_md_devtools.html">Tutorial 4: Starting projects based on fwdpp</a></li>

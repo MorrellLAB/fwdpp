@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.7</span>
+   &#160;<span id="projectnumber">0.2.8</span>
    </div>
   </td>
  </tr>
@@ -243,6 +243,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a1c9791ec9905f663089b0a52d4facb0d"><td class="memTemplParams" colspan="2">template&lt;typename T , typename cT &gt; </td></tr>
 <tr class="memitem:a1c9791ec9905f663089b0a52d4facb0d"><td class="memTemplItemLeft" align="right" valign="top">cT::iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a1c9791ec9905f663089b0a52d4facb0d">insert_if_not_found</a> (T &amp;&amp;t, cT *ct)</td></tr>
 <tr class="separator:a1c9791ec9905f663089b0a52d4facb0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb2fd01e4b5a2bdcadb5e7c4382bb4d2"><td class="memTemplParams" colspan="2">template&lt;typename T , typename cT &gt; </td></tr>
+<tr class="memitem:afb2fd01e4b5a2bdcadb5e7c4382bb4d2"><td class="memTemplItemLeft" align="right" valign="top">cT::iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#afb2fd01e4b5a2bdcadb5e7c4382bb4d2">insert_if_not_found</a> (T &amp;&amp;t, cT *ct, const unsigned &amp;n)</td></tr>
+<tr class="separator:afb2fd01e4b5a2bdcadb5e7c4382bb4d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f12d7c4af0b0d5b6dc48772d1cae49d"><td class="memTemplParams" colspan="2">template&lt;typename T , typename cT &gt; </td></tr>
 <tr class="memitem:a4f12d7c4af0b0d5b6dc48772d1cae49d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a4f12d7c4af0b0d5b6dc48772d1cae49d">update_if_exists_push</a> (T &amp;&amp;t, cT *ct)</td></tr>
 <tr class="memdesc:a4f12d7c4af0b0d5b6dc48772d1cae49d"><td class="mdescLeft">&#160;</td><td class="mdescRight">An insertion policy.  <a href="#a4f12d7c4af0b0d5b6dc48772d1cae49d">More...</a><br/></td></tr>
@@ -601,6 +604,48 @@ template&lt;typename T , typename cT &gt; </div>
           <td></td>
           <td class="paramtype">cT *&#160;</td>
           <td class="paramname"><em>ct</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afb2fd01e4b5a2bdcadb5e7c4382bb4d2"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename cT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cT::iterator KTfwd::insert_if_not_found </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cT *&#160;</td>
+          <td class="paramname"><em>ct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned &amp;&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1220,7 +1265,7 @@ template&lt;typename mutation_type , typename list_type_allocator , template&lt;
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a28">migsel_ind.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a29">migsel_ind.cc</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1686,7 +1731,7 @@ template&lt;typename mutation_type , typename vector_type_allocator1 , typename 
 </div><div class="memdoc">
 
 <p>Remove mutations from population Removes mutations that are fixed or lost. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a12">bneck_selection_ind.cc</a>, <a class="el" href="../../db/d81/diploid_8cc-example.html#a15">diploid.cc</a>, <a class="el" href="../../d7/dd8/diploid_binaryIO_8cc-example.html#a24">diploid_binaryIO.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a25">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a12">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a14">diploid_fixed_sh_ind_lambda.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a16">diploid_ind.cc</a>, <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a29">diploid_ind_2locus.cc</a>, <a class="el" href="../../dd/da1/diploid_twopop_mig_8cc-example.html#a18">diploid_twopop_mig.cc</a>, <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a25">migsel_ind.cc</a>, <a class="el" href="../../d3/d0a/RHH_8cc-example.html#a13">RHH.cc</a>, and <a class="el" href="../../dc/d1a/TFL2013_8cc-example.html#a16">TFL2013.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a12">bneck_selection_ind.cc</a>, <a class="el" href="../../db/d81/diploid_8cc-example.html#a15">diploid.cc</a>, <a class="el" href="../../d7/dd8/diploid_binaryIO_8cc-example.html#a24">diploid_binaryIO.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a25">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a12">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a14">diploid_fixed_sh_ind_lambda.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a16">diploid_ind.cc</a>, <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a29">diploid_ind_2locus.cc</a>, <a class="el" href="../../dd/da1/diploid_twopop_mig_8cc-example.html#a18">diploid_twopop_mig.cc</a>, <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a26">migsel_ind.cc</a>, <a class="el" href="../../d3/d0a/RHH_8cc-example.html#a13">RHH.cc</a>, and <a class="el" href="../../dc/d1a/TFL2013_8cc-example.html#a16">TFL2013.cc</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1845,7 +1890,7 @@ template&lt;typename gamete_type , typename vector_type_allocator , template&lt;
         </tr>
       </table>
 </div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a8">bneck_selection_ind.cc</a>, <a class="el" href="../../db/d81/diploid_8cc-example.html#a12">diploid.cc</a>, <a class="el" href="../../d7/dd8/diploid_binaryIO_8cc-example.html#a21">diploid_binaryIO.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a21">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a8">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a9">diploid_fixed_sh_ind_lambda.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a12">diploid_ind.cc</a>, <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a26">diploid_ind_2locus.cc</a>, <a class="el" href="../../dd/da1/diploid_twopop_mig_8cc-example.html#a16">diploid_twopop_mig.cc</a>, <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a22">migsel_ind.cc</a>, <a class="el" href="../../de/d58/pfix_8cc-example.html#a11">pfix.cc</a>, <a class="el" href="../../d3/d0a/RHH_8cc-example.html#a10">RHH.cc</a>, and <a class="el" href="../../dc/d1a/TFL2013_8cc-example.html#a14">TFL2013.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a8">bneck_selection_ind.cc</a>, <a class="el" href="../../db/d81/diploid_8cc-example.html#a12">diploid.cc</a>, <a class="el" href="../../d7/dd8/diploid_binaryIO_8cc-example.html#a21">diploid_binaryIO.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a21">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a8">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a9">diploid_fixed_sh_ind_lambda.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a12">diploid_ind.cc</a>, <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a26">diploid_ind_2locus.cc</a>, <a class="el" href="../../dd/da1/diploid_twopop_mig_8cc-example.html#a16">diploid_twopop_mig.cc</a>, <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a23">migsel_ind.cc</a>, <a class="el" href="../../de/d58/pfix_8cc-example.html#a11">pfix.cc</a>, <a class="el" href="../../d3/d0a/RHH_8cc-example.html#a10">RHH.cc</a>, and <a class="el" href="../../dc/d1a/TFL2013_8cc-example.html#a14">TFL2013.cc</a>.</dd>
 </dl>
 </div>
 </div>
@@ -3160,7 +3205,7 @@ template&lt;typename mutation_type , typename list_type_allocator , template&lt;
   </dd>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>If is often useful for buffer to be of type std::ostringstream to allow writing of the buffered data to C-style file handles/pointers, in turn allowing file locking which speeds up performance on distributed file systems. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a27">migsel_ind.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a28">migsel_ind.cc</a>.</dd>
 </dl>
 </div>
 </div>

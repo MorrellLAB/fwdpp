@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.7</span>
+   &#160;<span id="projectnumber">0.2.8</span>
    </div>
   </td>
  </tr>
@@ -104,13 +104,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:afd72de0976ba461c357b743e241f90ef"><td class="memItemLeft" align="right" valign="top">typedef double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html#afd72de0976ba461c357b743e241f90ef">result_type</a></td></tr>
-<tr class="separator:afd72de0976ba461c357b743e241f90ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0eeb4a26d85d44fefe0a2122c18413e9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html#a0eeb4a26d85d44fefe0a2122c18413e9">result_type</a> = double</td></tr>
+<tr class="separator:a0eeb4a26d85d44fefe0a2122c18413e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aca0441e321691053f2ea7abfca50e0c6"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename fitness_updating_policy_hom , typename fitness_updating_policy_het &gt; </td></tr>
-<tr class="memitem:aca0441e321691053f2ea7abfca50e0c6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html#afd72de0976ba461c357b743e241f90ef">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html#aca0441e321691053f2ea7abfca50e0c6">operator()</a> (const iterator_type &amp;g1, const iterator_type &amp;g2, const fitness_updating_policy_hom &amp;fpol_hom, const fitness_updating_policy_het &amp;fpol_het, const double starting_fitness=1.) const </td></tr>
+<tr class="memitem:aca0441e321691053f2ea7abfca50e0c6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html#a0eeb4a26d85d44fefe0a2122c18413e9">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html#aca0441e321691053f2ea7abfca50e0c6">operator()</a> (const iterator_type &amp;g1, const iterator_type &amp;g2, const fitness_updating_policy_hom &amp;fpol_hom, const fitness_updating_policy_het &amp;fpol_het, const double starting_fitness=1.) const </td></tr>
 <tr class="separator:aca0441e321691053f2ea7abfca50e0c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -130,12 +130,12 @@ Public Member Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>The updating policies must take a non-const reference to a double as the first argument and an iterator to a gamete as the second. Any remaining arguments needed should be passed via a mechanism such as std::bind and a function object, or via a lambda expression. See <a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html" title="Multiplicative fitness across sites. ">KTfwd::multiplicative_diploid</a> for an example implementation. </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#_a6">diploid_fixed_sh_ind_lambda.cc</a>, and <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#_a17">migsel_ind.cc</a>.</dd>
 </dl></div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a class="anchor" id="afd72de0976ba461c357b743e241f90ef"></a>
+<a class="anchor" id="a0eeb4a26d85d44fefe0a2122c18413e9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef double <a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html#afd72de0976ba461c357b743e241f90ef">KTfwd::site_dependent_fitness::result_type</a></td>
+          <td class="memname">using <a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html#a0eeb4a26d85d44fefe0a2122c18413e9">KTfwd::site_dependent_fitness::result_type</a> =  double</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -153,7 +153,7 @@ template&lt;typename iterator_type , typename fitness_updating_policy_hom , type
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html#afd72de0976ba461c357b743e241f90ef">result_type</a> KTfwd::site_dependent_fitness::operator() </td>
+          <td class="memname"><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html#a0eeb4a26d85d44fefe0a2122c18413e9">result_type</a> KTfwd::site_dependent_fitness::operator() </td>
           <td>(</td>
           <td class="paramtype">const iterator_type &amp;&#160;</td>
           <td class="paramname"><em>g1</em>, </td>

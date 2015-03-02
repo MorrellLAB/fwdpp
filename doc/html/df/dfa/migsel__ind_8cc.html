@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.7</span>
+   &#160;<span id="projectnumber">0.2.8</span>
    </div>
   </td>
  </tr>
@@ -321,13 +321,13 @@ Functions</h2></td></tr>
 <div class="line">  <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> lookup;</div>
 <div class="line"><span class="preprocessor">#if defined(HAVE_BOOST_VECTOR) &amp;&amp; defined(HAVE_BOOST_LIST) &amp;&amp; defined(HAVE_BOOST_UNORDERED_SET) &amp;&amp; defined(HAVE_BOOST_POOL_ALLOC) &amp;&amp; defined(HAVE_BOOST_HASH) &amp;&amp; !defined(USE_STANDARD_CONTAINERS)</span></div>
 <div class="line"><span class="preprocessor"></span>  boost::container::vector&lt; glist &gt; metapop(2, <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>(1,<a class="code" href="../../d1/dbe/crossoverTest_8cc.html#ace9428d4aa6205eaf777c2c9f398d9ea">gtype</a>(2*N)));</div>
-<div class="line">  <span class="keyword">typedef</span> boost::container::vector&lt; std::pair&lt; glist::iterator, glist::iterator &gt; &gt; diploid_bucket;</div>
+<div class="line">  <span class="keyword">typedef</span> boost::container::vector&lt; std::pair&lt; glist::iterator, glist::iterator &gt; &gt; <a class="code" href="../../d8/d60/migsel__split__ind_8cc.html#a7a1ebf214c7f3565ff044aec9024a6fb">diploid_bucket</a>;</div>
 <div class="line">  boost::container::vector&lt; diploid_bucket &gt; diploids;</div>
 <div class="line">  boost::container::vector&lt;unsigned&gt; Ns(2,N);</div>
 <div class="line">  boost::container::vector&lt;double&gt; fs;</div>
 <div class="line"><span class="preprocessor">#else</span></div>
 <div class="line"><span class="preprocessor"></span>  std::vector&lt; glist &gt; metapop(2, <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>(1,<a class="code" href="../../d1/dbe/crossoverTest_8cc.html#ace9428d4aa6205eaf777c2c9f398d9ea">gtype</a>(2*N)));</div>
-<div class="line">  <span class="keyword">typedef</span> std::vector&lt; std::pair&lt; glist::iterator, glist::iterator &gt; &gt; diploid_bucket;</div>
+<div class="line">  <span class="keyword">typedef</span> std::vector&lt; std::pair&lt; glist::iterator, glist::iterator &gt; &gt; <a class="code" href="../../d8/d60/migsel__split__ind_8cc.html#a7a1ebf214c7f3565ff044aec9024a6fb">diploid_bucket</a>;</div>
 <div class="line">  std::vector&lt; diploid_bucket &gt; diploids;</div>
 <div class="line">  std::vector&lt;unsigned&gt; Ns(2,N);</div>
 <div class="line">  std::vector&lt;double&gt; fs;</div>
@@ -337,7 +337,7 @@ Functions</h2></td></tr>
 <div class="line">  <span class="keywordflow">for</span> ( <span class="keyword">auto</span> i = metapop.begin() ;</div>
 <div class="line">        i != metapop.end() ; ++i )</div>
 <div class="line">    {</div>
-<div class="line">      diploids.push_back ( diploid_bucket(N,std::make_pair(i-&gt;begin(),i-&gt;begin())) );</div>
+<div class="line">      diploids.push_back ( <a class="code" href="../../d8/d60/migsel__split__ind_8cc.html#a7a1ebf214c7f3565ff044aec9024a6fb">diploid_bucket</a>(N,std::make_pair(i-&gt;begin(),i-&gt;begin())) );</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">  fs.push_back(f1);</div>

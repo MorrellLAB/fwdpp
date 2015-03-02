@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['faux_5fmutate',['faux_mutate',['../d7/daa/policyTests_8cc.html#aa85bd948938e3008db54408dc7612c2a',1,'policyTests.cc']]],
-  ['faux_5fmutate2',['faux_mutate2',['../d7/daa/policyTests_8cc.html#a292f27d87883cb5c4b354c574eff143f',1,'policyTests.cc']]],
-  ['faux_5fmutate_5fmechanics',['faux_mutate_mechanics',['../d7/daa/policyTests_8cc.html#a688fee0039fb6561c12502e1344f1d16',1,'policyTests.cc']]]
+  ['duplicate_5fpop',['duplicate_pop',['../d8/d60/migsel__split__ind_8cc.html#a1466c6c48ff206708636bdc2d3cbab4e',1,'duplicate_pop(glist_vec &amp;metapop, diploid_bucket_vec &amp;diploids, mlist &amp;mutations):&#160;migsel_split_ind.cc'],['../d5/dcc/migsel__split__ind__list_8cc.html#a5c950bfe34746777a32b2f61d8ee1351',1,'duplicate_pop(glist_list &amp;metapop, diploid_bucket_vec &amp;diploids, mlist &amp;mutations):&#160;migsel_split_ind_list.cc']]]
 ];

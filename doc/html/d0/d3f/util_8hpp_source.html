@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.7</span>
+   &#160;<span id="projectnumber">0.2.8</span>
    </div>
   </td>
  </tr>
@@ -141,10 +141,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    static_assert( std::is_same&lt;typename gamete_type::mutation_type,mutation_type&gt;::value,</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                   <span class="stringliteral">&quot;gamete_type::mutation type and mutation_type must be the same&quot;</span> );</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">typename</span> source_gamete_container&lt;gamete_type,gamete_allocator_type&gt;::const_iterator giterator;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">typename</span> source_mut_container&lt;mutation_type,mutation_allocator_type&gt;::iterator literator;  </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">typename</span> source_mut_container&lt;mutation_type,mutation_allocator_type&gt;::const_iterator cliterator;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">typename</span> gamete_type::mutation_container::const_iterator gciterator;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">using</span> giterator = <span class="keyword">typename</span> source_gamete_container&lt;gamete_type,gamete_allocator_type&gt;::const_iterator;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">using</span> literator = <span class="keyword">typename</span> source_mut_container&lt;mutation_type,mutation_allocator_type&gt;::iterator;  </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">using</span> cliterator = <span class="keyword">typename</span> source_mut_container&lt;mutation_type,mutation_allocator_type&gt;::const_iterator;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">using</span> gciterator = <span class="keyword">typename</span> gamete_type::mutation_container::const_iterator;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    gametes_destination.clear();</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    mutations_destination.clear();</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">//copying the mutations is trivial</span></div>

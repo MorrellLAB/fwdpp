@@ -7,6 +7,8 @@ var searchData=
   ['diploid_2ehh',['diploid.hh',['../df/df8/diploid_8hh.html',1,'']]],
   ['diploid_5fbinaryio_2ecc',['diploid_binaryIO.cc',['../db/d0c/diploid__binaryIO_8cc.html',1,'']]],
   ['diploid_5fbinaryio_5find_2ecc',['diploid_binaryIO_ind.cc',['../d3/da9/diploid__binaryIO__ind_8cc.html',1,'']]],
+  ['diploid_5fbucket',['diploid_bucket',['../d8/d60/migsel__split__ind_8cc.html#a7a1ebf214c7f3565ff044aec9024a6fb',1,'diploid_bucket():&#160;migsel_split_ind.cc'],['../d5/dcc/migsel__split__ind__list_8cc.html#a7a1ebf214c7f3565ff044aec9024a6fb',1,'diploid_bucket():&#160;migsel_split_ind_list.cc']]],
+  ['diploid_5fbucket_5fvec',['diploid_bucket_vec',['../d8/d60/migsel__split__ind_8cc.html#a2f9576945b19e9f0940433b57b3b8d84',1,'diploid_bucket_vec():&#160;migsel_split_ind.cc'],['../d5/dcc/migsel__split__ind__list_8cc.html#a2f9576945b19e9f0940433b57b3b8d84',1,'diploid_bucket_vec():&#160;migsel_split_ind_list.cc']]],
   ['diploid_5ffixed_5fsh_2ecc',['diploid_fixed_sh.cc',['../d1/de0/diploid__fixed__sh_8cc.html',1,'']]],
   ['diploid_5ffixed_5fsh_5find_2ecc',['diploid_fixed_sh_ind.cc',['../d8/d7e/diploid__fixed__sh__ind_8cc.html',1,'']]],
   ['diploid_5ffixed_5fsh_5find_5flambda_2ecc',['diploid_fixed_sh_ind_lambda.cc',['../df/d55/diploid__fixed__sh__ind__lambda_8cc.html',1,'']]],
@@ -22,5 +24,6 @@ var searchData=
   ['diploid_5ftwopop_5fmig_2ecc',['diploid_twopop_mig.cc',['../dd/de1/diploid__twopop__mig_8cc.html',1,'']]],
   ['dipvec',['dipvec',['../db/d4f/pfix_8cc.html#a8f9c6bdc596a8490c24d2859c65ccac2',1,'pfix.cc']]],
   ['disease_5feffect',['disease_effect',['../d0/dd7/structdisease__effect.html',1,'']]],
-  ['disease_5feffect_5fto_5ffitness',['disease_effect_to_fitness',['../dd/dd4/structdisease__effect__to__fitness.html',1,'']]]
+  ['disease_5feffect_5fto_5ffitness',['disease_effect_to_fitness',['../dd/dd4/structdisease__effect__to__fitness.html',1,'']]],
+  ['duplicate_5fpop',['duplicate_pop',['../d8/d60/migsel__split__ind_8cc.html#a1466c6c48ff206708636bdc2d3cbab4e',1,'duplicate_pop(glist_vec &amp;metapop, diploid_bucket_vec &amp;diploids, mlist &amp;mutations):&#160;migsel_split_ind.cc'],['../d5/dcc/migsel__split__ind__list_8cc.html#a5c950bfe34746777a32b2f61d8ee1351',1,'duplicate_pop(glist_list &amp;metapop, diploid_bucket_vec &amp;diploids, mlist &amp;mutations):&#160;migsel_split_ind_list.cc']]]
 ];

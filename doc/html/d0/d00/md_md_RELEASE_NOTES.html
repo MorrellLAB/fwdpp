@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.8</span>
+   &#160;<span id="projectnumber">0.2.9</span>
    </div>
   </td>
  </tr>
@@ -82,7 +82,12 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="title">FWDPP RELEASE NOTES </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2>0.2.8</h2>
+<div class="textblock"><h2>0.2.9</h2>
+<ul>
+<li>Added new unit test (siteDepFitness) to check for the effect of issue #8. Fortunately, fitness calculations were correct even with the bug, as the rest of the function did the right thing.</li>
+<li>Fixed issue #8, so that the code block in question will actually do what is intended.</li>
+</ul>
+<h2>0.2.8</h2>
 <ul>
 <li>Fixed issue #5, which was a bug in migrating gametes in multi-population, individual-based simulations.</li>
 <li>Fixed issue #6, which was a bug in how parents were copied in multi-population, individual-based simulations.</li>

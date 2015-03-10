@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.8</span>
+   &#160;<span id="projectnumber">0.2.9</span>
    </div>
   </td>
  </tr>
@@ -129,7 +129,7 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5b74cc7958599ff5dcd019304db963b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d7f/structKTfwd_1_1mutation.html">mutation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dfa/migsel__ind_8cc.html#a5b74cc7958599ff5dcd019304db963b3">neutral_mutations_selection</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a> *mutations, const double &amp;mu_neutral, const double &amp;mu_selected, const double &amp;s, const double &amp;h, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> *lookup)</td></tr>
+<tr class="memitem:a5b74cc7958599ff5dcd019304db963b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d7f/structKTfwd_1_1mutation.html">mutation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dfa/migsel__ind_8cc.html#a5b74cc7958599ff5dcd019304db963b3">neutral_mutations_selection</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a> *mutations, const double &amp;mu_neutral, const double &amp;mu_selected, const double &amp;s, const double &amp;h, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> *lookup)</td></tr>
 <tr class="separator:a5b74cc7958599ff5dcd019304db963b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4862499cb62bfa43943001b59fe6dc0d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dfa/migsel__ind_8cc.html#a4862499cb62bfa43943001b59fe6dc0d">migpop</a> (const size_t &amp;source_pop, gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const double &amp;mig_prob)</td></tr>
 <tr class="separator:a4862499cb62bfa43943001b59fe6dc0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -214,7 +214,7 @@ Functions</h2></td></tr>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"></div>
-<div class="line"><a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">mutation</a> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#acf14744791bda8ed8262db2070b0b63f">neutral_mutations_selection</a>(gsl_rng * <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,<a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a> * mutations,</div>
+<div class="line"><a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">mutation</a> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#acf14744791bda8ed8262db2070b0b63f">neutral_mutations_selection</a>(gsl_rng * <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,<a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a> * mutations,</div>
 <div class="line">                                            <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; mu_neutral, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; mu_selected,</div>
 <div class="line">                                            <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; s, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; h,</div>
 <div class="line">                                            <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> * lookup)</div>
@@ -314,7 +314,7 @@ Functions</h2></td></tr>
 <div class="line">  gsl_rng * r =  gsl_rng_alloc(gsl_rng_taus2);</div>
 <div class="line">  gsl_rng_set(r,seed);</div>
 <div class="line"></div>
-<div class="line">  <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a> mutations; </div>
+<div class="line">  <a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a> mutations; </div>
 <div class="line">  std::vector&lt;mtype&gt; fixations;</div>
 <div class="line">  std::vector&lt;unsigned&gt; fixation_times;</div>
 <div class="line"></div>
@@ -406,7 +406,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="preprocessor"></span>  std::vector&lt; glist &gt; metapop2;</div>
 <div class="line">  std::vector&lt; diploid_bucket &gt; diploids2;</div>
 <div class="line"><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="preprocessor"></span>  <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a> mutations2;</div>
+<div class="line"><span class="preprocessor"></span>  <a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a> mutations2;</div>
 <div class="line">  Sequence::SimData neutral2,selected2;</div>
 <div class="line"></div>
 <div class="line">  ifstream in(outfilename);</div>
@@ -606,7 +606,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a> *&#160;</td>
           <td class="paramname"><em>mutations</em>, </td>
         </tr>
         <tr>

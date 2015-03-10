@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.8</span>
+   &#160;<span id="projectnumber">0.2.9</span>
    </div>
   </td>
  </tr>
@@ -203,14 +203,14 @@ Policy requirements in fwdpp</h1>
 <p>The example program <b>diploid_fixed_sh_lambda</b> is an example of writing all policies using lambda expressions&ndash;take a look there for a concrete example of these concepts. The lambda expressions are very nice in that they document the policy requirements completely, as one is required to write them in the lambda arguments.</p>
 <p>For the sake of this example, let's assume that we are using the following types in an individual-based simulation (in C++11, ``using'' statements replace typedefs.):</p>
 <div class="fragment"><div class="line"><span class="keyword">using</span> mtype = <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a>;</div>
-<div class="line"><span class="keyword">using</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a> = std::list&lt;mtype&gt;;</div>
+<div class="line"><span class="keyword">using</span> <a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a> = std::list&lt;mtype&gt;;</div>
 <div class="line"><span class="keyword">using</span> <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gtype</a> = <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base&lt;mtype&gt;</a>;</div>
 <div class="line"><span class="keyword">using</span> <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a> = std::list&lt;gtype&gt;;</div>
 </div><!-- fragment --><p>A minimal mutation policy takes a non-const pointer to an <b>mlist</b> as an argument, and returns an <b>mtype</b>:</p>
 <div class="fragment"><div class="line"><span class="comment">//the [&amp;] is used to capture any things that may be needed</span></div>
-<div class="line"><span class="keyword">auto</span> mut_policy = [&amp;](<a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a> * __mutations){ <span class="keywordflow">return</span> function_generating_new_type( arguments ); };</div>
+<div class="line"><span class="keyword">auto</span> mut_policy = [&amp;](<a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a> * __mutations){ <span class="keywordflow">return</span> function_generating_new_type( arguments ); };</div>
 </div><!-- fragment --><p>We then need to decide how to add a new mutation (the return value of the mutation policy) to the list of mutations. This ``mutation insertion policy'' takes a const reference to an <b>mtype</b> and a non-const pointer to an <b>mlist</b> as arguments, and returns an <b>mlist::iterator</b>. This is an example for the infinite-sites model. Under this model, we know that a new mutation is at a new position, therefore we simply insert it at the end of the mlist:</p>
-<div class="fragment"><div class="line"><span class="keyword">auto</span> mut_insertion_policy = [](<span class="keyword">const</span> mtype &amp; m,<a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a> * __mutations) { </div>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> mut_insertion_policy = [](<span class="keyword">const</span> mtype &amp; m,<a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a> * __mutations) { </div>
 <div class="line"><span class="keywordflow">return</span> __mutations-&gt;insert(__mutations-&gt;end(),m); </div>
 <div class="line">};</div>
 </div><!-- fragment --><p>When a gamete is mutated, we need to decide how to insert it into the <b>glist</b>. This ``gamete insertion policy'' takes a const reference to an <b>gtype</b> and a non-const pointer to an <b>glist</b> as arguments, and returns an <b>glist::iterator</b>. Again, under the infinitely-many sites model, a gamete with a new mutation is guaranteed to be unique, so we can simply insert it:</p>
@@ -319,7 +319,7 @@ Mutation policies</h2>
 </div><!-- fragment --><p>We can now completely define our mutation model as a function (we could do it as a function object, too). In this example, We assume that we are using the boost list type and boost's memory pool allocator:</p>
 <div class="fragment"><div class="line"><span class="keyword">typedef</span> <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a08e697ef28ea008d75cc6de09f177dfa">mtype</a>;</div>
 <div class="line"><span class="keyword">typedef</span> boost::pool_allocator&lt;mtype&gt; <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a8da95455b301321cb0a4a7064ed8fe3d">mut_allocator</a>;</div>
-<div class="line"><span class="keyword">typedef</span> boost::container::list&lt;mtype,mut_allocator &gt; <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a>;</div>
+<div class="line"><span class="keyword">typedef</span> boost::container::list&lt;mtype,mut_allocator &gt; <a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>;</div>
 <div class="line">mtype mutmodel( gsl_rng * r, mlist * mutations,</div>
 <div class="line">                <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; mu_neutral,</div>
 <div class="line">                <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; mu_selected,</div>
@@ -376,7 +376,7 @@ Mutation policies</h2>
 </div><!-- fragment --><p>OK, our mutation model is going to be the following. It is infinitely-many sites with both neutral and non-neutral mutations:</p>
 <div class="fragment"><div class="line"><span class="keyword">typedef</span> <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a08e697ef28ea008d75cc6de09f177dfa">mtype</a>;</div>
 <div class="line"><span class="keyword">typedef</span> boost::pool_allocator&lt;mtype&gt; <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a8da95455b301321cb0a4a7064ed8fe3d">mut_allocator</a>;</div>
-<div class="line"><span class="keyword">typedef</span> boost::container::list&lt;mtype,mut_allocator &gt; <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a>;</div>
+<div class="line"><span class="keyword">typedef</span> boost::container::list&lt;mtype,mut_allocator &gt; <a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>;</div>
 <div class="line">mtype mutmodel_Qtrait( gsl_rng * r, mlist * mutations,</div>
 <div class="line">                       <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; mu_neutral,</div>
 <div class="line">                       <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; mu_selected,</div>

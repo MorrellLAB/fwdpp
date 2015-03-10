@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.8</span>
+   &#160;<span id="projectnumber">0.2.9</span>
    </div>
   </td>
  </tr>
@@ -146,7 +146,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="comment">/*</span></div>
 <div class="line"><span class="comment">  This function generates neutral mutations under the infinitely-many sites assumption</span></div>
 <div class="line"><span class="comment"> */</span></div>
-<div class="line"><a class="code" href="../../de/d4d/structmutation__with__age.html">mutation_with_age</a> <a name="a7"></a><a class="code" href="../../d8/df7/diploid_8cc.html#a864b38f6df519dfdcf7fa9edbad42c64">neutral_mutations_inf_sites</a>(gsl_rng * <a name="a8"></a><a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,<span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; generation,<a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a> * mutations,</div>
+<div class="line"><a class="code" href="../../de/d4d/structmutation__with__age.html">mutation_with_age</a> <a name="a7"></a><a class="code" href="../../d8/df7/diploid_8cc.html#a864b38f6df519dfdcf7fa9edbad42c64">neutral_mutations_inf_sites</a>(gsl_rng * <a name="a8"></a><a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,<span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; generation,<a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a> * mutations,</div>
 <div class="line">                                              <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> * lookup)</div>
 <div class="line">{</div>
 <div class="line">  <span class="comment">//Generate new mutation position on the interval [0,1)</span></div>
@@ -245,7 +245,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">      <span class="comment">//the population begins with 1 gamete with no mutations amd initial count 2N</span></div>
 <div class="line">      <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#afd5b74e0108d624225532de98a470a36">gvector</a> gametes(1,<a name="a11"></a><a class="code" href="../../d1/dbe/crossoverTest_8cc.html#ace9428d4aa6205eaf777c2c9f398d9ea">gtype</a>(twoN));</div>
 <div class="line">      gametes.reserve(twoN);</div>
-<div class="line">      <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a> mutations;  <span class="comment">//the population is devoid of mutations</span></div>
+<div class="line">      <a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a> mutations;  <span class="comment">//the population is devoid of mutations</span></div>
 <div class="line">      std::vector&lt;mtype&gt; fixations;  <span class="comment">//store mutation that fix.  Passed to KTfwd::remove_fixed_lost</span></div>
 <div class="line">      std::vector&lt;unsigned&gt; fixation_times; <span class="comment">//store when they fix.  Passed to KTfwd::remove_fixed_lost</span></div>
 <div class="line">      <span class="keywordtype">unsigned</span> generation;</div>

@@ -44,6 +44,8 @@ This code is distributed via my gitub [account](http://www.github.com/molpopgen)
 
 ###Revision history
 
+[Release notes](@ref md_md_RELEASE_NOTES)
+
 Specific version numbers ("tags" in git-ese, a.k.a. "releases") will occur when new feature are added to the library and/or bugs are fixed.  The details of what happens in each release can be found [here](@ref md_md_RELEASE_NOTES), beginning with release 0.2.4.
 
 ##Which C++?
@@ -81,10 +83,20 @@ A tutorial on policies and the library's reference manual can be found at [molpo
 
 __Note:__ the links above may be out of date, as the online documentation are not regenerated automatically.  If you want the latest, builds the docs from source.
 
+## Tutorials
+
+The [fwdpp](http://molpopgen.github.io/fwdpp) main page contains several tutorials:
+
+* @ref md_md_datatypes
+* @ref md_md_policies
+* @ref md_md_multiloc
+* @ref md_md_serialization
+* @ref md_md_devtools
+* @ref md_md_sugar
+
+
 ##Built from source
 The source code documentation is in the doc subdirectory that comes with the library.  There are two major pieces of documentation.  First is the detailed documentation of all library functions.  This is generated via [doxygen](http://www.doxygen.org), and the output is a folder called html.  To view the documentation, point a browser to html/index.html. 
-
-A tutorial on writing policies is also build via doxygen.  The source for the tutorial is a Markdown document (doc/md/policies.md).
 
 ##Example documentation
 The examples can be read in html form via the online reference manual linked to above.  You can find the two simplest examples online at the fwdpp [wiki](https://github.com/molpopgen/fwdpp/wiki) on github.
@@ -101,22 +113,52 @@ You must have the following on your system:
 ##Library dependencies
 fwdpp depends upon the following libraries:
 
-1.  [boost](http://www.boost.org).  Note: use of boost is optional, but is the default.  See below for more info.
+1.  [boost](http://www.boost.org).  Note: use of boost is optional, but is the default. 
 2.  [GSL](http://gnu.org/software/gsl)
 3.  [zlib](http://zlib.net)
 4.  [libsequence](http://github.com/molpopgen/libsequence).
 
+The first three are  available as pre-built packages on most Linux distributions and via [homebrew-science](http://github.com/Homebrew/homebrew-science) on OS X .  The latter (libsequence) also depends on the first three, and must be built from source or via  [homebrew-science](http://github.com/Homebrew/homebrew-science) on OS X.
 
+### Why use boost?
 
-The first three are  available as pre-built packages on most Linux distributions.  The latter (libsequence) also depends on the first three, and must be built from source.
+C++ containers (vectors, lists, etc.) are parameterized by the type of data that they store and the method use to allocate memory.  Thus, when you declare:
+
+~~~{.cpp}
+#include <list>
+#include <diploid.hh>
+std::list< KTfwd::mutation > mlist;
+~~~
+
+you are really saying:
+
+~~~{.cpp}
+#include <list>
+#include <diploid.hh>
+std::list< KTfwd::mutation, std::allocator<KTfwd::mutation> >
+~~~
+
+Boost provides a memory pool allocator that can be used to greatly speed up simulations:
+
+~~~{.cpp}
+#include <list>
+#include <boost/pool/pool_alloc.hpp>
+#include <diploid.hh>
+//You can also use boost::container::list instead of std::list, etc.
+std::list< KTfwd::mutation,boost::pool_allocator<KTfwd::mutation> >
+~~~
+
+The memory pool is more efficient than the standard allocator in the case where objects are constantly being allocated and deallocated, which is the case for forward simulations, where mutations are entering the population and often rapidly going extinct.
+
+Technically, if your write your own vector/list classes that are parameterized in the same way as the STL classes, then you may also (attempt to) use those with __fwdpp__.  If such containers work, let me know.  If they are really fast, let me know.
 
 ##Obtaining the source code
 
 ###Obtaining the master branch
 You have a few options:
 
-1. Clone the repo (best option): git clone https://github.com/molpopgen/fwdpp.git</li>
-2.  Click on "Download Zip" at https://github.com/molpopgen/fwdpp </li>
+1. Clone the repo (best option): git clone https://github.com/molpopgen/fwdpp.git
+2.  Click on "Download Zip" at https://github.com/molpopgen/fwdpp 
 
 
 ###Obtaining a specific release
@@ -173,7 +215,7 @@ make check
 make install
 ~~~
 
-The option passed to the configure script will pass -DUSE_STANDARD_CONTAINERS to the C++ preprocessor.  This symbol means that the example programs will be built using containers from the C++ standard library rather than from the boost libraries.  The effect of this is roughly a 10% performance loss (e.g., simulations will take about 10% longer to run).
+The option passed to the configure script will pass -DUSE_STANDARD_CONTAINERS to the C++ preprocessor.  This symbol means that the example programs will be built using containers from the C++ standard library rather than from the boost libraries.  Not using boost's pool_allocator can result in substantial performance loss in simulations with high mutation and/or recombination rates.
 
 Related to the above note, it is worth installing boost on your system.  Many of their libraries, especially program_options, will probably be worth using for simulations that you write.
 

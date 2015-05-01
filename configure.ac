@@ -1,6 +1,6 @@
 AC_PREREQ(2.59)
 
-AC_INIT([fwdpp], [0.2.9], [https://github.com/molpopgen/fwdpp])
+AC_INIT([fwdpp], [0.3.0], [https://github.com/molpopgen/fwdpp])
 AC_CONFIG_SRCDIR([fwdpp/diploid.hh])
 AC_CONFIG_SRCDIR([examples/diploid_ind.cc])
 AC_CONFIG_SRCDIR([unit/mutateTest.cc])
@@ -18,7 +18,7 @@ AM_MAINTAINER_MODE([disable])
 AX_CXX_COMPILE_STDCXX_11([noext],[mandatory])
 
 AC_LANG(C++)
-AC_CONFIG_FILES([Makefile fwdpp/Makefile fwdpp/internal/Makefile examples/Makefile unit/Makefile])
+AC_CONFIG_FILES([Makefile fwdpp/Makefile fwdpp/internal/Makefile fwdpp/tags/Makefile fwdpp/sugar/Makefile fwdpp/sugar/singlepop/Makefile fwdpp/sugar/metapop/Makefile fwdpp/sugar/multiloc/Makefile fwdpp/sugar/poptypes/Makefile fwdpp/sugar/gsl/Makefile examples/Makefile unit/Makefile])
 
 AC_ARG_ENABLE([standard],AS_HELP_STRING([--enable-standard],[Disable use of boost containers when compiling examples]),[AC_DEFINE([USE_STANDARD_CONTAINERS],[1],[Prefer containers from namespace std when compiling])])
 

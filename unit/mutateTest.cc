@@ -1,4 +1,8 @@
-//! \file mutateTest.cc \ingroup unit
+/*!
+  \file mutateTest.cc
+  \ingroup unit
+  \brief Tests KTfwd::fwdpp_internal::add_N_mutations, KTfwd::fwdpp_internal::add_new_mutation, KTfwd::mutation, KTfwd::gamete
+*/
 #define BOOST_TEST_MODULE mutateTest
 #define BOOST_TEST_DYN_LINK 
 
@@ -106,7 +110,8 @@ BOOST_AUTO_TEST_CASE( add_N_mutations_1 )
 					 std::bind(KTfwd::insert_at_end<mut,std::list<mut> >,std::placeholders::_1,std::placeholders::_2),
 					 next_mut_pos.size(),
 					 &mlist,
-					 g);
+					 g,
+					 KTfwd::tags::gamete_independent());
   BOOST_CHECK_EQUAL( mlist.size(), next_mut_pos.size() );
   //neutral mutations should contain 5 things
   BOOST_CHECK_EQUAL( g.mutations.size(), next_mut_pos.size() );
@@ -170,7 +175,8 @@ BOOST_AUTO_TEST_CASE( add_N_mutations_2 )
 					 std::bind(KTfwd::insert_at_end<mut,std::list<mut> >,std::placeholders::_1,std::placeholders::_2),
 					 next_mut_pos.size(),
 					 &mlist,
-					 g);
+					 g,
+					 KTfwd::tags::gamete_independent());
   BOOST_CHECK_EQUAL( mlist.size(), next_mut_pos.size() );
   //neutral mutations should contain 5 things
   BOOST_CHECK_EQUAL( g.mutations.size(), next_mut_pos.size() );

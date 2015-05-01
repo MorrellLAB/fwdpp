@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['read_5fhaplotypes',['read_haplotypes',['../da/d0e/structKTfwd_1_1fwdpp__internal_1_1read__haplotypes.html',1,'KTfwd::fwdpp_internal']]],
-  ['read_5fmutations',['read_mutations',['../d3/d8f/structKTfwd_1_1fwdpp__internal_1_1read__mutations.html',1,'KTfwd::fwdpp_internal']]]
+  ['popgenmut',['popgenmut',['../dc/dcc/structKTfwd_1_1popgenmut.html',1,'KTfwd']]],
+  ['push_5fback_5fgamete',['push_back_gamete',['../d1/dcc/structKTfwd_1_1push__back__gamete.html',1,'KTfwd']]]
 ];

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.9</span>
+   &#160;<span id="projectnumber">0.3.0</span>
    </div>
   </td>
  </tr>
@@ -68,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -103,6 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h2>A note about which version to use</h2>
 <p>This code is distributed via my gitub <a href="http://www.github.com/molpopgen">account</a>. The "master" and "dev" branches should be viewed as experimental. The <a href="https://github.com/molpopgen/fwdpp/releases">releases</a>, however, correspond to tested versions of the library fit for public consumption. This means that, while the version number in the configure script on master/dev may match that of a recent release, <em>that does not mean that the features/stability/bugs present in master/dev are identical to those of the release.</em> If you want to use fwdpp for research, use the latest <a href="https://github.com/molpopgen/fwdpp/releases">release</a>. If you want to play around with the latest and (occasionally not-so) greatest, look at the dev branch. If you want to look at the latest I believe to be stable, look at master. Also note that master may be ahead of dev, etc., depending on what I've committed from my development server to the repo stored at github.</p>
 <h3>Revision history</h3>
+<p><a class="el" href="d0/d00/md_md_RELEASE_NOTES.html">Release notes</a></p>
 <p>Specific version numbers ("tags" in git-ese, a.k.a. "releases") will occur when new feature are added to the library and/or bugs are fixed. The details of what happens in each release can be found <a class="el" href="d0/d00/md_md_RELEASE_NOTES.html">here</a>, beginning with release 0.2.4.</p>
 <h2>Which C++?</h2>
 <p>As of version 0.2.5, fwdpp requires a compiler supporting the "C++11" version of the language. Currently, fwdpp requires that your compiler support the flag -std=c++11 in order to use c++11 language features. Recent version of GCC (4.7 or greater) and clang (3.4 or greater, but I've not checked earlier versions) both support this option, which covers most Linux and OS X users.</p>
@@ -126,9 +127,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h2>Online</h2>
 <p>A tutorial on policies and the library's reference manual can be found at <a href="http://molpopgen.github.io/fwdpp">molpopgen.github.io/fwdpp</a> or <a class="el" href="d1/d7a/md_md_policies.html">here</a>.</p>
 <p><b>Note:</b> the links above may be out of date, as the online documentation are not regenerated automatically. If you want the latest, builds the docs from source.</p>
+<h2>Tutorials</h2>
+<p>The <a href="http://molpopgen.github.io/fwdpp">fwdpp</a> main page contains several tutorials:</p>
+<ul>
+<li><a class="el" href="d5/d00/md_md_datatypes.html">Tutorial 0: Data types in fwdpp</a></li>
+<li><a class="el" href="d1/d7a/md_md_policies.html">Tutorial 1: Policies in fwdpp</a></li>
+<li><a class="el" href="de/dbc/md_md_multiloc.html">Tutorial 2: Implementing multilocus simulations</a></li>
+<li><a class="el" href="d5/d9d/md_md_serialization.html">Tutorial 3: Data serialization</a></li>
+<li><a class="el" href="d9/d5d/md_md_devtools.html">Tutorial 4: Starting projects based on fwdpp</a></li>
+<li><a class="el" href="db/dd8/md_md_sugar.html">Tutorial 5: the "sugar" layer on top of fwdpp</a></li>
+</ul>
 <h2>Built from source</h2>
 <p>The source code documentation is in the doc subdirectory that comes with the library. There are two major pieces of documentation. First is the detailed documentation of all library functions. This is generated via <a href="http://www.doxygen.org">doxygen</a>, and the output is a folder called html. To view the documentation, point a browser to html/index.html.</p>
-<p>A tutorial on writing policies is also build via doxygen. The source for the tutorial is a Markdown document (<a class="el" href="df/d75/policies_8md.html">doc/md/policies.md</a>).</p>
 <h2>Example documentation</h2>
 <p>The examples can be read in html form via the online reference manual linked to above. You can find the two simplest examples online at the fwdpp <a href="https://github.com/molpopgen/fwdpp/wiki">wiki</a> on github.</p>
 <h1>Dependencies</h1>
@@ -141,18 +151,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h2>Library dependencies</h2>
 <p>fwdpp depends upon the following libraries:</p>
 <ol type="1">
-<li><a href="http://www.boost.org">boost</a>. Note: use of boost is optional, but is the default. See below for more info.</li>
+<li><a href="http://www.boost.org">boost</a>. Note: use of boost is optional, but is the default.</li>
 <li><a href="http://gnu.org/software/gsl">GSL</a></li>
 <li><a href="http://zlib.net">zlib</a></li>
 <li><a href="http://github.com/molpopgen/libsequence">libsequence</a>.</li>
 </ol>
-<p>The first three are available as pre-built packages on most Linux distributions. The latter (libsequence) also depends on the first three, and must be built from source.</p>
+<p>The first three are available as pre-built packages on most Linux distributions and via <a href="http://github.com/Homebrew/homebrew-science">homebrew-science</a> on OS X . The latter (libsequence) also depends on the first three, and must be built from source or via <a href="http://github.com/Homebrew/homebrew-science">homebrew-science</a> on OS X.</p>
+<h3>Why use boost?</h3>
+<p>C++ containers (vectors, lists, etc.) are parameterized by the type of data that they store and the method use to allocate memory. Thus, when you declare:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="df/df8/diploid_8hh.html">diploid.hh</a>&gt;</span></div>
+<div class="line">std::list&lt; KTfwd::mutation &gt; <a class="code" href="dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>;</div>
+</div><!-- fragment --><p>you are really saying:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="df/df8/diploid_8hh.html">diploid.hh</a>&gt;</span></div>
+<div class="line">std::list&lt; KTfwd::mutation, std::allocator&lt;KTfwd::mutation&gt; &gt;</div>
+</div><!-- fragment --><p>Boost provides a memory pool allocator that can be used to greatly speed up simulations:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;boost/pool/pool_alloc.hpp&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="df/df8/diploid_8hh.html">diploid.hh</a>&gt;</span></div>
+<div class="line"><span class="comment">//You can also use boost::container::list instead of std::list, etc.</span></div>
+<div class="line">std::list&lt; KTfwd::mutation,boost::pool_allocator&lt;KTfwd::mutation&gt; &gt;</div>
+</div><!-- fragment --><p>The memory pool is more efficient than the standard allocator in the case where objects are constantly being allocated and deallocated, which is the case for forward simulations, where mutations are entering the population and often rapidly going extinct.</p>
+<p>Technically, if your write your own vector/list classes that are parameterized in the same way as the STL classes, then you may also (attempt to) use those with <b>fwdpp</b>. If such containers work, let me know. If they are really fast, let me know.</p>
 <h2>Obtaining the source code</h2>
 <h3>Obtaining the master branch</h3>
 <p>You have a few options:</p>
 <ol type="1">
 <li>Clone the repo (best option): git clone <a href="https://github.com/molpopgen/fwdpp.git">https://github.com/molpopgen/fwdpp.git</a></li>
-<li>Click on "Download Zip" at <a href="https://github.com/molpopgen/fwdpp">https://github.com/molpopgen/fwdpp</a> </li>
+<li>Click on "Download Zip" at <a href="https://github.com/molpopgen/fwdpp">https://github.com/molpopgen/fwdpp</a></li>
 </ol>
 <h3>Obtaining a specific release</h3>
 <p>Again, a few options:</p>
@@ -182,10 +209,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="fragment"><div class="line">make check</div>
 </div><!-- fragment --><p>Currently, the example programs will not get installed via "make install". If you want them to be installed system-wide, copy the binaries manually to where you need them.</p>
 <h2>To compile examples and install library without boost</h2>
-<div class="fragment"><div class="line">./configure --enable-standard=yes</div>
+<div class="fragment"><div class="line">./configure --enable-<a class="code" href="d3/dea/namespaceKTfwd_1_1tags.html#af816e12f7b8648716658bd3f7dbc5382ac00f0c4675b91fb8b918e4079a0b1bac">standard</a>=yes</div>
 <div class="line">make check</div>
 <div class="line">make install</div>
-</div><!-- fragment --><p>The option passed to the configure script will pass -DUSE_STANDARD_CONTAINERS to the C++ preprocessor. This symbol means that the example programs will be built using containers from the C++ standard library rather than from the boost libraries. The effect of this is roughly a 10% performance loss (e.g., simulations will take about 10% longer to run).</p>
+</div><!-- fragment --><p>The option passed to the configure script will pass -DUSE_STANDARD_CONTAINERS to the C++ preprocessor. This symbol means that the example programs will be built using containers from the C++ standard library rather than from the boost libraries. Not using boost's pool_allocator can result in substantial performance loss in simulations with high mutation and/or recombination rates.</p>
 <p>Related to the above note, it is worth installing boost on your system. Many of their libraries, especially program_options, will probably be worth using for simulations that you write.</p>
 <h2>If dependent libraries are in non-stanard locations.</h2>
 <p>For example, if libsequence is in /opt:</p>

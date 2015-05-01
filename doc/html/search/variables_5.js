@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['n',['n',['../d1/da4/structKTfwd_1_1mutation__base.html#a9df75224a5f00b97dc09e68b475a517a',1,'KTfwd::mutation_base::n()'],['../d6/d90/structKTfwd_1_1gamete__base.html#aa89b6422373719ef4888b71d40824190',1,'KTfwd::gamete_base::n()']]],
-  ['neutral',['neutral',['../d1/da4/structKTfwd_1_1mutation__base.html#acfb3b4c94516cbbc5c28a12e1ad575b3',1,'KTfwd::mutation_base']]]
+  ['h',['h',['../d1/d7f/structKTfwd_1_1mutation.html#a45166a8ac131f277f06a261f6e16f5a0',1,'KTfwd::mutation::h()'],['../dc/dcc/structKTfwd_1_1popgenmut.html#a60a395a305fd9d0a1f3da6b7b223bc10',1,'KTfwd::popgenmut::h()'],['../de/d4d/structmutation__with__age.html#ad3b51b282581737f217cbd918fa800dc',1,'mutation_with_age::h()']]]
 ];

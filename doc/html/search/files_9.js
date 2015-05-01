@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['readme_2emd',['README.md',['../d7/dce/unit_2README_8md.html',1,'']]],
-  ['readme_2emd',['README.md',['../da/ddd/README_8md.html',1,'']]],
-  ['rec_5fgamete_5fupdater_2ehpp',['rec_gamete_updater.hpp',['../d1/d01/rec__gamete__updater_8hpp.html',1,'']]],
-  ['recombination_5fcommon_2ehpp',['recombination_common.hpp',['../df/d26/recombination__common_8hpp.html',1,'']]],
-  ['recombination_5fmethods_5find_2ehpp',['recombination_methods_ind.hpp',['../d6/de4/recombination__methods__ind_8hpp.html',1,'']]],
-  ['release_5fnotes_2emd',['RELEASE_NOTES.md',['../d9/de4/RELEASE__NOTES_8md.html',1,'']]],
-  ['rhh_2ecc',['RHH.cc',['../d7/d2d/RHH_8cc.html',1,'']]]
+  ['pfix_2ecc',['pfix.cc',['../db/d4f/pfix_8cc.html',1,'']]],
+  ['policies_2emd',['policies.md',['../df/d75/policies_8md.html',1,'']]],
+  ['policytests_2ecc',['policyTests.cc',['../d7/daa/policyTests_8cc.html',1,'']]],
+  ['popgenmut_2ehpp',['popgenmut.hpp',['../d6/d96/popgenmut_8hpp.html',1,'']]]
 ];

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.9</span>
+   &#160;<span id="projectnumber">0.3.0</span>
    </div>
   </td>
  </tr>
@@ -68,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -195,10 +195,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">  assert(std::find_if(mutations-&gt;begin(),mutations-&gt;end(),std::bind(<a name="_a9"></a><a class="code" href="../../d5/d1a/structKTfwd_1_1mutation__at__pos.html">KTfwd::mutation_at_pos</a>(),std::placeholders::_1,pos)) == mutations-&gt;end());</div>
 <div class="line"></div>
 <div class="line">  <span class="comment">//return constructor call to mutation type</span></div>
-<div class="line">  <span class="keywordflow">return</span> <a class="code" href="../../de/d4d/structmutation__with__age.html">mutation_with_age</a>(generation,pos,1,<span class="keyword">true</span>);</div>
+<div class="line">  <span class="keywordflow">return</span> <a name="a10"></a><a class="code" href="../../d0/db9/sugar1_8cc.html#a26022ef252703a27f414647b9ad246a8">mutation_with_age</a>(generation,pos,1,<span class="keyword">true</span>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> <a name="a10"></a><a class="code" href="../../d8/df7/diploid_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv)</div>
+<div class="line"><span class="keywordtype">int</span> <a name="a11"></a><a class="code" href="../../d8/df7/diploid_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv)</div>
 <div class="line">{</div>
 <div class="line">  <span class="keywordflow">if</span> (argc != 8)</div>
 <div class="line">    {</div>
@@ -243,7 +243,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">  <span class="keywordflow">while</span>(nreps--)</div>
 <div class="line">    {</div>
 <div class="line">      <span class="comment">//the population begins with 1 gamete with no mutations amd initial count 2N</span></div>
-<div class="line">      <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#afd5b74e0108d624225532de98a470a36">gvector</a> gametes(1,<a name="a11"></a><a class="code" href="../../d1/dbe/crossoverTest_8cc.html#ace9428d4aa6205eaf777c2c9f398d9ea">gtype</a>(twoN));</div>
+<div class="line">      <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#afd5b74e0108d624225532de98a470a36">gvector</a> gametes(1,<a name="a12"></a><a class="code" href="../../d1/dbe/crossoverTest_8cc.html#ace9428d4aa6205eaf777c2c9f398d9ea">gtype</a>(twoN));</div>
 <div class="line">      gametes.reserve(twoN);</div>
 <div class="line">      <a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a> mutations;  <span class="comment">//the population is devoid of mutations</span></div>
 <div class="line">      std::vector&lt;mtype&gt; fixations;  <span class="comment">//store mutation that fix.  Passed to KTfwd::remove_fixed_lost</span></div>
@@ -254,7 +254,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">      <span class="keywordflow">for</span>( generation = 0; generation &lt; ngens; ++generation )</div>
 <div class="line">        {</div>
 <div class="line">          <span class="comment">//Sample gamete frequencies proportional to fitness/(population mean fitness, aka wbar).  wbar is the return value</span></div>
-<div class="line">          wbar = <a name="a12"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a946efaa4a6095f4f2aadda44a809a477">KTfwd::sample_diploid</a>(r,&amp;gametes,twoN,</div>
+<div class="line">          wbar = <a name="a13"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a946efaa4a6095f4f2aadda44a809a477">KTfwd::sample_diploid</a>(r,&amp;gametes,twoN,</div>
 <div class="line">                                       <span class="comment">/*</span></div>
 <div class="line"><span class="comment">                                         Fitness is multiplicative over sites.</span></div>
 <div class="line"><span class="comment"></span></div>
@@ -271,7 +271,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="comment">                                         function is called anyways to illustrate it as multiplicative</span></div>
 <div class="line"><span class="comment">                                         models are very common in population genetics</span></div>
 <div class="line"><span class="comment">                                       */</span></div>
-<div class="line">                                       std::bind(<a name="_a13"></a><a class="code" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html">KTfwd::multiplicative_diploid</a>(),std::placeholders::_1,std::placeholders::_2,2.), </div>
+<div class="line">                                       std::bind(<a name="_a14"></a><a class="code" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html">KTfwd::multiplicative_diploid</a>(),std::placeholders::_1,std::placeholders::_2,2.), </div>
 <div class="line">                                       <span class="comment">/*</span></div>
 <div class="line"><span class="comment">                                         For each gamete still extant afte sampling,</span></div>
 <div class="line"><span class="comment">                                         remove the pointers to any mutations that have </span></div>
@@ -288,7 +288,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="comment">                                         are just a constant applied to everyone&#39;s fitness, so we </span></div>
 <div class="line"><span class="comment">                                         can remove them, making the simulation faster, etc.</span></div>
 <div class="line"><span class="comment">                                       */</span></div>
-<div class="line">                                       std::bind(<a name="_a14"></a><a class="code" href="../../d4/de8/structKTfwd_1_1mutation__remover.html">KTfwd::mutation_remover</a>(),std::placeholders::_1,0,twoN));       </div>
+<div class="line">                                       std::bind(<a name="_a15"></a><a class="code" href="../../d4/de8/structKTfwd_1_1mutation__remover.html">KTfwd::mutation_remover</a>(),std::placeholders::_1,0,twoN));       </div>
 <div class="line"></div>
 <div class="line">          <span class="comment">/*</span></div>
 <div class="line"><span class="comment">            Clean up the mutation list to remove any mutations fixed or lost.</span></div>
@@ -298,16 +298,16 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="comment">            replace the line below with:</span></div>
 <div class="line"><span class="comment">            KTfwd::remove_lost(&amp;mutations);</span></div>
 <div class="line"><span class="comment">          */</span></div>
-<div class="line">          <a name="a15"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a84e666ea27d38bdfc539ffd23653eaa9">KTfwd::remove_fixed_lost</a>(&amp;mutations,&amp;fixations,&amp;fixation_times,&amp;lookup,generation,twoN);</div>
+<div class="line">          <a name="a16"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a84e666ea27d38bdfc539ffd23653eaa9">KTfwd::remove_fixed_lost</a>(&amp;mutations,&amp;fixations,&amp;fixation_times,&amp;lookup,generation,twoN);</div>
 <div class="line">          assert( lookup.size() == mutations.size() );</div>
 <div class="line"></div>
 <div class="line">          <span class="comment">//if all is going well, the (sum of the counts of each gamete) == twoN, otherwise we have a problem and must abort.</span></div>
-<div class="line">          assert(<a name="a16"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a728e20cb60f82b818b5cc570722079a4">KTfwd::check_sum</a>(gametes,twoN));</div>
+<div class="line">          assert(<a name="a17"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a728e20cb60f82b818b5cc570722079a4">KTfwd::check_sum</a>(gametes,twoN));</div>
 <div class="line"></div>
 <div class="line"></div>
 <div class="line"></div>
 <div class="line">          <span class="comment">//Mutate the gamete pool</span></div>
-<div class="line">          <span class="keywordtype">unsigned</span> nmuts = <a name="a17"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a9566be0bd568e2e75b02b1f46457c25c">KTfwd::mutate</a>(r,&amp;gametes,&amp;mutations,mu,</div>
+<div class="line">          <span class="keywordtype">unsigned</span> nmuts = <a name="a18"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a9566be0bd568e2e75b02b1f46457c25c">KTfwd::mutate</a>(r,&amp;gametes,&amp;mutations,mu,</div>
 <div class="line">                                         <span class="comment">/*</span></div>
 <div class="line"><span class="comment">                                           The mutation model (defined above) will pass each gamete</span></div>
 <div class="line"><span class="comment">                                           to be mutated to the mutation model function.  Again, _1</span></div>
@@ -332,7 +332,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"></div>
 <div class="line">          <span class="comment">//Recombination</span></div>
 <div class="line">          <span class="comment">//unsigned nrec = KTfwd::recombine_test_not_inserting_as_much(r, </span></div>
-<div class="line">          <span class="keywordtype">unsigned</span> nrec = <a name="a18"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a41bccb4fd1108616d626e371c3cf83c4">KTfwd::recombine</a>(r, </div>
+<div class="line">          <span class="keywordtype">unsigned</span> nrec = <a name="a19"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a41bccb4fd1108616d626e371c3cf83c4">KTfwd::recombine</a>(r, </div>
 <div class="line">                                           &amp;gametes,</div>
 <div class="line">                                           twoN, </div>
 <div class="line">                                           littler, </div>
@@ -342,7 +342,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">        }</div>
 <div class="line">      Sequence::SimData sdata;</div>
 <div class="line"></div>
-<div class="line">      std::vector&lt;std::pair&lt;double,std::string&gt; &gt; mslike = <a name="a19"></a><a class="code" href="../../d7/d86/group__samplingPopsGamete.html#gae5656f2b4685348222718deff1f24997">KTfwd::ms_sample</a>(r,&amp;gametes,samplesize1,twoN,<span class="keyword">true</span>);</div>
+<div class="line">      std::vector&lt;std::pair&lt;double,std::string&gt; &gt; mslike = <a name="a20"></a><a class="code" href="../../d7/d86/group__samplingPopsGamete.html#gae5656f2b4685348222718deff1f24997">KTfwd::ms_sample</a>(r,&amp;gametes,samplesize1,twoN,<span class="keyword">true</span>);</div>
 <div class="line"></div>
 <div class="line">      <span class="keywordflow">if</span>(!mslike.empty())</div>
 <div class="line">        {</div>

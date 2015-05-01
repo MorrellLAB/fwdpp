@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.9</span>
+   &#160;<span id="projectnumber">0.3.0</span>
    </div>
   </td>
  </tr>
@@ -73,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -121,7 +121,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">    there are two mutations at the same site.  This function attempts to control that in the following way:  If </span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">    three mutations in the file are at positions A, A, and B, then the positions are converted to ,A, A + (B-A)/2, and B.</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">template</span>&lt; <span class="keyword">typename</span> gamete_type,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">template</span>&lt; <span class="keyword">typename</span> <a class="code" href="../../d3/dea/namespaceKTfwd_1_1tags.html#af816e12f7b8648716658bd3f7dbc5382">gamete_type</a>,</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keyword">typename</span> vector_allocator_type,</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keyword">typename</span> mutation_type,</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keyword">typename</span> list_allocator_type,</div>
@@ -173,7 +173,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      {</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">unsigned</span> c = std::count(d.begin(),std::min(d.begin()+max_chroms,d.end()),*i);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="comment">//now, create this gamete and fill its neutral mutations list</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        gamete_type g(c);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="../../d3/dea/namespaceKTfwd_1_1tags.html#af816e12f7b8648716658bd3f7dbc5382">gamete_type</a> g(c);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">for</span>( std::string::const_iterator j = i-&gt;begin() ; j != i-&gt;end() ; ++j )</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;          {</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">if</span>( *j == <span class="charliteral">&#39;1&#39;</span> )<span class="comment">//is a derived mutation</span></div>
@@ -196,6 +196,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="namespaceKTfwd_html_af05d39195307329f16205963a265b41f"><div class="ttname"><a href="../../da/d8b/namespaceKTfwd.html#af05d39195307329f16205963a265b41f">KTfwd::init_with_ms</a></div><div class="ttdeci">void init_with_ms(Sequence::SimData &amp;d, vector_type&lt; gamete_type, vector_allocator_type &gt; *gametes, list_type&lt; mutation_type, list_allocator_type &gt; *mutations, const unsigned &amp;max_chroms=std::numeric_limits&lt; unsigned &gt;::max())</div><div class="ttdoc">Initialize a population with results from a coalescent simulation Takes an object of type Sequence::S...</div><div class="ttdef"><b>Definition:</b> initms.hpp:36</div></div>
 <div class="ttc" id="forward__types_8hpp_html"><div class="ttname"><a href="../../d5/d1d/forward__types_8hpp.html">forward_types.hpp</a></div></div>
+<div class="ttc" id="namespaceKTfwd_1_1tags_html_af816e12f7b8648716658bd3f7dbc5382"><div class="ttname"><a href="../../d3/dea/namespaceKTfwd_1_1tags.html#af816e12f7b8648716658bd3f7dbc5382">KTfwd::tags::gamete_type</a></div><div class="ttdeci">gamete_type</div><div class="ttdoc">Built-in types of gametes for which dispatch tags exist. </div><div class="ttdef"><b>Definition:</b> gamete_tags.hpp:7</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

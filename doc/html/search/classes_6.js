@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['local_5finsert_5fat_5fend2',['local_insert_at_end2',['../da/dec/structlocal__insert__at__end2.html',1,'']]]
+  ['infsites',['infsites',['../df/d07/structKTfwd_1_1infsites.html',1,'KTfwd']]],
+  ['insert_5funique',['insert_unique',['../dd/dff/structKTfwd_1_1insert__unique.html',1,'KTfwd']]]
 ];

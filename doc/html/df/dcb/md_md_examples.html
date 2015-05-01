@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.9</span>
+   &#160;<span id="projectnumber">0.3.0</span>
    </div>
   </td>
  </tr>
@@ -67,7 +67,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,6 +83,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>The best documentation of how to use the library are the example simulations in the examples/ subdirectory.</p>
+<p>Example programs with _ind in their name are individual-based. Otherwise, they are gamete-based.</p>
+<p>The individual-based programs represent the best/most efficient way to use <b>fwdpp</b>. The others are here for legacy purposes.</p>
 <h3>Compiling the examples:</h3>
 <p>As of fwdpp 0.2.5, the examples are compiled by saying "make check" after the configure step.</p>
 <h3>Running the examples:</h3>
@@ -96,15 +98,15 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
  seed = a random number seed. I will use $RANDOM as a seed, referring to the bash shell method to return a random integer.<br/>
 </p>
 <p>Note: familiarity with Hudson's "[ms](http://home.uchicago.edu/~rhudson1)" program is helpful for some of what comes below.</p>
-<h4>diploid</h4>
+<h4>diploid (<a class="el" href="../../d8/df7/diploid_8cc.html">diploid.cc</a>)</h4>
 <p>The first program, diploid, simulates a Wright-Fisher population with mutation, recombination, and drift. To run it:</p>
 <div class="fragment"><div class="line">./diploid N theta rho g n nreps seed | gzip &gt; outfile.gz</div>
 </div><!-- fragment --><p>The data in outfile.gz will be in the same format as Dick Hudson's "ms" coalescent simulator.</p>
 <p>Example:</p>
 <div class="fragment"><div class="line">./diploid 10000 10 10 100000 50 1 $RANDOM | gzip &gt; test_diploid.gz</div>
-</div><!-- fragment --><h4>diploid_ind</h4>
+</div><!-- fragment --><h4>diploid_ind (<a class="el" href="../../d9/de8/diploid__ind_8cc.html">diploid_ind.cc</a>)</h4>
 <p>Identical to diploids, but uses the individual-based sampler. As this program (and diploid) simulate neutral models, this program will typically be slower than that gamete-based implementation when N is large.</p>
-<h4>diploid_binaryIO</h4>
+<h4>diploid_binaryIO (<a class="el" href="../../db/d0c/diploid__binaryIO_8cc.html">diploid_binaryIO.cc</a>)</h4>
 <p>The next program is called diploid_binaryIO. This program is identical to diploid, except that it only simulates one replicate at a time, creates two output files, and outputs the entire population rather than a sample of size n &lt;&lt; 2N. The first file is an index file, containing an integer representing the replicate number of the output and the position in the haplotypes file where this record begins. The second file is the haplotypes file, which contains the entire population in binary format.</p>
 <p>Usage:</p>
 <div class="fragment"><div class="line">./diploid_binaryIO N theta rho g replicate\_number index\_filename haplotype\_filename seed.</div>
@@ -117,26 +119,26 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --><p>#note: the below assumes that the binary is in the users's $PATH and that the GE system knows how to link it to the relevant dynamic libraries</p>
 <div class="fragment"><div class="line">diploid_binaryIO 10000 10 10 100000 $SGE_TASK_ID indexfile hapfile $seed</div>
 </div><!-- fragment --><p>The above script, when submitted to a Grid Engine queue, will result in 100 populations of size N=10,000 being written to hapfile. Further, “indexfile” will contain the ID number and position of each file. Records are not over-written because the program uses POSIX file locking to ensure that only 1 process at a time can do the writing. This is a complex program, as it mixes C++ objects with output streams such that they can be written to C-style file descriptors, which is required in order to use file locking (which is a C feature with no C++ analog). However, the advantage is that you write all data to one large file, avoiding the plague of lots of small files that can bring distributed file systems to their knees.</p>
-<h4>diploid_binaryIO_ind</h4>
+<h4>diploid_binaryIO_ind (<a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html">diploid_binaryIO_ind.cc</a>)</h4>
 <p>Identical to diploid_binaryIO, but individual-based.</p>
-<h4>diploid_fixed_sh</h4>
+<h4>diploid_fixed_sh (<a class="el" href="../../d1/de0/diploid__fixed__sh_8cc.html">diploid_fixed_sh.cc</a>)</h4>
 <p>This program is similar to diploid, but adds an additional mutation rate (theta_selected = 4Nu_s, where u_s is the mutation rate per gamete per generation to mutations with selection coefficient s) to mutations with selection coefficient s and dominance h. Fitness across sites is multiplicative. The output is in "ms" format&ndash;one block for neutral mutations followed by one block for selected mutations.</p>
 <p>Usage:</p>
 <div class="fragment"><div class="line">./dipoid_fixed_sh N theta theta_selected rho s h g n nreps seed | gzip &gt; outfile.gz</div>
 </div><!-- fragment --><p>For this program, s can be positive or negative, as can h.</p>
-<h4>diploid_fixed_sh_ind and diploid_fixed_sh_lambda</h4>
+<h4>diploid_fixed_sh_ind (<a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc.html">diploid_fixed_sh_ind.cc</a>) and diploid_fixed_sh_ind_lambda (<a class="el" href="../../df/d55/diploid__fixed__sh__ind__lambda_8cc.html">diploid_fixed_sh_ind_lambda.cc</a>)</h4>
 <p>Identical to diploid_fixed_sh, but based on the individual-based sampler.</p>
 <p>These two programs are identical in function, but differ in that the former is implemented using std::bind and the latter using lambda expressions.</p>
-<h4>diploid_twopop_mig</h4>
+<h4>diploid_twopop_mig (<a class="el" href="../../dd/de1/diploid__twopop__mig_8cc.html">diploid_twopop_mig.cc</a>)</h4>
 <p>This program simulates an ancestral population for g generations, at which point a daughter population of size N is “budded” off from the ancestral population. Evolution continues for g2 more generations, with symmetric migration at rate M = 4Nm, where m is the migration rate per diploid per generation. The output is in "ms" format, with n haplotypes per sample just like how ms outputs data for multi-population models.</p>
 <p>Usage:</p>
 <div class="fragment"><div class="line">./diploid_twopop_mig N theta rho g g2 M n nreps seed | gzip &gt; outfile.gz</div>
 </div><!-- fragment --><p>Note: the demographic model here implemented may be viewed as biologically bizarre, as it mimics the default behavior of “ms” for population split models. Let’s compare a specific example vs. the equivalent ms command line:</p>
-<div class="fragment"><div class="line">./diplod_twopop_mig 10000 50 50 100000 1000 1 50 1 $RANDOM | gzip &gt; outfile.gz</div>
+<div class="fragment"><div class="line">./diploid_twopop_mig 10000 50 50 100000 1000 1 50 1 $RANDOM | gzip &gt; outfile.gz</div>
 </div><!-- fragment --><p>and</p>
 <div class="fragment"><div class="line">ms 100 1 -t 50 -r 50 1000 -I 2 2 1 -ej 0.025 2 1 -em 0.025 1 2 0.</div>
 </div><!-- fragment --><p>Why may this be considered odd? In ms, when two populations are merged, the rate of coalescence is unaffected by default (this behavior is documented, and it is up to the user to adjust population sizes when population merge and split in ms). That means when the two populations, each of size N merge, the merged (ancestral) population is still of size N. diploid_twopop_mig is doing the same thing forwards in time: an ancestral population of size N magically changes into two populations of size N.</p>
-<h4>migsel_ind</h4>
+<h4>migsel_ind (<a class="el" href="../../df/dfa/migsel__ind_8cc.html">migsel_ind.cc</a>)</h4>
 <p>Simulates 2 equal-sized populations of size N (N remains constant over time) diploids with selection at strength s and dominance h. Migration occurs between the two populations.</p>
 <p><em>Note that the two populations never share a common ancestor in this simulation! In other words, deme 1 is never founded by a sampling event from deme 0. This means that if you simulate for a short period of time, it is unlikely that there is a MRCA common to all individuals sampled. (See comment above about appropriateness of these examples for research...)</em></p>
 <p>Usage:</p>
@@ -149,7 +151,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <li>Two "ms"-format blocks of size 2*n. These are for neutral and selected mutations, respectively. Within each block, the first n haplotypes are from deme 1 and the second n are from deme 2.</li>
 </ol>
 <p>The program writes the data to the output file and then reads it in again. This is mainly to illustrate the binary I/O routines for individual-based metapopulation simulations.</p>
-<h4>migsel_split_ind and migsel_split_ind_list</h4>
+<h4>migsel_split_ind (<a class="el" href="../../d8/d60/migsel__split__ind_8cc.html">migsel_split_ind.cc</a>) and migsel_split_ind_list (<a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc.html">migsel_split_ind_list.cc</a>)</h4>
+<p><b>NOTE:</b> migsel_split_ind is not longer compiled as of fwdpp 0.3.0. It may be resurrected in the future.</p>
 <p>Simulates a constant-sized population of N diploids with selection at strength s and dominance h for ngens generations. Then, a copy is made of the population, and the two demes are simulated with migration for another ngens2 generations.</p>
 <p>These two programs also serialize their data, read the copied data back, and make sure that input equals output.</p>
 <p>These two examples are hints on how to code up "IM"-like models.</p>
@@ -158,7 +161,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --><div class="fragment"><div class="line">./migsel_split_ind_list N 4Nu_neut 4Nu_sel 4Nr 4Nm s h f1 f2 ngens ngens2 n seed</div>
 </div><!-- fragment --><p>where: N = population number for each deme. 4Nu_neut = 4N times the neutral mutation rate per gamete 4Nu_sel = 4N times the mutation rate per gamete to selected mutations 4Nr = 4N times the recombination rate per diploid per region per generation 4Nm = 4N times the probability of migration per diploid per generation s = the selection coefficient of newly-arising selected mutations h = dominance of newly-arising selected mutations f1 and f2 are the probabilities of inbreeding in deme 1 and 2, respectively ngens = # of generations to simulate ngens2 = # of generations to simulate after the split n = sample size to take from each deme @ end of simulation (must be even #) seed = random number seed.</p>
 <p>Notes: s is taken to be s in deme 1 and -s in deme 2. This lets me illustrate how different fitness functions can be passed to different demes using fwdpp.</p>
-<h4>RHH</h4>
+<h4>RHH (<a class="el" href="../../d7/d2d/RHH_8cc.html">RHH.cc</a>)</h4>
 <p>This program simulates the "recurrent hitch-hiking" model in which the expected number of fixations of beneficial codominant mutations per site per 4N generations is Lambda. The output is ms-format (just one block for neutral mutations). This model is one of the most thoroughly-studied models of the effect of selection on linked variation. See, for example:</p>
 <ol type="1">
 <li>Wiehe, T. H. and W. Stephan, 1993 Analysis of a genetic hitchhiking model, and its application to DNA polymorphism data from Drosophila melanogaster. Molecular Biology and Evolution 10: 842–854.</li>
@@ -173,7 +176,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <p>Usage:</p>
 <div class="fragment"><div class="line">./RHH N theta rho L s Lambda g1 g2 n nreps seed | gzip &gt; outfile.gz</div>
 </div><!-- fragment --><p>Note: many of the well-known formulas for the effect of RHH on linked, neutral variation make very strong assumptions about the parameter values. For example, N needs to be large and s needs to be small, but Ns needs to be large. Further, Lambda needs to be sufficiently small such that sweeps are independent in time. This means that plugging in values to this program and comparing to theoretical predictions may lead to apparent discrepancies. This is also the case with various coalescent simulations of RHH.</p>
-<h4>bneck_selection_ind</h4>
+<h4>bneck_selection_ind (<a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html">bneck_selection_ind.cc</a>)</h4>
 <p>This program simulates a population for g generations at size N. In generation g+1, N changes to N2 &lt;= N. The population then grows exponentially to size N3 &gt;= N2 in g2 generations. Selected and neutral mutations are allowed each generation. The output is in “ms” format&ndash;one block for neutral mutations followed by one block for selected mutations.</p>
 <p>Usage:</p>
 <div class="fragment"><div class="line">./bneck_selection_ind N theta_neutral theta_sel rho s h g1 N2 N3 g2 n nreps seed</div>
@@ -191,7 +194,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
  nreps = # replicates to simulate<br/>
  seed = random number seed.<br/>
 </p>
-<h4>TFL2013</h4>
+<h4>TFL2013 (<a class="el" href="../../df/da3/TFL2013_8cc.html">TFL2013.cc</a>)</h4>
 <p>This is the simulation from Thornton, Foran, and Long (2013) Properties and Modeling of GWAS when Complex Disease Risk Is Due to Non-Complementing, Deleterious Mutations in Genes of Large Effect. PLoS Genetics 9: e1003258. The manuscript is available <a href="http://www.plosgenetics.org/article/info%3Adoi%2F10.1371%2Fjournal.pgen.1003258">here</a>. See that paper for modeling details.</p>
 <p>Usage:</p>
 <div class="fragment"><div class="line">./TFL2013 N mu_disease mu_neutral littler esize dist sdE sdS burnin evolve msfile phenofile effectfile</div>
@@ -213,17 +216,17 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <p>Example from the PLoS Genetics paper:</p>
 <div class="fragment"><div class="line">./TFL2013 20000 0.000125 0.00125 0.00125 0.5 1 0.075 1 0 160000 msfile.gz phenotypes.gz effects.gz</div>
 </div><!-- fragment --><p>will simulate a mean effect size of 0.5 (exponentially-distributed). The above will take probably many hours to run.</p>
-<h4>diploid_ind_2locus</h4>
-<p>This program simulates a 2-locus neutral model. Mutations arise at rate <img class="formulaInl" alt="$\theta$" src="../../form_4.png"/> at each locus, and each locus recombines at rate <img class="formulaInl" alt="$\rho$" src="../../form_5.png"/>. The recombination rate between loci is <img class="formulaInl" alt="$r_{bw}$" src="../../form_6.png"/>, which corresponds to the probability a crossover is observed between loci. In other words, the genotypes at the two loci will switch from </p>
+<h4>diploid_ind_2locus (<a class="el" href="../../de/dce/diploid__ind__2locus_8cc.html">diploid_ind_2locus.cc</a>)</h4>
+<p>This program simulates a 2-locus neutral model. Mutations arise at rate <img class="formulaInl" alt="$\theta$" src="../../form_5.png"/> at each locus, and each locus recombines at rate <img class="formulaInl" alt="$\rho$" src="../../form_6.png"/>. The recombination rate between loci is <img class="formulaInl" alt="$r_{bw}$" src="../../form_7.png"/>, which corresponds to the probability a crossover is observed between loci. In other words, the genotypes at the two loci will switch from </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[\frac{AB}{ab}\]" src="../../form_7.png"/>
+<img class="formulaDsp" alt="\[\frac{AB}{ab}\]" src="../../form_8.png"/>
 </p>
 <p> to </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[\frac{Ab}{aB}\]" src="../../form_8.png"/>
+<img class="formulaDsp" alt="\[\frac{Ab}{aB}\]" src="../../form_9.png"/>
 </p>
-<p> with probability <img class="formulaInl" alt="$r_{bw}$" src="../../form_6.png"/>.</p>
-<p>The output of the simulation is an "ms"-style block for each locus. Positions are uniform on the interval <img class="formulaInl" alt="$[0,1)$" src="../../form_9.png"/> at locus 1, and uniform on the interval <img class="formulaInl" alt="$[1,2)$" src="../../form_10.png"/> at locus 2.</p>
+<p> with probability <img class="formulaInl" alt="$r_{bw}$" src="../../form_7.png"/>.</p>
+<p>The output of the simulation is an "ms"-style block for each locus. Positions are uniform on the interval <img class="formulaInl" alt="$[0,1)$" src="../../form_10.png"/> at locus 1, and uniform on the interval <img class="formulaInl" alt="$[1,2)$" src="../../form_11.png"/> at locus 2.</p>
 <p>The usage is:</p>
 <div class="fragment"><div class="line">Usage:</div>
 <div class="line">./diploid_ind_2locus N theta rho ngens n nreps seed</div>
@@ -236,7 +239,25 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">n = the sample size to pull from the population at the end of each simulated replicate</div>
 <div class="line">nreps = the number of replicates to simulated</div>
 <div class="line">seed = seed value <span class="keywordflow">for</span> random number generations</div>
-</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- fragment --><h4>HOC_ind (<a class="el" href="../../d5/d77/HOC__ind_8cc.html">HOC_ind.cc</a>)</h4>
+<p>This program simulates a little twist on Turelli's House-of-Cards (HOC) model. The main point of this model is to demonstrate how to use <a class="el" href="../../d3/dea/namespaceKTfwd_1_1tags.html#a3a3fa40df798bba498b12ed778caeb80" title="Gamete-dependent mutation model tag. ">KTfwd::tags::gamete_dependent</a> to implement mutation models that depend on the current gamete state.</p>
+<p>In a typical HOC model (Kingman), the effect size of a mutated allele is a new draw from a Gaussian distribution. In this simulation, the current effect size of an allele, before mutation, is additive over causative mutations, with sum <img class="formulaInl" alt="$y$" src="../../form_12.png"/>. After the addition of a single mutation, its new effect size will be <img class="formulaInl" alt="$x$" src="../../form_13.png"/>, and thus the effect size of the new mutation, <img class="formulaInl" alt="$e$" src="../../form_14.png"/>, is chosen such that <img class="formulaInl" alt="$x = y+e$" src="../../form_15.png"/>.</p>
+<p>The fitness model here is Gaussian stabilizing selection with a mean of 0 and a standard deviation of 1. With this fitness function and the additive model of Turelli, <img class="formulaInl" alt="$V(G) \approx 4\mu$" src="../../form_16.png"/> when the ratio of the variance in effect sizes over the variance in fitness falls within a certain range. That approximation seems to hold, at least roughly, for this odd method of generating the effect sizes of new variants. For example, these commands return a mean of approximately <img class="formulaInl" alt="$4 \times 10^{-4}$" src="../../form_17.png"/></p>
+<div class="fragment"><div class="line"><span class="preprocessor">#Generate 100 seeds</span></div>
+<div class="line"><span class="preprocessor"></span>Rscript -e <span class="stringliteral">&quot;cat(as.integer(runif(1e2,0,1e6)),sep=\&quot;\n\&quot;)&quot;</span> &gt; seeds</div>
+<div class="line"><span class="preprocessor">#run jobs in parallel on a 4-core machine, write VG to a file</span></div>
+<div class="line"><span class="preprocessor">parallel --jobs 4 ./HOC_ind 10000 0.0001 0.25 0 100000 1 {} :::: seeds &gt; VG.txt</span></div>
+</div><!-- fragment --><p>The usage is:</p>
+<div class="fragment"><div class="line">Usage: ./HOC_ind N mu sigmu rho ngens nreps seed</div>
+<div class="line">where:</div>
+<div class="line">N = diploid population size</div>
+<div class="line">mu = mutation rate to variants affecting fitness</div>
+<div class="line">sigmu = <a class="code" href="../../d3/dea/namespaceKTfwd_1_1tags.html#af816e12f7b8648716658bd3f7dbc5382ac00f0c4675b91fb8b918e4079a0b1bac">standard</a> deviation of effect sizes.  E ~ N(0,sigmu^2)</div>
+<div class="line">r = recombination rate (per diploid, per generation)</div>
+<div class="line">nreps = number of replicates to simulate</div>
+<div class="line">seed = random number seed</div>
+</div><!-- fragment --><p>The only output is <img class="formulaInl" alt="$V(G)$" src="../../form_18.png"/>, the genetic variance in fitness, which is written to stdout for each replicate. </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

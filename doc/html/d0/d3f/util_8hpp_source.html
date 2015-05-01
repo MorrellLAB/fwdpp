@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.9</span>
+   &#160;<span id="projectnumber">0.3.0</span>
    </div>
   </td>
  </tr>
@@ -73,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -117,7 +117,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span>KTfwd</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">template</span>&lt; <span class="keyword">typename</span> gamete_type,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">template</span>&lt; <span class="keyword">typename</span> <a class="code" href="../../d3/dea/namespaceKTfwd_1_1tags.html#af816e12f7b8648716658bd3f7dbc5382">gamete_type</a>,</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keyword">typename</span> gamete_allocator_type,</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keyword">typename</span> gamete_allocator_type2,</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keyword">typename</span> mutation_type,</div>
@@ -160,7 +160,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      {</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="comment">//copy construct so that all public, etc., data</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="comment">//are properly initialized</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        gamete_type new_gamete(*i);<span class="comment">//gametes[i]);</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="../../d3/dea/namespaceKTfwd_1_1tags.html#af816e12f7b8648716658bd3f7dbc5382">gamete_type</a> new_gamete(*i);<span class="comment">//gametes[i]);</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        new_gamete.mutations.clear();</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        new_gamete.smutations.clear();</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">for</span>(gciterator itr = i-&gt;mutations.begin() ; </div>
@@ -360,7 +360,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="comment">  /*! \brief Pick a gamete proportional to its frequency</span></div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="comment">    Pick a gamete proportional to its frequency</span></div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  <span class="keyword">template</span>&lt; <span class="keyword">typename</span> gamete_type,</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  <span class="keyword">template</span>&lt; <span class="keyword">typename</span> <a class="code" href="../../d3/dea/namespaceKTfwd_1_1tags.html#af816e12f7b8648716658bd3f7dbc5382">gamete_type</a>,</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            <span class="keyword">typename</span> vector_type_allocator,</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span>,<span class="keyword">typename</span>&gt; <span class="keyword">class </span>vector_type &gt; </div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <span class="keyword">typename</span> vector_type&lt;gamete_type,vector_type_allocator&gt;::iterator</div>
@@ -374,7 +374,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="preprocessor"></span>    <span class="keywordtype">size_t</span> i = 0;</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    std::for_each(gametes-&gt;cbegin(),gametes-&gt;cend(),</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                  [&amp;i,&amp;freqs](<span class="keyword">const</span> gamete_type &amp; __g) {</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                  [&amp;i,&amp;freqs](<span class="keyword">const</span> <a class="code" href="../../d3/dea/namespaceKTfwd_1_1tags.html#af816e12f7b8648716658bd3f7dbc5382">gamete_type</a> &amp; __g) {</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                    freqs[i++]=__g.n;</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                  });</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <a class="code" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a918c9bb71df790dfa5e93683339620f2">fwdpp_internal::gsl_ran_discrete_t_ptr</a> lookup(gsl_ran_discrete_preproc(gametes-&gt;size(),&amp;freqs[0]));</div>
@@ -382,7 +382,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keywordflow">return</span> rv;</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  }</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                                                                                  </div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  <span class="keyword">template</span>&lt; <span class="keyword">typename</span> gamete_type,</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  <span class="keyword">template</span>&lt; <span class="keyword">typename</span> <a class="code" href="../../d3/dea/namespaceKTfwd_1_1tags.html#af816e12f7b8648716658bd3f7dbc5382">gamete_type</a>,</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            <span class="keyword">typename</span> vector_type_allocator,</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            <span class="keyword">typename</span> mutation_removal_policy,</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span>,<span class="keyword">typename</span>&gt; <span class="keyword">class </span>vector_type &gt;</div>
@@ -396,7 +396,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                   gametes-&gt;end()); </div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="preprocessor">#ifndef NDEBUG</span></div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="preprocessor"></span>    std::for_each( gametes-&gt;begin(),gametes-&gt;end(),[&amp;mrp](gamete_type &amp; __g) {</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="preprocessor"></span>    std::for_each( gametes-&gt;begin(),gametes-&gt;end(),[&amp;mrp](<a class="code" href="../../d3/dea/namespaceKTfwd_1_1tags.html#af816e12f7b8648716658bd3f7dbc5382">gamete_type</a> &amp; __g) {</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        __g.mutations.erase(std::remove_if( __g.mutations.begin(),</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                                            __g.mutations.end(),std::cref(mrp) ),</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                            __g.mutations.end());</div>
@@ -446,12 +446,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="forward__types_8hpp_html"><div class="ttname"><a href="../../d5/d1d/forward__types_8hpp.html">forward_types.hpp</a></div></div>
 <div class="ttc" id="structKTfwd_1_1n__is__zero_html"><div class="ttname"><a href="../../d4/dc3/structKTfwd_1_1n__is__zero.html">KTfwd::n_is_zero</a></div><div class="ttdoc">Returns true if member n == 0 Used internally. </div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:17</div></div>
 <div class="ttc" id="namespaceKTfwd_1_1fwdpp__internal_html_a918c9bb71df790dfa5e93683339620f2"><div class="ttname"><a href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a918c9bb71df790dfa5e93683339620f2">KTfwd::fwdpp_internal::gsl_ran_discrete_t_ptr</a></div><div class="ttdeci">std::unique_ptr&lt; gsl_ran_discrete_t, gsl_ran_discrete_t_deleter &gt; gsl_ran_discrete_t_ptr</div><div class="ttdef"><b>Definition:</b> gsl_discrete.hpp:25</div></div>
+<div class="ttc" id="namespaceKTfwd_1_1tags_html_af816e12f7b8648716658bd3f7dbc5382"><div class="ttname"><a href="../../d3/dea/namespaceKTfwd_1_1tags.html#af816e12f7b8648716658bd3f7dbc5382">KTfwd::tags::gamete_type</a></div><div class="ttdeci">gamete_type</div><div class="ttdoc">Built-in types of gametes for which dispatch tags exist. </div><div class="ttdef"><b>Definition:</b> gamete_tags.hpp:7</div></div>
 <div class="ttc" id="namespaceKTfwd_html_a86a4fcecb15c101816ccdd15eefd6a1b"><div class="ttname"><a href="../../da/d8b/namespaceKTfwd.html#a86a4fcecb15c101816ccdd15eefd6a1b">KTfwd::remove_lost</a></div><div class="ttdeci">void remove_lost(list_type&lt; mutation_type, list_type_allocator &gt; *mutations)</div><div class="ttdoc">Remove mutations from population Removes mutations that are lost. </div><div class="ttdef"><b>Definition:</b> util.hpp:104</div></div>
 <div class="ttc" id="namespaceKTfwd_html_a91ac7525d84cfec32e3007029da92cee"><div class="ttname"><a href="../../da/d8b/namespaceKTfwd.html#a91ac7525d84cfec32e3007029da92cee">KTfwd::uncheck</a></div><div class="ttdeci">void uncheck(list_type&lt; mutation_type, list_type_allocator &gt; *mutations)</div><div class="ttdef"><b>Definition:</b> util.hpp:91</div></div>
 <div class="ttc" id="namespaceKTfwd_html_a8636e0942d61b4d30bd60709b4bd2c10"><div class="ttname"><a href="../../da/d8b/namespaceKTfwd.html#a8636e0942d61b4d30bd60709b4bd2c10">KTfwd::adjust_mutation_counts</a></div><div class="ttdeci">void adjust_mutation_counts(iterator_type g, const unsigned &amp;n)</div><div class="ttdoc">used internally </div><div class="ttdef"><b>Definition:</b> util.hpp:244</div></div>
 <div class="ttc" id="namespaceKTfwd_html_a84e666ea27d38bdfc539ffd23653eaa9"><div class="ttname"><a href="../../da/d8b/namespaceKTfwd.html#a84e666ea27d38bdfc539ffd23653eaa9">KTfwd::remove_fixed_lost</a></div><div class="ttdeci">void remove_fixed_lost(list_type&lt; mutation_type, list_type_allocator &gt; *mutations, vector_type&lt; mutation_type, vector_type_allocator1 &gt; *fixations, vector_type&lt; unsigned, vector_type_allocator2 &gt; *fixation_times, const unsigned &amp;generation, const unsigned &amp;twoN)</div><div class="ttdoc">Remove mutations from population Removes mutations that are fixed or lost. </div><div class="ttdef"><b>Definition:</b> util.hpp:169</div></div>
 <div class="ttc" id="fwd__functional_8hpp_html"><div class="ttname"><a href="../../d4/d62/fwd__functional_8hpp.html">fwd_functional.hpp</a></div></div>
-<div class="ttc" id="mlocusCrossoverTest_8cc_html_a53b3e4bb1bd287d2150b9c128e15a316"><div class="ttname"><a href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a></div><div class="ttdeci">gsl_rng * r</div><div class="ttdef"><b>Definition:</b> mlocusCrossoverTest.cc:25</div></div>
+<div class="ttc" id="mlocusCrossoverTest_8cc_html_a53b3e4bb1bd287d2150b9c128e15a316"><div class="ttname"><a href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a></div><div class="ttdeci">gsl_rng * r</div><div class="ttdef"><b>Definition:</b> mlocusCrossoverTest.cc:29</div></div>
 <div class="ttc" id="namespaceKTfwd_html_a6a2696271f4be7ee04aa58c9253e18a3"><div class="ttname"><a href="../../da/d8b/namespaceKTfwd.html#a6a2696271f4be7ee04aa58c9253e18a3">KTfwd::multinomial_sample_gametes</a></div><div class="ttdeci">void multinomial_sample_gametes(gsl_rng *r, iterator_type gbegin, const size_t &amp;ngametes, const double *efreqs, const unsigned &amp;twoN)</div><div class="ttdoc">Multinomial sampling of gametes Called by KTfwd::sample_diploid. </div><div class="ttdef"><b>Definition:</b> util.hpp:324</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

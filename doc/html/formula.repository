@@ -2,47 +2,61 @@
 \form#1:$n$
 \form#2:$n = N$
 \form#3:$2N$
-\form#4:$\theta$
-\form#5:$\rho$
-\form#6:$r_{bw}$
-\form#7:\[\frac{AB}{ab}\]
-\form#8:\[\frac{Ab}{aB}\]
-\form#9:$[0,1)$
-\form#10:$[1,2)$
-\form#11:$(\mathrm{start},\mathrm{start}+1]$
-\form#12:$(0,1]$
-\form#13:$(1,2]$
-\form#14:$L-1$
-\form#15:$L$
-\form#16:$i$
-\form#17:$i-1$
-\form#18:$1 \leq i \leq L-1$
-\form#19:$r$
-\form#20:$n \ll N$
-\form#21:$\mu$
-\form#22:$\mu_s$
-\form#23:$s_m$
-\form#24:$s < 0$
-\form#25:$s > 0$
-\form#26:$1, 1+hs, 1+2s$
-\form#27:$e$
-\form#28:$\sigma_e$
-\form#29:$8N$
-\form#30:$4N$
-\form#31:$r=\rho/4N$
-\form#32:$p$
-\form#33:$1-p$
-\form#34:$a$
-\form#35:$b$
-\form#36:$x$
-\form#37:$\geq 1.5x$
-\form#38:$j$
-\form#39:$j = i$
-\form#40:$j \neq i$
-\form#41:$m$
-\form#42:$0 \leq i \leq 1$
-\form#43:$1, 1+sh, 1+s \times \mathrm{scaling}$
-\form#44:$scaling = 1$
-\form#45:$1$
-\form#46:$w = 1$
-\form#47:$w$
+\form#4:$s$
+\form#5:$\theta$
+\form#6:$\rho$
+\form#7:$r_{bw}$
+\form#8:\[\frac{AB}{ab}\]
+\form#9:\[\frac{Ab}{aB}\]
+\form#10:$[0,1)$
+\form#11:$[1,2)$
+\form#12:$y$
+\form#13:$x$
+\form#14:$e$
+\form#15:$x = y+e$
+\form#16:$V(G) \approx 4\mu$
+\form#17:$4 \times 10^{-4}$
+\form#18:$V(G)$
+\form#19:$(\mathrm{start},\mathrm{start}+1]$
+\form#20:$(0,1]$
+\form#21:$(1,2]$
+\form#22:$L-1$
+\form#23:$L$
+\form#24:$i$
+\form#25:$i-1$
+\form#26:$1 \leq i \leq L-1$
+\form#27:$r$
+\form#28:$n \ll N$
+\form#29:$\mu$
+\form#30:$\mu_s$
+\form#31:$s_m$
+\form#32:$s < 0$
+\form#33:$s > 0$
+\form#34:$1, 1+hs, 1+2s$
+\form#35:$\sigma_e$
+\form#36:$8N$
+\form#37:$4N$
+\form#38:$r=\rho/4N$
+\form#39:$p$
+\form#40:$1-p$
+\form#41:$a$
+\form#42:$b$
+\form#43:$\geq 1.5x$
+\form#44:$j$
+\form#45:$j = i$
+\form#46:$j \neq i$
+\form#47:$m$
+\form#48:$0 \leq i \leq 1$
+\form#49:$1, 1+sh, 1+s \times \mathrm{scaling}$
+\form#50:$scaling = 1$
+\form#51:$1$
+\form#52:$w = 1$
+\form#53:$w$
+\form#54:$h$
+\form#55:$1+hs$
+\form#56:$1+xs$
+\form#57:$x = 1$
+\form#58:$AA$
+\form#59:$Aa$
+\form#60:$aa$
+\form#61:$g$

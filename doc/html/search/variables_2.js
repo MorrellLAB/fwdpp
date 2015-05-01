@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['h',['h',['../d1/d7f/structKTfwd_1_1mutation.html#a45166a8ac131f277f06a261f6e16f5a0',1,'KTfwd::mutation::h()'],['../de/d4d/structmutation__with__age.html#ad3b51b282581737f217cbd918fa800dc',1,'mutation_with_age::h()']]]
+  ['diploids',['diploids',['../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a5408e4bd524d8a69b018d2717c17bef1',1,'KTfwd::sugar::singlepop::diploids()'],['../d9/dee/classKTfwd_1_1sugar_1_1singlepop__serialized.html#acb82da71bf3f6034dc15dc5077e5e8fe',1,'KTfwd::sugar::singlepop_serialized::diploids()'],['../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a820861dc189e325c012099f22dd0a33e',1,'KTfwd::sugar::metapop::diploids()'],['../d2/d43/classKTfwd_1_1sugar_1_1metapop__serialized.html#aeab689ee8abe998e602c45bcadfa5d0f',1,'KTfwd::sugar::metapop_serialized::diploids()'],['../d3/d11/structKTfwd_1_1sugar_1_1multiloc.html#aec1910f49666ff4c17dcc9e026696aa1',1,'KTfwd::sugar::multiloc::diploids()'],['../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a308bd8fdb763826fa21b842a518d9d80',1,'KTfwd::sugar::multiloc_serialized::diploids()']]]
 ];

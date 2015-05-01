@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.2.9</span>
+   &#160;<span id="projectnumber">0.3.0</span>
    </div>
   </td>
  </tr>
@@ -68,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -92,105 +92,24 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;list&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><span class="comment">//Use mutation model from sugar layer</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../dc/d32/infsites_8hpp.html">fwdpp/sugar/infsites.hpp</a>&gt;</span></div>
 <div class="line"></div>
-<div class="line"><span class="comment">/*</span></div>
-<div class="line"><span class="comment">  We define a new mutation type, derived from the base class KTfwd::mutation_base.</span></div>
-<div class="line"><span class="comment">  This type adds a selection coefficient (s), dominance coefficient (h),</span></div>
-<div class="line"><span class="comment">  and the generation when the mutation first appeared in the population (g)</span></div>
-<div class="line"><span class="comment">*/</span></div>
-<div class="line"><span class="keyword">struct </span><a name="_a0"></a><a class="code" href="../../de/d4d/structmutation__with__age.html">mutation_with_age</a> : <span class="keyword">public</span> <a name="_a1"></a><a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html">KTfwd::mutation_base</a></div>
-<div class="line">{</div>
-<div class="line">  <span class="keywordtype">unsigned</span> <a name="a2"></a><a class="code" href="../../de/d4d/structmutation__with__age.html#a6911001ce7dcd8114e89ff7494fc2703">g</a>;</div>
-<div class="line">  <span class="keywordtype">double</span> <a name="a3"></a><a class="code" href="../../de/d4d/structmutation__with__age.html#a85f3c3c62fb469e3e38e5a5b3ec2d5dc">s</a>,<a name="a4"></a><a class="code" href="../../de/d4d/structmutation__with__age.html#ad3b51b282581737f217cbd918fa800dc">h</a>;</div>
-<div class="line">  <span class="comment">/*</span></div>
-<div class="line"><span class="comment">    The constructor initializes all class data, including that of the base class via a constructor</span></div>
-<div class="line"><span class="comment">    call to the base class.</span></div>
-<div class="line"><span class="comment">  */</span></div>
-<div class="line">  <a name="a5"></a><a class="code" href="../../de/d4d/structmutation__with__age.html#aeae6a32f9e7c790773cf94bb004d435d">mutation_with_age</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; __o,<span class="keyword">const</span> <span class="keywordtype">double</span> &amp; position, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; count, <span class="keyword">const</span> <span class="keywordtype">bool</span> &amp; isneutral = <span class="keyword">true</span>)</div>
-<div class="line">    : <a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html">KTfwd::mutation_base</a>(position,count,isneutral),<a class="code" href="../../de/d4d/structmutation__with__age.html#a6911001ce7dcd8114e89ff7494fc2703">g</a>(__o),<a class="code" href="../../de/d4d/structmutation__with__age.html#a85f3c3c62fb469e3e38e5a5b3ec2d5dc">s</a>(0.),<a class="code" href="../../de/d4d/structmutation__with__age.html#ad3b51b282581737f217cbd918fa800dc">h</a>(0.)</div>
-<div class="line">  {     </div>
-<div class="line">  }</div>
-<div class="line">};</div>
-<div class="line"></div>
-<div class="line"><span class="keyword">using</span> <a name="_a6"></a><a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">mtype</a> = <a class="code" href="../../de/d4d/structmutation__with__age.html">mutation_with_age</a>;</div>
-<div class="line"><span class="comment">//function object to write mutation data in binary format</span></div>
-<div class="line"><span class="keyword">struct </span><a name="_a7"></a><a class="code" href="../../db/d91/structmwriter.html">mwriter</a></div>
-<div class="line">{</div>
-<div class="line">  <span class="keyword">typedef</span> <span class="keywordtype">void</span> <a name="a8"></a><a class="code" href="../../db/d91/structmwriter.html#a4c2186e1cd2e69b3a695960eecfa5c50">result_type</a>;</div>
-<div class="line">  <a class="code" href="../../db/d91/structmwriter.html#a4c2186e1cd2e69b3a695960eecfa5c50">result_type</a> <a name="a9"></a><a class="code" href="../../db/d91/structmwriter.html#a66f5d25f9e132257328a29c6e715d77a">operator()</a>( <span class="keyword">const</span> <a class="code" href="../../de/d4d/structmutation__with__age.html">mutation_with_age</a> &amp; m, std::ostringstream &amp; buffer )<span class="keyword"> const</span></div>
-<div class="line"><span class="keyword">  </span>{</div>
-<div class="line">    <span class="keywordtype">unsigned</span> u = m.<a name="a10"></a><a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html#a9df75224a5f00b97dc09e68b475a517a">n</a>;</div>
-<div class="line">    buffer.write( reinterpret_cast&lt; char * &gt;(&amp;u),<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span>) );</div>
-<div class="line">    u = m.<a class="code" href="../../de/d4d/structmutation__with__age.html#a6911001ce7dcd8114e89ff7494fc2703">g</a>;</div>
-<div class="line">    buffer.write( reinterpret_cast&lt; char * &gt;(&amp;u),<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span>) );</div>
-<div class="line">    <span class="keywordtype">bool</span> b = m.<a name="a11"></a><a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html#acfb3b4c94516cbbc5c28a12e1ad575b3">neutral</a>;</div>
-<div class="line">    buffer.write( reinterpret_cast&lt; char * &gt;(&amp;b),<span class="keyword">sizeof</span>(<span class="keywordtype">bool</span>) );</div>
-<div class="line">    <span class="keywordtype">double</span> d = m.<a name="a12"></a><a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html#aed95181f38c8e17b19a7a9da4b373b03">pos</a>;</div>
-<div class="line">    buffer.write( reinterpret_cast&lt; char * &gt;(&amp;d),<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>) );</div>
-<div class="line">    d = m.<a class="code" href="../../de/d4d/structmutation__with__age.html#a85f3c3c62fb469e3e38e5a5b3ec2d5dc">s</a>;</div>
-<div class="line">    buffer.write( reinterpret_cast&lt; char * &gt;(&amp;d),<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>) );</div>
-<div class="line">    d = m.<a class="code" href="../../de/d4d/structmutation__with__age.html#ad3b51b282581737f217cbd918fa800dc">h</a>;</div>
-<div class="line">    buffer.write( reinterpret_cast&lt; char * &gt;(&amp;d),<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>) );</div>
-<div class="line">  }</div>
-<div class="line">};</div>
-<div class="line"></div>
-<div class="line"><span class="comment">//function object to read mutation data in binary format</span></div>
-<div class="line"><span class="keyword">struct </span><a name="_a13"></a><a class="code" href="../../d9/d61/structmreader.html">mreader</a></div>
-<div class="line">{</div>
-<div class="line">  <span class="keyword">typedef</span> <a class="code" href="../../de/d4d/structmutation__with__age.html">mutation_with_age</a> <a name="a14"></a><a class="code" href="../../d9/d61/structmreader.html#a018bc865eec84fdf7dc5fa8dd79089da">result_type</a>;</div>
-<div class="line">  <a class="code" href="../../d9/d61/structmreader.html#a018bc865eec84fdf7dc5fa8dd79089da">result_type</a> <a name="a15"></a><a class="code" href="../../d9/d61/structmreader.html#a5a87ded6097d21b6c26f6411cc064efd">operator()</a>( std::istream &amp; in )<span class="keyword"> const</span></div>
-<div class="line"><span class="keyword">  </span>{</div>
-<div class="line">    <span class="keywordtype">unsigned</span> n;</div>
-<div class="line">    in.read( reinterpret_cast&lt; char * &gt;(&amp;n),<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span>) );</div>
-<div class="line">    <span class="keywordtype">unsigned</span> g;</div>
-<div class="line">    in.read( reinterpret_cast&lt; char * &gt;(&amp;g),<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span>) );</div>
-<div class="line">    <span class="keywordtype">bool</span> neut;</div>
-<div class="line">    in.read( reinterpret_cast&lt; char * &gt;(&amp;neut),<span class="keyword">sizeof</span>(<span class="keywordtype">bool</span>) );</div>
-<div class="line">    <span class="keywordtype">double</span> pos;</div>
-<div class="line">    in.read( reinterpret_cast&lt; char * &gt;(&amp;pos),<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>) );</div>
-<div class="line">    <span class="keywordtype">double</span> s;</div>
-<div class="line">    in.read( reinterpret_cast&lt; char * &gt;(&amp;s),<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>) );</div>
-<div class="line">    <span class="keywordtype">double</span> h;</div>
-<div class="line">    in.read( reinterpret_cast&lt; char * &gt;(&amp;h),<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>) );</div>
-<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d9/d61/structmreader.html#a018bc865eec84fdf7dc5fa8dd79089da">result_type</a>(g,pos,n,neut);</div>
-<div class="line">  }</div>
-<div class="line">};</div>
-<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../df/d10/common__ind_8hpp.html">common_ind.hpp</a>&gt;</span></div>
-<div class="line"></div>
-<div class="line"><span class="comment">/*</span></div>
-<div class="line"><span class="comment">  This function generates neutral mutations under the infinitely-many sites assumption</span></div>
-<div class="line"><span class="comment">*/</span></div>
-<div class="line"><a class="code" href="../../de/d4d/structmutation__with__age.html">mutation_with_age</a> <a name="a16"></a><a class="code" href="../../de/dce/diploid__ind__2locus_8cc.html#afab61157d79924fce696607ed01554cc">neutral_mutations_inf_sites</a>(gsl_rng * <a name="a17"></a><a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,<span class="keyword">const</span> <span class="keywordtype">unsigned</span> * generation,<a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a> * mutations,</div>
-<div class="line">                                              <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> * lookup, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; beg)</div>
-<div class="line">{</div>
-<div class="line">  <span class="comment">//Generate new mutation position on the interval [0,1)</span></div>
-<div class="line">  <span class="keywordtype">double</span> pos = gsl_ran_flat(r,beg,beg+1.);</div>
-<div class="line">  <span class="keywordflow">while</span>( lookup-&gt;find(pos) != lookup-&gt;end() ) <span class="comment">//make sure it doesn&#39;t exist in the population</span></div>
-<div class="line">    { </div>
-<div class="line">      pos = gsl_ran_flat(r,beg,beg+1.);</div>
-<div class="line">    }</div>
-<div class="line">  <span class="comment">//update the lookup table</span></div>
-<div class="line">  lookup-&gt;insert(pos);</div>
-<div class="line"></div>
-<div class="line">  <span class="comment">//In absence of DEBUG, make sure lookup table is working</span></div>
-<div class="line">  assert(std::find_if(mutations-&gt;begin(),mutations-&gt;end(),std::bind(<a name="_a18"></a><a class="code" href="../../d5/d1a/structKTfwd_1_1mutation__at__pos.html">KTfwd::mutation_at_pos</a>(),std::placeholders::_1,pos)) == mutations-&gt;end());</div>
-<div class="line"></div>
-<div class="line">  <span class="comment">//return constructor call to mutation type</span></div>
-<div class="line">  <span class="keywordflow">return</span> <a class="code" href="../../de/d4d/structmutation__with__age.html">mutation_with_age</a>(*generation,pos,1,<span class="keyword">true</span>);</div>
-<div class="line">}</div>
+<div class="line"><span class="keyword">using</span> <a name="_a0"></a><a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">mtype</a> = <a name="_a1"></a><a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">KTfwd::popgenmut</a>;</div>
+<div class="line"><span class="preprocessor">#define MULTILOCUS_SIM</span></div>
+<div class="line"><span class="preprocessor"></span><span class="preprocessor">#include &lt;<a class="code" href="../../df/d10/common__ind_8hpp.html">common_ind.hpp</a>&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">//Fitness function</span></div>
-<div class="line"><span class="keyword">struct </span><a name="_a19"></a><a class="code" href="../../d8/df2/structno__selection__multi.html">no_selection_multi</a></div>
+<div class="line"><span class="keyword">struct </span><a name="_a2"></a><a class="code" href="../../d8/df2/structno__selection__multi.html">no_selection_multi</a></div>
 <div class="line">{</div>
-<div class="line">  <span class="keyword">typedef</span> <span class="keywordtype">double</span> <a name="a20"></a><a class="code" href="../../d8/df2/structno__selection__multi.html#af97428c15deb527bc450d5eb697423fd">result_type</a>;</div>
-<div class="line">  <span class="keyword">template</span>&lt; <span class="keyword">typename</span> iterator_type &gt;</div>
-<div class="line">  <span class="keyword">inline</span> <span class="keywordtype">double</span> <a name="a21"></a><a class="code" href="../../d8/df2/structno__selection__multi.html#a45b40b0a9514a6b57fe79151361675d0">operator()</a>( <span class="keyword">const</span> std::vector&lt; std::pair&lt;iterator_type,iterator_type&gt; &gt; &amp; diploid )<span class="keyword"> const</span></div>
+<div class="line">  <span class="keyword">typedef</span> <span class="keywordtype">double</span> <a name="a3"></a><a class="code" href="../../d8/df2/structno__selection__multi.html#ac8d3abd4176b215a58de070fe9111483">result_type</a>;</div>
+<div class="line">  <span class="keyword">inline</span> <span class="keywordtype">double</span> <a name="a4"></a><a class="code" href="../../d8/df2/structno__selection__multi.html#a6584b8295b3c8439328cc683d4aa0b4c">operator()</a>( <span class="keyword">const</span> <a name="a5"></a><a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a1a5f1954bb541f5016cc0844385c6758">multiloc_t::diploid_t</a> &amp; diploid )<span class="keyword"> const</span></div>
 <div class="line"><span class="keyword">  </span>{</div>
 <div class="line">    <span class="keywordflow">return</span> 1.;</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">int</span> <a name="a22"></a><a class="code" href="../../de/dce/diploid__ind__2locus_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv)</div>
+<div class="line"><span class="keywordtype">int</span> <a name="a6"></a><a class="code" href="../../de/dce/diploid__ind__2locus_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv)</div>
 <div class="line">{</div>
 <div class="line">  <span class="keywordtype">int</span> argument=1;</div>
 <div class="line">  <span class="keywordflow">if</span> (argc != 9 )</div>
@@ -229,46 +148,39 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">  <span class="keyword">const</span> <span class="keywordtype">double</span> littler = rho/double(4*N);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">//Initiate random number generation system</span></div>
-<div class="line">  gsl_rng * r =  gsl_rng_alloc(gsl_rng_ranlxs2);</div>
-<div class="line">  gsl_rng_set(r,seed);</div>
+<div class="line">  <a name="_a7"></a><a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">GSLrng</a> <a name="a8"></a><a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>(seed);</div>
 <div class="line"></div>
 <div class="line">  <span class="keywordtype">unsigned</span> twoN = 2*N;</div>
 <div class="line"></div>
-<div class="line">  std::function&lt;double(void)&gt; recmap = std::bind(gsl_rng_uniform,r),</div>
-<div class="line">    recmap2 = std::bind(gsl_ran_flat,r,1.,2.);</div>
+<div class="line">  std::function&lt;double(void)&gt; recmap = std::bind(gsl_rng_uniform,<a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>),</div>
+<div class="line">    recmap2 = std::bind(gsl_ran_flat,<a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,1.,2.);</div>
 <div class="line"></div>
 <div class="line">  <span class="keywordflow">while</span>(nreps--)</div>
 <div class="line">    {</div>
-<div class="line">      <span class="comment">//the population begins with 1 gamete with no mutations amd initial count 2N</span></div>
-<div class="line">      std::vector&lt; glist &gt; gametes (2, <a name="a23"></a><a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>(1,<a name="a24"></a><a class="code" href="../../d1/dbe/crossoverTest_8cc.html#ace9428d4aa6205eaf777c2c9f398d9ea">gtype</a>(twoN) ));</div>
-<div class="line">      <span class="comment">//Establish the list of diploids.  Here, there is only 1 gamete, so it is easy:</span></div>
-<div class="line">      std::vector&lt; std::pair&lt; glist::iterator, glist::iterator &gt; &gt; idip(2);</div>
-<div class="line">      idip[0] = std::make_pair( gametes[0].begin(),gametes[0].begin() );</div>
-<div class="line">      idip[1] = std::make_pair( gametes[1].begin(),gametes[1].begin() );</div>
-<div class="line">      std::vector&lt; std::vector&lt; std::pair&lt; glist::iterator, glist::iterator &gt; &gt; &gt; diploids(N,idip);</div>
-<div class="line"></div>
-<div class="line">      <a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a> mutations;  <span class="comment">//the population is devoid of mutations</span></div>
-<div class="line">      std::vector&lt;mtype&gt; fixations;  <span class="comment">//store mutation that fix.  Passed to KTfwd::remove_fixed_lost</span></div>
-<div class="line">      std::vector&lt;unsigned&gt; fixation_times; <span class="comment">//store when they fix.  Passed to KTfwd::remove_fixed_lost</span></div>
+<div class="line">      multiloc_t pop(N,2);</div>
 <div class="line">      <span class="keywordtype">unsigned</span> generation=0;</div>
 <div class="line">      <span class="keywordtype">double</span> wbar;</div>
-<div class="line">      <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> lookup;  <span class="comment">//this is our lookup table for the mutation model</span></div>
+<div class="line"></div>
 <div class="line">      <span class="comment">//within-locus recombination policies -- one per locus</span></div>
-<div class="line">      <span class="keyword">auto</span> recpol0 = std::bind(<a name="_a25"></a><a class="code" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a>(),std::placeholders::_1,std::placeholders::_2,&amp;gametes[0],littler,r,recmap);</div>
-<div class="line">      <span class="keyword">auto</span> recpol1 = std::bind(<a class="code" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a>(),std::placeholders::_1,std::placeholders::_2,&amp;gametes[1],littler,r,recmap2);</div>
+<div class="line">      <span class="keyword">auto</span> recpol0 = std::bind(<a name="_a9"></a><a class="code" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a>(),std::placeholders::_1,std::placeholders::_2,&amp;pop.gametes[0],littler,<a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,recmap);</div>
+<div class="line">      <span class="keyword">auto</span> recpol1 = std::bind(<a class="code" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a>(),std::placeholders::_1,std::placeholders::_2,&amp;pop.gametes[1],littler,<a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,recmap2);</div>
 <div class="line">      std::vector&lt; decltype(recpol0) &gt; recpols{ recpol0 , recpol1 };</div>
 <div class="line"></div>
-<div class="line">      <span class="comment">//mutation policies -- 1 per locus</span></div>
-<div class="line">      <span class="keyword">auto</span> mmodel0 = std::bind(<a class="code" href="../../de/dce/diploid__ind__2locus_8cc.html#afab61157d79924fce696607ed01554cc">neutral_mutations_inf_sites</a>,r,&amp;generation,std::placeholders::_1,&amp;lookup,0.);</div>
-<div class="line">      <span class="keyword">auto</span> mmodel1 = std::bind(<a class="code" href="../../de/dce/diploid__ind__2locus_8cc.html#afab61157d79924fce696607ed01554cc">neutral_mutations_inf_sites</a>,r,&amp;generation,std::placeholders::_1,&amp;lookup,1.);</div>
-<div class="line">      std::vector&lt; decltype(mmodel0) &gt; mmodels { mmodel0, mmodel1 };</div>
+<div class="line">      std::vector&lt; std::function&lt;mtype(multiloc_t::mlist_t *)&gt; &gt; mmodels {</div>
+<div class="line">        <span class="comment">//Locus 0: positions Uniform [0,1)</span></div>
+<div class="line">        std::bind(<a name="_a10"></a><a class="code" href="../../df/d07/structKTfwd_1_1infsites.html">KTfwd::infsites</a>(),<a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,std::placeholders::_1,&amp;pop.mut_lookup,&amp;generation,</div>
+<div class="line">                  mu[0],0.,[&amp;<a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>](){<span class="keywordflow">return</span> gsl_rng_uniform(<a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>);},[](){<span class="keywordflow">return</span> 0.;},[](){<span class="keywordflow">return</span> 0.;}) ,</div>
+<div class="line">          <span class="comment">//Locus 1: positions Uniform [1,2)</span></div>
+<div class="line">          std::bind(<a class="code" href="../../df/d07/structKTfwd_1_1infsites.html">KTfwd::infsites</a>(),<a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,std::placeholders::_1,&amp;pop.mut_lookup,&amp;generation,</div>
+<div class="line">                    mu[1],0.,[&amp;<a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>](){<span class="keywordflow">return</span> gsl_ran_flat(<a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,1.,2.);},[](){<span class="keywordflow">return</span> 0.;},[](){<span class="keywordflow">return</span> 0.;})</div>
+<div class="line">          };</div>
 <div class="line">      <span class="keywordflow">for</span>( generation = 0; generation &lt; ngens; ++generation )</div>
 <div class="line">        {</div>
 <div class="line">          <span class="comment">//Iterate the population through 1 generation</span></div>
-<div class="line">          <a name="a26"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a946efaa4a6095f4f2aadda44a809a477">KTfwd::sample_diploid</a>( r,</div>
-<div class="line">                                 &amp;gametes,</div>
-<div class="line">                                 &amp;diploids,</div>
-<div class="line">                                 &amp;mutations,</div>
+<div class="line">          <a name="a11"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a946efaa4a6095f4f2aadda44a809a477">KTfwd::sample_diploid</a>( <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,</div>
+<div class="line">                                 &amp;pop.gametes,</div>
+<div class="line">                                 &amp;pop.diploids,</div>
+<div class="line">                                 &amp;pop.mutations,</div>
 <div class="line">                                 N,</div>
 <div class="line">                                 N,</div>
 <div class="line">                                 &amp;mu[0],</div>
@@ -276,17 +188,17 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">                                 recpols,</div>
 <div class="line">                                 &amp;rbw,</div>
 <div class="line">                                 [](gsl_rng * __r, <span class="keyword">const</span> <span class="keywordtype">double</span> __d){ <span class="keywordflow">return</span> gsl_ran_binomial(__r,__d,1); },</div>
-<div class="line">                                 std::bind(KTfwd::insert_at_end&lt;mtype,mlist&gt;,std::placeholders::_1,std::placeholders::_2),</div>
-<div class="line">                                 std::bind(KTfwd::insert_at_end&lt;gtype,glist&gt;,std::placeholders::_1,std::placeholders::_2),</div>
+<div class="line">                                 std::bind(KTfwd::insert_at_end&lt;multiloc_t::mutation_t,multiloc_t::mlist_t&gt;,std::placeholders::_1,std::placeholders::_2),</div>
+<div class="line">                                 std::bind(KTfwd::insert_at_end&lt;multiloc_t::gamete_t,multiloc_t::glist_t&gt;,std::placeholders::_1,std::placeholders::_2),</div>
 <div class="line">                                 std::bind(<a class="code" href="../../d8/df2/structno__selection__multi.html">no_selection_multi</a>(),std::placeholders::_1),</div>
-<div class="line">                                 std::bind(<a name="_a27"></a><a class="code" href="../../d4/de8/structKTfwd_1_1mutation__remover.html">KTfwd::mutation_remover</a>(),std::placeholders::_1,0,2*N),</div>
+<div class="line">                                 std::bind(<a name="_a12"></a><a class="code" href="../../d4/de8/structKTfwd_1_1mutation__remover.html">KTfwd::mutation_remover</a>(),std::placeholders::_1,0,2*N),</div>
 <div class="line">                                 0.);</div>
-<div class="line">          assert( <a name="a28"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a728e20cb60f82b818b5cc570722079a4">check_sum</a>(gametes[0],twoN) );</div>
-<div class="line">          assert( <a class="code" href="../../da/d8b/namespaceKTfwd.html#a728e20cb60f82b818b5cc570722079a4">check_sum</a>(gametes[1],twoN) );</div>
-<div class="line">          <a name="a29"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a84e666ea27d38bdfc539ffd23653eaa9">KTfwd::remove_fixed_lost</a>(&amp;mutations,&amp;fixations,&amp;fixation_times,&amp;lookup,generation,2*N);</div>
+<div class="line">          assert( <a name="a13"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a728e20cb60f82b818b5cc570722079a4">check_sum</a>(pop.gametes[0],twoN) );</div>
+<div class="line">          assert( <a class="code" href="../../da/d8b/namespaceKTfwd.html#a728e20cb60f82b818b5cc570722079a4">check_sum</a>(pop.gametes[1],twoN) );</div>
+<div class="line">          <a name="a14"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a84e666ea27d38bdfc539ffd23653eaa9">KTfwd::remove_fixed_lost</a>(&amp;pop.mutations,&amp;pop.fixations,&amp;pop.fixation_times,&amp;pop.mut_lookup,generation,2*N);</div>
 <div class="line">        }</div>
 <div class="line">      <span class="comment">//Take a sample and print it to screen.</span></div>
-<div class="line">      <span class="keyword">auto</span> x = <a name="a30"></a><a class="code" href="../../d7/d86/group__samplingPopsGamete.html#gae5656f2b4685348222718deff1f24997">KTfwd::ms_sample</a>(r,&amp;diploids,samplesize1,<span class="keyword">true</span>);</div>
+<div class="line">      <span class="keyword">auto</span> x = <a name="a15"></a><a class="code" href="../../d7/d86/group__samplingPopsGamete.html#gae5656f2b4685348222718deff1f24997">KTfwd::ms_sample</a>(<a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,&amp;pop.diploids,samplesize1,<span class="keyword">true</span>);</div>
 <div class="line">      Sequence::SimData l1(x[0].begin(),x[0].end()),</div>
 <div class="line">        l2(x[1].begin(),x[1].end());</div>
 <div class="line">      std::cout &lt;&lt; l1 &lt;&lt; <span class="charliteral">&#39;\n&#39;</span> &lt;&lt; l2 &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;    </div>

@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['uncheck',['uncheck',['../da/d8b/namespaceKTfwd.html#a91ac7525d84cfec32e3007029da92cee',1,'KTfwd']]],
-  ['update_5fgamete_5flist',['update_gamete_list',['../da/d8b/namespaceKTfwd.html#a9b9cddaf4fdce8362637f127179cece8',1,'KTfwd']]],
-  ['update_5fif_5fexists_5finsert',['update_if_exists_insert',['../da/d8b/namespaceKTfwd.html#a5f6270abe1bf379c5458a3d09bc99455',1,'KTfwd']]],
-  ['update_5fif_5fexists_5fpush',['update_if_exists_push',['../da/d8b/namespaceKTfwd.html#a4f12d7c4af0b0d5b6dc48772d1cae49d',1,'KTfwd']]],
-  ['update_5fsample_5fblock',['update_sample_block',['../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a0531c0a223ff483e8af0f5946d4c950b',1,'KTfwd::fwdpp_internal']]]
+  ['w',['w',['../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html#a735f9face8e103b59d46eaf43af2eea8',1,'KTfwd::experimental::standardWFrules']]],
+  ['write_5fbinary_5fmetapop',['write_binary_metapop',['../da/d8b/namespaceKTfwd.html#a27f3a42eb05e20def4a515242ecd71c4',1,'KTfwd']]],
+  ['write_5fbinary_5fpop',['write_binary_pop',['../da/d8b/namespaceKTfwd.html#a4826160f7e99b8c2cdb7fa2769c6aeeb',1,'KTfwd::write_binary_pop(const gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *gametes, const mutation_list_type&lt; mutation_type, mutation_list_type_allocator &gt; *mutations, const diploid_vector_type&lt; diploid_geno_t, vector_type_allocator &gt; *diploids, const mutation_writer_type &amp;mw, ostreamtype &amp;buffer, const diploid_writer_t &amp;dw=diploid_writer_t())'],['../da/d8b/namespaceKTfwd.html#a155a4a3be11d90ac32a75618ccf24a8a',1,'KTfwd::write_binary_pop(const mlocus_vector_type&lt; gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt;, mlocus_vector_type_allocator &gt; *mlocus_gametes, const mutation_list_type&lt; mutation_type, mutation_list_type_allocator &gt; *mutations, const diploid_vv_type&lt; diploid_vector_type&lt; diploid_geno_t, vector_type_allocator &gt;, diploid_vv_type_allocator &gt; *diploids, const mutation_writer_type &amp;mw, ostreamtype &amp;buffer, const diploid_writer_t &amp;dw=diploid_writer_t())']]]
 ];

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.0</span>
+   &#160;<span id="projectnumber">0.3.1</span>
    </div>
   </td>
  </tr>
@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;algorithm&gt;</code><br/>
-<code>#include &lt;<a class="el" href="../../d9/d68/mutation__tags_8hpp_source.html">fwdpp/tags/mutation_tags.hpp</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="../../dc/d54/type__traits_8hpp_source.html">fwdpp/type_traits.hpp</a>&gt;</code><br/>
 </div>
 <p><a href="../../d3/d80/mutation__internal_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -114,12 +114,46 @@ Functions</h2></td></tr>
 <tr class="memitem:a416cc435f714e2ab6c5d52e79e56ed39"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename mutation_iterator &gt; </td></tr>
 <tr class="memitem:a416cc435f714e2ab6c5d52e79e56ed39"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a416cc435f714e2ab6c5d52e79e56ed39">KTfwd::fwdpp_internal::add_new_mutation</a> (mutation_iterator &amp;mitr, gamete_type &amp;new_gamete)</td></tr>
 <tr class="separator:a416cc435f714e2ab6c5d52e79e56ed39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9afee6ac9dce5932824f97c356abf60"><td class="memTemplParams" colspan="2">template&lt;typename mutation_model , typename mutation_insertion_policy , typename mlist_type , typename gamete_type &gt; </td></tr>
-<tr class="memitem:ab9afee6ac9dce5932824f97c356abf60"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ab9afee6ac9dce5932824f97c356abf60">KTfwd::fwdpp_internal::add_N_mutations</a> (const <a class="el" href="../../d0/d35/structmutation__model.html">mutation_model</a> &amp;mmodel, const mutation_insertion_policy &amp;mpolicy, const unsigned &amp;n, mlist_type *mutations, gamete_type &amp;g, <a class="el" href="../../d3/dea/namespaceKTfwd_1_1tags.html#a0efa4cbefee06dc2dea368d322a7fb64">KTfwd::tags::gamete_independent</a>)</td></tr>
-<tr class="separator:ab9afee6ac9dce5932824f97c356abf60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0127ae29e6e4ed2289776eff183e52b1"><td class="memTemplParams" colspan="2">template&lt;typename mutation_model , typename mutation_insertion_policy , typename mlist_type , typename gamete_type &gt; </td></tr>
-<tr class="memitem:a0127ae29e6e4ed2289776eff183e52b1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a0127ae29e6e4ed2289776eff183e52b1">KTfwd::fwdpp_internal::add_N_mutations</a> (const <a class="el" href="../../d0/d35/structmutation__model.html">mutation_model</a> &amp;mmodel, const mutation_insertion_policy &amp;mpolicy, const unsigned &amp;n, mlist_type *mutations, gamete_type &amp;g, <a class="el" href="../../d3/dea/namespaceKTfwd_1_1tags.html#a3a3fa40df798bba498b12ed778caeb80">KTfwd::tags::gamete_dependent</a>)</td></tr>
-<tr class="separator:a0127ae29e6e4ed2289776eff183e52b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac11d6f5e10e76d59c22fcdb8d0a4c496"><td class="memTemplParams" colspan="2">template&lt;typename mmodel , typename gamete_type , typename mlist_type &gt; </td></tr>
+<tr class="memitem:ac11d6f5e10e76d59c22fcdb8d0a4c496"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if<br class="typebreak"/>
+&lt; <a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html#ad5ad6786ff26ea413b8d3585fc3452d7">KTfwd::traits::is_nullary_t</a><br class="typebreak"/>
+&lt; mmodel &gt;::value, typename <br class="typebreak"/>
+std::result_of&lt; mmodel()&gt;<br class="typebreak"/>
+::type &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ac11d6f5e10e76d59c22fcdb8d0a4c496">KTfwd::fwdpp_internal::mmodel_dispatcher</a> (const mmodel &amp;m, gamete_type &amp;, mlist_type *)</td></tr>
+<tr class="separator:ac11d6f5e10e76d59c22fcdb8d0a4c496"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92ebb7cdbfde5ccf3d34df35f69f32a4"><td class="memTemplParams" colspan="2">template&lt;typename mmodel , typename gamete_type , typename mlist_type &gt; </td></tr>
+<tr class="memitem:a92ebb7cdbfde5ccf3d34df35f69f32a4"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if<br class="typebreak"/>
+&lt; <a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html#acbece33d510a541cb82385580fd0b27f">KTfwd::traits::is_unary_t</a><br class="typebreak"/>
+&lt; mmodel, gamete_type &amp; &gt;<br class="typebreak"/>
+::value, typename <br class="typebreak"/>
+std::result_of&lt; mmodel(gamete_type &amp;)&gt;<br class="typebreak"/>
+::type &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a92ebb7cdbfde5ccf3d34df35f69f32a4">KTfwd::fwdpp_internal::mmodel_dispatcher</a> (mmodel &amp;m, gamete_type &amp;g, mlist_type *)</td></tr>
+<tr class="separator:a92ebb7cdbfde5ccf3d34df35f69f32a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a866a94575918c6f2a0044c1833e0a75e"><td class="memTemplParams" colspan="2">template&lt;typename mmodel , typename gamete_type , typename mlist_type &gt; </td></tr>
+<tr class="memitem:a866a94575918c6f2a0044c1833e0a75e"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if<br class="typebreak"/>
+&lt; <a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html#acbece33d510a541cb82385580fd0b27f">KTfwd::traits::is_unary_t</a><br class="typebreak"/>
+&lt; mmodel, mlist_type * &gt;<br class="typebreak"/>
+::value, typename <br class="typebreak"/>
+std::result_of&lt; mmodel(mlist_type *)&gt;<br class="typebreak"/>
+::type &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a866a94575918c6f2a0044c1833e0a75e">KTfwd::fwdpp_internal::mmodel_dispatcher</a> (mmodel &amp;m, gamete_type &amp;, mlist_type *mutations)</td></tr>
+<tr class="separator:a866a94575918c6f2a0044c1833e0a75e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a758df0431278b9f26daa6d3cf357b5b2"><td class="memTemplParams" colspan="2">template&lt;typename mmodel , typename gamete_type , typename mlist_type &gt; </td></tr>
+<tr class="memitem:a758df0431278b9f26daa6d3cf357b5b2"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if<br class="typebreak"/>
+&lt; (<a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html#af4c76da1580e9da1bd1babc1415b6ffb">KTfwd::traits::is_binary_t</a><br class="typebreak"/>
+&lt; mmodel, gamete_type <br class="typebreak"/>
+&amp;, mlist_type * &gt;::value <br class="typebreak"/>
+&amp;&amp;!(<a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html#acbece33d510a541cb82385580fd0b27f">KTfwd::traits::is_unary_t</a><br class="typebreak"/>
+&lt; mmodel, gamete_type &amp; &gt;<br class="typebreak"/>
+::value||<a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html#acbece33d510a541cb82385580fd0b27f">KTfwd::traits::is_unary_t</a><br class="typebreak"/>
+&lt; mmodel, mlist_type * &gt;<br class="typebreak"/>
+::value)), typename <br class="typebreak"/>
+std::result_of&lt; mmodel(gamete_type <br class="typebreak"/>
+&amp;, mlist_type *)&gt;::type &gt;<br class="typebreak"/>
+::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a758df0431278b9f26daa6d3cf357b5b2">KTfwd::fwdpp_internal::mmodel_dispatcher</a> (const mmodel &amp;m, gamete_type &amp;g, mlist_type *mutations)</td></tr>
+<tr class="separator:a758df0431278b9f26daa6d3cf357b5b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3acc05aef846d0b704f5208bba37c316"><td class="memTemplParams" colspan="2">template&lt;typename mutation_model , typename mutation_insertion_policy , typename mlist_type , typename gamete_type &gt; </td></tr>
+<tr class="memitem:a3acc05aef846d0b704f5208bba37c316"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a3acc05aef846d0b704f5208bba37c316">KTfwd::fwdpp_internal::add_N_mutations</a> (const mutation_model &amp;mmodel, const mutation_insertion_policy &amp;mpolicy, const unsigned &amp;n, mlist_type *mutations, gamete_type &amp;g)</td></tr>
+<tr class="separator:a3acc05aef846d0b704f5208bba37c316"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

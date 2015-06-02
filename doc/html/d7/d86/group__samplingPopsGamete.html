@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.0</span>
+   &#160;<span id="projectnumber">0.3.1</span>
    </div>
   </td>
  </tr>
@@ -78,129 +78,15 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Randomly-sampling individual gametes.<div class="ingroups"><a class="el" href="../../df/d2f/group__samplingPops.html">Functions related to taking samples from simulated populations</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:gae5656f2b4685348222718deff1f24997"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename allocator_t , template&lt; typename, typename &gt; class container_t&gt; </td></tr>
-<tr class="memitem:gae5656f2b4685348222718deff1f24997"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; double, <br class="typebreak"/>
-std::string &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/d86/group__samplingPopsGamete.html#gae5656f2b4685348222718deff1f24997">KTfwd::ms_sample</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const container_t&lt; gamete_type, allocator_t &gt; *gametes, const unsigned &amp;n, const unsigned &amp;N, bool remove_fixed=true)</td></tr>
-<tr class="separator:gae5656f2b4685348222718deff1f24997"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9aa3258399200b1f313ff3cfdb222a34"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename allocator_t , template&lt; typename, typename &gt; class container_t&gt; </td></tr>
-<tr class="memitem:ga9aa3258399200b1f313ff3cfdb222a34"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; std::vector<br class="typebreak"/>
-&lt; std::pair&lt; double, <br class="typebreak"/>
-std::string &gt; &gt;, std::vector<br class="typebreak"/>
-&lt; std::pair&lt; double, <br class="typebreak"/>
-std::string &gt; &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/d86/group__samplingPopsGamete.html#ga9aa3258399200b1f313ff3cfdb222a34">KTfwd::ms_sample_separate</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const container_t&lt; gamete_type, allocator_t &gt; *gametes, const unsigned &amp;n, const unsigned &amp;N, bool remove_fixed=true)</td></tr>
-<tr class="separator:ga9aa3258399200b1f313ff3cfdb222a34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>These functions draws a sample of size <img class="formulaInl" alt="$n \ll 2N$" src="../../form_0.png"/> from a simulated population.</p>
 <p>The gametes are randomly-sampled (with replacement) proportionally to their frequency in the population.</p>
 <p>The object passed to these functions is the container of gametes (e.g, some container of type <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html" title="Base class for gametes. ">KTfwd::gamete_base</a>).</p>
 <p>The return values have no relation to any actual diploid individual in the population. Each haplotype corresponds to a simulated haplotype, but adjacent haplotypes are basically random draws of M&amp;Ms from a jar.</p>
 <p>For these functions, <img class="formulaInl" alt="$n$" src="../../form_1.png"/> can be odd or even. </p>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="gae5656f2b4685348222718deff1f24997"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename gamete_type , typename allocator_t , template&lt; typename, typename &gt; class container_t&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; std::pair&lt;double, std::string&gt; &gt; KTfwd::ms_sample </td>
-          <td>(</td>
-          <td class="paramtype">gsl_rng *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const container_t&lt; gamete_type, allocator_t &gt; *&#160;</td>
-          <td class="paramname"><em>gametes</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>N</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>remove_fixed</em> = <code>true</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Take a sample of size n from a larger population of N diploids </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d81/diploid_8cc-example.html#a20">diploid.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a12">diploid_ind.cc</a>, <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a15">diploid_ind_2locus.cc</a>, and <a class="el" href="../../dd/da1/diploid_twopop_mig_8cc-example.html#a25">diploid_twopop_mig.cc</a>.</dd>
-</dl>
-</div>
-</div>
-<a class="anchor" id="ga9aa3258399200b1f313ff3cfdb222a34"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename gamete_type , typename allocator_t , template&lt; typename, typename &gt; class container_t&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::pair&lt; std::vector&lt; std::pair&lt;double, std::string&gt; &gt; , std::vector&lt; std::pair&lt;double, std::string&gt; &gt; &gt; KTfwd::ms_sample_separate </td>
-          <td>(</td>
-          <td class="paramtype">gsl_rng *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const container_t&lt; gamete_type, allocator_t &gt; *&#160;</td>
-          <td class="paramname"><em>gametes</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>N</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>remove_fixed</em> = <code>true</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a11">bneck_selection_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a11">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a15">diploid_fixed_sh_ind_lambda.cc</a>, <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a20">migsel_ind.cc</a>, and <a class="el" href="../../d3/d0a/RHH_8cc-example.html#a17">RHH.cc</a>.</dd>
-</dl>
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

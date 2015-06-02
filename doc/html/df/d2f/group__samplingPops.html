@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.0</span>
+   &#160;<span id="projectnumber">0.3.1</span>
    </div>
   </td>
  </tr>
@@ -94,15 +94,15 @@ Modules</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>This collection of functions allows a user to draw a sample of size <img class="formulaInl" alt="$n \ll 2N$" src="../../form_0.png"/> from a simulated population.</p>
-<p>The library provides several overloads of the functions <a class="el" href="../../d7/d86/group__samplingPopsGamete.html#gae5656f2b4685348222718deff1f24997">KTfwd::ms_sample</a> and <a class="el" href="../../d7/d86/group__samplingPopsGamete.html#ga9aa3258399200b1f313ff3cfdb222a34">KTfwd::ms_sample_separate</a>. Further, the behavior of these functions differs slightly depending on whether or not the output from the simulation comes from a gamete- or an indvidual-based method.</p>
+<p>The library provides several overloads of the functions <a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga2e9aee81e0abaddbb9c6e56f0d8f980f" title="Sampling from a population in an individual-based simulation. ">KTfwd::ms_sample</a> and <a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga235b4507a6f09b26fa9b33ef12abf59d" title="Sampling from a population in an individual-based simulation. Selected and neutral mutations returned...">KTfwd::ms_sample_separate</a>.</p>
 <p>The following features are in common to all versions of these functions:</p>
 <ol type="1">
-<li>They only support bi-allelic mutation positions.</li>
-<li>All functions return some number of objects of type std::vector&lt; std::pair&lt;double, std::string&gt; &gt;. Each element in the vector corresponds to a mutation. The double corresponds to the mutation position, and the string corresponds to the character states in each of the <img class="formulaInl" alt="$n$" src="../../form_1.png"/> samples. The strings contain the character '0' when a sample has the ancestral state or '1' for the derived (mutant) state. This type may be used to populate a polymorphism table from the <a href="http://molpopgen.github.io/libsequence/">libsequence</a> library: <div class="fragment"><div class="line"><span class="keyword">auto</span> x = <a class="code" href="../../d7/d86/group__samplingPopsGamete.html#gae5656f2b4685348222718deff1f24997">KTfwd::ms_sample</a>( appropriate arguments );</div>
+<li>They only supp]ort bi-allelic mutation positions.</li>
+<li>All functions return some number of objects of type std::vector&lt; std::pair&lt;double, std::string&gt; &gt;. Each element in the vector corresponds to a mutation. The double corresponds to the mutation position, and the string corresponds to the character states in each of the <img class="formulaInl" alt="$n$" src="../../form_1.png"/> samples. The strings contain the character '0' when a sample has the ancestral state or '1' for the derived (mutant) state. This type may be used to populate a polymorphism table from the <a href="http://molpopgen.github.io/libsequence/">libsequence</a> library: <div class="fragment"><div class="line"><span class="keyword">auto</span> x = <a class="code" href="../../d7/de2/group__samplingPopsInd.html#ga2e9aee81e0abaddbb9c6e56f0d8f980f">KTfwd::ms_sample</a>( appropriate arguments );</div>
 <div class="line">Sequence::SimData xx(x.begin(),x.end());</div>
 </div><!-- fragment --> When a SimData object is written to a stream, its output format is the same as that used by Dick Hudson's coalescent simulation program <a href="http://home.uchicago.edu/~rhudson1/source/mksamples.html">ms</a></li>
-<li>All versions of <a class="el" href="../../d7/d86/group__samplingPopsGamete.html#gae5656f2b4685348222718deff1f24997">KTfwd::ms_sample</a> return vectors where the mutations affecting fitness and those not affecting fitness are intermingled.</li>
-<li>All versions of <a class="el" href="../../d7/d86/group__samplingPopsGamete.html#ga9aa3258399200b1f313ff3cfdb222a34">KTfwd::ms_sample_separate</a> return pairs of vectors separating the mutations not affecting fitness from those that do. The first member of each pair is a vector of "neutral" mutations, and the second member is the vector of "selected" mutations.</li>
+<li>All versions of <a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga2e9aee81e0abaddbb9c6e56f0d8f980f" title="Sampling from a population in an individual-based simulation. ">KTfwd::ms_sample</a> return vectors where the mutations affecting fitness and those not affecting fitness are intermingled.</li>
+<li>All versions of <a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga235b4507a6f09b26fa9b33ef12abf59d" title="Sampling from a population in an individual-based simulation. Selected and neutral mutations returned...">KTfwd::ms_sample_separate</a> return pairs of vectors separating the mutations not affecting fitness from those that do. The first member of each pair is a vector of "neutral" mutations, and the second member is the vector of "selected" mutations.</li>
 <li>The functions are all implemented using sampling with replacement from the population. Thus, setting <img class="formulaInl" alt="$n = N$" src="../../form_2.png"/> (or <img class="formulaInl" alt="$2N$" src="../../form_3.png"/>) will NOT return all the variable sites in the entire population!!!</li>
 </ol>
 <p>A vector may contain data looking like the following: </p>

@@ -6,5 +6,7 @@ var searchData=
   ['gsl_5fran_5fdiscrete_5ft_5fdeleter',['gsl_ran_discrete_t_deleter',['../dc/d4a/structKTfwd_1_1fwdpp__internal_1_1gsl__ran__discrete__t__deleter.html',1,'KTfwd::fwdpp_internal']]],
   ['gsl_5frng_5fdeleter',['gsl_rng_deleter',['../d5/d99/structKTfwd_1_1sugar_1_1gsl__rng__deleter.html',1,'KTfwd::sugar']]],
   ['gsl_5frng_5ftype_5ftag',['GSL_RNG_TYPE_TAG',['../d7/d43/structKTfwd_1_1sugar_1_1GSL__RNG__TYPE__TAG.html',1,'KTfwd::sugar']]],
-  ['gslrng_5ft',['GSLrng_t',['../de/d55/classKTfwd_1_1GSLrng__t.html',1,'KTfwd']]]
+  ['gslrng_5ft',['GSLrng_t',['../de/d55/classKTfwd_1_1GSLrng__t.html',1,'KTfwd']]],
+  ['gzdeserialize',['gzdeserialize',['../d2/db3/structKTfwd_1_1gzdeserialize.html',1,'KTfwd']]],
+  ['gzserialize',['gzserialize',['../d1/d04/structKTfwd_1_1gzserialize.html',1,'KTfwd']]]
 ];

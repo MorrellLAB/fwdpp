@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.0</span>
+   &#160;<span id="projectnumber">0.3.1</span>
    </div>
   </td>
  </tr>
@@ -170,24 +170,17 @@ Functions</h2></td></tr>
 <div class="line"><span class="preprocessor"></span><span class="preprocessor">#include &lt;<a class="code" href="../../df/d10/common__ind_8hpp.html">common_ind.hpp</a>&gt;</span></div>
 <div class="line"><span class="keyword">using</span> <a class="code" href="../../d5/d77/HOC__ind_8cc.html#aa1797c37ecd3700357dbddadc6838b6d">poptype</a> = singlepop_t;</div>
 <div class="line"></div>
-<div class="line"><span class="keyword">struct </span><a class="code" href="../../dc/d70/structHOChap.html">HOChap</a> : <span class="keyword">public</span> <a class="code" href="../../d5/dcb/structKTfwd_1_1tags_1_1mmodel__type.html">KTfwd::tags::gamete_dependent</a></div>
+<div class="line"><span class="keyword">struct </span><a class="code" href="../../dc/d70/structHOChap.html">HOChap</a></div>
 <div class="line">{</div>
-<div class="line">  gsl_rng * <a class="code" href="../../dc/d70/structHOChap.html#ad717d251bec71239b6b67d9fc22b2486">r</a>;</div>
-<div class="line">  <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="../../dc/d70/structHOChap.html#af1e24ad6df238c3af6775fde5b9c6d40">sigmu</a>;</div>
-<div class="line">  poptype::lookup_table_t * <a class="code" href="../../dc/d70/structHOChap.html#a312846240240672713e46fe4f6d7cd8f">lookup</a>;</div>
-<div class="line">  <a class="code" href="../../dc/d70/structHOChap.html#a57b7d7ec0704e812ace4b565977fb1f8">HOChap</a>( gsl_rng * __r, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; __sigmu,</div>
-<div class="line">          poptype::lookup_table_t * __lookup ) : r(__r),<a class="code" href="../../dc/d70/structHOChap.html#af1e24ad6df238c3af6775fde5b9c6d40">sigmu</a>(__sigmu),<a class="code" href="../../dc/d70/structHOChap.html#a312846240240672713e46fe4f6d7cd8f">lookup</a>(__lookup)</div>
-<div class="line">  {</div>
-<div class="line">  }</div>
-<div class="line">  <span class="keyword">inline</span> <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">mtype</a> <a class="code" href="../../dc/d70/structHOChap.html#a0f109466eacf0c7a73635f5a1a9dbedd">operator()</a>(<a class="code" href="../../da/d8b/namespaceKTfwd.html#a8328028349c9a38d51bcaba0a80f78a1">poptype::gamete_t</a> &amp; g,<a class="code" href="../../da/d8b/namespaceKTfwd.html#ac9b6fed9da78e8c21de7ecd4b1cd52fe">poptype::mlist_t</a> * mutations)<span class="keyword"> const</span></div>
+<div class="line">  <span class="keyword">inline</span> <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">mtype</a> <a class="code" href="../../dc/d70/structHOChap.html#ac1c44803de49ab04a447b89bb51222ee">operator()</a>(poptype::gamete_t &amp; g,gsl_rng * r, poptype::lookup_table_t * lookup, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; sigmu)<span class="keyword"> const</span></div>
 <div class="line"><span class="keyword">  </span>{</div>
 <div class="line">    <span class="keywordtype">double</span> pos = gsl_rng_uniform(r);</div>
-<div class="line">    <span class="keywordflow">while</span>( <a class="code" href="../../dc/d70/structHOChap.html#a312846240240672713e46fe4f6d7cd8f">lookup</a>-&gt;find(pos) != <a class="code" href="../../dc/d70/structHOChap.html#a312846240240672713e46fe4f6d7cd8f">lookup</a>-&gt;end() ) <span class="comment">//make sure it doesn&#39;t exist in the population</span></div>
+<div class="line">    <span class="keywordflow">while</span>( lookup-&gt;find(pos) != lookup-&gt;end() ) <span class="comment">//make sure it doesn&#39;t exist in the population</span></div>
 <div class="line">      { </div>
 <div class="line">        pos = gsl_rng_uniform(r);  <span class="comment">//if it does, generate a new one</span></div>
 <div class="line">      }</div>
-<div class="line">    <a class="code" href="../../dc/d70/structHOChap.html#a312846240240672713e46fe4f6d7cd8f">lookup</a>-&gt;insert(pos);</div>
-<div class="line">    <span class="keywordtype">double</span> E = gsl_ran_gaussian(r,<a class="code" href="../../dc/d70/structHOChap.html#af1e24ad6df238c3af6775fde5b9c6d40">sigmu</a>); <span class="comment">//effect size of hap, after mutation</span></div>
+<div class="line">    lookup-&gt;insert(pos);</div>
+<div class="line">    <span class="keywordtype">double</span> E = gsl_ran_gaussian(r,sigmu); <span class="comment">//effect size of hap, after mutation</span></div>
 <div class="line">    <span class="keywordtype">double</span> sum = std::accumulate(g.smutations.begin(),g.smutations.end(),0.,</div>
 <div class="line">                                 [](<span class="keywordtype">double</span> &amp; d, <span class="keyword">const</span> poptype::mlist_t::iterator &amp; m) { <span class="keywordflow">return</span> d + m-&gt;s; });</div>
 <div class="line">    <span class="keywordtype">double</span> esize = (E &gt; sum) ? std::fabs(E-sum) : -1.*std::fabs(E-sum);</div>
@@ -252,64 +245,67 @@ Functions</h2></td></tr>
 <div class="line">    {</div>
 <div class="line">      <a class="code" href="../../d5/d77/HOC__ind_8cc.html#aa1797c37ecd3700357dbddadc6838b6d">poptype</a> pop(N);</div>
 <div class="line"></div>
-<div class="line">      <a class="code" href="../../dc/d70/structHOChap.html">HOChap</a> mmodel(r,sigmu,&amp;pop.mut_lookup);</div>
+<div class="line">      <span class="comment">//HOChap mmodel(r,sigmu,&amp;pop.mut_lookup);</span></div>
 <div class="line">      <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> generation = 0; generation &lt; ngens; ++generation )</div>
 <div class="line">        {</div>
 <div class="line">          <span class="comment">//Iterate the population through 1 generation</span></div>
-<div class="line">          <span class="keywordtype">double</span> wbar = <a class="code" href="../../da/d8b/namespaceKTfwd.html#a946efaa4a6095f4f2aadda44a809a477">KTfwd::sample_diploid</a>(r,</div>
-<div class="line">                                       &amp;pop.gametes,  <span class="comment">//non-const pointer to gametes</span></div>
-<div class="line">                                       &amp;pop.diploids, <span class="comment">//non-const pointer to diploids</span></div>
-<div class="line">                                       &amp;pop.mutations, <span class="comment">//non-const pointer to mutations</span></div>
-<div class="line">                                       N,     <span class="comment">//current pop size, remains constant</span></div>
-<div class="line">                                       mu,    <span class="comment">//mutation rate per gamete</span></div>
-<div class="line">                                       <span class="comment">/*</span></div>
-<div class="line"><span class="comment">                                         The mutation model (defined above) will pass each gamete</span></div>
-<div class="line"><span class="comment">                                         to be mutated to the mutation model function.  Again, _1</span></div>
-<div class="line"><span class="comment">                                         is used as a placeholder for that gamete.</span></div>
-<div class="line"><span class="comment">                                       */</span></div>
-<div class="line">                                       mmodel,</div>
-<div class="line">                                       <span class="comment">//The recombination policy includes the uniform crossover rate</span></div>
-<div class="line">                                       std::bind(<a class="code" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a>(),std::placeholders::_1,std::placeholders::_2,</div>
-<div class="line">                                                   &amp;pop.gametes,</div>
-<div class="line">                                                   littler,</div>
-<div class="line">                                                   r,</div>
-<div class="line">                                                   recmap),</div>
-<div class="line">                                       <span class="comment">/*</span></div>
-<div class="line"><span class="comment">                                         Policy to insert new mutations at the end of the mutations list</span></div>
-<div class="line"><span class="comment">                                       */</span></div>
-<div class="line">                                       std::bind(KTfwd::insert_at_end&lt;poptype::mutation_t,poptype::mlist_t&gt;,std::placeholders::_1,std::placeholders::_2),</div>
-<div class="line">                                       <span class="comment">/*</span></div>
-<div class="line"><span class="comment">                                         Policy telling KTfwd::mutate how to add mutated gametes into the gamete pool.</span></div>
-<div class="line"><span class="comment">                                         If mutation results in a new gamete, add that gamete to the </span></div>
-<div class="line"><span class="comment">                                         end of gametes. This is always the case under infinitely-many sites,</span></div>
-<div class="line"><span class="comment">                                         but for other mutation models, mutation may result in a new</span></div>
-<div class="line"><span class="comment">                                         copy identical to an existing gamete.  If so,</span></div>
-<div class="line"><span class="comment">                                         that gamete&#39;s frequency increases by 1.</span></div>
-<div class="line"><span class="comment">                                       */</span></div>
-<div class="line">                                       std::bind(KTfwd::insert_at_end&lt;poptype::gamete_t,poptype::glist_t&gt;,std::placeholders::_1,std::placeholders::_2),</div>
-<div class="line">                                       <span class="comment">/*</span></div>
-<div class="line"><span class="comment">                                         Fitness is multiplicative over sites.</span></div>
+<div class="line">          <span class="keywordtype">double</span> wbar = <a class="code" href="../../da/d8b/namespaceKTfwd.html#a18df6351fa3148914bbb844c36bc3e05">KTfwd::sample_diploid</a>(r,</div>
+<div class="line">                                              &amp;pop.gametes,  <span class="comment">//non-const pointer to gametes</span></div>
+<div class="line">                                              &amp;pop.diploids, <span class="comment">//non-const pointer to diploids</span></div>
+<div class="line">                                              &amp;pop.mutations, <span class="comment">//non-const pointer to mutations</span></div>
+<div class="line">                                              N,     <span class="comment">//current pop size, remains constant</span></div>
+<div class="line">                                              mu,    <span class="comment">//mutation rate per gamete</span></div>
+<div class="line">                                              <span class="comment">/*</span></div>
+<div class="line"><span class="comment">                                                The mutation model below will be applied by</span></div>
+<div class="line"><span class="comment">                                                sample_diploid in order to add mutations to gametes each generation.</span></div>
 <div class="line"><span class="comment"></span></div>
-<div class="line"><span class="comment">                                         The fitness model takes two gametes as arguments.  </span></div>
-<div class="line"><span class="comment">                                         The gametes are passed to this function by </span></div>
-<div class="line"><span class="comment">                                         KTfwd::sample_diploid, and the _1 and _2 are placeholders for</span></div>
-<div class="line"><span class="comment">                                         those gametes (see documentation for boost/bind.hpp for details).</span></div>
-<div class="line"><span class="comment">                                         The 2. means that fitnesses are 1, 1+sh, and 1+2s for genotypes</span></div>
-<div class="line"><span class="comment">                                         AA, Aa, and aa, respectively, where a is a mutation with</span></div>
-<div class="line"><span class="comment">                                         selection coefficient s and dominance h, and the fitness of </span></div>
-<div class="line"><span class="comment">                                         the diploid is the product of fitness over sites</span></div>
-<div class="line"><span class="comment"></span></div>
-<div class="line"><span class="comment">                                         There is no selection in this simulation, but this</span></div>
-<div class="line"><span class="comment">                                         function is called anyways to illustrate it as multiplicative</span></div>
-<div class="line"><span class="comment">                                         models are very common in population genetics</span></div>
-<div class="line"><span class="comment">                                       */</span></div>
-<div class="line">                                       std::bind(<a class="code" href="../../d5/d77/HOC__ind_8cc.html#a25b24674eef2892e7f54af399c90de3b">simple_gaussian</a>,std::placeholders::_1,std::placeholders::_2),</div>
-<div class="line">                                       <span class="comment">/*</span></div>
-<div class="line"><span class="comment">                                         For each gamete still extant after sampling,</span></div>
-<div class="line"><span class="comment">                                         remove the pointers to any mutations that have </span></div>
-<div class="line"><span class="comment">                                         been lost from the population.</span></div>
-<div class="line"><span class="comment">                                       */</span></div>
-<div class="line">                                       std::bind(<a class="code" href="../../d4/de8/structKTfwd_1_1mutation__remover.html">KTfwd::mutation_remover</a>(),std::placeholders::_1,0));</div>
+<div class="line"><span class="comment">                                                The _1 is a placeholder for a non-const reference to a gamete (see defn&#39;</span></div>
+<div class="line"><span class="comment">                                                of HOChap above).</span></div>
+<div class="line"><span class="comment">                                              */</span></div>
+<div class="line">                                              std::bind(<a class="code" href="../../dc/d70/structHOChap.html">HOChap</a>(),std::placeholders::_1,r,&amp;pop.mut_lookup,sigmu),</div>
+<div class="line">                                              <span class="comment">// mmodel,</span></div>
+<div class="line">                                              <span class="comment">//The recombination policy includes the uniform crossover rate</span></div>
+<div class="line">                                              std::bind(<a class="code" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a>(),std::placeholders::_1,std::placeholders::_2,</div>
+<div class="line">                                                        &amp;pop.gametes,</div>
+<div class="line">                                                        littler,</div>
+<div class="line">                                                        r,</div>
+<div class="line">                                                        recmap),</div>
+<div class="line">                                              <span class="comment">/*</span></div>
+<div class="line"><span class="comment">                                                Policy to insert new mutations at the end of the mutations list</span></div>
+<div class="line"><span class="comment">                                              */</span></div>
+<div class="line">                                              std::bind(KTfwd::insert_at_end&lt;poptype::mutation_t,poptype::mlist_t&gt;,std::placeholders::_1,std::placeholders::_2),</div>
+<div class="line">                                              <span class="comment">/*</span></div>
+<div class="line"><span class="comment">                                                Policy telling KTfwd::mutate how to add mutated gametes into the gamete pool.</span></div>
+<div class="line"><span class="comment">                                                If mutation results in a new gamete, add that gamete to the </span></div>
+<div class="line"><span class="comment">                                                end of gametes. This is always the case under infinitely-many sites,</span></div>
+<div class="line"><span class="comment">                                                but for other mutation models, mutation may result in a new</span></div>
+<div class="line"><span class="comment">                                                copy identical to an existing gamete.  If so,</span></div>
+<div class="line"><span class="comment">                                                that gamete&#39;s frequency increases by 1.</span></div>
+<div class="line"><span class="comment">                                              */</span></div>
+<div class="line">                                              std::bind(KTfwd::insert_at_end&lt;poptype::gamete_t,poptype::glist_t&gt;,std::placeholders::_1,std::placeholders::_2),</div>
+<div class="line">                                              <span class="comment">/*</span></div>
+<div class="line"><span class="comment">                                                Fitness is multiplicative over sites.</span></div>
+<div class="line"><span class="comment">                                                </span></div>
+<div class="line"><span class="comment">                                                The fitness model takes two gametes as arguments.  </span></div>
+<div class="line"><span class="comment">                                                The gametes are passed to this function by </span></div>
+<div class="line"><span class="comment">                                                KTfwd::sample_diploid, and the _1 and _2 are placeholders for</span></div>
+<div class="line"><span class="comment">                                                those gametes (see documentation for boost/bind.hpp for details).</span></div>
+<div class="line"><span class="comment">                                                The 2. means that fitnesses are 1, 1+sh, and 1+2s for genotypes</span></div>
+<div class="line"><span class="comment">                                                AA, Aa, and aa, respectively, where a is a mutation with</span></div>
+<div class="line"><span class="comment">                                                selection coefficient s and dominance h, and the fitness of </span></div>
+<div class="line"><span class="comment">                                                the diploid is the product of fitness over sites</span></div>
+<div class="line"><span class="comment">                                                </span></div>
+<div class="line"><span class="comment">                                                There is no selection in this simulation, but this</span></div>
+<div class="line"><span class="comment">                                                function is called anyways to illustrate it as multiplicative</span></div>
+<div class="line"><span class="comment">                                                models are very common in population genetics</span></div>
+<div class="line"><span class="comment">                                              */</span></div>
+<div class="line">                                              std::bind(<a class="code" href="../../d5/d77/HOC__ind_8cc.html#a25b24674eef2892e7f54af399c90de3b">simple_gaussian</a>,std::placeholders::_1,std::placeholders::_2),</div>
+<div class="line">                                              <span class="comment">/*</span></div>
+<div class="line"><span class="comment">                                                For each gamete still extant after sampling,</span></div>
+<div class="line"><span class="comment">                                                remove the pointers to any mutations that have </span></div>
+<div class="line"><span class="comment">                                                been lost from the population.</span></div>
+<div class="line"><span class="comment">                                              */</span></div>
+<div class="line">                                              std::bind(<a class="code" href="../../d4/de8/structKTfwd_1_1mutation__remover.html">KTfwd::mutation_remover</a>(),std::placeholders::_1,0));</div>
 <div class="line">          <a class="code" href="../../da/d8b/namespaceKTfwd.html#a86a4fcecb15c101816ccdd15eefd6a1b">KTfwd::remove_lost</a>(&amp;pop.mutations,&amp;pop.mut_lookup);</div>
 <div class="line">          assert(<a class="code" href="../../da/d8b/namespaceKTfwd.html#a728e20cb60f82b818b5cc570722079a4">KTfwd::check_sum</a>(pop.gametes,twoN));</div>
 <div class="line">        }    </div>
@@ -317,7 +313,7 @@ Functions</h2></td></tr>
 <div class="line">      <span class="comment">//Note: this can be done more efficiently via the boost accumulator library, which</span></div>
 <div class="line">      <span class="comment">//we don&#39;t use here to reduce dependencies.</span></div>
 <div class="line">      std::vector&lt;double&gt; G;</div>
-<div class="line">      std::for_each(pop.diploids.cbegin(),pop.diploids.cend(),[&amp;G](<span class="keyword">const</span> std::pair&lt; poptype::glist_t::iterator, poptype::glist_t::iterator&gt; &amp; dip ) {</div>
+<div class="line">      std::for_each(pop.diploids.cbegin(),pop.diploids.cend(),[&amp;G](<span class="keyword">const</span> <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a1a5f1954bb541f5016cc0844385c6758">poptype::diploid_t</a> &amp; dip ) {</div>
 <div class="line">          <span class="keywordtype">double</span> sum = std::accumulate(dip.first-&gt;smutations.begin(),dip.first-&gt;smutations.end(),0.,</div>
 <div class="line">                                       [](<span class="keywordtype">double</span> &amp; d, <span class="keyword">const</span> poptype::mlist_t::iterator &amp; m) { <span class="keywordflow">return</span> d + m-&gt;s; } );</div>
 <div class="line">          sum += std::accumulate(dip.second-&gt;smutations.begin(),dip.second-&gt;smutations.end(),0.,</div>
@@ -330,8 +326,7 @@ Functions</h2></td></tr>
 <div class="line">}</div>
 <div class="line"></div>
 </div><!-- fragment --><p> A twist of additive House-of-Cards models with mutations within haplotypes having their effect sizes constrained to = new haplotype effect size. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/d9b/HOC_ind_8cc-example.html#a10">HOC_ind.cc</a>.</dd>
-</dl>
+
 </div>
 </div>
 <a class="anchor" id="aa1797c37ecd3700357dbddadc6838b6d"></a>
@@ -370,8 +365,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/d9b/HOC_ind_8cc-example.html#a12">HOC_ind.cc</a>.</dd>
-</dl>
+
 </div>
 </div>
 <a class="anchor" id="a25b24674eef2892e7f54af399c90de3b"></a>
@@ -397,8 +391,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/d9b/HOC_ind_8cc-example.html#a11">HOC_ind.cc</a>.</dd>
-</dl>
+
 </div>
 </div>
 </div><!-- contents -->

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.0</span>
+   &#160;<span id="projectnumber">0.3.1</span>
    </div>
   </td>
  </tr>
@@ -105,13 +105,18 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a0e00f0a04c175f402a6ccba8117a8cee"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d0b/structKTfwd_1_1no__selection.html#a0e00f0a04c175f402a6ccba8117a8cee">result_type</a> = double</td></tr>
+<tr class="memdesc:a0e00f0a04c175f402a6ccba8117a8cee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method for standard diploid simulations of a single locus.  <a href="#a0e00f0a04c175f402a6ccba8117a8cee">More...</a><br/></td></tr>
 <tr class="separator:a0e00f0a04c175f402a6ccba8117a8cee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a84865f8fff96bcbafbc537414df316ae"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type &gt; </td></tr>
-<tr class="memitem:a84865f8fff96bcbafbc537414df316ae"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../dc/d0b/structKTfwd_1_1no__selection.html#a0e00f0a04c175f402a6ccba8117a8cee">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d0b/structKTfwd_1_1no__selection.html#a84865f8fff96bcbafbc537414df316ae">operator()</a> (const iterator_type &amp;g1, const iterator_type &amp;g2) const </td></tr>
-<tr class="separator:a84865f8fff96bcbafbc537414df316ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1a1a1fa03ea6a09e1272d3c0a466830"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type &gt; </td></tr>
+<tr class="memitem:ab1a1a1fa03ea6a09e1272d3c0a466830"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../dc/d0b/structKTfwd_1_1no__selection.html#a0e00f0a04c175f402a6ccba8117a8cee">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d0b/structKTfwd_1_1no__selection.html#ab1a1a1fa03ea6a09e1272d3c0a466830">operator()</a> (const iterator_type &amp;, const iterator_type &amp;) const </td></tr>
+<tr class="separator:ab1a1a1fa03ea6a09e1272d3c0a466830"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7bafb8f17983f1f0a907ff616b7d8de"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ae7bafb8f17983f1f0a907ff616b7d8de"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../dc/d0b/structKTfwd_1_1no__selection.html#a0e00f0a04c175f402a6ccba8117a8cee">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d0b/structKTfwd_1_1no__selection.html#ae7bafb8f17983f1f0a907ff616b7d8de">operator()</a> (const T &amp;) const </td></tr>
+<tr class="memdesc:ae7bafb8f17983f1f0a907ff616b7d8de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Naive implementation for non-standard cases.  <a href="#ae7bafb8f17983f1f0a907ff616b7d8de">More...</a><br/></td></tr>
+<tr class="separator:ae7bafb8f17983f1f0a907ff616b7d8de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Returns a fitness of 1. </p>
@@ -135,10 +140,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Method for standard diploid simulations of a single locus. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a84865f8fff96bcbafbc537414df316ae"></a>
+<a class="anchor" id="ab1a1a1fa03ea6a09e1272d3c0a466830"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -151,13 +158,13 @@ template&lt;typename iterator_type &gt; </div>
           <td class="memname"><a class="el" href="../../dc/d0b/structKTfwd_1_1no__selection.html#a0e00f0a04c175f402a6ccba8117a8cee">result_type</a> KTfwd::no_selection::operator() </td>
           <td>(</td>
           <td class="paramtype">const iterator_type &amp;&#160;</td>
-          <td class="paramname"><em>g1</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const iterator_type &amp;&#160;</td>
-          <td class="paramname"><em>g2</em>&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -171,6 +178,34 @@ template&lt;typename iterator_type &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae7bafb8f17983f1f0a907ff616b7d8de"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/d0b/structKTfwd_1_1no__selection.html#a0e00f0a04c175f402a6ccba8117a8cee">result_type</a> KTfwd::no_selection::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Naive implementation for non-standard cases. </p>
 
 </div>
 </div>

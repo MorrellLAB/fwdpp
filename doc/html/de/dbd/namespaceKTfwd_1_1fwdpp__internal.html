@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.0</span>
+   &#160;<span id="projectnumber">0.3.1</span>
    </div>
   </td>
  </tr>
@@ -122,6 +122,18 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:afc6d610569653768f125848317007328"><td class="memTemplParams" colspan="2">template&lt;typename fitness_policy_type , typename diploid_itr_t &gt; </td></tr>
+<tr class="memitem:afc6d610569653768f125848317007328"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#afc6d610569653768f125848317007328">diploid_fitness_dispatch</a> (const fitness_policy_type &amp;fp, const diploid_itr_t &amp;d, std::false_type)</td></tr>
+<tr class="memdesc:afc6d610569653768f125848317007328"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard diploids.  <a href="#afc6d610569653768f125848317007328">More...</a><br/></td></tr>
+<tr class="separator:afc6d610569653768f125848317007328"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac17dccb362b7b7a488ae34ac43bd5738"><td class="memTemplParams" colspan="2">template&lt;typename fitness_policy_type , typename diploid_itr_t &gt; </td></tr>
+<tr class="memitem:ac17dccb362b7b7a488ae34ac43bd5738"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ac17dccb362b7b7a488ae34ac43bd5738">diploid_fitness_dispatch</a> (const fitness_policy_type &amp;fp, const diploid_itr_t &amp;d, std::true_type)</td></tr>
+<tr class="memdesc:ac17dccb362b7b7a488ae34ac43bd5738"><td class="mdescLeft">&#160;</td><td class="mdescRight">Custom diploids.  <a href="#ac17dccb362b7b7a488ae34ac43bd5738">More...</a><br/></td></tr>
+<tr class="separator:ac17dccb362b7b7a488ae34ac43bd5738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbb84152f62a5e3c009467cdbe4b3614"><td class="memTemplParams" colspan="2">template&lt;typename fitness_policy_type , typename diploid_itr_t &gt; </td></tr>
+<tr class="memitem:adbb84152f62a5e3c009467cdbe4b3614"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#adbb84152f62a5e3c009467cdbe4b3614">diploid_fitness_dispatch</a> (const fitness_policy_type &amp;fp, const diploid_itr_t &amp;d, std::true_type, typename std::enable_if&lt; <a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html#a932d87fc5a9068585039a7a5e8bfc859">traits::is_custom_diploid_t</a>&lt; typename diploid_itr_t::value_type &gt;::type &gt;::type())</td></tr>
+<tr class="memdesc:adbb84152f62a5e3c009467cdbe4b3614"><td class="mdescLeft">&#160;</td><td class="mdescRight">Custom diploids.  <a href="#adbb84152f62a5e3c009467cdbe4b3614">More...</a><br/></td></tr>
+<tr class="separator:adbb84152f62a5e3c009467cdbe4b3614"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0531c0a223ff483e8af0f5946d4c950b"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename pos_finder &gt; </td></tr>
 <tr class="memitem:a0531c0a223ff483e8af0f5946d4c950b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a0531c0a223ff483e8af0f5946d4c950b">update_sample_block</a> (std::vector&lt; std::pair&lt; double, std::string &gt; &gt; &amp;block, const mcont_t &amp;mutations, const unsigned &amp;i, const unsigned &amp;n, const pos_finder &amp;pf, const unsigned &amp;offset=0, const unsigned &amp;scalar=2)</td></tr>
 <tr class="separator:a0531c0a223ff483e8af0f5946d4c950b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,12 +144,46 @@ Functions</h2></td></tr>
 <tr class="memitem:a416cc435f714e2ab6c5d52e79e56ed39"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename mutation_iterator &gt; </td></tr>
 <tr class="memitem:a416cc435f714e2ab6c5d52e79e56ed39"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a416cc435f714e2ab6c5d52e79e56ed39">add_new_mutation</a> (mutation_iterator &amp;mitr, gamete_type &amp;new_gamete)</td></tr>
 <tr class="separator:a416cc435f714e2ab6c5d52e79e56ed39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9afee6ac9dce5932824f97c356abf60"><td class="memTemplParams" colspan="2">template&lt;typename mutation_model , typename mutation_insertion_policy , typename mlist_type , typename gamete_type &gt; </td></tr>
-<tr class="memitem:ab9afee6ac9dce5932824f97c356abf60"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ab9afee6ac9dce5932824f97c356abf60">add_N_mutations</a> (const <a class="el" href="../../d0/d35/structmutation__model.html">mutation_model</a> &amp;mmodel, const mutation_insertion_policy &amp;mpolicy, const unsigned &amp;n, mlist_type *mutations, gamete_type &amp;g, <a class="el" href="../../d3/dea/namespaceKTfwd_1_1tags.html#a0efa4cbefee06dc2dea368d322a7fb64">KTfwd::tags::gamete_independent</a>)</td></tr>
-<tr class="separator:ab9afee6ac9dce5932824f97c356abf60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0127ae29e6e4ed2289776eff183e52b1"><td class="memTemplParams" colspan="2">template&lt;typename mutation_model , typename mutation_insertion_policy , typename mlist_type , typename gamete_type &gt; </td></tr>
-<tr class="memitem:a0127ae29e6e4ed2289776eff183e52b1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a0127ae29e6e4ed2289776eff183e52b1">add_N_mutations</a> (const <a class="el" href="../../d0/d35/structmutation__model.html">mutation_model</a> &amp;mmodel, const mutation_insertion_policy &amp;mpolicy, const unsigned &amp;n, mlist_type *mutations, gamete_type &amp;g, <a class="el" href="../../d3/dea/namespaceKTfwd_1_1tags.html#a3a3fa40df798bba498b12ed778caeb80">KTfwd::tags::gamete_dependent</a>)</td></tr>
-<tr class="separator:a0127ae29e6e4ed2289776eff183e52b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac11d6f5e10e76d59c22fcdb8d0a4c496"><td class="memTemplParams" colspan="2">template&lt;typename mmodel , typename gamete_type , typename mlist_type &gt; </td></tr>
+<tr class="memitem:ac11d6f5e10e76d59c22fcdb8d0a4c496"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if<br class="typebreak"/>
+&lt; <a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html#ad5ad6786ff26ea413b8d3585fc3452d7">KTfwd::traits::is_nullary_t</a><br class="typebreak"/>
+&lt; mmodel &gt;::value, typename <br class="typebreak"/>
+std::result_of&lt; mmodel()&gt;<br class="typebreak"/>
+::type &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ac11d6f5e10e76d59c22fcdb8d0a4c496">mmodel_dispatcher</a> (const mmodel &amp;m, gamete_type &amp;, mlist_type *)</td></tr>
+<tr class="separator:ac11d6f5e10e76d59c22fcdb8d0a4c496"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92ebb7cdbfde5ccf3d34df35f69f32a4"><td class="memTemplParams" colspan="2">template&lt;typename mmodel , typename gamete_type , typename mlist_type &gt; </td></tr>
+<tr class="memitem:a92ebb7cdbfde5ccf3d34df35f69f32a4"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if<br class="typebreak"/>
+&lt; <a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html#acbece33d510a541cb82385580fd0b27f">KTfwd::traits::is_unary_t</a><br class="typebreak"/>
+&lt; mmodel, gamete_type &amp; &gt;<br class="typebreak"/>
+::value, typename <br class="typebreak"/>
+std::result_of&lt; mmodel(gamete_type &amp;)&gt;<br class="typebreak"/>
+::type &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a92ebb7cdbfde5ccf3d34df35f69f32a4">mmodel_dispatcher</a> (mmodel &amp;m, gamete_type &amp;g, mlist_type *)</td></tr>
+<tr class="separator:a92ebb7cdbfde5ccf3d34df35f69f32a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a866a94575918c6f2a0044c1833e0a75e"><td class="memTemplParams" colspan="2">template&lt;typename mmodel , typename gamete_type , typename mlist_type &gt; </td></tr>
+<tr class="memitem:a866a94575918c6f2a0044c1833e0a75e"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if<br class="typebreak"/>
+&lt; <a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html#acbece33d510a541cb82385580fd0b27f">KTfwd::traits::is_unary_t</a><br class="typebreak"/>
+&lt; mmodel, mlist_type * &gt;<br class="typebreak"/>
+::value, typename <br class="typebreak"/>
+std::result_of&lt; mmodel(mlist_type *)&gt;<br class="typebreak"/>
+::type &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a866a94575918c6f2a0044c1833e0a75e">mmodel_dispatcher</a> (mmodel &amp;m, gamete_type &amp;, mlist_type *mutations)</td></tr>
+<tr class="separator:a866a94575918c6f2a0044c1833e0a75e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a758df0431278b9f26daa6d3cf357b5b2"><td class="memTemplParams" colspan="2">template&lt;typename mmodel , typename gamete_type , typename mlist_type &gt; </td></tr>
+<tr class="memitem:a758df0431278b9f26daa6d3cf357b5b2"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if<br class="typebreak"/>
+&lt; (<a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html#af4c76da1580e9da1bd1babc1415b6ffb">KTfwd::traits::is_binary_t</a><br class="typebreak"/>
+&lt; mmodel, gamete_type <br class="typebreak"/>
+&amp;, mlist_type * &gt;::value <br class="typebreak"/>
+&amp;&amp;!(<a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html#acbece33d510a541cb82385580fd0b27f">KTfwd::traits::is_unary_t</a><br class="typebreak"/>
+&lt; mmodel, gamete_type &amp; &gt;<br class="typebreak"/>
+::value||<a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html#acbece33d510a541cb82385580fd0b27f">KTfwd::traits::is_unary_t</a><br class="typebreak"/>
+&lt; mmodel, mlist_type * &gt;<br class="typebreak"/>
+::value)), typename <br class="typebreak"/>
+std::result_of&lt; mmodel(gamete_type <br class="typebreak"/>
+&amp;, mlist_type *)&gt;::type &gt;<br class="typebreak"/>
+::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a758df0431278b9f26daa6d3cf357b5b2">mmodel_dispatcher</a> (const mmodel &amp;m, gamete_type &amp;g, mlist_type *mutations)</td></tr>
+<tr class="separator:a758df0431278b9f26daa6d3cf357b5b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3acc05aef846d0b704f5208bba37c316"><td class="memTemplParams" colspan="2">template&lt;typename mutation_model , typename mutation_insertion_policy , typename mlist_type , typename gamete_type &gt; </td></tr>
+<tr class="memitem:a3acc05aef846d0b704f5208bba37c316"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a3acc05aef846d0b704f5208bba37c316">add_N_mutations</a> (const mutation_model &amp;mmodel, const mutation_insertion_policy &amp;mpolicy, const unsigned &amp;n, mlist_type *mutations, gamete_type &amp;g)</td></tr>
+<tr class="separator:a3acc05aef846d0b704f5208bba37c316"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac48625abcee7f808a28ab9a2867ce9bb"><td class="memTemplParams" colspan="2">template&lt;typename itr_type , typename cont_type &gt; </td></tr>
 <tr class="memitem:ac48625abcee7f808a28ab9a2867ce9bb"><td class="memTemplItemLeft" align="right" valign="top">itr_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ac48625abcee7f808a28ab9a2867ce9bb">rec_gam_updater</a> (itr_type __first, itr_type __last, cont_type &amp;m1, cont_type &amp;m2, const short &amp;SWITCH, const double &amp;val)</td></tr>
 <tr class="separator:ac48625abcee7f808a28ab9a2867ce9bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,7 +208,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ab9afee6ac9dce5932824f97c356abf60"></a>
+<a class="anchor" id="a3acc05aef846d0b704f5208bba37c316"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -171,7 +217,7 @@ template&lt;typename mutation_model , typename mutation_insertion_policy , typen
         <tr>
           <td class="memname">void KTfwd::fwdpp_internal::add_N_mutations </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d0/d35/structmutation__model.html">mutation_model</a> &amp;&#160;</td>
+          <td class="paramtype">const mutation_model &amp;&#160;</td>
           <td class="paramname"><em>mmodel</em>, </td>
         </tr>
         <tr>
@@ -196,13 +242,7 @@ template&lt;typename mutation_model , typename mutation_insertion_policy , typen
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">gamete_type &amp;&#160;</td>
-          <td class="paramname"><em>g</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d3/dea/namespaceKTfwd_1_1tags.html#a0efa4cbefee06dc2dea368d322a7fb64">KTfwd::tags::gamete_independent</a>&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>g</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -212,58 +252,6 @@ template&lt;typename mutation_model , typename mutation_insertion_policy , typen
       </table>
 </div><div class="memdoc">
 <p>Apply mutation model N times to a new gamete. Updates mutation list </p>
-
-</div>
-</div>
-<a class="anchor" id="a0127ae29e6e4ed2289776eff183e52b1"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename mutation_model , typename mutation_insertion_policy , typename mlist_type , typename gamete_type &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void KTfwd::fwdpp_internal::add_N_mutations </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d0/d35/structmutation__model.html">mutation_model</a> &amp;&#160;</td>
-          <td class="paramname"><em>mmodel</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const mutation_insertion_policy &amp;&#160;</td>
-          <td class="paramname"><em>mpolicy</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">mlist_type *&#160;</td>
-          <td class="paramname"><em>mutations</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">gamete_type &amp;&#160;</td>
-          <td class="paramname"><em>g</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d3/dea/namespaceKTfwd_1_1tags.html#a3a3fa40df798bba498b12ed778caeb80">KTfwd::tags::gamete_dependent</a>&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -294,6 +282,288 @@ template&lt;typename gamete_type , typename mutation_iterator &gt; </div>
 </div><div class="memdoc">
 <p>Mechanics of adding a new mutation. We do this odd choosing between find_if and upper_bound b/c of the way the GCC STL is implemented.</p>
 <p>Objectively, upper_bound should always be preferred, but that is not the case in practice because the GNU STL implements find_if in a very clever way for small containers. </p>
+
+</div>
+</div>
+<a class="anchor" id="afc6d610569653768f125848317007328"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename fitness_policy_type , typename diploid_itr_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">double KTfwd::fwdpp_internal::diploid_fitness_dispatch </td>
+          <td>(</td>
+          <td class="paramtype">const fitness_policy_type &amp;&#160;</td>
+          <td class="paramname"><em>fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const diploid_itr_t &amp;&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::false_type&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Standard diploids. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac17dccb362b7b7a488ae34ac43bd5738"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename fitness_policy_type , typename diploid_itr_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">double KTfwd::fwdpp_internal::diploid_fitness_dispatch </td>
+          <td>(</td>
+          <td class="paramtype">const fitness_policy_type &amp;&#160;</td>
+          <td class="paramname"><em>fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const diploid_itr_t &amp;&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::true_type&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Custom diploids. </p>
+
+</div>
+</div>
+<a class="anchor" id="adbb84152f62a5e3c009467cdbe4b3614"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename fitness_policy_type , typename diploid_itr_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">double KTfwd::fwdpp_internal::diploid_fitness_dispatch </td>
+          <td>(</td>
+          <td class="paramtype">const fitness_policy_type &amp;&#160;</td>
+          <td class="paramname"><em>fp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const diploid_itr_t &amp;&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::true_type&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename std::enable_if&lt; traits::is_custom_diploid_t&lt; typename diploid_itr_t::value_type &gt;::type &gt;::&#160;</td>
+          <td class="paramname"><em>type</em>()&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Custom diploids. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac11d6f5e10e76d59c22fcdb8d0a4c496"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mmodel , typename gamete_type , typename mlist_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt; <a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html#ad5ad6786ff26ea413b8d3585fc3452d7">KTfwd::traits::is_nullary_t</a>&lt;mmodel&gt;::value, typename std::result_of&lt;mmodel()&gt;::type &gt;::type KTfwd::fwdpp_internal::mmodel_dispatcher </td>
+          <td>(</td>
+          <td class="paramtype">const mmodel &amp;&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gamete_type &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mlist_type *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a92ebb7cdbfde5ccf3d34df35f69f32a4"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mmodel , typename gamete_type , typename mlist_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt; <a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html#acbece33d510a541cb82385580fd0b27f">KTfwd::traits::is_unary_t</a>&lt;mmodel,gamete_type&amp;&gt;::value, typename std::result_of&lt;mmodel(gamete_type &amp;)&gt;::type &gt;::type KTfwd::fwdpp_internal::mmodel_dispatcher </td>
+          <td>(</td>
+          <td class="paramtype">mmodel &amp;&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gamete_type &amp;&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mlist_type *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a866a94575918c6f2a0044c1833e0a75e"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mmodel , typename gamete_type , typename mlist_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt; <a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html#acbece33d510a541cb82385580fd0b27f">KTfwd::traits::is_unary_t</a>&lt;mmodel,mlist_type *&gt;::value, typename std::result_of&lt;mmodel(mlist_type *)&gt;::type &gt;::type KTfwd::fwdpp_internal::mmodel_dispatcher </td>
+          <td>(</td>
+          <td class="paramtype">mmodel &amp;&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gamete_type &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mlist_type *&#160;</td>
+          <td class="paramname"><em>mutations</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a758df0431278b9f26daa6d3cf357b5b2"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mmodel , typename gamete_type , typename mlist_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt; (<a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html#af4c76da1580e9da1bd1babc1415b6ffb">KTfwd::traits::is_binary_t</a>&lt;mmodel,gamete_type &amp;, mlist_type *&gt;::value &amp;&amp; !(<a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html#acbece33d510a541cb82385580fd0b27f">KTfwd::traits::is_unary_t</a>&lt;mmodel,gamete_type &amp;&gt;::value || <a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html#acbece33d510a541cb82385580fd0b27f">KTfwd::traits::is_unary_t</a>&lt;mmodel,mlist_type *&gt;::value)), typename std::result_of&lt;mmodel(gamete_type&amp;,mlist_type*)&gt;::type &gt;::type KTfwd::fwdpp_internal::mmodel_dispatcher </td>
+          <td>(</td>
+          <td class="paramtype">const mmodel &amp;&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gamete_type &amp;&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mlist_type *&#160;</td>
+          <td class="paramname"><em>mutations</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

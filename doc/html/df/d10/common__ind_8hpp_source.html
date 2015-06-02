@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.0</span>
+   &#160;<span id="projectnumber">0.3.1</span>
    </div>
   </td>
  </tr>
@@ -110,19 +110,19 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   to including this header, and is an alias to the simulation&#39;s</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   mutation type</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d8/d21/serialization_8hpp.html">fwdpp/sugar/serialization.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifdef SINGLEPOP_SIM</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;<a class="code" href="../../d5/dd9/singlepop_8hpp.html">fwdpp/sugar/singlepop.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using</span> singlepop_t = <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::singlepop&lt;mtype&gt;</a>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">using</span> singlepop_serialized_t = <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::singlepop&lt;mtype&gt;</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">using</span> singlepop_serialized_t = <a class="code" href="../../d9/dee/classKTfwd_1_1sugar_1_1singlepop__serialized.html">KTfwd::singlepop_serialized&lt;mtype,KTfwd::mutation_writer,KTfwd::mutation_reader&lt;mtype&gt;</a>&gt;;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#elif defined(METAPOP_SIM)</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;<a class="code" href="../../df/dae/metapop_8hpp.html">fwdpp/sugar/metapop.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">using</span> <a class="code" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">metapop_t</a> = <a class="code" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::metapop&lt;mtype&gt;</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">using</span> metapop_serialized_t = <a class="code" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::metapop&lt;mtype&gt;</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">using</span> metapop_serialized_t = <a class="code" href="../../d2/d43/classKTfwd_1_1sugar_1_1metapop__serialized.html">KTfwd::metapop_serialized&lt;mtype,KTfwd::mutation_writer,KTfwd::mutation_reader&lt;mtype&gt;</a>&gt;;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#elif defined(MULTILOCUS_SIM)</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;<a class="code" href="../../d6/d10/multiloc_8hpp.html">fwdpp/sugar/multiloc.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">using</span> multiloc_t = <a class="code" href="../../d3/d11/structKTfwd_1_1sugar_1_1multiloc.html">KTfwd::multiloc&lt;mtype&gt;</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">using</span> multiloc_serialized_t = <a class="code" href="../../d3/d11/structKTfwd_1_1sugar_1_1multiloc.html">KTfwd::multiloc&lt;mtype&gt;</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">using</span> multiloc_serialized_t = <a class="code" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::multiloc_serialized&lt;mtype,KTfwd::mutation_writer,KTfwd::mutation_reader&lt;mtype&gt;</a>&gt;;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//RNG type</span></div>
@@ -132,7 +132,11 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="classKTfwd_1_1GSLrng__t_html"><div class="ttname"><a href="../../de/d55/classKTfwd_1_1GSLrng__t.html">KTfwd::GSLrng_t</a></div><div class="ttdoc">A wrapper around gsl_rng * objects. </div><div class="ttdef"><b>Definition:</b> GSLrng_t.hpp:30</div></div>
+<div class="ttc" id="structKTfwd_1_1sugar_1_1multiloc__serialized_html"><div class="ttname"><a href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a></div><div class="ttdoc">Abstraction of what is needed to simulate a multilocus simulation using an individual-based sampler f...</div><div class="ttdef"><b>Definition:</b> multiloc.hpp:137</div></div>
+<div class="ttc" id="classKTfwd_1_1sugar_1_1singlepop__serialized_html"><div class="ttname"><a href="../../d9/dee/classKTfwd_1_1sugar_1_1singlepop__serialized.html">KTfwd::sugar::singlepop_serialized</a></div><div class="ttdoc">Abstraction of what is needed to simulate a single population using an individual-based sampler from ...</div><div class="ttdef"><b>Definition:</b> singlepop.hpp:138</div></div>
 <div class="ttc" id="GSLrng__t_8hpp_html"><div class="ttname"><a href="../../da/dd8/GSLrng__t_8hpp.html">GSLrng_t.hpp</a></div><div class="ttdoc">Wrapper for gsl_rng *. </div></div>
+<div class="ttc" id="classKTfwd_1_1sugar_1_1metapop__serialized_html"><div class="ttname"><a href="../../d2/d43/classKTfwd_1_1sugar_1_1metapop__serialized.html">KTfwd::sugar::metapop_serialized</a></div><div class="ttdoc">Abstraction of what is needed to simulate a metapopulation using an individual-based sampler from fwd...</div><div class="ttdef"><b>Definition:</b> metapop.hpp:167</div></div>
+<div class="ttc" id="serialization_8hpp_html"><div class="ttname"><a href="../../d8/d21/serialization_8hpp.html">serialization.hpp</a></div></div>
 <div class="ttc" id="multiloc_8hpp_html"><div class="ttname"><a href="../../d6/d10/multiloc_8hpp.html">multiloc.hpp</a></div></div>
 <div class="ttc" id="metapop_8hpp_html"><div class="ttname"><a href="../../df/dae/metapop_8hpp.html">metapop.hpp</a></div></div>
 <div class="ttc" id="classKTfwd_1_1sugar_1_1metapop_html"><div class="ttname"><a href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::sugar::metapop</a></div><div class="ttdoc">Abstraction of what is needed to simulate a metapopulation using an individual-based sampler from fwd...</div><div class="ttdef"><b>Definition:</b> metapop.hpp:33</div></div>

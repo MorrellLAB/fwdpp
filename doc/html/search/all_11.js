@@ -9,5 +9,6 @@ var searchData=
   ['tags_2ehpp',['tags.hpp',['../d5/d9b/poptypes_2tags_8hpp.html',1,'']]],
   ['tags_2ehpp',['tags.hpp',['../d2/dea/gsl_2tags_8hpp.html',1,'']]],
   ['taus2',['TAUS2',['../de/d6e/group__sugar.html#gga04107baa95fa1f3b160d7618d3369d75a1c61b3e6e6203fecfb58277795ad23e0',1,'KTfwd::sugar']]],
-  ['tfl2013_2ecc',['TFL2013.cc',['../df/da3/TFL2013_8cc.html',1,'']]]
+  ['type_5ftraits_2ehpp',['type_traits.hpp',['../dc/d54/type__traits_8hpp.html',1,'']]],
+  ['type_5ftraits_2ehpp',['type_traits.hpp',['../d4/d26/internal_2type__traits_8hpp.html',1,'']]]
 ];

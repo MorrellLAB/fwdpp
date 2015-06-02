@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.0</span>
+   &#160;<span id="projectnumber">0.3.1</span>
    </div>
   </td>
  </tr>
@@ -106,7 +106,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <h3>Notes</h3>
 <ul>
 <li>Remember to <em>properly</em> initialize the base class from your derived mutation classes!</li>
-<li>All fitness models provided by the library require a mutation type to contain a double called <img class="formulaInl" alt="$s$" src="../../form_4.png"/> representing the selection coefficient (or effect size). For example, see <a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html" title="Function object for fitness as a function of individual mutations in a diploid. ">KTfwd::site_dependent_fitness</a>. Hoewever, if you write your own fitness models, then your mutations can contain whatever they want.</li>
+<li>All fitness models provided by the library require a mutation type to contain a double called <img class="formulaInl" alt="$s$" src="../../form_5.png"/> representing the selection coefficient (or effect size). For example, see <a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html" title="Function object for fitness as a function of individual mutations in a diploid. ">KTfwd::site_dependent_fitness</a>. Hoewever, if you write your own fitness models, then your mutations can contain whatever they want.</li>
 </ul>
 <h2>Mutation lists</h2>
 <p>Mutations must be stored in double-linked lists. In the C++ standard library, use std::list:</p>
@@ -143,7 +143,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="keyword">using</span> mutation_t = <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a>;</div>
 <div class="line">std::list&lt; mutation_t &gt; <a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>;</div>
 <div class="line"><span class="comment">//This defaults to assuming that std::list&lt;mutation_t&gt; is the mutation list type</span></div>
-<div class="line"><span class="keyword">using</span> <a class="code" href="../../da/d8b/namespaceKTfwd.html#a8328028349c9a38d51bcaba0a80f78a1">gamete_t</a> = <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base&lt;mutation_t&gt;</a>;</div>
+<div class="line"><span class="keyword">using</span> gamete_t = <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base&lt;mutation_t&gt;</a>;</div>
 </div><!-- fragment --><p>If your mutation list type is not std::list, then you must provide an additional template parameter:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;boost/container/list.hpp&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;boost/pool/pool_alloc.hpp&gt;</span></div>
@@ -152,15 +152,15 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="comment">//We see that typedefs lead to improved sanity:</span></div>
 <div class="line"><span class="keyword">using</span> mutation_t = <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a>;</div>
 <div class="line"><span class="keyword">using</span> mutation_t_allocator = boost::pool_allocator&lt;mutation_t&gt;;</div>
-<div class="line"><span class="keyword">using</span> <a class="code" href="../../da/d8b/namespaceKTfwd.html#ac9b6fed9da78e8c21de7ecd4b1cd52fe">mlist_t</a> = boost::container::list&lt; mutation_t, mutation_t_allocator &gt;;</div>
-<div class="line"><a class="code" href="../../da/d8b/namespaceKTfwd.html#ac9b6fed9da78e8c21de7ecd4b1cd52fe">mlist_t</a> <a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>;</div>
-<div class="line"><span class="keyword">using</span> <a class="code" href="../../da/d8b/namespaceKTfwd.html#a8328028349c9a38d51bcaba0a80f78a1">gamete_t</a> = <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base&lt;mutation_t,mlist_t&gt;</a>;</div>
+<div class="line"><span class="keyword">using</span> mlist_t = boost::container::list&lt; mutation_t, mutation_t_allocator &gt;;</div>
+<div class="line">mlist_t <a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>;</div>
+<div class="line"><span class="keyword">using</span> gamete_t = <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base&lt;mutation_t,mlist_t&gt;</a>;</div>
 </div><!-- fragment --><p>That's basically it for gametes.</p>
 <h3>Notes</h3>
 <ul>
 <li>The interface to Ktfwd::gamete_base is a little funny. Ideally, you should be able to provide only the mutation list type, <em>e.g.</em>,</li>
 </ul>
-<div class="fragment"><div class="line"><span class="keyword">using</span> <a class="code" href="../../da/d8b/namespaceKTfwd.html#a8328028349c9a38d51bcaba0a80f78a1">gamete_t</a> = <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base&lt;mutation_t,mlist_t&gt;</a>;</div>
+<div class="fragment"><div class="line"><span class="keyword">using</span> gamete_t = <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base&lt;mutation_t,mlist_t&gt;</a>;</div>
 </div><!-- fragment --><p>The gamete_t should be able to deduce the mutation_t from the mlist_t::value_type. That's all true, but I first wrote the gamete type based around the idea of the mutation and the default std::list&lt;mutation_t&gt;. Changing it now would break all existing simulations using the library.</p>
 <ul>
 <li>As of <b>fwdpp</b> 0.3.0, <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html" title="Base class for gametes. ">KTfwd::gamete_base</a> takes a third template argument, which currently defaults to <a class="el" href="../../d3/dea/namespaceKTfwd_1_1tags.html#a5d8bb8cb0ad58525e213bf7d6f529dee" title="The &quot;regular&quot; gamete for a diploid simulation. ">KTfwd::tags::standard_gamete</a>. This tag has no effect on anything, and the library remains source-compatible with previous versions. This "tag" is a placeholder for potential future library features making use of tag-dispatch methods for implementing more complex models.</li>
@@ -169,8 +169,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <p>Like mutations, gametes are stored in doubly-linked lists. All of the stuff from the section on mutation lists applies here.</p>
 <h2>Diploids</h2>
 <p>In fwdpp, a diploid is a pair of iterator derived from a gamete list, <em>e.g.</em>,</p>
-<div class="fragment"><div class="line"><span class="keyword">using</span> <a class="code" href="../../da/d8b/namespaceKTfwd.html#a42217db3d94e3807e54f6ba4b37ee97c">glist_t</a> = std::list&lt;gamete_t&gt;;</div>
-<div class="line"><span class="keyword">using</span> <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a1a5f1954bb541f5016cc0844385c6758">diploid_t</a> = std::pair&lt; glist_t::iterator, glist_t::iterator &gt;;</div>
+<div class="fragment"><div class="line"><span class="keyword">using</span> glist_t = std::list&lt;gamete_t&gt;;</div>
+<div class="line"><span class="keyword">using</span> <a class="code" href="../../dc/dfb/structdiploid__t.html">diploid_t</a> = std::pair&lt; glist_t::iterator, glist_t::iterator &gt;;</div>
 </div><!-- fragment --><p>Then, the entire population is a vector of diploids:</p>
 <div class="fragment"><div class="line">std::vector&lt; diploid_t &gt; diploids;</div>
 </div><!-- fragment --><h2>What next</h2>

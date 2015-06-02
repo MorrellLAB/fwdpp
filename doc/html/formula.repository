@@ -2,61 +2,59 @@
 \form#1:$n$
 \form#2:$n = N$
 \form#3:$2N$
-\form#4:$s$
-\form#5:$\theta$
-\form#6:$\rho$
-\form#7:$r_{bw}$
-\form#8:\[\frac{AB}{ab}\]
-\form#9:\[\frac{Ab}{aB}\]
-\form#10:$[0,1)$
-\form#11:$[1,2)$
-\form#12:$y$
-\form#13:$x$
-\form#14:$e$
-\form#15:$x = y+e$
-\form#16:$V(G) \approx 4\mu$
-\form#17:$4 \times 10^{-4}$
-\form#18:$V(G)$
-\form#19:$(\mathrm{start},\mathrm{start}+1]$
-\form#20:$(0,1]$
-\form#21:$(1,2]$
-\form#22:$L-1$
-\form#23:$L$
-\form#24:$i$
-\form#25:$i-1$
-\form#26:$1 \leq i \leq L-1$
-\form#27:$r$
-\form#28:$n \ll N$
-\form#29:$\mu$
-\form#30:$\mu_s$
-\form#31:$s_m$
-\form#32:$s < 0$
-\form#33:$s > 0$
-\form#34:$1, 1+hs, 1+2s$
-\form#35:$\sigma_e$
-\form#36:$8N$
-\form#37:$4N$
-\form#38:$r=\rho/4N$
-\form#39:$p$
-\form#40:$1-p$
-\form#41:$a$
-\form#42:$b$
-\form#43:$\geq 1.5x$
-\form#44:$j$
-\form#45:$j = i$
-\form#46:$j \neq i$
-\form#47:$m$
-\form#48:$0 \leq i \leq 1$
-\form#49:$1, 1+sh, 1+s \times \mathrm{scaling}$
-\form#50:$scaling = 1$
-\form#51:$1$
-\form#52:$w = 1$
-\form#53:$w$
-\form#54:$h$
-\form#55:$1+hs$
-\form#56:$1+xs$
-\form#57:$x = 1$
-\form#58:$AA$
-\form#59:$Aa$
-\form#60:$aa$
-\form#61:$g$
+\form#4:$\leq$
+\form#5:$s$
+\form#6:$\theta$
+\form#7:$\rho$
+\form#8:$r_{bw}$
+\form#9:\[\frac{AB}{ab}\]
+\form#10:\[\frac{Ab}{aB}\]
+\form#11:$[0,1)$
+\form#12:$[1,2)$
+\form#13:$y$
+\form#14:$x$
+\form#15:$e$
+\form#16:$x = y+e$
+\form#17:$V(G) \approx 4\mu$
+\form#18:$4 \times 10^{-4}$
+\form#19:$V(G)$
+\form#20:$(\mathrm{start},\mathrm{start}+1]$
+\form#21:$(0,1]$
+\form#22:$(1,2]$
+\form#23:$L-1$
+\form#24:$L$
+\form#25:$i$
+\form#26:$i-1$
+\form#27:$1 \leq i \leq L-1$
+\form#28:$r$
+\form#29:$n \ll N$
+\form#30:$\mu$
+\form#31:$\mu_s$
+\form#32:$s_m$
+\form#33:$s < 0$
+\form#34:$s > 0$
+\form#35:$1, 1+hs, 1+2s$
+\form#36:$\sigma_e$
+\form#37:$p$
+\form#38:$1-p$
+\form#39:$a$
+\form#40:$b$
+\form#41:$\geq 1.5x$
+\form#42:$j$
+\form#43:$j = i$
+\form#44:$j \neq i$
+\form#45:$m$
+\form#46:$0 \leq i \leq 1$
+\form#47:$1, 1+sh, 1+s \times \mathrm{scaling}$
+\form#48:$scaling = 1$
+\form#49:$1$
+\form#50:$w = 1$
+\form#51:$w$
+\form#52:$h$
+\form#53:$1+hs$
+\form#54:$1+xs$
+\form#55:$x = 1$
+\form#56:$AA$
+\form#57:$Aa$
+\form#58:$aa$
+\form#59:$g$

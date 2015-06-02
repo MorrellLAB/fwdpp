@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.0</span>
+   &#160;<span id="projectnumber">0.3.1</span>
    </div>
   </td>
  </tr>
@@ -168,7 +168,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="keyword">struct </span><a class="code" href="../../d8/df2/structno__selection__multi.html">no_selection_multi</a></div>
 <div class="line">{</div>
 <div class="line">  <span class="keyword">typedef</span> <span class="keywordtype">double</span> <a class="code" href="../../d8/df2/structno__selection__multi.html#ac8d3abd4176b215a58de070fe9111483">result_type</a>;</div>
-<div class="line">  <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="../../d8/df2/structno__selection__multi.html#a6584b8295b3c8439328cc683d4aa0b4c">operator()</a>( <span class="keyword">const</span> <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a1a5f1954bb541f5016cc0844385c6758">multiloc_t::diploid_t</a> &amp; diploid )<span class="keyword"> const</span></div>
+<div class="line">  <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="../../d8/df2/structno__selection__multi.html#a7705f8a068ac01a1691f5d925c4319c4">operator()</a>( <span class="keyword">const</span> multiloc_t::dipvector_t::const_iterator &amp; diploid )<span class="keyword"> const</span></div>
 <div class="line"><span class="keyword">  </span>{</div>
 <div class="line">    <span class="keywordflow">return</span> 1.;</div>
 <div class="line">  }</div>
@@ -181,7 +181,7 @@ Functions</h2></td></tr>
 <div class="line">    {</div>
 <div class="line">      std::cerr &lt;&lt; <span class="stringliteral">&quot;Incorrect number of arguments.\n&quot;</span></div>
 <div class="line">                &lt;&lt; <span class="stringliteral">&quot;Usage:\n&quot;</span></div>
-<div class="line">                &lt;&lt; argv[0] &lt;&lt; <span class="stringliteral">&quot; N theta rho ngens n nreps seed\n&quot;</span></div>
+<div class="line">                &lt;&lt; argv[0] &lt;&lt; <span class="stringliteral">&quot; N theta rho rbw ngens n nreps seed\n&quot;</span></div>
 <div class="line">                &lt;&lt; <span class="stringliteral">&quot;Where:\n&quot;</span></div>
 <div class="line">                &lt;&lt; <span class="stringliteral">&quot;N = population size (number of diploids)\n&quot;</span></div>
 <div class="line">                &lt;&lt; <span class="stringliteral">&quot;theta = 4Nu, the scaled neutral mutation rate\n&quot;</span></div>
@@ -222,7 +222,7 @@ Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">  <span class="keywordflow">while</span>(nreps--)</div>
 <div class="line">    {</div>
-<div class="line">      multiloc_t pop(N,2);</div>
+<div class="line">      multiloc_serialized_t pop(N,2);</div>
 <div class="line">      <span class="keywordtype">unsigned</span> generation=0;</div>
 <div class="line">      <span class="keywordtype">double</span> wbar;</div>
 <div class="line"></div>
@@ -233,20 +233,19 @@ Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">      std::vector&lt; std::function&lt;mtype(multiloc_t::mlist_t *)&gt; &gt; mmodels {</div>
 <div class="line">        <span class="comment">//Locus 0: positions Uniform [0,1)</span></div>
-<div class="line">        std::bind(<a class="code" href="../../df/d07/structKTfwd_1_1infsites.html">KTfwd::infsites</a>(),r,std::placeholders::_1,&amp;pop.mut_lookup,&amp;generation,</div>
+<div class="line">        std::bind(<a class="code" href="../../df/d07/structKTfwd_1_1infsites.html">KTfwd::infsites</a>(),r,&amp;pop.mut_lookup,&amp;generation,</div>
 <div class="line">                  mu[0],0.,[&amp;r](){<span class="keywordflow">return</span> gsl_rng_uniform(r);},[](){<span class="keywordflow">return</span> 0.;},[](){<span class="keywordflow">return</span> 0.;}) ,</div>
 <div class="line">          <span class="comment">//Locus 1: positions Uniform [1,2)</span></div>
-<div class="line">          std::bind(<a class="code" href="../../df/d07/structKTfwd_1_1infsites.html">KTfwd::infsites</a>(),<a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,std::placeholders::_1,&amp;pop.mut_lookup,&amp;generation,</div>
+<div class="line">          std::bind(<a class="code" href="../../df/d07/structKTfwd_1_1infsites.html">KTfwd::infsites</a>(),<a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,&amp;pop.mut_lookup,&amp;generation,</div>
 <div class="line">                    mu[1],0.,[&amp;<a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>](){<span class="keywordflow">return</span> gsl_ran_flat(r,1.,2.);},[](){<span class="keywordflow">return</span> 0.;},[](){<span class="keywordflow">return</span> 0.;})</div>
 <div class="line">          };</div>
 <div class="line">      <span class="keywordflow">for</span>( generation = 0; generation &lt; ngens; ++generation )</div>
 <div class="line">        {</div>
 <div class="line">          <span class="comment">//Iterate the population through 1 generation</span></div>
-<div class="line">          <a class="code" href="../../da/d8b/namespaceKTfwd.html#a946efaa4a6095f4f2aadda44a809a477">KTfwd::sample_diploid</a>( r,</div>
+<div class="line">          <a class="code" href="../../da/d8b/namespaceKTfwd.html#a18df6351fa3148914bbb844c36bc3e05">KTfwd::sample_diploid</a>( r,</div>
 <div class="line">                                 &amp;pop.gametes,</div>
 <div class="line">                                 &amp;pop.diploids,</div>
 <div class="line">                                 &amp;pop.mutations,</div>
-<div class="line">                                 N,</div>
 <div class="line">                                 N,</div>
 <div class="line">                                 &amp;mu[0],</div>
 <div class="line">                                 mmodels,</div>
@@ -256,14 +255,15 @@ Functions</h2></td></tr>
 <div class="line">                                 std::bind(KTfwd::insert_at_end&lt;multiloc_t::mutation_t,multiloc_t::mlist_t&gt;,std::placeholders::_1,std::placeholders::_2),</div>
 <div class="line">                                 std::bind(KTfwd::insert_at_end&lt;multiloc_t::gamete_t,multiloc_t::glist_t&gt;,std::placeholders::_1,std::placeholders::_2),</div>
 <div class="line">                                 std::bind(<a class="code" href="../../d8/df2/structno__selection__multi.html">no_selection_multi</a>(),std::placeholders::_1),</div>
-<div class="line">                                 std::bind(<a class="code" href="../../d4/de8/structKTfwd_1_1mutation__remover.html">KTfwd::mutation_remover</a>(),std::placeholders::_1,0,2*N),</div>
-<div class="line">                                 0.);</div>
+<div class="line">                                 std::bind(<a class="code" href="../../d4/de8/structKTfwd_1_1mutation__remover.html">KTfwd::mutation_remover</a>(),std::placeholders::_1,0,2*N));</div>
 <div class="line">          assert( <a class="code" href="../../da/d8b/namespaceKTfwd.html#a728e20cb60f82b818b5cc570722079a4">check_sum</a>(pop.gametes[0],twoN) );</div>
 <div class="line">          assert( <a class="code" href="../../da/d8b/namespaceKTfwd.html#a728e20cb60f82b818b5cc570722079a4">check_sum</a>(pop.gametes[1],twoN) );</div>
 <div class="line">          <a class="code" href="../../da/d8b/namespaceKTfwd.html#a84e666ea27d38bdfc539ffd23653eaa9">KTfwd::remove_fixed_lost</a>(&amp;pop.mutations,&amp;pop.fixations,&amp;pop.fixation_times,&amp;pop.mut_lookup,generation,2*N);</div>
 <div class="line">        }</div>
+<div class="line">      <span class="comment">//For giggles, make sure that the pop. is copy-constructible...</span></div>
+<div class="line">      multiloc_serialized_t pop2(pop);</div>
 <div class="line">      <span class="comment">//Take a sample and print it to screen.</span></div>
-<div class="line">      <span class="keyword">auto</span> x = <a class="code" href="../../d7/d86/group__samplingPopsGamete.html#gae5656f2b4685348222718deff1f24997">KTfwd::ms_sample</a>(r,&amp;pop.diploids,samplesize1,<span class="keyword">true</span>);</div>
+<div class="line">      <span class="keyword">auto</span> x = <a class="code" href="../../d7/de2/group__samplingPopsInd.html#ga2e9aee81e0abaddbb9c6e56f0d8f980f">KTfwd::ms_sample</a>(r,&amp;pop.diploids,samplesize1,<span class="keyword">true</span>);</div>
 <div class="line">      Sequence::SimData l1(x[0].begin(),x[0].end()),</div>
 <div class="line">        l2(x[1].begin(),x[1].end());</div>
 <div class="line">      std::cout &lt;&lt; l1 &lt;&lt; <span class="charliteral">&#39;\n&#39;</span> &lt;&lt; l2 &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;    </div>
@@ -298,7 +298,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a6">diploid_ind_2locus.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a5">diploid_ind_2locus.cc</a>.</dd>
 </dl>
 </div>
 </div>

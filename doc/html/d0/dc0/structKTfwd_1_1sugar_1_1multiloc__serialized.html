@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>fwdpp: KTfwd::sugar::multiloc_serialized&lt; mutation_type, mwriter, mreader, mlist, glist, dipvector, vglist, mvector, ftvector, lookup_table_type &gt; Struct Template Reference</title>
+<title>fwdpp: KTfwd::sugar::multiloc_serialized&lt; mutation_type, mwriter, mreader, mlist, glist, dipvector, vglist, mvector, ftvector, lookup_table_type, dip_reader_t, dip_writer_t &gt; Struct Template Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.0</span>
+   &#160;<span id="projectnumber">0.3.1</span>
    </div>
   </td>
  </tr>
@@ -94,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">KTfwd::sugar::multiloc_serialized&lt; mutation_type, mwriter, mreader, mlist, glist, dipvector, vglist, mvector, ftvector, lookup_table_type &gt; Struct Template Reference<div class="ingroups"><a class="el" href="../../de/d6e/group__sugar.html">Syntactic sugar layer</a></div></div>  </div>
+<div class="title">KTfwd::sugar::multiloc_serialized&lt; mutation_type, mwriter, mreader, mlist, glist, dipvector, vglist, mvector, ftvector, lookup_table_type, dip_reader_t, dip_writer_t &gt; Struct Template Reference<div class="ingroups"><a class="el" href="../../de/d6e/group__sugar.html">Syntactic sugar layer</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -105,94 +105,122 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:aae5c00b7fb7a2563ef01df4fef21e777"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#aae5c00b7fb7a2563ef01df4fef21e777">popmodel_t</a> = <a class="el" href="../../de/d6e/group__sugar.html#gaf921d18379b491101cec5291b2e08432">sugar::MULTILOCPOP_TAG</a></td></tr>
-<tr class="separator:aae5c00b7fb7a2563ef01df4fef21e777"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a145710f12724ff49dbd1d2b198ffd036"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a145710f12724ff49dbd1d2b198ffd036">mutation_t</a> = mutation_type</td></tr>
-<tr class="memdesc:a145710f12724ff49dbd1d2b198ffd036"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutation type.  <a href="#a145710f12724ff49dbd1d2b198ffd036">More...</a><br/></td></tr>
-<tr class="separator:a145710f12724ff49dbd1d2b198ffd036"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10660cf37921caaee9809ef1f1db944d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a10660cf37921caaee9809ef1f1db944d">mwriter_t</a> = <a class="el" href="../../db/d91/structmwriter.html">mwriter</a></td></tr>
-<tr class="memdesc:a10660cf37921caaee9809ef1f1db944d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutation serialization type.  <a href="#a10660cf37921caaee9809ef1f1db944d">More...</a><br/></td></tr>
-<tr class="separator:a10660cf37921caaee9809ef1f1db944d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a661525e3ff712cec782603ec9ba26e90"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a661525e3ff712cec782603ec9ba26e90">mreader_t</a> = <a class="el" href="../../d9/d61/structmreader.html">mreader</a></td></tr>
-<tr class="memdesc:a661525e3ff712cec782603ec9ba26e90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutation deserialization type.  <a href="#a661525e3ff712cec782603ec9ba26e90">More...</a><br/></td></tr>
-<tr class="separator:a661525e3ff712cec782603ec9ba26e90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcea78f0decb31fa2a47d68c0edc910d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#abcea78f0decb31fa2a47d68c0edc910d">gamete_t</a> = typename glist::value_type</td></tr>
-<tr class="memdesc:abcea78f0decb31fa2a47d68c0edc910d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gamete type.  <a href="#abcea78f0decb31fa2a47d68c0edc910d">More...</a><br/></td></tr>
-<tr class="separator:abcea78f0decb31fa2a47d68c0edc910d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefa6b6bbdfadf9269c68aaeaa1937cd6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#aefa6b6bbdfadf9269c68aaeaa1937cd6">dipvector_t</a> = dipvector</td></tr>
-<tr class="memdesc:aefa6b6bbdfadf9269c68aaeaa1937cd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of diploids.  <a href="#aefa6b6bbdfadf9269c68aaeaa1937cd6">More...</a><br/></td></tr>
-<tr class="separator:aefa6b6bbdfadf9269c68aaeaa1937cd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c0b9b4450d7fb28b7ffd8c34dadef56"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a3c0b9b4450d7fb28b7ffd8c34dadef56">diploid_t</a> = typename dipvector_t::value_type</td></tr>
-<tr class="memdesc:a3c0b9b4450d7fb28b7ffd8c34dadef56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diploid type (vector&lt;std::pair&lt;glist_t::iterator,glist_t::iterator&gt;)  <a href="#a3c0b9b4450d7fb28b7ffd8c34dadef56">More...</a><br/></td></tr>
-<tr class="separator:a3c0b9b4450d7fb28b7ffd8c34dadef56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab62ec1454204df8340bb82a3b77cfb15"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#ab62ec1454204df8340bb82a3b77cfb15">mlist_t</a> = <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a></td></tr>
-<tr class="memdesc:ab62ec1454204df8340bb82a3b77cfb15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linked list of mutations.  <a href="#ab62ec1454204df8340bb82a3b77cfb15">More...</a><br/></td></tr>
-<tr class="separator:ab62ec1454204df8340bb82a3b77cfb15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e01184b418c5149828eb4d1768165a5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a7e01184b418c5149828eb4d1768165a5">glist_t</a> = <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a></td></tr>
-<tr class="memdesc:a7e01184b418c5149828eb4d1768165a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linked list of gametes.  <a href="#a7e01184b418c5149828eb4d1768165a5">More...</a><br/></td></tr>
-<tr class="separator:a7e01184b418c5149828eb4d1768165a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d44cb4ea39820444441b0676b769355"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a0d44cb4ea39820444441b0676b769355">vglist_t</a> = vglist</td></tr>
-<tr class="memdesc:a0d44cb4ea39820444441b0676b769355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container of glist_t (gametes for each locus)  <a href="#a0d44cb4ea39820444441b0676b769355">More...</a><br/></td></tr>
-<tr class="separator:a0d44cb4ea39820444441b0676b769355"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e3a6cb4279204075c526ec11edd30a4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a0e3a6cb4279204075c526ec11edd30a4">lookup_table_t</a> = <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a></td></tr>
-<tr class="memdesc:a0e3a6cb4279204075c526ec11edd30a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lookup table type for recording mutation positions, etc.  <a href="#a0e3a6cb4279204075c526ec11edd30a4">More...</a><br/></td></tr>
-<tr class="separator:a0e3a6cb4279204075c526ec11edd30a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a256c50d52913225f60d28d220eb2087e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a256c50d52913225f60d28d220eb2087e">popmodel_t</a> = <a class="el" href="../../de/d6e/group__sugar.html#gaf921d18379b491101cec5291b2e08432">sugar::MULTILOCPOP_TAG</a></td></tr>
+<tr class="separator:a256c50d52913225f60d28d220eb2087e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a367e48669d50a9d95e3233428b6e3761"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a367e48669d50a9d95e3233428b6e3761">mutation_t</a> = mutation_type</td></tr>
+<tr class="memdesc:a367e48669d50a9d95e3233428b6e3761"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutation type.  <a href="#a367e48669d50a9d95e3233428b6e3761">More...</a><br/></td></tr>
+<tr class="separator:a367e48669d50a9d95e3233428b6e3761"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37e8e6aed5d9cbd3373c80bdb67cce34"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a37e8e6aed5d9cbd3373c80bdb67cce34">mwriter_t</a> = <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a></td></tr>
+<tr class="memdesc:a37e8e6aed5d9cbd3373c80bdb67cce34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutation serialization type.  <a href="#a37e8e6aed5d9cbd3373c80bdb67cce34">More...</a><br/></td></tr>
+<tr class="separator:a37e8e6aed5d9cbd3373c80bdb67cce34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5264503cf7db30960ab3934c8305a590"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a5264503cf7db30960ab3934c8305a590">mreader_t</a> = <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a></td></tr>
+<tr class="memdesc:a5264503cf7db30960ab3934c8305a590"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutation deserialization type.  <a href="#a5264503cf7db30960ab3934c8305a590">More...</a><br/></td></tr>
+<tr class="separator:a5264503cf7db30960ab3934c8305a590"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a089bed83a31369ded3355e2deb5dc738"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a089bed83a31369ded3355e2deb5dc738">gamete_t</a> = typename glist::value_type</td></tr>
+<tr class="memdesc:a089bed83a31369ded3355e2deb5dc738"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gamete type.  <a href="#a089bed83a31369ded3355e2deb5dc738">More...</a><br/></td></tr>
+<tr class="separator:a089bed83a31369ded3355e2deb5dc738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5673c44583ab7fde42ff141f00be34e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#ae5673c44583ab7fde42ff141f00be34e">dipvector_t</a> = dipvector</td></tr>
+<tr class="memdesc:ae5673c44583ab7fde42ff141f00be34e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of diploids.  <a href="#ae5673c44583ab7fde42ff141f00be34e">More...</a><br/></td></tr>
+<tr class="separator:ae5673c44583ab7fde42ff141f00be34e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8c6ff3625c6e88ae0a4f2d62fbbf2af"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#ad8c6ff3625c6e88ae0a4f2d62fbbf2af">diploid_t</a> = typename dipvector_t::value_type</td></tr>
+<tr class="memdesc:ad8c6ff3625c6e88ae0a4f2d62fbbf2af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diploid type (vector&lt;std::pair&lt;glist_t::iterator,glist_t::iterator&gt;)  <a href="#ad8c6ff3625c6e88ae0a4f2d62fbbf2af">More...</a><br/></td></tr>
+<tr class="separator:ad8c6ff3625c6e88ae0a4f2d62fbbf2af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaa5010742926cb0c42a5237d3877d25"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#aaaa5010742926cb0c42a5237d3877d25">mlist_t</a> = <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a></td></tr>
+<tr class="memdesc:aaaa5010742926cb0c42a5237d3877d25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linked list of mutations.  <a href="#aaaa5010742926cb0c42a5237d3877d25">More...</a><br/></td></tr>
+<tr class="separator:aaaa5010742926cb0c42a5237d3877d25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63aefec99a496ce8d816b91691c71cda"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a63aefec99a496ce8d816b91691c71cda">glist_t</a> = <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a></td></tr>
+<tr class="memdesc:a63aefec99a496ce8d816b91691c71cda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linked list of gametes.  <a href="#a63aefec99a496ce8d816b91691c71cda">More...</a><br/></td></tr>
+<tr class="separator:a63aefec99a496ce8d816b91691c71cda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a67450b86bb45de12e98d1753dc1f15"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a0a67450b86bb45de12e98d1753dc1f15">vglist_t</a> = vglist</td></tr>
+<tr class="memdesc:a0a67450b86bb45de12e98d1753dc1f15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container of glist_t (gametes for each locus)  <a href="#a0a67450b86bb45de12e98d1753dc1f15">More...</a><br/></td></tr>
+<tr class="separator:a0a67450b86bb45de12e98d1753dc1f15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a164a5ddfc601ed0ef9308eaa1552bb9a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a164a5ddfc601ed0ef9308eaa1552bb9a">lookup_table_t</a> = <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a></td></tr>
+<tr class="memdesc:a164a5ddfc601ed0ef9308eaa1552bb9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lookup table type for recording mutation positions, etc.  <a href="#a164a5ddfc601ed0ef9308eaa1552bb9a">More...</a><br/></td></tr>
+<tr class="separator:a164a5ddfc601ed0ef9308eaa1552bb9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a243677a45469f7b01280366b592646cc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a243677a45469f7b01280366b592646cc">diploid_reader_t</a> = dip_reader_t</td></tr>
+<tr class="memdesc:a243677a45469f7b01280366b592646cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialization type for writing diploid genotypes.  <a href="#a243677a45469f7b01280366b592646cc">More...</a><br/></td></tr>
+<tr class="separator:a243677a45469f7b01280366b592646cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfa86d7b0363224ed301cf9652bb91d1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#acfa86d7b0363224ed301cf9652bb91d1">diploid_writer_t</a> = dip_writer_t</td></tr>
+<tr class="memdesc:acfa86d7b0363224ed301cf9652bb91d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialization type for reading diploid genotypes.  <a href="#acfa86d7b0363224ed301cf9652bb91d1">More...</a><br/></td></tr>
+<tr class="separator:acfa86d7b0363224ed301cf9652bb91d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a695ca2b7f02d70e82437c2a0f19cc083"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a695ca2b7f02d70e82437c2a0f19cc083">mvector_t</a> = mvector</td></tr>
+<tr class="memdesc:a695ca2b7f02d70e82437c2a0f19cc083"><td class="mdescLeft">&#160;</td><td class="mdescRight">container type for fixations  <a href="#a695ca2b7f02d70e82437c2a0f19cc083">More...</a><br/></td></tr>
+<tr class="separator:a695ca2b7f02d70e82437c2a0f19cc083"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a394cb5fd6eeb5ea15d557d2cd776f405"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a394cb5fd6eeb5ea15d557d2cd776f405">ftvector_t</a> = ftvector</td></tr>
+<tr class="memdesc:a394cb5fd6eeb5ea15d557d2cd776f405"><td class="mdescLeft">&#160;</td><td class="mdescRight">container type for fixation times  <a href="#a394cb5fd6eeb5ea15d557d2cd776f405">More...</a><br/></td></tr>
+<tr class="separator:a394cb5fd6eeb5ea15d557d2cd776f405"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af22ff9c0e9c0dc4f91fd5d536d5bed68"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#af22ff9c0e9c0dc4f91fd5d536d5bed68">multiloc_serialized</a> (const unsigned &amp;__N, const unsigned &amp;__nloci)</td></tr>
-<tr class="memdesc:af22ff9c0e9c0dc4f91fd5d536d5bed68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct with population size and number of loci.  <a href="#af22ff9c0e9c0dc4f91fd5d536d5bed68">More...</a><br/></td></tr>
-<tr class="separator:af22ff9c0e9c0dc4f91fd5d536d5bed68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcd7350de3b7d7f6e2844db8f01eb6b3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#abcd7350de3b7d7f6e2844db8f01eb6b3">multiloc_serialized</a> (<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">multiloc_serialized</a> &amp;&amp;)=default</td></tr>
-<tr class="memdesc:abcd7350de3b7d7f6e2844db8f01eb6b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor.  <a href="#abcd7350de3b7d7f6e2844db8f01eb6b3">More...</a><br/></td></tr>
-<tr class="separator:abcd7350de3b7d7f6e2844db8f01eb6b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01f931858e511e4c771e147beeed5e46"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a01f931858e511e4c771e147beeed5e46">multiloc_serialized</a> (const <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">multiloc_serialized</a> &amp;__m)</td></tr>
-<tr class="memdesc:a01f931858e511e4c771e147beeed5e46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <a href="#a01f931858e511e4c771e147beeed5e46">More...</a><br/></td></tr>
-<tr class="separator:a01f931858e511e4c771e147beeed5e46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8496a4b74819d1d584092b1b51497d20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">multiloc_serialized</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a8496a4b74819d1d584092b1b51497d20">operator=</a> (const <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">multiloc_serialized</a> &amp;__m)</td></tr>
-<tr class="memdesc:a8496a4b74819d1d584092b1b51497d20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator.  <a href="#a8496a4b74819d1d584092b1b51497d20">More...</a><br/></td></tr>
-<tr class="separator:a8496a4b74819d1d584092b1b51497d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55ccb1abc5fa79c8b3c86c839f889acd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a55ccb1abc5fa79c8b3c86c839f889acd">clear</a> ()</td></tr>
-<tr class="memdesc:a55ccb1abc5fa79c8b3c86c839f889acd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all containers.  <a href="#a55ccb1abc5fa79c8b3c86c839f889acd">More...</a><br/></td></tr>
-<tr class="separator:a55ccb1abc5fa79c8b3c86c839f889acd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed0482eb050cd5fd2f415c9d3eaf4324"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#aed0482eb050cd5fd2f415c9d3eaf4324">multiloc_serialized</a> (const unsigned &amp;__N, const unsigned &amp;__nloci)</td></tr>
+<tr class="memdesc:aed0482eb050cd5fd2f415c9d3eaf4324"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct with population size and number of loci.  <a href="#aed0482eb050cd5fd2f415c9d3eaf4324">More...</a><br/></td></tr>
+<tr class="separator:aed0482eb050cd5fd2f415c9d3eaf4324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac75efa8e61ba1d9ee602043addf87c43"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#ac75efa8e61ba1d9ee602043addf87c43">multiloc_serialized</a> (<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">multiloc_serialized</a> &amp;&amp;)=default</td></tr>
+<tr class="memdesc:ac75efa8e61ba1d9ee602043addf87c43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor.  <a href="#ac75efa8e61ba1d9ee602043addf87c43">More...</a><br/></td></tr>
+<tr class="separator:ac75efa8e61ba1d9ee602043addf87c43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab98486ef29ff7c0f942c7e7e95466a46"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#ab98486ef29ff7c0f942c7e7e95466a46">multiloc_serialized</a> (const <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">multiloc_serialized</a> &amp;__m)</td></tr>
+<tr class="memdesc:ab98486ef29ff7c0f942c7e7e95466a46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <a href="#ab98486ef29ff7c0f942c7e7e95466a46">More...</a><br/></td></tr>
+<tr class="separator:ab98486ef29ff7c0f942c7e7e95466a46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e454e9b72465e5ca30a564a9e20e2c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">multiloc_serialized</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a0e454e9b72465e5ca30a564a9e20e2c3">operator=</a> (const <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">multiloc_serialized</a> &amp;__m)</td></tr>
+<tr class="memdesc:a0e454e9b72465e5ca30a564a9e20e2c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator.  <a href="#a0e454e9b72465e5ca30a564a9e20e2c3">More...</a><br/></td></tr>
+<tr class="separator:a0e454e9b72465e5ca30a564a9e20e2c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ab4bd2419ddff73f23635da811f17cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a4ab4bd2419ddff73f23635da811f17cf">clear</a> ()</td></tr>
+<tr class="memdesc:a4ab4bd2419ddff73f23635da811f17cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all containers.  <a href="#a4ab4bd2419ddff73f23635da811f17cf">More...</a><br/></td></tr>
+<tr class="separator:a4ab4bd2419ddff73f23635da811f17cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:ad31064da175d2d3cc3f7d36592f43ae4"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#ad31064da175d2d3cc3f7d36592f43ae4">N</a></td></tr>
-<tr class="memdesc:ad31064da175d2d3cc3f7d36592f43ae4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Population size.  <a href="#ad31064da175d2d3cc3f7d36592f43ae4">More...</a><br/></td></tr>
-<tr class="separator:ad31064da175d2d3cc3f7d36592f43ae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a2c36758235181f221c20b05b78bb3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#ab62ec1454204df8340bb82a3b77cfb15">mlist_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a3a2c36758235181f221c20b05b78bb3b">mutations</a></td></tr>
-<tr class="separator:a3a2c36758235181f221c20b05b78bb3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf6359a5696ff335b2fd0b0045ec5073"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a0d44cb4ea39820444441b0676b769355">vglist_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#aaf6359a5696ff335b2fd0b0045ec5073">gametes</a></td></tr>
-<tr class="separator:aaf6359a5696ff335b2fd0b0045ec5073"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a308bd8fdb763826fa21b842a518d9d80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#aefa6b6bbdfadf9269c68aaeaa1937cd6">dipvector_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a308bd8fdb763826fa21b842a518d9d80">diploids</a></td></tr>
-<tr class="separator:a308bd8fdb763826fa21b842a518d9d80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa74ef6627689ce5a2ea4500589cd9b86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#aa74ef6627689ce5a2ea4500589cd9b86">mut_lookup</a></td></tr>
-<tr class="memdesc:aa74ef6627689ce5a2ea4500589cd9b86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be used to track positions of segregating mutations.  <a href="#aa74ef6627689ce5a2ea4500589cd9b86">More...</a><br/></td></tr>
-<tr class="separator:aa74ef6627689ce5a2ea4500589cd9b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a867de5301cd4db110cdeacf06e82ca24"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a867de5301cd4db110cdeacf06e82ca24">fixations</a></td></tr>
-<tr class="memdesc:a867de5301cd4db110cdeacf06e82ca24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of mutation_t to track fixations.  <a href="#a867de5301cd4db110cdeacf06e82ca24">More...</a><br/></td></tr>
-<tr class="separator:a867de5301cd4db110cdeacf06e82ca24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f72977a227038728552bb47698c3876"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a3f72977a227038728552bb47698c3876">fixation_times</a></td></tr>
-<tr class="memdesc:a3f72977a227038728552bb47698c3876"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector&lt;unsigned&gt; records times when mutation_ts were added to mut_lookup  <a href="#a3f72977a227038728552bb47698c3876">More...</a><br/></td></tr>
-<tr class="separator:a3f72977a227038728552bb47698c3876"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac21f55002cb917c3bda4342c40e590ef"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#ac21f55002cb917c3bda4342c40e590ef">N</a></td></tr>
+<tr class="memdesc:ac21f55002cb917c3bda4342c40e590ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Population size.  <a href="#ac21f55002cb917c3bda4342c40e590ef">More...</a><br/></td></tr>
+<tr class="separator:ac21f55002cb917c3bda4342c40e590ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64a95978553025596a0fb6d450c2ff05"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#aaaa5010742926cb0c42a5237d3877d25">mlist_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a64a95978553025596a0fb6d450c2ff05">mutations</a></td></tr>
+<tr class="separator:a64a95978553025596a0fb6d450c2ff05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01bc3bfc98dbcbac788019f24b973203"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a0a67450b86bb45de12e98d1753dc1f15">vglist_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a01bc3bfc98dbcbac788019f24b973203">gametes</a></td></tr>
+<tr class="separator:a01bc3bfc98dbcbac788019f24b973203"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8e5e6b3729f1428b3c6b357a97fb4df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#ae5673c44583ab7fde42ff141f00be34e">dipvector_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#ad8e5e6b3729f1428b3c6b357a97fb4df">diploids</a></td></tr>
+<tr class="separator:ad8e5e6b3729f1428b3c6b357a97fb4df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3377def111fd56889fbd519a79d95114"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a3377def111fd56889fbd519a79d95114">mut_lookup</a></td></tr>
+<tr class="memdesc:a3377def111fd56889fbd519a79d95114"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be used to track positions of segregating mutations.  <a href="#a3377def111fd56889fbd519a79d95114">More...</a><br/></td></tr>
+<tr class="separator:a3377def111fd56889fbd519a79d95114"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7c1dccb4b10062d09e476e94247722e"><td class="memItemLeft" align="right" valign="top">mvector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#aa7c1dccb4b10062d09e476e94247722e">fixations</a></td></tr>
+<tr class="memdesc:aa7c1dccb4b10062d09e476e94247722e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of mutation_t to track fixations.  <a href="#aa7c1dccb4b10062d09e476e94247722e">More...</a><br/></td></tr>
+<tr class="separator:aa7c1dccb4b10062d09e476e94247722e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e0bae20aee050c4a61ddc5d563c0dec"><td class="memItemLeft" align="right" valign="top">ftvector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a7e0bae20aee050c4a61ddc5d563c0dec">fixation_times</a></td></tr>
+<tr class="memdesc:a7e0bae20aee050c4a61ddc5d563c0dec"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector&lt;unsigned&gt; records times when mutation_ts were added to mut_lookup  <a href="#a7e0bae20aee050c4a61ddc5d563c0dec">More...</a><br/></td></tr>
+<tr class="separator:a7e0bae20aee050c4a61ddc5d563c0dec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename mutation_type, typename mwriter, typename mreader, typename mlist, typename glist, typename dipvector, typename vglist, typename mvector, typename ftvector, typename lookup_table_type&gt;<br/>
-struct KTfwd::sugar::multiloc_serialized&lt; mutation_type, mwriter, mreader, mlist, glist, dipvector, vglist, mvector, ftvector, lookup_table_type &gt;</h3>
+<div class="textblock"><h3>template&lt;typename mutation_type, typename mwriter, typename mreader, typename mlist, typename glist, typename dipvector, typename vglist, typename mvector, typename ftvector, typename lookup_table_type, typename dip_reader_t = KTfwd::diploidIOplaceholder, typename dip_writer_t = KTfwd::diploidIOplaceholder&gt;<br/>
+struct KTfwd::sugar::multiloc_serialized&lt; mutation_type, mwriter, mreader, mlist, glist, dipvector, vglist, mvector, ftvector, lookup_table_type, dip_reader_t, dip_writer_t &gt;</h3>
 
 <p>Abstraction of what is needed to simulate a multilocus simulation using an individual-based sampler from fwdpp. </p>
 <p>Allows copy/construction/assignment via deep copy.</p>
 <p>See <a class="el" href="../../db/dd8/md_md_sugar.html">Tutorial 5: the "sugar" layer on top of fwdpp</a> for rationale, etc. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a class="anchor" id="a3c0b9b4450d7fb28b7ffd8c34dadef56"></a>
+<a class="anchor" id="a243677a45469f7b01280366b592646cc"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../db/d91/structmwriter.html">mwriter</a>, <a class="el" href="../../d9/d61/structmreader.html">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, <a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>, <a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a3c0b9b4450d7fb28b7ffd8c34dadef56">diploid_t</a> =  typename dipvector_t::value_type</td>
+          <td class="memname">using <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a243677a45469f7b01280366b592646cc">diploid_reader_t</a> =  dip_reader_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Serialization type for writing diploid genotypes. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad8c6ff3625c6e88ae0a4f2d62fbbf2af"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#ad8c6ff3625c6e88ae0a4f2d62fbbf2af">diploid_t</a> =  typename dipvector_t::value_type</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -201,14 +229,30 @@ template&lt;typename mutation_type , typename mwriter , typename mreader , typen
 
 </div>
 </div>
-<a class="anchor" id="aefa6b6bbdfadf9269c68aaeaa1937cd6"></a>
+<a class="anchor" id="acfa86d7b0363224ed301cf9652bb91d1"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../db/d91/structmwriter.html">mwriter</a>, <a class="el" href="../../d9/d61/structmreader.html">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, <a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>, <a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#aefa6b6bbdfadf9269c68aaeaa1937cd6">dipvector_t</a> =  dipvector</td>
+          <td class="memname">using <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#acfa86d7b0363224ed301cf9652bb91d1">diploid_writer_t</a> =  dip_writer_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Serialization type for reading diploid genotypes. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae5673c44583ab7fde42ff141f00be34e"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#ae5673c44583ab7fde42ff141f00be34e">dipvector_t</a> =  dipvector</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -217,14 +261,30 @@ template&lt;typename mutation_type , typename mwriter , typename mreader , typen
 
 </div>
 </div>
-<a class="anchor" id="abcea78f0decb31fa2a47d68c0edc910d"></a>
+<a class="anchor" id="a394cb5fd6eeb5ea15d557d2cd776f405"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../db/d91/structmwriter.html">mwriter</a>, <a class="el" href="../../d9/d61/structmreader.html">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, <a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>, <a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#abcea78f0decb31fa2a47d68c0edc910d">gamete_t</a> =  typename glist::value_type</td>
+          <td class="memname">using <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a394cb5fd6eeb5ea15d557d2cd776f405">ftvector_t</a> =  ftvector</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>container type for fixation times </p>
+
+</div>
+</div>
+<a class="anchor" id="a089bed83a31369ded3355e2deb5dc738"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a089bed83a31369ded3355e2deb5dc738">gamete_t</a> =  typename glist::value_type</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -233,14 +293,14 @@ template&lt;typename mutation_type , typename mwriter , typename mreader , typen
 
 </div>
 </div>
-<a class="anchor" id="a7e01184b418c5149828eb4d1768165a5"></a>
+<a class="anchor" id="a63aefec99a496ce8d816b91691c71cda"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../db/d91/structmwriter.html">mwriter</a>, <a class="el" href="../../d9/d61/structmreader.html">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, <a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>, <a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a7e01184b418c5149828eb4d1768165a5">glist_t</a> =  <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a></td>
+          <td class="memname">using <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a63aefec99a496ce8d816b91691c71cda">glist_t</a> =  <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -249,14 +309,14 @@ template&lt;typename mutation_type , typename mwriter , typename mreader , typen
 
 </div>
 </div>
-<a class="anchor" id="a0e3a6cb4279204075c526ec11edd30a4"></a>
+<a class="anchor" id="a164a5ddfc601ed0ef9308eaa1552bb9a"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../db/d91/structmwriter.html">mwriter</a>, <a class="el" href="../../d9/d61/structmreader.html">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, <a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>, <a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a0e3a6cb4279204075c526ec11edd30a4">lookup_table_t</a> =  <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a></td>
+          <td class="memname">using <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a164a5ddfc601ed0ef9308eaa1552bb9a">lookup_table_t</a> =  <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -265,14 +325,14 @@ template&lt;typename mutation_type , typename mwriter , typename mreader , typen
 
 </div>
 </div>
-<a class="anchor" id="ab62ec1454204df8340bb82a3b77cfb15"></a>
+<a class="anchor" id="aaaa5010742926cb0c42a5237d3877d25"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../db/d91/structmwriter.html">mwriter</a>, <a class="el" href="../../d9/d61/structmreader.html">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, <a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>, <a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#ab62ec1454204df8340bb82a3b77cfb15">mlist_t</a> =  <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a></td>
+          <td class="memname">using <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#aaaa5010742926cb0c42a5237d3877d25">mlist_t</a> =  <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -281,14 +341,14 @@ template&lt;typename mutation_type , typename mwriter , typename mreader , typen
 
 </div>
 </div>
-<a class="anchor" id="a661525e3ff712cec782603ec9ba26e90"></a>
+<a class="anchor" id="a5264503cf7db30960ab3934c8305a590"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../db/d91/structmwriter.html">mwriter</a>, <a class="el" href="../../d9/d61/structmreader.html">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, <a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>, <a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a661525e3ff712cec782603ec9ba26e90">mreader_t</a> =  <a class="el" href="../../d9/d61/structmreader.html">mreader</a></td>
+          <td class="memname">using <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a5264503cf7db30960ab3934c8305a590">mreader_t</a> =  <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -297,14 +357,14 @@ template&lt;typename mutation_type , typename mwriter , typename mreader , typen
 
 </div>
 </div>
-<a class="anchor" id="a145710f12724ff49dbd1d2b198ffd036"></a>
+<a class="anchor" id="a367e48669d50a9d95e3233428b6e3761"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../db/d91/structmwriter.html">mwriter</a>, <a class="el" href="../../d9/d61/structmreader.html">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, <a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>, <a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a145710f12724ff49dbd1d2b198ffd036">mutation_t</a> =  mutation_type</td>
+          <td class="memname">using <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a367e48669d50a9d95e3233428b6e3761">mutation_t</a> =  mutation_type</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -313,14 +373,30 @@ template&lt;typename mutation_type , typename mwriter , typename mreader , typen
 
 </div>
 </div>
-<a class="anchor" id="a10660cf37921caaee9809ef1f1db944d"></a>
+<a class="anchor" id="a695ca2b7f02d70e82437c2a0f19cc083"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../db/d91/structmwriter.html">mwriter</a>, <a class="el" href="../../d9/d61/structmreader.html">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, <a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>, <a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a10660cf37921caaee9809ef1f1db944d">mwriter_t</a> =  <a class="el" href="../../db/d91/structmwriter.html">mwriter</a></td>
+          <td class="memname">using <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a695ca2b7f02d70e82437c2a0f19cc083">mvector_t</a> =  mvector</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>container type for fixations </p>
+
+</div>
+</div>
+<a class="anchor" id="a37e8e6aed5d9cbd3373c80bdb67cce34"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a37e8e6aed5d9cbd3373c80bdb67cce34">mwriter_t</a> =  <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -329,28 +405,28 @@ template&lt;typename mutation_type , typename mwriter , typename mreader , typen
 
 </div>
 </div>
-<a class="anchor" id="aae5c00b7fb7a2563ef01df4fef21e777"></a>
+<a class="anchor" id="a256c50d52913225f60d28d220eb2087e"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../db/d91/structmwriter.html">mwriter</a>, <a class="el" href="../../d9/d61/structmreader.html">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, <a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>, <a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#aae5c00b7fb7a2563ef01df4fef21e777">popmodel_t</a> =  <a class="el" href="../../de/d6e/group__sugar.html#gaf921d18379b491101cec5291b2e08432">sugar::MULTILOCPOP_TAG</a></td>
+          <td class="memname">using <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a256c50d52913225f60d28d220eb2087e">popmodel_t</a> =  <a class="el" href="../../de/d6e/group__sugar.html#gaf921d18379b491101cec5291b2e08432">sugar::MULTILOCPOP_TAG</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a0d44cb4ea39820444441b0676b769355"></a>
+<a class="anchor" id="a0a67450b86bb45de12e98d1753dc1f15"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../db/d91/structmwriter.html">mwriter</a>, <a class="el" href="../../d9/d61/structmreader.html">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, <a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>, <a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a0d44cb4ea39820444441b0676b769355">vglist_t</a> =  vglist</td>
+          <td class="memname">using <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a0a67450b86bb45de12e98d1753dc1f15">vglist_t</a> =  vglist</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -360,17 +436,17 @@ template&lt;typename mutation_type , typename mwriter , typename mreader , typen
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="af22ff9c0e9c0dc4f91fd5d536d5bed68"></a>
+<a class="anchor" id="aed0482eb050cd5fd2f415c9d3eaf4324"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../db/d91/structmwriter.html">mwriter</a>, <a class="el" href="../../d9/d61/structmreader.html">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, <a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>, <a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">multiloc_serialized</a> </td>
+          <td class="memname"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">multiloc_serialized</a> </td>
           <td>(</td>
           <td class="paramtype">const unsigned &amp;&#160;</td>
           <td class="paramname"><em>__N</em>, </td>
@@ -398,19 +474,19 @@ template&lt;typename mutation_type , typename mwriter , typename mreader , typen
 
 </div>
 </div>
-<a class="anchor" id="abcd7350de3b7d7f6e2844db8f01eb6b3"></a>
+<a class="anchor" id="ac75efa8e61ba1d9ee602043addf87c43"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../db/d91/structmwriter.html">mwriter</a>, <a class="el" href="../../d9/d61/structmreader.html">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, <a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>, <a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">multiloc_serialized</a> </td>
+          <td class="memname"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">multiloc_serialized</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../db/d91/structmwriter.html">mwriter</a>, <a class="el" href="../../d9/d61/structmreader.html">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, <a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>, <a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt; &amp;&amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -426,19 +502,19 @@ template&lt;typename mutation_type , typename mwriter , typename mreader , typen
 
 </div>
 </div>
-<a class="anchor" id="a01f931858e511e4c771e147beeed5e46"></a>
+<a class="anchor" id="ab98486ef29ff7c0f942c7e7e95466a46"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../db/d91/structmwriter.html">mwriter</a>, <a class="el" href="../../d9/d61/structmreader.html">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, <a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>, <a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">multiloc_serialized</a> </td>
+          <td class="memname"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::<a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">multiloc_serialized</a> </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../db/d91/structmwriter.html">mwriter</a>, <a class="el" href="../../d9/d61/structmreader.html">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, <a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>, <a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt; &amp;&#160;</td>
           <td class="paramname"><em>__m</em></td><td>)</td>
           <td></td>
         </tr>
@@ -455,17 +531,17 @@ template&lt;typename mutation_type , typename mwriter , typename mreader , typen
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a55ccb1abc5fa79c8b3c86c839f889acd"></a>
+<a class="anchor" id="a4ab4bd2419ddff73f23635da811f17cf"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../db/d91/structmwriter.html">mwriter</a>, <a class="el" href="../../d9/d61/structmreader.html">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, <a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>, <a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::clear </td>
+          <td class="memname">void <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::clear </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -482,19 +558,19 @@ template&lt;typename mutation_type , typename mwriter , typename mreader , typen
 
 </div>
 </div>
-<a class="anchor" id="a8496a4b74819d1d584092b1b51497d20"></a>
+<a class="anchor" id="a0e454e9b72465e5ca30a564a9e20e2c3"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">multiloc_serialized</a>&amp; <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../db/d91/structmwriter.html">mwriter</a>, <a class="el" href="../../d9/d61/structmreader.html">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, <a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>, <a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::operator= </td>
+          <td class="memname"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">multiloc_serialized</a>&amp; <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::operator= </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../db/d91/structmwriter.html">mwriter</a>, <a class="el" href="../../d9/d61/structmreader.html">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, <a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>, <a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt; &amp;&#160;</td>
           <td class="paramname"><em>__m</em></td><td>)</td>
           <td></td>
         </tr>
@@ -511,28 +587,28 @@ template&lt;typename mutation_type , typename mwriter , typename mreader , typen
 </div>
 </div>
 <h2 class="groupheader">Field Documentation</h2>
-<a class="anchor" id="a308bd8fdb763826fa21b842a518d9d80"></a>
+<a class="anchor" id="ad8e5e6b3729f1428b3c6b357a97fb4df"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#aefa6b6bbdfadf9269c68aaeaa1937cd6">dipvector_t</a> <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../db/d91/structmwriter.html">mwriter</a>, <a class="el" href="../../d9/d61/structmreader.html">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, <a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>, <a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::diploids</td>
+          <td class="memname"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#ae5673c44583ab7fde42ff141f00be34e">dipvector_t</a> <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::diploids</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a3f72977a227038728552bb47698c3876"></a>
+<a class="anchor" id="a7e0bae20aee050c4a61ddc5d563c0dec"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a> <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../db/d91/structmwriter.html">mwriter</a>, <a class="el" href="../../d9/d61/structmreader.html">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, <a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>, <a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::fixation_times</td>
+          <td class="memname">ftvector <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::fixation_times</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -541,14 +617,14 @@ template&lt;typename mutation_type , typename mwriter , typename mreader , typen
 
 </div>
 </div>
-<a class="anchor" id="a867de5301cd4db110cdeacf06e82ca24"></a>
+<a class="anchor" id="aa7c1dccb4b10062d09e476e94247722e"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a> <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../db/d91/structmwriter.html">mwriter</a>, <a class="el" href="../../d9/d61/structmreader.html">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, <a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>, <a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::fixations</td>
+          <td class="memname">mvector <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::fixations</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -557,28 +633,28 @@ template&lt;typename mutation_type , typename mwriter , typename mreader , typen
 
 </div>
 </div>
-<a class="anchor" id="aaf6359a5696ff335b2fd0b0045ec5073"></a>
+<a class="anchor" id="a01bc3bfc98dbcbac788019f24b973203"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a0d44cb4ea39820444441b0676b769355">vglist_t</a> <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../db/d91/structmwriter.html">mwriter</a>, <a class="el" href="../../d9/d61/structmreader.html">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, <a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>, <a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::gametes</td>
+          <td class="memname"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a0a67450b86bb45de12e98d1753dc1f15">vglist_t</a> <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::gametes</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="aa74ef6627689ce5a2ea4500589cd9b86"></a>
+<a class="anchor" id="a3377def111fd56889fbd519a79d95114"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../db/d91/structmwriter.html">mwriter</a>, <a class="el" href="../../d9/d61/structmreader.html">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, <a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>, <a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::mut_lookup</td>
+          <td class="memname"><a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::mut_lookup</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -588,28 +664,28 @@ template&lt;typename mutation_type , typename mwriter , typename mreader , typen
 
 </div>
 </div>
-<a class="anchor" id="a3a2c36758235181f221c20b05b78bb3b"></a>
+<a class="anchor" id="a64a95978553025596a0fb6d450c2ff05"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#ab62ec1454204df8340bb82a3b77cfb15">mlist_t</a> <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../db/d91/structmwriter.html">mwriter</a>, <a class="el" href="../../d9/d61/structmreader.html">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, <a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>, <a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::mutations</td>
+          <td class="memname"><a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#aaaa5010742926cb0c42a5237d3877d25">mlist_t</a> <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::mutations</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="ad31064da175d2d3cc3f7d36592f43ae4"></a>
+<a class="anchor" id="ac21f55002cb917c3bda4342c40e590ef"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+template&lt;typename mutation_type , typename mwriter , typename mreader , typename mlist , typename glist , typename dipvector , typename vglist , typename mvector , typename ftvector , typename lookup_table_type , typename dip_reader_t  = KTfwd::diploidIOplaceholder, typename dip_writer_t  = KTfwd::diploidIOplaceholder&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">unsigned <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../db/d91/structmwriter.html">mwriter</a>, <a class="el" href="../../d9/d61/structmreader.html">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, <a class="el" href="../../df/da3/TFL2013_8cc.html#a1e738991be300fce0a7f757f3d7b8b95">mvector</a>, <a class="el" href="../../df/da3/TFL2013_8cc.html#a9177f9ed29c0d36758db138b8ffab0f4">ftvector</a>, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::N</td>
+          <td class="memname">unsigned <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">KTfwd::sugar::multiloc_serialized</a>&lt; mutation_type, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, vglist, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>, dip_reader_t, dip_writer_t &gt;::N</td>
         </tr>
       </table>
 </div><div class="memdoc">

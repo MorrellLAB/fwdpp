@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.0</span>
+   &#160;<span id="projectnumber">0.3.1</span>
    </div>
   </td>
  </tr>
@@ -91,23 +91,21 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <h2>The basic functions</h2>
 <p>For single-deme simulations, the library provides the following functions:</p>
 <ul>
-<li><a class="el" href="../../da/d8b/namespaceKTfwd.html#a7e61ead953245fa0179b92971ad9dc1f">KTfwd::write_binary_pop</a></li>
-<li><a class="el" href="../../da/d8b/namespaceKTfwd.html#aa86f256af3adb31cc09ad797b3d76c6e" title="Read the population back from a binary-format file Read the population back from a binary-format file...">KTfwd::read_binary_pop</a></li>
+<li><a class="el" href="../../da/d8b/namespaceKTfwd.html#a4826160f7e99b8c2cdb7fa2769c6aeeb" title="Write population to binary-format file for individual-based simulations. ">KTfwd::write_binary_pop</a></li>
+<li><a class="el" href="../../da/d8b/namespaceKTfwd.html#af5ddb3ab8a5d762b4feda87205ad2253" title="Read the population back from a binary-format file for individual-based simulations. ">KTfwd::read_binary_pop</a></li>
 </ul>
 <p>These functions write and read simulated populations in a binary (<em>e.g.</em> not human-readable) format.</p>
 <p>For multi-deme simulations, we have:</p>
 <ul>
-<li><a class="el" href="../../da/d8b/namespaceKTfwd.html#a21e90a90f379efd81081f3c07c9e5507" title="Write the metapopulation to a compact binary-format output file. Write the metapopulation to a compac...">KTfwd::write_binary_metapop</a></li>
-<li><a class="el" href="../../da/d8b/namespaceKTfwd.html#a2360771e6340d7ed72fb69a4d7869d0f" title="Read the metapopulation back from a binary-format file Read the metapopulation back from a binary-for...">KTfwd::read_binary_metapop</a></li>
+<li><a class="el" href="../../da/d8b/namespaceKTfwd.html#a27f3a42eb05e20def4a515242ecd71c4">KTfwd::write_binary_metapop</a></li>
+<li><a class="el" href="../../da/d8b/namespaceKTfwd.html#a2e8e31af4723d5ed95458876ebd319fe" title="Read the metapopulation back from a binary-format file for individual-based simulations Read the meta...">KTfwd::read_binary_metapop</a></li>
 </ul>
 <p>As with the rest of the library, these functions are implemented using a combination of templates + function overloading.</p>
 <p>Currently, these functions support the following types of simulations:</p>
 <ul>
-<li>single-locus, single-deme, gamete-based</li>
-<li>single-locus, multi-deme, gamete-based</li>
-<li>single-locus, single-deme, individual-based</li>
-<li>single-locus, multi-deme, individual-based</li>
-<li>multi-locus, single-deme, individual-based</li>
+<li>single-locus, single-deme</li>
+<li>single-locus, multi-deme</li>
+<li>multi-locus, single-deme</li>
 </ul>
 <p>The type requirements for these functions are:</p>
 <ul>
@@ -123,11 +121,11 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <li>Define a mutation read function, taking an input stream type as an object</li>
 </ul>
 <p>Let's look at an example. For this definition of a mutation type:</p>
-<div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code" href="../../de/d4d/structmutation__with__age.html">mutation_with_age</a> : <span class="keyword">public</span> <a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html">KTfwd::mutation_base</a></div>
+<div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">mutation_with_age</a> : <span class="keyword">public</span> <a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html">KTfwd::mutation_base</a></div>
 <div class="line">{</div>
-<div class="line">  <span class="keywordtype">double</span> <a class="code" href="../../de/d4d/structmutation__with__age.html#a85f3c3c62fb469e3e38e5a5b3ec2d5dc">s</a>,<a class="code" href="../../de/d4d/structmutation__with__age.html#ad3b51b282581737f217cbd918fa800dc">h</a>;</div>
-<div class="line">  <span class="keywordtype">unsigned</span> <a class="code" href="../../de/d4d/structmutation__with__age.html#a6911001ce7dcd8114e89ff7494fc2703">g</a>; <span class="comment">//generation in which mutation arose</span></div>
-<div class="line">  <a class="code" href="../../de/d4d/structmutation__with__age.html#aeae6a32f9e7c790773cf94bb004d435d">mutation_with_age</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; __o,<span class="keyword">const</span> <span class="keywordtype">double</span> &amp; position, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; count, </div>
+<div class="line">  <span class="keywordtype">double</span> <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html#ae055d7d981b19117c04def0dcc57e310">s</a>,<a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html#a60a395a305fd9d0a1f3da6b7b223bc10">h</a>;</div>
+<div class="line">  <span class="keywordtype">unsigned</span> <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html#af42aac73b0fef6d2b1990b110bc3d4c9">g</a>; <span class="comment">//generation in which mutation arose</span></div>
+<div class="line">  <a class="code" href="../../d0/db9/sugar1_8cc.html#a26022ef252703a27f414647b9ad246a8">mutation_with_age</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; __o,<span class="keyword">const</span> <span class="keywordtype">double</span> &amp; position, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; count, </div>
 <div class="line">                    <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; __s, <span class="keyword">const</span> <span class="keywordtype">double</span> __h,</div>
 <div class="line">                    <span class="keyword">const</span> <span class="keywordtype">bool</span> &amp; isneutral = <span class="keyword">true</span>)</div>
 <div class="line">    : KTfwd::<a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html#a73b18577e5d041ad1822663335477862">mutation_base</a>(position,count,isneutral),s(__s),h(__h),g(__o)</div>
@@ -136,31 +134,31 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">};</div>
 </div><!-- fragment --><p>This function object works as a writer:</p>
 <div class="fragment"><div class="line"><span class="comment">//function object to write mutation data in binary format</span></div>
-<div class="line"><span class="keyword">struct </span><a class="code" href="../../db/d91/structmwriter.html">mwriter</a></div>
+<div class="line"><span class="keyword">struct </span><a class="code" href="../../de/d25/structKTfwd_1_1mutation__writer.html">mwriter</a></div>
 <div class="line">{</div>
-<div class="line">  <span class="keyword">typedef</span> <span class="keywordtype">void</span> <a class="code" href="../../db/d91/structmwriter.html#a4c2186e1cd2e69b3a695960eecfa5c50">result_type</a>;</div>
-<div class="line">  <a class="code" href="../../db/d91/structmwriter.html#a4c2186e1cd2e69b3a695960eecfa5c50">result_type</a> <a class="code" href="../../db/d91/structmwriter.html#a66f5d25f9e132257328a29c6e715d77a">operator()</a>( <span class="keyword">const</span> <a class="code" href="../../de/d4d/structmutation__with__age.html">mutation_with_age</a> &amp; m, std::ostream &amp; buffer )<span class="keyword"> const</span></div>
+<div class="line">  <span class="keyword">typedef</span> <span class="keywordtype">void</span> <a class="code" href="../../de/d25/structKTfwd_1_1mutation__writer.html#a0562d10bc194da5b0fa595da8784a9b6">result_type</a>;</div>
+<div class="line">  <a class="code" href="../../de/d25/structKTfwd_1_1mutation__writer.html#a0562d10bc194da5b0fa595da8784a9b6">result_type</a> <a class="code" href="../../de/d25/structKTfwd_1_1mutation__writer.html#af7bb26e19759adec8181abf1054bbe76">operator()</a>( <span class="keyword">const</span> <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">mutation_with_age</a> &amp; m, std::ostream &amp; buffer )<span class="keyword"> const</span></div>
 <div class="line"><span class="keyword">  </span>{</div>
 <div class="line">    <span class="keywordtype">unsigned</span> u = m.<a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html#a9df75224a5f00b97dc09e68b475a517a">n</a>;</div>
 <div class="line">    buffer.write( reinterpret_cast&lt; char * &gt;(&amp;u),<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span>) );</div>
-<div class="line">    u = m.<a class="code" href="../../de/d4d/structmutation__with__age.html#a6911001ce7dcd8114e89ff7494fc2703">g</a>;</div>
+<div class="line">    u = m.<a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html#af42aac73b0fef6d2b1990b110bc3d4c9">g</a>;</div>
 <div class="line">    buffer.write( reinterpret_cast&lt; char * &gt;(&amp;u),<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span>) );</div>
 <div class="line">    <span class="keywordtype">bool</span> b = m.<a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html#acfb3b4c94516cbbc5c28a12e1ad575b3">neutral</a>;</div>
 <div class="line">    buffer.write( reinterpret_cast&lt; char * &gt;(&amp;b),<span class="keyword">sizeof</span>(<span class="keywordtype">bool</span>) );</div>
 <div class="line">    <span class="keywordtype">double</span> d = m.<a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html#aed95181f38c8e17b19a7a9da4b373b03">pos</a>;</div>
 <div class="line">    buffer.write( reinterpret_cast&lt; char * &gt;(&amp;d),<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>) );</div>
-<div class="line">    d = m.<a class="code" href="../../de/d4d/structmutation__with__age.html#a85f3c3c62fb469e3e38e5a5b3ec2d5dc">s</a>;</div>
+<div class="line">    d = m.<a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html#ae055d7d981b19117c04def0dcc57e310">s</a>;</div>
 <div class="line">    buffer.write( reinterpret_cast&lt; char * &gt;(&amp;d),<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>) );</div>
-<div class="line">    d = m.<a class="code" href="../../de/d4d/structmutation__with__age.html#ad3b51b282581737f217cbd918fa800dc">h</a>;</div>
+<div class="line">    d = m.<a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html#a60a395a305fd9d0a1f3da6b7b223bc10">h</a>;</div>
 <div class="line">    buffer.write( reinterpret_cast&lt; char * &gt;(&amp;d),<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>) );</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 </div><!-- fragment --><p>And this function object works as a reader:</p>
 <div class="fragment"><div class="line"><span class="comment">//function object to read mutation data in binary format</span></div>
-<div class="line"><span class="keyword">struct </span><a class="code" href="../../d9/d61/structmreader.html">mreader</a></div>
+<div class="line"><span class="keyword">struct </span><a class="code" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">mreader</a></div>
 <div class="line">{</div>
-<div class="line">  <span class="keyword">typedef</span> <a class="code" href="../../de/d4d/structmutation__with__age.html">mutation_with_age</a> <a class="code" href="../../d9/d61/structmreader.html#a018bc865eec84fdf7dc5fa8dd79089da">result_type</a>;</div>
-<div class="line">  <a class="code" href="../../d9/d61/structmreader.html#a018bc865eec84fdf7dc5fa8dd79089da">result_type</a> <a class="code" href="../../d9/d61/structmreader.html#a5a87ded6097d21b6c26f6411cc064efd">operator()</a>( std::istream &amp; in )<span class="keyword"> const</span></div>
+<div class="line">  <span class="keyword">typedef</span> <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">mutation_with_age</a> <a class="code" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html#a445d1d00f8ccab821827842bf7f78df0">result_type</a>;</div>
+<div class="line">  <a class="code" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html#a445d1d00f8ccab821827842bf7f78df0">result_type</a> <a class="code" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html#af89b081c7ea0de9bc13c7ce91a559d51">operator()</a>( std::istream &amp; in )<span class="keyword"> const</span></div>
 <div class="line"><span class="keyword">  </span>{</div>
 <div class="line">    <span class="keywordtype">unsigned</span> n;</div>
 <div class="line">    in.read( reinterpret_cast&lt; char * &gt;(&amp;n),<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span>) );</div>
@@ -174,30 +172,43 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">    in.read( reinterpret_cast&lt; char * &gt;(&amp;s),<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>) );</div>
 <div class="line">    <span class="keywordtype">double</span> h;</div>
 <div class="line">    in.read( reinterpret_cast&lt; char * &gt;(&amp;h),<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>) );</div>
-<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d9/d61/structmreader.html#a018bc865eec84fdf7dc5fa8dd79089da">result_type</a>(g,pos,n,s,h,neut);</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html#a445d1d00f8ccab821827842bf7f78df0">result_type</a>(g,pos,n,s,h,neut);</div>
 <div class="line">  }</div>
 <div class="line">};</div>
-</div><!-- fragment --><p>In the next section, you'll see how to pass these to <a class="el" href="../../da/d8b/namespaceKTfwd.html#a7e61ead953245fa0179b92971ad9dc1f">KTfwd::write_binary_pop</a> and <a class="el" href="../../da/d8b/namespaceKTfwd.html#aa86f256af3adb31cc09ad797b3d76c6e" title="Read the population back from a binary-format file Read the population back from a binary-format file...">KTfwd::read_binary_pop</a>.</p>
+</div><!-- fragment --><p>Below, you will see how to pass these to <a class="el" href="../../da/d8b/namespaceKTfwd.html#a4826160f7e99b8c2cdb7fa2769c6aeeb" title="Write population to binary-format file for individual-based simulations. ">KTfwd::write_binary_pop</a> and <a class="el" href="../../da/d8b/namespaceKTfwd.html#af5ddb3ab8a5d762b4feda87205ad2253" title="Read the population back from a binary-format file for individual-based simulations. ">KTfwd::read_binary_pop</a>.</p>
+<h2>Reading and writing diploids.</h2>
+<p>Version 0.3.1 allowed the use of custom diploid genotype objects (<a class="el" href="../../d2/dcd/md_md_customdip.html">Advanced topics: custom diploid genotypes</a>). Such objects can be serialized with no additional effort. <em>However, doing so will result in custom data associated with these custom types not being serialized.</em></p>
+<p>In order to solve this, define your own custom structures for writing and reading:</p>
+<div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code" href="../../da/d21/structdiploid__writer.html">diploid_writer</a> {</div>
+<div class="line">        <span class="keyword">using</span> <a class="code" href="../../da/d21/structdiploid__writer.html#a0edf036be1fd1b4719ca7f0c10ad6a37">result_type</a> = void;</div>
+<div class="line">        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> dip_itr, <span class="keyword">typename</span> streamtype &gt;</div>
+<div class="line">        <span class="keyword">inline</span> <a class="code" href="../../da/d21/structdiploid__writer.html#a0edf036be1fd1b4719ca7f0c10ad6a37">result_type</a>( dip_itr i, streamtype &amp; o )<span class="keyword"> const</span></div>
+<div class="line"><span class="keyword">        </span>{</div>
+<div class="line">                <span class="comment">//Do the right thing here.</span></div>
+<div class="line">        }</div>
+<div class="line">};</div>
+</div><!-- fragment --><p>The arguments should be an iterator pointing to one of your custom diploids, and a reference to an output stream (including a gzFile!). A function object of the same form should also be written to read the data back in.</p>
+<p>These custom serialization objects may be passed as the last arguments to the functions discussed in the next section. By default, they are implicitly passed <a class="el" href="../../d5/d09/structKTfwd_1_1diploidIOplaceholder.html" title="placeholder IO policy for standard diploid types ">KTfwd::diploidIOplaceholder</a>, which is essentially an empty object.</p>
 <h2>In-memory copying</h2>
-<p>It may be desirable to be able to restore a population from a previous state. For example, you may wish to repeatedly introduce a mutation at a position, and then simulate until it is fixed. For replicates where it is lost, you will restore the population to the state it was in when you introduced the mutation. You may do this using <a class="el" href="../../da/d8b/namespaceKTfwd.html#a7e61ead953245fa0179b92971ad9dc1f">KTfwd::write_binary_pop</a> or <a class="el" href="../../da/d8b/namespaceKTfwd.html#a21e90a90f379efd81081f3c07c9e5507" title="Write the metapopulation to a compact binary-format output file. Write the metapopulation to a compac...">KTfwd::write_binary_metapop</a>, and write the population to an in-memory buffer such as <a href="http://www.cplusplus.com/reference/sstream/ostringstream/">std::ostringstream</a>. You may restore the population by reading the data from a <a href="http://www.cplusplus.com/reference/sstream/istringstream/">std::istringstream</a>.</p>
+<p>It may be desirable to be able to restore a population from a previous state. For example, you may wish to repeatedly introduce a mutation at a position, and then simulate until it is fixed. For replicates where it is lost, you will restore the population to the state it was in when you introduced the mutation. You may do this using <a class="el" href="../../da/d8b/namespaceKTfwd.html#a4826160f7e99b8c2cdb7fa2769c6aeeb" title="Write population to binary-format file for individual-based simulations. ">KTfwd::write_binary_pop</a> or <a class="el" href="../../da/d8b/namespaceKTfwd.html#a27f3a42eb05e20def4a515242ecd71c4">KTfwd::write_binary_metapop</a>, and write the population to an in-memory buffer such as <a href="http://www.cplusplus.com/reference/sstream/ostringstream/">std::ostringstream</a>. You may restore the population by reading the data from a <a href="http://www.cplusplus.com/reference/sstream/istringstream/">std::istringstream</a>.</p>
 <p>Here is some pseudocode for an individual-based simulation:</p>
 <div class="fragment"><div class="line"><span class="comment">//run a simulation...</span></div>
 <div class="line"></div>
 <div class="line"><span class="comment">//write it to a buffer:</span></div>
 <div class="line">std::ostringstream buffer;</div>
-<div class="line"><a class="code" href="../../da/d8b/namespaceKTfwd.html#a7e61ead953245fa0179b92971ad9dc1f">KTfwd::write_binary_pop</a>(&amp;gametes,&amp;mutations,&amp;diploids,std::bind(<a class="code" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>(),std::placeholders::_1,std::placeholders::_2),buffer);</div>
+<div class="line"><a class="code" href="../../da/d8b/namespaceKTfwd.html#a4826160f7e99b8c2cdb7fa2769c6aeeb">KTfwd::write_binary_pop</a>(&amp;gametes,&amp;mutations,&amp;diploids,std::bind(<a class="code" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>(),std::placeholders::_1,std::placeholders::_2),buffer);</div>
 <div class="line"></div>
 <div class="line"><span class="comment">//Now, if you want to restore it:</span></div>
 <div class="line">std::istringstream inbuffer(buffer.str());</div>
 <div class="line">decltype(mutations) mutations2;</div>
 <div class="line">decltype(gametes) gametes2;</div>
 <div class="line">decltype(diploids) diploids2;</div>
-<div class="line">KTfwd::<a class="code" href="../../da/d8b/namespaceKTfwd.html#aa86f256af3adb31cc09ad797b3d76c6e">read_binary_pop</a>(&amp;gametes2,</div>
+<div class="line">KTfwd::<a class="code" href="../../da/d8b/namespaceKTfwd.html#af5ddb3ab8a5d762b4feda87205ad2253">read_binary_pop</a>(&amp;gametes2,</div>
 <div class="line">                         &amp;mutations2,</div>
 <div class="line">                         &amp;diploids2,</div>
-<div class="line">                         std::bind(<a class="code" href="../../d9/d61/structmreader.html">mreader</a>(),std::placeholders::_1),</div>
+<div class="line">                         std::bind(<a class="code" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">mreader</a>(),std::placeholders::_1),</div>
 <div class="line">                         inbuffer);</div>
-</div><!-- fragment --><p>This approach works because <a class="el" href="../../da/d8b/namespaceKTfwd.html#a7e61ead953245fa0179b92971ad9dc1f">KTfwd::write_binary_pop</a> and <a class="el" href="../../da/d8b/namespaceKTfwd.html#a21e90a90f379efd81081f3c07c9e5507" title="Write the metapopulation to a compact binary-format output file. Write the metapopulation to a compac...">KTfwd::write_binary_metapop</a> perform "deep copies" of the data, allowing the complete restoration of all the pointers, etc., stored in the containers.</p>
+</div><!-- fragment --><p>This approach works because <a class="el" href="../../da/d8b/namespaceKTfwd.html#a4826160f7e99b8c2cdb7fa2769c6aeeb" title="Write population to binary-format file for individual-based simulations. ">KTfwd::write_binary_pop</a> and <a class="el" href="../../da/d8b/namespaceKTfwd.html#a27f3a42eb05e20def4a515242ecd71c4">KTfwd::write_binary_metapop</a> perform "deep copies" of the data, allowing the complete restoration of all the pointers, etc., stored in the containers.</p>
 <h2>Writing to files</h2>
 <p>You may use the same functions to write/read to from files. You may use and sort of <a href="http://www.cplusplus.com/reference/ostream/ostream/">std::ostream</a>-compatible object for output. You may use either a <a href="http://www.cplusplus.com/reference/istream/istream/">std::istream</a>-compatible object for input or a gzFile object from <a href="http://zlib.net">zlib</a>.</p>
 <h2>Managing output from multiple independent processes</h2>

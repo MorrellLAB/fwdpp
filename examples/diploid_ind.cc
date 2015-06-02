@@ -80,11 +80,10 @@ int main(int argc, char ** argv)
       				       N,     //current pop size, remains constant
       				       mu,    //mutation rate per gamete
       				       /*
-      					 The mutation model (KTfwd::infsites) will pass each gamete
-      					 to be mutated to the mutation model function.  The _1
-      					 is used as a placeholder for that gamete.
+      					 The mutation model (KTfwd::infsites) will be applied by
+					 sample_diploid in order to add mutations to gametes each generation.
       				       */
-				       std::bind(KTfwd::infsites(),r,std::placeholders::_1,&pop.mut_lookup,generation,
+				       std::bind(KTfwd::infsites(),r,&pop.mut_lookup,generation,
 						 mu,0.,[&r](){return gsl_rng_uniform(r);},[](){return 0.;},[](){return 0.;}),
 				       //The recombination policy includes the uniform crossover rate
       				       std::bind(KTfwd::genetics101(),std::placeholders::_1,std::placeholders::_2,
@@ -156,6 +155,5 @@ int main(int argc, char ** argv)
 	  std::cout << "//\nsegsites: 0\n";
 	}      
     }
-  gsl_rng_free(r);
   return 0;
 }

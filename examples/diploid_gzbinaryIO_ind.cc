@@ -25,70 +25,6 @@ using mtype = KTfwd::popgenmut;
 #define SINGLEPOP_SIM
 #include <common_ind.hpp>
 
-//function object to write mutation data in binary format
-struct mwriter
-{
-  typedef void result_type;
-  result_type operator()( const mtype & m, std::ostringstream & buffer ) const
-  {
-    unsigned u = m.n;
-    buffer.write( reinterpret_cast< char * >(&u),sizeof(unsigned) );
-    u = m.g;
-    buffer.write( reinterpret_cast< char * >(&u),sizeof(unsigned) );
-    bool b = m.neutral;
-    buffer.write( reinterpret_cast< char * >(&b),sizeof(bool) );
-    double d = m.pos;
-    buffer.write( reinterpret_cast< char * >(&d),sizeof(double) );
-    d = m.s;
-    buffer.write( reinterpret_cast< char * >(&d),sizeof(double) );
-    d = m.h;
-    buffer.write( reinterpret_cast< char * >(&d),sizeof(double) );
-  }
-};
-
-/*
-  Function object to read mutation data in binary format.
-  This is the difference from diploid_binaryIO_ind.cc,
-  as it is based on gzread from a gzFile rather than
-  an istream.
-
-  Note: zlib.h is already included via fwdpp,
-  but there would be no harm in doing so again above.
-*/
-struct mreader
-{
-  using result_type = mtype;
-  result_type operator()( gzFile gzin ) const
-  {
-    unsigned n;
-    gzread( gzin,&n,sizeof(unsigned) );
-    unsigned g;
-    gzread( gzin,&g,sizeof(unsigned) );
-    bool neut;
-    gzread( gzin,&neut,sizeof(bool) );
-    double pos;
-    gzread( gzin,&pos,sizeof(double) );
-    double s;
-    gzread( gzin,&s,sizeof(double) );
-    double h;
-    gzread( gzin,&h,sizeof(double) );
-    return result_type(pos,s,h,g,n);
-  }
-};
-
-// mutation_with_age neutral_mutations_inf_sites(gsl_rng * r,const unsigned & generation,mlist * mutations,
-// 					      lookup_table_type * lookup)
-// {
-//   double pos = gsl_rng_uniform(r);
-//   while( lookup->find(pos) != lookup->end() )
-//     {
-//       pos = gsl_rng_uniform(r);
-//     }
-//   lookup->insert(pos);
-//   assert(std::find_if(mutations->begin(),mutations->end(),std::bind(KTfwd::mutation_at_pos(),std::placeholders::_1,pos)) == mutations->end());
-//   return mutation_with_age(generation,pos,1,0.,0.,true);
-// }
-
 int main(int argc, char ** argv)
 {
   if (argc != 9)
@@ -132,7 +68,7 @@ int main(int argc, char ** argv)
 				   &pop.mutations,
 				   N,     
 				   mu,   
-				   std::bind(KTfwd::infsites(),r,std::placeholders::_1,&pop.mut_lookup,generation,
+				   std::bind(KTfwd::infsites(),r,&pop.mut_lookup,generation,
 						 mu,0.,[&r](){return gsl_rng_uniform(r);},[](){return 0.;},[](){return 0.;}),
 				   std::bind(KTfwd::genetics101(),std::placeholders::_1,std::placeholders::_2,
 					       &pop.gametes,
@@ -145,9 +81,6 @@ int main(int argc, char ** argv)
 				   std::bind(KTfwd::mutation_remover(),std::placeholders::_1,0,2*N));
       KTfwd::remove_fixed_lost(&pop.mutations,&pop.fixations,&pop.fixation_times,&pop.mut_lookup,generation,twoN);
     }
-  std::ostringstream buffer;
-      
-  KTfwd::write_binary_pop(&pop.gametes,&pop.mutations,&pop.diploids,std::bind(mwriter(),std::placeholders::_1,std::placeholders::_2),buffer);
 
   /*
     Note: gzFiles are not as easily compatible with file-locking and creating an index, etc.,
@@ -179,7 +112,7 @@ int main(int argc, char ** argv)
 
   //Now, write output to a gzipped file
   gzFile gzout = gzopen( hapfile, "ab" ); //open in append mode.  The b = binary mode.  Not required on all systems, but never hurts.
-  gzwrite( gzout, buffer.str().c_str(), buffer.str().size() ); //write buffer to gzfile
+  long long written = KTfwd::gzserialize()(gzout,pop,KTfwd::mutation_writer());
   //write info to index file
   fprintf( index_fh, "%u %lld\n",replicate_no,gztell( gzout ) );
   gzclose(gzout);
@@ -221,21 +154,16 @@ int main(int argc, char ** argv)
       exit(10);
     }
 
-  singlepop_t::mlist_t mutations2;
-  singlepop_t::glist_t gametes2;
-  singlepop_t::dipvector_t diploids2;
-
+  singlepop_t pop2(pop.N);
+  
   gzFile gzin = gzopen( hapfile, "rb" ); //open it for reading.  Again, binary mode.
   gzseek( gzin, rec_offset, SEEK_CUR ); //seek to position
-  KTfwd::read_binary_pop(&gametes2,
-			 &mutations2,
-			 &diploids2,
-			 std::bind(mreader(),std::placeholders::_1),
-			 gzin);
+
+  KTfwd::gzdeserialize()(gzin,pop2,std::bind(KTfwd::mutation_reader<mtype>(),std::placeholders::_1));
 
   //Now, compare what we wrote to what we read
-  std::cout << pop.gametes.size() << ' ' << gametes2.size() << ' ' << pop.mutations.size() << ' ' << mutations2.size() 
-	    << ' ' << pop.diploids.size() << ' ' << diploids2.size() << '\n';
+  std::cout << pop.gametes.size() << ' ' << pop2.gametes.size() << ' ' << pop.mutations.size() << ' ' << pop2.mutations.size() 
+	    << ' ' << pop.diploids.size() << ' ' << pop2.diploids.size() << '\n';
 
   for( unsigned i = 0 ; i < pop.diploids.size() ; ++i )
     {
@@ -254,16 +182,16 @@ int main(int argc, char ** argv)
       std::cout << '\n';
 
       std::cout << "Read:\n";
-      for( unsigned j = 0 ; j < diploids2[i].first->mutations.size() ; ++j )
+      for( unsigned j = 0 ; j < pop2.diploids[i].first->mutations.size() ; ++j )
 	{
-	  std::cout << '(' << diploids2[i].first->mutations[j]->pos << ','
-		    << diploids2[i].first->mutations[j]->n << ')';
+	  std::cout << '(' << pop2.diploids[i].first->mutations[j]->pos << ','
+		    << pop2.diploids[i].first->mutations[j]->n << ')';
 	}
       std::cout << '\n';
-      for( unsigned j = 0 ; j < diploids2[i].second->mutations.size() ; ++j )
+      for( unsigned j = 0 ; j < pop2.diploids[i].second->mutations.size() ; ++j )
 	{
-	  std::cout << '(' << diploids2[i].second->mutations[j]->pos << ','
-		    << diploids2[i].second->mutations[j]->n << ')';
+	  std::cout << '(' << pop2.diploids[i].second->mutations[j]->pos << ','
+		    << pop2.diploids[i].second->mutations[j]->n << ')';
 	}
       std::cout << '\n';
     }

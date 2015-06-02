@@ -56,6 +56,10 @@ namespace KTfwd {
       using glist_t = glist;
       //! Lookup table type for recording mutation positions, etc.
       using lookup_table_t = lookup_table_type;
+      //! container type for fixations
+      using mvector_t = mvector;
+      //! container type for fixation times
+      using ftvector_t = ftvector;
 
       mlist mutations;
       glist gametes;
@@ -79,7 +83,7 @@ namespace KTfwd {
 					      //The population contains a single gamete in 2N copies
 					      gametes(glist(1,gamete_t(2*popsize))),
 					      //All N diploids contain the only gamete in the pop
-					      diploids(dipvector_t(popsize,std::make_pair(gametes.begin(),gametes.begin()))),
+					      diploids(dipvector_t(popsize,diploid_t(gametes.begin(),gametes.begin()))),
 					      mut_lookup(lookup_table_type()),
 					      fixations(mvector()),
 					      fixation_times(ftvector())
@@ -128,7 +132,9 @@ namespace KTfwd {
 	     typename dipvector,
 	     typename mvector,
 	     typename ftvector,
-	     typename lookup_table_type>
+	     typename lookup_table_type,
+	     typename dip_reader_t = KTfwd::diploidIOplaceholder,
+	     typename dip_writer_t = KTfwd::diploidIOplaceholder>
     class singlepop_serialized
     {
       static_assert( std::is_same< typename glist::value_type,
@@ -158,7 +164,15 @@ namespace KTfwd {
       using glist_t = glist;
       //! Lookup table type for recording mutation positions, etc.
       using lookup_table_t = lookup_table_type;
-      
+      //! Serialization type for writing diploid genotypes
+      using diploid_reader_t = dip_reader_t;
+      //! Serialization type for reading diploid genotypes
+      using diploid_writer_t = dip_writer_t;
+      //! container type for fixations
+      using mvector_t = mvector;
+      //! container type for fixation times
+      using ftvector_t = ftvector;
+
       //Data types -- the names should make the above typedefs a bit more clear
       mlist mutations;
       glist gametes;
@@ -182,7 +196,7 @@ namespace KTfwd {
 							 //The population contains a single gamete in 2N copies
 							 gametes(glist(1,gamete_t(2*popsize))),
 							 //All N diploids contain the only gamete in the pop
-							 diploids(dipvector_t(popsize,std::make_pair(gametes.begin(),gametes.begin()))), 
+							 diploids(dipvector_t(popsize,diploid_t(gametes.begin(),gametes.begin()))), 
 							 mut_lookup(lookup_table_type()),
 							 fixations(mvector()),
 							 fixation_times(ftvector())
@@ -204,8 +218,8 @@ namespace KTfwd {
 	static_assert( std::is_same<mutation_t,typename mreader_t::result_type>::value,
 		       "Mutation type must be same for class and mreader_t" );
 	serialize s;
-	s(pop,mwriter_t());
-	deserialize()(*this,s,mreader_t());
+	s(pop,mwriter_t(),dip_writer_t());
+	deserialize()(*this,s,mreader_t(),dip_reader_t());
       }
       
       //! Move constructor
@@ -217,8 +231,8 @@ namespace KTfwd {
 	static_assert( std::is_same<mutation_t,typename mreader_t::result_type>::value,
 		       "Mutation type must be same for class and mreader_t" );
 	serialize s;
-	s(p,mwriter_t());
-	deserialize()(*this,s,mreader_t());
+	s(p,mwriter_t(),dip_writer_t());
+	deserialize()(*this,s,mreader_t(),dip_reader_t());
 	return *this;
       }
 

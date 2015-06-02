@@ -73,7 +73,7 @@ int main(int argc, char ** argv)
 				   &pop.mutations,
 				   N,     
 				   mu,   
-				   std::bind(KTfwd::infsites(),r,std::placeholders::_1,&pop.mut_lookup,generation,
+				   std::bind(KTfwd::infsites(),r,&pop.mut_lookup,generation,
 					     mu,0.,[&r](){return gsl_rng_uniform(r);},[](){return 0.;},[](){return 0.;}),
 				   std::bind(KTfwd::genetics101(),std::placeholders::_1,std::placeholders::_2,
 					       &pop.gametes,
@@ -160,7 +160,7 @@ int main(int argc, char ** argv)
   //now, read the data back in...
   glist gametes2;
   mlist mutations2;
-  std::vector< std::pair< glist::iterator,glist::iterator > > diploids2;
+  singlepop_serialized_t::dipvector_t diploids2;
 
   std::ifstream in(hapfile,std::ios_base::in|std::ios_base::binary);
   in.seekg(offset);

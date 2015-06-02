@@ -7,6 +7,7 @@
   functions rely on these implementations
 */
 #include <zlib.h>
+
 namespace KTfwd {
   namespace fwdpp_internal {
 
@@ -23,7 +24,7 @@ namespace KTfwd {
 	gzread(gzin,__t,sizeof(T));
       }
     };
-
+    
     struct write_mutations
     {
       template< typename mutation_type,

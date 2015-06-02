@@ -47,9 +47,13 @@ namespace KTfwd {
       using glist_t = glist;
       //! Container of glist_t (gametes for each locus)
       using vglist_t = vglist;
-            //! Lookup table type for recording mutation positions, etc.
+      //! Lookup table type for recording mutation positions, etc.
       using lookup_table_t = lookup_table_type;
-      
+      //! container type for fixations
+      using mvector_t = mvector;
+      //! container type for fixation times
+      using ftvector_t = ftvector;
+
       //! Population size
       unsigned N;
       mlist_t mutations;
@@ -79,7 +83,7 @@ namespace KTfwd {
 	diploid_t idip;
 	for( auto gitr = gametes.begin() ; gitr != gametes.end() ; ++gitr )
 	  {
-	    idip.emplace_back(std::make_pair(gitr->begin(),gitr->begin()));
+	    idip.emplace_back(typename diploid_t::value_type(gitr->begin(),gitr->begin()));
 	  }
 	diploids = dipvector_t(N,idip);
       }
@@ -127,7 +131,9 @@ namespace KTfwd {
 	     typename vglist,
 	     typename mvector,
 	     typename ftvector,
-	     typename lookup_table_type>
+	     typename lookup_table_type,
+	     typename dip_reader_t = KTfwd::diploidIOplaceholder,
+	     typename dip_writer_t = KTfwd::diploidIOplaceholder>
     struct multiloc_serialized
     {
       //Dispatch tags for other parts of sugar layer
@@ -153,7 +159,15 @@ namespace KTfwd {
       using vglist_t = vglist;
       //! Lookup table type for recording mutation positions, etc.
       using lookup_table_t = lookup_table_type;
-      
+      //! Serialization type for writing diploid genotypes
+      using diploid_reader_t = dip_reader_t;
+      //! Serialization type for reading diploid genotypes
+      using diploid_writer_t = dip_writer_t;
+      //! container type for fixations
+      using mvector_t = mvector;
+      //! container type for fixation times
+      using ftvector_t = ftvector;
+
       //! Population size
       unsigned N;
       mlist_t mutations;
@@ -183,7 +197,7 @@ namespace KTfwd {
 	diploid_t idip;
 	for( auto gitr = gametes.begin() ; gitr != gametes.end() ; ++gitr )
 	  {
-	    idip.emplace_back(std::make_pair(gitr->begin(),gitr->begin()));
+	    idip.emplace_back(typename diploid_t::value_type(gitr->begin(),gitr->begin()));
 	  }
 	diploids = dipvector_t(N,idip);
       }
@@ -200,16 +214,16 @@ namespace KTfwd {
 							       fixation_times(ftvector())
       {
 	serialize s;
-	s(__m,mwriter_t());
-	deserialize()(*this,s,mreader_t());
+	s(__m,mwriter_t(),dip_writer_t());
+	deserialize()(*this,s,mreader_t(),dip_reader_t());
       }
 
       //! Assignment operator
       multiloc_serialized & operator=(const multiloc_serialized & __m)
       {
 	serialize s;
-	s(__m,mwriter_t());
-	deserialize()(*this,s,mreader_t());
+	s(__m,mwriter_t(),dip_writer_t());
+	deserialize()(*this,s,mreader_t(),dip_reader_t());
 	return *this;
       }
 

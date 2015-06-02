@@ -3,6 +3,7 @@
 
 #include <fwdpp/forward_types.hpp>
 #include <fwdpp/fwd_functional.hpp>
+#include <fwdpp/tags/diploid_tags.hpp>
 #include <cassert>
 #include <type_traits>
 #include <algorithm>
@@ -36,13 +37,22 @@ namespace KTfwd
   */
   struct no_selection
   {
+    /*!
+      \brief Method for standard diploid simulations of a single locus.
+    */
     using result_type = double;
     template<typename iterator_type >
-    inline result_type operator()(const iterator_type & g1, const iterator_type &g2) const
+    inline result_type operator()(const iterator_type &, const iterator_type &) const
     {
       static_assert( std::is_base_of<mutation_base,
 		     typename iterator_type::value_type::mutation_type>::value,
                      "iterator_type::value_type::mutation_type must be derived from KTfwd::mutation_base" );
+      return 1.;
+    }
+    //! \brief Naive implementation for non-standard cases
+    template<typename T >
+    inline result_type operator()(const T &) const
+    {
       return 1.;
     }
   };
@@ -71,7 +81,7 @@ namespace KTfwd
 				   const iterator_type & g2,
 				   const fitness_updating_policy_hom & fpol_hom,
 				   const fitness_updating_policy_het & fpol_het,
-				   const double starting_fitness = 1. ) const
+				   const double & starting_fitness  = 1. ) const
     {
       static_assert( std::is_base_of<mutation_base,
                                      typename iterator_type::value_type::mutation_type>::value,
@@ -131,6 +141,21 @@ namespace KTfwd
       std::for_each( b2,e2,
 		     std::bind(fpol_het,std::ref(fitness),std::placeholders::_1) );
       return fitness;
+    }
+    
+    /*!
+      \brief Overload for custom diploids.  This is what a programmer's functions will call.
+      \note See @ref md_md_customdip
+    */
+    template< typename diploid2dispatch,
+	      typename fitness_updating_policy_hom,
+	      typename fitness_updating_policy_het>
+    inline result_type operator()( const diploid2dispatch & dip,
+				   const fitness_updating_policy_hom & fpol_hom,
+				   const fitness_updating_policy_het & fpol_het,
+				   const double & starting_fitness = 1. ) const
+    {
+      return this->operator()(dip->first,dip->second,fpol_hom,fpol_het,starting_fitness);
     }
   };
 
@@ -251,7 +276,7 @@ namespace KTfwd
     using result_type = double;
     template< typename iterator_type>
     inline double operator()(const iterator_type & g1, const iterator_type & g2, 
-			     const double scaling = 1.) const
+			     const double & scaling = 1.) const
     {
       using __mtype =  typename iterator_type::value_type::mutation_list_type_iterator;
       return site_dependent_fitness()(g1,g2,
@@ -264,6 +289,16 @@ namespace KTfwd
 					fitness *= (1. + mut->h*mut->s);
 				      },
 				      1.);
+    }
+    /*!
+      \brief Overload for custom diploids.  This is what a programmer's functions will call.
+      \note See @ref md_md_customdip
+    */
+    template< typename diploid2dispatch>
+    inline result_type operator()( const diploid2dispatch & dip,
+				   const double & scaling = 1. ) const
+    {
+      return this->operator()(dip->first,dip->second,scaling);
     }
   };
 
@@ -280,8 +315,8 @@ namespace KTfwd
   {
     using result_type = double;
     template< typename iterator_type>
-    inline double operator()(const iterator_type & g1, const iterator_type & g2, 
-			     const double scaling = 1.) const
+    inline result_type operator()(const iterator_type & g1, const iterator_type & g2, 
+				  const double & scaling = 1.) const
     {
       using __mtype =  typename iterator_type::value_type::mutation_list_type_iterator;
       return 1. + site_dependent_fitness()(g1,g2,
@@ -294,6 +329,17 @@ namespace KTfwd
 					     fitness += (mut->h*mut->s);
 					   },
 					   0.);
+    }
+
+    /*!
+      \brief Overload for custom diploids.  This is what a programmer's functions will call.
+      \note See @ref md_md_customdip
+    */
+    template< typename diploid2dispatch >
+    inline result_type operator()( const diploid2dispatch & dip,
+				   const double & scaling = 1. ) const
+    {
+      return this->operator()(dip->first,dip->second,scaling);
     }
   };
 }

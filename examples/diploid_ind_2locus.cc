@@ -18,7 +18,7 @@ using mtype = KTfwd::popgenmut;
 struct no_selection_multi
 {
   typedef double result_type;
-  inline double operator()( const multiloc_t::diploid_t & diploid ) const
+  inline double operator()( const multiloc_t::dipvector_t::const_iterator & diploid ) const
   {
     return 1.;
   }
@@ -31,7 +31,7 @@ int main(int argc, char ** argv)
     {
       std::cerr << "Incorrect number of arguments.\n"
 		<< "Usage:\n"
-		<< argv[0] << " N theta rho ngens n nreps seed\n"
+		<< argv[0] << " N theta rho rbw ngens n nreps seed\n"
 		<< "Where:\n"
 		<< "N = population size (number of diploids)\n"
 		<< "theta = 4Nu, the scaled neutral mutation rate\n"
@@ -72,7 +72,7 @@ int main(int argc, char ** argv)
 
   while(nreps--)
     {
-      multiloc_t pop(N,2);
+      multiloc_serialized_t pop(N,2);
       unsigned generation=0;
       double wbar;
 
@@ -83,10 +83,10 @@ int main(int argc, char ** argv)
 
       std::vector< std::function<mtype(multiloc_t::mlist_t *)> > mmodels {
 	//Locus 0: positions Uniform [0,1)
-	std::bind(KTfwd::infsites(),r,std::placeholders::_1,&pop.mut_lookup,&generation,
+	std::bind(KTfwd::infsites(),r,&pop.mut_lookup,&generation,
 		  mu[0],0.,[&r](){return gsl_rng_uniform(r);},[](){return 0.;},[](){return 0.;}) ,
 	  //Locus 1: positions Uniform [1,2)
-	  std::bind(KTfwd::infsites(),r,std::placeholders::_1,&pop.mut_lookup,&generation,
+	  std::bind(KTfwd::infsites(),r,&pop.mut_lookup,&generation,
 		    mu[1],0.,[&r](){return gsl_ran_flat(r,1.,2.);},[](){return 0.;},[](){return 0.;})
 	  };
       for( generation = 0; generation < ngens; ++generation )
@@ -97,7 +97,6 @@ int main(int argc, char ** argv)
 	  			 &pop.diploids,
 	  			 &pop.mutations,
 	  			 N,
-	  			 N,
 				 &mu[0],
 	  			 mmodels,
 	  			 recpols,
@@ -106,12 +105,13 @@ int main(int argc, char ** argv)
 	  			 std::bind(KTfwd::insert_at_end<multiloc_t::mutation_t,multiloc_t::mlist_t>,std::placeholders::_1,std::placeholders::_2),
 	  			 std::bind(KTfwd::insert_at_end<multiloc_t::gamete_t,multiloc_t::glist_t>,std::placeholders::_1,std::placeholders::_2),
 	  			 std::bind(no_selection_multi(),std::placeholders::_1),
-	  			 std::bind(KTfwd::mutation_remover(),std::placeholders::_1,0,2*N),
-	  			 0.);
+	  			 std::bind(KTfwd::mutation_remover(),std::placeholders::_1,0,2*N));
 	  assert( check_sum(pop.gametes[0],twoN) );
 	  assert( check_sum(pop.gametes[1],twoN) );
       	  KTfwd::remove_fixed_lost(&pop.mutations,&pop.fixations,&pop.fixation_times,&pop.mut_lookup,generation,2*N);
 	}
+      //For giggles, make sure that the pop. is copy-constructible...
+      multiloc_serialized_t pop2(pop);
       //Take a sample and print it to screen.
       auto x = KTfwd::ms_sample(r,&pop.diploids,samplesize1,true);
       Sequence::SimData l1(x[0].begin(),x[0].end()),

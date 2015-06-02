@@ -25,11 +25,9 @@ As with the rest of the library, these functions are implemented using a combina
 
 Currently, these functions support the following types of simulations:
 
-* single-locus, single-deme, gamete-based 
-* single-locus, multi-deme, gamete-based
-* single-locus, single-deme, individual-based 
-* single-locus, multi-deme, individual-based
-* multi-locus, single-deme, individual-based 
+* single-locus, single-deme
+* single-locus, multi-deme
+* multi-locus, single-deme
 
 The type requirements for these functions are:
 
@@ -112,7 +110,28 @@ struct mreader
 };
 ~~~
 
-In the next section, you'll see how to pass these to KTfwd::write_binary_pop and KTfwd::read_binary_pop.
+Below, you will see how to pass these to KTfwd::write_binary_pop and KTfwd::read_binary_pop.
+
+## Reading and writing diploids.
+
+Version 0.3.1 allowed the use of custom diploid genotype objects (@ref md_md_customdip).  Such objects can be serialized with no additional effort. _However, doing so will result in custom data associated with these custom types not being serialized._
+
+In order to solve this, define your own custom structures for writing and reading:
+
+~~~{.cpp}
+struct diploid_writer {
+	using result_type = void;
+	template<typename dip_itr, typename streamtype >
+	inline result_type( dip_itr i, streamtype & o ) const
+	{
+		//Do the right thing here.
+	}
+};
+~~~
+
+The arguments should be an iterator pointing to one of your custom diploids, and a reference to an output stream (including a gzFile!).  A function object of the same form should also be written to read the data back in.
+
+These custom serialization objects may be passed as the last arguments to the functions discussed in the next section.  By default, they are implicitly passed KTfwd::diploidIOplaceholder, which is essentially an empty object.
 
 ## In-memory copying
 

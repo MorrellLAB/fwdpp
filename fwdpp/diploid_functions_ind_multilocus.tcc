@@ -9,7 +9,8 @@
 namespace KTfwd
 {
   //single deme, N changing
-  template< typename gamete_type,
+  template< typename diploid_geno_t,
+	    typename gamete_type,
 	    typename glist_vector_type_allocator,
 	    typename gamete_list_type_allocator,
 	    typename mutation_list_type_allocator,
@@ -32,10 +33,7 @@ namespace KTfwd
 		 glist_vector_type< gamete_list_type<gamete_type,
 		 gamete_list_type_allocator> ,
 		 glist_vector_type_allocator > * gametes,
-		 diploid_vector_type<locus_vector_type<std::pair<typename gamete_list_type< gamete_type,gamete_list_type_allocator >::iterator,
-		 typename gamete_list_type< gamete_type,gamete_list_type_allocator >::iterator>,
-		 locus_vector_type_allocator>,
-		 diploid_vector_type_allocator> * diploids,
+		 diploid_vector_type<locus_vector_type<diploid_geno_t,locus_vector_type_allocator>,diploid_vector_type_allocator> * diploids,
 		 mutation_list_type<typename gamete_type::mutation_type,mutation_list_type_allocator > * mutations, 
 		 const unsigned & N_curr, 
 		 const unsigned & N_next, 
@@ -76,7 +74,7 @@ namespace KTfwd
 	    j->second->n=0;
 	  }
 	//Calculate the fitness of this parent
-	fitnesses[i] += ff( *dptr );
+	fitnesses[i] += ff( dptr );
 	//increment pop. mean fitness
 	wbar += fitnesses[i];
       }
@@ -121,7 +119,11 @@ namespace KTfwd
 
 	//Choose the two parents
 	typename decltype(pptr)::difference_type p1 = decltype(p1)(gsl_ran_discrete(r,lookup.get()));
+#ifdef FWDPP_COMPAT_0_3_0
 	decltype(p1) p2  = (gsl_rng_uniform(r) <= f) ? p1 : decltype(p1)(gsl_ran_discrete(r,lookup.get()));
+#else
+	decltype(p1) p2 = (f==1. || (f>0. && gsl_rng_uniform(r)<=f)) ? p1 :  decltype(p1)(gsl_ran_discrete(r,lookup.get()));
+#endif
 	assert(p1<N_curr);
 	assert(p2<N_curr);
      
@@ -230,7 +232,8 @@ namespace KTfwd
   }
 
   //single deme, constant N
-  template< typename gamete_type,
+  template< typename diploid_geno_t,
+	    typename gamete_type,
 	    typename glist_vector_type_allocator,
 	    typename gamete_list_type_allocator,
 	    typename mutation_list_type_allocator,
@@ -253,10 +256,7 @@ namespace KTfwd
 		 glist_vector_type< gamete_list_type<gamete_type,
 		 gamete_list_type_allocator> ,
 		 glist_vector_type_allocator > * gametes,
-		 diploid_vector_type<locus_vector_type<std::pair<typename gamete_list_type< gamete_type,gamete_list_type_allocator >::iterator,
-		 typename gamete_list_type< gamete_type,gamete_list_type_allocator >::iterator>,
-		 locus_vector_type_allocator>,
-		 diploid_vector_type_allocator> * diploids,
+		 diploid_vector_type<locus_vector_type<diploid_geno_t,locus_vector_type_allocator>,diploid_vector_type_allocator> * diploids,
 		 mutation_list_type<typename gamete_type::mutation_type,mutation_list_type_allocator > * mutations, 
 		 const unsigned & N,
 		 const double * mu,

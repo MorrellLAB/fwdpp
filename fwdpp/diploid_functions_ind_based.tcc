@@ -3,6 +3,7 @@
 #define __DIPLOID_FUNCTIONS_IND_BASED_TCC__
 
 #include <fwdpp/internal/gsl_discrete.hpp>
+#include <fwdpp/internal/diploid_fitness_dispatch.hpp>
 
 namespace KTfwd
 {
@@ -10,6 +11,7 @@ namespace KTfwd
   template< typename gamete_type,
 	    typename gamete_list_type_allocator,
 	    typename mutation_list_type_allocator,
+	    typename diploid_geno_t,
 	    typename diploid_vector_type_allocator,
 	    typename diploid_fitness_function,
 	    typename mutation_removal_policy,
@@ -23,9 +25,7 @@ namespace KTfwd
   double
   sample_diploid(gsl_rng * r,
 		 gamete_list_type<gamete_type,gamete_list_type_allocator > * gametes,
-		 diploid_vector_type<std::pair<typename gamete_list_type< gamete_type,gamete_list_type_allocator >::iterator,
-					       typename gamete_list_type< gamete_type,gamete_list_type_allocator >::iterator>,
-				     diploid_vector_type_allocator> * diploids,
+		 diploid_vector_type<diploid_geno_t,diploid_vector_type_allocator> * diploids,
 		 mutation_list_type<typename gamete_type::mutation_type,mutation_list_type_allocator > * mutations, 
 		 const unsigned & N_curr, 
 		 const double & mu,
@@ -46,6 +46,7 @@ namespace KTfwd
   template< typename gamete_type,
 	    typename gamete_list_type_allocator,
 	    typename mutation_list_type_allocator,
+	    typename diploid_geno_t,
 	    typename diploid_vector_type_allocator,
 	    typename diploid_fitness_function,
 	    typename mutation_removal_policy,
@@ -59,9 +60,7 @@ namespace KTfwd
   double
   sample_diploid(gsl_rng * r,
 		 gamete_list_type<gamete_type,gamete_list_type_allocator > * gametes,
-		 diploid_vector_type<std::pair<typename gamete_list_type< gamete_type,gamete_list_type_allocator >::iterator,
-					       typename gamete_list_type< gamete_type,gamete_list_type_allocator >::iterator>,
-				     diploid_vector_type_allocator> * diploids,
+		 diploid_vector_type<diploid_geno_t,diploid_vector_type_allocator> * diploids,
 		 mutation_list_type<typename gamete_type::mutation_type,mutation_list_type_allocator > * mutations, 
 		 const unsigned & N_curr, 
 		 const unsigned & N_next, 
@@ -86,7 +85,8 @@ namespace KTfwd
       {
 	(dptr+i)->first->n = 0;
 	(dptr+i)->second->n = 0;
-	fitnesses[i] = ff((dptr+i)->first,(dptr+i)->second);
+	fitnesses[i] = fwdpp_internal::diploid_fitness_dispatch(ff,(dptr+i),
+								typename traits::is_custom_diploid_t<diploid_geno_t>::type());
 	wbar += fitnesses[i];
       }
     wbar /= double(diploids->size());
@@ -113,7 +113,11 @@ namespace KTfwd
 	assert(dptr==diploids->begin());
 	assert( (dptr+i) < diploids->end() );
 	size_t p1 = gsl_ran_discrete(r,lookup.get());
+#ifdef FWDPP_COMPAT_0_3_0
 	size_t p2 = (gsl_rng_uniform(r) <= f) ? p1 : gsl_ran_discrete(r,lookup.get());
+#else
+	size_t p2 = (f==1. || (f>0. && gsl_rng_uniform(r)<=f)) ? p1 : gsl_ran_discrete(r,lookup.get());
+#endif
 	assert(p1<parents.size());
 	assert(p2<parents.size());
 	
@@ -179,6 +183,7 @@ namespace KTfwd
 	    typename metapop_diploid_vector_type_allocator,
 	    typename gamete_list_type_allocator,
 	    typename mutation_list_type_allocator,
+	    typename diploid_geno_t,
 	    typename diploid_vector_type_allocator,
 	    typename diploid_fitness_function_container,
 	    typename mutation_removal_policy,
@@ -196,10 +201,7 @@ namespace KTfwd
   sample_diploid(gsl_rng * r,
 		 metapop_gamete_vector_type < gamete_list_type<gamete_type,gamete_list_type_allocator > ,
 		 metapop_gamete_vector_type_allocator > * metapop,
-		 metapop_diploid_vector_type < diploid_vector_type<std::pair<typename gamete_list_type< gamete_type,gamete_list_type_allocator >::iterator,
-									     typename gamete_list_type< gamete_type,gamete_list_type_allocator >::iterator>,
-								   diploid_vector_type_allocator>,
-					       metapop_diploid_vector_type_allocator > * diploids,
+		 metapop_diploid_vector_type < diploid_vector_type<diploid_geno_t,diploid_vector_type_allocator>,metapop_diploid_vector_type_allocator > * diploids,
 		 mutation_list_type<typename gamete_type::mutation_type,mutation_list_type_allocator > * mutations, 
 		 const unsigned * N_curr, 
 		 const double & mu,
@@ -223,6 +225,7 @@ namespace KTfwd
 	    typename metapop_diploid_vector_type_allocator,
 	    typename gamete_list_type_allocator,
 	    typename mutation_list_type_allocator,
+	    typename diploid_geno_t,
 	    typename diploid_vector_type_allocator,
 	    typename diploid_fitness_function_container,
 	    typename mutation_removal_policy,
@@ -240,10 +243,7 @@ namespace KTfwd
   sample_diploid(gsl_rng * r,
 		 metapop_gamete_vector_type < gamete_list_type<gamete_type,gamete_list_type_allocator > ,
 		 metapop_gamete_vector_type_allocator > * metapop,
-		 metapop_diploid_vector_type < diploid_vector_type<std::pair<typename gamete_list_type< gamete_type,gamete_list_type_allocator >::iterator,
-									     typename gamete_list_type< gamete_type,gamete_list_type_allocator >::iterator>,
-								   diploid_vector_type_allocator>,
-					       metapop_diploid_vector_type_allocator > * diploids,
+		 metapop_diploid_vector_type < diploid_vector_type<diploid_geno_t, diploid_vector_type_allocator>,metapop_diploid_vector_type_allocator > * diploids,
 		 mutation_list_type<typename gamete_type::mutation_type,mutation_list_type_allocator > * mutations, 
 		 const unsigned * N_curr, 
 		 const unsigned * N_next, 
@@ -286,7 +286,8 @@ namespace KTfwd
 		  for( auto gptr = dptr->begin() ; 
 		       gptr != dptr->end() ; ++gptr,++ith_dip )
 		    {
-		      fitnesses[ith_dip] = ffs[typename diploid_fitness_function_container::size_type(popindex)](gptr->first,gptr->second);
+		      fitnesses[ith_dip] = fwdpp_internal::diploid_fitness_dispatch(ffs[typename diploid_fitness_function_container::size_type(popindex)],gptr,
+										    typename traits::is_custom_diploid_t<diploid_geno_t>::type());
 		      wbars[std::vector<double>::size_type(popindex)]+=fitnesses[ith_dip];
 		      gptr->first->n = 0;
 		      gptr->second->n = 0;
@@ -351,11 +352,15 @@ namespace KTfwd
 			deme from the migration policy for parent 2
 		      */
 		      auto pptr2=(parents.begin()+typename decltype(parents.begin())::difference_type(deme_other_parent))->end();
-		      if( f != NULL && gsl_rng_uniform(r) <= *(f + popindex ) ) //individual is inbred
-			{
-			  pptr2=(parents.begin()+typename decltype(parents.begin())::difference_type(popindex))->begin();
-			  p2=p1;
-			}
+#ifdef FWDPP_COMPAT_0_3_0
+		      if( f != nullptr && gsl_rng_uniform(r) <= *(f + popindex ) ) //individual is inbred
+#else
+			if( f != nullptr && ( *(f + popindex)==1. || (*(f + popindex)>0. && gsl_rng_uniform(r) <= *(f + popindex)) ) ) //individual is inbred
+#endif
+			  {
+			    pptr2=(parents.begin()+typename decltype(parents.begin())::difference_type(popindex))->begin();
+			    p2=p1;
+			  }
 		      else
 			{
 			  deme_other_parent = decltype(deme_other_parent)(mig(size_t(popindex)));

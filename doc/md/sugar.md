@@ -215,6 +215,21 @@ It you aren't happy with how I've set up the "poptypes", you may provide your ow
 
 You should also be able to publicly inherit them or encapsulate them in the usual ways, if more customization is needed.
 
+__fwdpp__ 0.3.1 added support for custom diploid types (see @ref md_md_customdip).  The template aliases for population types were updated accordingly:
+
+~~~{.cpp}
+//In fwdpp 0.3.0:
+template<typename mtype> using singlepop_t = //something
+~~~
+
+~~~{.cpp}
+//In 0.3.1, the default diploid_t is a pair of iterators pointing to gametes.
+//You may over-ride this by providing your own diploid type.
+template<typename mtype,
+	typename diploid_t = std::pair<typename glist_t<mtype>::iterator,
+		                       typename glist_t<mtype>::iterator> > using singlepop_t = //something
+~~~
+
 ### Simplifying serializing of simulated data
 
 The population types discussed above may be serialized using KTfwd::serialize and deserialized using KTfwd::deserialize.  The sugar layer also provides KTfwd::mutation_writer and KTfwd::mutation reader to support the serialization of KTfwd::mutation and KTfwd::popgenmut.
@@ -271,4 +286,4 @@ int main( int argc, char ** argv )
 
 You may use KTfwd::serialize and KTfwd::deserialize for any custom mutation types, once the proper serializing objects are written (see \ref md_md_serialization).
 
-In future releases, support for direct serialization to/from gzipped files will be added.  In the mean time, you can do this manually using __fwdpp__ functions like KTfwd::write_binary_pop, etc.
+In 0.3.1, KTfwd::gzserialize and KTfwd::gzdeserialize were added to handle gzipped output and input, respectivel.  The interface is similar to the above.

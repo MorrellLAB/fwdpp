@@ -6,7 +6,7 @@ usage(){
     >&2 echo " -d/--dir root path to place the project (DIR)"
     >&2 echo " -p/--project Name for project directory (PROJECT)"
     >&2 echo "Together, the -p and -d options will create a skeleton package in DIR/PROJECT."
-    >&2 echo "For example: ./setup.sh -p ~/src -d my_fwdpp_project"
+    >&2 echo "For example: ./setup.sh -d ~/src -p my_fwdpp_project"
     >&2 echo "Optional options are:"
     >&2 echo " -u/--url project url.  This must be single-quoted with special characters escaped, e.g. -u 'https:\/\/github.com\/molpopgen\/fwdpp'"
     exit 1
@@ -34,6 +34,7 @@ fi
 if [ -d $DIR/$PROJECT ]
 then 
     echo "error, $DIR/$PROJECT already exists, exiting"
+    exit
 fi
 
 mkdir $DIR/$PROJECT
@@ -47,6 +48,6 @@ fi
 cp -r skeleton/* $DIR/$PROJECT
 
 mv $DIR/$PROJECT/src/FWDPPPACKAGE.cc $DIR/$PROJECT/src/$PROJECT.cc
-sed -i '' "s/FWDPPPACKAGE/$PROJECT/" $DIR/$PROJECT/configure.ac
-sed -i '' "s/FWDPPPACKAGE/$PROJECT/g" $DIR/$PROJECT/src/Makefile.am
-sed -i '' "s/FWDPPPROJECTURL/$URL/" $DIR/$PROJECT/configure.ac
+sed -i "s/FWDPPPACKAGE/$PROJECT/" $DIR/$PROJECT/configure.ac
+sed -i "s/FWDPPPACKAGE/$PROJECT/g" $DIR/$PROJECT/src/Makefile.am
+sed -i "s/FWDPPPROJECTURL/$URL/" $DIR/$PROJECT/configure.ac

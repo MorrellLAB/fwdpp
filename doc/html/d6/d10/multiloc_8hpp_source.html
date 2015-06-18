@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.1</span>
+   &#160;<span id="projectnumber">0.3.2</span>
    </div>
   </td>
  </tr>
@@ -107,9 +107,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span>KTfwd</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> mtype&gt; <span class="keyword">using</span> <a class="code" href="../../da/d8b/namespaceKTfwd.html#a9cfa6f797c02d26ac60e49774096829b">multiloc_mlist_t</a> = boost::container::list&lt;mtype,boost::pool_allocator&lt;mtype&gt; &gt;;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> mtype&gt; <span class="keyword">using</span> <a class="code" href="../../da/d8b/namespaceKTfwd.html#a9cfa6f797c02d26ac60e49774096829b">multiloc_mlist_t</a> = boost::container::list&lt;mtype,boost::fast_pool_allocator&lt;mtype&gt; &gt;;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> mtype&gt; <span class="keyword">using</span> <a class="code" href="../../da/d8b/namespaceKTfwd.html#a40afd65fd9ec426bfef16969d7c8c1c4">multiloc_gamete_t</a> = gamete_base&lt;mtype,multiloc_mlist_t&lt;mtype&gt;&gt;;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> mtype&gt; <span class="keyword">using</span> <a class="code" href="../../da/d8b/namespaceKTfwd.html#a28b6af326e670138f1077b17be3c8038">multiloc_glist_t</a> = boost::container::list&lt;multiloc_gamete_t&lt;mtype&gt;, boost::pool_allocator&lt;multiloc_gamete_t&lt;mtype&gt;&gt;&gt;;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> mtype&gt; <span class="keyword">using</span> <a class="code" href="../../da/d8b/namespaceKTfwd.html#a28b6af326e670138f1077b17be3c8038">multiloc_glist_t</a> = boost::container::list&lt;multiloc_gamete_t&lt;mtype&gt;, boost::fast_pool_allocator&lt;multiloc_gamete_t&lt;mtype&gt;&gt;&gt;;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">  /*!</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">    \brief Single population, multilocus simulation without serialization.  Cannot be copied, etc.</span></div>

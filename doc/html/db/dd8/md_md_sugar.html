@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.1</span>
+   &#160;<span id="projectnumber">0.3.2</span>
    </div>
   </td>
  </tr>
@@ -112,8 +112,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <ul>
 <li>It is constructed with an unsigned integer, which will be used as a seed</li>
 <li>It is implemented in terms of a std::unique_ptr</li>
-<li>It is copy-constructable via a call to gsl_rng_clone to create a new unique_ptr</li>
-<li>It is implicitly convertible to a gsl_rng *, and thus may be passed to any function taking such a type as a parameter</li>
+<li>It is not copyable</li>
+<li>The underlying pointer is retrived via a call to get()</li>
 <li>It frees the gsl_rng * upon destruction using <a class="el" href="../../d5/d99/structKTfwd_1_1sugar_1_1gsl__rng__deleter.html" title="Function object to delete a gsl_rng *. ">KTfwd::sugar::gsl_rng_deleter</a></li>
 </ul>
 <p>The template parameters are of type <a class="el" href="../../d7/d43/structKTfwd_1_1sugar_1_1GSL__RNG__TYPE__TAG.html" title="Dispatch tag for gsl_rng * types. ">KTfwd::sugar::GSL_RNG_TYPE_TAG</a>;</p>
@@ -161,11 +161,11 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --><p>(Note that simulations will typically be a lot faster if you use boost's memory pools!)</p>
 <h4>Copyable populations</h4>
 <p>There are important use cases that require copyable populations. For example, exposing classes to python using boost.python requires that the underlying C++ types are copy-constructible, and thus the "poptypes" described above will not compile successfully because their copy constructors are deleted for safety.</p>
-<p>However, due to the pointer/iterator-based design of <b>fwdpp</b>, such copies require deep copies that reconstruct data structures. Such copies are complex, and can be handled manually via <a class="el" href="../../da/d8b/namespaceKTfwd.html#a4826160f7e99b8c2cdb7fa2769c6aeeb" title="Write population to binary-format file for individual-based simulations. ">KTfwd::write_binary_pop</a> and <a class="el" href="../../da/d8b/namespaceKTfwd.html#a27f3a42eb05e20def4a515242ecd71c4">KTfwd::write_binary_metapop</a> to <em>write</em> data to an internal buffer (such as std::ostringstream), and <a class="el" href="../../da/d8b/namespaceKTfwd.html#af5ddb3ab8a5d762b4feda87205ad2253" title="Read the population back from a binary-format file for individual-based simulations. ">KTfwd::read_binary_pop</a> and <a class="el" href="../../da/d8b/namespaceKTfwd.html#a2e8e31af4723d5ed95458876ebd319fe" title="Read the metapopulation back from a binary-format file for individual-based simulations Read the meta...">KTfwd::read_binary_metapop</a> to <em>read</em> populations from a buffer. These same functions can be used to implement copy constructors and assignment operators for classes representing populations. However, such objects require policies to write and read the simulation's mutation type (see <a class="el" href="../../d5/d9d/md_md_serialization.html">Tutorial 3: Data serialization</a> for how to write such policies for custom mutation types).</p>
+<p>However, due to the pointer/iterator-based design of <b>fwdpp</b>, such copies require deep copies that reconstruct data structures. Such copies are complex, and can be handled manually via <a class="el" href="../../da/d8b/namespaceKTfwd.html#a4826160f7e99b8c2cdb7fa2769c6aeeb" title="Write population to binary-format file for individual-based simulations. ">KTfwd::write_binary_pop</a> and <a class="el" href="../../da/d8b/namespaceKTfwd.html#ab62f60cccc4f91b8d9695a4d9abf300a">KTfwd::write_binary_metapop</a> to <em>write</em> data to an internal buffer (such as std::ostringstream), and <a class="el" href="../../da/d8b/namespaceKTfwd.html#af5ddb3ab8a5d762b4feda87205ad2253" title="Read the population back from a binary-format file for individual-based simulations. ">KTfwd::read_binary_pop</a> and <a class="el" href="../../da/d8b/namespaceKTfwd.html#a3be2b56dc9917b88ed0a91ce7a3c6bb5" title="Read the metapopulation back from a binary-format file for individual-based simulations Read the meta...">KTfwd::read_binary_metapop</a> to <em>read</em> populations from a buffer. These same functions can be used to implement copy constructors and assignment operators for classes representing populations. However, such objects require policies to write and read the simulation's mutation type (see <a class="el" href="../../d5/d9d/md_md_serialization.html">Tutorial 3: Data serialization</a> for how to write such policies for custom mutation types).</p>
 <p>Once such serialization policies are implemented, you may use the following types that <em>are</em> copy-constructible and assignable via operator=:</p>
 <ul>
 <li><a class="el" href="../../de/d6e/group__sugar.html#ga8c218b55653f2425a8701951ab16be1c" title="Single locus, single population with serialization. Can be copied, etc. See Tutorial 5: the &quot;sugar&quot; l...">KTfwd::singlepop_serialized</a></li>
-<li><a class="el" href="../../de/d6e/group__sugar.html#gaec825a970e3667b73313e42ba9000569" title="Single locus metapopulation simulation with serialization. Can be copied, etc. See Tutorial 5: the &quot;s...">KTfwd::metapop_serialized</a></li>
+<li><a class="el" href="../../de/d6e/group__sugar.html#gaf7c6aaf76dded21d719d9197503ea8ae" title="Single locus metapopulation simulation with serialization. Can be copied, etc. See Tutorial 5: the &quot;s...">KTfwd::metapop_serialized</a></li>
 <li><a class="el" href="../../de/d6e/group__sugar.html#gade651e70b4a2357c1e686393c67dcdf5" title="Single population, multilocus simulation with serialization. Can be copied, etc. See Tutorial 5: the ...">KTfwd::multiloc_serialized</a></li>
 </ul>
 <p>Now, copy construction will work:</p>

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.1</span>
+   &#160;<span id="projectnumber">0.3.2</span>
    </div>
   </td>
  </tr>
@@ -228,7 +228,7 @@ Policy requirements in fwdpp</h1>
 <div class="line">}</div>
 </div><!-- fragment --><p>So, std::function is a concrete type defining the <em>signature</em> of a function (return type and arguments). Internally, that signature must be met by your policies, and you can "bind" additional arguments to them in order to implement specific models.</p>
 <p>For the sake of being explicit, let's assume that we are using the following types in an individual-based simulation (in C++11, "using'' statements replace typedefs.):</p>
-<div class="fragment"><div class="line"><span class="keyword">using</span> mtype = <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a>;</div>
+<div class="fragment"><div class="line"><span class="keyword">using</span> <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">mtype</a> = <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a>;</div>
 <div class="line"><span class="keyword">using</span> mlist = std::list&lt;mtype&gt;;</div>
 <div class="line"><span class="keyword">using</span> <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gtype</a> = <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base&lt;mtype&gt;</a>;</div>
 <div class="line"><span class="keyword">using</span> <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a> = std::list&lt;gtype&gt;;</div>
@@ -368,7 +368,7 @@ Mutation policies</h2>
 <div class="fragment"><div class="line">std::map&lt;double,bool&gt;</div>
 </div><!-- fragment --><p>it is more efficient to use a hash table like</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;unordered_set&gt;</span> <span class="comment">//need this header</span></div>
-<div class="line"><span class="keyword">typedef</span> std::unordered_set&lt;double,std::hash&lt;double&gt;,KTfwd::equal_eps &gt; <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>;</div>
+<div class="line"><span class="keyword">typedef</span> std::unordered_set&lt;double,std::hash&lt;double&gt;,<a class="code" href="../../dc/d8e/structKTfwd_1_1equal__eps.html">KTfwd::equal_eps</a> &gt; <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>;</div>
 </div><!-- fragment --><p>The above code creates a new data type called <b>lookup_table_type</b> that hashes doubles with the data type <b><a class="el" href="../../dc/d8e/structKTfwd_1_1equal__eps.html" title="Returns true if std::max(lhs,rhs)-std::min(lhs,rhs) &lt;= std::numeric_limits&lt;T&gt;::epsilon() ...">KTfwd::equal_eps</a></b> as its comparison operator. That comparison operation is provided by the library and looks like this:</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>equal_eps</div>
 <div class="line">{</div>

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.1</span>
+   &#160;<span id="projectnumber">0.3.2</span>
    </div>
   </td>
  </tr>
@@ -184,9 +184,9 @@ std::result_of&lt; mmodel(gamete_type <br class="typebreak"/>
 <tr class="memitem:a3acc05aef846d0b704f5208bba37c316"><td class="memTemplParams" colspan="2">template&lt;typename mutation_model , typename mutation_insertion_policy , typename mlist_type , typename gamete_type &gt; </td></tr>
 <tr class="memitem:a3acc05aef846d0b704f5208bba37c316"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a3acc05aef846d0b704f5208bba37c316">add_N_mutations</a> (const mutation_model &amp;mmodel, const mutation_insertion_policy &amp;mpolicy, const unsigned &amp;n, mlist_type *mutations, gamete_type &amp;g)</td></tr>
 <tr class="separator:a3acc05aef846d0b704f5208bba37c316"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac48625abcee7f808a28ab9a2867ce9bb"><td class="memTemplParams" colspan="2">template&lt;typename itr_type , typename cont_type &gt; </td></tr>
-<tr class="memitem:ac48625abcee7f808a28ab9a2867ce9bb"><td class="memTemplItemLeft" align="right" valign="top">itr_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ac48625abcee7f808a28ab9a2867ce9bb">rec_gam_updater</a> (itr_type __first, itr_type __last, cont_type &amp;m1, cont_type &amp;m2, const short &amp;SWITCH, const double &amp;val)</td></tr>
-<tr class="separator:ac48625abcee7f808a28ab9a2867ce9bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21e19298a2fabe4e5de08fb64a740f7d"><td class="memTemplParams" colspan="2">template&lt;typename itr_type , typename cont_type &gt; </td></tr>
+<tr class="memitem:a21e19298a2fabe4e5de08fb64a740f7d"><td class="memTemplItemLeft" align="right" valign="top">itr_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a21e19298a2fabe4e5de08fb64a740f7d">rec_gam_updater</a> (itr_type &amp;__first, itr_type &amp;__last, cont_type &amp;m1, cont_type &amp;m2, const short &amp;SWITCH, const double &amp;val)</td></tr>
+<tr class="separator:a21e19298a2fabe4e5de08fb64a740f7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69903516668af1fd65d939af52d4588d"><td class="memTemplParams" colspan="2">template&lt;typename double_vec_type , typename gamete_type , typename gamete_cont_iterator &gt; </td></tr>
 <tr class="memitem:a69903516668af1fd65d939af52d4588d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a69903516668af1fd65d939af52d4588d">recombine_gametes</a> (const double_vec_type &amp;pos, gamete_cont_iterator &amp;ibeg, gamete_cont_iterator &amp;jbeg, gamete_type &amp;new_gamete1, gamete_type &amp;new_gamete2)</td></tr>
 <tr class="separator:a69903516668af1fd65d939af52d4588d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -280,8 +280,8 @@ template&lt;typename gamete_type , typename mutation_iterator &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Mechanics of adding a new mutation. We do this odd choosing between find_if and upper_bound b/c of the way the GCC STL is implemented.</p>
-<p>Objectively, upper_bound should always be preferred, but that is not the case in practice because the GNU STL implements find_if in a very clever way for small containers. </p>
+<p>Mechanics of adding a new mutation.</p>
+<p>Ensures that it is always added into a vector in less-than-sorted order according to position </p>
 
 </div>
 </div>
@@ -653,7 +653,7 @@ template&lt;typename within_loc_rec_policy , typename between_loc_rec_policy , t
 
 </div>
 </div>
-<a class="anchor" id="ac48625abcee7f808a28ab9a2867ce9bb"></a>
+<a class="anchor" id="a21e19298a2fabe4e5de08fb64a740f7d"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -662,13 +662,13 @@ template&lt;typename itr_type , typename cont_type &gt; </div>
         <tr>
           <td class="memname">itr_type KTfwd::fwdpp_internal::rec_gam_updater </td>
           <td>(</td>
-          <td class="paramtype">itr_type&#160;</td>
+          <td class="paramtype">itr_type &amp;&#160;</td>
           <td class="paramname"><em>__first</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">itr_type&#160;</td>
+          <td class="paramtype">itr_type &amp;&#160;</td>
           <td class="paramname"><em>__last</em>, </td>
         </tr>
         <tr>

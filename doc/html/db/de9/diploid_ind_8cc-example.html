@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.1</span>
+   &#160;<span id="projectnumber">0.3.2</span>
    </div>
   </td>
  </tr>
@@ -164,7 +164,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">  <span class="keywordtype">unsigned</span> twoN = 2*N;</div>
 <div class="line"></div>
 <div class="line">  <span class="comment">//recombination map is uniform[0,1)</span></div>
-<div class="line">  std::function&lt;double(void)&gt; recmap = std::bind(gsl_rng_uniform,r);</div>
+<div class="line">  std::function&lt;double(void)&gt; recmap = std::bind(gsl_rng_uniform,r.<a name="a5"></a><a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a12a336875d99337390d2231228707bc4">get</a>());</div>
 <div class="line"></div>
 <div class="line">  <span class="keywordflow">while</span>(nreps--)</div>
 <div class="line">    {</div>
@@ -178,7 +178,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">      <span class="keywordflow">for</span>( generation = 0; generation &lt; ngens; ++generation )</div>
 <div class="line">        {</div>
 <div class="line">          <span class="comment">//Iterate the population through 1 generation</span></div>
-<div class="line">          wbar = <a name="a5"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a18df6351fa3148914bbb844c36bc3e05">KTfwd::sample_diploid</a>(r,</div>
+<div class="line">          wbar = <a name="a6"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a18df6351fa3148914bbb844c36bc3e05">KTfwd::sample_diploid</a>(r.<a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a12a336875d99337390d2231228707bc4">get</a>(),</div>
 <div class="line">                                       &amp;pop.gametes,  <span class="comment">//non-const pointer to gametes</span></div>
 <div class="line">                                       &amp;pop.diploids, <span class="comment">//non-const pointer to diploids</span></div>
 <div class="line">                                       &amp;pop.mutations, <span class="comment">//non-const pointer to mutations</span></div>
@@ -188,14 +188,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="comment">                                         The mutation model (KTfwd::infsites) will be applied by</span></div>
 <div class="line"><span class="comment">                                         sample_diploid in order to add mutations to gametes each generation.</span></div>
 <div class="line"><span class="comment">                                       */</span></div>
-<div class="line">                                       std::bind(<a name="_a6"></a><a class="code" href="../../df/d07/structKTfwd_1_1infsites.html">KTfwd::infsites</a>(),r,&amp;pop.mut_lookup,generation,</div>
-<div class="line">                                                 mu,0.,[&amp;r](){<span class="keywordflow">return</span> gsl_rng_uniform(r);},[](){<span class="keywordflow">return</span> 0.;},[](){<span class="keywordflow">return</span> 0.;}),</div>
+<div class="line">                                       std::bind(<a name="_a7"></a><a class="code" href="../../df/d07/structKTfwd_1_1infsites.html">KTfwd::infsites</a>(),r.<a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a12a336875d99337390d2231228707bc4">get</a>(),&amp;pop.mut_lookup,generation,</div>
+<div class="line">                                                 mu,0.,[&amp;<a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>](){<span class="keywordflow">return</span> gsl_rng_uniform(r.<a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a12a336875d99337390d2231228707bc4">get</a>());},[](){<span class="keywordflow">return</span> 0.;},[](){<span class="keywordflow">return</span> 0.;}),</div>
 <div class="line">                                       <span class="comment">//The recombination policy includes the uniform crossover rate</span></div>
-<div class="line">                                       std::bind(<a name="_a7"></a><a class="code" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a>(),std::placeholders::_1,std::placeholders::_2,</div>
-<div class="line">                                                   &amp;pop.gametes,</div>
-<div class="line">                                                   littler,</div>
-<div class="line">                                                   <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,</div>
-<div class="line">                                                   recmap),</div>
+<div class="line">                                       std::bind(<a name="_a8"></a><a class="code" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a>(),std::placeholders::_1,std::placeholders::_2,</div>
+<div class="line">                                                 &amp;pop.gametes,</div>
+<div class="line">                                                 littler,</div>
+<div class="line">                                                 r.<a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a12a336875d99337390d2231228707bc4">get</a>(),</div>
+<div class="line">                                                 recmap),</div>
 <div class="line">                                       <span class="comment">/*</span></div>
 <div class="line"><span class="comment">                                         Policy to insert new mutations at the end of the mutations list</span></div>
 <div class="line"><span class="comment">                                       */</span></div>
@@ -225,7 +225,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="comment">                                         function is called anyways to illustrate it as multiplicative</span></div>
 <div class="line"><span class="comment">                                         models are very common in population genetics</span></div>
 <div class="line"><span class="comment">                                       */</span></div>
-<div class="line">                                       std::bind(<a name="_a8"></a><a class="code" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html">KTfwd::multiplicative_diploid</a>(),std::placeholders::_1,std::placeholders::_2,2.),</div>
+<div class="line">                                       std::bind(<a name="_a9"></a><a class="code" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html">KTfwd::multiplicative_diploid</a>(),std::placeholders::_1,std::placeholders::_2,2.),</div>
 <div class="line">                                       <span class="comment">/*</span></div>
 <div class="line"><span class="comment">                                         For each gamete still extant after sampling,</span></div>
 <div class="line"><span class="comment">                                         remove the pointers to any mutations that have </span></div>
@@ -242,13 +242,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="comment">                                         are just a constant applied to everyone&#39;s fitness, so we </span></div>
 <div class="line"><span class="comment">                                         can remove them, making the simulation faster, etc.</span></div>
 <div class="line"><span class="comment">                                       */</span></div>
-<div class="line">                                       std::bind(<a name="_a9"></a><a class="code" href="../../d4/de8/structKTfwd_1_1mutation__remover.html">KTfwd::mutation_remover</a>(),std::placeholders::_1,0,2*N));</div>
-<div class="line">          <a name="a10"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a84e666ea27d38bdfc539ffd23653eaa9">KTfwd::remove_fixed_lost</a>(&amp;pop.mutations,&amp;pop.fixations,&amp;pop.fixation_times,&amp;pop.mut_lookup,generation,2*N);</div>
-<div class="line">          assert(<a name="a11"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a728e20cb60f82b818b5cc570722079a4">KTfwd::check_sum</a>(pop.gametes,twoN));</div>
+<div class="line">                                       std::bind(<a name="_a10"></a><a class="code" href="../../d4/de8/structKTfwd_1_1mutation__remover.html">KTfwd::mutation_remover</a>(),std::placeholders::_1,0,2*N));</div>
+<div class="line">          <a name="a11"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a84e666ea27d38bdfc539ffd23653eaa9">KTfwd::remove_fixed_lost</a>(&amp;pop.mutations,&amp;pop.fixations,&amp;pop.fixation_times,&amp;pop.mut_lookup,generation,2*N);</div>
+<div class="line">          assert(<a name="a12"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a728e20cb60f82b818b5cc570722079a4">KTfwd::check_sum</a>(pop.gametes,twoN));</div>
 <div class="line">        }</div>
 <div class="line">      Sequence::SimData sdata;</div>
 <div class="line"></div>
-<div class="line">      std::vector&lt;std::pair&lt;double,std::string&gt; &gt; mslike = <a name="a12"></a><a class="code" href="../../d7/de2/group__samplingPopsInd.html#ga2e9aee81e0abaddbb9c6e56f0d8f980f">KTfwd::ms_sample</a>(r,&amp;pop.diploids,samplesize1,<span class="keyword">true</span>);</div>
+<div class="line">      std::vector&lt;std::pair&lt;double,std::string&gt; &gt; mslike = <a name="a13"></a><a class="code" href="../../d7/de2/group__samplingPopsInd.html#ga2e9aee81e0abaddbb9c6e56f0d8f980f">KTfwd::ms_sample</a>(r.<a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a12a336875d99337390d2231228707bc4">get</a>(),&amp;pop.diploids,samplesize1,<span class="keyword">true</span>);</div>
 <div class="line"></div>
 <div class="line">      <span class="keywordflow">if</span>(!mslike.empty())</div>
 <div class="line">        {</div>

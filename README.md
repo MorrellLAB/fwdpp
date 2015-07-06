@@ -52,11 +52,11 @@ Specific version numbers ("tags" in git-ese, a.k.a. "releases") will occur when 
 
 ##Which C++?
 
-As of version 0.2.5, fwdpp requires a compiler supporting the "C++11" version of the language.  Currently, fwdpp requires that your compiler support the flag -std=c++11 in order to use c++11 language features. Recent version of GCC (4.7 or greater) and clang (3.4 or greater, but I've not checked earlier versions) both support this option, which covers most Linux and OS X users.
+As of version 0.2.5, fwdpp requires a compiler supporting the "C++11" version of the language.  Currently, fwdpp requires that your compiler support the flag -std=c++11 in order to use c++11 language features. Recent version of GCC  and clang both support this option, which covers most Linux and OS X users.
 
 ##Citation
 
-The fwdpp manuscript has been accepted for publication in Genetics.  The accepted version of the manuscript is [here](http://www.genetics.org/content/early/2014/06/19/genetics.114.165019.abstract).  For LaTeX users:
+The fwdpp manuscript has published in Genetics.  The accepted version of the manuscript is [here](http://www.genetics.org/content/early/2014/06/19/genetics.114.165019.abstract).  For LaTeX users:
 
 ~~~
 @Article{,
@@ -109,8 +109,23 @@ The examples can be read in html form via the online reference manual linked to 
 
 You must have the following on your system:
 
-1. A C++ compiler equivalent to gcc 4.6 or greater.  On OS X, this likely means that you should be running OS X Mavericks with Xcode installed, and have then installed the command line tools (which is done from within Xcode.)
+1. A C++ compiler that supports the C++11 language standard.
 2. Ideally, one should have the [git](http://git-scm.com/book/en/Getting-Started-Installing-Git) command line tools installed.  These are likely already installed on many systems.
+
+I have tested the library on my development machine (64-bit Intel processor, Ubuntu 14.04) with the following compilers:
+
+| Compiler | Version | Compatible? | Notes |
+|:-----:|:-----:|:-----:|:-----:|
+| GCC | 4.6.4 | __NO__ | Does not support the -std=c++11 flag|
+| GCC | 4.7.3 | __NO__ | Does not like one of the [libsequence](http://github.com/molpopgen/libsequence) headers.  Fails at ./configure |
+| GCC | 4.8.2 | __YES__ | |
+| GCC | 4.9.2 | __YES__ | |
+| GCC | 5.1 | __YES__ | |
+| clang++  | 3.5  | __YES__ | |
+| clang++  | 3.6  | __YES__ | |
+
+Please note that one unit test (policyTests) will show some test failures on GCC.  This is known, and fine.  That unit test basically shows that GCC sometimes chooses to copy an objects instead of move it, even when a move is requested.  Clang++, however, moves.  This has no effect on simulation correctness.  Rather, this unit test helps me understand some of the nuances that distinguish clang++ from g++.
+
 
 ##Library dependencies
 
@@ -139,7 +154,40 @@ The boost library provides fast_pool_allocator, which is a good replacement for 
 
 Empirically, on my linux systems, I have found that the fastest combination appears to be the standard C++ allocator combined with linking to tcmalloc.  See below for how to compile the examples in various ways, allowing you to benchmark performance on your own system.
 
-[See here](performance/tcmalloc.pdf) for an example of how tcmalloc can improve performance.  Results are based on running the example program diploid_ind with N=1000, theta=rho=5000 for 10N generations.
+## Performance
+
+Fwdpp 0.3.3 introduced massive performance improvements, requiring several API changes to make them possible.
+
+I performed a series of benchmarks on a 4-core, 3.6Ghz 64bit Intel machine, which is the same machine where the library is developed.  I performed small-N and large-N simulations, comparing performance between the following simulations:
+
+| Simulation | Version | Container/malloc combo |
+|:-----:|:-----:|:-----:|
+|fwdpp | 0.3.2 | std |
+|fwdpp | 0.3.2 | std + tcmalloc |
+|fwdpp | 0.3.2 | boost |
+|fwdpp | 0.3.2 | boost + tcmalloc |
+|fwdpp | 0.3.3 | std |
+|fwdpp | 0.3.3 | std + tcmalloc |
+|fwdpp | 0.3.3 | boost |
+|fwdpp | 0.3.3 | boost + tcmalloc |
+|[SLiM](http://messerlab.org/software/)| 1.8 | std |
+
+All simulations were compiled with GCC 4.9.2 and using -O3.  The intent is to check "out-of-the-box" performance, meaning that the programs were compiled as the developer intends them.  In the case of fwdpp, the configure script allows all of the above combinations.  For SLiM, I simply compiled it "as is", following the author's instructions.
+
+All fwdpp jobs are based on the example program diploid_ind that comes with the library.
+
+The parameters for the small-N simulations were \f$N=1,000\f$, \f$\theta = \rho = 5,000\f$, and evolved for \f$10N\f$ generations.  I performed 12 replicates of each of the above combinations, running 4 at a time using GNU parallel.  The [run times](performance/time_0_3_3_.pdf) and [peak memory use](performance/mem_0_3_3.pdf) show that:
+
+* fwdpp 0.3.3 is about 40% faster than 0.3.2
+* fwdpp 0.3.3 is more memory efficient than previous versions
+* fwdpp 0.3.3 outperforms SLiM for this case (which is a change from the fwdpp paper, where SLiM was faster for small-N simulations with large mutation/recombination rates).
+
+The parameters for the large-N simulations wer \f$N=10,000\f$, \f$\theta = \rho = 4,000\f$, and evolved for \f$10N\f$ generations.   I performed 4 replicates of each of the above combinations, running 4 at a time using GNU parallel, imposing a 36-hour wall clock limit, at which point a simulation was killed.  For these parameters, SLiM did not complete a single replicated.  The [run time](performance/bigtime_0_3_3.pdf) and [peak memory use](bigmem_0_3_3.pdf) results for fwdpp show that:
+
+* fwdpp 0.3.2 took ~19.5 hours to complete a replicate
+* fwdpp 0.3.3 takes ~9.5 hours and uses less memory than 0.3.2.
+
+This suggests that fwdpp 0.3.3 is _at least_ ~4X faster than SLiM for simulations like this (because all SLiM jobs were killed at 36 hours).
 
 ##Obtaining the source code
 
@@ -166,6 +214,29 @@ Another option is to click on [releases](https://github.com/molpopgen/fwdpp/rele
 On a decent browser, when you click on a release, it should be called fwdpp-version.tar.gz.  Sometimes, though, you may get version.tar.gz.  This is a browser-by-github interaction problem.  On my systems, I get the correct result.
 
 # Installation
+
+##What does fwdpp install?
+
+Two things:
+
+* The library itself, which is simply a set of C++ header files
+* A single binary called fwdppConfig, which you may use to check what version you have installed on your system.
+
+~~~{sh}
+fwdppConfig --version
+~~~
+
+fwdppConfig was introduced in version 0.3.3.  Its main raison d'etre is in helping other configure scripts test for what version is on their system.  For example, which may go into a configure.ac file for your project:
+
+~~~{sh}
+dnl Check that fwdpp version is sufficient
+if test "$FWDPPVERSION" \> "0.3.2"
+then
+	echo "fwdpp version $FWDPPVERSION detected"
+else
+	AC_MSG_ERROR([fwdpp >= 0.3.3 required, please install from http://github.com/molpopgen/fwdpp])
+fi
+~~~
 
 ##The case of a standard system with all dependencies installed in standard locations
 
@@ -200,7 +271,7 @@ Currently, the example programs will not get installed via "make install".   If 
 
 __Note:__ if you only wish to compile the example, issue the 'make check' command from the example subdirectory.  This will allow users without boost on their system to compile the examples but not attempt to compile the unit tests (which will fail to compile on systems without boost).
 
-### Using boost containers and the standard C-library malloc
+### Using standard containers and the standard C-library malloc
 
 This is the default:
 
@@ -209,27 +280,21 @@ This is the default:
 make check
 ~~~
 
-### Using the standard C++ containers and the standard C library malloc
+### Using the standard C++ containers and the Google's tcmalloc 
 
-~~~{.sh}
-./configure --enable-standard=yes
-make check
-~~~
-
-### Using boost containers and Google's tcmalloc replacement for malloc
+__This is the recommended method for maximum run-time performance.__
 
 ~~~{.sh}
 ./configure --enable-tcmalloc=yes
 make check
 ~~~
 
-
-### Using the standard C++ library containers and Google's tcmalloc replacement for malloc
+### Using boost containers and Google's tcmalloc replacement for malloc
 
 ~~~{.sh}
-./configure --enable-standard=yes --enable-tcmalloc=yes
+./configure --enable-boost=yes --enable-tcmalloc=yes
 make check
-~~~~
+~~~
 
 Note:  none of these options affect any other programs that you write using fwdpp!  You'll have to manage that on your own for your projects' builds.
 

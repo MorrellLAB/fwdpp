@@ -4,6 +4,8 @@
 
 #include <fwdpp/internal/gsl_discrete.hpp>
 #include <fwdpp/internal/diploid_fitness_dispatch.hpp>
+#include <fwdpp/internal/gamete_lookup_table.hpp>
+#include <fwdpp/internal/gamete_cleaner.hpp>
 
 namespace KTfwd
 {
@@ -75,8 +77,6 @@ namespace KTfwd
   {
     assert(N_curr == diploids->size());
 
-    std::for_each( mutations->begin(),mutations->end(),[](typename gamete_type::mutation_type & __m){__m.n=0;});
-
     std::vector<double> fitnesses(diploids->size());
     double wbar = 0.;
     
@@ -108,6 +108,9 @@ namespace KTfwd
     unsigned NREC=0;
     assert(diploids->size()==N_next);
     decltype( gametes->begin() ) p1g1,p1g2,p2g1,p2g2;
+
+    auto gamete_lookup = fwdpp_internal::gamete_lookup_table(gametes);
+
     for( unsigned i = 0 ; i < N_next ; ++i )
       {
 	assert(dptr==diploids->begin());
@@ -125,12 +128,15 @@ namespace KTfwd
 	p1g2 = (pptr+typename decltype(pptr)::difference_type(p1))->second;
 	p2g1 = (pptr+typename decltype(pptr)::difference_type(p2))->first;
 	p2g2 = (pptr+typename decltype(pptr)::difference_type(p2))->second;
-	
-	NREC += rec_pol(p1g1,p1g2);
-	NREC += rec_pol(p2g1,p2g2);
-	
-	(dptr+i)->first = (gsl_rng_uniform(r) <= 0.5) ? p1g1 : p1g2;
-	(dptr+i)->second = (gsl_rng_uniform(r) <= 0.5) ? p2g1 : p2g2;
+
+	if(gsl_rng_uniform(r)<=0.5) std::swap(p1g1,p1g2);
+	if(gsl_rng_uniform(r)<=0.5) std::swap(p2g1,p2g2);
+
+	NREC += rec_pol(p1g1,p1g2,gamete_lookup);
+	NREC += rec_pol(p2g1,p2g2,gamete_lookup);
+
+	(dptr+i)->first = p1g1;
+	(dptr+i)->second = p2g1;
 	
 	(dptr+i)->first->n++;
 	assert( (dptr+i)->first->n > 0 );
@@ -151,28 +157,18 @@ namespace KTfwd
 	assert( (dptr+i)->second->n > 0 );
 	assert( (dptr+i)->second->n <= 2*N_next );
       }
+    for( auto itr = mutations->begin() ; itr != mutations->end() ; ++itr ) assert( itr->n <= 2*N_next );
 #endif
-    decltype(gametes->begin()) temp;
-    for( auto itr = gametes->begin() ; itr != gametes->end() ;  )
+    for( auto itr = gametes->begin() ; itr != gametes->end() ; )
       {
-	if( itr->n == 0 ) //this gamete is extinct and need erasing from the list
-	  {
-	    temp = itr;
-	    ++itr;
-	    gametes->erase(temp);
-	  }
-	else //gamete remains extant and we adjust mut counts
+	if(!itr->n) itr = gametes->erase(itr);
+	else
 	  {
 	    adjust_mutation_counts(itr,itr->n);
-	    ++itr;
+	    ++itr; 
 	  }
       }
-     std::for_each( gametes->begin(),
-		    gametes->end(),
-		    [&mp](decltype( *(gametes->begin()) ) & __g ) {
-		      __g.mutations.erase( std::remove_if(__g.mutations.begin(),__g.mutations.end(),std::cref(mp)),__g.mutations.end() );
-		      __g.smutations.erase( std::remove_if(__g.smutations.begin(),__g.smutations.end(),std::cref(mp)),__g.smutations.end() );
-		    });
+    fwdpp_internal::gamete_cleaner(gametes,mp,typename std::is_same<mutation_removal_policy,KTfwd::remove_nothing >::type());
     assert(check_sum(gametes,2*N_next));
     return wbar;
   }
@@ -251,8 +247,6 @@ namespace KTfwd
 		 const migration_policy & mig,
 		 const double * f)
 	    {
-	      std::for_each(mutations->begin(),mutations->end(),[](typename gamete_type::mutation_type & __m){ __m.n=0; });
-
 	      //get the fitnesses for each diploid in each deme and make the lookup table of parental fitnesses
 	      using lookup_t = fwdpp_internal::gsl_ran_discrete_t_ptr;
 	      std::vector<lookup_t> lookups;
@@ -298,6 +292,7 @@ namespace KTfwd
 	      unsigned NREC=0;
 
 	      decltype(metapop->begin()) p1g1,p1g2,p2g1,p2g2;
+	      auto gamete_lookup = fwdpp_internal::gamete_lookup_table(metapop);
 	      for( auto ptr = diploids->begin() ; ptr != diploids->end() ; ++ptr,++popindex )
 		{
 		  unsigned demesize =*(N_next+popindex);
@@ -350,12 +345,16 @@ namespace KTfwd
 
 		      p2g1 = (pptr2+p2)->first;
 		      p2g2 = (pptr2+p2)->second;
-		      
-		      NREC += rec_pol(p1g1,p1g2,metapop);
-		      NREC += rec_pol(p2g1,p2g2,metapop);
 
-		      (dptr+i)->first = (gsl_rng_uniform(r) <= 0.5) ? p1g1 : p1g2;
-		      (dptr+i)->second = (gsl_rng_uniform(r) <= 0.5) ? p2g1 : p2g2;
+		      //0.3.3: Do "Mendel" now...
+		      if(gsl_rng_uniform(r)<=0.5) std::swap(p1g1,p1g2);
+		      if(gsl_rng_uniform(r)<=0.5) std::swap(p2g1,p2g2);
+		      
+		      NREC += rec_pol(p1g1,p1g2,gamete_lookup);
+		      NREC += rec_pol(p2g1,p2g2,gamete_lookup);
+
+		      (dptr+i)->first = p1g1;
+		      (dptr+i)->second = p2g1;
 		      assert( std::find( (metapop)->begin(), (metapop)->end(), *( (dptr+i)->second ) )
 			      != (metapop)->end() );
 
@@ -366,28 +365,19 @@ namespace KTfwd
 		      (dptr+i)->second = mutate_gamete(r,mu,metapop,mutations,(dptr+i)->second,mmodel,mpolicy,gpolicy_mut);
 		    }
 		}
-	      //get rid of extinct stuff, etc.
-	      for(auto gptr = metapop->begin(), temp = gptr ; gptr != metapop->end() ; ) 
+	      for( auto itr = metapop->begin() ; itr != metapop->end() ; )
 		{
-		      if( gptr->n == 0 )//extinct gamete, remove it
-			{
-			  temp = gptr;
-			  ++gptr;
-			  metapop->erase(temp);
-			}
-		      else
-			{
-			  adjust_mutation_counts(gptr,gptr->n);
-			  ++gptr;
-			}
+		  if(!itr->n) itr = metapop->erase(itr);
+		  else
+		    {
+		      adjust_mutation_counts(itr,itr->n);
+		      ++itr; 
+		    }
 		}
-	      for(auto gptr = metapop->begin() ; gptr != metapop->end() ; ++gptr)
-		  {
-		    gptr->mutations.erase( std::remove_if(gptr->mutations.begin(),gptr->mutations.end(),mp), gptr->mutations.end() );
-		    gptr->smutations.erase( std::remove_if(gptr->smutations.begin(),gptr->smutations.end(),mp), gptr->smutations.end() );
-		  }
+	      fwdpp_internal::gamete_cleaner(metapop,mp,typename std::is_same<mutation_removal_policy,KTfwd::remove_nothing >::type());
 	      return wbars;
 	    }
 }
 
 #endif
+  

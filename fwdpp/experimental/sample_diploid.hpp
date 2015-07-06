@@ -63,19 +63,13 @@ namespace KTfwd {
       {
 	//static asserts suppress hideously-long compiler warnings on GCC
 	static_assert( std::is_const< typename std::remove_pointer<typename decltype(p1_itr)::pointer>::type >::value , "p1_itr must point to const data");
-	return (gsl_rng_uniform(r) <= f) ? p1 : gsl_ran_discrete(r,lookup.get());
+	return ((f==1.)||(f>0.&&gsl_rng_uniform(r) <= f)) ? p1 : gsl_ran_discrete(r,lookup.get());
       }
 
       //! \brief Update some property of the offspring based on properties of the parents
       template<typename offspring_itr_t, typename parent_itr_t>
-      void update(gsl_rng * r, offspring_itr_t offspring, parent_itr_t p1_itr, parent_itr_t p2_itr ) const
+      void update(gsl_rng * , offspring_itr_t , parent_itr_t , parent_itr_t ) const
       {
-	//static asserts suppress hideously-long compiler warnings on GCC
-	static_assert( std::is_pointer<decltype(r)>::value, "r must be a pointer" );
-	static_assert(!std::is_const< typename std::remove_pointer<typename decltype(offspring)::pointer>::type >::value , "offpsring must point to non-const data");
-	static_assert( std::is_const< typename std::remove_pointer<typename decltype(p1_itr)::pointer>::type >::value , "p1_itr must point to const data");
-	static_assert( std::is_const< typename std::remove_pointer<typename decltype(p2_itr)::pointer>::type >::value , "p2_itr must point to const data");
-	return;
       }
 
     };
@@ -117,7 +111,7 @@ namespace KTfwd {
     {
       assert(N_curr == diploids->size());
 
-      std::for_each( mutations->begin(),mutations->end(),[](typename gamete_type::mutation_type & __m){__m.n=0;});
+      //std::for_each( mutations->begin(),mutations->end(),[](typename gamete_type::mutation_type & __m){__m.n=0;});
 
       pmr.w(diploids,ff);
 
@@ -137,6 +131,7 @@ namespace KTfwd {
       unsigned NREC=0;
       assert(diploids->size()==N_next);
       decltype( gametes->begin() ) p1g1,p1g2,p2g1,p2g2;
+      auto lookup = fwdpp_internal::gamete_lookup_table(gametes);
       for( unsigned i = 0 ; i < N_next ; ++i )
 	{
 	  assert(dptr==diploids->begin());
@@ -152,13 +147,17 @@ namespace KTfwd {
 	  p1g2 = (pptr+typename decltype(pptr)::difference_type(p1))->second;
 	  p2g1 = (pptr+typename decltype(pptr)::difference_type(p2))->first;
 	  p2g2 = (pptr+typename decltype(pptr)::difference_type(p2))->second;
+
+	  //0.3.3 change:
+	  if(gsl_rng_uniform(r)<=0.5) std::swap(p1g1,p1g2);
+	  if(gsl_rng_uniform(r)<=0.5) std::swap(p2g1,p2g2);
+	  
+	  NREC += rec_pol(p1g1,p1g2,lookup);
+	  NREC += rec_pol(p2g1,p2g2,lookup);
 	
-	  NREC += rec_pol(p1g1,p1g2);
-	  NREC += rec_pol(p2g1,p2g2);
-	
-	  (dptr+i)->first = (gsl_rng_uniform(r) <= 0.5) ? p1g1 : p1g2;
-	  (dptr+i)->second = (gsl_rng_uniform(r) <= 0.5) ? p2g1 : p2g2;
-	
+	  (dptr+i)->first = p1g1;
+	  (dptr+i)->second = p2g1;
+
 	  (dptr+i)->first->n++;
 	  assert( (dptr+i)->first->n > 0 );
 	  assert( (dptr+i)->first->n <= 2*N_next );
@@ -181,27 +180,17 @@ namespace KTfwd {
 	  assert( (dptr+i)->second->n <= 2*N_next );
 	}
 #endif
-      decltype(gametes->begin()) temp;
       for( auto itr = gametes->begin() ; itr != gametes->end() ;  )
 	{
-	  if( itr->n == 0 ) //this gamete is extinct and need erasing from the list
-	    {
-	      temp = itr;
-	      ++itr;
-	      gametes->erase(temp);
-	    }
+	  if(!itr->n) //this gamete is extinct and need erasing from the list
+	      itr=gametes->erase(itr);
 	  else //gamete remains extant and we adjust mut counts
 	    {
 	      adjust_mutation_counts(itr,itr->n);
 	      ++itr;
 	    }
 	}
-      std::for_each( gametes->begin(),
-		     gametes->end(),
-		     [&mp](decltype( *(gametes->begin()) ) & __g ) {
-		       __g.mutations.erase( std::remove_if(__g.mutations.begin(),__g.mutations.end(),std::cref(mp)),__g.mutations.end() );
-		       __g.smutations.erase( std::remove_if(__g.smutations.begin(),__g.smutations.end(),std::cref(mp)),__g.smutations.end() );
-		     });
+      fwdpp_internal::gamete_cleaner(gametes,mp,typename std::is_same<mutation_removal_policy,KTfwd::remove_nothing >::type());
       assert(check_sum(gametes,2*N_next));
       return pmr.wbar;
     }

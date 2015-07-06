@@ -15,6 +15,7 @@ namespace KTfwd
 {
   template<typename mtype> using multiloc_mlist_t = boost::container::list<mtype,boost::fast_pool_allocator<mtype> >;
   template<typename mtype> using multiloc_gamete_t = gamete_base<mtype,multiloc_mlist_t<mtype>>;
+  //IDEA:
   template<typename mtype> using multiloc_glist_t = boost::container::list<multiloc_gamete_t<mtype>, boost::fast_pool_allocator<multiloc_gamete_t<mtype>>>;
 
   /*!
@@ -29,10 +30,9 @@ namespace KTfwd
 				   multiloc_mlist_t<mtype>,
 				   multiloc_glist_t<mtype>,
 				   boost::container::vector<boost::container::vector<diploid_t>>,
-				   boost::container::vector<multiloc_glist_t<mtype>>,
 				   boost::container::vector<mtype>,
 				   boost::container::vector<unsigned>,
-				   boost::unordered_set<double,boost::hash<double>,KTfwd::equal_eps>>;
+				   boost::unordered_set<double,boost::hash<double>,KTfwd::equal_eps> >;
 
   /*!
     \brief Single population, multilocus simulation with serialization.  Can be copied, etc.
@@ -49,7 +49,6 @@ namespace KTfwd
 							 multiloc_mlist_t<mtype>,
 							 multiloc_glist_t<mtype>,
 							 boost::container::vector<boost::container::vector<diploid_t>>,
-							 boost::container::vector<multiloc_glist_t<mtype>>,
 							 boost::container::vector<mtype>,
 							 boost::container::vector<unsigned>,
 							 boost::unordered_set<double,boost::hash<double>,KTfwd::equal_eps>,
@@ -81,7 +80,6 @@ namespace KTfwd
 				   multiloc_mlist_t<mtype>,
 				   multiloc_glist_t<mtype>,
 				   std::vector<std::vector<diploid_t>>,
-				   std::vector<multiloc_glist_t<mtype>>,
 				   std::vector<mtype>,
 				   std::vector<unsigned>,
 				   std::unordered_set<double,std::hash<double>,KTfwd::equal_eps>>;
@@ -102,7 +100,6 @@ namespace KTfwd
 							 multiloc_mlist_t<mtype>,
 							 multiloc_glist_t<mtype>,
 							 std::vector<std::vector<diploid_t>>,
-							 std::vector<multiloc_glist_t<mtype>>,
 							 std::vector<mtype>,
 							 std::vector<unsigned>,
 							 std::unordered_set<double,std::hash<double>,KTfwd::equal_eps>,

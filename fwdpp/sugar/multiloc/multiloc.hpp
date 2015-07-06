@@ -24,7 +24,6 @@ namespace KTfwd {
 	     typename mlist,
 	     typename glist,
 	     typename dipvector,
-	     typename vglist,
 	     typename mvector,
 	     typename ftvector,
 	     typename lookup_table_type>
@@ -37,6 +36,8 @@ namespace KTfwd {
       using mutation_t = mutation_type;
       //! Gamete type
       using gamete_t = typename glist::value_type;
+      //! Vector of vector of diploids
+      // using vdipvector_t = vdipvector;
       //! Vector of diploids
       using dipvector_t = dipvector;
       //! Diploid type (vector<std::pair<glist_t::iterator,glist_t::iterator>)
@@ -46,7 +47,7 @@ namespace KTfwd {
       //! Linked list of gametes
       using glist_t = glist;
       //! Container of glist_t (gametes for each locus)
-      using vglist_t = vglist;
+      //using vglist_t = vglist;
       //! Lookup table type for recording mutation positions, etc.
       using lookup_table_t = lookup_table_type;
       //! container type for fixations
@@ -57,8 +58,10 @@ namespace KTfwd {
       //! Population size
       unsigned N;
       mlist_t mutations;
-      vglist_t gametes;
+      glist_t gametes;
       dipvector_t diploids;
+      //! Vectors for recombination intermediates
+      typename gamete_t::mutation_container neutral,selected;
       /*!
 	\brief Can be used to track positions of segregating mutations.
 	\note Must have interface like std::map or std::unordered_set
@@ -72,20 +75,19 @@ namespace KTfwd {
       ftvector fixation_times;
 
       //! Construct with population size and number of loci
-      multiloc(const unsigned & __N, const unsigned & __nloci) : N(__N),
-								 mutations(mlist_t()),
-								 gametes(vglist_t(__nloci,glist_t(1,gamete_t(2*__N)))),
-								 diploids(dipvector_t()),
-								 mut_lookup(lookup_table_t()),
-								 fixations(mvector()),
-								 fixation_times(ftvector())
+      multiloc(const unsigned & __N, const unsigned & __nloci,
+	       typename gamete_t::mutation_container::size_type reserve_size = 100) : N(__N),
+										      mutations(mlist_t()),
+										      gametes(glist_t(1,gamete_t(2*__N))),
+										      diploids(dipvector_t()),
+										      mut_lookup(lookup_table_t()),
+										      fixations(mvector()),
+										      fixation_times(ftvector())
       {
-	diploid_t idip;
-	for( auto gitr = gametes.begin() ; gitr != gametes.end() ; ++gitr )
-	  {
-	    idip.emplace_back(typename diploid_t::value_type(gitr->begin(),gitr->begin()));
-	  }
-	diploids = dipvector_t(N,idip);
+	auto gitr = gametes.begin();
+	diploids = dipvector_t(N,diploid_t(__nloci,typename diploid_t::value_type(gitr,gitr)));
+	neutral.reserve(reserve_size);
+	selected.reserve(reserve_size);
       }
 
       //! Move constructor
@@ -128,7 +130,7 @@ namespace KTfwd {
 	     typename mlist,
 	     typename glist,
 	     typename dipvector,
-	     typename vglist,
+	     //typename vglist,
 	     typename mvector,
 	     typename ftvector,
 	     typename lookup_table_type,
@@ -156,7 +158,7 @@ namespace KTfwd {
       //! Linked list of gametes
       using glist_t = glist;
       //! Container of glist_t (gametes for each locus)
-      using vglist_t = vglist;
+      //using vglist_t = vglist;
       //! Lookup table type for recording mutation positions, etc.
       using lookup_table_t = lookup_table_type;
       //! Serialization type for writing diploid genotypes
@@ -171,8 +173,11 @@ namespace KTfwd {
       //! Population size
       unsigned N;
       mlist_t mutations;
-      vglist_t gametes;
+      glist_t gametes;
       dipvector_t diploids;
+      //! Vectors for recombination intermediates
+      typename gamete_t::mutation_container neutral,selected;
+
       /*!
 	\brief Can be used to track positions of segregating mutations.
 	\note Must have interface like std::map or std::unordered_set
@@ -186,20 +191,19 @@ namespace KTfwd {
       ftvector fixation_times;
      
       //! Construct with population size and number of loci
-      multiloc_serialized(const unsigned & __N, const unsigned & __nloci) : N(__N),
-									    mutations(mlist_t()),
-									    gametes(vglist_t(__nloci,glist_t(1,gamete_t(2*__N)))),
-									    diploids(dipvector_t()),
-									    mut_lookup(lookup_table_t()),
-									    fixations(mvector()),
-									    fixation_times(ftvector())
+      multiloc_serialized(const unsigned & __N, const unsigned & __nloci,
+			  typename gamete_t::mutation_container::size_type reserve_size = 100) : N(__N),
+												 mutations(mlist_t()),
+												 gametes(glist_t(1,gamete_t(2*__N))),
+												 diploids(dipvector_t()),
+												 mut_lookup(lookup_table_t()),
+												 fixations(mvector()),
+												 fixation_times(ftvector())
       {
-	diploid_t idip;
-	for( auto gitr = gametes.begin() ; gitr != gametes.end() ; ++gitr )
-	  {
-	    idip.emplace_back(typename diploid_t::value_type(gitr->begin(),gitr->begin()));
-	  }
-	diploids = dipvector_t(N,idip);
+	auto gitr = gametes.begin();
+	diploids = dipvector_t(N,diploid_t(__nloci,typename diploid_t::value_type(gitr,gitr)));
+	neutral.reserve(reserve_size);
+	selected.reserve(reserve_size);
       }
 
       //! Move constructor
@@ -207,7 +211,7 @@ namespace KTfwd {
 
       //! Copy constructor
       multiloc_serialized( const multiloc_serialized & __m ) : N(0u), mutations(mlist_t()),
-							       gametes(vglist_t()),
+							       gametes(glist_t()),
 							       diploids(dipvector_t()),
 							       mut_lookup(lookup_table_t()),
 							       fixations(mvector()),

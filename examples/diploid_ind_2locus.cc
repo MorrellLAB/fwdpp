@@ -2,6 +2,7 @@
   Simple example of a two-locus simulation using the multilocus API in fwdpp.
 */
 
+#include <iostream>
 #include <fwdpp/diploid.hh>
 #include <Sequence/SimData.hpp>
 #include <vector>
@@ -18,7 +19,7 @@ using mtype = KTfwd::popgenmut;
 struct no_selection_multi
 {
   typedef double result_type;
-  inline double operator()( const multiloc_t::dipvector_t::const_iterator & diploid ) const
+  inline double operator()( multiloc_t::dipvector_t::const_iterator ) const
   {
     return 1.;
   }
@@ -77,8 +78,8 @@ int main(int argc, char ** argv)
       double wbar;
 
       //within-locus recombination policies -- one per locus
-      auto recpol0 = std::bind(KTfwd::genetics101(),std::placeholders::_1,std::placeholders::_2,&pop.gametes[0],littler,r.get(),recmap);
-      auto recpol1 = std::bind(KTfwd::genetics101(),std::placeholders::_1,std::placeholders::_2,&pop.gametes[1],littler,r.get(),recmap2);
+      auto recpol0 = std::bind(KTfwd::genetics101(),std::placeholders::_1,std::placeholders::_2,std::placeholders::_3,std::ref(pop.neutral),std::ref(pop.selected),&pop.gametes,littler,r.get(),recmap);
+      auto recpol1 = std::bind(KTfwd::genetics101(),std::placeholders::_1,std::placeholders::_2,std::placeholders::_3,std::ref(pop.neutral),std::ref(pop.selected),&pop.gametes,littler,r.get(),recmap2);
       std::vector< decltype(recpol0) > recpols{ recpol0 , recpol1 };
 
       std::vector< std::function<mtype(multiloc_t::mlist_t *)> > mmodels {
@@ -106,8 +107,7 @@ int main(int argc, char ** argv)
 	  			 std::bind(KTfwd::insert_at_end<multiloc_t::gamete_t,multiloc_t::glist_t>,std::placeholders::_1,std::placeholders::_2),
 	  			 std::bind(no_selection_multi(),std::placeholders::_1),
 	  			 std::bind(KTfwd::mutation_remover(),std::placeholders::_1,0,2*N));
-	  assert( check_sum(pop.gametes[0],twoN) );
-	  assert( check_sum(pop.gametes[1],twoN) );
+	  assert( check_sum(pop.gametes,2*twoN) );
       	  KTfwd::remove_fixed_lost(&pop.mutations,&pop.fixations,&pop.fixation_times,&pop.mut_lookup,generation,2*N);
 	}
       //For giggles, make sure that the pop. is copy-constructible...

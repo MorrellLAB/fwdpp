@@ -1,5 +1,36 @@
 # FWDPP RELEASE NOTES
 
+##0.3.3
+
+This release of __fwdpp__ includes major performance improvements.  The short version of the story is:
+
+* Linked lists are traversed less often each generation compared to previous versions.
+* An (extremely) expensive linear-time search of a linked list that previously occurred after _every_ recombination event has been eliminated, and replaced with a very fast log-time search of a lookup table.
+* The containers required for storing the intermediate steps of recombination are now allocated at most once per replicate, and their capacity is adjusted as needed during the simulation.  Previously, these containers were allocated for every crossover event.
+* The way that mutations are copied during recombination has been changed from a call to std::copy to the vector's insert member function, resulting in fewer reallocations during copying.
+
+The result is much better scaling with large population size and recombination rates.
+
+Major changes:
+
+* Crossing over has been streamlined.  Unfortunately, this changes the library API.  However, run times improve substantially.
+* The library internals now use different insertion methods during recombination.  We swtiched from copy(beg,end,back_inserter(x)) to x.insert(x.end(),beg,end), which results in less memory usage, and some run-time improvement for large simulations.
+* API change: the simplification of metapopulation containers in 0.3.2 means that we can make the recombination policies required for such simulations the same as for single-deme simulations.
+* The build system has been streamlined, with fewer dependencies and a greater emphasis on standard containers + Google's perftools.
+* The various read/write functions for serializations have been renamed--I simply couldn't get the template declarations to auto-deduce the types.  I gave up on this one, and so there's an API change.  On the plus side, IO.hpp/IO.tcc are more readable now.
+
+Minor changes:
+
+* KTfwd::serialize now has a default constructor and a move constructor defined, allowing it to be a member of another class, which helps things in [foRward](http://github.com/molpopgen/foRward).
+* KTfwd::serialize can now be used to serialize multiple records into a single buffer.  
+* A "validation suite" has been added.  This is mostly for the developer to have an automatic way to check for problems.
+* The package now installs a single binary called fwdppConfig.  This program is intended to be used in configure scripts to make checking for fwdpp's existence and/or version easier.  It takes a single option:
+
+~~~{sh}
+#Get the version of fwdpp installed on your system (or at least the one most readily visible in your user's environment).
+fwdppConfig --version
+~~~
+
 ## 0.3.2
 
 This release make some tweaks that improve performance:

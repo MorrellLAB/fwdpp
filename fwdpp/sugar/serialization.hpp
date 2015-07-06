@@ -169,22 +169,50 @@ namespace KTfwd
   {
     using result_type = void;
     mutable std::stringstream buffer;
+
+    //!Default constructor
+    serialize() : buffer(std::string()) {}
+
+    //! Move constructor.  Req'd for this to be a member type of another class
+    serialize( serialize && __s) : buffer(__s.buffer.str())
+    {
+    }
+    
     /*!
       \brief Overload for single population simulations
      */
     template<typename sugarpop_t,
 	     typename writer_t,
 	     typename diploid_writer_t = diploidIOplaceholder>
-    inline typename std::enable_if< (std::is_same<typename sugarpop_t::popmodel_t,sugar::SINGLEPOP_TAG>::value |
-				     std::is_same<typename sugarpop_t::popmodel_t,sugar::MULTILOCPOP_TAG>::value )
-				   ,result_type>::type
+    inline typename std::enable_if<std::is_same<typename sugarpop_t::popmodel_t,sugar::SINGLEPOP_TAG>::value,result_type>::type
     operator()( const sugarpop_t & pop,
 		const writer_t & wt,
 		const diploid_writer_t & dw = diploid_writer_t()) const
     {
-      buffer.str(std::string());
       buffer.write( reinterpret_cast<const char*>(&pop.N), sizeof(unsigned) );
       write_binary_pop(&pop.gametes,&pop.mutations,&pop.diploids,wt,buffer,dw);
+      //Step 2: output fixations 
+      unsigned temp = pop.fixations.size();
+      buffer.write( reinterpret_cast<char*>(&temp), sizeof(unsigned) );
+      if( temp )
+	{
+	  std::for_each( pop.fixations.begin(), pop.fixations.end(),
+			 std::bind(std::cref(wt),std::placeholders::_1,std::ref(buffer)) );
+	  //Step 3:the fixation times
+	  buffer.write( reinterpret_cast<const char *>(&pop.fixation_times[0]), pop.fixation_times.size()*sizeof(unsigned) );
+	}
+    }
+
+    template<typename sugarpop_t,
+	     typename writer_t,
+	     typename diploid_writer_t = diploidIOplaceholder>
+    inline typename std::enable_if<std::is_same<typename sugarpop_t::popmodel_t,sugar::MULTILOCPOP_TAG>::value,result_type>::type
+    operator()( const sugarpop_t & pop,
+		const writer_t & wt,
+		const diploid_writer_t & dw = diploid_writer_t()) const
+    {
+      buffer.write( reinterpret_cast<const char*>(&pop.N), sizeof(unsigned) );
+      write_binary_pop_mloc(&pop.gametes,&pop.mutations,&pop.diploids,wt,buffer,dw);
       //Step 2: output fixations 
       unsigned temp = pop.fixations.size();
       buffer.write( reinterpret_cast<char*>(&temp), sizeof(unsigned) );
@@ -208,7 +236,6 @@ namespace KTfwd
 		const writer_t & wt,
 		const diploid_writer_t & dw = diploid_writer_t()) const
     {
-      buffer.str(std::string());
       unsigned npops = pop.Ns.size();
       buffer.write(reinterpret_cast<char *>(&npops),sizeof(unsigned));
       buffer.write( reinterpret_cast<const char*>(&pop.Ns[0]), npops*sizeof(unsigned) );
@@ -241,9 +268,7 @@ namespace KTfwd
     template<typename sugarpop_t,
 	     typename reader_t,
 	     typename diploid_reader_t = diploidIOplaceholder>
-    inline typename std::enable_if<(std::is_same<typename sugarpop_t::popmodel_t,sugar::SINGLEPOP_TAG>::value|
-				    std::is_same<typename sugarpop_t::popmodel_t,sugar::MULTILOCPOP_TAG>::value),
-				   result_type>::type
+    inline typename std::enable_if<std::is_same<typename sugarpop_t::popmodel_t,sugar::SINGLEPOP_TAG>::value,result_type>::type
     operator()( sugarpop_t & pop,
 		const serialize & s,
 		const reader_t & rt,
@@ -253,6 +278,38 @@ namespace KTfwd
       //Step 0: read N
       s.buffer.read( reinterpret_cast<char*>(&pop.N),sizeof(unsigned) );
       KTfwd::read_binary_pop( &pop.gametes,&pop.mutations,&pop.diploids,rt,s.buffer,dr );
+      unsigned temp;
+      s.buffer.read( reinterpret_cast<char*>(&temp),sizeof(unsigned) );
+      for( unsigned m=0;m<temp ;++m )
+    	{
+    	  typename reader_t::result_type mm = rt(s.buffer);
+    	  pop.fixations.emplace_back( std::move(mm) );
+    	}
+      pop.fixation_times.resize(temp);
+      if(temp)
+	{
+	  s.buffer.read( reinterpret_cast<char*>(&pop.fixation_times[0]), temp*sizeof(unsigned) );
+	}
+      s.buffer.seekg(0);
+      //Finally, fill the lookup table:
+      std::for_each( pop.mutations.begin(), pop.mutations.end(),
+    		     [&pop]( const typename sugarpop_t::mutation_t & __m ) { pop.mut_lookup.insert(__m.pos); } );
+
+    }
+
+   template<typename sugarpop_t,
+	     typename reader_t,
+	     typename diploid_reader_t = diploidIOplaceholder>
+    inline typename std::enable_if<std::is_same<typename sugarpop_t::popmodel_t,sugar::MULTILOCPOP_TAG>::value,result_type>::type
+    operator()( sugarpop_t & pop,
+		const serialize & s,
+		const reader_t & rt,
+		const diploid_reader_t & dr = diploid_reader_t()) const
+    {
+      pop.clear();
+      //Step 0: read N
+      s.buffer.read( reinterpret_cast<char*>(&pop.N),sizeof(unsigned) );
+      KTfwd::read_binary_pop_mloc( &pop.gametes,&pop.mutations,&pop.diploids,rt,s.buffer,dr );
       unsigned temp;
       s.buffer.read( reinterpret_cast<char*>(&temp),sizeof(unsigned) );
       for( unsigned m=0;m<temp ;++m )
@@ -348,8 +405,7 @@ namespace KTfwd
     template<typename sugarpop_t,
 	     typename reader_t,
 	     typename diploid_reader_t = diploidIOplaceholder>
-    inline typename std::enable_if<(std::is_same<typename sugarpop_t::popmodel_t,sugar::SINGLEPOP_TAG>::value|
-				    std::is_same<typename sugarpop_t::popmodel_t,sugar::MULTILOCPOP_TAG>::value),
+    inline typename std::enable_if<std::is_same<typename sugarpop_t::popmodel_t,sugar::SINGLEPOP_TAG>::value,
 				   result_type>::type operator()( gzFile gzin,
 								  sugarpop_t & pop,
 								  const reader_t & rt,
@@ -359,6 +415,36 @@ namespace KTfwd
       //Step 0: read N
       gzread( gzin, reinterpret_cast<char*>(&pop.N),sizeof(unsigned) );
       KTfwd::read_binary_pop( &pop.gametes,&pop.mutations,&pop.diploids,rt,gzin,dr );
+      unsigned temp;
+      gzread( gzin, reinterpret_cast<char*>(&temp),sizeof(unsigned) );
+      for( unsigned m=0;m<temp ;++m )
+    	{
+    	  typename reader_t::result_type mm = rt(gzin);
+    	  pop.fixations.emplace_back( std::move(mm) );
+    	}
+      pop.fixation_times.resize(temp);
+      if(temp)
+	{
+	  gzread( gzin, reinterpret_cast<char*>(&pop.fixation_times[0]), temp*sizeof(unsigned) );
+	}
+      //Finally, fill the lookup table:
+      std::for_each( pop.mutations.begin(), pop.mutations.end(),
+    		     [&pop]( const typename sugarpop_t::mutation_t & __m ) { pop.mut_lookup.insert(__m.pos); } );
+    }
+
+    template<typename sugarpop_t,
+	     typename reader_t,
+	     typename diploid_reader_t = diploidIOplaceholder>
+    inline typename std::enable_if<std::is_same<typename sugarpop_t::popmodel_t,sugar::MULTILOCPOP_TAG>::value,
+				   result_type>::type operator()( gzFile gzin,
+								  sugarpop_t & pop,
+								  const reader_t & rt,
+								  const diploid_reader_t & dr = diploid_reader_t()) const
+    {
+      pop.clear();
+      //Step 0: read N
+      gzread( gzin, reinterpret_cast<char*>(&pop.N),sizeof(unsigned) );
+      KTfwd::read_binary_pop_mloc( &pop.gametes,&pop.mutations,&pop.diploids,rt,gzin,dr );
       unsigned temp;
       gzread( gzin, reinterpret_cast<char*>(&temp),sizeof(unsigned) );
       for( unsigned m=0;m<temp ;++m )

@@ -14,13 +14,6 @@
 #include <gsl/gsl_rng.h>
 #include <gsl/gsl_randist.h>
 
-#if defined(HAVE_BOOST_VECTOR) && !defined(USE_STANDARD_CONTAINERS)
-#include <boost/container/vector.hpp>
-#else
-#include <vector>
-#endif
-
-
 namespace KTfwd
 {
   /* \brief Sets mutation::checked to false
@@ -45,21 +38,15 @@ namespace KTfwd
   {
     static_assert( std::is_base_of<mutation_base,mutation_type>::value,
                    "mutation_type must be derived from KTfwd::mutation_base" );
-    typename list_type<mutation_type,list_type_allocator>::iterator i = mutations->begin(),
-      temp;
-    
-    while(i != mutations->end())
+    for(auto i = mutations->begin(); i != mutations->end() ; )
       {
-	i->checked = false;
-	if( i->n == 0 )
+	if(!i->checked)
 	  {
-	    temp = i;
-	    ++i;
-	    mutations->erase(temp);
-	    //i=mutations->begin();
+	    i = mutations->erase(i);
 	  }
-	else
+	  else
 	  {
+	    i->checked = false;
 	    ++i;
 	  }
       }
@@ -77,21 +64,25 @@ namespace KTfwd
   {
     static_assert( std::is_base_of<mutation_base,mutation_type>::value,
                    "mutation_type must be derived from KTfwd::mutation_base" );
-    typename list_type<mutation_type,list_type_allocator>::iterator i = mutations->begin(),
-      temp;
+    //typename list_type<mutation_type,list_type_allocator>::iterator i = mutations->begin(),
+    //temp;
     
-    while(i != mutations->end())
+    //while(i != mutations->end())
+    for(auto i = mutations->begin() ; i != mutations->end() ; )
       {
-	i->checked = false;
-	if( i->n == 0 )
+	//i->checked = false;
+	//if( i->n == 0 )
+	if(!i->checked)
 	  {
 	    lookup->erase(lookup->find(i->pos));
-	    temp=i;
-	    ++i;
-	    mutations->erase(temp);
+	    i=mutations->erase(i);
+	    //temp=i;
+	    //++i;
+	    //mutations->erase(temp);
 	  }
 	else
 	  {
+	    i->checked=false;
 	    ++i;
 	  }
       }
@@ -113,25 +104,21 @@ namespace KTfwd
   {
     static_assert( std::is_base_of<mutation_base,mutation_type>::value,
 		   "mutation_type must be derived from KTfwd::mutation_base" );
-    typename list_type<mutation_type,list_type_allocator>::iterator i = mutations->begin(),temp;
-    
-    while(i != mutations->end())
+    for(auto i = mutations->begin() ; i != mutations->end() ; )
       {
 	assert(i->n <= twoN);			
-	i->checked = false;
 	if(i->n==twoN )
 	  {
 	    fixations->push_back(*i);
 	    fixation_times->push_back(generation);
 	  }
-	if( i->n == 0 || i->n == twoN )
+	if( !i->checked || i->n == twoN )
 	  {
-	    temp=i;
-	    ++i;
-	    mutations->erase(temp);
+	    i=mutations->erase(i);
 	  }
 	else
 	  {
+	    i->checked=false;
 	    ++i;
 	  }
       }
@@ -155,29 +142,27 @@ namespace KTfwd
 			  const unsigned & generation,const unsigned & twoN )
   {
     static_assert( std::is_base_of<mutation_base,mutation_type>::value,
-                   "mutation_type must be derived from KTfwd::mutation_base" );
-    typename list_type<mutation_type,list_type_allocator>::iterator i = mutations->begin(),temp;
-    while(i != mutations->end())
+		   "mutation_type must be derived from KTfwd::mutation_base" );
+    for(auto i=mutations->begin();i!=mutations->end();)
       {
-	assert(i->n <= twoN);			
-	i->checked = false;
+	assert(i->n <= twoN);
 	if(i->n==twoN )
 	  {
 	    fixations->push_back(*i);
 	    fixation_times->push_back(generation);
 	  }
-	if( i->n == 0 || i->n == twoN )
+	if(!i->checked ||  i->n == twoN )
 	  {
 	    lookup->erase(lookup->find(i->pos));
-	    temp=i;
-	    ++i;
-	    mutations->erase(temp);
+	    i = mutations->erase(i);
 	  }
 	else
 	  {
+	    i->checked=false;
 	    ++i;
 	  }
       }
+    
   }
 
   template<typename iterator_type>

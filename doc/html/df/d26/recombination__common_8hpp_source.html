@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.2</span>
+   &#160;<span id="projectnumber">0.3.3</span>
    </div>
   </td>
  </tr>
@@ -102,17 +102,17 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <span class="keyword">namespace </span>fwdpp_internal {</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> double_vec_type,</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;             <span class="keyword">typename</span> <a class="code" href="../../d3/dea/namespaceKTfwd_1_1tags.html#af816e12f7b8648716658bd3f7dbc5382">gamete_type</a>,</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;             <span class="keyword">typename</span> gamete_cont_iterator &gt;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a69903516668af1fd65d939af52d4588d">   13</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a69903516668af1fd65d939af52d4588d">recombine_gametes</a>( <span class="keyword">const</span> double_vec_type &amp; pos,</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                            gamete_cont_iterator &amp; ibeg,</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                            gamete_cont_iterator &amp; jbeg,</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                            <a class="code" href="../../d3/dea/namespaceKTfwd_1_1tags.html#af816e12f7b8648716658bd3f7dbc5382">gamete_type</a> &amp; new_gamete1,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                            <a class="code" href="../../d3/dea/namespaceKTfwd_1_1tags.html#af816e12f7b8648716658bd3f7dbc5382">gamete_type</a> &amp; new_gamete2 )</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      assert( std::is_sorted(pos.cbegin(),pos.cend()) );</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      <span class="keywordtype">short</span> SWITCH = 0;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;             <span class="keyword">typename</span> gamete_cont_iterator &gt;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ac137a342b9038e5293afda512b4238f5">   12</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ac137a342b9038e5293afda512b4238f5">recombine_gametes</a>( <span class="keyword">const</span> double_vec_type &amp; pos,</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                            gamete_cont_iterator &amp; ibeg,</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                            gamete_cont_iterator &amp; jbeg,</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                            <span class="keyword">typename</span> gamete_cont_iterator::value_type::mutation_container &amp; neutral,</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                            <span class="keyword">typename</span> gamete_cont_iterator::value_type::mutation_container &amp; selected)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;      assert( std::is_sorted(pos.cbegin(),pos.cend()) );</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      <span class="keywordtype">short</span> SWITCH = 0;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;      <span class="keyword">using</span> itr_t = <span class="keyword">typename</span> gamete_cont_iterator::value_type::mutation_container::iterator;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      <span class="keyword">auto</span> itr = ibeg-&gt;mutations.cbegin(),</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        jtr = jbeg-&gt;mutations.cbegin(),</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        itr_s = ibeg-&gt;smutations.cbegin(),</div>
@@ -121,79 +121,61 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        itr_s_e = ibeg-&gt;smutations.cend(),</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        jtr_e = jbeg-&gt;mutations.cend(),</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        jtr_s_e = jbeg-&gt;smutations.cend();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#ifndef NDEBUG</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor"></span>      decltype(ibeg-&gt;mutations.size()) nm1=ibeg-&gt;mutations.size()+ibeg-&gt;smutations.size(),</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        nm2=jbeg-&gt;mutations.size()+jbeg-&gt;smutations.size();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor"></span>      <span class="comment">//AUDIT/update--the last pos does not need the binary search...</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      <span class="comment">//for( const auto &amp; dummy : pos )</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      <span class="comment">//Look at: merge: http://www.cplusplus.com/reference/algorithm/merge/</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;      <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0 ; i &lt; pos.size()-1 ; ++i )</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;          <span class="keywordtype">double</span> dummy = pos[i];</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;          itr = <a class="code" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a21e19298a2fabe4e5de08fb64a740f7d">fwdpp_internal::rec_gam_updater</a>(itr,itr_e,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                                new_gamete2.mutations,new_gamete1.mutations,SWITCH,dummy);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;          itr_s = <a class="code" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a21e19298a2fabe4e5de08fb64a740f7d">fwdpp_internal::rec_gam_updater</a>(itr_s,itr_s_e,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                                  new_gamete2.smutations,new_gamete1.smutations,SWITCH,dummy);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;          jtr = <a class="code" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a21e19298a2fabe4e5de08fb64a740f7d">fwdpp_internal::rec_gam_updater</a>(jtr,jtr_e,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                                new_gamete1.mutations,new_gamete2.mutations,SWITCH,dummy);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;          jtr_s = <a class="code" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a21e19298a2fabe4e5de08fb64a740f7d">fwdpp_internal::rec_gam_updater</a>(jtr_s,jtr_s_e,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                                  new_gamete1.smutations,new_gamete2.smutations,SWITCH,dummy);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;          SWITCH=!SWITCH;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="comment">//Cleanup if needed</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="keywordflow">if</span>(SWITCH)</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;          std::copy(itr,itr_e,std::back_inserter(new_gamete2.mutations));</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;          std::copy(itr_s,itr_s_e,std::back_inserter(new_gamete2.smutations));</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;          std::copy(jtr,jtr_e,std::back_inserter(new_gamete1.mutations));</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;          std::copy(jtr_s,jtr_s_e,std::back_inserter(new_gamete1.smutations));</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;          std::copy(itr,itr_e,std::back_inserter(new_gamete1.mutations));</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;          std::copy(itr_s,itr_s_e,std::back_inserter(new_gamete1.smutations));</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;          std::copy(jtr,jtr_e,std::back_inserter(new_gamete2.mutations));</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;          std::copy(jtr_s,jtr_s_e,std::back_inserter(new_gamete2.smutations));</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#ifndef NDEBUG</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor"></span>      decltype(new_gamete1.mutations.size()) __nm1 = new_gamete1.mutations.size()+new_gamete1.smutations.size(),</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        __nm2 = new_gamete2.mutations.size()+new_gamete2.smutations.size();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      assert(__nm1+__nm2 == nm1+nm2);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <span class="comment">//Through fwdpp 0.2.4, we did a sort here, but it is not necessary</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="comment">/*</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">        std::sort(new_gamete1.smutations.begin(),new_gamete1.smutations.end(),</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">        [](typename gamete_type::mutation_list_type_iterator lhs,</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">        typename gamete_type::mutation_list_type_iterator rhs) { return lhs-&gt;pos &lt; rhs-&gt;pos; });</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">        std::sort(new_gamete1.smutations.begin(),new_gamete1.smutations.end(),</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">        [](typename gamete_type::mutation_list_type_iterator lhs,</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">        typename gamete_type::mutation_list_type_iterator rhs) { return lhs-&gt;pos &lt; rhs-&gt;pos; });</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">        std::sort(new_gamete2.mutations.begin(),new_gamete2.mutations.end(),</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">        [](typename gamete_type::mutation_list_type_iterator lhs,</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">        typename gamete_type::mutation_list_type_iterator rhs) { return lhs-&gt;pos &lt; rhs-&gt;pos; });</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">        std::sort(new_gamete2.smutations.begin(),new_gamete2.smutations.end(),</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">        [](typename gamete_type::mutation_list_type_iterator lhs,</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">        typename gamete_type::mutation_list_type_iterator rhs) { return lhs-&gt;pos &lt; rhs-&gt;pos; });</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">      */</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#ifndef NDEBUG</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor"></span>      <span class="keyword">using</span> mlist_itr = <span class="keyword">typename</span> gamete_type::mutation_list_type_iterator;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      <span class="keyword">auto</span> am_I_sorted = [](mlist_itr lhs,mlist_itr rhs){<span class="keywordflow">return</span> lhs-&gt;pos &lt; rhs-&gt;pos;};</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      assert( std::is_sorted(new_gamete1.mutations.begin(),new_gamete1.mutations.end(),std::cref(am_I_sorted)) );</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      assert( std::is_sorted(new_gamete1.smutations.begin(),new_gamete1.smutations.end(),std::cref(am_I_sorted)) );</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      assert( std::is_sorted(new_gamete2.mutations.begin(),new_gamete2.mutations.end(),std::cref(am_I_sorted)) );</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      assert( std::is_sorted(new_gamete2.smutations.begin(),new_gamete2.smutations.end(),std::cref(am_I_sorted)) );</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor"></span>    }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="namespaceKTfwd_1_1fwdpp__internal_html_a21e19298a2fabe4e5de08fb64a740f7d"><div class="ttname"><a href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a21e19298a2fabe4e5de08fb64a740f7d">KTfwd::fwdpp_internal::rec_gam_updater</a></div><div class="ttdeci">itr_type rec_gam_updater(itr_type &amp;__first, itr_type &amp;__last, cont_type &amp;m1, cont_type &amp;m2, const short &amp;SWITCH, const double &amp;val)</div><div class="ttdef"><b>Definition:</b> rec_gamete_updater.hpp:14</div></div>
-<div class="ttc" id="namespaceKTfwd_1_1tags_html_af816e12f7b8648716658bd3f7dbc5382"><div class="ttname"><a href="../../d3/dea/namespaceKTfwd_1_1tags.html#af816e12f7b8648716658bd3f7dbc5382">KTfwd::tags::gamete_type</a></div><div class="ttdeci">gamete_type</div><div class="ttdoc">Built-in types of gametes for which dispatch tags exist. </div><div class="ttdef"><b>Definition:</b> gamete_tags.hpp:7</div></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keywordtype">double</span> dummy : pos )</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;          <span class="keywordflow">if</span>(!SWITCH)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;              itr = <a class="code" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a0ef02166cf6e4b3c913d3a9da1410b8b">fwdpp_internal::rec_gam_updater</a>(itr,itr_e,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                                    neutral,dummy);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;              itr_s = <a class="code" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a0ef02166cf6e4b3c913d3a9da1410b8b">fwdpp_internal::rec_gam_updater</a>(itr_s,itr_s_e,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                                      selected,dummy);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;              jtr = std::lower_bound(jtr,jtr_e,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                     dummy,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                     [](<span class="keyword">const</span> <span class="keyword">typename</span> itr_t::value_type &amp; __mut,<span class="keyword">const</span> <span class="keywordtype">double</span> &amp; __val) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                       <span class="keywordflow">return</span> __mut-&gt;pos &lt; __val;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                     });</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;              jtr_s = std::lower_bound(jtr_s,jtr_s_e,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                       dummy,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                       [](<span class="keyword">const</span> <span class="keyword">typename</span> itr_t::value_type &amp; __mut,<span class="keyword">const</span> <span class="keywordtype">double</span> &amp; __val) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                         <span class="keywordflow">return</span> (__mut)-&gt;pos &lt; __val;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                       });</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;          <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;              jtr = <a class="code" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a0ef02166cf6e4b3c913d3a9da1410b8b">fwdpp_internal::rec_gam_updater</a>(jtr,jtr_e,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                                    neutral,dummy);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;              jtr_s = <a class="code" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a0ef02166cf6e4b3c913d3a9da1410b8b">fwdpp_internal::rec_gam_updater</a>(jtr_s,jtr_s_e,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                                      selected,dummy);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;              itr = std::lower_bound(itr,itr_e,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                     dummy,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                     [](<span class="keyword">const</span> <span class="keyword">typename</span> itr_t::value_type &amp; __mut,<span class="keyword">const</span> <span class="keywordtype">double</span> &amp; __val) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                       <span class="keywordflow">return</span> __mut-&gt;pos &lt; __val;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                     });</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;              itr_s = std::lower_bound(itr_s,itr_s_e,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                       dummy,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                       [](<span class="keyword">const</span> <span class="keyword">typename</span> itr_t::value_type &amp; __mut,<span class="keyword">const</span> <span class="keywordtype">double</span> &amp; __val) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                         <span class="keywordflow">return</span> (__mut)-&gt;pos &lt; __val;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                       });</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;          SWITCH=!SWITCH;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#ifndef NDEBUG</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor"></span>      <span class="comment">// using mlist_itr = typename gamete_type::mutation_list_type_iterator;</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <span class="comment">// auto am_I_sorted = [](mlist_itr lhs,mlist_itr rhs){return lhs-&gt;pos &lt; rhs-&gt;pos;};</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="comment">// assert( std::is_sorted(new_gamete1.mutations.begin(),new_gamete1.mutations.end(),std::cref(am_I_sorted)) );</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <span class="comment">// assert( std::is_sorted(new_gamete1.smutations.begin(),new_gamete1.smutations.end(),std::cref(am_I_sorted)) );</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      <span class="comment">// assert( std::is_sorted(new_gamete2.mutations.begin(),new_gamete2.mutations.end(),std::cref(am_I_sorted)) );</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <span class="comment">// assert( std::is_sorted(new_gamete2.smutations.begin(),new_gamete2.smutations.end(),std::cref(am_I_sorted)) );</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor"></span>    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="namespaceKTfwd_1_1fwdpp__internal_html_ac137a342b9038e5293afda512b4238f5"><div class="ttname"><a href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ac137a342b9038e5293afda512b4238f5">KTfwd::fwdpp_internal::recombine_gametes</a></div><div class="ttdeci">void recombine_gametes(const double_vec_type &amp;pos, gamete_cont_iterator &amp;ibeg, gamete_cont_iterator &amp;jbeg, typename gamete_cont_iterator::value_type::mutation_container &amp;neutral, typename gamete_cont_iterator::value_type::mutation_container &amp;selected)</div><div class="ttdef"><b>Definition:</b> recombination_common.hpp:12</div></div>
+<div class="ttc" id="namespaceKTfwd_1_1fwdpp__internal_html_a0ef02166cf6e4b3c913d3a9da1410b8b"><div class="ttname"><a href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a0ef02166cf6e4b3c913d3a9da1410b8b">KTfwd::fwdpp_internal::rec_gam_updater</a></div><div class="ttdeci">itr_type rec_gam_updater(itr_type __first, itr_type __last, cont_type &amp;muts, const double &amp;val)</div><div class="ttdef"><b>Definition:</b> rec_gamete_updater.hpp:14</div></div>
 <div class="ttc" id="rec__gamete__updater_8hpp_html"><div class="ttname"><a href="../../d1/d01/rec__gamete__updater_8hpp.html">rec_gamete_updater.hpp</a></div></div>
-<div class="ttc" id="namespaceKTfwd_1_1fwdpp__internal_html_a69903516668af1fd65d939af52d4588d"><div class="ttname"><a href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a69903516668af1fd65d939af52d4588d">KTfwd::fwdpp_internal::recombine_gametes</a></div><div class="ttdeci">void recombine_gametes(const double_vec_type &amp;pos, gamete_cont_iterator &amp;ibeg, gamete_cont_iterator &amp;jbeg, gamete_type &amp;new_gamete1, gamete_type &amp;new_gamete2)</div><div class="ttdef"><b>Definition:</b> recombination_common.hpp:13</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

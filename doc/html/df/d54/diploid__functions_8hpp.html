@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.2</span>
+   &#160;<span id="projectnumber">0.3.3</span>
    </div>
   </td>
  </tr>
@@ -114,13 +114,13 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8a46b107991548a40821e132496c1693"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename recombination_map , typename list_type_allocator , template&lt; typename, typename &gt; class list_type&gt; </td></tr>
-<tr class="memitem:a8a46b107991548a40821e132496c1693"><td class="memTemplItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a8a46b107991548a40821e132496c1693">KTfwd::recombine_gametes</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const double &amp;littler, list_type&lt; typename iterator_type::value_type, list_type_allocator &gt; *gametes, iterator_type &amp;g1, iterator_type &amp;g2, const recombination_map &amp;mf)</td></tr>
-<tr class="memdesc:a8a46b107991548a40821e132496c1693"><td class="mdescLeft">&#160;</td><td class="mdescRight">recombination for individual-based forward simulations  <a href="#a8a46b107991548a40821e132496c1693">More...</a><br/></td></tr>
-<tr class="separator:a8a46b107991548a40821e132496c1693"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad758ef2a67e1fbb768640e533377f506"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename list_type_allocator , typename vector_type_allocator , template&lt; typename, typename &gt; class vector_type, template&lt; typename, typename &gt; class list_type&gt; </td></tr>
-<tr class="memitem:ad758ef2a67e1fbb768640e533377f506"><td class="memTemplItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#ad758ef2a67e1fbb768640e533377f506">KTfwd::recombine_gametes</a> (const vector_type&lt; double, vector_type_allocator &gt; &amp;pos, list_type&lt; typename iterator_type::value_type, list_type_allocator &gt; *gametes, iterator_type &amp;g1, iterator_type &amp;g2)</td></tr>
-<tr class="separator:ad758ef2a67e1fbb768640e533377f506"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af28e27f1e9c39173b7a4d55256761c28"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename recombination_map , typename list_type_allocator , template&lt; typename, typename &gt; class list_type&gt; </td></tr>
+<tr class="memitem:af28e27f1e9c39173b7a4d55256761c28"><td class="memTemplItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#af28e27f1e9c39173b7a4d55256761c28">KTfwd::recombine_gametes</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const double &amp;littler, list_type&lt; typename iterator_type::value_type, list_type_allocator &gt; *gametes, iterator_type &amp;g1, iterator_type &amp;g2, const recombination_map &amp;mf, typename iterator_type::value_type::mutation_container &amp;neutral, typename iterator_type::value_type::mutation_container &amp;selected)</td></tr>
+<tr class="memdesc:af28e27f1e9c39173b7a4d55256761c28"><td class="mdescLeft">&#160;</td><td class="mdescRight">recombination for individual-based forward simulations  <a href="#af28e27f1e9c39173b7a4d55256761c28">More...</a><br/></td></tr>
+<tr class="separator:af28e27f1e9c39173b7a4d55256761c28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bc6fb0ae71894650f5f7fc821c02120"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename list_type_allocator , typename vector_type_allocator , template&lt; typename, typename &gt; class vector_type, template&lt; typename, typename &gt; class list_type&gt; </td></tr>
+<tr class="memitem:a6bc6fb0ae71894650f5f7fc821c02120"><td class="memTemplItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a6bc6fb0ae71894650f5f7fc821c02120">KTfwd::recombine_gametes</a> (const vector_type&lt; double, vector_type_allocator &gt; &amp;pos, list_type&lt; typename iterator_type::value_type, list_type_allocator &gt; *gametes, iterator_type &amp;g1, iterator_type &amp;g2, typename iterator_type::value_type::mutation_container &amp;neutral, typename iterator_type::value_type::mutation_container &amp;selected)</td></tr>
+<tr class="separator:a6bc6fb0ae71894650f5f7fc821c02120"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Wright-Fisher sampling in a finite population and recombination. </p>

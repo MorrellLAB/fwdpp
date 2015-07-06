@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.2</span>
+   &#160;<span id="projectnumber">0.3.3</span>
    </div>
   </td>
  </tr>
@@ -95,7 +95,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="title">multilocus_rec.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;gsl/gsl_rng.h&gt;</code><br/>
+<div class="textblock"><code>#include &lt;vector&gt;</code><br/>
+<code>#include &lt;algorithm&gt;</code><br/>
+<code>#include &lt;gsl/gsl_rng.h&gt;</code><br/>
 </div>
 <p><a href="../../d7/d48/multilocus__rec_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -110,10 +112,9 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3c36902b6ee80be11577986d681e5df8"><td class="memTemplParams" colspan="2">template&lt;typename within_loc_rec_policy , typename between_loc_rec_policy , typename gamete_itr_t &gt; </td></tr>
-<tr class="memitem:a3c36902b6ee80be11577986d681e5df8"><td class="memTemplItemLeft" align="right" valign="top">gamete_itr_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a3c36902b6ee80be11577986d681e5df8">KTfwd::fwdpp_internal::multilocus_rec</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const within_loc_rec_policy &amp;rec, const between_loc_rec_policy &amp;bw, const double *r_between_loci, const unsigned &amp;i, gamete_itr_t &amp;parental_gamete_1, gamete_itr_t &amp;parental_gamete_2, bool &amp;g1, bool &amp;LO)</td></tr>
-<tr class="memdesc:a3c36902b6ee80be11577986d681e5df8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The mechanics of recombination for multilocus simulations The mechanics of recombination for multilocus simulations.  <a href="#a3c36902b6ee80be11577986d681e5df8">More...</a><br/></td></tr>
-<tr class="separator:a3c36902b6ee80be11577986d681e5df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0eec8ef0271944bf9a41178430735a58"><td class="memTemplParams" colspan="2">template&lt;typename diploid_type , typename diploid_type_itr , typename gamete_lookup_t , typename recombination_policy_container , typename bw_locus_rec_fxn , typename mlist_t , typename glist_t , typename mutation_model_container , typename mutation_insertion_policy , typename gamete_insertion_policy &gt; </td></tr>
+<tr class="memitem:a0eec8ef0271944bf9a41178430735a58"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a0eec8ef0271944bf9a41178430735a58">KTfwd::fwdpp_internal::multilocus_rec_mut</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, diploid_type parent1, diploid_type parent2, diploid_type_itr &amp;offspring, gamete_lookup_t &amp;gamete_lookup, const recombination_policy_container &amp;rec_pols, const bw_locus_rec_fxn &amp;blrf, const double *r_bw_loci, const int iswitch1, const int iswitch2, glist_t *gametes, mlist_t *mutations, const double *mu, const mutation_model_container &amp;mmodel, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy_mut)</td></tr>
+<tr class="separator:a0eec8ef0271944bf9a41178430735a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

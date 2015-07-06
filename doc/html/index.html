@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.2</span>
+   &#160;<span id="projectnumber">0.3.3</span>
    </div>
   </td>
  </tr>
@@ -107,9 +107,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>You should pay particular attention to any statements about backwards compatibility. If you are updating from a previous version of <b>fwdpp</b>, you may wish to read this document regarding how to reproduce results based on previous versions: <a class="el" href="d1/d6b/md_md_preproc.html">Preprocessor symbols</a>.</p>
 <p>Specific version numbers ("tags" in git-ese, a.k.a. "releases") will occur when new feature are added to the library and/or bugs are fixed. The details of what happens in each release can be found <a class="el" href="d0/d00/md_md_RELEASE_NOTES.html">here</a>, beginning with release 0.2.4.</p>
 <h2>Which C++?</h2>
-<p>As of version 0.2.5, fwdpp requires a compiler supporting the "C++11" version of the language. Currently, fwdpp requires that your compiler support the flag -std=c++11 in order to use c++11 language features. Recent version of GCC (4.7 or greater) and clang (3.4 or greater, but I've not checked earlier versions) both support this option, which covers most Linux and OS X users.</p>
+<p>As of version 0.2.5, fwdpp requires a compiler supporting the "C++11" version of the language. Currently, fwdpp requires that your compiler support the flag -std=c++11 in order to use c++11 language features. Recent version of GCC and clang both support this option, which covers most Linux and OS X users.</p>
 <h2>Citation</h2>
-<p>The fwdpp manuscript has been accepted for publication in Genetics. The accepted version of the manuscript is <a href="http://www.genetics.org/content/early/2014/06/19/genetics.114.165019.abstract">here</a>. For LaTeX users:</p>
+<p>The fwdpp manuscript has published in Genetics. The accepted version of the manuscript is <a href="http://www.genetics.org/content/early/2014/06/19/genetics.114.165019.abstract">here</a>. For LaTeX users:</p>
 <div class="fragment"><div class="line">@Article{,</div>
 <div class="line">  author =       {K. R. Thornton},</div>
 <div class="line">  title =        {A C++ Template Library <span class="keywordflow">for</span> Efficient Forward-Time Population Genetic Simulation of Large Populations},</div>
@@ -146,9 +146,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h2>System requirements</h2>
 <p>You must have the following on your system:</p>
 <ol type="1">
-<li>A C++ compiler equivalent to gcc 4.6 or greater. On OS X, this likely means that you should be running OS X Mavericks with Xcode installed, and have then installed the command line tools (which is done from within Xcode.)</li>
+<li>A C++ compiler that supports the C++11 language standard.</li>
 <li>Ideally, one should have the <a href="http://git-scm.com/book/en/Getting-Started-Installing-Git">git</a> command line tools installed. These are likely already installed on many systems.</li>
 </ol>
+<p>I have tested the library on my development machine (64-bit Intel processor, Ubuntu 14.04) with the following compilers:</p>
+<table class="doxtable">
+<tr>
+<th align="center">Compiler </th><th align="center">Version </th><th align="center">Compatible? </th><th align="center">Notes  </th></tr>
+<tr>
+<td align="center">GCC </td><td align="center">4.6.4 </td><td align="center"><b>NO</b> </td><td align="center">Does not support the -std=c++11 flag </td></tr>
+<tr>
+<td align="center">GCC </td><td align="center">4.7.3 </td><td align="center"><b>NO</b> </td><td align="center">Does not like one of the <a href="http://github.com/molpopgen/libsequence">libsequence</a> headers. Fails at ./configure </td></tr>
+<tr>
+<td align="center">GCC </td><td align="center">4.8.2 </td><td align="center"><b>YES</b> </td><td align="center"></td></tr>
+<tr>
+<td align="center">GCC </td><td align="center">4.9.2 </td><td align="center"><b>YES</b> </td><td align="center"></td></tr>
+<tr>
+<td align="center">GCC </td><td align="center">5.1 </td><td align="center"><b>YES</b> </td><td align="center"></td></tr>
+<tr>
+<td align="center">clang++ </td><td align="center">3.5 </td><td align="center"><b>YES</b> </td><td align="center"></td></tr>
+<tr>
+<td align="center">clang++ </td><td align="center">3.6 </td><td align="center"><b>YES</b> </td><td align="center"></td></tr>
+</table>
+<p>Please note that one unit test (policyTests) will show some test failures on GCC. This is known, and fine. That unit test basically shows that GCC sometimes chooses to copy an objects instead of move it, even when a move is requested. Clang++, however, moves. This has no effect on simulation correctness. Rather, this unit test helps me understand some of the nuances that distinguish clang++ from g++.</p>
 <h2>Library dependencies</h2>
 <p>The minimal dependencies required to use the library to develop simulations are:</p>
 <ol type="1">
@@ -170,7 +190,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Forward simulations are constantly allocating relativel small objects whose lifetimes are random variables. For example, mutations enter populations every generation and are typically rapidly lost. We can improve the performance of a simulation using various techniques, including replacing the C++ standard library's allocator with a custom allocator and/or replacing the C library's malloc function with a faster replacement.</p>
 <p>The boost library provides fast_pool_allocator, which is a good replacement for the standard allocators. Google's perftools provide the tcmalloc library, which provides a faster malloc.</p>
 <p>Empirically, on my linux systems, I have found that the fastest combination appears to be the standard C++ allocator combined with linking to tcmalloc. See below for how to compile the examples in various ways, allowing you to benchmark performance on your own system.</p>
-<p><a href="performance/tcmalloc.pdf">See here</a> for an example of how tcmalloc can improve performance. Results are based on running the example program diploid_ind with N=1000, theta=rho=5000 for 10N generations.</p>
+<h2>Performance</h2>
+<p>Fwdpp 0.3.3 introduced massive performance improvements, requiring several API changes to make them possible.</p>
+<p>I performed a series of benchmarks on a 4-core, 3.6Ghz 64bit Intel machine, which is the same machine where the library is developed. I performed small-N and large-N simulations, comparing performance between the following simulations:</p>
+<table class="doxtable">
+<tr>
+<th align="center">Simulation </th><th align="center">Version </th><th align="center">Container/malloc combo  </th></tr>
+<tr>
+<td align="center">fwdpp </td><td align="center">0.3.2 </td><td align="center">std </td></tr>
+<tr>
+<td align="center">fwdpp </td><td align="center">0.3.2 </td><td align="center">std + tcmalloc </td></tr>
+<tr>
+<td align="center">fwdpp </td><td align="center">0.3.2 </td><td align="center">boost </td></tr>
+<tr>
+<td align="center">fwdpp </td><td align="center">0.3.2 </td><td align="center">boost + tcmalloc </td></tr>
+<tr>
+<td align="center">fwdpp </td><td align="center">0.3.3 </td><td align="center">std </td></tr>
+<tr>
+<td align="center">fwdpp </td><td align="center">0.3.3 </td><td align="center">std + tcmalloc </td></tr>
+<tr>
+<td align="center">fwdpp </td><td align="center">0.3.3 </td><td align="center">boost </td></tr>
+<tr>
+<td align="center">fwdpp </td><td align="center">0.3.3 </td><td align="center">boost + tcmalloc </td></tr>
+<tr>
+<td align="center"><a href="http://messerlab.org/software/">SLiM</a></td><td align="center">1.8 </td><td align="center">std </td></tr>
+</table>
+<p>All simulations were compiled with GCC 4.9.2 and using -O3. The intent is to check "out-of-the-box" performance, meaning that the programs were compiled as the developer intends them. In the case of fwdpp, the configure script allows all of the above combinations. For SLiM, I simply compiled it "as is", following the author's instructions.</p>
+<p>All fwdpp jobs are based on the example program diploid_ind that comes with the library.</p>
+<p>The parameters for the small-N simulations were <img class="formulaInl" alt="$N=1,000$" src="form_60.png"/>, <img class="formulaInl" alt="$\theta = \rho = 5,000$" src="form_61.png"/>, and evolved for <img class="formulaInl" alt="$10N$" src="form_62.png"/> generations. I performed 12 replicates of each of the above combinations, running 4 at a time using GNU parallel. The <a href="performance/time_0_3_3_.pdf">run times</a> and <a href="performance/mem_0_3_3.pdf">peak memory use</a> show that:</p>
+<ul>
+<li>fwdpp 0.3.3 is about 40% faster than 0.3.2</li>
+<li>fwdpp 0.3.3 is more memory efficient than previous versions</li>
+<li>fwdpp 0.3.3 outperforms SLiM for this case (which is a change from the fwdpp paper, where SLiM was faster for small-N simulations with large mutation/recombination rates).</li>
+</ul>
+<p>The parameters for the large-N simulations wer <img class="formulaInl" alt="$N=10,000$" src="form_63.png"/>, <img class="formulaInl" alt="$\theta = \rho = 4,000$" src="form_64.png"/>, and evolved for <img class="formulaInl" alt="$10N$" src="form_62.png"/> generations. I performed 4 replicates of each of the above combinations, running 4 at a time using GNU parallel, imposing a 36-hour wall clock limit, at which point a simulation was killed. For these parameters, SLiM did not complete a single replicated. The <a href="performance/bigtime_0_3_3.pdf">run time</a> and <a href="bigmem_0_3_3.pdf">peak memory use</a> results for fwdpp show that:</p>
+<ul>
+<li>fwdpp 0.3.2 took ~19.5 hours to complete a replicate</li>
+<li>fwdpp 0.3.3 takes ~9.5 hours and uses less memory than 0.3.2.</li>
+</ul>
+<p>This suggests that fwdpp 0.3.3 is <em>at least</em> ~4X faster than SLiM for simulations like this (because all SLiM jobs were killed at 36 hours).</p>
 <h2>Obtaining the source code</h2>
 <h3>Obtaining the master branch</h3>
 <p>You have a few options:</p>
@@ -192,7 +250,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Another option is to click on <a href="https://github.com/molpopgen/fwdpp/releases">releases</a> from the main <a href="https://github.com/molpopgen/fwdpp">project page</a> at github.</p>
 <p>On a decent browser, when you click on a release, it should be called fwdpp-version.tar.gz. Sometimes, though, you may get version.tar.gz. This is a browser-by-github interaction problem. On my systems, I get the correct result.</p>
 <h1>Installation</h1>
-<h2>The case of a standard system with all dependencies installed in standard locations</h2>
+<h2>What does fwdpp install?</h2>
+<p>Two things:</p>
+<ul>
+<li>The library itself, which is simply a set of C++ header files</li>
+<li>A single binary called fwdppConfig, which you may use to check what version you have installed on your system.</li>
+</ul>
+<div class="fragment"><div class="line">fwdppConfig --version</div>
+</div><!-- fragment --><p>fwdppConfig was introduced in version 0.3.3. Its main raison d'etre is in helping other configure scripts test for what version is on their system. For example, which may go into a configure.ac file for your project:</p>
+<div class="fragment"><div class="line">dnl Check that fwdpp version is sufficient</div>
+<div class="line"><span class="keywordflow">if</span> test <span class="stringliteral">&quot;$FWDPPVERSION&quot;</span> \&gt; <span class="stringliteral">&quot;0.3.2&quot;</span></div>
+<div class="line">then</div>
+<div class="line">        echo <span class="stringliteral">&quot;fwdpp version $FWDPPVERSION detected&quot;</span></div>
+<div class="line"><span class="keywordflow">else</span></div>
+<div class="line">        AC_MSG_ERROR([fwdpp &gt;= 0.3.3 required, please install from http:<span class="comment">//github.com/molpopgen/fwdpp])</span></div>
+<div class="line">fi</div>
+</div><!-- fragment --><h2>The case of a standard system with all dependencies installed in standard locations</h2>
 <p>If you cloned the git repo: </p>
 <div class="fragment"><div class="line">cd fwdpp</div>
 </div><!-- fragment --><p> If you downloaded a release:</p>
@@ -207,19 +280,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --><p>Currently, the example programs will not get installed via "make install". If you want them to be installed system-wide, copy the binaries manually to where you need them.</p>
 <h2>To compile examples and unit tests</h2>
 <p><b>Note:</b> if you only wish to compile the example, issue the 'make check' command from the example subdirectory. This will allow users without boost on their system to compile the examples but not attempt to compile the unit tests (which will fail to compile on systems without boost).</p>
-<h3>Using boost containers and the standard C-library malloc</h3>
+<h3>Using standard containers and the standard C-library malloc</h3>
 <p>This is the default:</p>
 <div class="fragment"><div class="line">./configure</div>
 <div class="line">make check</div>
-</div><!-- fragment --><h3>Using the standard C++ containers and the standard C library malloc</h3>
-<div class="fragment"><div class="line">./configure --enable-<a class="code" href="d3/dea/namespaceKTfwd_1_1tags.html#af816e12f7b8648716658bd3f7dbc5382ac00f0c4675b91fb8b918e4079a0b1bac">standard</a>=yes</div>
-<div class="line">make check</div>
-</div><!-- fragment --><h3>Using boost containers and Google's tcmalloc replacement for malloc</h3>
+</div><!-- fragment --><h3>Using the standard C++ containers and the Google's tcmalloc</h3>
+<p><b>This is the recommended method for maximum run-time performance.</b></p>
 <div class="fragment"><div class="line">./configure --enable-tcmalloc=yes</div>
 <div class="line">make check</div>
-</div><!-- fragment --><h3>Using the standard C++ library containers and Google's tcmalloc replacement for malloc</h3>
-<p>~~~{.sh} ./configure &ndash;enable-standard=yes &ndash;enable-tcmalloc=yes make check ~~~~</p>
-<p>Note: none of these options affect any other programs that you write using fwdpp! You'll have to manage that on your own for your projects' builds.</p>
+</div><!-- fragment --><h3>Using boost containers and Google's tcmalloc replacement for malloc</h3>
+<div class="fragment"><div class="line">./configure --enable-boost=yes --enable-tcmalloc=yes</div>
+<div class="line">make check</div>
+</div><!-- fragment --><p>Note: none of these options affect any other programs that you write using fwdpp! You'll have to manage that on your own for your projects' builds.</p>
 <h2>If dependent libraries are in non-stanard locations.</h2>
 <p>For example, if libsequence is in /opt:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#Note, you need to add in the desired optimization (-OXX) level:</span></div>

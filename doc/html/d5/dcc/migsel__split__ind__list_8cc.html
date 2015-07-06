@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.2</span>
+   &#160;<span id="projectnumber">0.3.3</span>
    </div>
   </td>
  </tr>
@@ -301,7 +301,8 @@ Functions</h2></td></tr>
 <div class="line">                                          mu_neutral+mu_del,</div>
 <div class="line">                                          std::bind(<a class="code" href="../../df/d07/structKTfwd_1_1infsites.html">KTfwd::infsites</a>(),r,&amp;pop.mut_lookup,</div>
 <div class="line">                                                    mu_neutral,mu_del,[&amp;r](){<span class="keywordflow">return</span> gsl_rng_uniform(r);},[&amp;s](){<span class="keywordflow">return</span> s;},[&amp;h](){<span class="keywordflow">return</span> h;}),</div>
-<div class="line">                                          std::bind(<a class="code" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a>(),std::placeholders::_1,std::placeholders::_2,</div>
+<div class="line">                                          std::bind(<a class="code" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a>(),std::placeholders::_1,std::placeholders::_2,std::placeholders::_3,</div>
+<div class="line">                                                    std::ref(pop.neutral),std::ref(pop.selected),</div>
 <div class="line">                                                    &amp;pop.gametes,</div>
 <div class="line">                                                    littler,</div>
 <div class="line">                                                    <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,</div>
@@ -335,6 +336,8 @@ Functions</h2></td></tr>
 <div class="line">                                                 std::bind(<a class="code" href="../../df/d07/structKTfwd_1_1infsites.html">KTfwd::infsites</a>(),r,&amp;pop.mut_lookup,</div>
 <div class="line">                                                           mu_neutral,mu_del,[&amp;r](){<span class="keywordflow">return</span> gsl_rng_uniform(r);},[&amp;s](){<span class="keywordflow">return</span> s;},[&amp;h](){<span class="keywordflow">return</span> h;}),</div>
 <div class="line">                                                 std::bind(<a class="code" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a>(),std::placeholders::_1,std::placeholders::_2,std::placeholders::_3,</div>
+<div class="line">                                                           std::ref(pop.neutral),std::ref(pop.selected),</div>
+<div class="line">                                                           &amp;pop.gametes,</div>
 <div class="line">                                                           littler,</div>
 <div class="line">                                                           <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,</div>
 <div class="line">                                                           recmap),</div>
@@ -357,7 +360,7 @@ Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">  <span class="comment">//Write the metapop in binary format to outstream</span></div>
 <div class="line">  std::ostringstream outstream;</div>
-<div class="line">  <a class="code" href="../../da/d8b/namespaceKTfwd.html#ab62f60cccc4f91b8d9695a4d9abf300a">KTfwd::write_binary_metapop</a>(&amp;pop.gametes,&amp;pop.mutations,&amp;pop.diploids,</div>
+<div class="line">  <a class="code" href="../../da/d8b/namespaceKTfwd.html#a9e69664068c15f09429f9087144fec7f">KTfwd::write_binary_metapop</a>(&amp;pop.gametes,&amp;pop.mutations,&amp;pop.diploids,</div>
 <div class="line">                              std::bind(<a class="code" href="../../de/d25/structKTfwd_1_1mutation__writer.html">KTfwd::mutation_writer</a>(),std::placeholders::_1,std::placeholders::_2),</div>
 <div class="line">                              outstream);</div>
 <div class="line"></div>
@@ -366,7 +369,7 @@ Functions</h2></td></tr>
 <div class="line">  <a class="code" href="../../d5/dcc/migsel__split__ind__list_8cc.html#a683a7a92132c42a3ebad506c8dadf6f6">diploid_bucket_vec</a> metapop_diploids2;</div>
 <div class="line">  <a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a> mutations2;</div>
 <div class="line"></div>
-<div class="line">  <a class="code" href="../../da/d8b/namespaceKTfwd.html#a3be2b56dc9917b88ed0a91ce7a3c6bb5">KTfwd::read_binary_metapop</a>(&amp;metapop_gametes2,&amp;mutations2,&amp;metapop_diploids2,</div>
+<div class="line">  <a class="code" href="../../da/d8b/namespaceKTfwd.html#aed5dfa35262dd186e117a0c98b7f77fb">KTfwd::read_binary_metapop</a>(&amp;metapop_gametes2,&amp;mutations2,&amp;metapop_diploids2,</div>
 <div class="line">                             std::bind(<a class="code" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">KTfwd::mutation_reader&lt;mtype&gt;</a>(),std::placeholders::_1),</div>
 <div class="line">                             instream);</div>
 <div class="line"></div>

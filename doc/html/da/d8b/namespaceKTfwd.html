@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.2</span>
+   &#160;<span id="projectnumber">0.3.3</span>
    </div>
   </td>
  </tr>
@@ -155,6 +155,8 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de8/structKTfwd_1_1mutation__remover.html">mutation_remover</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Policy determining how mutations are removed from gametes after sampling Policy determining how mutations are removed from gametes after sampling.  <a href="../../d4/de8/structKTfwd_1_1mutation__remover.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dcf/structKTfwd_1_1remove__nothing.html">remove_nothing</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcc/structKTfwd_1_1push__back__gamete.html">push_back_gamete</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An insertion policy for gametes.  <a href="../../d1/dcc/structKTfwd_1_1push__back__gamete.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -228,14 +230,14 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a28b6af326e670138f1077b17be3c8038"><td class="memTemplParams" colspan="2">template&lt;typename mtype &gt; </td></tr>
 <tr class="memitem:a28b6af326e670138f1077b17be3c8038"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a28b6af326e670138f1077b17be3c8038">multiloc_glist_t</a> = std::list&lt; <a class="el" href="../../da/d8b/namespaceKTfwd.html#a40afd65fd9ec426bfef16969d7c8c1c4">multiloc_gamete_t</a>&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;&gt;</td></tr>
 <tr class="separator:a28b6af326e670138f1077b17be3c8038"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabce0e5a9ecd3ba04a4ec5441f13532d8"><td class="memTemplParams" colspan="2">template&lt;typename mtype , typename diploid_t  = std::pair&lt;typename multiloc_glist_t&lt;mtype&gt;::iterator,					  typename multiloc_glist_t&lt;mtype&gt;::iterator&gt;&gt; </td></tr>
-<tr class="memitem:gabce0e5a9ecd3ba04a4ec5441f13532d8"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#gabce0e5a9ecd3ba04a4ec5441f13532d8">multiloc</a> = <a class="el" href="../../d3/d11/structKTfwd_1_1sugar_1_1multiloc.html">sugar::multiloc</a>&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>, <a class="el" href="../../da/d8b/namespaceKTfwd.html#a9cfa6f797c02d26ac60e49774096829b">multiloc_mlist_t</a>&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;, <a class="el" href="../../da/d8b/namespaceKTfwd.html#a28b6af326e670138f1077b17be3c8038">multiloc_glist_t</a>&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;, std::vector&lt; std::vector&lt; <a class="el" href="../../dc/dfb/structdiploid__t.html">diploid_t</a> &gt;&gt;, std::vector&lt; <a class="el" href="../../da/d8b/namespaceKTfwd.html#a28b6af326e670138f1077b17be3c8038">multiloc_glist_t</a>&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;&gt;, std::vector&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;, std::vector&lt; unsigned &gt;, std::unordered_set&lt; double, std::hash&lt; double &gt;, <a class="el" href="../../dc/d8e/structKTfwd_1_1equal__eps.html">KTfwd::equal_eps</a> &gt;&gt;</td></tr>
-<tr class="memdesc:gabce0e5a9ecd3ba04a4ec5441f13532d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single population, multilocus simulation without serialization. Cannot be copied, etc. See <a class="el" href="../../db/dd8/md_md_sugar.html">Tutorial 5: the "sugar" layer on top of fwdpp</a> for rationale, etc.  <a href="../../de/d6e/group__sugar.html#gabce0e5a9ecd3ba04a4ec5441f13532d8">More...</a><br/></td></tr>
-<tr class="separator:gabce0e5a9ecd3ba04a4ec5441f13532d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gade651e70b4a2357c1e686393c67dcdf5"><td class="memTemplParams" colspan="2">template&lt;typename mtype , typename mwriter , typename mreader , typename diploid_t  = std::pair&lt;typename multiloc_glist_t&lt;mtype&gt;::iterator,					  typename multiloc_glist_t&lt;mtype&gt;::iterator&gt;, typename diploid_writer_t  = diploidIOplaceholder, typename diploid_reader_t  = diploidIOplaceholder&gt; </td></tr>
-<tr class="memitem:gade651e70b4a2357c1e686393c67dcdf5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#gade651e70b4a2357c1e686393c67dcdf5">multiloc_serialized</a> = <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">sugar::multiloc_serialized</a>&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../da/d8b/namespaceKTfwd.html#a9cfa6f797c02d26ac60e49774096829b">multiloc_mlist_t</a>&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;, <a class="el" href="../../da/d8b/namespaceKTfwd.html#a28b6af326e670138f1077b17be3c8038">multiloc_glist_t</a>&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;, std::vector&lt; std::vector&lt; <a class="el" href="../../dc/dfb/structdiploid__t.html">diploid_t</a> &gt;&gt;, std::vector&lt; <a class="el" href="../../da/d8b/namespaceKTfwd.html#a28b6af326e670138f1077b17be3c8038">multiloc_glist_t</a>&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;&gt;, std::vector&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;, std::vector&lt; unsigned &gt;, std::unordered_set&lt; double, std::hash&lt; double &gt;, <a class="el" href="../../dc/d8e/structKTfwd_1_1equal__eps.html">KTfwd::equal_eps</a> &gt;, diploid_writer_t, diploid_reader_t &gt;</td></tr>
-<tr class="memdesc:gade651e70b4a2357c1e686393c67dcdf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single population, multilocus simulation with serialization. Can be copied, etc. See <a class="el" href="../../db/dd8/md_md_sugar.html">Tutorial 5: the "sugar" layer on top of fwdpp</a> for rationale, etc.  <a href="../../de/d6e/group__sugar.html#gade651e70b4a2357c1e686393c67dcdf5">More...</a><br/></td></tr>
-<tr class="separator:gade651e70b4a2357c1e686393c67dcdf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga605debfcafc07bfdb547f435742b9afb"><td class="memTemplParams" colspan="2">template&lt;typename mtype , typename diploid_t  = std::pair&lt;typename multiloc_glist_t&lt;mtype&gt;::iterator,					  typename multiloc_glist_t&lt;mtype&gt;::iterator&gt;&gt; </td></tr>
+<tr class="memitem:ga605debfcafc07bfdb547f435742b9afb"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#ga605debfcafc07bfdb547f435742b9afb">multiloc</a> = <a class="el" href="../../d3/d11/structKTfwd_1_1sugar_1_1multiloc.html">sugar::multiloc</a>&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>, <a class="el" href="../../da/d8b/namespaceKTfwd.html#a9cfa6f797c02d26ac60e49774096829b">multiloc_mlist_t</a>&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;, <a class="el" href="../../da/d8b/namespaceKTfwd.html#a28b6af326e670138f1077b17be3c8038">multiloc_glist_t</a>&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;, std::vector&lt; std::vector&lt; <a class="el" href="../../dc/dfb/structdiploid__t.html">diploid_t</a> &gt;&gt;, std::vector&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;, std::vector&lt; unsigned &gt;, std::unordered_set&lt; double, std::hash&lt; double &gt;, <a class="el" href="../../dc/d8e/structKTfwd_1_1equal__eps.html">KTfwd::equal_eps</a> &gt;&gt;</td></tr>
+<tr class="memdesc:ga605debfcafc07bfdb547f435742b9afb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single population, multilocus simulation without serialization. Cannot be copied, etc. See <a class="el" href="../../db/dd8/md_md_sugar.html">Tutorial 5: the "sugar" layer on top of fwdpp</a> for rationale, etc.  <a href="../../de/d6e/group__sugar.html#ga605debfcafc07bfdb547f435742b9afb">More...</a><br/></td></tr>
+<tr class="separator:ga605debfcafc07bfdb547f435742b9afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5ea69876641d770d4bf6ce3901307b52"><td class="memTemplParams" colspan="2">template&lt;typename mtype , typename mwriter , typename mreader , typename diploid_t  = std::pair&lt;typename multiloc_glist_t&lt;mtype&gt;::iterator,					  typename multiloc_glist_t&lt;mtype&gt;::iterator&gt;, typename diploid_writer_t  = diploidIOplaceholder, typename diploid_reader_t  = diploidIOplaceholder&gt; </td></tr>
+<tr class="memitem:ga5ea69876641d770d4bf6ce3901307b52"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#ga5ea69876641d770d4bf6ce3901307b52">multiloc_serialized</a> = <a class="el" href="../../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html">sugar::multiloc_serialized</a>&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>, <a class="el" href="../../da/d8b/namespaceKTfwd.html#a9cfa6f797c02d26ac60e49774096829b">multiloc_mlist_t</a>&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;, <a class="el" href="../../da/d8b/namespaceKTfwd.html#a28b6af326e670138f1077b17be3c8038">multiloc_glist_t</a>&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;, std::vector&lt; std::vector&lt; <a class="el" href="../../dc/dfb/structdiploid__t.html">diploid_t</a> &gt;&gt;, std::vector&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;, std::vector&lt; unsigned &gt;, std::unordered_set&lt; double, std::hash&lt; double &gt;, <a class="el" href="../../dc/d8e/structKTfwd_1_1equal__eps.html">KTfwd::equal_eps</a> &gt;, diploid_writer_t, diploid_reader_t &gt;</td></tr>
+<tr class="memdesc:ga5ea69876641d770d4bf6ce3901307b52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single population, multilocus simulation with serialization. Can be copied, etc. See <a class="el" href="../../db/dd8/md_md_sugar.html">Tutorial 5: the "sugar" layer on top of fwdpp</a> for rationale, etc.  <a href="../../de/d6e/group__sugar.html#ga5ea69876641d770d4bf6ce3901307b52">More...</a><br/></td></tr>
+<tr class="separator:ga5ea69876641d770d4bf6ce3901307b52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ae4c7f1ef9dd1bd058811d3e2a69914"><td class="memTemplParams" colspan="2">template&lt;typename mtype &gt; </td></tr>
 <tr class="memitem:a4ae4c7f1ef9dd1bd058811d3e2a69914"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a4ae4c7f1ef9dd1bd058811d3e2a69914">singlepop_mlist_t</a> = std::list&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>, std::allocator&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt; &gt;</td></tr>
 <tr class="separator:a4ae4c7f1ef9dd1bd058811d3e2a69914"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -264,13 +266,13 @@ Functions</h2></td></tr>
 <tr class="memitem:a3a49997b8e11c148177adea58dd916a6"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a3a49997b8e11c148177adea58dd916a6">check_sum</a> (const vector_type&lt; gamete_type, vector_type_allocator &gt; *gametes, const unsigned &amp;twoN)</td></tr>
 <tr class="memdesc:a3a49997b8e11c148177adea58dd916a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the sum of counts in gametes equals twoN, false otherwise Returns true if the sum of counts in gametes equals twoN, false otherwise.  <a href="#a3a49997b8e11c148177adea58dd916a6">More...</a><br/></td></tr>
 <tr class="separator:a3a49997b8e11c148177adea58dd916a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a46b107991548a40821e132496c1693"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename recombination_map , typename list_type_allocator , template&lt; typename, typename &gt; class list_type&gt; </td></tr>
-<tr class="memitem:a8a46b107991548a40821e132496c1693"><td class="memTemplItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a8a46b107991548a40821e132496c1693">recombine_gametes</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const double &amp;littler, list_type&lt; typename iterator_type::value_type, list_type_allocator &gt; *gametes, iterator_type &amp;g1, iterator_type &amp;g2, const recombination_map &amp;mf)</td></tr>
-<tr class="memdesc:a8a46b107991548a40821e132496c1693"><td class="mdescLeft">&#160;</td><td class="mdescRight">recombination for individual-based forward simulations  <a href="#a8a46b107991548a40821e132496c1693">More...</a><br/></td></tr>
-<tr class="separator:a8a46b107991548a40821e132496c1693"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad758ef2a67e1fbb768640e533377f506"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename list_type_allocator , typename vector_type_allocator , template&lt; typename, typename &gt; class vector_type, template&lt; typename, typename &gt; class list_type&gt; </td></tr>
-<tr class="memitem:ad758ef2a67e1fbb768640e533377f506"><td class="memTemplItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#ad758ef2a67e1fbb768640e533377f506">recombine_gametes</a> (const vector_type&lt; double, vector_type_allocator &gt; &amp;pos, list_type&lt; typename iterator_type::value_type, list_type_allocator &gt; *gametes, iterator_type &amp;g1, iterator_type &amp;g2)</td></tr>
-<tr class="separator:ad758ef2a67e1fbb768640e533377f506"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af28e27f1e9c39173b7a4d55256761c28"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename recombination_map , typename list_type_allocator , template&lt; typename, typename &gt; class list_type&gt; </td></tr>
+<tr class="memitem:af28e27f1e9c39173b7a4d55256761c28"><td class="memTemplItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#af28e27f1e9c39173b7a4d55256761c28">recombine_gametes</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const double &amp;littler, list_type&lt; typename iterator_type::value_type, list_type_allocator &gt; *gametes, iterator_type &amp;g1, iterator_type &amp;g2, const recombination_map &amp;mf, typename iterator_type::value_type::mutation_container &amp;neutral, typename iterator_type::value_type::mutation_container &amp;selected)</td></tr>
+<tr class="memdesc:af28e27f1e9c39173b7a4d55256761c28"><td class="mdescLeft">&#160;</td><td class="mdescRight">recombination for individual-based forward simulations  <a href="#af28e27f1e9c39173b7a4d55256761c28">More...</a><br/></td></tr>
+<tr class="separator:af28e27f1e9c39173b7a4d55256761c28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bc6fb0ae71894650f5f7fc821c02120"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename list_type_allocator , typename vector_type_allocator , template&lt; typename, typename &gt; class vector_type, template&lt; typename, typename &gt; class list_type&gt; </td></tr>
+<tr class="memitem:a6bc6fb0ae71894650f5f7fc821c02120"><td class="memTemplItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a6bc6fb0ae71894650f5f7fc821c02120">recombine_gametes</a> (const vector_type&lt; double, vector_type_allocator &gt; &amp;pos, list_type&lt; typename iterator_type::value_type, list_type_allocator &gt; *gametes, iterator_type &amp;g1, iterator_type &amp;g2, typename iterator_type::value_type::mutation_container &amp;neutral, typename iterator_type::value_type::mutation_container &amp;selected)</td></tr>
+<tr class="separator:a6bc6fb0ae71894650f5f7fc821c02120"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18df6351fa3148914bbb844c36bc3e05"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_geno_t , typename diploid_vector_type_allocator , typename diploid_fitness_function , typename mutation_removal_policy , typename mutation_model , typename recombination_policy , typename mutation_insertion_policy , typename gamete_insertion_policy , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type&gt; </td></tr>
 <tr class="memitem:a18df6351fa3148914bbb844c36bc3e05"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a18df6351fa3148914bbb844c36bc3e05">sample_diploid</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *gametes, diploid_vector_type&lt; diploid_geno_t, diploid_vector_type_allocator &gt; *diploids, mutation_list_type&lt; typename gamete_type::mutation_type, mutation_list_type_allocator &gt; *mutations, const unsigned &amp;N_curr, const double &amp;mu, const mutation_model &amp;mmodel, const recombination_policy &amp;rec_pol, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy_mut, const diploid_fitness_function &amp;ff, const mutation_removal_policy &amp;mp, const double &amp;f=0)</td></tr>
 <tr class="separator:a18df6351fa3148914bbb844c36bc3e05"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -284,13 +286,13 @@ Functions</h2></td></tr>
 <tr class="memitem:ad592697866c4bacdf00ccb6e902c0891"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#ad592697866c4bacdf00ccb6e902c0891">sample_diploid</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *<a class="el" href="../../de/d6e/group__sugar.html#ga49b0bed2e77578074c133af95e9d3a66">metapop</a>, metapop_diploid_vector_type&lt; diploid_vector_type&lt; diploid_geno_t, diploid_vector_type_allocator &gt;, metapop_diploid_vector_type_allocator &gt; *diploids, mutation_list_type&lt; typename gamete_type::mutation_type, mutation_list_type_allocator &gt; *mutations, const unsigned *N_curr, const unsigned *N_next, const double &amp;mu, const mutation_model &amp;mmodel, const recombination_policy &amp;rec_pol, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy_mut, const diploid_fitness_function_container &amp;ffs, const mutation_removal_policy &amp;mp, const migration_policy &amp;mig, const double *f=nullptr)</td></tr>
 <tr class="memdesc:ad592697866c4bacdf00ccb6e902c0891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evolve a metapopulation where demes may be changing size. For individual-based sims. Evolve a metapopulation where demes may be changing size. For individual-based sims.  <a href="#ad592697866c4bacdf00ccb6e902c0891">More...</a><br/></td></tr>
 <tr class="separator:ad592697866c4bacdf00ccb6e902c0891"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9b321ba63144739f7a25675da26bf02"><td class="memTemplParams" colspan="2">template&lt;typename diploid_geno_t , typename gamete_type , typename glist_vector_type_allocator , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_vector_type_allocator , typename locus_vector_type_allocator , typename diploid_fitness_function , typename mutation_removal_policy , typename mutation_model_container , typename recombination_policy_container , typename mutation_insertion_policy , typename gamete_insertion_policy , typename bw_locus_rec_fxn , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class glist_vector_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type, template&lt; typename, typename &gt; class locus_vector_type&gt; </td></tr>
-<tr class="memitem:ab9b321ba63144739f7a25675da26bf02"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#ab9b321ba63144739f7a25675da26bf02">sample_diploid</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, glist_vector_type&lt; gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt;, glist_vector_type_allocator &gt; *gametes, diploid_vector_type&lt; locus_vector_type&lt; diploid_geno_t, locus_vector_type_allocator &gt;, diploid_vector_type_allocator &gt; *diploids, mutation_list_type&lt; typename gamete_type::mutation_type, mutation_list_type_allocator &gt; *mutations, const unsigned &amp;N_curr, const unsigned &amp;N_next, const double *mu, const mutation_model_container &amp;mmodel, const recombination_policy_container &amp;rec_policies, const double *r_between_loci, const bw_locus_rec_fxn &amp;blrf, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy_mut, const diploid_fitness_function &amp;ff, const mutation_removal_policy &amp;mp, const double &amp;f=0)</td></tr>
-<tr class="memdesc:ab9b321ba63144739f7a25675da26bf02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single deme, multilocus model, changing population size.  <a href="#ab9b321ba63144739f7a25675da26bf02">More...</a><br/></td></tr>
-<tr class="separator:ab9b321ba63144739f7a25675da26bf02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe562b17f78f17b16d477ae93a5c2eb8"><td class="memTemplParams" colspan="2">template&lt;typename diploid_geno_t , typename gamete_type , typename glist_vector_type_allocator , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_vector_type_allocator , typename locus_vector_type_allocator , typename diploid_fitness_function , typename mutation_removal_policy , typename mutation_model_container , typename recombination_policy_container , typename mutation_insertion_policy , typename gamete_insertion_policy , typename bw_locus_rec_fxn , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class glist_vector_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type, template&lt; typename, typename &gt; class locus_vector_type&gt; </td></tr>
-<tr class="memitem:afe562b17f78f17b16d477ae93a5c2eb8"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#afe562b17f78f17b16d477ae93a5c2eb8">sample_diploid</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, glist_vector_type&lt; gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt;, glist_vector_type_allocator &gt; *gametes, diploid_vector_type&lt; locus_vector_type&lt; diploid_geno_t, locus_vector_type_allocator &gt;, diploid_vector_type_allocator &gt; *diploids, mutation_list_type&lt; typename gamete_type::mutation_type, mutation_list_type_allocator &gt; *mutations, const unsigned &amp;N, const double *mu, const mutation_model_container &amp;mmodel, const recombination_policy_container &amp;rec_policies, const double *r_between_loci, const bw_locus_rec_fxn &amp;blrf, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy_mut, const diploid_fitness_function &amp;ff, const mutation_removal_policy &amp;mp, const double &amp;f=0)</td></tr>
-<tr class="separator:afe562b17f78f17b16d477ae93a5c2eb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaffceb4a238f2a75a05512a8c717aa49"><td class="memTemplParams" colspan="2">template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_vector_type_allocator , typename locus_vector_type_allocator , typename diploid_fitness_function , typename mutation_removal_policy , typename mutation_model_container , typename recombination_policy_container , typename mutation_insertion_policy , typename gamete_insertion_policy , typename bw_locus_rec_fxn , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type, template&lt; typename, typename &gt; class locus_vector_type&gt; </td></tr>
+<tr class="memitem:aaffceb4a238f2a75a05512a8c717aa49"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#aaffceb4a238f2a75a05512a8c717aa49">sample_diploid</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *gametes, diploid_vector_type&lt; locus_vector_type&lt; diploid_geno_t, locus_vector_type_allocator &gt;, diploid_vector_type_allocator &gt; *diploids, mutation_list_type&lt; typename gamete_type::mutation_type, mutation_list_type_allocator &gt; *mutations, const unsigned &amp;N_curr, const unsigned &amp;N_next, const double *mu, const mutation_model_container &amp;mmodel, const recombination_policy_container &amp;rec_policies, const double *r_between_loci, const bw_locus_rec_fxn &amp;blrf, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy_mut, const diploid_fitness_function &amp;ff, const mutation_removal_policy &amp;mp, const double &amp;f=0)</td></tr>
+<tr class="memdesc:aaffceb4a238f2a75a05512a8c717aa49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single deme, multilocus model, changing population size.  <a href="#aaffceb4a238f2a75a05512a8c717aa49">More...</a><br/></td></tr>
+<tr class="separator:aaffceb4a238f2a75a05512a8c717aa49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af37e12388574a535d7162b2b8b4fa343"><td class="memTemplParams" colspan="2">template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_vector_type_allocator , typename locus_vector_type_allocator , typename diploid_fitness_function , typename mutation_removal_policy , typename mutation_model_container , typename recombination_policy_container , typename mutation_insertion_policy , typename gamete_insertion_policy , typename bw_locus_rec_fxn , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type, template&lt; typename, typename &gt; class locus_vector_type&gt; </td></tr>
+<tr class="memitem:af37e12388574a535d7162b2b8b4fa343"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#af37e12388574a535d7162b2b8b4fa343">sample_diploid</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *gametes, diploid_vector_type&lt; locus_vector_type&lt; diploid_geno_t, locus_vector_type_allocator &gt;, diploid_vector_type_allocator &gt; *diploids, mutation_list_type&lt; typename gamete_type::mutation_type, mutation_list_type_allocator &gt; *mutations, const unsigned &amp;N, const double *mu, const mutation_model_container &amp;mmodel, const recombination_policy_container &amp;rec_policies, const double *r_between_loci, const bw_locus_rec_fxn &amp;blrf, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy_mut, const diploid_fitness_function &amp;ff, const mutation_removal_policy &amp;mp, const double &amp;f=0)</td></tr>
+<tr class="separator:af37e12388574a535d7162b2b8b4fa343"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a105a292a1e5c591d64d14caf4062e2f3"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename fitness_updating_policy_hom , typename fitness_updating_policy_het &gt; </td></tr>
 <tr class="memitem:a105a292a1e5c591d64d14caf4062e2f3"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a105a292a1e5c591d64d14caf4062e2f3">site_dependent_fitness2</a> (iterator_type __first1, iterator_type __last1, iterator_type __first2, iterator_type __last2, const fitness_updating_policy_hom &amp;fpol_hom, const fitness_updating_policy_het &amp;fpol_het, const double &amp;starting_fitness=1.)</td></tr>
 <tr class="separator:a105a292a1e5c591d64d14caf4062e2f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -331,29 +333,29 @@ Functions</h2></td></tr>
 <tr class="memitem:ad884f819fe299dbf52d65253e21c1d17"><td class="memTemplParams" colspan="2">template&lt;typename mutation_type , typename list_type &gt; </td></tr>
 <tr class="memitem:ad884f819fe299dbf52d65253e21c1d17"><td class="memTemplItemLeft" align="right" valign="top">list_type::iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#ad884f819fe299dbf52d65253e21c1d17">insert_unique_or_fail</a> (mutation_type &amp;&amp;m, list_type *mutations)</td></tr>
 <tr class="separator:ad884f819fe299dbf52d65253e21c1d17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4826160f7e99b8c2cdb7fa2769c6aeeb"><td class="memTemplParams" colspan="2">template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_list_type_allocator , template&lt; typename, typename &gt; class gamete_list_type, typename mutation_type , typename mutation_list_type_allocator , template&lt; typename, typename &gt; class mutation_list_type, typename vector_type_allocator , template&lt; typename, typename &gt; class diploid_vector_type, typename mutation_writer_type , typename ostreamtype , typename diploid_writer_t  = diploidIOplaceholder&gt; </td></tr>
-<tr class="memitem:a4826160f7e99b8c2cdb7fa2769c6aeeb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a4826160f7e99b8c2cdb7fa2769c6aeeb">write_binary_pop</a> (const gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *gametes, const mutation_list_type&lt; mutation_type, mutation_list_type_allocator &gt; *mutations, const diploid_vector_type&lt; diploid_geno_t, vector_type_allocator &gt; *diploids, const mutation_writer_type &amp;mw, ostreamtype &amp;buffer, const diploid_writer_t &amp;dw=diploid_writer_t())</td></tr>
-<tr class="memdesc:a4826160f7e99b8c2cdb7fa2769c6aeeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write population to binary-format file for individual-based simulations.  <a href="#a4826160f7e99b8c2cdb7fa2769c6aeeb">More...</a><br/></td></tr>
-<tr class="separator:a4826160f7e99b8c2cdb7fa2769c6aeeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5ddb3ab8a5d762b4feda87205ad2253"><td class="memTemplParams" colspan="2">template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_list_type_allocator , template&lt; typename, typename &gt; class gamete_list_type, typename mutation_type , typename mutation_list_type_allocator , template&lt; typename, typename &gt; class mutation_list_type, typename vector_type_allocator , template&lt; typename, typename &gt; class diploid_vector_type, typename mutation_reader_type , typename istreamtype , typename diploid_reader_t  = diploidIOplaceholder&gt; </td></tr>
-<tr class="memitem:af5ddb3ab8a5d762b4feda87205ad2253"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#af5ddb3ab8a5d762b4feda87205ad2253">read_binary_pop</a> (gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *gametes, mutation_list_type&lt; mutation_type, mutation_list_type_allocator &gt; *mutations, diploid_vector_type&lt; diploid_geno_t, vector_type_allocator &gt; *diploids, const mutation_reader_type &amp;mr, istreamtype &amp;in, const diploid_reader_t &amp;dr=diploid_reader_t())</td></tr>
-<tr class="memdesc:af5ddb3ab8a5d762b4feda87205ad2253"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the population back from a binary-format file for individual-based simulations.  <a href="#af5ddb3ab8a5d762b4feda87205ad2253">More...</a><br/></td></tr>
-<tr class="separator:af5ddb3ab8a5d762b4feda87205ad2253"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a155a4a3be11d90ac32a75618ccf24a8a"><td class="memTemplParams" colspan="2">template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_list_type_allocator , template&lt; typename, typename &gt; class gamete_list_type, typename mlocus_vector_type_allocator , template&lt; typename, typename &gt; class mlocus_vector_type, typename mutation_type , typename mutation_list_type_allocator , template&lt; typename, typename &gt; class mutation_list_type, typename vector_type_allocator , template&lt; typename, typename &gt; class diploid_vector_type, typename diploid_vv_type_allocator , template&lt; typename, typename &gt; class diploid_vv_type, typename mutation_writer_type , typename ostreamtype , typename diploid_writer_t  = diploidIOplaceholder&gt; </td></tr>
-<tr class="memitem:a155a4a3be11d90ac32a75618ccf24a8a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a155a4a3be11d90ac32a75618ccf24a8a">write_binary_pop</a> (const mlocus_vector_type&lt; gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt;, mlocus_vector_type_allocator &gt; *mlocus_gametes, const mutation_list_type&lt; mutation_type, mutation_list_type_allocator &gt; *mutations, const diploid_vv_type&lt; diploid_vector_type&lt; diploid_geno_t, vector_type_allocator &gt;, diploid_vv_type_allocator &gt; *diploids, const mutation_writer_type &amp;mw, ostreamtype &amp;buffer, const diploid_writer_t &amp;dw=diploid_writer_t())</td></tr>
-<tr class="memdesc:a155a4a3be11d90ac32a75618ccf24a8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the population to a binary-format file for individual-based multilocus simulations.  <a href="#a155a4a3be11d90ac32a75618ccf24a8a">More...</a><br/></td></tr>
-<tr class="separator:a155a4a3be11d90ac32a75618ccf24a8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1ea92a126bcb9616e9c6a0207760774"><td class="memTemplParams" colspan="2">template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_list_type_allocator , template&lt; typename, typename &gt; class gamete_list_type, typename mlocus_vector_type_allocator , template&lt; typename, typename &gt; class mlocus_vector_type, typename mutation_type , typename mutation_list_type_allocator , template&lt; typename, typename &gt; class mutation_list_type, typename vector_type_allocator , template&lt; typename, typename &gt; class diploid_vector_type, typename diploid_vv_type_allocator , template&lt; typename, typename &gt; class diploid_vv_type, typename mutation_reader_type , typename istreamtype , typename diploid_reader_t  = diploidIOplaceholder&gt; </td></tr>
-<tr class="memitem:af1ea92a126bcb9616e9c6a0207760774"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#af1ea92a126bcb9616e9c6a0207760774">read_binary_pop</a> (mlocus_vector_type&lt; gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt;, mlocus_vector_type_allocator &gt; *mlocus_gametes, mutation_list_type&lt; mutation_type, mutation_list_type_allocator &gt; *mutations, diploid_vv_type&lt; diploid_vector_type&lt; diploid_geno_t, vector_type_allocator &gt;, diploid_vv_type_allocator &gt; *diploids, const mutation_reader_type &amp;mr, istreamtype &amp;in, const diploid_reader_t &amp;dr=diploid_reader_t())</td></tr>
-<tr class="memdesc:af1ea92a126bcb9616e9c6a0207760774"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the population back from a binary-format file for individual-based multilocus simulations.  <a href="#af1ea92a126bcb9616e9c6a0207760774">More...</a><br/></td></tr>
-<tr class="separator:af1ea92a126bcb9616e9c6a0207760774"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab62f60cccc4f91b8d9695a4d9abf300a"><td class="memTemplParams" colspan="2">template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_list_type_allocator , template&lt; typename, typename &gt; class gamete_list_type, typename mutation_type , typename mutation_list_type_allocator , template&lt; typename, typename &gt; class mutation_list_type, typename vector_type_allocator , template&lt; typename, typename &gt; class diploid_vector_type, typename diploid_vv_type_allocator , template&lt; typename, typename &gt; class diploid_vv_type, typename mutation_writer_type , typename ostreamtype , typename diploid_writer_t  = diploidIOplaceholder&gt; </td></tr>
-<tr class="memitem:ab62f60cccc4f91b8d9695a4d9abf300a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#ab62f60cccc4f91b8d9695a4d9abf300a">write_binary_metapop</a> (const gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *<a class="el" href="../../de/d6e/group__sugar.html#ga49b0bed2e77578074c133af95e9d3a66">metapop</a>, const mutation_list_type&lt; mutation_type, mutation_list_type_allocator &gt; *mutations, const diploid_vv_type&lt; diploid_vector_type&lt; diploid_geno_t, vector_type_allocator &gt;, diploid_vv_type_allocator &gt; *diploids, const mutation_writer_type &amp;mw, ostreamtype &amp;buffer, const diploid_writer_t &amp;dw=diploid_writer_t())</td></tr>
-<tr class="separator:ab62f60cccc4f91b8d9695a4d9abf300a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3be2b56dc9917b88ed0a91ce7a3c6bb5"><td class="memTemplParams" colspan="2">template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_list_type_allocator , template&lt; typename, typename &gt; class gamete_list_type, typename mutation_type , typename mutation_list_type_allocator , template&lt; typename, typename &gt; class mutation_list_type, typename vector_type_allocator , template&lt; typename, typename &gt; class diploid_vector_type, typename diploid_vv_type_allocator , template&lt; typename, typename &gt; class diploid_vv_type, typename mutation_reader_type , typename istreamtype , typename diploid_reader_t  = diploidIOplaceholder&gt; </td></tr>
-<tr class="memitem:a3be2b56dc9917b88ed0a91ce7a3c6bb5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a3be2b56dc9917b88ed0a91ce7a3c6bb5">read_binary_metapop</a> (gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *gametes, mutation_list_type&lt; mutation_type, mutation_list_type_allocator &gt; *mutations, diploid_vv_type&lt; diploid_vector_type&lt; diploid_geno_t, vector_type_allocator &gt;, diploid_vv_type_allocator &gt; *diploids, const mutation_reader_type &amp;mr, istreamtype &amp;in, const diploid_reader_t &amp;dr=diploid_reader_t())</td></tr>
-<tr class="memdesc:a3be2b56dc9917b88ed0a91ce7a3c6bb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the metapopulation back from a binary-format file for individual-based simulations Read the metapopulation back from a binary-format file.  <a href="#a3be2b56dc9917b88ed0a91ce7a3c6bb5">More...</a><br/></td></tr>
-<tr class="separator:a3be2b56dc9917b88ed0a91ce7a3c6bb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a373a7cb82b761c6d2a49059031fe69de"><td class="memTemplParams" colspan="2">template&lt;typename glist_t , typename mlist_t , typename dipvector_t , typename mutation_writer_type , typename ostreamtype , typename diploid_writer_t  = diploidIOplaceholder&gt; </td></tr>
+<tr class="memitem:a373a7cb82b761c6d2a49059031fe69de"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a373a7cb82b761c6d2a49059031fe69de">write_binary_pop</a> (const glist_t *gametes, const mlist_t *mutations, const dipvector_t *diploids, const mutation_writer_type &amp;mw, ostreamtype &amp;buffer, const diploid_writer_t &amp;dw=diploid_writer_t())</td></tr>
+<tr class="memdesc:a373a7cb82b761c6d2a49059031fe69de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write population to binary-format file for individual-based simulations.  <a href="#a373a7cb82b761c6d2a49059031fe69de">More...</a><br/></td></tr>
+<tr class="separator:a373a7cb82b761c6d2a49059031fe69de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a770312024c111ecd9e065854e527cf86"><td class="memTemplParams" colspan="2">template&lt;typename glist_t , typename mlist_t , typename dipvector_t , typename mutation_reader_type , typename istreamtype , typename diploid_reader_t  = diploidIOplaceholder&gt; </td></tr>
+<tr class="memitem:a770312024c111ecd9e065854e527cf86"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a770312024c111ecd9e065854e527cf86">read_binary_pop</a> (glist_t *gametes, mlist_t *mutations, dipvector_t *diploids, const mutation_reader_type &amp;mr, istreamtype &amp;in, const diploid_reader_t &amp;dr=diploid_reader_t())</td></tr>
+<tr class="memdesc:a770312024c111ecd9e065854e527cf86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the population back from a binary-format file for individual-based simulations.  <a href="#a770312024c111ecd9e065854e527cf86">More...</a><br/></td></tr>
+<tr class="separator:a770312024c111ecd9e065854e527cf86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03aa95883bbe25896df2203d505966e0"><td class="memTemplParams" colspan="2">template&lt;typename glist_t , typename mlist_t , typename dipvector_t , typename mutation_writer_type , typename ostreamtype , typename diploid_writer_t  = diploidIOplaceholder&gt; </td></tr>
+<tr class="memitem:a03aa95883bbe25896df2203d505966e0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a03aa95883bbe25896df2203d505966e0">write_binary_pop_mloc</a> (const glist_t *mlocus_gametes, const mlist_t *mutations, const dipvector_t *diploids, const mutation_writer_type &amp;mw, ostreamtype &amp;buffer, const diploid_writer_t &amp;dw=diploid_writer_t())</td></tr>
+<tr class="memdesc:a03aa95883bbe25896df2203d505966e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the population to a binary-format file for individual-based multilocus simulations.  <a href="#a03aa95883bbe25896df2203d505966e0">More...</a><br/></td></tr>
+<tr class="separator:a03aa95883bbe25896df2203d505966e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add75c54e71dd19c49539ddd07b5898bb"><td class="memTemplParams" colspan="2">template&lt;typename glist_t , typename mlist_t , typename dipvector_t , typename mutation_reader_type , typename istreamtype , typename diploid_reader_t  = diploidIOplaceholder&gt; </td></tr>
+<tr class="memitem:add75c54e71dd19c49539ddd07b5898bb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#add75c54e71dd19c49539ddd07b5898bb">read_binary_pop_mloc</a> (glist_t *mlocus_gametes, mlist_t *mutations, dipvector_t *diploids, const mutation_reader_type &amp;mr, istreamtype &amp;in, const diploid_reader_t &amp;dr=diploid_reader_t())</td></tr>
+<tr class="memdesc:add75c54e71dd19c49539ddd07b5898bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the population back from a binary-format file for individual-based multilocus simulations.  <a href="#add75c54e71dd19c49539ddd07b5898bb">More...</a><br/></td></tr>
+<tr class="separator:add75c54e71dd19c49539ddd07b5898bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e69664068c15f09429f9087144fec7f"><td class="memTemplParams" colspan="2">template&lt;typename glist_t , typename mlist_t , typename dipvector_t , typename mutation_writer_type , typename ostreamtype , typename diploid_writer_t  = diploidIOplaceholder&gt; </td></tr>
+<tr class="memitem:a9e69664068c15f09429f9087144fec7f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a9e69664068c15f09429f9087144fec7f">write_binary_metapop</a> (const glist_t *<a class="el" href="../../de/d6e/group__sugar.html#ga49b0bed2e77578074c133af95e9d3a66">metapop</a>, const mlist_t *mutations, const dipvector_t *diploids, const mutation_writer_type &amp;mw, ostreamtype &amp;buffer, const diploid_writer_t &amp;dw=diploid_writer_t())</td></tr>
+<tr class="separator:a9e69664068c15f09429f9087144fec7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed5dfa35262dd186e117a0c98b7f77fb"><td class="memTemplParams" colspan="2">template&lt;typename glist_t , typename mlist_t , typename dipvector_t , typename mutation_reader_type , typename istreamtype , typename diploid_reader_t  = diploidIOplaceholder&gt; </td></tr>
+<tr class="memitem:aed5dfa35262dd186e117a0c98b7f77fb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#aed5dfa35262dd186e117a0c98b7f77fb">read_binary_metapop</a> (glist_t *<a class="el" href="../../de/d6e/group__sugar.html#ga49b0bed2e77578074c133af95e9d3a66">metapop</a>, mlist_t *mutations, dipvector_t *diploids, const mutation_reader_type &amp;mr, istreamtype &amp;in, const diploid_reader_t &amp;dr=diploid_reader_t())</td></tr>
+<tr class="memdesc:aed5dfa35262dd186e117a0c98b7f77fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the metapopulation back from a binary-format file for individual-based simulations Read the metapopulation back from a binary-format file.  <a href="#aed5dfa35262dd186e117a0c98b7f77fb">More...</a><br/></td></tr>
+<tr class="separator:aed5dfa35262dd186e117a0c98b7f77fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a949b79d4df5bc10c6c1b31d311e4a392"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename mutation_model , typename mutation_insertion_policy , typename gamete_insertion_policy , typename list_type_allocator , typename list_type_allocator2 , template&lt; typename, typename &gt; class list_type, template&lt; typename, typename &gt; class list_type2&gt; </td></tr>
 <tr class="memitem:a949b79d4df5bc10c6c1b31d311e4a392"><td class="memTemplItemLeft" align="right" valign="top">iterator_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a949b79d4df5bc10c6c1b31d311e4a392">mutate_gamete</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const double &amp;mu, list_type&lt; typename iterator_type::value_type, list_type_allocator &gt; *gametes, list_type2&lt; typename iterator_type::value_type::mutation_type, list_type_allocator2 &gt; *mutations, iterator_type &amp;g, const mutation_model &amp;mmodel, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy)</td></tr>
 <tr class="memdesc:a949b79d4df5bc10c6c1b31d311e4a392"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply mutation model to an individual gamete. Used for individual-based forward simulations.  <a href="#a949b79d4df5bc10c6c1b31d311e4a392">More...</a><br/></td></tr>
@@ -1131,28 +1133,28 @@ template&lt;typename T , typename cT &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a3be2b56dc9917b88ed0a91ce7a3c6bb5"></a>
+<a class="anchor" id="aed5dfa35262dd186e117a0c98b7f77fb"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_list_type_allocator , template&lt; typename, typename &gt; class gamete_list_type, typename mutation_type , typename mutation_list_type_allocator , template&lt; typename, typename &gt; class mutation_list_type, typename vector_type_allocator , template&lt; typename, typename &gt; class diploid_vector_type, typename diploid_vv_type_allocator , template&lt; typename, typename &gt; class diploid_vv_type, typename mutation_reader_type , typename istreamtype , typename diploid_reader_t  = diploidIOplaceholder&gt; </div>
+template&lt;typename glist_t , typename mlist_t , typename dipvector_t , typename mutation_reader_type , typename istreamtype , typename diploid_reader_t  = diploidIOplaceholder&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void KTfwd::read_binary_metapop </td>
           <td>(</td>
-          <td class="paramtype">gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *&#160;</td>
-          <td class="paramname"><em>gametes</em>, </td>
+          <td class="paramtype">glist_t *&#160;</td>
+          <td class="paramname"><em>metapop</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">mutation_list_type&lt; mutation_type, mutation_list_type_allocator &gt; *&#160;</td>
+          <td class="paramtype">mlist_t *&#160;</td>
           <td class="paramname"><em>mutations</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">diploid_vv_type&lt; diploid_vector_type&lt; diploid_geno_t, vector_type_allocator &gt;, diploid_vv_type_allocator &gt; *&#160;</td>
+          <td class="paramtype">dipvector_t *&#160;</td>
           <td class="paramname"><em>diploids</em>, </td>
         </tr>
         <tr>
@@ -1196,28 +1198,28 @@ template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_lis
 </dl>
 </div>
 </div>
-<a class="anchor" id="af5ddb3ab8a5d762b4feda87205ad2253"></a>
+<a class="anchor" id="a770312024c111ecd9e065854e527cf86"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_list_type_allocator , template&lt; typename, typename &gt; class gamete_list_type, typename mutation_type , typename mutation_list_type_allocator , template&lt; typename, typename &gt; class mutation_list_type, typename vector_type_allocator , template&lt; typename, typename &gt; class diploid_vector_type, typename mutation_reader_type , typename istreamtype , typename diploid_reader_t  = diploidIOplaceholder&gt; </div>
+template&lt;typename glist_t , typename mlist_t , typename dipvector_t , typename mutation_reader_type , typename istreamtype , typename diploid_reader_t  = diploidIOplaceholder&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void KTfwd::read_binary_pop </td>
           <td>(</td>
-          <td class="paramtype">gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *&#160;</td>
+          <td class="paramtype">glist_t *&#160;</td>
           <td class="paramname"><em>gametes</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">mutation_list_type&lt; mutation_type, mutation_list_type_allocator &gt; *&#160;</td>
+          <td class="paramtype">mlist_t *&#160;</td>
           <td class="paramname"><em>mutations</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">diploid_vector_type&lt; diploid_geno_t, vector_type_allocator &gt; *&#160;</td>
+          <td class="paramtype">dipvector_t *&#160;</td>
           <td class="paramname"><em>diploids</em>, </td>
         </tr>
         <tr>
@@ -1261,28 +1263,28 @@ template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_lis
 </dl>
 </div>
 </div>
-<a class="anchor" id="af1ea92a126bcb9616e9c6a0207760774"></a>
+<a class="anchor" id="add75c54e71dd19c49539ddd07b5898bb"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_list_type_allocator , template&lt; typename, typename &gt; class gamete_list_type, typename mlocus_vector_type_allocator , template&lt; typename, typename &gt; class mlocus_vector_type, typename mutation_type , typename mutation_list_type_allocator , template&lt; typename, typename &gt; class mutation_list_type, typename vector_type_allocator , template&lt; typename, typename &gt; class diploid_vector_type, typename diploid_vv_type_allocator , template&lt; typename, typename &gt; class diploid_vv_type, typename mutation_reader_type , typename istreamtype , typename diploid_reader_t  = diploidIOplaceholder&gt; </div>
+template&lt;typename glist_t , typename mlist_t , typename dipvector_t , typename mutation_reader_type , typename istreamtype , typename diploid_reader_t  = diploidIOplaceholder&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void KTfwd::read_binary_pop </td>
+          <td class="memname">void KTfwd::read_binary_pop_mloc </td>
           <td>(</td>
-          <td class="paramtype">mlocus_vector_type&lt; gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt;, mlocus_vector_type_allocator &gt; *&#160;</td>
+          <td class="paramtype">glist_t *&#160;</td>
           <td class="paramname"><em>mlocus_gametes</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">mutation_list_type&lt; mutation_type, mutation_list_type_allocator &gt; *&#160;</td>
+          <td class="paramtype">mlist_t *&#160;</td>
           <td class="paramname"><em>mutations</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">diploid_vv_type&lt; diploid_vector_type&lt; diploid_geno_t, vector_type_allocator &gt;, diploid_vv_type_allocator &gt; *&#160;</td>
+          <td class="paramtype">dipvector_t *&#160;</td>
           <td class="paramname"><em>diploids</em>, </td>
         </tr>
         <tr>
@@ -1325,7 +1327,7 @@ template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_lis
 
 </div>
 </div>
-<a class="anchor" id="a8a46b107991548a40821e132496c1693"></a>
+<a class="anchor" id="af28e27f1e9c39173b7a4d55256761c28"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -1365,7 +1367,19 @@ template&lt;typename iterator_type , typename recombination_map , typename list_
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const recombination_map &amp;&#160;</td>
-          <td class="paramname"><em>mf</em>&#160;</td>
+          <td class="paramname"><em>mf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename iterator_type::value_type::mutation_container &amp;&#160;</td>
+          <td class="paramname"><em>neutral</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename iterator_type::value_type::mutation_container &amp;&#160;</td>
+          <td class="paramname"><em>selected</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1393,11 +1407,11 @@ The type of g1 and g2 is gamete_list_type&lt;gamete_type,list_type_allocator &gt
 <dd>
 The return value may be 0 even if littler is large. The code recognizes when crossovers could not modify the gametes, and the function returns when such cases are found </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>The number of crossovers that happened between g1 and g2 (which is Poisson with mean littler) </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a9">diploid_fixed_sh_ind_lambda.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a10">diploid_fixed_sh_ind_lambda.cc</a>.</dd>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ad758ef2a67e1fbb768640e533377f506"></a>
+<a class="anchor" id="a6bc6fb0ae71894650f5f7fc821c02120"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -1425,7 +1439,19 @@ template&lt;typename iterator_type , typename list_type_allocator , typename vec
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">iterator_type &amp;&#160;</td>
-          <td class="paramname"><em>g2</em>&#160;</td>
+          <td class="paramname"><em>g2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename iterator_type::value_type::mutation_container &amp;&#160;</td>
+          <td class="paramname"><em>neutral</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename iterator_type::value_type::mutation_container &amp;&#160;</td>
+          <td class="paramname"><em>selected</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1495,7 +1521,7 @@ template&lt;typename mutation_type , typename vector_type_allocator1 , typename 
 </div><div class="memdoc">
 
 <p>Remove mutations from population Removes mutations that are fixed or lost. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a11">bneck_selection_ind.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a12">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a11">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a12">diploid_fixed_sh_ind_lambda.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a11">diploid_ind.cc</a>, <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a13">diploid_ind_2locus.cc</a>, and <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a16">migsel_ind.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a11">bneck_selection_ind.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a12">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a11">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a13">diploid_fixed_sh_ind_lambda.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a11">diploid_ind.cc</a>, <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a13">diploid_ind_2locus.cc</a>, and <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a16">migsel_ind.cc</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1605,11 +1631,11 @@ template&lt;typename mutation_type , typename list_type_allocator , template&lt;
 
 </div>
 </div>
-<a class="anchor" id="ab9b321ba63144739f7a25675da26bf02"></a>
+<a class="anchor" id="aaffceb4a238f2a75a05512a8c717aa49"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename diploid_geno_t , typename gamete_type , typename glist_vector_type_allocator , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_vector_type_allocator , typename locus_vector_type_allocator , typename diploid_fitness_function , typename mutation_removal_policy , typename mutation_model_container , typename recombination_policy_container , typename mutation_insertion_policy , typename gamete_insertion_policy , typename bw_locus_rec_fxn , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class glist_vector_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type, template&lt; typename, typename &gt; class locus_vector_type&gt; </div>
+template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_vector_type_allocator , typename locus_vector_type_allocator , typename diploid_fitness_function , typename mutation_removal_policy , typename mutation_model_container , typename recombination_policy_container , typename mutation_insertion_policy , typename gamete_insertion_policy , typename bw_locus_rec_fxn , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type, template&lt; typename, typename &gt; class locus_vector_type&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">double KTfwd::sample_diploid </td>
@@ -1620,7 +1646,7 @@ template&lt;typename diploid_geno_t , typename gamete_type , typename glist_vect
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">glist_vector_type&lt; gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt;, glist_vector_type_allocator &gt; *&#160;</td>
+          <td class="paramtype">gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *&#160;</td>
           <td class="paramname"><em>gametes</em>, </td>
         </tr>
         <tr>
@@ -1814,11 +1840,11 @@ template&lt;typename gamete_type , typename gamete_list_type_allocator , typenam
 </dl>
 </div>
 </div>
-<a class="anchor" id="afe562b17f78f17b16d477ae93a5c2eb8"></a>
+<a class="anchor" id="af37e12388574a535d7162b2b8b4fa343"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename diploid_geno_t , typename gamete_type , typename glist_vector_type_allocator , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_vector_type_allocator , typename locus_vector_type_allocator , typename diploid_fitness_function , typename mutation_removal_policy , typename mutation_model_container , typename recombination_policy_container , typename mutation_insertion_policy , typename gamete_insertion_policy , typename bw_locus_rec_fxn , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class glist_vector_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type, template&lt; typename, typename &gt; class locus_vector_type&gt; </div>
+template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_vector_type_allocator , typename locus_vector_type_allocator , typename diploid_fitness_function , typename mutation_removal_policy , typename mutation_model_container , typename recombination_policy_container , typename mutation_insertion_policy , typename gamete_insertion_policy , typename bw_locus_rec_fxn , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type, template&lt; typename, typename &gt; class locus_vector_type&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">double KTfwd::sample_diploid </td>
@@ -1829,7 +1855,7 @@ template&lt;typename diploid_geno_t , typename gamete_type , typename glist_vect
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">glist_vector_type&lt; gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt;, glist_vector_type_allocator &gt; *&#160;</td>
+          <td class="paramtype">gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *&#160;</td>
           <td class="paramname"><em>gametes</em>, </td>
         </tr>
         <tr>
@@ -2457,28 +2483,28 @@ template&lt;typename T , typename cT &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ab62f60cccc4f91b8d9695a4d9abf300a"></a>
+<a class="anchor" id="a9e69664068c15f09429f9087144fec7f"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_list_type_allocator , template&lt; typename, typename &gt; class gamete_list_type, typename mutation_type , typename mutation_list_type_allocator , template&lt; typename, typename &gt; class mutation_list_type, typename vector_type_allocator , template&lt; typename, typename &gt; class diploid_vector_type, typename diploid_vv_type_allocator , template&lt; typename, typename &gt; class diploid_vv_type, typename mutation_writer_type , typename ostreamtype , typename diploid_writer_t  = diploidIOplaceholder&gt; </div>
+template&lt;typename glist_t , typename mlist_t , typename dipvector_t , typename mutation_writer_type , typename ostreamtype , typename diploid_writer_t  = diploidIOplaceholder&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void KTfwd::write_binary_metapop </td>
           <td>(</td>
-          <td class="paramtype">const gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *&#160;</td>
+          <td class="paramtype">const glist_t *&#160;</td>
           <td class="paramname"><em>metapop</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const mutation_list_type&lt; mutation_type, mutation_list_type_allocator &gt; *&#160;</td>
+          <td class="paramtype">const mlist_t *&#160;</td>
           <td class="paramname"><em>mutations</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const diploid_vv_type&lt; diploid_vector_type&lt; diploid_geno_t, vector_type_allocator &gt;, diploid_vv_type_allocator &gt; *&#160;</td>
+          <td class="paramtype">const dipvector_t *&#160;</td>
           <td class="paramname"><em>diploids</em>, </td>
         </tr>
         <tr>
@@ -2510,28 +2536,28 @@ template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_lis
 </dl>
 </div>
 </div>
-<a class="anchor" id="a4826160f7e99b8c2cdb7fa2769c6aeeb"></a>
+<a class="anchor" id="a373a7cb82b761c6d2a49059031fe69de"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_list_type_allocator , template&lt; typename, typename &gt; class gamete_list_type, typename mutation_type , typename mutation_list_type_allocator , template&lt; typename, typename &gt; class mutation_list_type, typename vector_type_allocator , template&lt; typename, typename &gt; class diploid_vector_type, typename mutation_writer_type , typename ostreamtype , typename diploid_writer_t  = diploidIOplaceholder&gt; </div>
+template&lt;typename glist_t , typename mlist_t , typename dipvector_t , typename mutation_writer_type , typename ostreamtype , typename diploid_writer_t  = diploidIOplaceholder&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void KTfwd::write_binary_pop </td>
           <td>(</td>
-          <td class="paramtype">const gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *&#160;</td>
+          <td class="paramtype">const glist_t *&#160;</td>
           <td class="paramname"><em>gametes</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const mutation_list_type&lt; mutation_type, mutation_list_type_allocator &gt; *&#160;</td>
+          <td class="paramtype">const mlist_t *&#160;</td>
           <td class="paramname"><em>mutations</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const diploid_vector_type&lt; diploid_geno_t, vector_type_allocator &gt; *&#160;</td>
+          <td class="paramtype">const dipvector_t *&#160;</td>
           <td class="paramname"><em>diploids</em>, </td>
         </tr>
         <tr>
@@ -2576,28 +2602,28 @@ template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_lis
 </dl>
 </div>
 </div>
-<a class="anchor" id="a155a4a3be11d90ac32a75618ccf24a8a"></a>
+<a class="anchor" id="a03aa95883bbe25896df2203d505966e0"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_list_type_allocator , template&lt; typename, typename &gt; class gamete_list_type, typename mlocus_vector_type_allocator , template&lt; typename, typename &gt; class mlocus_vector_type, typename mutation_type , typename mutation_list_type_allocator , template&lt; typename, typename &gt; class mutation_list_type, typename vector_type_allocator , template&lt; typename, typename &gt; class diploid_vector_type, typename diploid_vv_type_allocator , template&lt; typename, typename &gt; class diploid_vv_type, typename mutation_writer_type , typename ostreamtype , typename diploid_writer_t  = diploidIOplaceholder&gt; </div>
+template&lt;typename glist_t , typename mlist_t , typename dipvector_t , typename mutation_writer_type , typename ostreamtype , typename diploid_writer_t  = diploidIOplaceholder&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void KTfwd::write_binary_pop </td>
+          <td class="memname">void KTfwd::write_binary_pop_mloc </td>
           <td>(</td>
-          <td class="paramtype">const mlocus_vector_type&lt; gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt;, mlocus_vector_type_allocator &gt; *&#160;</td>
+          <td class="paramtype">const glist_t *&#160;</td>
           <td class="paramname"><em>mlocus_gametes</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const mutation_list_type&lt; mutation_type, mutation_list_type_allocator &gt; *&#160;</td>
+          <td class="paramtype">const mlist_t *&#160;</td>
           <td class="paramname"><em>mutations</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const diploid_vv_type&lt; diploid_vector_type&lt; diploid_geno_t, vector_type_allocator &gt;, diploid_vv_type_allocator &gt; *&#160;</td>
+          <td class="paramtype">const dipvector_t *&#160;</td>
           <td class="paramname"><em>diploids</em>, </td>
         </tr>
         <tr>

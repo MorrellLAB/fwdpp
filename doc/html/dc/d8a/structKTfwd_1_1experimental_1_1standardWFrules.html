@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.2</span>
+   &#160;<span id="projectnumber">0.3.3</span>
    </div>
   </td>
  </tr>
@@ -118,10 +118,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a295542483770140ef27ec176079797f0"><td class="memTemplItemLeft" align="right" valign="top">size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html#a295542483770140ef27ec176079797f0">pick2</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const size_t &amp;p1, diploid_itr_t p1_itr, const double &amp;f) const </td></tr>
 <tr class="memdesc:a295542483770140ef27ec176079797f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pick parent 2. Parent 1's data are passed along for models where that is relevant.  <a href="#a295542483770140ef27ec176079797f0">More...</a><br/></td></tr>
 <tr class="separator:a295542483770140ef27ec176079797f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5eb9d413e9b7b8574fc2c26ed5e7b41c"><td class="memTemplParams" colspan="2">template&lt;typename offspring_itr_t , typename parent_itr_t &gt; </td></tr>
-<tr class="memitem:a5eb9d413e9b7b8574fc2c26ed5e7b41c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html#a5eb9d413e9b7b8574fc2c26ed5e7b41c">update</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, offspring_itr_t offspring, parent_itr_t p1_itr, parent_itr_t p2_itr) const </td></tr>
-<tr class="memdesc:a5eb9d413e9b7b8574fc2c26ed5e7b41c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update some property of the offspring based on properties of the parents.  <a href="#a5eb9d413e9b7b8574fc2c26ed5e7b41c">More...</a><br/></td></tr>
-<tr class="separator:a5eb9d413e9b7b8574fc2c26ed5e7b41c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a070fa336c463725730068eb2ced8ca20"><td class="memTemplParams" colspan="2">template&lt;typename offspring_itr_t , typename parent_itr_t &gt; </td></tr>
+<tr class="memitem:a070fa336c463725730068eb2ced8ca20"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html#a070fa336c463725730068eb2ced8ca20">update</a> (gsl_rng *, offspring_itr_t, parent_itr_t, parent_itr_t) const </td></tr>
+<tr class="memdesc:a070fa336c463725730068eb2ced8ca20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update some property of the offspring based on properties of the parents.  <a href="#a070fa336c463725730068eb2ced8ca20">More...</a><br/></td></tr>
+<tr class="separator:a070fa336c463725730068eb2ced8ca20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
@@ -237,7 +237,7 @@ template&lt;typename diploid_itr_t &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a5eb9d413e9b7b8574fc2c26ed5e7b41c"></a>
+<a class="anchor" id="a070fa336c463725730068eb2ced8ca20"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -250,25 +250,25 @@ template&lt;typename offspring_itr_t , typename parent_itr_t &gt; </div>
           <td class="memname">void KTfwd::experimental::standardWFrules::update </td>
           <td>(</td>
           <td class="paramtype">gsl_rng *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">offspring_itr_t&#160;</td>
-          <td class="paramname"><em>offspring</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">parent_itr_t&#160;</td>
-          <td class="paramname"><em>p1_itr</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">parent_itr_t&#160;</td>
-          <td class="paramname"><em>p2_itr</em>&#160;</td>
+          <td class="paramname">&#160;</td>
         </tr>
         <tr>
           <td></td>

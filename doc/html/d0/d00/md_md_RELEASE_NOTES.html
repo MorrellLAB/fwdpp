@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.2</span>
+   &#160;<span id="projectnumber">0.3.3</span>
    </div>
   </td>
  </tr>
@@ -82,7 +82,33 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="title">FWDPP RELEASE NOTES </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2>0.3.2</h2>
+<div class="textblock"><h2>0.3.3</h2>
+<p>This release of <b>fwdpp</b> includes major performance improvements. The short version of the story is:</p>
+<ul>
+<li>Linked lists are traversed less often each generation compared to previous versions.</li>
+<li>An (extremely) expensive linear-time search of a linked list that previously occurred after <em>every</em> recombination event has been eliminated, and replaced with a very fast log-time search of a lookup table.</li>
+<li>The containers required for storing the intermediate steps of recombination are now allocated at most once per replicate, and their capacity is adjusted as needed during the simulation. Previously, these containers were allocated for every crossover event.</li>
+<li>The way that mutations are copied during recombination has been changed from a call to std::copy to the vector's insert member function, resulting in fewer reallocations during copying.</li>
+</ul>
+<p>The result is much better scaling with large population size and recombination rates.</p>
+<p>Major changes:</p>
+<ul>
+<li>Crossing over has been streamlined. Unfortunately, this changes the library API. However, run times improve substantially.</li>
+<li>The library internals now use different insertion methods during recombination. We swtiched from copy(beg,end,back_inserter(x)) to x.insert(x.end(),beg,end), which results in less memory usage, and some run-time improvement for large simulations.</li>
+<li>API change: the simplification of metapopulation containers in 0.3.2 means that we can make the recombination policies required for such simulations the same as for single-deme simulations.</li>
+<li>The build system has been streamlined, with fewer dependencies and a greater emphasis on standard containers + Google's perftools.</li>
+<li>The various read/write functions for serializations have been renamed&ndash;I simply couldn't get the template declarations to auto-deduce the types. I gave up on this one, and so there's an API change. On the plus side, <a class="el" href="../../df/d9f/IO_8hpp.html">IO.hpp</a>/IO.tcc are more readable now.</li>
+</ul>
+<p>Minor changes:</p>
+<ul>
+<li><a class="el" href="../../d0/d8e/structKTfwd_1_1serialize.html" title="Serialize populations. ">KTfwd::serialize</a> now has a default constructor and a move constructor defined, allowing it to be a member of another class, which helps things in <a href="http://github.com/molpopgen/foRward">foRward</a>.</li>
+<li><a class="el" href="../../d0/d8e/structKTfwd_1_1serialize.html" title="Serialize populations. ">KTfwd::serialize</a> can now be used to serialize multiple records into a single buffer.</li>
+<li>A "validation suite" has been added. This is mostly for the developer to have an automatic way to check for problems.</li>
+<li>The package now installs a single binary called fwdppConfig. This program is intended to be used in configure scripts to make checking for fwdpp's existence and/or version easier. It takes a single option:</li>
+</ul>
+<div class="fragment"><div class="line"><span class="preprocessor">#Get the version of fwdpp installed on your system (or at least the one most readily visible in your user&#39;s environment).</span></div>
+<div class="line"><span class="preprocessor">fwdppConfig --version</span></div>
+</div><!-- fragment --><h2>0.3.2</h2>
 <p>This release make some tweaks that improve performance:</p>
 <ul>
 <li>All occurrences of boost::pool_allocator have been replaced by boost::fast_pool_allocator in the declarations of population types in the sugar layer (see <a class="el" href="../../db/dd8/md_md_sugar.html">Tutorial 5: the "sugar" layer on top of fwdpp</a>). This can result in &gt;= 10% reductions in run times are recombination rates increase.</li>
@@ -154,9 +180,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <li>const mutation lists now passed to binary output routines</li>
 <li>The library internals now fully support C++11 move semantics</li>
 <li>Default policies now support C++11 "perfect forwarding"</li>
-<li>The function <a class="el" href="../../da/d8b/namespaceKTfwd.html#a8a46b107991548a40821e132496c1693" title="recombination for individual-based forward simulations ">KTfwd::recombine_gametes</a>, which is provided for recombination in individual-based simulations, has an overloaded version. This new version takes a fixed set of positions representing recombination breakpoints, allowing more modeling flexibility and making unit testing easier.</li>
+<li>The function <a class="el" href="../../da/d8b/namespaceKTfwd.html#af28e27f1e9c39173b7a4d55256761c28" title="recombination for individual-based forward simulations ">KTfwd::recombine_gametes</a>, which is provided for recombination in individual-based simulations, has an overloaded version. This new version takes a fixed set of positions representing recombination breakpoints, allowing more modeling flexibility and making unit testing easier.</li>
 <li>The mechanics of recombination in multilocus simulations moved to function multilocus_rec in namesapce <a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html" title="Nested namespace for nuts and bolts of certain library functions. ">KTfwd::fwdpp_internal</a>.</li>
-<li>A unit test for the function <a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a3c36902b6ee80be11577986d681e5df8" title="The mechanics of recombination for multilocus simulations The mechanics of recombination for multiloc...">KTfwd::fwdpp_internal::multilocus_rec</a> was added.</li>
+<li>A unit test for the function KTfwd::fwdpp_internal::multilocus_rec was added.</li>
 <li>Added tutorial for multilocus simulation implmentation</li>
 <li>Minor cleanups to the build system</li>
 <li>Reorganization of <a class="el" href="../../df/d9f/IO_8hpp.html">fwdpp/IO.hpp</a> and fwdpp/IO.tcc to reduce code duplication and provide output routines for multilocus simulations. There are no longer separate read functions for gzFiles. The necessary operations are handled automatically by overloads of template functions in namespace <a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html" title="Nested namespace for nuts and bolts of certain library functions. ">KTfwd::fwdpp_internal</a>.</li>

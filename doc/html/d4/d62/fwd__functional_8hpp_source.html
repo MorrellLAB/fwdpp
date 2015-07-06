@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.2</span>
+   &#160;<span id="projectnumber">0.3.3</span>
    </div>
   </td>
  </tr>
@@ -184,8 +184,15 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <span class="keywordflow">return</span> i-&gt;n == x1 || i-&gt;n == x2;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  };</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* _FWD_FUNCTIONAL_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="comment">/* \brief Policy telling library not to remove any mutations from gametes after sampling</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">     \note This is an empty struct that functions as a dispatch tag for library internals</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="../../db/dcf/structKTfwd_1_1remove__nothing.html">   97</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../db/dcf/structKTfwd_1_1remove__nothing.html">remove_nothing</a></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  };</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* _FWD_FUNCTIONAL_HPP_ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="structKTfwd_1_1same__pos_html_a50fdf4f63d943b04304d359cc360124d"><div class="ttname"><a href="../../da/d8f/structKTfwd_1_1same__pos.html#a50fdf4f63d943b04304d359cc360124d">KTfwd::same_pos::result_type</a></div><div class="ttdeci">bool result_type</div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:45</div></div>
 <div class="ttc" id="structKTfwd_1_1equal__eps_html"><div class="ttname"><a href="../../dc/d8e/structKTfwd_1_1equal__eps.html">KTfwd::equal_eps</a></div><div class="ttdoc">Returns true if std::max(lhs,rhs)-std::min(lhs,rhs) &lt;= std::numeric_limits&lt;T&gt;::epsilon() ...</div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:54</div></div>
 <div class="ttc" id="structKTfwd_1_1mutation__remover_html"><div class="ttname"><a href="../../d4/de8/structKTfwd_1_1mutation__remover.html">KTfwd::mutation_remover</a></div><div class="ttdoc">Policy determining how mutations are removed from gametes after sampling Policy determining how mutat...</div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:76</div></div>
@@ -202,6 +209,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="ttc" id="structKTfwd_1_1mutation__remover_html_a58a2b84677e3fdd729105e25110967fd"><div class="ttname"><a href="../../d4/de8/structKTfwd_1_1mutation__remover.html#a58a2b84677e3fdd729105e25110967fd">KTfwd::mutation_remover::operator()</a></div><div class="ttdeci">result_type operator()(const iterator_type &amp;i, const unsigned &amp;x1, const unsigned &amp;x2) const </div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:86</div></div>
 <div class="ttc" id="structKTfwd_1_1same__pos_html_afd4b930dec1455dce58c927d7a7dc1b7"><div class="ttname"><a href="../../da/d8f/structKTfwd_1_1same__pos.html#afd4b930dec1455dce58c927d7a7dc1b7">KTfwd::same_pos::operator()</a></div><div class="ttdeci">bool operator()(const mutation_type &amp;m1, const mutation_type &amp;m2) const </div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:47</div></div>
 <div class="ttc" id="structKTfwd_1_1mutation__remover_html_a5caf896f16718076ab87128f166044bb"><div class="ttname"><a href="../../d4/de8/structKTfwd_1_1mutation__remover.html#a5caf896f16718076ab87128f166044bb">KTfwd::mutation_remover::result_type</a></div><div class="ttdeci">bool result_type</div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:78</div></div>
+<div class="ttc" id="structKTfwd_1_1remove__nothing_html"><div class="ttname"><a href="../../db/dcf/structKTfwd_1_1remove__nothing.html">KTfwd::remove_nothing</a></div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:97</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.2</span>
+   &#160;<span id="projectnumber">0.3.3</span>
    </div>
   </td>
  </tr>
@@ -98,16 +98,16 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Tests <a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a3c36902b6ee80be11577986d681e5df8" title="The mechanics of recombination for multilocus simulations The mechanics of recombination for multiloc...">KTfwd::fwdpp_internal::multilocus_rec</a>.  
+<p>Tests KTfwd::fwdpp_internal::multilocus_rec.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;config.h&gt;</code><br/>
+<code>#include &lt;iostream&gt;</code><br/>
 <code>#include &lt;<a class="el" href="../../df/df8/diploid_8hh_source.html">fwdpp/diploid.hh</a>&gt;</code><br/>
 <code>#include &lt;boost/test/unit_test.hpp&gt;</code><br/>
 <code>#include &lt;unistd.h&gt;</code><br/>
 <code>#include &lt;iterator&gt;</code><br/>
 <code>#include &lt;functional&gt;</code><br/>
 <code>#include &lt;list&gt;</code><br/>
-<code>#include &lt;iostream&gt;</code><br/>
 <code>#include &lt;gsl/gsl_rng.h&gt;</code><br/>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -116,6 +116,8 @@ Macros</h2></td></tr>
 <tr class="separator:a6b2a3852db8bb19ab6909bac01859985"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a139f00d2466d591f60b8d6a73c8273f1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a139f00d2466d591f60b8d6a73c8273f1">BOOST_TEST_DYN_LINK</a></td></tr>
 <tr class="separator:a139f00d2466d591f60b8d6a73c8273f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd5c5f0d118268f5e39c858b57b839ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#acd5c5f0d118268f5e39c858b57b839ea">FWDPP_UNIT_TESTING</a></td></tr>
+<tr class="separator:acd5c5f0d118268f5e39c858b57b839ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -125,8 +127,6 @@ Typedefs</h2></td></tr>
 <tr class="separator:ace9428d4aa6205eaf777c2c9f398d9ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43adc418ba4093dd1c7d3ad5dbf8fa3a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a> = std::list&lt; <a class="el" href="../../d1/dbe/crossoverTest_8cc.html#ace9428d4aa6205eaf777c2c9f398d9ea">gtype</a> &gt;</td></tr>
 <tr class="separator:a43adc418ba4093dd1c7d3ad5dbf8fa3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd5b74e0108d624225532de98a470a36"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#afd5b74e0108d624225532de98a470a36">gvector</a> = std::vector&lt; <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a> &gt;</td></tr>
-<tr class="separator:afd5b74e0108d624225532de98a470a36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb6fa0168e07296495fea7661b96c455"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#abb6fa0168e07296495fea7661b96c455">mutlist</a> = std::list&lt; <a class="el" href="../../de/d89/structmut.html">mut</a> &gt;</td></tr>
 <tr class="separator:abb6fa0168e07296495fea7661b96c455"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a5f1954bb541f5016cc0844385c6758"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a1a5f1954bb541f5016cc0844385c6758">diploid_t</a> = std::vector&lt; std::pair&lt; glist::iterator, glist::iterator &gt; &gt;</td></tr>
@@ -134,24 +134,16 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a52ed2176e17b75d6e31dcc9bdd41de78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a52ed2176e17b75d6e31dcc9bdd41de78">setup1</a> (<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#afd5b74e0108d624225532de98a470a36">gvector</a> &amp;gametes, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#abb6fa0168e07296495fea7661b96c455">mutlist</a> &amp;<a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../dc/dfb/structdiploid__t.html">diploid_t</a> &amp;diploid)</td></tr>
-<tr class="separator:a52ed2176e17b75d6e31dcc9bdd41de78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cbb3bf20c284ffffae0aec0bbc77f87"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a7cbb3bf20c284ffffae0aec0bbc77f87">BOOST_AUTO_TEST_CASE</a> (two_locus_test_1)</td></tr>
-<tr class="separator:a7cbb3bf20c284ffffae0aec0bbc77f87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80f8ce009ca04b951f1d269b14d12888"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a80f8ce009ca04b951f1d269b14d12888">BOOST_AUTO_TEST_CASE</a> (two_locus_test_2)</td></tr>
-<tr class="separator:a80f8ce009ca04b951f1d269b14d12888"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc20bca45938c007dfdc979e3902a2a6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#adc20bca45938c007dfdc979e3902a2a6">BOOST_AUTO_TEST_CASE</a> (two_locus_test_3)</td></tr>
-<tr class="separator:adc20bca45938c007dfdc979e3902a2a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a785073b5234cde96403aec49a16aa3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a2a785073b5234cde96403aec49a16aa3">BOOST_AUTO_TEST_CASE</a> (two_locus_test_4)</td></tr>
-<tr class="separator:a2a785073b5234cde96403aec49a16aa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae449ee59771b314a3ecb5bed7b219bd5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#ae449ee59771b314a3ecb5bed7b219bd5">BOOST_AUTO_TEST_CASE</a> (two_locus_test_5)</td></tr>
-<tr class="separator:ae449ee59771b314a3ecb5bed7b219bd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b75872632cace2d73e39e4f105805e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a5b75872632cace2d73e39e4f105805e3">BOOST_AUTO_TEST_CASE</a> (two_locus_test_6)</td></tr>
-<tr class="separator:a5b75872632cace2d73e39e4f105805e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9568faa7157dd456dd1fead0e071ec12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a9568faa7157dd456dd1fead0e071ec12">setup2</a> (<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#afd5b74e0108d624225532de98a470a36">gvector</a> &amp;gametes, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#abb6fa0168e07296495fea7661b96c455">mutlist</a> &amp;<a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../dc/dfb/structdiploid__t.html">diploid_t</a> &amp;diploid)</td></tr>
-<tr class="separator:a9568faa7157dd456dd1fead0e071ec12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaa8c80d6b37ed1d36ceb6877cc5c3b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#aaaa8c80d6b37ed1d36ceb6877cc5c3b9">setup3locus2</a> (<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a> &amp;gametes, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#abb6fa0168e07296495fea7661b96c455">mutlist</a> &amp;<a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../dc/dfb/structdiploid__t.html">diploid_t</a> &amp;diploid)</td></tr>
+<tr class="separator:aaaa8c80d6b37ed1d36ceb6877cc5c3b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e2ebd8c852ac6558478fb65a430cc74"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a7e2ebd8c852ac6558478fb65a430cc74">BOOST_AUTO_TEST_CASE</a> (three_locus_test_1)</td></tr>
 <tr class="separator:a7e2ebd8c852ac6558478fb65a430cc74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa312b642b8c37d39dfd0335345b79b55"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#aa312b642b8c37d39dfd0335345b79b55">BOOST_AUTO_TEST_CASE</a> (three_locus_test_2)</td></tr>
+<tr class="separator:aa312b642b8c37d39dfd0335345b79b55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dc76c26bdfcc89f48f27668c062ea9b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a0dc76c26bdfcc89f48f27668c062ea9b">BOOST_AUTO_TEST_CASE</a> (three_locus_test_3)</td></tr>
+<tr class="separator:a0dc76c26bdfcc89f48f27668c062ea9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cd5978844215caf93ab5cacbc3fa94e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a2cd5978844215caf93ab5cacbc3fa94e">BOOST_AUTO_TEST_CASE</a> (three_locus_test_4)</td></tr>
+<tr class="separator:a2cd5978844215caf93ab5cacbc3fa94e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -159,7 +151,7 @@ Variables</h2></td></tr>
 <tr class="separator:a53b3e4bb1bd287d2150b9c128e15a316"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Tests <a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a3c36902b6ee80be11577986d681e5df8" title="The mechanics of recombination for multilocus simulations The mechanics of recombination for multiloc...">KTfwd::fwdpp_internal::multilocus_rec</a>. </p>
+<div class="textblock"><p>Tests KTfwd::fwdpp_internal::multilocus_rec. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="a139f00d2466d591f60b8d6a73c8273f1"></a>
 <div class="memitem">
@@ -179,6 +171,18 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define BOOST_TEST_MODULE&#160;&#160;&#160;mlocusCrossoverTest</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acd5c5f0d118268f5e39c858b57b839ea"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FWDPP_UNIT_TESTING</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -222,18 +226,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="afd5b74e0108d624225532de98a470a36"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#afd5b74e0108d624225532de98a470a36">gvector</a> =  std::vector&lt; <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a> &gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="ad9baf2d3214da5c5b5710791a07c22a6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -259,102 +251,6 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a7cbb3bf20c284ffffae0aec0bbc77f87"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">BOOST_AUTO_TEST_CASE </td>
-          <td>(</td>
-          <td class="paramtype">two_locus_test_1&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a80f8ce009ca04b951f1d269b14d12888"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">BOOST_AUTO_TEST_CASE </td>
-          <td>(</td>
-          <td class="paramtype">two_locus_test_2&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="adc20bca45938c007dfdc979e3902a2a6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">BOOST_AUTO_TEST_CASE </td>
-          <td>(</td>
-          <td class="paramtype">two_locus_test_3&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a2a785073b5234cde96403aec49a16aa3"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">BOOST_AUTO_TEST_CASE </td>
-          <td>(</td>
-          <td class="paramtype">two_locus_test_4&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ae449ee59771b314a3ecb5bed7b219bd5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">BOOST_AUTO_TEST_CASE </td>
-          <td>(</td>
-          <td class="paramtype">two_locus_test_5&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a5b75872632cace2d73e39e4f105805e3"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">BOOST_AUTO_TEST_CASE </td>
-          <td>(</td>
-          <td class="paramtype">two_locus_test_6&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a7e2ebd8c852ac6558478fb65a430cc74"></a>
 <div class="memitem">
 <div class="memproto">
@@ -371,46 +267,62 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a52ed2176e17b75d6e31dcc9bdd41de78"></a>
+<a class="anchor" id="aa312b642b8c37d39dfd0335345b79b55"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void setup1 </td>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#afd5b74e0108d624225532de98a470a36">gvector</a> &amp;&#160;</td>
-          <td class="paramname"><em>gametes</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">three_locus_test_2&#160;</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#abb6fa0168e07296495fea7661b96c455">mutlist</a> &amp;&#160;</td>
-          <td class="paramname"><em>mlist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../dc/dfb/structdiploid__t.html">diploid_t</a> &amp;&#160;</td>
-          <td class="paramname"><em>diploid</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a9568faa7157dd456dd1fead0e071ec12"></a>
+<a class="anchor" id="a0dc76c26bdfcc89f48f27668c062ea9b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void setup2 </td>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#afd5b74e0108d624225532de98a470a36">gvector</a> &amp;&#160;</td>
+          <td class="paramtype">three_locus_test_3&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2cd5978844215caf93ab5cacbc3fa94e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">three_locus_test_4&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aaaa8c80d6b37ed1d36ceb6877cc5c3b9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setup3locus2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a> &amp;&#160;</td>
           <td class="paramname"><em>gametes</em>, </td>
         </tr>
         <tr>

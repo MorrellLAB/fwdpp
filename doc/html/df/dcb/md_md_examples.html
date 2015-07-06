@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.2</span>
+   &#160;<span id="projectnumber">0.3.3</span>
    </div>
   </td>
  </tr>
@@ -208,7 +208,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">N = diploid population size</div>
 <div class="line">mu = mutation rate to variants affecting fitness</div>
 <div class="line">sigmu = <a class="code" href="../../d3/dea/namespaceKTfwd_1_1tags.html#af816e12f7b8648716658bd3f7dbc5382ac00f0c4675b91fb8b918e4079a0b1bac">standard</a> deviation of effect sizes.  E ~ N(0,sigmu^2)</div>
-<div class="line">r = recombination rate (per diploid, per generation)</div>
+<div class="line">4Nr = population scaled recombination rate (per diploid, per generation)</div>
+<div class="line">ngens = number of generations to simulate</div>
 <div class="line">nreps = number of replicates to simulate</div>
 <div class="line">seed = random number seed</div>
 </div><!-- fragment --><p>The only output is <img class="formulaInl" alt="$V(G)$" src="../../form_19.png"/>, the genetic variance in fitness, which is written to stdout for each replicate. </p>

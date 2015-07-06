@@ -2,8 +2,9 @@ var searchData=
 [
   ['w',['w',['../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html#a735f9face8e103b59d46eaf43af2eea8',1,'KTfwd::experimental::standardWFrules']]],
   ['wbar',['wbar',['../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html#a1fb72d9245e2806c87878103aa7d1398',1,'KTfwd::experimental::standardWFrules']]],
-  ['write_5fbinary_5fmetapop',['write_binary_metapop',['../da/d8b/namespaceKTfwd.html#ab62f60cccc4f91b8d9695a4d9abf300a',1,'KTfwd']]],
-  ['write_5fbinary_5fpop',['write_binary_pop',['../da/d8b/namespaceKTfwd.html#a4826160f7e99b8c2cdb7fa2769c6aeeb',1,'KTfwd::write_binary_pop(const gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *gametes, const mutation_list_type&lt; mutation_type, mutation_list_type_allocator &gt; *mutations, const diploid_vector_type&lt; diploid_geno_t, vector_type_allocator &gt; *diploids, const mutation_writer_type &amp;mw, ostreamtype &amp;buffer, const diploid_writer_t &amp;dw=diploid_writer_t())'],['../da/d8b/namespaceKTfwd.html#a155a4a3be11d90ac32a75618ccf24a8a',1,'KTfwd::write_binary_pop(const mlocus_vector_type&lt; gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt;, mlocus_vector_type_allocator &gt; *mlocus_gametes, const mutation_list_type&lt; mutation_type, mutation_list_type_allocator &gt; *mutations, const diploid_vv_type&lt; diploid_vector_type&lt; diploid_geno_t, vector_type_allocator &gt;, diploid_vv_type_allocator &gt; *diploids, const mutation_writer_type &amp;mw, ostreamtype &amp;buffer, const diploid_writer_t &amp;dw=diploid_writer_t())']]],
+  ['write_5fbinary_5fmetapop',['write_binary_metapop',['../da/d8b/namespaceKTfwd.html#a9e69664068c15f09429f9087144fec7f',1,'KTfwd']]],
+  ['write_5fbinary_5fpop',['write_binary_pop',['../da/d8b/namespaceKTfwd.html#a373a7cb82b761c6d2a49059031fe69de',1,'KTfwd']]],
+  ['write_5fbinary_5fpop_5fmloc',['write_binary_pop_mloc',['../da/d8b/namespaceKTfwd.html#a03aa95883bbe25896df2203d505966e0',1,'KTfwd']]],
   ['write_5fhaplotypes',['write_haplotypes',['../d2/d44/structKTfwd_1_1fwdpp__internal_1_1write__haplotypes.html',1,'KTfwd::fwdpp_internal']]],
   ['write_5fmutations',['write_mutations',['../dd/d6a/structKTfwd_1_1fwdpp__internal_1_1write__mutations.html',1,'KTfwd::fwdpp_internal']]]
 ];

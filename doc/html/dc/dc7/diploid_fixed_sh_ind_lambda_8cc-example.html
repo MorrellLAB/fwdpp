@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.2</span>
+   &#160;<span id="projectnumber">0.3.3</span>
    </div>
   </td>
  </tr>
@@ -86,7 +86,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="comment">  \include diploid_fixed_sh_ind_lambda.cc</span></div>
 <div class="line"><span class="comment">  </span></div>
 <div class="line"><span class="comment">  Same as diploid_fixed_sh.cc, but individual-based</span></div>
-<div class="line"><span class="comment"> */</span></div>
+<div class="line"><span class="comment">*/</span></div>
 <div class="line"></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../df/df8/diploid_8hh.html">fwdpp/diploid.hh</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;Sequence/SimData.hpp&gt;</span></div>
@@ -136,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">  <a name="_a4"></a><a class="code" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html">KTfwd::site_dependent_fitness</a> fitness_model;</div>
 <div class="line">  <span class="keywordflow">while</span>(nreps--)</div>
 <div class="line">    {</div>
-<div class="line">singlepop_t pop(N);</div>
+<div class="line">      singlepop_t pop(N);</div>
 <div class="line">      <span class="keywordtype">unsigned</span> generation;</div>
 <div class="line">      <span class="keywordtype">double</span> wbar=1;</div>
 <div class="line">      <span class="keywordflow">for</span>( generation = 0; generation &lt; ngens; ++generation )</div>
@@ -162,10 +162,18 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">                                       std::bind(<a name="_a8"></a><a class="code" href="../../df/d07/structKTfwd_1_1infsites.html">KTfwd::infsites</a>(),r.<a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a12a336875d99337390d2231228707bc4">get</a>(),&amp;pop.mut_lookup,</div>
 <div class="line">                                                 mu_neutral,mu_del,[&amp;<a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>](){<span class="keywordflow">return</span> gsl_rng_uniform(r.<a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a12a336875d99337390d2231228707bc4">get</a>());},[&amp;s](){<span class="keywordflow">return</span> s;},[&amp;h](){<span class="keywordflow">return</span> h;}),</div>
 <div class="line">                                       <span class="comment">//The recombination policy must take two non-const iterators from the glist</span></div>
-<div class="line">                                         [&amp;](singlepop_t::glist_t::iterator &amp; g1,</div>
-<div class="line">                                             singlepop_t::glist_t::iterator &amp; g2) { <span class="keywordflow">return</span> <a name="a9"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a8a46b107991548a40821e132496c1693">KTfwd::recombine_gametes</a>(r.<a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a12a336875d99337390d2231228707bc4">get</a>(),littler,&amp;pop.gametes,g1,g2,</div>
-<div class="line">                                                                                                                    <span class="comment">//This nested lambda is our genetic map: uniform on interval (0,1]</span></div>
-<div class="line">                                                                                                                    [&amp;](){<span class="keywordflow">return</span> gsl_rng_uniform(r.<a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a12a336875d99337390d2231228707bc4">get</a>());}); },</div>
+<div class="line">                                       [&amp;](singlepop_t::glist_t::iterator &amp; g1,</div>
+<div class="line">                                           singlepop_t::glist_t::iterator &amp; g2,</div>
+<div class="line">                                           <span class="comment">/*</span></div>
+<div class="line"><span class="comment">                                             This is an oddity of lambdas: the user will either have to dig into fwdpp&#39;s internals</span></div>
+<div class="line"><span class="comment">                                             to determine what this type is, or rely on decltype, which in this case is asking about the</span></div>
+<div class="line"><span class="comment">                                             return type of the function creating the lookup table.</span></div>
+<div class="line"><span class="comment">                                           */</span></div>
+<div class="line">                                           decltype(<a name="a9"></a><a class="code" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a5b8104d6dc686f66777637641d2d49ab">KTfwd::fwdpp_internal::gamete_lookup_table</a>(&amp;pop.gametes)) &amp; gamete_lookup) {</div>
+<div class="line">                                         <span class="keywordflow">return</span> <a name="a10"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#af28e27f1e9c39173b7a4d55256761c28">KTfwd::recombine_gametes</a>(r.<a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a12a336875d99337390d2231228707bc4">get</a>(),littler,&amp;pop.gametes,g1,g2,gamete_lookup,</div>
+<div class="line">                                                                         std::ref(pop.neutral),std::ref(pop.selected),</div>
+<div class="line">                                                                         <span class="comment">//This nested lambda is our genetic map: uniform on interval (0,1]</span></div>
+<div class="line">                                                                         [&amp;](){<span class="keywordflow">return</span> gsl_rng_uniform(r.<a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a12a336875d99337390d2231228707bc4">get</a>());}); },</div>
 <div class="line">                                       <span class="comment">//The mutation insertion policy takes a const singlepop_t::mutation_t and a non-const pointer to an singlepop_t::mlist_t</span></div>
 <div class="line">                                       [](<span class="keyword">const</span> singlepop_t::mutation_t &amp; m,singlepop_t::mlist_t * __mutations) { <span class="keywordflow">return</span> __mutations-&gt;insert(__mutations-&gt;end(),m); },</div>
 <div class="line">                                       <span class="comment">//The gamete insertion policy takes a const singlepop_t::gamete_t and a non-const pointer to a glist</span></div>
@@ -176,8 +184,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">                                                                         <span class="comment">//The first policy is what to do for a homozygous mutation</span></div>
 <div class="line">                                                                         <span class="comment">//The &quot;homozygote&quot; policy must take a non-const reference to a double</span></div>
 <div class="line">                                                                         <span class="comment">//and a const singlepop_t::mlist_t::iterator as arguments</span></div>
-<div class="line">                                                                         [](<span class="keywordtype">double</span> &amp; fitness,<span class="keyword">const</span> singlepop_t::mlist_t::iterator &amp; <a name="a10"></a><a class="code" href="../../d1/dbe/crossoverTest_8cc.html#ad9baf2d3214da5c5b5710791a07c22a6">mut</a>) { </div>
-<div class="line">                                                                           fitness *= (1. + 2.*<a name="_a11"></a><a class="code" href="../../de/d89/structmut.html">mut</a>-&gt;s);</div>
+<div class="line">                                                                         [](<span class="keywordtype">double</span> &amp; fitness,<span class="keyword">const</span> singlepop_t::mlist_t::iterator &amp; <a name="a11"></a><a class="code" href="../../d1/dbe/crossoverTest_8cc.html#ad9baf2d3214da5c5b5710791a07c22a6">mut</a>) { </div>
+<div class="line">                                                                           fitness *= (1. + 2.*<a name="_a12"></a><a class="code" href="../../de/d89/structmut.html">mut</a>-&gt;s);</div>
 <div class="line">                                                                         },</div>
 <div class="line">                                                                         <span class="comment">//The second is what to do for a heterozygous mutation</span></div>
 <div class="line">                                                                         <span class="comment">//The &quot;heterozygote&quot; policy must take a non-const reference to a double</span></div>
@@ -187,14 +195,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">                                                                         });},</div>
 <div class="line">                                       <span class="comment">//Finally, mutations will be removed from gametes if they are extinct or fixed</span></div>
 <div class="line">                                       [&amp;N](<span class="keyword">const</span> singlepop_t::mlist_t::iterator &amp; i){ <span class="keywordflow">return</span> (!i-&gt;n || i-&gt;n == 2*N); });</div>
-<div class="line">          <a name="a12"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a84e666ea27d38bdfc539ffd23653eaa9">KTfwd::remove_fixed_lost</a>(&amp;pop.mutations,&amp;pop.fixations,&amp;pop.fixation_times,&amp;pop.mut_lookup,generation,2*N);</div>
+<div class="line">          <a name="a13"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a84e666ea27d38bdfc539ffd23653eaa9">KTfwd::remove_fixed_lost</a>(&amp;pop.mutations,&amp;pop.fixations,&amp;pop.fixation_times,&amp;pop.mut_lookup,generation,2*N);</div>
 <div class="line">          assert(<a class="code" href="../../da/d8b/namespaceKTfwd.html#a728e20cb60f82b818b5cc570722079a4">KTfwd::check_sum</a>(pop.gametes,2*N));</div>
 <div class="line">        }</div>
 <div class="line">      Sequence::SimData neutral_muts,selected_muts;</div>
 <div class="line"></div>
 <div class="line">      <span class="comment">//Take a sample of size samplesize1.  Two data blocks are returned, one for neutral mutations, and one for selected</span></div>
 <div class="line">      std::pair&lt; std::vector&lt; std::pair&lt;double,std::string&gt; &gt;,</div>
-<div class="line">                 std::vector&lt; std::pair&lt;double,std::string&gt; &gt; &gt; sample = <a name="a13"></a><a class="code" href="../../d7/de2/group__samplingPopsInd.html#ga235b4507a6f09b26fa9b33ef12abf59d">ms_sample_separate</a>(r.<a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a12a336875d99337390d2231228707bc4">get</a>(),&amp;pop.diploids,samplesize1);</div>
+<div class="line">                 std::vector&lt; std::pair&lt;double,std::string&gt; &gt; &gt; sample = <a name="a14"></a><a class="code" href="../../d7/de2/group__samplingPopsInd.html#ga235b4507a6f09b26fa9b33ef12abf59d">ms_sample_separate</a>(r.<a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a12a336875d99337390d2231228707bc4">get</a>(),&amp;pop.diploids,samplesize1);</div>
 <div class="line"></div>
 <div class="line">      neutral_muts.assign( sample.first.begin(), sample.first.end() );</div>
 <div class="line">      selected_muts.assign( sample.second.begin(), sample.second.end() );</div>

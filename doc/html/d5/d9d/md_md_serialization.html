@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.2</span>
+   &#160;<span id="projectnumber">0.3.3</span>
    </div>
   </td>
  </tr>
@@ -91,14 +91,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <h2>The basic functions</h2>
 <p>For single-deme simulations, the library provides the following functions:</p>
 <ul>
-<li><a class="el" href="../../da/d8b/namespaceKTfwd.html#a4826160f7e99b8c2cdb7fa2769c6aeeb" title="Write population to binary-format file for individual-based simulations. ">KTfwd::write_binary_pop</a></li>
-<li><a class="el" href="../../da/d8b/namespaceKTfwd.html#af5ddb3ab8a5d762b4feda87205ad2253" title="Read the population back from a binary-format file for individual-based simulations. ">KTfwd::read_binary_pop</a></li>
+<li><a class="el" href="../../da/d8b/namespaceKTfwd.html#a373a7cb82b761c6d2a49059031fe69de" title="Write population to binary-format file for individual-based simulations. ">KTfwd::write_binary_pop</a></li>
+<li><a class="el" href="../../da/d8b/namespaceKTfwd.html#a770312024c111ecd9e065854e527cf86" title="Read the population back from a binary-format file for individual-based simulations. ">KTfwd::read_binary_pop</a></li>
 </ul>
 <p>These functions write and read simulated populations in a binary (<em>e.g.</em> not human-readable) format.</p>
 <p>For multi-deme simulations, we have:</p>
 <ul>
-<li><a class="el" href="../../da/d8b/namespaceKTfwd.html#ab62f60cccc4f91b8d9695a4d9abf300a">KTfwd::write_binary_metapop</a></li>
-<li><a class="el" href="../../da/d8b/namespaceKTfwd.html#a3be2b56dc9917b88ed0a91ce7a3c6bb5" title="Read the metapopulation back from a binary-format file for individual-based simulations Read the meta...">KTfwd::read_binary_metapop</a></li>
+<li><a class="el" href="../../da/d8b/namespaceKTfwd.html#a9e69664068c15f09429f9087144fec7f">KTfwd::write_binary_metapop</a></li>
+<li><a class="el" href="../../da/d8b/namespaceKTfwd.html#aed5dfa35262dd186e117a0c98b7f77fb" title="Read the metapopulation back from a binary-format file for individual-based simulations Read the meta...">KTfwd::read_binary_metapop</a></li>
 </ul>
 <p>As with the rest of the library, these functions are implemented using a combination of templates + function overloading.</p>
 <p>Currently, these functions support the following types of simulations:</p>
@@ -128,7 +128,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">  <a class="code" href="../../d0/db9/sugar1_8cc.html#a26022ef252703a27f414647b9ad246a8">mutation_with_age</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; __o,<span class="keyword">const</span> <span class="keywordtype">double</span> &amp; position, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; count, </div>
 <div class="line">                    <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; __s, <span class="keyword">const</span> <span class="keywordtype">double</span> __h,</div>
 <div class="line">                    <span class="keyword">const</span> <span class="keywordtype">bool</span> &amp; isneutral = <span class="keyword">true</span>)</div>
-<div class="line">    : KTfwd::<a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html#a73b18577e5d041ad1822663335477862">mutation_base</a>(position,count,isneutral),s(__s),h(__h),g(__o)</div>
+<div class="line">    : KTfwd::<a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html#a64bdb5e0758a9ab0b759b780d35ce50f">mutation_base</a>(position,count,isneutral),s(__s),h(__h),g(__o)</div>
 <div class="line">  {     </div>
 <div class="line">  }</div>
 <div class="line">};</div>
@@ -175,7 +175,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html#a445d1d00f8ccab821827842bf7f78df0">result_type</a>(g,pos,n,s,h,neut);</div>
 <div class="line">  }</div>
 <div class="line">};</div>
-</div><!-- fragment --><p>Below, you will see how to pass these to <a class="el" href="../../da/d8b/namespaceKTfwd.html#a4826160f7e99b8c2cdb7fa2769c6aeeb" title="Write population to binary-format file for individual-based simulations. ">KTfwd::write_binary_pop</a> and <a class="el" href="../../da/d8b/namespaceKTfwd.html#af5ddb3ab8a5d762b4feda87205ad2253" title="Read the population back from a binary-format file for individual-based simulations. ">KTfwd::read_binary_pop</a>.</p>
+</div><!-- fragment --><p>Below, you will see how to pass these to <a class="el" href="../../da/d8b/namespaceKTfwd.html#a373a7cb82b761c6d2a49059031fe69de" title="Write population to binary-format file for individual-based simulations. ">KTfwd::write_binary_pop</a> and <a class="el" href="../../da/d8b/namespaceKTfwd.html#a770312024c111ecd9e065854e527cf86" title="Read the population back from a binary-format file for individual-based simulations. ">KTfwd::read_binary_pop</a>.</p>
 <h2>Reading and writing diploids.</h2>
 <p>Version 0.3.1 allowed the use of custom diploid genotype objects (<a class="el" href="../../d2/dcd/md_md_customdip.html">Advanced topics: custom diploid genotypes</a>). Such objects can be serialized with no additional effort. <em>However, doing so will result in custom data associated with these custom types not being serialized.</em></p>
 <p>In order to solve this, define your own custom structures for writing and reading:</p>
@@ -190,25 +190,25 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --><p>The arguments should be an iterator pointing to one of your custom diploids, and a reference to an output stream (including a gzFile!). A function object of the same form should also be written to read the data back in.</p>
 <p>These custom serialization objects may be passed as the last arguments to the functions discussed in the next section. By default, they are implicitly passed <a class="el" href="../../d5/d09/structKTfwd_1_1diploidIOplaceholder.html" title="placeholder IO policy for standard diploid types ">KTfwd::diploidIOplaceholder</a>, which is essentially an empty object.</p>
 <h2>In-memory copying</h2>
-<p>It may be desirable to be able to restore a population from a previous state. For example, you may wish to repeatedly introduce a mutation at a position, and then simulate until it is fixed. For replicates where it is lost, you will restore the population to the state it was in when you introduced the mutation. You may do this using <a class="el" href="../../da/d8b/namespaceKTfwd.html#a4826160f7e99b8c2cdb7fa2769c6aeeb" title="Write population to binary-format file for individual-based simulations. ">KTfwd::write_binary_pop</a> or <a class="el" href="../../da/d8b/namespaceKTfwd.html#ab62f60cccc4f91b8d9695a4d9abf300a">KTfwd::write_binary_metapop</a>, and write the population to an in-memory buffer such as <a href="http://www.cplusplus.com/reference/sstream/ostringstream/">std::ostringstream</a>. You may restore the population by reading the data from a <a href="http://www.cplusplus.com/reference/sstream/istringstream/">std::istringstream</a>.</p>
+<p>It may be desirable to be able to restore a population from a previous state. For example, you may wish to repeatedly introduce a mutation at a position, and then simulate until it is fixed. For replicates where it is lost, you will restore the population to the state it was in when you introduced the mutation. You may do this using <a class="el" href="../../da/d8b/namespaceKTfwd.html#a373a7cb82b761c6d2a49059031fe69de" title="Write population to binary-format file for individual-based simulations. ">KTfwd::write_binary_pop</a> or <a class="el" href="../../da/d8b/namespaceKTfwd.html#a9e69664068c15f09429f9087144fec7f">KTfwd::write_binary_metapop</a>, and write the population to an in-memory buffer such as <a href="http://www.cplusplus.com/reference/sstream/ostringstream/">std::ostringstream</a>. You may restore the population by reading the data from a <a href="http://www.cplusplus.com/reference/sstream/istringstream/">std::istringstream</a>.</p>
 <p>Here is some pseudocode for an individual-based simulation:</p>
 <div class="fragment"><div class="line"><span class="comment">//run a simulation...</span></div>
 <div class="line"></div>
 <div class="line"><span class="comment">//write it to a buffer:</span></div>
 <div class="line">std::ostringstream buffer;</div>
-<div class="line"><a class="code" href="../../da/d8b/namespaceKTfwd.html#a4826160f7e99b8c2cdb7fa2769c6aeeb">KTfwd::write_binary_pop</a>(&amp;gametes,&amp;mutations,&amp;diploids,std::bind(<a class="code" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>(),std::placeholders::_1,std::placeholders::_2),buffer);</div>
+<div class="line"><a class="code" href="../../da/d8b/namespaceKTfwd.html#a373a7cb82b761c6d2a49059031fe69de">KTfwd::write_binary_pop</a>(&amp;gametes,&amp;mutations,&amp;diploids,std::bind(<a class="code" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>(),std::placeholders::_1,std::placeholders::_2),buffer);</div>
 <div class="line"></div>
 <div class="line"><span class="comment">//Now, if you want to restore it:</span></div>
 <div class="line">std::istringstream inbuffer(buffer.str());</div>
 <div class="line">decltype(mutations) mutations2;</div>
 <div class="line">decltype(gametes) gametes2;</div>
 <div class="line">decltype(diploids) diploids2;</div>
-<div class="line">KTfwd::<a class="code" href="../../da/d8b/namespaceKTfwd.html#af5ddb3ab8a5d762b4feda87205ad2253">read_binary_pop</a>(&amp;gametes2,</div>
+<div class="line">KTfwd::<a class="code" href="../../da/d8b/namespaceKTfwd.html#a770312024c111ecd9e065854e527cf86">read_binary_pop</a>(&amp;gametes2,</div>
 <div class="line">                         &amp;mutations2,</div>
 <div class="line">                         &amp;diploids2,</div>
 <div class="line">                         std::bind(<a class="code" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">mreader</a>(),std::placeholders::_1),</div>
 <div class="line">                         inbuffer);</div>
-</div><!-- fragment --><p>This approach works because <a class="el" href="../../da/d8b/namespaceKTfwd.html#a4826160f7e99b8c2cdb7fa2769c6aeeb" title="Write population to binary-format file for individual-based simulations. ">KTfwd::write_binary_pop</a> and <a class="el" href="../../da/d8b/namespaceKTfwd.html#ab62f60cccc4f91b8d9695a4d9abf300a">KTfwd::write_binary_metapop</a> perform "deep copies" of the data, allowing the complete restoration of all the pointers, etc., stored in the containers.</p>
+</div><!-- fragment --><p>This approach works because <a class="el" href="../../da/d8b/namespaceKTfwd.html#a373a7cb82b761c6d2a49059031fe69de" title="Write population to binary-format file for individual-based simulations. ">KTfwd::write_binary_pop</a> and <a class="el" href="../../da/d8b/namespaceKTfwd.html#a9e69664068c15f09429f9087144fec7f">KTfwd::write_binary_metapop</a> perform "deep copies" of the data, allowing the complete restoration of all the pointers, etc., stored in the containers.</p>
 <h2>Writing to files</h2>
 <p>You may use the same functions to write/read to from files. You may use and sort of <a href="http://www.cplusplus.com/reference/ostream/ostream/">std::ostream</a>-compatible object for output. You may use either a <a href="http://www.cplusplus.com/reference/istream/istream/">std::istream</a>-compatible object for input or a gzFile object from <a href="http://zlib.net">zlib</a>.</p>
 <h2>Managing output from multiple independent processes</h2>

@@ -217,7 +217,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </table>
 <p>All simulations were compiled with GCC 4.9.2 and using -O3. The intent is to check "out-of-the-box" performance, meaning that the programs were compiled as the developer intends them. In the case of fwdpp, the configure script allows all of the above combinations. For SLiM, I simply compiled it "as is", following the author's instructions.</p>
 <p>All fwdpp jobs are based on the example program diploid_ind that comes with the library.</p>
-<p>The parameters for the small-N simulations were <img class="formulaInl" alt="$N=1,000$" src="form_60.png"/>, <img class="formulaInl" alt="$\theta = \rho = 5,000$" src="form_61.png"/>, and evolved for <img class="formulaInl" alt="$10N$" src="form_62.png"/> generations. I performed 12 replicates of each of the above combinations, running 4 at a time using GNU parallel. The <a href="performance/time_0_3_3_.pdf">run times</a> and <a href="performance/mem_0_3_3.pdf">peak memory use</a> show that:</p>
+<p>The parameters for the small-N simulations were <img class="formulaInl" alt="$N=1,000$" src="form_60.png"/>, <img class="formulaInl" alt="$\theta = \rho = 5,000$" src="form_61.png"/>, and evolved for <img class="formulaInl" alt="$10N$" src="form_62.png"/> generations. I performed 12 replicates of each of the above combinations, running 4 at a time using GNU parallel. The <a href="performance/time_0_3_3.pdf">run times</a> and <a href="performance/mem_0_3_3.pdf">peak memory use</a> show that:</p>
 <ul>
 <li>fwdpp 0.3.3 is about 40% faster than 0.3.2</li>
 <li>fwdpp 0.3.3 is more memory efficient than previous versions</li>

@@ -217,13 +217,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </table>
 <p>All simulations were compiled with GCC 4.9.2 and using -O3. The intent is to check "out-of-the-box" performance, meaning that the programs were compiled as the developer intends them. In the case of fwdpp, the configure script allows all of the above combinations. For SLiM, I simply compiled it "as is", following the author's instructions.</p>
 <p>All fwdpp jobs are based on the example program diploid_ind that comes with the library.</p>
+<p><b>Links to pdfs only show up on github. I'll try to fix this later for the doxygen reference manual page.</b></p>
 <p>The parameters for the small-N simulations were <img class="formulaInl" alt="$N=1,000$" src="form_60.png"/>, <img class="formulaInl" alt="$\theta = \rho = 5,000$" src="form_61.png"/>, and evolved for <img class="formulaInl" alt="$10N$" src="form_62.png"/> generations. I performed 12 replicates of each of the above combinations, running 4 at a time using GNU parallel. The <a href="performance/time_0_3_3.pdf">run times</a> and <a href="performance/mem_0_3_3.pdf">peak memory use</a> show that:</p>
 <ul>
 <li>fwdpp 0.3.3 is about 40% faster than 0.3.2</li>
 <li>fwdpp 0.3.3 is more memory efficient than previous versions</li>
 <li>fwdpp 0.3.3 outperforms SLiM for this case (which is a change from the fwdpp paper, where SLiM was faster for small-N simulations with large mutation/recombination rates).</li>
 </ul>
-<p>The parameters for the large-N simulations wer <img class="formulaInl" alt="$N=10,000$" src="form_63.png"/>, <img class="formulaInl" alt="$\theta = \rho = 4,000$" src="form_64.png"/>, and evolved for <img class="formulaInl" alt="$10N$" src="form_62.png"/> generations. I performed 4 replicates of each of the above combinations, running 4 at a time using GNU parallel, imposing a 36-hour wall clock limit, at which point a simulation was killed. For these parameters, SLiM did not complete a single replicated. The <a href="performance/bigtime_0_3_3.pdf">run time</a> and <a href="bigmem_0_3_3.pdf">peak memory use</a> results for fwdpp show that:</p>
+<p>The parameters for the large-N simulations wer <img class="formulaInl" alt="$N=10,000$" src="form_63.png"/>, <img class="formulaInl" alt="$\theta = \rho = 4,000$" src="form_64.png"/>, and evolved for <img class="formulaInl" alt="$10N$" src="form_62.png"/> generations. I performed 4 replicates of each of the above combinations, running 4 at a time using GNU parallel, imposing a 36-hour wall clock limit, at which point a simulation was killed. For these parameters, SLiM did not complete a single replicated. The <a href="performance/bigtime_0_3_3.pdf">run time</a> and <a href="performance/bigmem_0_3_3.pdf">peak memory use</a> results for fwdpp show that:</p>
 <ul>
 <li>fwdpp 0.3.2 took ~19.5 hours to complete a replicate</li>
 <li>fwdpp 0.3.3 takes ~9.5 hours and uses less memory than 0.3.2.</li>

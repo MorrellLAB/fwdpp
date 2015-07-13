@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.3</span>
+   &#160;<span id="projectnumber">0.3.4</span>
    </div>
   </td>
  </tr>
@@ -157,7 +157,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">      </span>{</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="comment">//static asserts suppress hideously-long compiler warnings on GCC</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        static_assert( std::is_const&lt; <span class="keyword">typename</span> std::remove_pointer&lt;<span class="keyword">typename</span> decltype(p1_itr)::pointer&gt;::type &gt;::value , <span class="stringliteral">&quot;p1_itr must point to const data&quot;</span>);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">return</span> ((f==1.)||(f&gt;0.&amp;&amp;gsl_rng_uniform(r) &lt;= f)) ? p1 : gsl_ran_discrete(r,<a class="code" href="../../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html#ae7971038e9afab30dad01a8aefbca3fb">lookup</a>.get());</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">return</span> ((f==1.)||(f&gt;0.&amp;&amp;gsl_rng_uniform(r) &lt; f)) ? p1 : gsl_ran_discrete(r,<a class="code" href="../../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html#ae7971038e9afab30dad01a8aefbca3fb">lookup</a>.get());</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">      //! \brief Update some property of the offspring based on properties of the parents</span></div>
@@ -243,8 +243,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;          p2g2 = (pptr+<span class="keyword">typename</span> decltype(pptr)::difference_type(p2))-&gt;second;</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;          <span class="comment">//0.3.3 change:</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;          <span class="keywordflow">if</span>(gsl_rng_uniform(r)&lt;=0.5) std::swap(p1g1,p1g2);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;          <span class="keywordflow">if</span>(gsl_rng_uniform(r)&lt;=0.5) std::swap(p2g1,p2g2);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;          <span class="keywordflow">if</span>(gsl_rng_uniform(r)&lt;0.5) std::swap(p1g1,p1g2);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;          <span class="keywordflow">if</span>(gsl_rng_uniform(r)&lt;0.5) std::swap(p2g1,p2g2);</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;          </div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;          NREC += rec_pol(p1g1,p1g2,lookup);</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;          NREC += rec_pol(p2g1,p2g2,lookup);</div>

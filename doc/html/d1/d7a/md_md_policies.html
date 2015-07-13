@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.3</span>
+   &#160;<span id="projectnumber">0.3.4</span>
    </div>
   </td>
  </tr>
@@ -273,7 +273,7 @@ Policy requirements in fwdpp</h1>
 <div class="line"><span class="comment"></span></div>
 <div class="line"><span class="comment">size_t migpop(const size_t &amp; source_pop, gsl_rng * r, const double &amp; mig_prob)</span></div>
 <div class="line"><span class="comment">{</span></div>
-<div class="line"><span class="comment">  if( gsl_rng_uniform(r) &lt;= mig_prob )</span></div>
+<div class="line"><span class="comment">  if( gsl_rng_uniform(r) &lt; mig_prob )</span></div>
 <div class="line"><span class="comment">    {</span></div>
 <div class="line"><span class="comment">      return ! source_pop;</span></div>
 <div class="line"><span class="comment">    }</span></div>
@@ -416,7 +416,7 @@ Mutation policies</h2>
 <div class="line">    lookup-&gt;insert(pos);</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//law of TTL prob</span></div>
-<div class="line">    <span class="keywordtype">bool</span> neutral = (gsl_rng_uniform(r) &lt;= (mu_neutral)/(mu_neutral+mu_selected)) ? <span class="keyword">true</span> : <span class="keyword">false</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> neutral = (gsl_rng_uniform(r) &lt; (mu_neutral)/(mu_neutral+mu_selected)) ? <span class="keyword">true</span> : <span class="keyword">false</span>;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//return neutral mutation</span></div>
 <div class="line">    <span class="keywordflow">if</span> ( neutral ) { <span class="keywordflow">return</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>(pos,0,1,0); }</div>
@@ -473,7 +473,7 @@ Mutation policies</h2>
 <div class="line">   lookup-&gt;insert(pos);</div>
 <div class="line"></div>
 <div class="line">   <span class="comment">//law of TTL prob</span></div>
-<div class="line">   <span class="keywordtype">bool</span> neutral = (gsl_rng_uniform(r) &lt;= (mu_neutral)/(mu_neutral+mu_selected)) ? <span class="keyword">true</span> : <span class="keyword">false</span>;</div>
+<div class="line">   <span class="keywordtype">bool</span> neutral = (gsl_rng_uniform(r) &lt; (mu_neutral)/(mu_neutral+mu_selected)) ? <span class="keyword">true</span> : <span class="keyword">false</span>;</div>
 <div class="line"></div>
 <div class="line">   <span class="comment">//return neutral mutation</span></div>
 <div class="line">   <span class="keywordflow">if</span> ( neutral ) { <span class="keywordflow">return</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>(pos,1,<span class="keyword">true</span>,0); }</div>
@@ -497,7 +497,7 @@ Recombination</h2>
 <div class="line">                   <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; a,</div>
 <div class="line">                   <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; b)</div>
 <div class="line">    {</div>
-<div class="line">      <span class="keywordflow">return</span> (gsl_rng_uniform(r) &lt;= p) ? gsl_rng_uniform(r) : gsl_ran_beta(r,a,b);</div>
+<div class="line">      <span class="keywordflow">return</span> (gsl_rng_uniform(r) &lt; p) ? gsl_rng_uniform(r) : gsl_ran_beta(r,a,b);</div>
 <div class="line">    }</div>
 <div class="line"><span class="comment">/*</span></div>
 <div class="line"><span class="comment">   This is a hot hotspot.  say hist( c(runif(1e3),rbeta(9e3,100,100) ) ) in R </span></div>
@@ -559,7 +559,7 @@ Migration</h2>
 <div class="fragment"><div class="line"><span class="keywordtype">size_t</span> <a class="code" href="../../da/d50/sugar2_8cc.html#a4862499cb62bfa43943001b59fe6dc0d">migpop</a>(<span class="keyword">const</span> <span class="keywordtype">size_t</span> &amp; source_pop, gsl_rng * r, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; mig_prob)</div>
 <div class="line">{</div>
 <div class="line">  <span class="comment">//if parent is a migrant</span></div>
-<div class="line">  <span class="keywordflow">if</span>( gsl_rng_uniform(r) &lt;= mig_prob )</div>
+<div class="line">  <span class="keywordflow">if</span>( gsl_rng_uniform(r) &lt; mig_prob )</div>
 <div class="line">  {</div>
 <div class="line">    <span class="comment">//return other population</span></div>
 <div class="line">    <span class="keywordflow">return</span> ! source_pop;</div>

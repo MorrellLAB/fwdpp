@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.3</span>
+   &#160;<span id="projectnumber">0.3.4</span>
    </div>
   </td>
  </tr>
@@ -205,7 +205,7 @@ Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">size_t</span> <a class="code" href="../../da/d50/sugar2_8cc.html#a4862499cb62bfa43943001b59fe6dc0d">migpop</a>(<span class="keyword">const</span> <span class="keywordtype">size_t</span> &amp; source_pop, gsl_rng * r, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; mig_prob)</div>
 <div class="line">{</div>
-<div class="line">  <span class="keywordflow">if</span>( gsl_rng_uniform(r) &lt;= mig_prob )</div>
+<div class="line">  <span class="keywordflow">if</span>( gsl_rng_uniform(r) &lt; mig_prob )</div>
 <div class="line">    {</div>
 <div class="line">      <span class="keywordflow">return</span> ! source_pop;</div>
 <div class="line">    }</div>

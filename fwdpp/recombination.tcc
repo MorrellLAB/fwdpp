@@ -1,18 +1,17 @@
 //  -*- C++ -*- 
-#ifndef __DIPLOID_FUNCTIONS_REC_GAMS_TCC__
-#define __DIPLOID_FUNCTIONS_REC_GAMS_TCC__
+#ifndef __FWDPP_RECOMBINATION_TCC__
+#define __FWDPP_RECOMBINATION_TCC__
 
+#include <vector>
 #include <fwdpp/internal/recombination_common.hpp>
 
 namespace KTfwd
 {
   template< typename iterator_type,
 	    typename list_type_allocator,
-	    typename vector_type_allocator,
 	    typename glookup_t,
-	    template<typename,typename> class vector_type,
 	    template<typename,typename> class list_type>
-  unsigned recombine_gametes( const vector_type< double, vector_type_allocator > & pos,
+  unsigned recombine_gametes( std::vector<double> & pos,
 			      list_type< typename iterator_type::value_type,list_type_allocator > * gametes,
 			      iterator_type & g1,
 			      iterator_type & g2,
@@ -31,53 +30,36 @@ namespace KTfwd
     fwdpp_internal::recombine_gametes(pos,g1,g2,neutral,selected);
 
     typename iterator_type::value_type ng(0u,neutral,selected);
-    //0.3.3
-#ifndef FWDPP_VECTOR_GLOOKUP
-    auto pitr = gamete_lookup.equal_range(neutral.size()+selected.size());
-    auto itr = std::find_if(pitr.first,pitr.second,[&ng](const typename glookup_t::value_type & __p) {
-	return *__p.second == ng;
-      });
-        if(itr == pitr.second)
+
+    //Lookup table method modified in 0.3.5.  Result is faster simulations with selection.
+    auto lookup = gamete_lookup.lookup(neutral.size(),selected.size());
+    if( lookup.first ) 
       {
-	g1 = gametes->emplace(gametes->end(),std::move(ng));
-	gamete_lookup.insert(std::make_pair(g1->mutations.size()+g1->smutations.size(),g1));
-      }
+	//Then we have to search through lookup.second
+	auto itr = std::find_if(lookup.second.first,
+				lookup.second.second,
+				[&ng]( typename glookup_t::inner_t & __p) {
+				  return *__p.second==ng;
+				});
+      if( itr == lookup.second.second ) 
+	{
+	  g1 = gametes->emplace(gametes->end(),std::move(ng));
+	  gamete_lookup.update(g1);
+	} 
+      else 
+	{
+	  g1 = itr->second;
+	}
+      } 
     else
       {
-	g1 = itr->second;
-      }
-#else
-    typename std::pair<std::int32_t,iterator_type> dummy(neutral.size()+selected.size(),g1);
-    auto pitr = std::equal_range(gamete_lookup.begin(),gamete_lookup.end(),dummy,
-     				 [](const typename std::pair<std::int32_t,iterator_type> & __p1, const typename std::pair<std::int32_t,iterator_type> & __p2 )
-     				 {
-     				   return __p1.first < __p2.first;
-     				 });
-    auto itr = std::find_if(pitr.first,pitr.second,[&ng](const typename glookup_t::value_type & __p) {
-	return *__p.second == ng;
-      });
-    if(itr == pitr.second)
-      {
+	/*
+	  There is no gamete in gametes with the number of neutral AND selected mutations,
+	  and therefore the gamete is novel
+	*/
 	g1 = gametes->emplace(gametes->end(),std::move(ng));
-	//By def'n, pitr.second is the place to insert...
-	gamete_lookup.insert(pitr.second,std::make_pair(g1->mutations.size()+g1->smutations.size(),g1));
+	gamete_lookup.update(g1);
       }
-    else
-      {
-	g1 = itr->second;
-      }
-#endif
-    // std::cerr << std::distance(pitr.first,pitr.second) << ' ' << gamete_lookup.size() << ' '
-    // 	      << (std::find_if(pitr.first,pitr.second,[&ng](typename glookup_t::value_type & __p) {
-    // 		    return *__p.second == ng;
-    // 		  }) == pitr.second)
-    // 	      << '\n';
-    /*
-    //NOTE: backwards searches have little effect on speed, apparently...
-    auto itr=std::find(gametes->begin(),gametes->end(),ng);
-    if(itr!=gametes->end())g1=itr;
-    else g1 = gametes->emplace(gametes->end(),std::move(ng));
-    */
     return pos.size()-1;
   }
 

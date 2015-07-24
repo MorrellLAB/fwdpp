@@ -1,8 +1,30 @@
 # FWDPP RELEASE NOTES
 
+## 0.3.5
+
+* Faster simulations with selection due to new data structure.  The gamete lookup tables introduced in 0.3.3 have been reworked.  This is not an API change, but rather an internal change that will be transparent to programmers using the library.
+* "make check" now executes all unit tests, if and only if the boost unit testing library is present.
+* Source code reorganization -- Issue #21
+* Sugar code can now be included all at once.  This resolves Issue #23.  The convenience header is:
+
+~~~{cpp}
+#include <fwdpp/sugar.hpp>
+~~~
+
+* configure script now allows linking to the jemalloc library.  Preliminary benchmarks suggest that linking to tcmalloc gives better performance, but users may test for themselves:
+
+~~~~{sh}
+./configure --enable-jemalloc=yes
+~~~~
+
+* Travis-CI integration was added for the Git repo.
+* Getting the Travis-CI integration to work resulted in changes to the unit tests and the experimental examples to improve their handling of boost-related things.
+* unit/policyTests.cc was modified.  Previously, it was failing on GCC for the "wrong" reason.  The moves were actually happening, but the return value was being set at the wrong time.
+* Various code cleanup
+
 ## 0.3.4
 
-* License updated to GPLv3
+* LICENSE/COPYING files updated
 * Tutorial improved for multi-locus simulations
 * Issue #20 addressed throughout the library + examples + unit tests
 

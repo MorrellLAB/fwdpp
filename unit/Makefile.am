@@ -1,4 +1,4 @@
-if BUNIT_TEST_PRESENT
+if BUNIT_TEST_LIB_PRESENT
 
 check_PROGRAMS=mutateTest \
 	crossoverTest \
@@ -11,6 +11,8 @@ check_PROGRAMS=mutateTest \
 	sugar2 \
 	sugar3 \
 	sugar1_custom
+
+TESTS=$(check_PROGRAMS)
 
 mutateTest_SOURCES=mutateTest.cc 
 crossoverTest_SOURCES=crossoverTest.cc

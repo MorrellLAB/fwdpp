@@ -26,6 +26,19 @@ Comments are welcome.
 
 This README is the main page of the fwdpp documentation.  It may display some things oddly when viewed on GitHub and/or links to other documentation pages may be broken.  These issues are not bugs -- please see the Reference Manual at the [fwdpp home page](http://molpopgen.github.io/fwdpp/) for a fully-formatted version of this document.
 
+# Build status
+
+* Status of master branch: [![Build Status](https://travis-ci.org/molpopgen/fwdpp.svg?branch=master)](https://travis-ci.org/molpopgen/fwdpp) 
+* Status of dev branch: [![Build Status](https://travis-ci.org/molpopgen/fwdpp.svg?branch=dev)](https://travis-ci.org/molpopgen/fwdpp)
+
+Currently, the Travis-CI setup uses the following tools:
+
+* Linux
+* gcc 4.9
+* clang 3.6
+* GSL 1.15
+* boost 1.48
+
 # Introduction
 
 fwdpp is a C++ template library that abstracts the basic operations required to implement forward-time simulations of population- and quantitative-genetic models.  The library allows the simulation of single populations or metapopulations evolving under the standard evolutionary forces of drift, recombination, migration, and natural selection.  Arbitrary population size changes are also allowed. Different populations in a metapopulation may evolve under different fitness schemes.
@@ -261,7 +274,7 @@ make
 make install
 ~~~
 
-To compile examples and unit tests:
+To compile examples and unit tests, and to execute unit tests:
 
 ~~~
 make check
@@ -306,7 +319,7 @@ For example, if libsequence is in /opt:
 
 ~~~{.sh}
 #Note, you need to add in the desired optimization (-OXX) level:
-./configure CXXFLAGS=-"-O2 -I/opt/include" LDFLAGS="$LDFLAGS -L/opt/lib"
+./configure CXXFLAGS="-O2 -I/opt/include" LDFLAGS="$LDFLAGS -L/opt/lib"
 make check
 make install
 ~~~

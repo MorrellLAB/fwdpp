@@ -1,5 +1,20 @@
 /* config.h.in.  Generated from configure.ac by autoheader.  */
 
+/* Is boost hash header found? */
+#undef HAVE_BOOST_HASH
+
+/* Is boost list header found? */
+#undef HAVE_BOOST_LIST
+
+/* Is boost pool alloc header found? */
+#undef HAVE_BOOST_POOL_ALLOC
+
+/* Is boost unordered set header found> */
+#undef HAVE_BOOST_UNORDERED_SET
+
+/* Is boost vector header found? */
+#undef HAVE_BOOST_VECTOR
+
 /* define if the compiler supports basic C++11 syntax */
 #undef HAVE_CXX11
 
@@ -14,6 +29,9 @@
 
 /* Define to 1 if you have the `gslcblas' library (-lgslcblas). */
 #undef HAVE_LIBGSLCBLAS
+
+/* Define to 1 if you have the `jemalloc' library (-ljemalloc). */
+#undef HAVE_LIBJEMALLOC
 
 /* Define to 1 if you have the `sequence' library (-lsequence). */
 #undef HAVE_LIBSEQUENCE

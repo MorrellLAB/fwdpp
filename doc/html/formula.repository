@@ -2,72 +2,72 @@
 \form#1:$n$
 \form#2:$n = N$
 \form#3:$2N$
-\form#4:$\leq$
-\form#5:$s$
-\form#6:$\theta$
-\form#7:$\rho$
-\form#8:$r_{bw}$
-\form#9:\[\frac{AB}{ab}\]
-\form#10:\[\frac{Ab}{aB}\]
-\form#11:$[0,1)$
-\form#12:$[1,2)$
-\form#13:$y$
-\form#14:$x$
-\form#15:$e$
-\form#16:$x = y+e$
-\form#17:$V(G) \approx 4\mu$
-\form#18:$4 \times 10^{-4}$
-\form#19:$V(G)$
-\form#20:$(\mathrm{start},\mathrm{start}+1]$
-\form#21:$(0,1]$
-\form#22:$(1,2]$
-\form#23:$L-1$
-\form#24:$L$
-\form#25:$i$
-\form#26:$i-1$
-\form#27:$1 \leq i \leq L-1$
-\form#28:$r$
-\form#29:$n \ll N$
-\form#30:$\mu$
-\form#31:$\mu_s$
-\form#32:$s_m$
-\form#33:$s < 0$
-\form#34:$s > 0$
-\form#35:$1, 1+hs, 1+2s$
-\form#36:$\sigma_e$
-\form#37:$p$
-\form#38:$1-p$
-\form#39:$a$
-\form#40:$b$
-\form#41:$\geq 1.5x$
-\form#42:$j$
-\form#43:$j = i$
-\form#44:$j \neq i$
-\form#45:$m$
-\form#46:$0 \leq i \leq 1$
-\form#47:$1, 1+sh, 1+s \times \mathrm{scaling}$
-\form#48:$scaling = 1$
-\form#49:$1$
-\form#50:$w = 1$
-\form#51:$w$
-\form#52:$h$
-\form#53:$1+hs$
-\form#54:$1+xs$
-\form#55:$x = 1$
-\form#56:$AA$
-\form#57:$Aa$
-\form#58:$aa$
-\form#59:$g$
-\form#60:$N=1,000$
-\form#61:$\theta = \rho = 5,000$
-\form#62:$10N$
-\form#63:$N=10,000$
-\form#64:$\theta = \rho = 4,000$
-\form#65:$\rho = 4Nr$
-\form#66:$4\rho$
-\form#67:$4Nr$
-\form#68:$O(g)$
-\form#69:$O(log(g))$
-\form#70:$O(\rho/2)$
-\form#71:$i^{th}$
-\form#72:$[i,i+1)$
+\form#4:$N=1,000$
+\form#5:$\theta = \rho = 5,000$
+\form#6:$10N$
+\form#7:$N=10,000$
+\form#8:$\theta = \rho = 4,000$
+\form#9:$\rho = 4Nr$
+\form#10:$4\rho$
+\form#11:$4Nr$
+\form#12:$r$
+\form#13:$O(g)$
+\form#14:$g$
+\form#15:$O(log(g))$
+\form#16:$O(\rho/2)$
+\form#17:$\leq$
+\form#18:$s$
+\form#19:$\theta$
+\form#20:$\rho$
+\form#21:$r_{bw}$
+\form#22:\[\frac{AB}{ab}\]
+\form#23:\[\frac{Ab}{aB}\]
+\form#24:$[0,1)$
+\form#25:$[1,2)$
+\form#26:$y$
+\form#27:$x$
+\form#28:$e$
+\form#29:$x = y+e$
+\form#30:$V(G) \approx 4\mu$
+\form#31:$4 \times 10^{-4}$
+\form#32:$V(G)$
+\form#33:$(\mathrm{start},\mathrm{start}+1]$
+\form#34:$(0,1]$
+\form#35:$(1,2]$
+\form#36:$i^{th}$
+\form#37:$[i,i+1)$
+\form#38:$L-1$
+\form#39:$L$
+\form#40:$i$
+\form#41:$i-1$
+\form#42:$1 \leq i \leq L-1$
+\form#43:$n \ll N$
+\form#44:$\mu$
+\form#45:$\mu_s$
+\form#46:$s_m$
+\form#47:$s < 0$
+\form#48:$s > 0$
+\form#49:$1, 1+hs, 1+2s$
+\form#50:$\sigma_e$
+\form#51:$p$
+\form#52:$1-p$
+\form#53:$a$
+\form#54:$b$
+\form#55:$\geq 1.5x$
+\form#56:$j$
+\form#57:$j = i$
+\form#58:$j \neq i$
+\form#59:$m$
+\form#60:$0 \leq i \leq 1$
+\form#61:$1, 1+sh, 1+s \times \mathrm{scaling}$
+\form#62:$scaling = 1$
+\form#63:$1$
+\form#64:$w = 1$
+\form#65:$w$
+\form#66:$h$
+\form#67:$1+hs$
+\form#68:$1+xs$
+\form#69:$x = 1$
+\form#70:$AA$
+\form#71:$Aa$
+\form#72:$aa$

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.4</span>
+   &#160;<span id="projectnumber">0.3.5</span>
    </div>
   </td>
  </tr>
@@ -87,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <p>This section discusses how to implement simulations where a diploid's genotype is represented by a user-defined type.</p>
 <p>This is a document covering advanced programming issues using <b>fwdpp</b>. Please see the introductory tutorials if you are new to programming with the library.</p>
 <h2>Rationale</h2>
-<p>In all versions of <b>fwdpp</b> <img class="formulaInl" alt="$\leq$" src="../../form_4.png"/> 0.3.0, the genotype of a diploid (at a single locus, including a specific locus in a multilocus simulation) had the following type:</p>
+<p>In all versions of <b>fwdpp</b> <img class="formulaInl" alt="$\leq$" src="../../form_17.png"/> 0.3.0, the genotype of a diploid (at a single locus, including a specific locus in a multilocus simulation) had the following type:</p>
 <div class="fragment"><div class="line"><span class="comment">//Note: standard_diploid_t is not, nor ever was, a fwdpp type--this is simply a typedef for illustration&#39;s sake.</span></div>
 <div class="line"><span class="keyword">using</span> <a class="code" href="../../d3/dea/namespaceKTfwd_1_1tags.html#a92fb7b7465637fb0a6b8cd9301b793f9">standard_diploid_t</a> = std::pair&lt; glist::iterator, glist::iterator&gt;;</div>
 </div><!-- fragment --><p>And a single population was implemented as:</p>

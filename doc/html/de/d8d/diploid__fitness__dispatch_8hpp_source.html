@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.4</span>
+   &#160;<span id="projectnumber">0.3.5</span>
    </div>
   </td>
  </tr>
@@ -103,22 +103,22 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">    //! Standard diploids</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"></span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> fitness_policy_type,</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;             <span class="keyword">typename</span> diploid_itr_t&gt;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#afc6d610569653768f125848317007328">   12</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#afc6d610569653768f125848317007328">diploid_fitness_dispatch</a>( <span class="keyword">const</span> fitness_policy_type &amp; fp, <span class="keyword">const</span> diploid_itr_t &amp; d, std::false_type ) {</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#afc6d610569653768f125848317007328">   12</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#afc6d610569653768f125848317007328">diploid_fitness_dispatch</a>( <span class="keyword">const</span> fitness_policy_type &amp; fp, <span class="keyword">const</span> diploid_itr_t &amp; d, std::false_type ) {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;      <span class="keywordflow">return</span> fp(d-&gt;first,d-&gt;second);</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    }</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment"></span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">    //! Custom diploids</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"></span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> fitness_policy_type,</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;             <span class="keyword">typename</span> diploid_itr_t&gt;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ac17dccb362b7b7a488ae34ac43bd5738">   19</a></span>&#160;    <span class="keywordtype">double</span>  <a class="code" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#afc6d610569653768f125848317007328">diploid_fitness_dispatch</a>( <span class="keyword">const</span> fitness_policy_type &amp; fp, <span class="keyword">const</span> diploid_itr_t &amp; d, std::true_type ) { </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ac17dccb362b7b7a488ae34ac43bd5738">   19</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">double</span>  <a class="code" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#afc6d610569653768f125848317007328">diploid_fitness_dispatch</a>( <span class="keyword">const</span> fitness_policy_type &amp; fp, <span class="keyword">const</span> diploid_itr_t &amp; d, std::true_type ) { </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      <span class="keywordflow">return</span> fp(d);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">    //! Custom diploids</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"></span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> fitness_policy_type,</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;             <span class="keyword">typename</span> diploid_itr_t&gt;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#adbb84152f62a5e3c009467cdbe4b3614">   26</a></span>&#160;    <span class="keywordtype">double</span>  <a class="code" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#afc6d610569653768f125848317007328">diploid_fitness_dispatch</a>( <span class="keyword">const</span> fitness_policy_type &amp; fp, <span class="keyword">const</span> diploid_itr_t &amp; d, std::true_type,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                      <span class="keyword">typename</span> std::enable_if&lt; <a class="code" href="../../d0/d30/namespaceKTfwd_1_1traits.html#a932d87fc5a9068585039a7a5e8bfc859">traits::is_custom_diploid_t&lt;typename diploid_itr_t::value_type&gt;::type</a> &gt;::type()) { </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#adbb84152f62a5e3c009467cdbe4b3614">   26</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">double</span>  <a class="code" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#afc6d610569653768f125848317007328">diploid_fitness_dispatch</a>( <span class="keyword">const</span> fitness_policy_type &amp; fp, <span class="keyword">const</span> diploid_itr_t &amp; d, std::true_type,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                             <span class="keyword">typename</span> std::enable_if&lt; <a class="code" href="../../d0/d30/namespaceKTfwd_1_1traits.html#a932d87fc5a9068585039a7a5e8bfc859">traits::is_custom_diploid_t&lt;typename diploid_itr_t::value_type&gt;::type</a> &gt;::type()) { </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      <span class="keywordflow">return</span> fp(*d);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    </div>

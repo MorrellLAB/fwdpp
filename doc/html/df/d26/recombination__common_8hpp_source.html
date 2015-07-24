@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.4</span>
+   &#160;<span id="projectnumber">0.3.5</span>
    </div>
   </td>
  </tr>
@@ -161,18 +161,16 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;          SWITCH=!SWITCH;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#ifndef NDEBUG</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor"></span>      <span class="comment">// using mlist_itr = typename gamete_type::mutation_list_type_iterator;</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <span class="comment">// auto am_I_sorted = [](mlist_itr lhs,mlist_itr rhs){return lhs-&gt;pos &lt; rhs-&gt;pos;};</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="comment">// assert( std::is_sorted(new_gamete1.mutations.begin(),new_gamete1.mutations.end(),std::cref(am_I_sorted)) );</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <span class="comment">// assert( std::is_sorted(new_gamete1.smutations.begin(),new_gamete1.smutations.end(),std::cref(am_I_sorted)) );</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      <span class="comment">// assert( std::is_sorted(new_gamete2.mutations.begin(),new_gamete2.mutations.end(),std::cref(am_I_sorted)) );</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <span class="comment">// assert( std::is_sorted(new_gamete2.smutations.begin(),new_gamete2.smutations.end(),std::cref(am_I_sorted)) );</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor"></span>    }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor"></span>      <span class="keyword">using</span> mlist_itr = <span class="keyword">typename</span> gamete_cont_iterator::value_type::mutation_container::iterator::value_type;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <span class="keyword">auto</span> am_I_sorted = [](mlist_itr lhs,mlist_itr rhs){<span class="keywordflow">return</span> lhs-&gt;pos &lt; rhs-&gt;pos;};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      assert(std::is_sorted(neutral.begin(),neutral.end(),std::cref(am_I_sorted)));</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      assert(std::is_sorted(selected.begin(),selected.end(),std::cref(am_I_sorted)));</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor"></span>    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="namespaceKTfwd_1_1fwdpp__internal_html_ac137a342b9038e5293afda512b4238f5"><div class="ttname"><a href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ac137a342b9038e5293afda512b4238f5">KTfwd::fwdpp_internal::recombine_gametes</a></div><div class="ttdeci">void recombine_gametes(const double_vec_type &amp;pos, gamete_cont_iterator &amp;ibeg, gamete_cont_iterator &amp;jbeg, typename gamete_cont_iterator::value_type::mutation_container &amp;neutral, typename gamete_cont_iterator::value_type::mutation_container &amp;selected)</div><div class="ttdef"><b>Definition:</b> recombination_common.hpp:12</div></div>
 <div class="ttc" id="namespaceKTfwd_1_1fwdpp__internal_html_a0ef02166cf6e4b3c913d3a9da1410b8b"><div class="ttname"><a href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a0ef02166cf6e4b3c913d3a9da1410b8b">KTfwd::fwdpp_internal::rec_gam_updater</a></div><div class="ttdeci">itr_type rec_gam_updater(itr_type __first, itr_type __last, cont_type &amp;muts, const double &amp;val)</div><div class="ttdef"><b>Definition:</b> rec_gamete_updater.hpp:14</div></div>
 <div class="ttc" id="rec__gamete__updater_8hpp_html"><div class="ttname"><a href="../../d1/d01/rec__gamete__updater_8hpp.html">rec_gamete_updater.hpp</a></div></div>

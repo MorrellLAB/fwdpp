@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.4</span>
+   &#160;<span id="projectnumber">0.3.5</span>
    </div>
   </td>
  </tr>
@@ -102,6 +102,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">gamete_lookup</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d4a/structKTfwd_1_1fwdpp__internal_1_1gsl__ran__discrete__t__deleter.html">gsl_ran_discrete_t_deleter</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d63/structKTfwd_1_1fwdpp__internal_1_1scalar__reader.html">scalar_reader</a></td></tr>
@@ -142,15 +144,14 @@ Functions</h2></td></tr>
 <tr class="memitem:a538142088853f1ceae0735aa4c9f8a16"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a538142088853f1ceae0735aa4c9f8a16">gamete_cleaner</a> (gamete_list_type *gametes, const mutation_removal_policy &amp;mp, std::false_type)</td></tr>
 <tr class="memdesc:a538142088853f1ceae0735aa4c9f8a16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles removal of pointers to mutations from gametes after sampling Intended use is when std::is_same&lt; mutation_removal_policy, KTfwd::remove_nothing &gt;::type is false. Called by <a class="el" href="../../da/d8b/namespaceKTfwd.html#a18df6351fa3148914bbb844c36bc3e05">KTfwd::sample_diploid</a> via dispatch.  <a href="#a538142088853f1ceae0735aa4c9f8a16">More...</a><br/></td></tr>
 <tr class="separator:a538142088853f1ceae0735aa4c9f8a16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b8104d6dc686f66777637641d2d49ab"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t &gt; </td></tr>
-<tr class="memitem:a5b8104d6dc686f66777637641d2d49ab"><td class="memTemplItemLeft" align="right" valign="top">std::multimap&lt; std::uint32_t, <br class="typebreak"/>
-typename gcont_t::iterator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a5b8104d6dc686f66777637641d2d49ab">gamete_lookup_table</a> (gcont_t *gametes)</td></tr>
-<tr class="separator:a5b8104d6dc686f66777637641d2d49ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01ebf9c64af85f1831a4ec0bd8977057"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t &gt; </td></tr>
+<tr class="memitem:a01ebf9c64af85f1831a4ec0bd8977057"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">gamete_lookup</a>&lt; gcont_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a01ebf9c64af85f1831a4ec0bd8977057">gamete_lookup_table</a> (gcont_t *gametes)</td></tr>
+<tr class="separator:a01ebf9c64af85f1831a4ec0bd8977057"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0531c0a223ff483e8af0f5946d4c950b"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename pos_finder &gt; </td></tr>
 <tr class="memitem:a0531c0a223ff483e8af0f5946d4c950b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a0531c0a223ff483e8af0f5946d4c950b">update_sample_block</a> (std::vector&lt; std::pair&lt; double, std::string &gt; &gt; &amp;block, const mcont_t &amp;mutations, const unsigned &amp;i, const unsigned &amp;n, const pos_finder &amp;pf, const unsigned &amp;offset=0, const unsigned &amp;scalar=2)</td></tr>
 <tr class="separator:a0531c0a223ff483e8af0f5946d4c950b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0eec8ef0271944bf9a41178430735a58"><td class="memTemplParams" colspan="2">template&lt;typename diploid_type , typename diploid_type_itr , typename gamete_lookup_t , typename recombination_policy_container , typename bw_locus_rec_fxn , typename mlist_t , typename glist_t , typename mutation_model_container , typename mutation_insertion_policy , typename gamete_insertion_policy &gt; </td></tr>
-<tr class="memitem:a0eec8ef0271944bf9a41178430735a58"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a0eec8ef0271944bf9a41178430735a58">multilocus_rec_mut</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, diploid_type parent1, diploid_type parent2, diploid_type_itr &amp;offspring, gamete_lookup_t &amp;gamete_lookup, const recombination_policy_container &amp;rec_pols, const bw_locus_rec_fxn &amp;blrf, const double *r_bw_loci, const int iswitch1, const int iswitch2, glist_t *gametes, mlist_t *mutations, const double *mu, const mutation_model_container &amp;mmodel, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy_mut)</td></tr>
+<tr class="memitem:a0eec8ef0271944bf9a41178430735a58"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a0eec8ef0271944bf9a41178430735a58">multilocus_rec_mut</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, diploid_type parent1, diploid_type parent2, diploid_type_itr &amp;offspring, gamete_lookup_t &amp;<a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">gamete_lookup</a>, const recombination_policy_container &amp;rec_pols, const bw_locus_rec_fxn &amp;blrf, const double *r_bw_loci, const int iswitch1, const int iswitch2, glist_t *gametes, mlist_t *mutations, const double *mu, const mutation_model_container &amp;mmodel, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy_mut)</td></tr>
 <tr class="separator:a0eec8ef0271944bf9a41178430735a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a416cc435f714e2ab6c5d52e79e56ed39"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename mutation_iterator &gt; </td></tr>
 <tr class="memitem:a416cc435f714e2ab6c5d52e79e56ed39"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a416cc435f714e2ab6c5d52e79e56ed39">add_new_mutation</a> (mutation_iterator &amp;mitr, gamete_type &amp;new_gamete)</td></tr>
@@ -301,6 +302,9 @@ template&lt;typename gamete_type , typename mutation_iterator &gt; </div>
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename fitness_policy_type , typename diploid_itr_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">double KTfwd::fwdpp_internal::diploid_fitness_dispatch </td>
@@ -326,6 +330,11 @@ template&lt;typename fitness_policy_type , typename diploid_itr_t &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Standard diploids. </p>
@@ -337,6 +346,9 @@ template&lt;typename fitness_policy_type , typename diploid_itr_t &gt; </div>
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename fitness_policy_type , typename diploid_itr_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">double KTfwd::fwdpp_internal::diploid_fitness_dispatch </td>
@@ -362,6 +374,11 @@ template&lt;typename fitness_policy_type , typename diploid_itr_t &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Custom diploids. </p>
@@ -373,6 +390,9 @@ template&lt;typename fitness_policy_type , typename diploid_itr_t &gt; </div>
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename fitness_policy_type , typename diploid_itr_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">double KTfwd::fwdpp_internal::diploid_fitness_dispatch </td>
@@ -404,6 +424,11 @@ template&lt;typename fitness_policy_type , typename diploid_itr_t &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Custom diploids. </p>
@@ -498,14 +523,14 @@ template&lt;typename gamete_list_type , typename mutation_removal_policy &gt; </
 
 </div>
 </div>
-<a class="anchor" id="a5b8104d6dc686f66777637641d2d49ab"></a>
+<a class="anchor" id="a01ebf9c64af85f1831a4ec0bd8977057"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename gcont_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::multimap&lt;std::uint32_t,typename gcont_t::iterator&gt; KTfwd::fwdpp_internal::gamete_lookup_table </td>
+          <td class="memname"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">gamete_lookup</a>&lt;gcont_t&gt; KTfwd::fwdpp_internal::gamete_lookup_table </td>
           <td>(</td>
           <td class="paramtype">gcont_t *&#160;</td>
           <td class="paramname"><em>gametes</em></td><td>)</td>
@@ -513,6 +538,7 @@ template&lt;typename gcont_t &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Convenience function to return a lookup table. Exists so that calling environ can use auto and not deal w/template type, which is an attempt at future-proofing. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a9">diploid_fixed_sh_ind_lambda.cc</a>.</dd>
 </dl>
 </div>

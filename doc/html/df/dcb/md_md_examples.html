@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.4</span>
+   &#160;<span id="projectnumber">0.3.5</span>
    </div>
   </td>
  </tr>
@@ -172,16 +172,16 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
  seed = random number seed.<br/>
 </p>
 <h4>diploid_ind_2locus (<a class="el" href="../../de/dce/diploid__ind__2locus_8cc.html">diploid_ind_2locus.cc</a>)</h4>
-<p>This program simulates a 2-locus neutral model. Mutations arise at rate <img class="formulaInl" alt="$\theta$" src="../../form_6.png"/> at each locus, and each locus recombines at rate <img class="formulaInl" alt="$\rho$" src="../../form_7.png"/>. The recombination rate between loci is <img class="formulaInl" alt="$r_{bw}$" src="../../form_8.png"/>, which corresponds to the probability a crossover is observed between loci. In other words, the genotypes at the two loci will switch from </p>
+<p>This program simulates a 2-locus neutral model. Mutations arise at rate <img class="formulaInl" alt="$\theta$" src="../../form_19.png"/> at each locus, and each locus recombines at rate <img class="formulaInl" alt="$\rho$" src="../../form_20.png"/>. The recombination rate between loci is <img class="formulaInl" alt="$r_{bw}$" src="../../form_21.png"/>, which corresponds to the probability a crossover is observed between loci. In other words, the genotypes at the two loci will switch from </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[\frac{AB}{ab}\]" src="../../form_9.png"/>
+<img class="formulaDsp" alt="\[\frac{AB}{ab}\]" src="../../form_22.png"/>
 </p>
 <p> to </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[\frac{Ab}{aB}\]" src="../../form_10.png"/>
+<img class="formulaDsp" alt="\[\frac{Ab}{aB}\]" src="../../form_23.png"/>
 </p>
-<p> with probability <img class="formulaInl" alt="$r_{bw}$" src="../../form_8.png"/>.</p>
-<p>The output of the simulation is an "ms"-style block for each locus. Positions are uniform on the interval <img class="formulaInl" alt="$[0,1)$" src="../../form_11.png"/> at locus 1, and uniform on the interval <img class="formulaInl" alt="$[1,2)$" src="../../form_12.png"/> at locus 2.</p>
+<p> with probability <img class="formulaInl" alt="$r_{bw}$" src="../../form_21.png"/>.</p>
+<p>The output of the simulation is an "ms"-style block for each locus. Positions are uniform on the interval <img class="formulaInl" alt="$[0,1)$" src="../../form_24.png"/> at locus 1, and uniform on the interval <img class="formulaInl" alt="$[1,2)$" src="../../form_25.png"/> at locus 2.</p>
 <p>The usage is:</p>
 <div class="fragment"><div class="line">Usage:</div>
 <div class="line">./diploid_ind_2locus N theta rho rbw ngens n nreps seed</div>
@@ -196,8 +196,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">seed = seed value <span class="keywordflow">for</span> random number generations</div>
 </div><!-- fragment --><h4>HOC_ind (<a class="el" href="../../d5/d77/HOC__ind_8cc.html">HOC_ind.cc</a>)</h4>
 <p>This program simulates a little twist on Turelli's House-of-Cards (HOC) model. The main point of this model is to demonstrate how to use KTfwd::tags::gamete_dependent to implement mutation models that depend on the current gamete state.</p>
-<p>In a typical HOC model (Kingman), the effect size of a mutated allele is a new draw from a Gaussian distribution. In this simulation, the current effect size of an allele, before mutation, is additive over causative mutations, with sum <img class="formulaInl" alt="$y$" src="../../form_13.png"/>. After the addition of a single mutation, its new effect size will be <img class="formulaInl" alt="$x$" src="../../form_14.png"/>, and thus the effect size of the new mutation, <img class="formulaInl" alt="$e$" src="../../form_15.png"/>, is chosen such that <img class="formulaInl" alt="$x = y+e$" src="../../form_16.png"/>.</p>
-<p>The fitness model here is Gaussian stabilizing selection with a mean of 0 and a standard deviation of 1. With this fitness function and the additive model of Turelli, <img class="formulaInl" alt="$V(G) \approx 4\mu$" src="../../form_17.png"/> when the ratio of the variance in effect sizes over the variance in fitness falls within a certain range. That approximation seems to hold, at least roughly, for this odd method of generating the effect sizes of new variants. For example, these commands return a mean of approximately <img class="formulaInl" alt="$4 \times 10^{-4}$" src="../../form_18.png"/></p>
+<p>In a typical HOC model (Kingman), the effect size of a mutated allele is a new draw from a Gaussian distribution. In this simulation, the current effect size of an allele, before mutation, is additive over causative mutations, with sum <img class="formulaInl" alt="$y$" src="../../form_26.png"/>. After the addition of a single mutation, its new effect size will be <img class="formulaInl" alt="$x$" src="../../form_27.png"/>, and thus the effect size of the new mutation, <img class="formulaInl" alt="$e$" src="../../form_28.png"/>, is chosen such that <img class="formulaInl" alt="$x = y+e$" src="../../form_29.png"/>.</p>
+<p>The fitness model here is Gaussian stabilizing selection with a mean of 0 and a standard deviation of 1. With this fitness function and the additive model of Turelli, <img class="formulaInl" alt="$V(G) \approx 4\mu$" src="../../form_30.png"/> when the ratio of the variance in effect sizes over the variance in fitness falls within a certain range. That approximation seems to hold, at least roughly, for this odd method of generating the effect sizes of new variants. For example, these commands return a mean of approximately <img class="formulaInl" alt="$4 \times 10^{-4}$" src="../../form_31.png"/></p>
 <div class="fragment"><div class="line"><span class="preprocessor">#Generate 100 seeds</span></div>
 <div class="line"><span class="preprocessor"></span>Rscript -e <span class="stringliteral">&quot;cat(as.integer(runif(1e2,0,1e6)),sep=\&quot;\n\&quot;)&quot;</span> &gt; seeds</div>
 <div class="line"><span class="preprocessor">#run jobs in parallel on a 4-core machine, write VG to a file</span></div>
@@ -212,7 +212,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">ngens = number of generations to simulate</div>
 <div class="line">nreps = number of replicates to simulate</div>
 <div class="line">seed = random number seed</div>
-</div><!-- fragment --><p>The only output is <img class="formulaInl" alt="$V(G)$" src="../../form_19.png"/>, the genetic variance in fitness, which is written to stdout for each replicate. </p>
+</div><!-- fragment --><p>The only output is <img class="formulaInl" alt="$V(G)$" src="../../form_32.png"/>, the genetic variance in fitness, which is written to stdout for each replicate. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.4</span>
+   &#160;<span id="projectnumber">0.3.5</span>
    </div>
   </td>
  </tr>
@@ -169,8 +169,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="comment">                                             to determine what this type is, or rely on decltype, which in this case is asking about the</span></div>
 <div class="line"><span class="comment">                                             return type of the function creating the lookup table.</span></div>
 <div class="line"><span class="comment">                                           */</span></div>
-<div class="line">                                           decltype(<a name="a9"></a><a class="code" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a5b8104d6dc686f66777637641d2d49ab">KTfwd::fwdpp_internal::gamete_lookup_table</a>(&amp;pop.gametes)) &amp; gamete_lookup) {</div>
-<div class="line">                                         <span class="keywordflow">return</span> <a name="a10"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#af28e27f1e9c39173b7a4d55256761c28">KTfwd::recombine_gametes</a>(r.<a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a12a336875d99337390d2231228707bc4">get</a>(),littler,&amp;pop.gametes,g1,g2,gamete_lookup,</div>
+<div class="line">                                           decltype(<a name="a9"></a><a class="code" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a01ebf9c64af85f1831a4ec0bd8977057">KTfwd::fwdpp_internal::gamete_lookup_table</a>(&amp;pop.gametes)) &amp; gamete_lookup) {</div>
+<div class="line">                                         <span class="keywordflow">return</span> <a name="a10"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a5dd7205f912f153bb4c8a27fa400693f">KTfwd::recombine_gametes</a>(r.<a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a12a336875d99337390d2231228707bc4">get</a>(),littler,&amp;pop.gametes,g1,g2,gamete_lookup,</div>
 <div class="line">                                                                         std::ref(pop.neutral),std::ref(pop.selected),</div>
 <div class="line">                                                                         <span class="comment">//This nested lambda is our genetic map: uniform on interval (0,1]</span></div>
 <div class="line">                                                                         [&amp;](){<span class="keywordflow">return</span> gsl_rng_uniform(r.<a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a12a336875d99337390d2231228707bc4">get</a>());}); },</div>

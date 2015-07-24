@@ -14,7 +14,6 @@ var searchData=
   ['fwd_5ffunctional_2ehpp',['fwd_functional.hpp',['../d4/d62/fwd__functional_8hpp.html',1,'']]],
   ['fwdpp_5fsugar_5fpoptag',['FWDPP_SUGAR_POPTAG',['../d9/d2b/structKTfwd_1_1sugar_1_1FWDPP__SUGAR__POPTAG.html',1,'KTfwd::sugar']]],
   ['fwdpp_5fsugar_5fpoptype',['FWDPP_SUGAR_POPTYPE',['../de/d6e/group__sugar.html#ga6900fb51d7d4e8e89c6ce5f527eb3dad',1,'KTfwd::sugar']]],
-  ['fwdpp_5fsugar_5fuse_5fboost',['FWDPP_SUGAR_USE_BOOST',['../d0/db9/sugar1_8cc.html#ac0a1f1fbf720314159d4ab3e150252c5',1,'FWDPP_SUGAR_USE_BOOST():&#160;sugar1.cc'],['../d8/dd2/sugar1__custom_8cc.html#ac0a1f1fbf720314159d4ab3e150252c5',1,'FWDPP_SUGAR_USE_BOOST():&#160;sugar1_custom.cc'],['../da/d50/sugar2_8cc.html#ac0a1f1fbf720314159d4ab3e150252c5',1,'FWDPP_SUGAR_USE_BOOST():&#160;sugar2.cc'],['../de/d28/sugar3_8cc.html#ac0a1f1fbf720314159d4ab3e150252c5',1,'FWDPP_SUGAR_USE_BOOST():&#160;sugar3.cc']]],
   ['fwdpp_5funit_5ftesting',['FWDPP_UNIT_TESTING',['../d9/d1d/mlocusCrossoverTest_8cc.html#acd5c5f0d118268f5e39c858b57b839ea',1,'mlocusCrossoverTest.cc']]],
   ['fwdpp_20release_20notes',['FWDPP RELEASE NOTES',['../d0/d00/md_md_RELEASE_NOTES.html',1,'']]],
   ['functions_20related_20to_20taking_20samples_20from_20simulated_20populations',['Functions related to taking samples from simulated populations',['../df/d2f/group__samplingPops.html',1,'']]]

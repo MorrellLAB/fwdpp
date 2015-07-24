@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.4</span>
+   &#160;<span id="projectnumber">0.3.5</span>
    </div>
   </td>
  </tr>
@@ -82,9 +82,27 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="title">FWDPP RELEASE NOTES </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2>0.3.4</h2>
+<div class="textblock"><h2>0.3.5</h2>
 <ul>
-<li>License updated to GPLv3</li>
+<li>Faster simulations with selection due to new data structure. The gamete lookup tables introduced in 0.3.3 have been reworked. This is not an API change, but rather an internal change that will be transparent to programmers using the library.</li>
+<li>"make check" now executes all unit tests, if and only if the boost unit testing library is present.</li>
+<li>Source code reorganization &ndash; Issue #21</li>
+<li>Sugar code can now be included all at once. This resolves Issue #23. The convenience header is:</li>
+</ul>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d7/d63/sugar_8hpp.html">fwdpp/sugar.hpp</a>&gt;</span></div>
+</div><!-- fragment --><ul>
+<li>configure script now allows linking to the jemalloc library. Preliminary benchmarks suggest that linking to tcmalloc gives better performance, but users may test for themselves:</li>
+</ul>
+<div class="fragment"><div class="line">./configure --enable-jemalloc=yes</div>
+</div><!-- fragment --><ul>
+<li>Travis-CI integration was added for the Git repo.</li>
+<li>Getting the Travis-CI integration to work resulted in changes to the unit tests and the experimental examples to improve their handling of boost-related things.</li>
+<li><a class="el" href="../../d7/daa/policyTests_8cc.html" title="Checks whether or not move or copy constructors are called. Results can vary system-to-system/compile...">unit/policyTests.cc</a> was modified. Previously, it was failing on GCC for the "wrong" reason. The moves were actually happening, but the return value was being set at the wrong time.</li>
+<li>Various code cleanup</li>
+</ul>
+<h2>0.3.4</h2>
+<ul>
+<li>LICENSE/COPYING files updated</li>
 <li>Tutorial improved for multi-locus simulations</li>
 <li>Issue #20 addressed throughout the library + examples + unit tests</li>
 </ul>
@@ -186,7 +204,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <li>const mutation lists now passed to binary output routines</li>
 <li>The library internals now fully support C++11 move semantics</li>
 <li>Default policies now support C++11 "perfect forwarding"</li>
-<li>The function <a class="el" href="../../da/d8b/namespaceKTfwd.html#af28e27f1e9c39173b7a4d55256761c28" title="recombination for individual-based forward simulations ">KTfwd::recombine_gametes</a>, which is provided for recombination in individual-based simulations, has an overloaded version. This new version takes a fixed set of positions representing recombination breakpoints, allowing more modeling flexibility and making unit testing easier.</li>
+<li>The function <a class="el" href="../../da/d8b/namespaceKTfwd.html#a5dd7205f912f153bb4c8a27fa400693f" title="recombination for individual-based forward simulations ">KTfwd::recombine_gametes</a>, which is provided for recombination in individual-based simulations, has an overloaded version. This new version takes a fixed set of positions representing recombination breakpoints, allowing more modeling flexibility and making unit testing easier.</li>
 <li>The mechanics of recombination in multilocus simulations moved to function multilocus_rec in namesapce <a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html" title="Nested namespace for nuts and bolts of certain library functions. ">KTfwd::fwdpp_internal</a>.</li>
 <li>A unit test for the function KTfwd::fwdpp_internal::multilocus_rec was added.</li>
 <li>Added tutorial for multilocus simulation implmentation</li>
@@ -197,7 +215,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <h2>0.2.5</h2>
 <p>The following changes:</p>
 <ol type="1">
-<li>fwdpp/diploid_functions_ind_multilocus.tcc was added. This contains a more natural method of simulating mutiple partially-linked regions. The header <a class="el" href="../../df/d54/diploid__functions_8hpp.html" title="Wright-Fisher sampling in a finite population and recombination. ">fwdpp/diploid_functions.hpp</a> contains the relevant prototypes. These routines are still in "beta" stage, and full support for simulations of partially-linked regions will be put off until a future version, likely 0.2.6 or later.</li>
+<li>fwdpp/diploid_functions_ind_multilocus.tcc was added. This contains a more natural method of simulating mutiple partially-linked regions. The header fwdpp/diploid_functions.hpp contains the relevant prototypes. These routines are still in "beta" stage, and full support for simulations of partially-linked regions will be put off until a future version, likely 0.2.6 or later.</li>
 <li>Header files have been reorganized. <a class="el" href="../../df/df8/diploid_8hh.html" title="Main header for programming using this library. ">fwdpp/diploid.hh</a> is still the header to use. The reorg has been for the developer's sanity.</li>
 <li>C++11 support is now required. A side-effect is that users may use what is currently the dev branch of libsequence, which requires c++11 and no longer requires boost. However, simulations using fwdpp will still be a <em>lot</em> faster with boost installed!</li>
 <li>Internally, functions from namespace boost have been replaced with the namespace std equivalents provided by the C++11 standard.</li>

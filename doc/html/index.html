@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.4</span>
+   &#160;<span id="projectnumber">0.3.5</span>
    </div>
   </td>
  </tr>
@@ -91,6 +91,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <pre class="fragment">    - Kevin Thornton &lt;krthornt@uci.edu&gt;
 </pre><h1>Preface</h1>
 <p>This README is the main page of the fwdpp documentation. It may display some things oddly when viewed on GitHub and/or links to other documentation pages may be broken. These issues are not bugs &ndash; please see the Reference Manual at the <a href="http://molpopgen.github.io/fwdpp/">fwdpp home page</a> for a fully-formatted version of this document.</p>
+<h1>Build status</h1>
+<ul>
+<li>Status of master branch: <a href="https://travis-ci.org/molpopgen/fwdpp">![Build Status](https://travis-ci.org/molpopgen/fwdpp.svg?branch=master)</a></li>
+<li>Status of dev branch: <a href="https://travis-ci.org/molpopgen/fwdpp">![Build Status](https://travis-ci.org/molpopgen/fwdpp.svg?branch=dev)</a></li>
+</ul>
+<p>Currently, the Travis-CI setup uses the following tools:</p>
+<ul>
+<li>Linux</li>
+<li>gcc 4.9</li>
+<li>clang 3.6</li>
+<li>GSL 1.15</li>
+<li>boost 1.48</li>
+</ul>
 <h1>Introduction</h1>
 <p>fwdpp is a C++ template library that abstracts the basic operations required to implement forward-time simulations of population- and quantitative-genetic models. The library allows the simulation of single populations or metapopulations evolving under the standard evolutionary forces of drift, recombination, migration, and natural selection. Arbitrary population size changes are also allowed. Different populations in a metapopulation may evolve under different fitness schemes.</p>
 <p>The library uses advanced C++ techniques to allow arbitrary models to be implemented via the implementation of simple policies (see Documentation section below). A programmer wishing to use the library will need a strong background in templates, function objects, and the Standard Template Library (STL). Web resources for these topics vary too much in quality to recommend any particular one. However, there are several classic books that are must-reads for C++ programmers (old school, I know):</p>
@@ -218,13 +231,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>All simulations were compiled with GCC 4.9.2 and using -O3. The intent is to check "out-of-the-box" performance, meaning that the programs were compiled as the developer intends them. In the case of fwdpp, the configure script allows all of the above combinations. For SLiM, I simply compiled it "as is", following the author's instructions.</p>
 <p>All fwdpp jobs are based on the example program diploid_ind that comes with the library.</p>
 <p><b>Links to pdfs only show up on github. I'll try to fix this later for the doxygen reference manual page.</b></p>
-<p>The parameters for the small-N simulations were <img class="formulaInl" alt="$N=1,000$" src="form_60.png"/>, <img class="formulaInl" alt="$\theta = \rho = 5,000$" src="form_61.png"/>, and evolved for <img class="formulaInl" alt="$10N$" src="form_62.png"/> generations. I performed 12 replicates of each of the above combinations, running 4 at a time using GNU parallel. The <a href="performance/time_0_3_3.pdf">run times</a> and <a href="performance/mem_0_3_3.pdf">peak memory use</a> show that:</p>
+<p>The parameters for the small-N simulations were <img class="formulaInl" alt="$N=1,000$" src="form_4.png"/>, <img class="formulaInl" alt="$\theta = \rho = 5,000$" src="form_5.png"/>, and evolved for <img class="formulaInl" alt="$10N$" src="form_6.png"/> generations. I performed 12 replicates of each of the above combinations, running 4 at a time using GNU parallel. The <a href="performance/time_0_3_3.pdf">run times</a> and <a href="performance/mem_0_3_3.pdf">peak memory use</a> show that:</p>
 <ul>
 <li>fwdpp 0.3.3 is about 40% faster than 0.3.2</li>
 <li>fwdpp 0.3.3 is more memory efficient than previous versions</li>
 <li>fwdpp 0.3.3 outperforms SLiM for this case (which is a change from the fwdpp paper, where SLiM was faster for small-N simulations with large mutation/recombination rates).</li>
 </ul>
-<p>The parameters for the large-N simulations wer <img class="formulaInl" alt="$N=10,000$" src="form_63.png"/>, <img class="formulaInl" alt="$\theta = \rho = 4,000$" src="form_64.png"/>, and evolved for <img class="formulaInl" alt="$10N$" src="form_62.png"/> generations. I performed 4 replicates of each of the above combinations, running 4 at a time using GNU parallel, imposing a 36-hour wall clock limit, at which point a simulation was killed. For these parameters, SLiM did not complete a single replicated. The <a href="performance/bigtime_0_3_3.pdf">run time</a> and <a href="performance/bigmem_0_3_3.pdf">peak memory use</a> results for fwdpp show that:</p>
+<p>The parameters for the large-N simulations wer <img class="formulaInl" alt="$N=10,000$" src="form_7.png"/>, <img class="formulaInl" alt="$\theta = \rho = 4,000$" src="form_8.png"/>, and evolved for <img class="formulaInl" alt="$10N$" src="form_6.png"/> generations. I performed 4 replicates of each of the above combinations, running 4 at a time using GNU parallel, imposing a 36-hour wall clock limit, at which point a simulation was killed. For these parameters, SLiM did not complete a single replicated. The <a href="performance/bigtime_0_3_3.pdf">run time</a> and <a href="performance/bigmem_0_3_3.pdf">peak memory use</a> results for fwdpp show that:</p>
 <ul>
 <li>fwdpp 0.3.2 took ~19.5 hours to complete a replicate</li>
 <li>fwdpp 0.3.3 takes ~9.5 hours and uses less memory than 0.3.2.</li>
@@ -276,7 +289,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="fragment"><div class="line">./configure</div>
 <div class="line">make</div>
 <div class="line">make install</div>
-</div><!-- fragment --><p>To compile examples and unit tests:</p>
+</div><!-- fragment --><p>To compile examples and unit tests, and to execute unit tests:</p>
 <div class="fragment"><div class="line">make check</div>
 </div><!-- fragment --><p>Currently, the example programs will not get installed via "make install". If you want them to be installed system-wide, copy the binaries manually to where you need them.</p>
 <h2>To compile examples and unit tests</h2>
@@ -296,7 +309,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h2>If dependent libraries are in non-stanard locations.</h2>
 <p>For example, if libsequence is in /opt:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#Note, you need to add in the desired optimization (-OXX) level:</span></div>
-<div class="line"><span class="preprocessor"></span>./configure CXXFLAGS=-<span class="stringliteral">&quot;-O2 -I/opt/include&quot;</span> LDFLAGS=<span class="stringliteral">&quot;$LDFLAGS -L/opt/lib&quot;</span></div>
+<div class="line"><span class="preprocessor"></span>./configure CXXFLAGS=<span class="stringliteral">&quot;-O2 -I/opt/include&quot;</span> LDFLAGS=<span class="stringliteral">&quot;$LDFLAGS -L/opt/lib&quot;</span></div>
 <div class="line">make check</div>
 <div class="line">make install</div>
 </div><!-- fragment --><h2>Installing in a custom location</h2>

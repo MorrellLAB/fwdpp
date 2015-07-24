@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.4</span>
+   &#160;<span id="projectnumber">0.3.5</span>
    </div>
   </td>
  </tr>
@@ -157,6 +157,8 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dcf/structKTfwd_1_1remove__nothing.html">remove_nothing</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d5b/structKTfwd_1_1genetics101.html">genetics101</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcc/structKTfwd_1_1push__back__gamete.html">push_back_gamete</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An insertion policy for gametes.  <a href="../../d1/dcc/structKTfwd_1_1push__back__gamete.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -165,8 +167,6 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d09/structKTfwd_1_1diploidIOplaceholder.html">diploidIOplaceholder</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">placeholder IO policy for standard diploid types  <a href="../../d5/d09/structKTfwd_1_1diploidIOplaceholder.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d5b/structKTfwd_1_1genetics101.html">genetics101</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">GSLrng_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper around gsl_rng * objects.  <a href="../../de/d55/classKTfwd_1_1GSLrng__t.html#details">More...</a><br/></td></tr>
@@ -266,36 +266,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a3a49997b8e11c148177adea58dd916a6"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a3a49997b8e11c148177adea58dd916a6">check_sum</a> (const vector_type&lt; gamete_type, vector_type_allocator &gt; *gametes, const unsigned &amp;twoN)</td></tr>
 <tr class="memdesc:a3a49997b8e11c148177adea58dd916a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the sum of counts in gametes equals twoN, false otherwise Returns true if the sum of counts in gametes equals twoN, false otherwise.  <a href="#a3a49997b8e11c148177adea58dd916a6">More...</a><br/></td></tr>
 <tr class="separator:a3a49997b8e11c148177adea58dd916a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af28e27f1e9c39173b7a4d55256761c28"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename recombination_map , typename list_type_allocator , template&lt; typename, typename &gt; class list_type&gt; </td></tr>
-<tr class="memitem:af28e27f1e9c39173b7a4d55256761c28"><td class="memTemplItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#af28e27f1e9c39173b7a4d55256761c28">recombine_gametes</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const double &amp;littler, list_type&lt; typename iterator_type::value_type, list_type_allocator &gt; *gametes, iterator_type &amp;g1, iterator_type &amp;g2, const recombination_map &amp;mf, typename iterator_type::value_type::mutation_container &amp;neutral, typename iterator_type::value_type::mutation_container &amp;selected)</td></tr>
-<tr class="memdesc:af28e27f1e9c39173b7a4d55256761c28"><td class="mdescLeft">&#160;</td><td class="mdescRight">recombination for individual-based forward simulations  <a href="#af28e27f1e9c39173b7a4d55256761c28">More...</a><br/></td></tr>
-<tr class="separator:af28e27f1e9c39173b7a4d55256761c28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bc6fb0ae71894650f5f7fc821c02120"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename list_type_allocator , typename vector_type_allocator , template&lt; typename, typename &gt; class vector_type, template&lt; typename, typename &gt; class list_type&gt; </td></tr>
-<tr class="memitem:a6bc6fb0ae71894650f5f7fc821c02120"><td class="memTemplItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a6bc6fb0ae71894650f5f7fc821c02120">recombine_gametes</a> (const vector_type&lt; double, vector_type_allocator &gt; &amp;pos, list_type&lt; typename iterator_type::value_type, list_type_allocator &gt; *gametes, iterator_type &amp;g1, iterator_type &amp;g2, typename iterator_type::value_type::mutation_container &amp;neutral, typename iterator_type::value_type::mutation_container &amp;selected)</td></tr>
-<tr class="separator:a6bc6fb0ae71894650f5f7fc821c02120"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18df6351fa3148914bbb844c36bc3e05"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_geno_t , typename diploid_vector_type_allocator , typename diploid_fitness_function , typename mutation_removal_policy , typename mutation_model , typename recombination_policy , typename mutation_insertion_policy , typename gamete_insertion_policy , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type&gt; </td></tr>
-<tr class="memitem:a18df6351fa3148914bbb844c36bc3e05"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a18df6351fa3148914bbb844c36bc3e05">sample_diploid</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *gametes, diploid_vector_type&lt; diploid_geno_t, diploid_vector_type_allocator &gt; *diploids, mutation_list_type&lt; typename gamete_type::mutation_type, mutation_list_type_allocator &gt; *mutations, const unsigned &amp;N_curr, const double &amp;mu, const mutation_model &amp;mmodel, const recombination_policy &amp;rec_pol, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy_mut, const diploid_fitness_function &amp;ff, const mutation_removal_policy &amp;mp, const double &amp;f=0)</td></tr>
-<tr class="separator:a18df6351fa3148914bbb844c36bc3e05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37bfd39cb9e480156946dc9969bde8e6"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_geno_t , typename diploid_vector_type_allocator , typename diploid_fitness_function , typename mutation_removal_policy , typename mutation_model , typename recombination_policy , typename mutation_insertion_policy , typename gamete_insertion_policy , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type&gt; </td></tr>
-<tr class="memitem:a37bfd39cb9e480156946dc9969bde8e6"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a37bfd39cb9e480156946dc9969bde8e6">sample_diploid</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *gametes, diploid_vector_type&lt; diploid_geno_t, diploid_vector_type_allocator &gt; *diploids, mutation_list_type&lt; typename gamete_type::mutation_type, mutation_list_type_allocator &gt; *mutations, const unsigned &amp;N_curr, const unsigned &amp;N_next, const double &amp;mu, const mutation_model &amp;mmodel, const recombination_policy &amp;rec_pol, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy_mut, const diploid_fitness_function &amp;ff, const mutation_removal_policy &amp;mp, const double &amp;f=0)</td></tr>
-<tr class="separator:a37bfd39cb9e480156946dc9969bde8e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44bc3d0dbb6b092f56ba18331751af77"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename metapop_diploid_vector_type_allocator , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_geno_t , typename diploid_vector_type_allocator , typename diploid_fitness_function_container , typename mutation_removal_policy , typename mutation_model , typename recombination_policy , typename migration_policy , typename mutation_insertion_policy , typename gamete_insertion_policy , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type, template&lt; typename, typename &gt; class metapop_diploid_vector_type&gt; </td></tr>
-<tr class="memitem:a44bc3d0dbb6b092f56ba18331751af77"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a44bc3d0dbb6b092f56ba18331751af77">sample_diploid</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *<a class="el" href="../../de/d6e/group__sugar.html#ga49b0bed2e77578074c133af95e9d3a66">metapop</a>, metapop_diploid_vector_type&lt; diploid_vector_type&lt; diploid_geno_t, diploid_vector_type_allocator &gt;, metapop_diploid_vector_type_allocator &gt; *diploids, mutation_list_type&lt; typename gamete_type::mutation_type, mutation_list_type_allocator &gt; *mutations, const unsigned *N_curr, const double &amp;mu, const mutation_model &amp;mmodel, const recombination_policy &amp;rec_pol, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy_mut, const diploid_fitness_function_container &amp;ffs, const mutation_removal_policy &amp;mp, const migration_policy &amp;mig, const double *f=nullptr)</td></tr>
-<tr class="separator:a44bc3d0dbb6b092f56ba18331751af77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad592697866c4bacdf00ccb6e902c0891"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename metapop_diploid_vector_type_allocator , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_geno_t , typename diploid_vector_type_allocator , typename diploid_fitness_function_container , typename mutation_removal_policy , typename mutation_model , typename recombination_policy , typename migration_policy , typename mutation_insertion_policy , typename gamete_insertion_policy , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type, template&lt; typename, typename &gt; class metapop_diploid_vector_type&gt; </td></tr>
-<tr class="memitem:ad592697866c4bacdf00ccb6e902c0891"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#ad592697866c4bacdf00ccb6e902c0891">sample_diploid</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *<a class="el" href="../../de/d6e/group__sugar.html#ga49b0bed2e77578074c133af95e9d3a66">metapop</a>, metapop_diploid_vector_type&lt; diploid_vector_type&lt; diploid_geno_t, diploid_vector_type_allocator &gt;, metapop_diploid_vector_type_allocator &gt; *diploids, mutation_list_type&lt; typename gamete_type::mutation_type, mutation_list_type_allocator &gt; *mutations, const unsigned *N_curr, const unsigned *N_next, const double &amp;mu, const mutation_model &amp;mmodel, const recombination_policy &amp;rec_pol, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy_mut, const diploid_fitness_function_container &amp;ffs, const mutation_removal_policy &amp;mp, const migration_policy &amp;mig, const double *f=nullptr)</td></tr>
-<tr class="memdesc:ad592697866c4bacdf00ccb6e902c0891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evolve a metapopulation where demes may be changing size. For individual-based sims. Evolve a metapopulation where demes may be changing size. For individual-based sims.  <a href="#ad592697866c4bacdf00ccb6e902c0891">More...</a><br/></td></tr>
-<tr class="separator:ad592697866c4bacdf00ccb6e902c0891"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaffceb4a238f2a75a05512a8c717aa49"><td class="memTemplParams" colspan="2">template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_vector_type_allocator , typename locus_vector_type_allocator , typename diploid_fitness_function , typename mutation_removal_policy , typename mutation_model_container , typename recombination_policy_container , typename mutation_insertion_policy , typename gamete_insertion_policy , typename bw_locus_rec_fxn , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type, template&lt; typename, typename &gt; class locus_vector_type&gt; </td></tr>
-<tr class="memitem:aaffceb4a238f2a75a05512a8c717aa49"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#aaffceb4a238f2a75a05512a8c717aa49">sample_diploid</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *gametes, diploid_vector_type&lt; locus_vector_type&lt; diploid_geno_t, locus_vector_type_allocator &gt;, diploid_vector_type_allocator &gt; *diploids, mutation_list_type&lt; typename gamete_type::mutation_type, mutation_list_type_allocator &gt; *mutations, const unsigned &amp;N_curr, const unsigned &amp;N_next, const double *mu, const mutation_model_container &amp;mmodel, const recombination_policy_container &amp;rec_policies, const double *r_between_loci, const bw_locus_rec_fxn &amp;blrf, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy_mut, const diploid_fitness_function &amp;ff, const mutation_removal_policy &amp;mp, const double &amp;f=0)</td></tr>
-<tr class="memdesc:aaffceb4a238f2a75a05512a8c717aa49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single deme, multilocus model, changing population size.  <a href="#aaffceb4a238f2a75a05512a8c717aa49">More...</a><br/></td></tr>
-<tr class="separator:aaffceb4a238f2a75a05512a8c717aa49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af37e12388574a535d7162b2b8b4fa343"><td class="memTemplParams" colspan="2">template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_vector_type_allocator , typename locus_vector_type_allocator , typename diploid_fitness_function , typename mutation_removal_policy , typename mutation_model_container , typename recombination_policy_container , typename mutation_insertion_policy , typename gamete_insertion_policy , typename bw_locus_rec_fxn , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type, template&lt; typename, typename &gt; class locus_vector_type&gt; </td></tr>
-<tr class="memitem:af37e12388574a535d7162b2b8b4fa343"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#af37e12388574a535d7162b2b8b4fa343">sample_diploid</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *gametes, diploid_vector_type&lt; locus_vector_type&lt; diploid_geno_t, locus_vector_type_allocator &gt;, diploid_vector_type_allocator &gt; *diploids, mutation_list_type&lt; typename gamete_type::mutation_type, mutation_list_type_allocator &gt; *mutations, const unsigned &amp;N, const double *mu, const mutation_model_container &amp;mmodel, const recombination_policy_container &amp;rec_policies, const double *r_between_loci, const bw_locus_rec_fxn &amp;blrf, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy_mut, const diploid_fitness_function &amp;ff, const mutation_removal_policy &amp;mp, const double &amp;f=0)</td></tr>
-<tr class="separator:af37e12388574a535d7162b2b8b4fa343"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a105a292a1e5c591d64d14caf4062e2f3"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename fitness_updating_policy_hom , typename fitness_updating_policy_het &gt; </td></tr>
-<tr class="memitem:a105a292a1e5c591d64d14caf4062e2f3"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a105a292a1e5c591d64d14caf4062e2f3">site_dependent_fitness2</a> (iterator_type __first1, iterator_type __last1, iterator_type __first2, iterator_type __last2, const fitness_updating_policy_hom &amp;fpol_hom, const fitness_updating_policy_het &amp;fpol_het, const double &amp;starting_fitness=1.)</td></tr>
-<tr class="separator:a105a292a1e5c591d64d14caf4062e2f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af05d39195307329f16205963a265b41f"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename vector_allocator_type , typename mutation_type , typename list_allocator_type , template&lt; typename, typename &gt; class vector_type, template&lt; typename, typename &gt; class list_type&gt; </td></tr>
 <tr class="memitem:af05d39195307329f16205963a265b41f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#af05d39195307329f16205963a265b41f">init_with_ms</a> (Sequence::SimData &amp;d, vector_type&lt; gamete_type, vector_allocator_type &gt; *gametes, list_type&lt; mutation_type, list_allocator_type &gt; *mutations, const unsigned &amp;max_chroms=std::numeric_limits&lt; unsigned &gt;::max())</td></tr>
 <tr class="memdesc:af05d39195307329f16205963a265b41f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a population with results from a coalescent simulation Takes an object of type Sequence::SimData from libsequence and initialized a population.  <a href="#af05d39195307329f16205963a265b41f">More...</a><br/></td></tr>
@@ -360,6 +330,33 @@ Functions</h2></td></tr>
 <tr class="memitem:a949b79d4df5bc10c6c1b31d311e4a392"><td class="memTemplItemLeft" align="right" valign="top">iterator_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a949b79d4df5bc10c6c1b31d311e4a392">mutate_gamete</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const double &amp;mu, list_type&lt; typename iterator_type::value_type, list_type_allocator &gt; *gametes, list_type2&lt; typename iterator_type::value_type::mutation_type, list_type_allocator2 &gt; *mutations, iterator_type &amp;g, const mutation_model &amp;mmodel, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy)</td></tr>
 <tr class="memdesc:a949b79d4df5bc10c6c1b31d311e4a392"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply mutation model to an individual gamete. Used for individual-based forward simulations.  <a href="#a949b79d4df5bc10c6c1b31d311e4a392">More...</a><br/></td></tr>
 <tr class="separator:a949b79d4df5bc10c6c1b31d311e4a392"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dd7205f912f153bb4c8a27fa400693f"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename recombination_map , typename list_type_allocator , typename glookup_t , template&lt; typename, typename &gt; class list_type&gt; </td></tr>
+<tr class="memitem:a5dd7205f912f153bb4c8a27fa400693f"><td class="memTemplItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a5dd7205f912f153bb4c8a27fa400693f">recombine_gametes</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const double &amp;littler, list_type&lt; typename iterator_type::value_type, list_type_allocator &gt; *gametes, iterator_type &amp;g1, iterator_type &amp;g2, const recombination_map &amp;mf, glookup_t &amp;gamete_lookup, typename iterator_type::value_type::mutation_container &amp;neutral, typename iterator_type::value_type::mutation_container &amp;selected)</td></tr>
+<tr class="memdesc:a5dd7205f912f153bb4c8a27fa400693f"><td class="mdescLeft">&#160;</td><td class="mdescRight">recombination for individual-based forward simulations  <a href="#a5dd7205f912f153bb4c8a27fa400693f">More...</a><br/></td></tr>
+<tr class="separator:a5dd7205f912f153bb4c8a27fa400693f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32c70c0b20277cd60829bbc330fc599d"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename list_type_allocator , typename vector_type_allocator , typename glookup_t , template&lt; typename, typename &gt; class vector_type, template&lt; typename, typename &gt; class list_type&gt; </td></tr>
+<tr class="memitem:a32c70c0b20277cd60829bbc330fc599d"><td class="memTemplItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a32c70c0b20277cd60829bbc330fc599d">recombine_gametes</a> (const vector_type&lt; double, vector_type_allocator &gt; &amp;pos, list_type&lt; typename iterator_type::value_type, list_type_allocator &gt; *gametes, iterator_type &amp;g1, iterator_type &amp;g2, glookup_t &amp;gamete_lookup, typename iterator_type::value_type::mutation_container &amp;neutral, typename iterator_type::value_type::mutation_container &amp;selected)</td></tr>
+<tr class="separator:a32c70c0b20277cd60829bbc330fc599d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18df6351fa3148914bbb844c36bc3e05"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_geno_t , typename diploid_vector_type_allocator , typename diploid_fitness_function , typename mutation_removal_policy , typename mutation_model , typename recombination_policy , typename mutation_insertion_policy , typename gamete_insertion_policy , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type&gt; </td></tr>
+<tr class="memitem:a18df6351fa3148914bbb844c36bc3e05"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a18df6351fa3148914bbb844c36bc3e05">sample_diploid</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *gametes, diploid_vector_type&lt; diploid_geno_t, diploid_vector_type_allocator &gt; *diploids, mutation_list_type&lt; typename gamete_type::mutation_type, mutation_list_type_allocator &gt; *mutations, const unsigned &amp;N_curr, const double &amp;mu, const mutation_model &amp;mmodel, const recombination_policy &amp;rec_pol, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy_mut, const diploid_fitness_function &amp;ff, const mutation_removal_policy &amp;mp, const double &amp;f=0)</td></tr>
+<tr class="separator:a18df6351fa3148914bbb844c36bc3e05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37bfd39cb9e480156946dc9969bde8e6"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_geno_t , typename diploid_vector_type_allocator , typename diploid_fitness_function , typename mutation_removal_policy , typename mutation_model , typename recombination_policy , typename mutation_insertion_policy , typename gamete_insertion_policy , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type&gt; </td></tr>
+<tr class="memitem:a37bfd39cb9e480156946dc9969bde8e6"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a37bfd39cb9e480156946dc9969bde8e6">sample_diploid</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *gametes, diploid_vector_type&lt; diploid_geno_t, diploid_vector_type_allocator &gt; *diploids, mutation_list_type&lt; typename gamete_type::mutation_type, mutation_list_type_allocator &gt; *mutations, const unsigned &amp;N_curr, const unsigned &amp;N_next, const double &amp;mu, const mutation_model &amp;mmodel, const recombination_policy &amp;rec_pol, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy_mut, const diploid_fitness_function &amp;ff, const mutation_removal_policy &amp;mp, const double &amp;f=0)</td></tr>
+<tr class="separator:a37bfd39cb9e480156946dc9969bde8e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44bc3d0dbb6b092f56ba18331751af77"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename metapop_diploid_vector_type_allocator , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_geno_t , typename diploid_vector_type_allocator , typename diploid_fitness_function_container , typename mutation_removal_policy , typename mutation_model , typename recombination_policy , typename migration_policy , typename mutation_insertion_policy , typename gamete_insertion_policy , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type, template&lt; typename, typename &gt; class metapop_diploid_vector_type&gt; </td></tr>
+<tr class="memitem:a44bc3d0dbb6b092f56ba18331751af77"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a44bc3d0dbb6b092f56ba18331751af77">sample_diploid</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *<a class="el" href="../../de/d6e/group__sugar.html#ga49b0bed2e77578074c133af95e9d3a66">metapop</a>, metapop_diploid_vector_type&lt; diploid_vector_type&lt; diploid_geno_t, diploid_vector_type_allocator &gt;, metapop_diploid_vector_type_allocator &gt; *diploids, mutation_list_type&lt; typename gamete_type::mutation_type, mutation_list_type_allocator &gt; *mutations, const unsigned *N_curr, const double &amp;mu, const mutation_model &amp;mmodel, const recombination_policy &amp;rec_pol, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy_mut, const diploid_fitness_function_container &amp;ffs, const mutation_removal_policy &amp;mp, const migration_policy &amp;mig, const double *f=nullptr)</td></tr>
+<tr class="separator:a44bc3d0dbb6b092f56ba18331751af77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad592697866c4bacdf00ccb6e902c0891"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename metapop_diploid_vector_type_allocator , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_geno_t , typename diploid_vector_type_allocator , typename diploid_fitness_function_container , typename mutation_removal_policy , typename mutation_model , typename recombination_policy , typename migration_policy , typename mutation_insertion_policy , typename gamete_insertion_policy , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type, template&lt; typename, typename &gt; class metapop_diploid_vector_type&gt; </td></tr>
+<tr class="memitem:ad592697866c4bacdf00ccb6e902c0891"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#ad592697866c4bacdf00ccb6e902c0891">sample_diploid</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *<a class="el" href="../../de/d6e/group__sugar.html#ga49b0bed2e77578074c133af95e9d3a66">metapop</a>, metapop_diploid_vector_type&lt; diploid_vector_type&lt; diploid_geno_t, diploid_vector_type_allocator &gt;, metapop_diploid_vector_type_allocator &gt; *diploids, mutation_list_type&lt; typename gamete_type::mutation_type, mutation_list_type_allocator &gt; *mutations, const unsigned *N_curr, const unsigned *N_next, const double &amp;mu, const mutation_model &amp;mmodel, const recombination_policy &amp;rec_pol, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy_mut, const diploid_fitness_function_container &amp;ffs, const mutation_removal_policy &amp;mp, const migration_policy &amp;mig, const double *f=nullptr)</td></tr>
+<tr class="memdesc:ad592697866c4bacdf00ccb6e902c0891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evolve a metapopulation where demes may be changing size. For individual-based sims. Evolve a metapopulation where demes may be changing size. For individual-based sims.  <a href="#ad592697866c4bacdf00ccb6e902c0891">More...</a><br/></td></tr>
+<tr class="separator:ad592697866c4bacdf00ccb6e902c0891"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaffceb4a238f2a75a05512a8c717aa49"><td class="memTemplParams" colspan="2">template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_vector_type_allocator , typename locus_vector_type_allocator , typename diploid_fitness_function , typename mutation_removal_policy , typename mutation_model_container , typename recombination_policy_container , typename mutation_insertion_policy , typename gamete_insertion_policy , typename bw_locus_rec_fxn , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type, template&lt; typename, typename &gt; class locus_vector_type&gt; </td></tr>
+<tr class="memitem:aaffceb4a238f2a75a05512a8c717aa49"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#aaffceb4a238f2a75a05512a8c717aa49">sample_diploid</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *gametes, diploid_vector_type&lt; locus_vector_type&lt; diploid_geno_t, locus_vector_type_allocator &gt;, diploid_vector_type_allocator &gt; *diploids, mutation_list_type&lt; typename gamete_type::mutation_type, mutation_list_type_allocator &gt; *mutations, const unsigned &amp;N_curr, const unsigned &amp;N_next, const double *mu, const mutation_model_container &amp;mmodel, const recombination_policy_container &amp;rec_policies, const double *r_between_loci, const bw_locus_rec_fxn &amp;blrf, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy_mut, const diploid_fitness_function &amp;ff, const mutation_removal_policy &amp;mp, const double &amp;f=0)</td></tr>
+<tr class="memdesc:aaffceb4a238f2a75a05512a8c717aa49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single deme, multilocus model, changing population size.  <a href="#aaffceb4a238f2a75a05512a8c717aa49">More...</a><br/></td></tr>
+<tr class="separator:aaffceb4a238f2a75a05512a8c717aa49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af37e12388574a535d7162b2b8b4fa343"><td class="memTemplParams" colspan="2">template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_vector_type_allocator , typename locus_vector_type_allocator , typename diploid_fitness_function , typename mutation_removal_policy , typename mutation_model_container , typename recombination_policy_container , typename mutation_insertion_policy , typename gamete_insertion_policy , typename bw_locus_rec_fxn , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type, template&lt; typename, typename &gt; class locus_vector_type&gt; </td></tr>
+<tr class="memitem:af37e12388574a535d7162b2b8b4fa343"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#af37e12388574a535d7162b2b8b4fa343">sample_diploid</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *gametes, diploid_vector_type&lt; locus_vector_type&lt; diploid_geno_t, locus_vector_type_allocator &gt;, diploid_vector_type_allocator &gt; *diploids, mutation_list_type&lt; typename gamete_type::mutation_type, mutation_list_type_allocator &gt; *mutations, const unsigned &amp;N, const double *mu, const mutation_model_container &amp;mmodel, const recombination_policy_container &amp;rec_policies, const double *r_between_loci, const bw_locus_rec_fxn &amp;blrf, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy_mut, const diploid_fitness_function &amp;ff, const mutation_removal_policy &amp;mp, const double &amp;f=0)</td></tr>
+<tr class="separator:af37e12388574a535d7162b2b8b4fa343"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b4ac5932b4c1d311486946b2b6f612c"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type &gt; </td></tr>
 <tr class="memitem:a2b4ac5932b4c1d311486946b2b6f612c"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; unsigned &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a2b4ac5932b4c1d311486946b2b6f612c">population_sfs</a> (iterator_type beg, iterator_type end, const unsigned &amp;N)</td></tr>
 <tr class="separator:a2b4ac5932b4c1d311486946b2b6f612c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1327,11 +1324,11 @@ template&lt;typename glist_t , typename mlist_t , typename dipvector_t , typenam
 
 </div>
 </div>
-<a class="anchor" id="af28e27f1e9c39173b7a4d55256761c28"></a>
+<a class="anchor" id="a5dd7205f912f153bb4c8a27fa400693f"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename iterator_type , typename recombination_map , typename list_type_allocator , template&lt; typename, typename &gt; class list_type&gt; </div>
+template&lt;typename iterator_type , typename recombination_map , typename list_type_allocator , typename glookup_t , template&lt; typename, typename &gt; class list_type&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">unsigned KTfwd::recombine_gametes </td>
@@ -1372,6 +1369,12 @@ template&lt;typename iterator_type , typename recombination_map , typename list_
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">glookup_t &amp;&#160;</td>
+          <td class="paramname"><em>gamete_lookup</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">typename iterator_type::value_type::mutation_container &amp;&#160;</td>
           <td class="paramname"><em>neutral</em>, </td>
         </tr>
@@ -1397,11 +1400,12 @@ template&lt;typename iterator_type , typename recombination_map , typename list_
     <tr><td class="paramname">gametes</td><td>Pointer to the list of gametes in the population </td></tr>
     <tr><td class="paramname">g1</td><td>Iterator to the first gamete involved in the recombination event </td></tr>
     <tr><td class="paramname">g2</td><td>Iterator to the second gamete involved in the recombination event </td></tr>
-    <tr><td class="paramname">mf</td><td>Recombination policy which generates crossover positions</td></tr>
+    <tr><td class="paramname">mf</td><td>Recombination policy which generates crossover positions </td></tr>
+    <tr><td class="paramname">gamete_lookup</td><td>The return value of <a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a01ebf9c64af85f1831a4ec0bd8977057">KTfwd::fwdpp_internal::gamete_lookup_table</a>, which gets passed in via sample_diploid </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>g1 and g2 will be changed </dd>
+<dl class="section note"><dt>Note</dt><dd>g1 will be changed </dd>
 <dd>
 The type of g1 and g2 is gamete_list_type&lt;gamete_type,list_type_allocator &gt;::iterator </dd>
 <dd>
@@ -1411,11 +1415,11 @@ The return value may be 0 even if littler is large. The code recognizes when cro
 </dl>
 </div>
 </div>
-<a class="anchor" id="a6bc6fb0ae71894650f5f7fc821c02120"></a>
+<a class="anchor" id="a32c70c0b20277cd60829bbc330fc599d"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename iterator_type , typename list_type_allocator , typename vector_type_allocator , template&lt; typename, typename &gt; class vector_type, template&lt; typename, typename &gt; class list_type&gt; </div>
+template&lt;typename iterator_type , typename list_type_allocator , typename vector_type_allocator , typename glookup_t , template&lt; typename, typename &gt; class vector_type, template&lt; typename, typename &gt; class list_type&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">unsigned KTfwd::recombine_gametes </td>
@@ -1444,6 +1448,12 @@ template&lt;typename iterator_type , typename list_type_allocator , typename vec
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">glookup_t &amp;&#160;</td>
+          <td class="paramname"><em>gamete_lookup</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">typename iterator_type::value_type::mutation_container &amp;&#160;</td>
           <td class="paramname"><em>neutral</em>, </td>
         </tr>
@@ -1468,6 +1478,7 @@ template&lt;typename iterator_type , typename list_type_allocator , typename vec
     <tr><td class="paramname">gametes</td><td>A container of the gametes segregating in the population </td></tr>
     <tr><td class="paramname">g1</td><td>An iterator, derived from gametes, representing one parental gamete. </td></tr>
     <tr><td class="paramname">g2</td><td>An iterator, derived from gametes, representing the other parental gamete. </td></tr>
+    <tr><td class="paramname">gamete_lookup</td><td>The return value of <a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a01ebf9c64af85f1831a4ec0bd8977057">KTfwd::fwdpp_internal::gamete_lookup_table</a>, which gets passed in via sample_diploid </td></tr>
   </table>
   </dd>
 </dl>
@@ -1631,120 +1642,6 @@ template&lt;typename mutation_type , typename list_type_allocator , template&lt;
 
 </div>
 </div>
-<a class="anchor" id="aaffceb4a238f2a75a05512a8c717aa49"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_vector_type_allocator , typename locus_vector_type_allocator , typename diploid_fitness_function , typename mutation_removal_policy , typename mutation_model_container , typename recombination_policy_container , typename mutation_insertion_policy , typename gamete_insertion_policy , typename bw_locus_rec_fxn , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type, template&lt; typename, typename &gt; class locus_vector_type&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">double KTfwd::sample_diploid </td>
-          <td>(</td>
-          <td class="paramtype">gsl_rng *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *&#160;</td>
-          <td class="paramname"><em>gametes</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">diploid_vector_type&lt; locus_vector_type&lt; diploid_geno_t, locus_vector_type_allocator &gt;, diploid_vector_type_allocator &gt; *&#160;</td>
-          <td class="paramname"><em>diploids</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">mutation_list_type&lt; typename gamete_type::mutation_type, mutation_list_type_allocator &gt; *&#160;</td>
-          <td class="paramname"><em>mutations</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>N_curr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>N_next</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const double *&#160;</td>
-          <td class="paramname"><em>mu</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const mutation_model_container &amp;&#160;</td>
-          <td class="paramname"><em>mmodel</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const recombination_policy_container &amp;&#160;</td>
-          <td class="paramname"><em>rec_policies</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const double *&#160;</td>
-          <td class="paramname"><em>r_between_loci</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const bw_locus_rec_fxn &amp;&#160;</td>
-          <td class="paramname"><em>blrf</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const mutation_insertion_policy &amp;&#160;</td>
-          <td class="paramname"><em>mpolicy</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const gamete_insertion_policy &amp;&#160;</td>
-          <td class="paramname"><em>gpolicy_mut</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const diploid_fitness_function &amp;&#160;</td>
-          <td class="paramname"><em>ff</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const mutation_removal_policy &amp;&#160;</td>
-          <td class="paramname"><em>mp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const double &amp;&#160;</td>
-          <td class="paramname"><em>f</em> = <code>0</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Single deme, multilocus model, changing population size. </p>
-
-</div>
-</div>
 <a class="anchor" id="a18df6351fa3148914bbb844c36bc3e05"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1838,112 +1735,6 @@ template&lt;typename gamete_type , typename gamete_list_type_allocator , typenam
 </div><div class="memdoc">
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a6">bneck_selection_ind.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a7">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a6">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a6">diploid_fixed_sh_ind_lambda.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a6">diploid_ind.cc</a>, <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a10">diploid_ind_2locus.cc</a>, and <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a12">migsel_ind.cc</a>.</dd>
 </dl>
-</div>
-</div>
-<a class="anchor" id="af37e12388574a535d7162b2b8b4fa343"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_vector_type_allocator , typename locus_vector_type_allocator , typename diploid_fitness_function , typename mutation_removal_policy , typename mutation_model_container , typename recombination_policy_container , typename mutation_insertion_policy , typename gamete_insertion_policy , typename bw_locus_rec_fxn , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type, template&lt; typename, typename &gt; class locus_vector_type&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">double KTfwd::sample_diploid </td>
-          <td>(</td>
-          <td class="paramtype">gsl_rng *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *&#160;</td>
-          <td class="paramname"><em>gametes</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">diploid_vector_type&lt; locus_vector_type&lt; diploid_geno_t, locus_vector_type_allocator &gt;, diploid_vector_type_allocator &gt; *&#160;</td>
-          <td class="paramname"><em>diploids</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">mutation_list_type&lt; typename gamete_type::mutation_type, mutation_list_type_allocator &gt; *&#160;</td>
-          <td class="paramname"><em>mutations</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
-          <td class="paramname"><em>N</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const double *&#160;</td>
-          <td class="paramname"><em>mu</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const mutation_model_container &amp;&#160;</td>
-          <td class="paramname"><em>mmodel</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const recombination_policy_container &amp;&#160;</td>
-          <td class="paramname"><em>rec_policies</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const double *&#160;</td>
-          <td class="paramname"><em>r_between_loci</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const bw_locus_rec_fxn &amp;&#160;</td>
-          <td class="paramname"><em>blrf</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const mutation_insertion_policy &amp;&#160;</td>
-          <td class="paramname"><em>mpolicy</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const gamete_insertion_policy &amp;&#160;</td>
-          <td class="paramname"><em>gpolicy_mut</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const diploid_fitness_function &amp;&#160;</td>
-          <td class="paramname"><em>ff</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const mutation_removal_policy &amp;&#160;</td>
-          <td class="paramname"><em>mp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const double &amp;&#160;</td>
-          <td class="paramname"><em>f</em> = <code>0</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
 </div>
 </div>
 <a class="anchor" id="a37bfd39cb9e480156946dc9969bde8e6"></a>
@@ -2276,6 +2067,226 @@ template&lt;typename gamete_type , typename metapop_diploid_vector_type_allocato
 
 </div>
 </div>
+<a class="anchor" id="aaffceb4a238f2a75a05512a8c717aa49"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_vector_type_allocator , typename locus_vector_type_allocator , typename diploid_fitness_function , typename mutation_removal_policy , typename mutation_model_container , typename recombination_policy_container , typename mutation_insertion_policy , typename gamete_insertion_policy , typename bw_locus_rec_fxn , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type, template&lt; typename, typename &gt; class locus_vector_type&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">double KTfwd::sample_diploid </td>
+          <td>(</td>
+          <td class="paramtype">gsl_rng *&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *&#160;</td>
+          <td class="paramname"><em>gametes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">diploid_vector_type&lt; locus_vector_type&lt; diploid_geno_t, locus_vector_type_allocator &gt;, diploid_vector_type_allocator &gt; *&#160;</td>
+          <td class="paramname"><em>diploids</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mutation_list_type&lt; typename gamete_type::mutation_type, mutation_list_type_allocator &gt; *&#160;</td>
+          <td class="paramname"><em>mutations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned &amp;&#160;</td>
+          <td class="paramname"><em>N_curr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned &amp;&#160;</td>
+          <td class="paramname"><em>N_next</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>mu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mutation_model_container &amp;&#160;</td>
+          <td class="paramname"><em>mmodel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const recombination_policy_container &amp;&#160;</td>
+          <td class="paramname"><em>rec_policies</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>r_between_loci</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bw_locus_rec_fxn &amp;&#160;</td>
+          <td class="paramname"><em>blrf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mutation_insertion_policy &amp;&#160;</td>
+          <td class="paramname"><em>mpolicy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const gamete_insertion_policy &amp;&#160;</td>
+          <td class="paramname"><em>gpolicy_mut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const diploid_fitness_function &amp;&#160;</td>
+          <td class="paramname"><em>ff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mutation_removal_policy &amp;&#160;</td>
+          <td class="paramname"><em>mp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>f</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Single deme, multilocus model, changing population size. </p>
+
+</div>
+</div>
+<a class="anchor" id="af37e12388574a535d7162b2b8b4fa343"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_vector_type_allocator , typename locus_vector_type_allocator , typename diploid_fitness_function , typename mutation_removal_policy , typename mutation_model_container , typename recombination_policy_container , typename mutation_insertion_policy , typename gamete_insertion_policy , typename bw_locus_rec_fxn , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type, template&lt; typename, typename &gt; class locus_vector_type&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">double KTfwd::sample_diploid </td>
+          <td>(</td>
+          <td class="paramtype">gsl_rng *&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *&#160;</td>
+          <td class="paramname"><em>gametes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">diploid_vector_type&lt; locus_vector_type&lt; diploid_geno_t, locus_vector_type_allocator &gt;, diploid_vector_type_allocator &gt; *&#160;</td>
+          <td class="paramname"><em>diploids</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mutation_list_type&lt; typename gamete_type::mutation_type, mutation_list_type_allocator &gt; *&#160;</td>
+          <td class="paramname"><em>mutations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned &amp;&#160;</td>
+          <td class="paramname"><em>N</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>mu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mutation_model_container &amp;&#160;</td>
+          <td class="paramname"><em>mmodel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const recombination_policy_container &amp;&#160;</td>
+          <td class="paramname"><em>rec_policies</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>r_between_loci</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bw_locus_rec_fxn &amp;&#160;</td>
+          <td class="paramname"><em>blrf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mutation_insertion_policy &amp;&#160;</td>
+          <td class="paramname"><em>mpolicy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const gamete_insertion_policy &amp;&#160;</td>
+          <td class="paramname"><em>gpolicy_mut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const diploid_fitness_function &amp;&#160;</td>
+          <td class="paramname"><em>ff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mutation_removal_policy &amp;&#160;</td>
+          <td class="paramname"><em>mp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>f</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a9d9d58d1446e2d4a5aae1e5c4e7ba946"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2312,72 +2323,6 @@ template&lt;typename gamete_type , typename allocator_t , template&lt; typename,
           <td></td><td></td>
         </tr>
       </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a105a292a1e5c591d64d14caf4062e2f3"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename iterator_type , typename fitness_updating_policy_hom , typename fitness_updating_policy_het &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double KTfwd::site_dependent_fitness2 </td>
-          <td>(</td>
-          <td class="paramtype">iterator_type&#160;</td>
-          <td class="paramname"><em>__first1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">iterator_type&#160;</td>
-          <td class="paramname"><em>__last1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">iterator_type&#160;</td>
-          <td class="paramname"><em>__first2</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">iterator_type&#160;</td>
-          <td class="paramname"><em>__last2</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const fitness_updating_policy_hom &amp;&#160;</td>
-          <td class="paramname"><em>fpol_hom</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const fitness_updating_policy_het &amp;&#160;</td>
-          <td class="paramname"><em>fpol_het</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const double &amp;&#160;</td>
-          <td class="paramname"><em>starting_fitness</em> = <code>1.</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>fwdpp: /home/kevin/git/fwdpp.git/fwdpp/diploid_functions.hpp File Reference</title>
+<title>fwdpp: /home/kevin/git/fwdpp.git/fwdpp/experimental/sample_diploid.hpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.4</span>
+   &#160;<span id="projectnumber">0.3.5</span>
    </div>
   </td>
  </tr>
@@ -84,47 +84,48 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../dir_95c40379012e7d63e221456575a6f3b3.html">fwdpp</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../dir_95c40379012e7d63e221456575a6f3b3.html">fwdpp</a></li><li class="navelem"><a class="el" href="../../dir_55d189e6f4a6c7837cda86ac5fc37f26.html">experimental</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">diploid_functions.hpp File Reference</div>  </div>
+<div class="title">sample_diploid.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Wright-Fisher sampling in a finite population and recombination.  
-<a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;gsl/gsl_rng.h&gt;</code><br/>
-<code>#include &lt;gsl/gsl_randist.h&gt;</code><br/>
-<code>#include &lt;<a class="el" href="../../d9/da9/diploid__individual__based_8hpp_source.html">fwdpp/diploid_individual_based.hpp</a>&gt;</code><br/>
-<code>#include &lt;<a class="el" href="../../df/db7/diploid__individual__based__multilocus_8hpp_source.html">fwdpp/diploid_individual_based_multilocus.hpp</a>&gt;</code><br/>
-<code>#include &lt;fwdpp/diploid_functions.tcc&gt;</code><br/>
+<div class="textblock"><code>#include &lt;<a class="el" href="../../df/df8/diploid_8hh_source.html">fwdpp/diploid.hh</a>&gt;</code><br/>
 </div>
-<p><a href="../../df/d54/diploid__functions_8hpp_source.html">Go to the source code of this file.</a></p>
+<p><a href="../../d8/d59/experimental_2sample__diploid_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html">KTfwd::experimental::standardWFrules</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstraction of the standard Wright-Fisher sampling process.  <a href="../../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:da/d8b/namespaceKTfwd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html">KTfwd</a></td></tr>
 <tr class="memdesc:da/d8b/namespaceKTfwd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The primary namespace defined by this library. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:d5/d8a/namespaceKTfwd_1_1experimental"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d8a/namespaceKTfwd_1_1experimental.html">KTfwd::experimental</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af28e27f1e9c39173b7a4d55256761c28"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename recombination_map , typename list_type_allocator , template&lt; typename, typename &gt; class list_type&gt; </td></tr>
-<tr class="memitem:af28e27f1e9c39173b7a4d55256761c28"><td class="memTemplItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#af28e27f1e9c39173b7a4d55256761c28">KTfwd::recombine_gametes</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const double &amp;littler, list_type&lt; typename iterator_type::value_type, list_type_allocator &gt; *gametes, iterator_type &amp;g1, iterator_type &amp;g2, const recombination_map &amp;mf, typename iterator_type::value_type::mutation_container &amp;neutral, typename iterator_type::value_type::mutation_container &amp;selected)</td></tr>
-<tr class="memdesc:af28e27f1e9c39173b7a4d55256761c28"><td class="mdescLeft">&#160;</td><td class="mdescRight">recombination for individual-based forward simulations  <a href="#af28e27f1e9c39173b7a4d55256761c28">More...</a><br/></td></tr>
-<tr class="separator:af28e27f1e9c39173b7a4d55256761c28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bc6fb0ae71894650f5f7fc821c02120"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename list_type_allocator , typename vector_type_allocator , template&lt; typename, typename &gt; class vector_type, template&lt; typename, typename &gt; class list_type&gt; </td></tr>
-<tr class="memitem:a6bc6fb0ae71894650f5f7fc821c02120"><td class="memTemplItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a6bc6fb0ae71894650f5f7fc821c02120">KTfwd::recombine_gametes</a> (const vector_type&lt; double, vector_type_allocator &gt; &amp;pos, list_type&lt; typename iterator_type::value_type, list_type_allocator &gt; *gametes, iterator_type &amp;g1, iterator_type &amp;g2, typename iterator_type::value_type::mutation_container &amp;neutral, typename iterator_type::value_type::mutation_container &amp;selected)</td></tr>
-<tr class="separator:a6bc6fb0ae71894650f5f7fc821c02120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af860f7a2f4258b585c113ab5ae7f73b7"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_geno_t , typename diploid_vector_type_allocator , typename diploid_fitness_function , typename mutation_removal_policy , typename mutation_model , typename recombination_policy , typename mutation_insertion_policy , typename gamete_insertion_policy , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type, typename popmodel_rules  = standardWFrules&gt; </td></tr>
+<tr class="memitem:af860f7a2f4258b585c113ab5ae7f73b7"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d5/d8a/namespaceKTfwd_1_1experimental.html#af860f7a2f4258b585c113ab5ae7f73b7">KTfwd::experimental::sample_diploid</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *gametes, diploid_vector_type&lt; diploid_geno_t, diploid_vector_type_allocator &gt; *diploids, mutation_list_type&lt; typename gamete_type::mutation_type, mutation_list_type_allocator &gt; *mutations, const unsigned &amp;N_curr, const unsigned &amp;N_next, const double &amp;mu, const mutation_model &amp;mmodel, const recombination_policy &amp;rec_pol, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy_mut, const diploid_fitness_function &amp;ff, const mutation_removal_policy &amp;mp, const double &amp;f=0., const popmodel_rules &amp;pmr=popmodel_rules())</td></tr>
+<tr class="memdesc:af860f7a2f4258b585c113ab5ae7f73b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Experimental variant where the population rules are implemented via an external policy.  <a href="#af860f7a2f4258b585c113ab5ae7f73b7">More...</a><br/></td></tr>
+<tr class="separator:af860f7a2f4258b585c113ab5ae7f73b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6371ed5e9dd2635fc7fa90e73f8dbc70"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename gamete_list_type_allocator , typename mutation_list_type_allocator , typename diploid_geno_t , typename diploid_vector_type_allocator , typename diploid_fitness_function , typename mutation_removal_policy , typename mutation_model , typename recombination_policy , typename mutation_insertion_policy , typename gamete_insertion_policy , template&lt; typename, typename &gt; class gamete_list_type, template&lt; typename, typename &gt; class mutation_list_type, template&lt; typename, typename &gt; class diploid_vector_type, typename popmodel_rules  = standardWFrules&gt; </td></tr>
+<tr class="memitem:a6371ed5e9dd2635fc7fa90e73f8dbc70"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d5/d8a/namespaceKTfwd_1_1experimental.html#a6371ed5e9dd2635fc7fa90e73f8dbc70">KTfwd::experimental::sample_diploid</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, gamete_list_type&lt; gamete_type, gamete_list_type_allocator &gt; *gametes, diploid_vector_type&lt; diploid_geno_t, diploid_vector_type_allocator &gt; *diploids, mutation_list_type&lt; typename gamete_type::mutation_type, mutation_list_type_allocator &gt; *mutations, const unsigned &amp;N_curr, const double &amp;mu, const mutation_model &amp;mmodel, const recombination_policy &amp;rec_pol, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy_mut, const diploid_fitness_function &amp;ff, const mutation_removal_policy &amp;mp, const double &amp;f=0., const popmodel_rules &amp;pmr=popmodel_rules())</td></tr>
+<tr class="memdesc:a6371ed5e9dd2635fc7fa90e73f8dbc70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Experimental variant where the population rules are implemented via an external policy.  <a href="#a6371ed5e9dd2635fc7fa90e73f8dbc70">More...</a><br/></td></tr>
+<tr class="separator:a6371ed5e9dd2635fc7fa90e73f8dbc70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Wright-Fisher sampling in a finite population and recombination. </p>
-</div></div><!-- contents -->
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

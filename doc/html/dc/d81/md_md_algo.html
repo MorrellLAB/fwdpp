@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.4</span>
+   &#160;<span id="projectnumber">0.3.5</span>
    </div>
   </td>
  </tr>
@@ -119,7 +119,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <li>For a given random number seed, the output is different for programs compiled using 0.3.2 and 0.3.3. This is because the "Mendel" step occurs earlier in 0.3.3, thus changing the context of all subsequent calls to the random number generator.</li>
 </ul>
 <h3>Changing memory allocation patterns</h3>
-<p>Through <b>fwdpp</b> 0.3.2, the library would allocate memory for the two recombinant gametes. This occurred for every recombination event, meaning that for <img class="formulaInl" alt="$\rho = 4Nr$" src="../../form_65.png"/>, the expected number of containers created each generation was <img class="formulaInl" alt="$4\rho$" src="../../form_66.png"/>, as there are <img class="formulaInl" alt="$4Nr$" src="../../form_67.png"/> expected recombination events each generation (2 parents per 2N offspring, each parent recombining at <img class="formulaInl" alt="$r$" src="../../form_28.png"/> positions on average), and 4 containers needed per recombining parent (because pointers to neutral and selected mutations are stored separately).</p>
+<p>Through <b>fwdpp</b> 0.3.2, the library would allocate memory for the two recombinant gametes. This occurred for every recombination event, meaning that for <img class="formulaInl" alt="$\rho = 4Nr$" src="../../form_9.png"/>, the expected number of containers created each generation was <img class="formulaInl" alt="$4\rho$" src="../../form_10.png"/>, as there are <img class="formulaInl" alt="$4Nr$" src="../../form_11.png"/> expected recombination events each generation (2 parents per 2N offspring, each parent recombining at <img class="formulaInl" alt="$r$" src="../../form_12.png"/> positions on average), and 4 containers needed per recombining parent (because pointers to neutral and selected mutations are stored separately).</p>
 <p>The method describe above worked ok, but ultimately results in a massive number of calls for new memory over the course of a simulation.</p>
 <p>In 0.3.3, we can cut the number of allocations in half because we generate half as many recombinant chromosomes (see above). However, the library takes the following steps to reduce allocations even further:</p>
 <ul>
@@ -144,12 +144,12 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <li>If not, we simply assign the pointer to the recombinant as the pointer to the version that we already have in a list</li>
 <li>If so, we insert the new gamete at the end of the list, and store a pointer to it.</li>
 </ul>
-<p>Through <b>fwdpp</b> 0.3.2, the library searched the entire gamete list to see if the recombinant already exists. This search took <img class="formulaInl" alt="$O(g)$" src="../../form_68.png"/> operations, where <img class="formulaInl" alt="$g$" src="../../form_59.png"/> is the number of unique gametes in the population. Such linear searches are slow for linked lists and scale terribly with increasing population size and/or mutation and/or recombination rate.</p>
-<p>In 0.3.3, the linear searches are replaced with <img class="formulaInl" alt="$O(log(g))$" src="../../form_69.png"/> lookups via a lookup table that is calculated internally every generation.</p>
+<p>Through <b>fwdpp</b> 0.3.2, the library searched the entire gamete list to see if the recombinant already exists. This search took <img class="formulaInl" alt="$O(g)$" src="../../form_13.png"/> operations, where <img class="formulaInl" alt="$g$" src="../../form_14.png"/> is the number of unique gametes in the population. Such linear searches are slow for linked lists and scale terribly with increasing population size and/or mutation and/or recombination rate.</p>
+<p>In 0.3.3, the linear searches are replaced with <img class="formulaInl" alt="$O(log(g))$" src="../../form_15.png"/> lookups via a lookup table that is calculated internally every generation.</p>
 <p>The lookup table associates the total number of mutations in a gamete (neutral + selected mutations) and the iterator to that gamete in the linked list. Given a new gamete, we can find the <em>range</em> of gametes in the lookup table with the same total number of mutations in logarithmic time. If the size of that range is zero, then the new gamete is by definition unique, and we insert it. Otherwise, we must compare the recombinant to all gamtes in the range, which is a linear serach, but this time over a much smaller range than what <b>fwdpp</b> 0.3.2 was doing.</p>
 <p>The plus sides:</p>
 <ul>
-<li>Massive improvements in the scalability of the simulation. For the cost of building the lookup table, we replace <img class="formulaInl" alt="$O(\rho/2)$" src="../../form_70.png"/> linear searches of a linked list with <img class="formulaInl" alt="$O(\rho/2)$" src="../../form_70.png"/> logarithmic-time lookups. Further, <em>we rarely have to do the secondary linear search!</em></li>
+<li>Massive improvements in the scalability of the simulation. For the cost of building the lookup table, we replace <img class="formulaInl" alt="$O(\rho/2)$" src="../../form_16.png"/> linear searches of a linked list with <img class="formulaInl" alt="$O(\rho/2)$" src="../../form_16.png"/> logarithmic-time lookups. Further, <em>we rarely have to do the secondary linear search!</em></li>
 </ul>
 <p>The down side (quibble):</p>
 <ul>

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.5</span>
+   &#160;<span id="projectnumber">0.3.6</span>
    </div>
   </td>
  </tr>
@@ -82,7 +82,12 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="title">FWDPP RELEASE NOTES </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2>0.3.5</h2>
+<div class="textblock"><h2>0.3.6</h2>
+<ul>
+<li>The internal lookup table has been further refined, resulting in much faster simulations with selection.</li>
+<li><a class="el" href="../../d6/d39/structKTfwd_1_1additive__diploid.html" title="Additive fitness across sites. ">KTfwd::additive_diploid</a> and <a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html" title="Multiplicative fitness across sites. ">KTfwd::multiplicative_diploid</a> now have checks to prevent returning fitnesses &lt; 0.</li>
+</ul>
+<h2>0.3.5</h2>
 <ul>
 <li>Faster simulations with selection due to new data structure. The gamete lookup tables introduced in 0.3.3 have been reworked. This is not an API change, but rather an internal change that will be transparent to programmers using the library.</li>
 <li>"make check" now executes all unit tests, if and only if the boost unit testing library is present.</li>

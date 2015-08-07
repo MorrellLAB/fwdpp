@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.5</span>
+   &#160;<span id="projectnumber">0.3.6</span>
    </div>
   </td>
  </tr>
@@ -115,16 +115,16 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      <span class="keywordflow">if</span>(mitr-&gt;neutral)</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;          new_gamete.mutations.insert(std::lower_bound(new_gamete.mutations.begin(),</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                                       new_gamete.mutations.end(),mitr-&gt;pos,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                                       [](<span class="keyword">const</span> mutation_iterator &amp; __mut,<span class="keyword">const</span> <span class="keywordtype">double</span> &amp; __value){ <span class="keywordflow">return</span> __mut-&gt;pos &lt; __value;}),</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                      mitr );</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;          new_gamete.mutations.emplace(std::lower_bound(new_gamete.mutations.begin(),</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                                        new_gamete.mutations.end(),mitr-&gt;pos,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                                        [](<span class="keyword">const</span> mutation_iterator &amp; __mut,<span class="keyword">const</span> <span class="keywordtype">double</span> &amp; __value){ <span class="keywordflow">return</span> __mut-&gt;pos &lt; __value;}),</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                       mitr );</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;          new_gamete.smutations.insert(std::lower_bound(new_gamete.smutations.begin(),</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                                        new_gamete.smutations.end(),mitr-&gt;pos,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                                        [](<span class="keyword">const</span> mutation_iterator &amp; __mut,<span class="keyword">const</span> <span class="keywordtype">double</span> &amp; __value){ <span class="keywordflow">return</span> __mut-&gt;pos &lt; __value;}),</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;          new_gamete.smutations.emplace(std::lower_bound(new_gamete.smutations.begin(),</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                                         new_gamete.smutations.end(),mitr-&gt;pos,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                                         [](<span class="keyword">const</span> mutation_iterator &amp; __mut,<span class="keyword">const</span> <span class="keywordtype">double</span> &amp; __value){ <span class="keywordflow">return</span> __mut-&gt;pos &lt; __value;}),</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                        mitr );</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>

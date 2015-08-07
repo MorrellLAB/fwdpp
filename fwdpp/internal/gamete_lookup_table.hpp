@@ -2,7 +2,7 @@
 #define __FWDPP__INTERNAL_GAMETE_LOOKUP_TABLE_HPP__
 
 #include <map>
-
+#include <limits>
 namespace KTfwd {
   namespace fwdpp_internal {
 
@@ -15,31 +15,26 @@ namespace KTfwd {
       introduced in 0.3.3 that simply associated iterators
       to gametes with the number of mutations.
       
-      The new lookup separates out the number of neutral
-      and selected mutations, which speeds up simulations
-      with selection.
+      fwdpp 0.3.6 further changed the lookup scheme to have a
+      friendlier API as well as a much faster lookup for the case of 
+      simulations involving selected mutations
     */
     template<typename gcont_t>
     struct gamete_lookup {
-      using uint_t = std::uint32_t;
       using gcont_t_itr = typename gcont_t::iterator;
-      using mmap_t = std::multimap<uint_t,gcont_t_itr>;
-      using inner_t = typename mmap_t::value_type;
-      using lookup_table_t = std::map<uint_t,mmap_t>;
-      using result_type = std::pair<bool,std::pair<typename mmap_t::iterator,typename mmap_t::iterator> >;
+      using lookup_table_t = std::multimap<double,gcont_t_itr>;
+      using result_type = std::pair<typename lookup_table_t::iterator,typename lookup_table_t::iterator>;
+      using inner_t = typename lookup_table_t::value_type;
       lookup_table_t lookup_table;
-      
-      void update_details( gcont_t_itr g ) 
+
+      inline double keyit( const typename gcont_t_itr::value_type::mutation_container & mc ) const
       {
-	auto __outer = lookup_table.find(g->mutations.size());
-	if( __outer == lookup_table.end() ) 
-	  {
-	    lookup_table[g->mutations.size()] = mmap_t({std::make_pair(g->smutations.size(),g)});
-	  } 
-	else
-	  {
-	  __outer->second.insert(std::make_pair(g->smutations.size(),g));
-	  }
+	return (mc.empty()) ? -std::numeric_limits<double>::max() : mc[0]->pos;
+      }
+      
+      inline void update_details( const gcont_t_itr & g ) 
+      {
+	lookup_table.emplace( std::make_pair( keyit(g->mutations)*double(g->mutations.size()) + keyit(g->smutations)*double(g->smutations.size()), g) );
       }
 
       explicit gamete_lookup(gcont_t * gametes) : lookup_table( lookup_table_t() )
@@ -50,17 +45,12 @@ namespace KTfwd {
 	  }
       }
 
-      result_type lookup( const uint_t & nm, const uint_t & sm ) 
+      inline result_type lookup( const typename gcont_t::value_type & g ) 
       {
-	auto itr = lookup_table.find(nm);
-	if(itr == lookup_table.end())
-	  {
-	    return std::make_pair(false,std::make_pair(typename mmap_t::iterator(),typename mmap_t::iterator()));
-	  }
-	return std::make_pair(true, itr->second.equal_range(sm));
+	return lookup_table.equal_range(  keyit(g.mutations)*double(g.mutations.size()) + keyit(g.smutations)*double(g.smutations.size()) );
       }
 
-      void update( gcont_t_itr g ) 
+      inline void update( const gcont_t_itr & g ) 
       {
 	update_details(g);
       }

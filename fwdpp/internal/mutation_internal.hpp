@@ -21,16 +21,16 @@ namespace KTfwd {
     {
       if(mitr->neutral)
 	{
-	  new_gamete.mutations.insert(std::lower_bound(new_gamete.mutations.begin(),
-						       new_gamete.mutations.end(),mitr->pos,
-						       [](const mutation_iterator & __mut,const double & __value){ return __mut->pos < __value;}),
-				      mitr );
+	  new_gamete.mutations.emplace(std::lower_bound(new_gamete.mutations.begin(),
+							new_gamete.mutations.end(),mitr->pos,
+							[](const mutation_iterator & __mut,const double & __value){ return __mut->pos < __value;}),
+				       mitr );
 	}
       else
 	{
-	  new_gamete.smutations.insert(std::lower_bound(new_gamete.smutations.begin(),
-							new_gamete.smutations.end(),mitr->pos,
-							[](const mutation_iterator & __mut,const double & __value){ return __mut->pos < __value;}),
+	  new_gamete.smutations.emplace(std::lower_bound(new_gamete.smutations.begin(),
+							 new_gamete.smutations.end(),mitr->pos,
+							 [](const mutation_iterator & __mut,const double & __value){ return __mut->pos < __value;}),
 					mitr );
 	}
     }

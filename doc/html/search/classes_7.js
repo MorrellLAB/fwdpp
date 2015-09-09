@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['local_5finsert_5fat_5fend2',['local_insert_at_end2',['../da/dec/structlocal__insert__at__end2.html',1,'']]]
+  ['haplotype_5fdependent_5ffitness',['haplotype_dependent_fitness',['../de/d99/structKTfwd_1_1haplotype__dependent__fitness.html',1,'KTfwd']]],
+  ['hochap',['HOChap',['../dc/d70/structHOChap.html',1,'']]]
 ];

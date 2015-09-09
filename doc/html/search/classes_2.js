@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['equal_5feps',['equal_eps',['../dc/d8e/structKTfwd_1_1equal__eps.html',1,'KTfwd']]]
+  ['constant',['constant',['../d6/dd8/structKTfwd_1_1extensions_1_1constant.html',1,'KTfwd::extensions']]]
 ];

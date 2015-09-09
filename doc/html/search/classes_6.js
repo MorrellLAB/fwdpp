@@ -1,11 +1,15 @@
 var searchData=
 [
-  ['infsites',['infsites',['../df/d07/structKTfwd_1_1infsites.html',1,'KTfwd']]],
-  ['insert_5funique',['insert_unique',['../dd/dff/structKTfwd_1_1insert__unique.html',1,'KTfwd']]],
-  ['is_5fbinary',['is_binary',['../d9/db7/structKTfwd_1_1traits_1_1internal_1_1is__binary.html',1,'KTfwd::traits::internal']]],
-  ['is_5fbinary_3c_20f_2c_20a1_2c_20a2_2c_20void_5ft_3c_20typename_20std_3a_3aresult_5fof_3c_20f_28a1_2c_20a2_29_3e_3a_3atype_20_3e_20_3e',['is_binary&lt; F, A1, A2, void_t&lt; typename std::result_of&lt; F(A1, A2)&gt;::type &gt; &gt;',['../d8/dd2/structKTfwd_1_1traits_1_1internal_1_1is__binary_3_01F_00_01A1_00_01A2_00_01void__t_3_01typename_8397ce7a695b900870a8bf02c28d66f1.html',1,'KTfwd::traits::internal']]],
-  ['is_5fnullary',['is_nullary',['../df/de6/structKTfwd_1_1traits_1_1internal_1_1is__nullary.html',1,'KTfwd::traits::internal']]],
-  ['is_5fnullary_3c_20f_2c_20void_5ft_3c_20typename_20std_3a_3aresult_5fof_3c_20f_28_29_3e_3a_3atype_20_3e_20_3e',['is_nullary&lt; F, void_t&lt; typename std::result_of&lt; F()&gt;::type &gt; &gt;',['../d3/db9/structKTfwd_1_1traits_1_1internal_1_1is__nullary_3_01F_00_01void__t_3_01typename_01std_1_1result0186ad5608999819f9f2ee079d6f4103.html',1,'KTfwd::traits::internal']]],
-  ['is_5funary',['is_unary',['../d3/da7/structKTfwd_1_1traits_1_1internal_1_1is__unary.html',1,'KTfwd::traits::internal']]],
-  ['is_5funary_3c_20f_2c_20a1_2c_20void_5ft_3c_20typename_20std_3a_3aresult_5fof_3c_20f_28a1_29_3e_3a_3atype_20_3e_20_3e',['is_unary&lt; F, A1, void_t&lt; typename std::result_of&lt; F(A1)&gt;::type &gt; &gt;',['../d2/da6/structKTfwd_1_1traits_1_1internal_1_1is__unary_3_01F_00_01A1_00_01void__t_3_01typename_01std_1_18e3b397c6039a55aad10f6ff0afcff1d.html',1,'KTfwd::traits::internal']]]
+  ['gamete_5fbase',['gamete_base',['../d6/d90/structKTfwd_1_1gamete__base.html',1,'KTfwd']]],
+  ['gamete_5flookup',['gamete_lookup',['../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html',1,'KTfwd::fwdpp_internal']]],
+  ['gamete_5ftype_5ftag',['gamete_type_tag',['../dd/dbf/structKTfwd_1_1tags_1_1gamete__type__tag.html',1,'KTfwd::tags']]],
+  ['gamma',['gamma',['../dd/df9/structKTfwd_1_1extensions_1_1gamma.html',1,'KTfwd::extensions']]],
+  ['gaussian',['gaussian',['../da/d13/structKTfwd_1_1extensions_1_1gaussian.html',1,'KTfwd::extensions']]],
+  ['genetics101',['genetics101',['../d1/d5b/structKTfwd_1_1genetics101.html',1,'KTfwd']]],
+  ['gsl_5fran_5fdiscrete_5ft_5fdeleter',['gsl_ran_discrete_t_deleter',['../dc/d4a/structKTfwd_1_1fwdpp__internal_1_1gsl__ran__discrete__t__deleter.html',1,'KTfwd::fwdpp_internal']]],
+  ['gsl_5frng_5fdeleter',['gsl_rng_deleter',['../d5/d99/structKTfwd_1_1sugar_1_1gsl__rng__deleter.html',1,'KTfwd::sugar']]],
+  ['gsl_5frng_5ftype_5ftag',['GSL_RNG_TYPE_TAG',['../d7/d43/structKTfwd_1_1sugar_1_1GSL__RNG__TYPE__TAG.html',1,'KTfwd::sugar']]],
+  ['gslrng_5ft',['GSLrng_t',['../de/d55/classKTfwd_1_1GSLrng__t.html',1,'KTfwd']]],
+  ['gzdeserialize',['gzdeserialize',['../d2/db3/structKTfwd_1_1gzdeserialize.html',1,'KTfwd']]],
+  ['gzserialize',['gzserialize',['../d1/d04/structKTfwd_1_1gzserialize.html',1,'KTfwd']]]
 ];

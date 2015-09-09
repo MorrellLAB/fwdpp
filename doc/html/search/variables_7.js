@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['lookup',['lookup',['../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html#ae7971038e9afab30dad01a8aefbca3fb',1,'KTfwd::experimental::standardWFrules']]],
-  ['lookup_5ftable',['lookup_table',['../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a8a30775336ea4f3c3cfd1a069cb830d3',1,'KTfwd::fwdpp_internal::gamete_lookup']]]
+  ['h',['h',['../d1/d7f/structKTfwd_1_1mutation.html#a45166a8ac131f277f06a261f6e16f5a0',1,'KTfwd::mutation::h()'],['../dc/dcc/structKTfwd_1_1popgenmut.html#a60a395a305fd9d0a1f3da6b7b223bc10',1,'KTfwd::popgenmut::h()'],['../db/dbe/structKTfwd_1_1extensions_1_1shmodel.html#a2724abbf72fe037384432b72306dc1fb',1,'KTfwd::extensions::shmodel::h()']]]
 ];

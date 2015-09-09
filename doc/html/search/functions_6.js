@@ -1,9 +1,11 @@
 var searchData=
 [
-  ['init_5fwith_5fms',['init_with_ms',['../da/d8b/namespaceKTfwd.html#af05d39195307329f16205963a265b41f',1,'KTfwd']]],
-  ['insert_5fat_5fend',['insert_at_end',['../da/d8b/namespaceKTfwd.html#ac06ca8dade5d8e9af09e117e403bf644',1,'KTfwd']]],
-  ['insert_5fif_5fnot_5ffound',['insert_if_not_found',['../da/d8b/namespaceKTfwd.html#a1c9791ec9905f663089b0a52d4facb0d',1,'KTfwd::insert_if_not_found(T &amp;&amp;t, cT *ct)'],['../da/d8b/namespaceKTfwd.html#afb2fd01e4b5a2bdcadb5e7c4382bb4d2',1,'KTfwd::insert_if_not_found(T &amp;&amp;t, cT *ct, const unsigned &amp;n)']]],
-  ['insert_5fmutation_5fat_5fend',['insert_mutation_at_end',['../da/d8b/namespaceKTfwd.html#a851c5d5579cbb54c0f0dffdf57e0d9b9',1,'KTfwd']]],
-  ['insert_5fnew_5for_5ffail',['insert_new_or_fail',['../da/d8b/namespaceKTfwd.html#a8be41eec381fecf3eb936bb1f7ef19af',1,'KTfwd']]],
-  ['insert_5funique_5for_5ffail',['insert_unique_or_fail',['../da/d8b/namespaceKTfwd.html#ad884f819fe299dbf52d65253e21c1d17',1,'KTfwd']]]
+  ['gamete_5fbase',['gamete_base',['../d6/d90/structKTfwd_1_1gamete__base.html#a2602511c7188e372a84f9e92d43d3241',1,'KTfwd::gamete_base::gamete_base(const unsigned &amp;icount) noexcept'],['../d6/d90/structKTfwd_1_1gamete__base.html#a7a769baf03520d0008e016089dc165f9',1,'KTfwd::gamete_base::gamete_base(const unsigned &amp;icount, const mutation_container &amp;n, const mutation_container &amp;s) noexcept'],['../d6/d90/structKTfwd_1_1gamete__base.html#a0f33741eb637b2583727a668fcab2d97',1,'KTfwd::gamete_base::gamete_base(gamete_base &amp;)=default'],['../d6/d90/structKTfwd_1_1gamete__base.html#aab5e896a3b17806fc5e45df411d4c0f6',1,'KTfwd::gamete_base::gamete_base(gamete_base const &amp;)=default'],['../d6/d90/structKTfwd_1_1gamete__base.html#a57144754dd38c0634af5217aeccf1d45',1,'KTfwd::gamete_base::gamete_base(gamete_base &amp;&amp;)=default']]],
+  ['gamete_5fcleaner',['gamete_cleaner',['../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a35a5dfd097cce7743602f5bd32819c21',1,'KTfwd::fwdpp_internal::gamete_cleaner(gamete_list_type *, const mutation_removal_policy &amp;, std::true_type)'],['../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a538142088853f1ceae0735aa4c9f8a16',1,'KTfwd::fwdpp_internal::gamete_cleaner(gamete_list_type *gametes, const mutation_removal_policy &amp;mp, std::false_type)']]],
+  ['gamete_5flookup',['gamete_lookup',['../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a25637d3e05e20b6c7453689dcd2f1210',1,'KTfwd::fwdpp_internal::gamete_lookup']]],
+  ['gamete_5flookup_5ftable',['gamete_lookup_table',['../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a01ebf9c64af85f1831a4ec0bd8977057',1,'KTfwd::fwdpp_internal']]],
+  ['gamma',['gamma',['../dd/df9/structKTfwd_1_1extensions_1_1gamma.html#affdf86d1ee02f4c1f6081424a7302b2f',1,'KTfwd::extensions::gamma']]],
+  ['gaussian',['gaussian',['../da/d13/structKTfwd_1_1extensions_1_1gaussian.html#a1f17cabafbb10c844125ffc562dcfbe1',1,'KTfwd::extensions::gaussian']]],
+  ['get',['get',['../de/d55/classKTfwd_1_1GSLrng__t.html#a12a336875d99337390d2231228707bc4',1,'KTfwd::GSLrng_t']]],
+  ['gslrng_5ft',['GSLrng_t',['../de/d55/classKTfwd_1_1GSLrng__t.html#a8228f2db9986da0cbb71505a59b3dbc3',1,'KTfwd::GSLrng_t::GSLrng_t(const unsigned &amp;seed)'],['../de/d55/classKTfwd_1_1GSLrng__t.html#a9fc21eab20c88d78402cf3e674386ec6',1,'KTfwd::GSLrng_t::GSLrng_t(const GSLrng_t &amp;rng)'],['../de/d55/classKTfwd_1_1GSLrng__t.html#adf8f7609240da542ce2f18f00abc77ab',1,'KTfwd::GSLrng_t::GSLrng_t(GSLrng_t &amp;rng)']]]
 ];

@@ -13,6 +13,7 @@ var searchData=
   ['poptype',['poptype',['../d8/df2/structno__selection__multi.html#a343844b58298377d9a00fc367567b0c8',1,'no_selection_multi::poptype()'],['../d5/d77/HOC__ind_8cc.html#aa1797c37ecd3700357dbddadc6838b6d',1,'poptype():&#160;HOC_ind.cc'],['../df/dfa/migsel__ind_8cc.html#a26f13d876c83e1b114495387f66e45fb',1,'poptype():&#160;migsel_ind.cc'],['../d5/dcc/migsel__split__ind__list_8cc.html#a03a1cc418a74d1311b6869c0ef0aa607',1,'poptype():&#160;migsel_split_ind_list.cc']]],
   ['population_5fsfs',['population_sfs',['../da/d8b/namespaceKTfwd.html#a2b4ac5932b4c1d311486946b2b6f612c',1,'KTfwd']]],
   ['pos',['pos',['../d1/da4/structKTfwd_1_1mutation__base.html#aed95181f38c8e17b19a7a9da4b373b03',1,'KTfwd::mutation_base']]],
+  ['posmaker',['posmaker',['../d8/d8d/structKTfwd_1_1extensions_1_1discrete__mut__model.html#a8bffa889fece774397bb42953e7dd7aa',1,'KTfwd::extensions::discrete_mut_model']]],
   ['preproc_2emd',['preproc.md',['../dc/db1/preproc_8md.html',1,'']]],
   ['push_5fat_5fend',['push_at_end',['../da/d8b/namespaceKTfwd.html#a258eb02c9748d27f8793e431c999feea',1,'KTfwd']]],
   ['push_5fback_5fgamete',['push_back_gamete',['../d1/dcc/structKTfwd_1_1push__back__gamete.html',1,'KTfwd']]]

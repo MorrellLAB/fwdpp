@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['buffer',['buffer',['../d0/d8e/structKTfwd_1_1serialize.html#a01a324dbaaeeac9580cfccf9539b5b9e',1,'KTfwd::serialize']]]
+  ['a',['a',['../d2/d4d/structKTfwd_1_1extensions_1_1beta.html#a5abad64ce2dcb41449e31091e88e898c',1,'KTfwd::extensions::beta']]]
 ];

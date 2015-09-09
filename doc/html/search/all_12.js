@@ -2,6 +2,8 @@ var searchData=
 [
   ['unit_20tests_20for_20fwdpp',['Unit tests for fwdpp',['../dc/dae/md__home_kevin_git_fwdpp_8git_unit_README.html',1,'']]],
   ['uncheck',['uncheck',['../da/d8b/namespaceKTfwd.html#a91ac7525d84cfec32e3007029da92cee',1,'KTfwd']]],
+  ['uniform',['uniform',['../d0/db2/structKTfwd_1_1extensions_1_1uniform.html',1,'KTfwd::extensions']]],
+  ['uniform',['uniform',['../d0/db2/structKTfwd_1_1extensions_1_1uniform.html#acf10bfbcb7875abe9f0593231aaf7589',1,'KTfwd::extensions::uniform']]],
   ['unit_20testing',['Unit testing',['../dd/ddc/group__unit.html',1,'']]],
   ['update',['update',['../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a06bf617abf631ccab89d5a41fee1bc02',1,'KTfwd::fwdpp_internal::gamete_lookup::update()'],['../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html#a070fa336c463725730068eb2ced8ca20',1,'KTfwd::experimental::standardWFrules::update()']]],
   ['update_5fdetails',['update_details',['../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#afb1eb0cfd1176c4f8b1d43a5cb4fe74f',1,'KTfwd::fwdpp_internal::gamete_lookup']]],

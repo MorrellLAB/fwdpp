@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.6</span>
+   &#160;<span id="projectnumber">0.3.7</span>
    </div>
   </td>
  </tr>
@@ -82,7 +82,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="title">FWDPP RELEASE NOTES </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2>0.3.6</h2>
+<div class="textblock"><h2>0.3.7</h2>
+<ul>
+<li>An declaration of <a class="el" href="../../da/d8b/namespaceKTfwd.html#a83d780c0a1e1421f3a17d79ec8c23ff0" title="recombination for individual-based forward simulations ">KTfwd::recombine_gametes</a> was fixed to match the implementation</li>
+<li>Minor re-organization of recombination code</li>
+<li>The details of <a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga235b4507a6f09b26fa9b33ef12abf59d" title="Sampling from a population in an individual-based simulation. Selected and neutral mutations returned...">KTfwd::ms_sample_separate</a> were moved into KTfwd::internal. This move allows access to functions that sample a specific set of diploids, which is handy in a lot of cases.</li>
+</ul>
+<h2>0.3.6</h2>
 <ul>
 <li>The internal lookup table has been further refined, resulting in much faster simulations with selection.</li>
 <li><a class="el" href="../../d6/d39/structKTfwd_1_1additive__diploid.html" title="Additive fitness across sites. ">KTfwd::additive_diploid</a> and <a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html" title="Multiplicative fitness across sites. ">KTfwd::multiplicative_diploid</a> now have checks to prevent returning fitnesses &lt; 0.</li>
@@ -209,7 +215,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <li>const mutation lists now passed to binary output routines</li>
 <li>The library internals now fully support C++11 move semantics</li>
 <li>Default policies now support C++11 "perfect forwarding"</li>
-<li>The function <a class="el" href="../../da/d8b/namespaceKTfwd.html#a5dd7205f912f153bb4c8a27fa400693f" title="recombination for individual-based forward simulations ">KTfwd::recombine_gametes</a>, which is provided for recombination in individual-based simulations, has an overloaded version. This new version takes a fixed set of positions representing recombination breakpoints, allowing more modeling flexibility and making unit testing easier.</li>
+<li>The function <a class="el" href="../../da/d8b/namespaceKTfwd.html#a83d780c0a1e1421f3a17d79ec8c23ff0" title="recombination for individual-based forward simulations ">KTfwd::recombine_gametes</a>, which is provided for recombination in individual-based simulations, has an overloaded version. This new version takes a fixed set of positions representing recombination breakpoints, allowing more modeling flexibility and making unit testing easier.</li>
 <li>The mechanics of recombination in multilocus simulations moved to function multilocus_rec in namesapce <a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html" title="Nested namespace for nuts and bolts of certain library functions. ">KTfwd::fwdpp_internal</a>.</li>
 <li>A unit test for the function KTfwd::fwdpp_internal::multilocus_rec was added.</li>
 <li>Added tutorial for multilocus simulation implmentation</li>

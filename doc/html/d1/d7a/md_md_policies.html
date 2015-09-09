@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.6</span>
+   &#160;<span id="projectnumber">0.3.7</span>
    </div>
   </td>
  </tr>
@@ -252,7 +252,7 @@ Policy requirements in fwdpp</h1>
 <div class="line">}</div>
 </div><!-- fragment --><p>See the header file <b><a class="el" href="../../db/dd7/fitness__models_8hpp.html">fwdpp/fitness_models.hpp</a></b> for examples of fitness policies that I provide for "standard'' cases.</p>
 <p>A recombination policy takes two non-const references to <b>glist::iterator</b>, scrambles up those gametes appropriately, and returns an unsigned integer representing the number of crossovers, etc., between the two gametes.</p>
-<p>Typically, recombination would work via a call to <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#a5dd7205f912f153bb4c8a27fa400693f" title="recombination for individual-based forward simulations ">KTfwd::recombine_gametes</a></b>, or the convenience wrapper <b><a class="el" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a></b>. Here is an example of the latter, taken from the example file <a class="el" href="../../d9/de8/diploid__ind_8cc.html">diploid_ind.cc</a>:</p>
+<p>Typically, recombination would work via a call to <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#a83d780c0a1e1421f3a17d79ec8c23ff0" title="recombination for individual-based forward simulations ">KTfwd::recombine_gametes</a></b>, or the convenience wrapper <b><a class="el" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a></b>. Here is an example of the latter, taken from the example file <a class="el" href="../../d9/de8/diploid__ind_8cc.html">diploid_ind.cc</a>:</p>
 <div class="fragment"><div class="line">std::bind(<a class="code" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a>(),</div>
 <div class="line">        <span class="comment">//These two placeholders are for  iterators to the two parental gametes</span></div>
 <div class="line">        std::placeholders::_1,std::placeholders::_2,</div>
@@ -550,7 +550,7 @@ Recombination</h2>
 <div class="line">           littler,                <span class="comment">//Avg. # of crossovers b/w two gametes per region per generation</span></div>
 <div class="line">           r,                      <span class="comment">//a gsl_rng *</span></div>
 <div class="line">           recmap)                 <span class="comment">//A genetic map policy like the one we made above</span></div>
-</div><!-- fragment --><p>Note: if you want to write a new recombination policy, you probably want to proceed by modifying how it interacts with the the recombination map policy. For example, if a recombination at position <img class="formulaInl" alt="$x$" src="../../form_27.png"/> means that the next position must be <img class="formulaInl" alt="$\geq 1.5x$" src="../../form_55.png"/> (in some model of interference). Doing so requires making a custom version of the <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#a5dd7205f912f153bb4c8a27fa400693f" title="recombination for individual-based forward simulations ">KTfwd::recombine_gametes</a></b> function. If you read the code for that function, you will see where the recombination map policy is called. If you try to modify the code below that, then good luck to you. It isn't super-complicated, but tread with caution.</p>
+</div><!-- fragment --><p>Note: if you want to write a new recombination policy, you probably want to proceed by modifying how it interacts with the the recombination map policy. For example, if a recombination at position <img class="formulaInl" alt="$x$" src="../../form_27.png"/> means that the next position must be <img class="formulaInl" alt="$\geq 1.5x$" src="../../form_55.png"/> (in some model of interference). Doing so requires making a custom version of the <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#a83d780c0a1e1421f3a17d79ec8c23ff0" title="recombination for individual-based forward simulations ">KTfwd::recombine_gametes</a></b> function. If you read the code for that function, you will see where the recombination map policy is called. If you try to modify the code below that, then good luck to you. It isn't super-complicated, but tread with caution.</p>
 <h2><a class="anchor" id="TutMig"></a>
 Migration</h2>
 <p>Migration policies are only used in individual-based simulations.</p>

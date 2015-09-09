@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['checked',['checked',['../d1/da4/structKTfwd_1_1mutation__base.html#ad4da8f49535997d3adc3ac9f524adaa5',1,'KTfwd::mutation_base']]]
+  ['b',['b',['../d2/d4d/structKTfwd_1_1extensions_1_1beta.html#abe9bff0696a5dcc94e8e23d985cdd304',1,'KTfwd::extensions::beta']]],
+  ['beg',['beg',['../dc/d61/structKTfwd_1_1extensions_1_1discrete__rec__model.html#a22898d0e414ff0a4588414ab5fcdfb2e',1,'KTfwd::extensions::discrete_rec_model']]],
+  ['buffer',['buffer',['../d0/d8e/structKTfwd_1_1serialize.html#a01a324dbaaeeac9580cfccf9539b5b9e',1,'KTfwd::serialize']]]
 ];

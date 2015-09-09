@@ -1,0 +1,187 @@
+/*!
+  \file callbacks.hpp
+
+  This file provides lightweight wrappers
+  around calls to GSL.
+
+  The intendend use is to implement 
+  standard models of distributions on selection/
+  dominance effects of mutations.
+
+  Rather, the intended use is that they provide
+  the implementation details of "shmodel", defined below
+*/
+
+#ifndef __FWDPP_EXTENSIONS_CALLBACKS_HPP__
+#define __FWDPP_EXTENSIONS_CALLBACKS_HPP__
+
+#include <gsl/gsl_randist.h>
+#include <functional>
+#include <exception>
+#include <cmath>
+
+namespace KTfwd {
+
+  /*!
+    Useful types for implementing fwdpp-based simulations in 
+    enviroments like R, Python, etc.
+
+    Unlike the rest of fwdpp, functions in this namespace
+    are allowed to throw exceptions, and it is up to the programmer
+    to catch them and handle them appropriately.  Both Rcpp and 
+    Cython/boost.python
+
+    Examples of using this namespace are:
+
+    1. http://github.com/molpopgen/fwdpy
+    2. http://github.com/molpopgen/foRward
+   */
+  namespace extensions {
+
+    struct shmodel
+    /*!
+      Callback wrapper.  Used to model
+      distributions on effect sizes/selection coefficients (s)
+      and dominance (h)
+    */
+    {
+      std::function<double(gsl_rng*)> s,h;
+    };
+  
+    struct constant
+    /*!
+      Callback for fixed s and/or h
+     */
+    {
+      double x;
+      constant(const double & __x) : x(__x)
+      {
+	if(!std::isfinite(x)) {
+	  throw std::runtime_error("value must be finite");
+	}
+      }
+      inline double operator()(gsl_rng *) const
+      {
+	return x;
+      }
+    };
+
+    struct exponential
+    /*!
+      Exponential s or h
+     */
+    {
+      double mean;
+      exponential(const double & m) : mean(m)
+      {
+	if(!std::isfinite(mean))
+	  {
+	    throw std::runtime_error("mean must be finite");
+	  }
+	if(mean==0.)
+	  {
+	    throw std::runtime_error("mean must not equal 0");
+	  }
+      }
+      inline double operator()(gsl_rng * r) const
+      {
+	return gsl_ran_exponential(r,mean);
+      }
+    };
+
+    struct uniform
+    /*!
+      Uniform s or h
+     */
+    {
+      double mn,mx;
+      uniform(const double & __mn,
+	      const double & __mx) : mn(__mn),mx(__mx)
+      {
+	if(!std::isfinite(mn) || !std::isfinite(mx))
+	  {
+	    throw std::runtime_error("min and max of range must both be finite");
+	  }
+	if(mn>mx)
+	  {
+	    throw std::runtime_error("min must be <= max");
+	  }
+      }
+      inline double operator()(gsl_rng * r) const
+      {
+	return gsl_ran_flat(r,mn,mx);
+      }
+    };
+
+    struct beta
+    /*!
+      Beta-distributed s or h
+    */
+    {
+      double a,b,factor;
+      beta(const double & __a,
+	   const double & __b,
+	   const double & __f) : a(__a),b(__b),factor(__f)
+      {
+	if(!std::isfinite(a) || a <= 0.)
+	  {
+	    throw std::runtime_error("a must be > 0.");
+	  }
+	if(!std::isfinite(b) || b <= 0.)
+	  {
+	    throw std::runtime_error("b must be > 0.");
+	  }
+	if(!std::isfinite(factor) || !(factor>0.))
+	  {
+	    throw std::runtime_error("scaling factor must be finite and > 0");
+	  }
+      }
+      inline double operator()(gsl_rng * r) const
+      {
+	return factor*gsl_ran_beta(r,a,b);
+      }
+    };
+
+    struct gaussian
+    /*!
+      Gaussian s or h
+    */
+    {
+      double sd;
+      gaussian(const double & __sd) : sd(__sd)
+      {
+	if(sd == 0.) throw std::runtime_error("sd must not equal 0");
+	if(!std::isfinite(sd)) throw std::runtime_error("sd must be finite");
+      }
+      inline double operator()(const gsl_rng * r) const
+      {
+	return gsl_ran_gaussian(r,sd);
+      }
+    };
+
+    struct gamma
+    /*!
+      Gamma distributed s or h
+    */
+    {
+      double mean,shape;
+      gamma(const double & __m,
+	    const double & __s ) : mean(__m),shape(__s)
+      {
+	if(!std::isfinite(mean))
+	  {
+	    throw std::runtime_error("mean and sign must both be finite");
+	  }
+	if(shape <= 0)
+	  {
+	    throw std::runtime_error("shape must be >= 0");
+	  }
+      }
+      inline double operator()(const gsl_rng * r) const
+      {
+	return gsl_ran_gamma(r,shape,mean/shape);
+      }
+    };
+  }
+}
+#endif

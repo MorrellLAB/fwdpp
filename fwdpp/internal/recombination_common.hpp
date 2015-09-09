@@ -18,7 +18,6 @@ namespace KTfwd {
       assert( std::is_sorted(pos.cbegin(),pos.cend()) );
       short SWITCH = 0;
 
-      using itr_t = typename gamete_cont_iterator::value_type::mutation_container::iterator;
       auto itr = ibeg->mutations.cbegin(),
 	jtr = jbeg->mutations.cbegin(),
 	itr_s = ibeg->smutations.cbegin(),
@@ -36,16 +35,8 @@ namespace KTfwd {
 						    neutral,dummy);
 	      itr_s = fwdpp_internal::rec_gam_updater(itr_s,itr_s_e,
 						      selected,dummy);
-	      jtr = std::lower_bound(jtr,jtr_e,
-				     dummy,
-	       			     [](const typename itr_t::value_type & __mut,const double & __val) {
-	       			       return __mut->pos < __val;
-	       			     });
-	      jtr_s = std::lower_bound(jtr_s,jtr_s_e,
-	      			       dummy,
-	       			       [](const typename itr_t::value_type & __mut,const double & __val) {
-	       				 return (__mut)->pos < __val;
-	       			       });
+	      jtr = fwdpp_internal::rec_update_itr(jtr,jtr_e,dummy);
+	      jtr_s = fwdpp_internal::rec_update_itr(jtr_s,jtr_s_e,dummy);
 	    }
 	  else
 	    {
@@ -53,16 +44,8 @@ namespace KTfwd {
 						    neutral,dummy);
 	      jtr_s = fwdpp_internal::rec_gam_updater(jtr_s,jtr_s_e,
 						      selected,dummy);
-	      itr = std::lower_bound(itr,itr_e,
-				     dummy,
-	       			     [](const typename itr_t::value_type & __mut,const double & __val) {
-	       			       return __mut->pos < __val;
-	       			     });
-	      itr_s = std::lower_bound(itr_s,itr_s_e,
-	      			       dummy,
-	       			       [](const typename itr_t::value_type & __mut,const double & __val) {
-	       				 return (__mut)->pos < __val;
-	       			       });
+	      itr = fwdpp_internal::rec_update_itr(itr,itr_e,dummy);
+	      itr_s = fwdpp_internal::rec_update_itr(itr_s,itr_s_e,dummy);
 	    }
 	  SWITCH=!SWITCH;
 	}

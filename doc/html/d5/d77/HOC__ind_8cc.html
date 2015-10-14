@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>fwdpp: /home/kevin/git/fwdpp.git/examples/HOC_ind.cc File Reference</title>
+<title>fwdpp: /home/kevin/src/fwdpp/examples/HOC_ind.cc File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.8</span>
+   &#160;<span id="projectnumber">0.3.9</span>
    </div>
   </td>
  </tr>
@@ -120,7 +120,7 @@ Macros</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr class="memitem:ab95d5809de5b32335213c961a4e895af"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d77/HOC__ind_8cc.html#ab95d5809de5b32335213c961a4e895af">mtype</a> = <a class="el" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a></td></tr>
 <tr class="separator:ab95d5809de5b32335213c961a4e895af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1797c37ecd3700357dbddadc6838b6d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d77/HOC__ind_8cc.html#aa1797c37ecd3700357dbddadc6838b6d">poptype</a> = singlepop_t</td></tr>
+<tr class="memitem:aa1797c37ecd3700357dbddadc6838b6d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d77/HOC__ind_8cc.html#aa1797c37ecd3700357dbddadc6838b6d">poptype</a> = <a class="el" href="../../d6/d4f/sugar__sampling_8cc.html#aa00dd5387565dec3455a42fdce5a26f5">singlepop_t</a></td></tr>
 <tr class="separator:aa1797c37ecd3700357dbddadc6838b6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -149,7 +149,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> =  <a class="el" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a></td>
+          <td class="memname">using <a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> =  <a class="el" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -168,11 +168,11 @@ Functions</h2></td></tr>
 <div class="line"><span class="keyword">using</span> <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">mtype</a> = <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a>;</div>
 <div class="line"><span class="preprocessor">#define SINGLEPOP_SIM</span></div>
 <div class="line"><span class="preprocessor"></span><span class="preprocessor">#include &lt;<a class="code" href="../../df/d10/common__ind_8hpp.html">common_ind.hpp</a>&gt;</span></div>
-<div class="line"><span class="keyword">using</span> <a class="code" href="../../d5/d77/HOC__ind_8cc.html#aa1797c37ecd3700357dbddadc6838b6d">poptype</a> = singlepop_t;</div>
+<div class="line"><span class="keyword">using</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">poptype</a> = <a class="code" href="../../d6/d4f/sugar__sampling_8cc.html#aa00dd5387565dec3455a42fdce5a26f5">singlepop_t</a>;</div>
 <div class="line"></div>
 <div class="line"><span class="keyword">struct </span><a class="code" href="../../dc/d70/structHOChap.html">HOChap</a></div>
 <div class="line">{</div>
-<div class="line">  <span class="keyword">inline</span> <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">mtype</a> <a class="code" href="../../dc/d70/structHOChap.html#ac1c44803de49ab04a447b89bb51222ee">operator()</a>(poptype::gamete_t &amp; g,gsl_rng * <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, poptype::lookup_table_t * lookup, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; sigmu)<span class="keyword"> const</span></div>
+<div class="line">  <span class="keyword">inline</span> <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">mtype</a> <a class="code" href="../../dc/d70/structHOChap.html#ac1c44803de49ab04a447b89bb51222ee">operator()</a>(<a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#ab6775aa6d7aea3269e3a3dfdba8857e2">poptype::gamete_t</a> &amp; g,gsl_rng * <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#ae32743465e9bcaf53d13bfd5cff8d23f">poptype::lookup_table_t</a> * lookup, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; sigmu)<span class="keyword"> const</span></div>
 <div class="line"><span class="keyword">  </span>{</div>
 <div class="line">    <span class="keywordtype">double</span> pos = gsl_rng_uniform(r);</div>
 <div class="line">    <span class="keywordflow">while</span>( lookup-&gt;find(pos) != lookup-&gt;end() ) <span class="comment">//make sure it doesn&#39;t exist in the population</span></div>
@@ -184,7 +184,7 @@ Functions</h2></td></tr>
 <div class="line">    <span class="keywordtype">double</span> sum = std::accumulate(g.smutations.begin(),g.smutations.end(),0.,</div>
 <div class="line">                                 [](<span class="keywordtype">double</span> &amp; d, <span class="keyword">const</span> poptype::mlist_t::iterator &amp; m) { <span class="keywordflow">return</span> d + m-&gt;s; });</div>
 <div class="line">    <span class="keywordtype">double</span> esize = (E &gt; sum) ? std::fabs(E-sum) : -1.*std::fabs(E-sum);</div>
-<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>(pos,esize,1);</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>(pos,esize,1);</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"></div>
@@ -197,7 +197,7 @@ Functions</h2></td></tr>
 <div class="line">  <span class="keywordflow">return</span> std::exp(-1.*std::pow(sum,2.)/2.);</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">int</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv)</div>
+<div class="line"><span class="keywordtype">int</span> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv)</div>
 <div class="line">{</div>
 <div class="line">  <span class="keywordflow">if</span> (argc != 8)</div>
 <div class="line">    {</div>
@@ -244,7 +244,7 @@ Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">  <span class="keywordflow">while</span>(nreps--)</div>
 <div class="line">    {</div>
-<div class="line">      <a class="code" href="../../d5/d77/HOC__ind_8cc.html#aa1797c37ecd3700357dbddadc6838b6d">poptype</a> pop(N);</div>
+<div class="line">      <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">poptype</a> pop(N);</div>
 <div class="line"></div>
 <div class="line">      <span class="comment">//HOChap mmodel(r,sigmu,&amp;pop.mut_lookup);</span></div>
 <div class="line">      <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> generation = 0; generation &lt; ngens; ++generation )</div>
@@ -310,7 +310,7 @@ Functions</h2></td></tr>
 <div class="line">      <span class="comment">//Note: this can be done more efficiently via the boost accumulator library, which</span></div>
 <div class="line">      <span class="comment">//we don&#39;t use here to reduce dependencies.</span></div>
 <div class="line">      std::vector&lt;double&gt; G;</div>
-<div class="line">      std::for_each(pop.diploids.cbegin(),pop.diploids.cend(),[&amp;G](<span class="keyword">const</span> <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a1a5f1954bb541f5016cc0844385c6758">poptype::diploid_t</a> &amp; dip ) {</div>
+<div class="line">      std::for_each(pop.diploids.cbegin(),pop.diploids.cend(),[&amp;G](<span class="keyword">const</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a358079397bd7ee4f6a929b9f5097b6b8">poptype::diploid_t</a> &amp; dip ) {</div>
 <div class="line">          <span class="keywordtype">double</span> sum = std::accumulate(dip.first-&gt;smutations.begin(),dip.first-&gt;smutations.end(),0.,</div>
 <div class="line">                                       [](<span class="keywordtype">double</span> &amp; d, <span class="keyword">const</span> poptype::mlist_t::iterator &amp; m) { <span class="keywordflow">return</span> d + m-&gt;s; } );</div>
 <div class="line">          sum += std::accumulate(dip.second-&gt;smutations.begin(),dip.second-&gt;smutations.end(),0.,</div>
@@ -331,7 +331,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d5/d77/HOC__ind_8cc.html#aa1797c37ecd3700357dbddadc6838b6d">poptype</a> =  singlepop_t</td>
+          <td class="memname">using <a class="el" href="../../d5/d77/HOC__ind_8cc.html#aa1797c37ecd3700357dbddadc6838b6d">poptype</a> =  <a class="el" href="../../d6/d4f/sugar__sampling_8cc.html#aa00dd5387565dec3455a42fdce5a26f5">singlepop_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">

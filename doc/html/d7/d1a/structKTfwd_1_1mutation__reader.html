@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.8</span>
+   &#160;<span id="projectnumber">0.3.9</span>
    </div>
   </td>
  </tr>
@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a445d1d00f8ccab821827842bf7f78df0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html#a445d1d00f8ccab821827842bf7f78df0">result_type</a> = mutation_t</td></tr>
+<tr class="memitem:a445d1d00f8ccab821827842bf7f78df0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html#a445d1d00f8ccab821827842bf7f78df0">result_type</a> = <a class="el" href="../../d6/d4f/sugar__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a></td></tr>
 <tr class="memdesc:a445d1d00f8ccab821827842bf7f78df0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The return value of operator()  <a href="#a445d1d00f8ccab821827842bf7f78df0">More...</a><br/></td></tr>
 <tr class="separator:a445d1d00f8ccab821827842bf7f78df0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -141,7 +141,7 @@ struct KTfwd::mutation_reader&lt; mutation_t &gt;</h3>
 
 <p>Facilitates serialization of mutation types supported by the fwdpp sugar library. </p>
 <p>The template parameter must be derived from <a class="el" href="../../d1/da4/structKTfwd_1_1mutation__base.html" title="Base class for mutations At minimum, a mutation must contain a position and a count in the population...">KTfwd::mutation_base</a> </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#_a16">diploid_binaryIO_ind.cc</a>, and <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#_a21">migsel_ind.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#_a17">diploid_binaryIO_ind.cc</a>, and <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#_a25">migsel_ind.cc</a>.</dd>
 </dl></div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a class="anchor" id="a445d1d00f8ccab821827842bf7f78df0"></a>
 <div class="memitem">
@@ -150,7 +150,7 @@ struct KTfwd::mutation_reader&lt; mutation_t &gt;</h3>
 template&lt;typename mutation_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">KTfwd::mutation_reader</a>&lt; mutation_t &gt;::<a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html#a445d1d00f8ccab821827842bf7f78df0">result_type</a> =  mutation_t</td>
+          <td class="memname">using <a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">KTfwd::mutation_reader</a>&lt; <a class="el" href="../../d6/d4f/sugar__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a> &gt;::<a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html#a445d1d00f8ccab821827842bf7f78df0">result_type</a> =  <a class="el" href="../../d6/d4f/sugar__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -172,7 +172,7 @@ template&lt;typename U  = mutation_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;std::is_same&lt;U,<a class="el" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">popgenmut</a>&gt;::value,<a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html#a445d1d00f8ccab821827842bf7f78df0">result_type</a>&gt;::type <a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">KTfwd::mutation_reader</a>&lt; mutation_t &gt;::operator() </td>
+          <td class="memname">std::enable_if&lt;std::is_same&lt;U,<a class="el" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">popgenmut</a>&gt;::value,<a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html#a445d1d00f8ccab821827842bf7f78df0">result_type</a>&gt;::type <a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">KTfwd::mutation_reader</a>&lt; <a class="el" href="../../d6/d4f/sugar__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a> &gt;::operator() </td>
           <td>(</td>
           <td class="paramtype">std::istream &amp;&#160;</td>
           <td class="paramname"><em>in</em></td><td>)</td>
@@ -202,7 +202,7 @@ template&lt;typename U  = mutation_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;std::is_same&lt;U,<a class="el" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">popgenmut</a>&gt;::value,<a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html#a445d1d00f8ccab821827842bf7f78df0">result_type</a>&gt;::type <a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">KTfwd::mutation_reader</a>&lt; mutation_t &gt;::operator() </td>
+          <td class="memname">std::enable_if&lt;std::is_same&lt;U,<a class="el" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">popgenmut</a>&gt;::value,<a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html#a445d1d00f8ccab821827842bf7f78df0">result_type</a>&gt;::type <a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">KTfwd::mutation_reader</a>&lt; <a class="el" href="../../d6/d4f/sugar__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a> &gt;::operator() </td>
           <td>(</td>
           <td class="paramtype">gzFile&#160;</td>
           <td class="paramname"><em>in</em></td><td>)</td>
@@ -232,7 +232,7 @@ template&lt;typename U  = mutation_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;std::is_same&lt;U,<a class="el" href="../../d1/d7f/structKTfwd_1_1mutation.html">mutation</a>&gt;::value,<a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html#a445d1d00f8ccab821827842bf7f78df0">result_type</a>&gt;::type <a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">KTfwd::mutation_reader</a>&lt; mutation_t &gt;::operator() </td>
+          <td class="memname">std::enable_if&lt;std::is_same&lt;U,<a class="el" href="../../d1/d7f/structKTfwd_1_1mutation.html">mutation</a>&gt;::value,<a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html#a445d1d00f8ccab821827842bf7f78df0">result_type</a>&gt;::type <a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">KTfwd::mutation_reader</a>&lt; <a class="el" href="../../d6/d4f/sugar__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a> &gt;::operator() </td>
           <td>(</td>
           <td class="paramtype">std::istream &amp;&#160;</td>
           <td class="paramname"><em>in</em></td><td>)</td>
@@ -262,7 +262,7 @@ template&lt;typename U  = mutation_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;std::is_same&lt;U,<a class="el" href="../../d1/d7f/structKTfwd_1_1mutation.html">mutation</a>&gt;::value,<a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html#a445d1d00f8ccab821827842bf7f78df0">result_type</a>&gt;::type <a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">KTfwd::mutation_reader</a>&lt; mutation_t &gt;::operator() </td>
+          <td class="memname">std::enable_if&lt;std::is_same&lt;U,<a class="el" href="../../d1/d7f/structKTfwd_1_1mutation.html">mutation</a>&gt;::value,<a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html#a445d1d00f8ccab821827842bf7f78df0">result_type</a>&gt;::type <a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">KTfwd::mutation_reader</a>&lt; <a class="el" href="../../d6/d4f/sugar__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a> &gt;::operator() </td>
           <td>(</td>
           <td class="paramtype">gzFile&#160;</td>
           <td class="paramname"><em>in</em></td><td>)</td>
@@ -281,7 +281,7 @@ template&lt;typename U  = mutation_t&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/kevin/git/fwdpp.git/fwdpp/sugar/<a class="el" href="../../d8/d21/serialization_8hpp_source.html">serialization.hpp</a></li>
+<li>/home/kevin/src/fwdpp/fwdpp/sugar/<a class="el" href="../../d8/d21/serialization_8hpp_source.html">serialization.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

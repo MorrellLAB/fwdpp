@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.8</span>
+   &#160;<span id="projectnumber">0.3.9</span>
    </div>
   </td>
  </tr>
@@ -104,10 +104,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../da/dd8/GSLrng__t_8hpp.html">fwdpp/sugar/GSLrng_t.hpp</a>&gt;</span></div>
 </div><!-- fragment --><p>To specify the use of the Mersenne twister:</p>
 <div class="fragment"><div class="line"><span class="keyword">using</span> <a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">GSLrng</a> = <a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">KTfwd::GSLrng_t&lt;KTfwd::GSL_RNG_MT19937&gt;</a>;</div>
-<div class="line"><a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">GSLrng</a> rng(101); <span class="comment">//101 is the seed value </span></div>
+<div class="line"><a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">GSLrng</a> <a class="code" href="../../d6/d4f/sugar__sampling_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>(101); <span class="comment">//101 is the seed value </span></div>
 </div><!-- fragment --><p>The taus generator may be declared like this:</p>
 <div class="fragment"><div class="line"><span class="keyword">using</span> <a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">GSLrng</a> = <a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">KTfwd::GSLrng_t&lt;KTfwd::GSL_RNG_TAUS2&gt;</a>;</div>
-<div class="line"><a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">GSLrng</a> rng(101); <span class="comment">//101 is the seed value </span></div>
+<div class="line"><a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">GSLrng</a> <a class="code" href="../../d6/d4f/sugar__sampling_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>(101); <span class="comment">//101 is the seed value </span></div>
 </div><!-- fragment --><p>This wrapper has the following properties:</p>
 <ul>
 <li>It is constructed with an unsigned integer, which will be used as a seed</li>
@@ -134,17 +134,17 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d6/d96/popgenmut_8hpp.html">fwdpp/sugar/popgenmut.hpp</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d5/dd9/singlepop_8hpp.html">fwdpp/sugar/singlepop.hpp</a>&gt;</span></div>
 <div class="line"></div>
-<div class="line"><span class="keyword">using</span> <a class="code" href="../../d5/d77/HOC__ind_8cc.html#aa1797c37ecd3700357dbddadc6838b6d">poptype</a> = <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::singlepop&lt;KTfwd::popgenmut&gt;</a>;</div>
+<div class="line"><span class="keyword">using</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">poptype</a> = <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::singlepop&lt;KTfwd::popgenmut&gt;</a>;</div>
 </div><!-- fragment --><div class="fragment"><div class="line"><span class="comment">//Metapopulation, single locus</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d6/d96/popgenmut_8hpp.html">fwdpp/sugar/popgenmut.hpp</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../df/dae/metapop_8hpp.html">fwdpp/sugar/metapop.hpp</a>&gt;</span></div>
 <div class="line"></div>
-<div class="line"><span class="keyword">using</span> <a class="code" href="../../d5/d77/HOC__ind_8cc.html#aa1797c37ecd3700357dbddadc6838b6d">poptype</a> = <a class="code" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::metapop&lt;KTfwd::popgenmut&gt;</a>;</div>
+<div class="line"><span class="keyword">using</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">poptype</a> = <a class="code" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::metapop&lt;KTfwd::popgenmut&gt;</a>;</div>
 </div><!-- fragment --><div class="fragment"><div class="line"><span class="comment">//Single population, multi locus</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d6/d96/popgenmut_8hpp.html">fwdpp/sugar/popgenmut.hpp</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d6/d10/multiloc_8hpp.html">fwdpp/sugar/multiloc.hpp</a>&gt;</span></div>
 <div class="line"></div>
-<div class="line"><span class="keyword">using</span> <a class="code" href="../../d5/d77/HOC__ind_8cc.html#aa1797c37ecd3700357dbddadc6838b6d">poptype</a> = <a class="code" href="../../d3/d11/structKTfwd_1_1sugar_1_1multiloc.html">KTfwd::multiloc&lt;KTfwd::popgenmut&gt;</a>;</div>
+<div class="line"><span class="keyword">using</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">poptype</a> = <a class="code" href="../../d3/d11/structKTfwd_1_1sugar_1_1multiloc.html">KTfwd::multiloc&lt;KTfwd::popgenmut&gt;</a>;</div>
 </div><!-- fragment --><p>The code chunks above will result in the following:</p>
 <ul>
 <li>All containers are from namespace std</li>
@@ -157,7 +157,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="preprocessor">#define FWDPP_SUGAR_USE_BOOST</span></div>
 <div class="line"><span class="preprocessor"></span><span class="preprocessor">#include &lt;<a class="code" href="../../d5/dd9/singlepop_8hpp.html">fwdpp/sugar/singlepop.hpp</a>&gt;</span></div>
 <div class="line"></div>
-<div class="line"><span class="keyword">using</span> <a class="code" href="../../d5/d77/HOC__ind_8cc.html#aa1797c37ecd3700357dbddadc6838b6d">poptype</a> = <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::singlepop&lt;KTfwd::popgenmut&gt;</a>;</div>
+<div class="line"><span class="keyword">using</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">poptype</a> = <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::singlepop&lt;KTfwd::popgenmut&gt;</a>;</div>
 </div><!-- fragment --><p>(Note that simulations will typically be a lot faster if you use boost's memory pools!)</p>
 <h4>Copyable populations</h4>
 <p>There are important use cases that require copyable populations. For example, exposing classes to python using boost.python requires that the underlying C++ types are copy-constructible, and thus the "poptypes" described above will not compile successfully because their copy constructors are deleted for safety.</p>
@@ -175,12 +175,12 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"></div>
 <div class="line"><span class="keyword">using</span> <a class="code" href="../../de/d25/structKTfwd_1_1mutation__writer.html">mwriter</a> = <a class="code" href="../../de/d25/structKTfwd_1_1mutation__writer.html">KTfwd::mutation_writer</a>;</div>
 <div class="line"><span class="keyword">using</span> mreader = <a class="code" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">KTfwd::mutation_reader&lt;KTfwd::popgenmut&gt;</a>;</div>
-<div class="line"><span class="keyword">using</span> <a class="code" href="../../d5/d77/HOC__ind_8cc.html#aa1797c37ecd3700357dbddadc6838b6d">poptype</a> = <a class="code" href="../../d9/dee/classKTfwd_1_1sugar_1_1singlepop__serialized.html">KTfwd::singlepop_serialized&lt;KTfwd::popgenmut,mwriter,mreader&gt;</a>;</div>
-<div class="line"><span class="keywordtype">int</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv )</div>
+<div class="line"><span class="keyword">using</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">poptype</a> = <a class="code" href="../../d9/dee/classKTfwd_1_1sugar_1_1singlepop__serialized.html">KTfwd::singlepop_serialized&lt;KTfwd::popgenmut,mwriter,mreader&gt;</a>;</div>
+<div class="line"><span class="keywordtype">int</span> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv )</div>
 <div class="line">{</div>
 <div class="line">        <span class="comment">//N = 100</span></div>
-<div class="line">        <a class="code" href="../../d5/d77/HOC__ind_8cc.html#aa1797c37ecd3700357dbddadc6838b6d">poptype</a> pop(100);</div>
-<div class="line">        <a class="code" href="../../d5/d77/HOC__ind_8cc.html#aa1797c37ecd3700357dbddadc6838b6d">poptype</a> pop2(pop);</div>
+<div class="line">        <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">poptype</a> pop(100);</div>
+<div class="line">        <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">poptype</a> pop2(pop);</div>
 <div class="line">}</div>
 </div><!-- fragment --><h4>Details</h4>
 <p>These "poptypes" contain all of the types needed to make calls to <a class="el" href="../../da/d8b/namespaceKTfwd.html#a18df6351fa3148914bbb844c36bc3e05">KTfwd::sample_diploid</a>, etc.:</p>
@@ -193,30 +193,30 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="keyword">using</span> <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">mutation_with_age</a> = <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">KTfwd::popgenmut</a>;</div>
 <div class="line"><span class="keyword">using</span> <a class="code" href="../../de/d25/structKTfwd_1_1mutation__writer.html">mwriter</a> = <a class="code" href="../../de/d25/structKTfwd_1_1mutation__writer.html">KTfwd::mutation_writer</a>;</div>
 <div class="line"><span class="keyword">using</span> mreader = <a class="code" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">KTfwd::mutation_reader&lt;mutation_with_age&gt;</a>;</div>
-<div class="line"><span class="keyword">using</span> <a class="code" href="../../d5/d77/HOC__ind_8cc.html#aa1797c37ecd3700357dbddadc6838b6d">poptype</a> = <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::singlepop&lt;mutation_with_age&gt;</a>;</div>
+<div class="line"><span class="keyword">using</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">poptype</a> = <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::singlepop&lt;mutation_with_age&gt;</a>;</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">int</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv)</div>
+<div class="line"><span class="keywordtype">int</span> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv)</div>
 <div class="line">{</div>
-<div class="line">  <a class="code" href="../../d5/d77/HOC__ind_8cc.html#aa1797c37ecd3700357dbddadc6838b6d">poptype</a> pop(1000);</div>
+<div class="line">  <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">poptype</a> pop(1000);</div>
 <div class="line"></div>
-<div class="line">  <a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">KTfwd::GSLrng_t&lt;KTfwd::GSL_RNG_TAUS2&gt;</a> rng(0u);</div>
+<div class="line">  <a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">KTfwd::GSLrng_t&lt;KTfwd::GSL_RNG_TAUS2&gt;</a> <a class="code" href="../../d6/d4f/sugar__sampling_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>(0u);</div>
 <div class="line"></div>
 <div class="line">  <span class="comment">//Evolve for 10 generations</span></div>
-<div class="line">  std::function&lt;double(void)&gt; recmap = std::bind(gsl_rng_uniform,rng);</div>
+<div class="line">  std::function&lt;double(void)&gt; recmap = std::bind(gsl_rng_uniform,<a class="code" href="../../d6/d4f/sugar__sampling_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>);</div>
 <div class="line">  <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> generation= 0 ; generation &lt; 10 ; ++generation )</div>
 <div class="line">    {</div>
-<div class="line">      <span class="keywordtype">double</span> wbar = <a class="code" href="../../da/d8b/namespaceKTfwd.html#a18df6351fa3148914bbb844c36bc3e05">KTfwd::sample_diploid</a>(rng,</div>
+<div class="line">      <span class="keywordtype">double</span> wbar = <a class="code" href="../../da/d8b/namespaceKTfwd.html#a18df6351fa3148914bbb844c36bc3e05">KTfwd::sample_diploid</a>(<a class="code" href="../../d6/d4f/sugar__sampling_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>,</div>
 <div class="line">                                          &amp;pop.gametes,</div>
 <div class="line">                                          &amp;pop.diploids,</div>
 <div class="line">                                          &amp;pop.mutations,</div>
 <div class="line">                                          1000,</div>
 <div class="line">                                          0.005,</div>
-<div class="line">                                          std::bind(<a class="code" href="../../df/d07/structKTfwd_1_1infsites.html">KTfwd::infsites</a>(),rng,std::placeholders::_1,&amp;pop.mut_lookup,generation,</div>
+<div class="line">                                          std::bind(<a class="code" href="../../df/d07/structKTfwd_1_1infsites.html">KTfwd::infsites</a>(),<a class="code" href="../../d6/d4f/sugar__sampling_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>,std::placeholders::_1,&amp;pop.mut_lookup,generation,</div>
 <div class="line">                                                    0.005,0.,[](gsl_rng * r){<span class="keywordflow">return</span> gsl_rng_uniform(r);},[](gsl_rng * <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>){<span class="keywordflow">return</span> 0.;},[](gsl_rng * <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>){<span class="keywordflow">return</span> 0.;}),</div>
 <div class="line">                                          std::bind(<a class="code" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a>(),std::placeholders::_1,std::placeholders::_2,</div>
 <div class="line">                                                    &amp;pop.gametes,</div>
 <div class="line">                                                    0., <span class="comment">//no rec</span></div>
-<div class="line">                                                    rng,</div>
+<div class="line">                                                    <a class="code" href="../../d6/d4f/sugar__sampling_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>,</div>
 <div class="line">                                                    recmap),</div>
 <div class="line">                                          std::bind(KTfwd::insert_at_end&lt;poptype::mutation_t,poptype::mlist_t&gt;,std::placeholders::_1,std::placeholders::_2),</div>
 <div class="line">                                          std::bind(KTfwd::insert_at_end&lt;poptype::gamete_t,poptype::glist_t&gt;,std::placeholders::_1,std::placeholders::_2),</div>
@@ -237,12 +237,12 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <p>You should also be able to publicly inherit them or encapsulate them in the usual ways, if more customization is needed.</p>
 <p><b>fwdpp</b> 0.3.1 added support for custom diploid types (see <a class="el" href="../../d2/dcd/md_md_customdip.html">Advanced topics: custom diploid genotypes</a>). The template aliases for population types were updated accordingly:</p>
 <div class="fragment"><div class="line"><span class="comment">//In fwdpp 0.3.0:</span></div>
-<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> mtype&gt; <span class="keyword">using</span> singlepop_t = <span class="comment">//something</span></div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> mtype&gt; <span class="keyword">using</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop_t</a> = <span class="comment">//something</span></div>
 </div><!-- fragment --><div class="fragment"><div class="line"><span class="comment">//In 0.3.1, the default diploid_t is a pair of iterators pointing to gametes.</span></div>
 <div class="line"><span class="comment">//You may over-ride this by providing your own diploid type.</span></div>
-<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>,</div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>,</div>
 <div class="line">        <span class="keyword">typename</span> <a class="code" href="../../dc/dfb/structdiploid__t.html">diploid_t</a> = std::pair&lt;typename glist_t&lt;mtype&gt;::iterator,</div>
-<div class="line">                                       <span class="keyword">typename</span> glist_t&lt;mtype&gt;::iterator&gt; &gt; <span class="keyword">using</span> singlepop_t = <span class="comment">//something</span></div>
+<div class="line">                                       <span class="keyword">typename</span> glist_t&lt;mtype&gt;::iterator&gt; &gt; <span class="keyword">using</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop_t</a> = <span class="comment">//something</span></div>
 </div><!-- fragment --><h3>Simplifying serializing of simulated data</h3>
 <p>The population types discussed above may be serialized using <a class="el" href="../../d0/d8e/structKTfwd_1_1serialize.html" title="Serialize populations. ">KTfwd::serialize</a> and deserialized using <a class="el" href="../../d6/dde/structKTfwd_1_1deserialize.html" title="Deserialize population objects. ">KTfwd::deserialize</a>. The sugar layer also provides <a class="el" href="../../de/d25/structKTfwd_1_1mutation__writer.html" title="Facilitates serialization of mutation types supported by the fwdpp sugar library. ...">KTfwd::mutation_writer</a> and <a class="el" href="../../d1/d7f/structKTfwd_1_1mutation.html" title="The simplest mutation type, adding just a selection coefficient and dominance to the interface...">KTfwd::mutation</a> reader to support the serialization of <a class="el" href="../../d1/d7f/structKTfwd_1_1mutation.html" title="The simplest mutation type, adding just a selection coefficient and dominance to the interface...">KTfwd::mutation</a> and <a class="el" href="../../dc/dcc/structKTfwd_1_1popgenmut.html" title="Mutations with selection, dominance, and tracking age of origin The &quot;standard&quot; mutation type for popu...">KTfwd::popgenmut</a>.</p>
 <p>For example:</p>
@@ -250,16 +250,16 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="preprocessor">#define FWDPP_SUGAR_USE_BOOST</span></div>
 <div class="line"><span class="preprocessor"></span><span class="preprocessor">#include &lt;<a class="code" href="../../d5/dd9/singlepop_8hpp.html">fwdpp/sugar/singlepop.hpp</a>&gt;</span></div>
 <div class="line"></div>
-<div class="line"><span class="keyword">using</span> <a class="code" href="../../d5/d77/HOC__ind_8cc.html#aa1797c37ecd3700357dbddadc6838b6d">poptype</a> = <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::singlepop&lt;KTfwd::popgenmut&gt;</a>;</div>
+<div class="line"><span class="keyword">using</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">poptype</a> = <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::singlepop&lt;KTfwd::popgenmut&gt;</a>;</div>
 <div class="line"><span class="keyword">using</span> <a class="code" href="../../de/d25/structKTfwd_1_1mutation__writer.html">mwriter</a> = <a class="code" href="../../de/d25/structKTfwd_1_1mutation__writer.html">KTfwd::mutation_writer</a>;</div>
 <div class="line"><span class="keyword">using</span> mreader = <a class="code" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">KTfwd::mutation_reader&lt;KTfwd::popgenmut&gt;</a>;</div>
-<div class="line"><span class="keywordtype">int</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv )</div>
+<div class="line"><span class="keywordtype">int</span> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv )</div>
 <div class="line">{</div>
 <div class="line">        <span class="comment">//N = 100</span></div>
-<div class="line">        <a class="code" href="../../d5/d77/HOC__ind_8cc.html#aa1797c37ecd3700357dbddadc6838b6d">poptype</a> pop(100);</div>
+<div class="line">        <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">poptype</a> pop(100);</div>
 <div class="line">        <a class="code" href="../../d0/d8e/structKTfwd_1_1serialize.html">KTfwd::serialize</a> s;</div>
 <div class="line">        s(pop,<a class="code" href="../../de/d25/structKTfwd_1_1mutation__writer.html">mwriter</a>);</div>
-<div class="line">        <a class="code" href="../../d5/d77/HOC__ind_8cc.html#aa1797c37ecd3700357dbddadc6838b6d">poptype</a> pop2(0);</div>
+<div class="line">        <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">poptype</a> pop2(0);</div>
 <div class="line">        <span class="comment">//Copy pop into pop2 via the buffer in s</span></div>
 <div class="line">        <a class="code" href="../../d6/dde/structKTfwd_1_1deserialize.html">KTfwd::deserialize</a>()(pop2,s,<a class="code" href="../../d0/db9/sugar1_8cc.html#ac02910b52cd45b9a8fd7e32d4ebfe46b">mreader</a>());</div>
 <div class="line">}</div>
@@ -271,13 +271,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="preprocessor">#define FWDPP_SUGAR_USE_BOOST</span></div>
 <div class="line"><span class="preprocessor"></span><span class="preprocessor">#include &lt;<a class="code" href="../../d5/dd9/singlepop_8hpp.html">fwdpp/sugar/singlepop.hpp</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;zlib.h&gt;</span></div>
-<div class="line"><span class="keyword">using</span> <a class="code" href="../../d5/d77/HOC__ind_8cc.html#aa1797c37ecd3700357dbddadc6838b6d">poptype</a> = <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::singlepop&lt;KTfwd::popgenmut&gt;</a>;</div>
+<div class="line"><span class="keyword">using</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">poptype</a> = <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::singlepop&lt;KTfwd::popgenmut&gt;</a>;</div>
 <div class="line"><span class="keyword">using</span> <a class="code" href="../../de/d25/structKTfwd_1_1mutation__writer.html">mwriter</a> = <a class="code" href="../../de/d25/structKTfwd_1_1mutation__writer.html">KTfwd::mutation_writer</a>;</div>
 <div class="line"><span class="keyword">using</span> mreader = <a class="code" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">KTfwd::mutation_reader&lt;KTfwd::popgenmut&gt;</a>;</div>
-<div class="line"><span class="keywordtype">int</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv )</div>
+<div class="line"><span class="keywordtype">int</span> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv )</div>
 <div class="line">{</div>
 <div class="line">        <span class="comment">//N = 100</span></div>
-<div class="line">        <a class="code" href="../../d5/d77/HOC__ind_8cc.html#aa1797c37ecd3700357dbddadc6838b6d">poptype</a> pop(100);</div>
+<div class="line">        <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">poptype</a> pop(100);</div>
 <div class="line">        <a class="code" href="../../d0/d8e/structKTfwd_1_1serialize.html">KTfwd::serialize</a> s;</div>
 <div class="line">        s(pop,<a class="code" href="../../de/d25/structKTfwd_1_1mutation__writer.html">mwriter</a>);</div>
 <div class="line">        gzFile gzf = gzopen(<span class="stringliteral">&quot;pop.gz&quot;</span>,<span class="stringliteral">&quot;wb&quot;</span>);</div>

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.8</span>
+   &#160;<span id="projectnumber">0.3.9</span>
    </div>
   </td>
  </tr>
@@ -110,7 +110,7 @@ Policies in C++</h1>
 <div class="line"></div>
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">int</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> ( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv )</div>
+<div class="line"><span class="keywordtype">int</span> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> ( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv )</div>
 <div class="line">{</div>
 <div class="line">  vector&lt;unsigned&gt; vu{10,9,8,7,6,5,4,3,2,1};</div>
 <div class="line"></div>
@@ -217,7 +217,7 @@ Policy requirements in fwdpp</h1>
 <div class="line"><span class="comment">//A function returning a double and taking a single const double &amp; as argument.  It is implemented in terms of a wrapper to the previous function.</span></div>
 <div class="line">std::function&lt;double(const double &amp;)&gt; mypow_over_x_wrapper = std::bind(mypow_over_x,3,2,std::placeholders::_1);</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">int</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>()</div>
+<div class="line"><span class="keywordtype">int</span> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>()</div>
 <div class="line">{</div>
 <div class="line">  std::cout &lt;&lt; mypow(3,2) &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line">  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=1;i&lt;11;++i)</div>
@@ -304,7 +304,7 @@ Policy requirements in fwdpp</h1>
 <div class="line">std::function&lt;double(const double &amp;,const double &amp;, const double &amp;)&gt; mypow_over_x_wrapper3 = [&amp;](<span class="keyword">const</span> <span class="keywordtype">double</span> &amp; a, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; b, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; c) { <span class="keywordflow">return</span> mypow_over_x(a,b,c); };</div>
 <div class="line">std::function&lt;double(const double &amp;,const double &amp;, const double &amp;)&gt; mypow_over_x_wrapper4 = [&amp;](<span class="keyword">const</span> <span class="keywordtype">double</span> &amp; a, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; b, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; c) { <span class="keywordflow">return</span> mypow_over_x(a,b,c); };</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">int</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>()</div>
+<div class="line"><span class="keywordtype">int</span> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>()</div>
 <div class="line">{</div>
 <div class="line">  <span class="comment">//This will evaluate to 0!!!!</span></div>
 <div class="line">  std::cout &lt;&lt; (<span class="keyword">typeid</span>(mypow_over_x_wrapper1).name() == <span class="keyword">typeid</span>(mypow_over_x_wrapper2).name()) &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
@@ -374,7 +374,7 @@ Mutation policies</h2>
 <div class="fragment"><div class="line">std::map&lt;double,bool&gt;</div>
 </div><!-- fragment --><p>it is more efficient to use a hash table like</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;unordered_set&gt;</span> <span class="comment">//need this header</span></div>
-<div class="line"><span class="keyword">typedef</span> std::unordered_set&lt;double,std::hash&lt;double&gt;,<a class="code" href="../../dc/d8e/structKTfwd_1_1equal__eps.html">KTfwd::equal_eps</a> &gt; <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>;</div>
+<div class="line"><span class="keyword">typedef</span> std::unordered_set&lt;double,std::hash&lt;double&gt;,<a class="code" href="../../dc/d8e/structKTfwd_1_1equal__eps.html">KTfwd::equal_eps</a> &gt; lookup_table_type;</div>
 </div><!-- fragment --><p>The above code creates a new data type called <b>lookup_table_type</b> that hashes doubles with the data type <b><a class="el" href="../../dc/d8e/structKTfwd_1_1equal__eps.html" title="Returns true if std::max(lhs,rhs)-std::min(lhs,rhs) &lt;= std::numeric_limits&lt;T&gt;::epsilon() ...">KTfwd::equal_eps</a></b> as its comparison operator. That comparison operation is provided by the library and looks like this:</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>equal_eps</div>
 <div class="line">{</div>
@@ -396,8 +396,8 @@ Mutation policies</h2>
 <div class="line">  }</div>
 <div class="line">};</div>
 </div><!-- fragment --><p>We can now completely define our mutation model as a function (we could do it as a function object, too). In this example, We assume that we are using the boost list type and boost's memory pool allocator:</p>
-<div class="fragment"><div class="line"><span class="keyword">typedef</span> <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>;</div>
-<div class="line"><span class="keyword">typedef</span> boost::pool_allocator&lt;mtype&gt; <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a8da95455b301321cb0a4a7064ed8fe3d">mut_allocator</a>;</div>
+<div class="fragment"><div class="line"><span class="keyword">typedef</span> <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>;</div>
+<div class="line"><span class="keyword">typedef</span> boost::pool_allocator&lt;mtype&gt; mut_allocator;</div>
 <div class="line"><span class="keyword">typedef</span> boost::container::list&lt;mtype,mut_allocator &gt; <a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>;</div>
 <div class="line">mtype mutmodel( gsl_rng * r,</div>
 <div class="line">                <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; mu_neutral,</div>
@@ -419,14 +419,14 @@ Mutation policies</h2>
 <div class="line">    <span class="keywordtype">bool</span> neutral = (gsl_rng_uniform(r) &lt; (mu_neutral)/(mu_neutral+mu_selected)) ? <span class="keyword">true</span> : <span class="keyword">false</span>;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//return neutral mutation</span></div>
-<div class="line">    <span class="keywordflow">if</span> ( neutral ) { <span class="keywordflow">return</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>(pos,0,1,0); }</div>
+<div class="line">    <span class="keywordflow">if</span> ( neutral ) { <span class="keywordflow">return</span> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>(pos,0,1,0); }</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//get selection coefficient</span></div>
 <div class="line">    <span class="keywordtype">double</span> s = gsl_ran_exponential(r,mean_s);</div>
 <div class="line">    <span class="keywordflow">if</span>( gsl_ran_uniform(r) &lt;= 0.5 ) { s = -1.*s; }</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//the gsl_ran_flat call generates the dominance</span></div>
-<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>(pos,s,1,gsl_ran_flat(r,0.,2.));</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>(pos,s,1,gsl_ran_flat(r,0.,2.));</div>
 <div class="line">  }</div>
 </div><!-- fragment --><p>That is is&ndash;the mutation model is complete. We still need to deal with how mutations are entered into data structures representing the population, but we'll treat that later.</p>
 <p>The mutation policy is passed to any of the various <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#a18df6351fa3148914bbb844c36bc3e05">KTfwd::sample_diploid</a></b> functions in the library like this:</p>
@@ -451,10 +451,10 @@ Mutation policies</h2>
 <div class="line">          }</div>
 <div class="line"> };</div>
 <div class="line"></div>
-<div class="line"><span class="keyword">typedef</span> mut_e <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>;</div>
+<div class="line"><span class="keyword">typedef</span> mut_e <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>;</div>
 </div><!-- fragment --><p>OK, our mutation model is going to be the following. It is infinitely-many sites with both neutral and non-neutral mutations:</p>
-<div class="fragment"><div class="line"><span class="keyword">typedef</span> <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>;</div>
-<div class="line"><span class="keyword">typedef</span> boost::pool_allocator&lt;mtype&gt; <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a8da95455b301321cb0a4a7064ed8fe3d">mut_allocator</a>;</div>
+<div class="fragment"><div class="line"><span class="keyword">typedef</span> <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>;</div>
+<div class="line"><span class="keyword">typedef</span> boost::pool_allocator&lt;mtype&gt; mut_allocator;</div>
 <div class="line"><span class="keyword">typedef</span> boost::container::list&lt;mtype,mut_allocator &gt; <a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>;</div>
 <div class="line">mtype mutmodel_Qtrait( gsl_rng * r, mlist * mutations,</div>
 <div class="line">                       <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; mu_neutral,</div>
@@ -476,10 +476,10 @@ Mutation policies</h2>
 <div class="line">   <span class="keywordtype">bool</span> neutral = (gsl_rng_uniform(r) &lt; (mu_neutral)/(mu_neutral+mu_selected)) ? <span class="keyword">true</span> : <span class="keyword">false</span>;</div>
 <div class="line"></div>
 <div class="line">   <span class="comment">//return neutral mutation</span></div>
-<div class="line">   <span class="keywordflow">if</span> ( neutral ) { <span class="keywordflow">return</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>(pos,1,<span class="keyword">true</span>,0); }</div>
+<div class="line">   <span class="keywordflow">if</span> ( neutral ) { <span class="keywordflow">return</span> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>(pos,1,<span class="keyword">true</span>,0); }</div>
 <div class="line"></div>
 <div class="line">   <span class="comment">//the gsl_ran_gaussian call determines the effect size</span></div>
-<div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>(pos,1,gsl_ran_gaussian(r,sigma_e),<span class="keyword">false</span>);</div>
+<div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>(pos,1,gsl_ran_gaussian(r,sigma_e),<span class="keyword">false</span>);</div>
 <div class="line"> }</div>
 </div><!-- fragment --><h2><a class="anchor" id="TutRec"></a>
 Recombination</h2>

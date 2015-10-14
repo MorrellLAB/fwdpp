@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.8</span>
+   &#160;<span id="projectnumber">0.3.9</span>
    </div>
   </td>
  </tr>
@@ -122,7 +122,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <p>Given the requirements outlined above, a function to return a mutation at a specific locus is:</p>
 <div class="fragment"><div class="line"><span class="comment">//&quot;beg&quot; is the start position of this locus</span></div>
 <div class="line"><a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">mutation_with_age</a> neutral_mutations_inf_sites(gsl_rng * r,<span class="keyword">const</span> <span class="keywordtype">unsigned</span> * generation,mlist * mutations,</div>
-<div class="line">                                              <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> * lookup, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; beg)</div>
+<div class="line">                                              lookup_table_type * lookup, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; beg)</div>
 <div class="line">{</div>
 <div class="line">  <span class="comment">//Generate new mutation position on the interval [0,1)</span></div>
 <div class="line">  <span class="keywordtype">double</span> pos = gsl_ran_flat(r,beg,beg+1.);</div>

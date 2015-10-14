@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.8</span>
+   &#160;<span id="projectnumber">0.3.9</span>
    </div>
   </td>
  </tr>
@@ -126,7 +126,7 @@ Public Types</h2></td></tr>
 <tr class="memitem:ad839a9120e6bc475ff6530bb3f90180c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#ad839a9120e6bc475ff6530bb3f90180c">glist_t</a> = <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a></td></tr>
 <tr class="memdesc:ad839a9120e6bc475ff6530bb3f90180c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gamete list type.  <a href="#ad839a9120e6bc475ff6530bb3f90180c">More...</a><br/></td></tr>
 <tr class="separator:ad839a9120e6bc475ff6530bb3f90180c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae32743465e9bcaf53d13bfd5cff8d23f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#ae32743465e9bcaf53d13bfd5cff8d23f">lookup_table_t</a> = <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a></td></tr>
+<tr class="memitem:ae32743465e9bcaf53d13bfd5cff8d23f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#ae32743465e9bcaf53d13bfd5cff8d23f">lookup_table_t</a> = lookup_table_type</td></tr>
 <tr class="memdesc:ae32743465e9bcaf53d13bfd5cff8d23f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lookup table type for recording mutation positions, etc.  <a href="#ae32743465e9bcaf53d13bfd5cff8d23f">More...</a><br/></td></tr>
 <tr class="separator:ae32743465e9bcaf53d13bfd5cff8d23f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa520c9040c6fb7f4a736788885da1480"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#aa520c9040c6fb7f4a736788885da1480">mvector_t</a> = mvector</td></tr>
@@ -174,7 +174,7 @@ Data Fields</h2></td></tr>
 <tr class="separator:a5ae6e84053dddfd7e2d856632d3cca68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add2d4ad07023354b8580defe074286c3"><td class="memItemLeft" align="right" valign="top">gamete_t::mutation_container&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#add2d4ad07023354b8580defe074286c3">selected</a></td></tr>
 <tr class="separator:add2d4ad07023354b8580defe074286c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af979a7d45f938ea5db5d2997c8dca798"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#af979a7d45f938ea5db5d2997c8dca798">mut_lookup</a></td></tr>
+<tr class="memitem:af979a7d45f938ea5db5d2997c8dca798"><td class="memItemLeft" align="right" valign="top">lookup_table_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#af979a7d45f938ea5db5d2997c8dca798">mut_lookup</a></td></tr>
 <tr class="memdesc:af979a7d45f938ea5db5d2997c8dca798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be used to track positions of segregating mutations.  <a href="#af979a7d45f938ea5db5d2997c8dca798">More...</a><br/></td></tr>
 <tr class="separator:af979a7d45f938ea5db5d2997c8dca798"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14b155a0bf02f5fe412e87a722a1e142"><td class="memItemLeft" align="right" valign="top">mvector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a14b155a0bf02f5fe412e87a722a1e142">fixations</a></td></tr>
@@ -192,7 +192,8 @@ class KTfwd::sugar::singlepop&lt; mutation_type, mlist, glist, dipvector, mvecto
 <p>All that is missing is the mutation_type and the container types.</p>
 <p>Does not allow copy construction/assignment!</p>
 <p>See <a class="el" href="../../db/dd8/md_md_sugar.html">Tutorial 5: the "sugar" layer on top of fwdpp</a> for rationale, etc. </p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#_a5">bneck_selection_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#_a5">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#_a5">diploid_fixed_sh_ind_lambda.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#_a6">diploid_ind.cc</a>, and <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#_a1">migsel_ind.cc</a>.</dd>
+</dl></div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a class="anchor" id="a358079397bd7ee4f6a929b9f5097b6b8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -200,7 +201,7 @@ class KTfwd::sugar::singlepop&lt; mutation_type, mlist, glist, dipvector, mvecto
 template&lt;typename mutation_type , typename mlist , typename glist , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a358079397bd7ee4f6a929b9f5097b6b8">diploid_t</a> =  typename dipvector_t::value_type</td>
+          <td class="memname">using <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a358079397bd7ee4f6a929b9f5097b6b8">diploid_t</a> =  typename dipvector_t::value_type</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -216,7 +217,7 @@ template&lt;typename mutation_type , typename mlist , typename glist , typename 
 template&lt;typename mutation_type , typename mlist , typename glist , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a930399671212be8215375cab38ba46fe">dipvector_t</a> =  dipvector</td>
+          <td class="memname">using <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a930399671212be8215375cab38ba46fe">dipvector_t</a> =  dipvector</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -232,7 +233,7 @@ template&lt;typename mutation_type , typename mlist , typename glist , typename 
 template&lt;typename mutation_type , typename mlist , typename glist , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a666e5a8fec9797a5ef81c619cf1d04e5">ftvector_t</a> =  ftvector</td>
+          <td class="memname">using <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a666e5a8fec9797a5ef81c619cf1d04e5">ftvector_t</a> =  ftvector</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -248,13 +249,14 @@ template&lt;typename mutation_type , typename mlist , typename glist , typename 
 template&lt;typename mutation_type , typename mlist , typename glist , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#ab6775aa6d7aea3269e3a3dfdba8857e2">gamete_t</a> =  typename glist::value_type</td>
+          <td class="memname">using <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#ab6775aa6d7aea3269e3a3dfdba8857e2">gamete_t</a> =  typename glist::value_type</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Gamete type. </p>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a4">migsel_ind.cc</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ad839a9120e6bc475ff6530bb3f90180c"></a>
@@ -264,13 +266,14 @@ template&lt;typename mutation_type , typename mlist , typename glist , typename 
 template&lt;typename mutation_type , typename mlist , typename glist , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#ad839a9120e6bc475ff6530bb3f90180c">glist_t</a> =  <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a></td>
+          <td class="memname">using <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#ad839a9120e6bc475ff6530bb3f90180c">glist_t</a> =  <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Gamete list type. </p>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a5">migsel_ind.cc</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ae32743465e9bcaf53d13bfd5cff8d23f"></a>
@@ -280,7 +283,7 @@ template&lt;typename mutation_type , typename mlist , typename glist , typename 
 template&lt;typename mutation_type , typename mlist , typename glist , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#ae32743465e9bcaf53d13bfd5cff8d23f">lookup_table_t</a> =  <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a></td>
+          <td class="memname">using <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#ae32743465e9bcaf53d13bfd5cff8d23f">lookup_table_t</a> =  lookup_table_type</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -296,13 +299,14 @@ template&lt;typename mutation_type , typename mlist , typename glist , typename 
 template&lt;typename mutation_type , typename mlist , typename glist , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a78399b27fedbc1fec3e749ceaf6e76b2">mlist_t</a> =  <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a></td>
+          <td class="memname">using <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a78399b27fedbc1fec3e749ceaf6e76b2">mlist_t</a> =  <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Mutation list type. </p>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a2">migsel_ind.cc</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="a5294bd9816887c77f429bd7cf8c4b8a6"></a>
@@ -312,7 +316,7 @@ template&lt;typename mutation_type , typename mlist , typename glist , typename 
 template&lt;typename mutation_type , typename mlist , typename glist , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a5294bd9816887c77f429bd7cf8c4b8a6">mutation_t</a> =  mutation_type</td>
+          <td class="memname">using <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a5294bd9816887c77f429bd7cf8c4b8a6">mutation_t</a> =  mutation_type</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -328,7 +332,7 @@ template&lt;typename mutation_type , typename mlist , typename glist , typename 
 template&lt;typename mutation_type , typename mlist , typename glist , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#aa520c9040c6fb7f4a736788885da1480">mvector_t</a> =  mvector</td>
+          <td class="memname">using <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#aa520c9040c6fb7f4a736788885da1480">mvector_t</a> =  mvector</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -344,7 +348,7 @@ template&lt;typename mutation_type , typename mlist , typename glist , typename 
 template&lt;typename mutation_type , typename mlist , typename glist , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a730d30cfb289d5f2c40fdb3fe85ab8e6">popmodel_t</a> =  <a class="el" href="../../de/d6e/group__sugar.html#ga1d1b3a08c798b89fea7c36a7180d8a0b">sugar::SINGLEPOP_TAG</a></td>
+          <td class="memname">using <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a730d30cfb289d5f2c40fdb3fe85ab8e6">popmodel_t</a> =  <a class="el" href="../../de/d6e/group__sugar.html#ga1d1b3a08c798b89fea7c36a7180d8a0b">sugar::SINGLEPOP_TAG</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -364,7 +368,7 @@ template&lt;typename mutation_type , typename mlist , typename glist , typename 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop</a> </td>
+          <td class="memname"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop</a> </td>
           <td>(</td>
           <td class="paramtype">const unsigned &amp;&#160;</td>
           <td class="paramname"><em>popsize</em>, </td>
@@ -402,9 +406,9 @@ template&lt;typename mutation_type , typename mlist , typename glist , typename 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop</a> </td>
+          <td class="memname"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt; &amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -430,9 +434,9 @@ template&lt;typename mutation_type , typename mlist , typename glist , typename 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop</a> </td>
+          <td class="memname"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop</a> </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt; &amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -458,9 +462,9 @@ template&lt;typename mutation_type , typename mlist , typename glist , typename 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop</a> </td>
+          <td class="memname"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt;::<a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt; &amp;&amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -487,7 +491,7 @@ template&lt;typename mutation_type , typename mlist , typename glist , typename 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::clear </td>
+          <td class="memname">void <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt;::clear </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -514,9 +518,9 @@ template&lt;typename mutation_type , typename mlist , typename glist , typename 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop</a>&amp; <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::operator= </td>
+          <td class="memname"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop</a>&amp; <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt;::operator= </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt; &amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -542,9 +546,9 @@ template&lt;typename mutation_type , typename mlist , typename glist , typename 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop</a>&amp; <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::operator= </td>
+          <td class="memname"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop</a>&amp; <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt;::operator= </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt; &amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -568,11 +572,12 @@ template&lt;typename mutation_type , typename mlist , typename glist , typename 
 template&lt;typename mutation_type , typename mlist , typename glist , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a930399671212be8215375cab38ba46fe">dipvector_t</a> <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::diploids</td>
+          <td class="memname"><a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a930399671212be8215375cab38ba46fe">dipvector_t</a> <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt;::diploids</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a9">bneck_selection_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a9">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a10">diploid_fixed_sh_ind_lambda.cc</a>, and <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a9">diploid_ind.cc</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="acf7702e9d263a9c91291fc6d87a5ec0d"></a>
@@ -582,13 +587,14 @@ template&lt;typename mutation_type , typename mlist , typename glist , typename 
 template&lt;typename mutation_type , typename mlist , typename glist , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">ftvector <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::fixation_times</td>
+          <td class="memname">ftvector <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt;::fixation_times</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>vector&lt;unsigned&gt; records times when mutation_ts were added to mut_lookup </p>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a20">bneck_selection_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a20">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a22">diploid_fixed_sh_ind_lambda.cc</a>, and <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a20">diploid_ind.cc</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="a14b155a0bf02f5fe412e87a722a1e142"></a>
@@ -598,13 +604,14 @@ template&lt;typename mutation_type , typename mlist , typename glist , typename 
 template&lt;typename mutation_type , typename mlist , typename glist , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">mvector <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::fixations</td>
+          <td class="memname">mvector <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt;::fixations</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Vector of mutation_t to track fixations. </p>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a19">bneck_selection_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a19">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a21">diploid_fixed_sh_ind_lambda.cc</a>, and <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a19">diploid_ind.cc</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="a43776b2bc1e95f267d666298533a0462"></a>
@@ -614,11 +621,12 @@ template&lt;typename mutation_type , typename mlist , typename glist , typename 
 template&lt;typename mutation_type , typename mlist , typename glist , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a> <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::gametes</td>
+          <td class="memname"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a> <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt;::gametes</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a6">bneck_selection_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a6">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a6">diploid_fixed_sh_ind_lambda.cc</a>, and <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a8">diploid_ind.cc</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="af979a7d45f938ea5db5d2997c8dca798"></a>
@@ -628,14 +636,15 @@ template&lt;typename mutation_type , typename mlist , typename glist , typename 
 template&lt;typename mutation_type , typename mlist , typename glist , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::mut_lookup</td>
+          <td class="memname">lookup_table_type <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt;::mut_lookup</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Can be used to track positions of segregating mutations. </p>
 <dl class="section note"><dt>Note</dt><dd>Must have interface like std::map or std::unordered_set </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a12">bneck_selection_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a12">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a13">diploid_fixed_sh_ind_lambda.cc</a>, and <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a12">diploid_ind.cc</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="a1ce679b909d5ccc09483452c37624846"></a>
@@ -645,11 +654,12 @@ template&lt;typename mutation_type , typename mlist , typename glist , typename 
 template&lt;typename mutation_type , typename mlist , typename glist , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a> <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::mutations</td>
+          <td class="memname"><a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a> <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt;::mutations</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a10">bneck_selection_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a10">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a11">diploid_fixed_sh_ind_lambda.cc</a>, and <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a10">diploid_ind.cc</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="a4bfbefd1cf039cd3eedd8981658c83b0"></a>
@@ -659,7 +669,7 @@ template&lt;typename mutation_type , typename mlist , typename glist , typename 
 template&lt;typename mutation_type , typename mlist , typename glist , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">unsigned <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::N</td>
+          <td class="memname">unsigned <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt;::N</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -673,7 +683,7 @@ template&lt;typename mutation_type , typename mlist , typename glist , typename 
 template&lt;typename mutation_type , typename mlist , typename glist , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">gamete_t::mutation_container <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::neutral</td>
+          <td class="memname">gamete_t::mutation_container <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt;::neutral</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -682,7 +692,8 @@ template&lt;typename mutation_type , typename mlist , typename glist , typename 
 <p>Now, we create the vector once per replicate. Further, we will reserve memory here, to minimize reallocs, etc., within fwdpp.</p>
 <p>Internally, fwdpp's job is to make sure that this vector is appropriately and efficiently cleared, but only when needed.</p>
 <dl class="section note"><dt>Note</dt><dd>: if not using the sugar features, you can create these vectors only once per simulation... </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a14">bneck_selection_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a14">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a16">diploid_fixed_sh_ind_lambda.cc</a>, and <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a14">diploid_ind.cc</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="add2d4ad07023354b8580defe074286c3"></a>
@@ -692,15 +703,16 @@ template&lt;typename mutation_type , typename mlist , typename glist , typename 
 template&lt;typename mutation_type , typename mlist , typename glist , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">gamete_t::mutation_container <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::selected</td>
+          <td class="memname">gamete_t::mutation_container <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a>&lt; mutation_type, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a>, dipvector, mvector, ftvector, lookup_table_type &gt;::selected</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a15">bneck_selection_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a15">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a17">diploid_fixed_sh_ind_lambda.cc</a>, and <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a15">diploid_ind.cc</a>.</dd>
+</dl>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/kevin/git/fwdpp.git/fwdpp/sugar/singlepop/<a class="el" href="../../d0/d82/singlepop_2singlepop_8hpp_source.html">singlepop.hpp</a></li>
+<li>/home/kevin/src/fwdpp/fwdpp/sugar/singlepop/<a class="el" href="../../d0/d82/singlepop_2singlepop_8hpp_source.html">singlepop.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

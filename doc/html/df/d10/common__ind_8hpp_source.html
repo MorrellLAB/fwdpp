@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>fwdpp: /home/kevin/git/fwdpp.git/examples/common_ind.hpp Source File</title>
+<title>fwdpp: /home/kevin/src/fwdpp/examples/common_ind.hpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.8</span>
+   &#160;<span id="projectnumber">0.3.9</span>
    </div>
   </td>
  </tr>
@@ -113,11 +113,11 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d8/d21/serialization_8hpp.html">fwdpp/sugar/serialization.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifdef SINGLEPOP_SIM</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;<a class="code" href="../../d5/dd9/singlepop_8hpp.html">fwdpp/sugar/singlepop.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using</span> singlepop_t = <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::singlepop&lt;mtype&gt;</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop_t</a> = <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::singlepop&lt;mtype&gt;</a>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">using</span> singlepop_serialized_t = <a class="code" href="../../d9/dee/classKTfwd_1_1sugar_1_1singlepop__serialized.html">KTfwd::singlepop_serialized&lt;mtype,KTfwd::mutation_writer,KTfwd::mutation_reader&lt;mtype&gt;</a>&gt;;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#elif defined(METAPOP_SIM)</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;<a class="code" href="../../df/dae/metapop_8hpp.html">fwdpp/sugar/metapop.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">using</span> metapop_t = <a class="code" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::metapop&lt;mtype&gt;</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">using</span> <a class="code" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">metapop_t</a> = <a class="code" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::metapop&lt;mtype&gt;</a>;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">using</span> metapop_serialized_t = <a class="code" href="../../d2/d43/classKTfwd_1_1sugar_1_1metapop__serialized.html">KTfwd::metapop_serialized&lt;mtype,KTfwd::mutation_writer,KTfwd::mutation_reader&lt;mtype&gt;</a>&gt;;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#elif defined(MULTILOCUS_SIM)</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;<a class="code" href="../../d6/d10/multiloc_8hpp.html">fwdpp/sugar/multiloc.hpp</a>&gt;</span></div>

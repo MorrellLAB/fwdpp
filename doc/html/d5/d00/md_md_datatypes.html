@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.8</span>
+   &#160;<span id="projectnumber">0.3.9</span>
    </div>
   </td>
  </tr>
@@ -128,7 +128,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../df/df8/diploid_8hh.html">fwdpp/diploid.hh</a>&gt;</span></div>
 <div class="line"></div>
 <div class="line"><span class="comment">//We see that typedefs lead to improved sanity:</span></div>
-<div class="line"><span class="keyword">using</span> mutation_t = <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a>;</div>
+<div class="line"><span class="keyword">using</span> <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">mutation_t</a> = <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a>;</div>
 <div class="line"><span class="keyword">using</span> mutation_t_allocator = boost::pool_allocator&lt;mutation_t&gt;;</div>
 <div class="line">boost::container::list&lt; mutation_t, mutation_t_allocator &gt; <a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>;</div>
 </div><!-- fragment --><p>For simulations with large mutation and/or recombination rates, using the boost types can result is substantially faster simulations. It is well worth it to have boost available on your systems!</p>
@@ -140,7 +140,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;list&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../df/df8/diploid_8hh.html">fwdpp/diploid.hh</a>&gt;</span></div>
 <div class="line"></div>
-<div class="line"><span class="keyword">using</span> mutation_t = <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a>;</div>
+<div class="line"><span class="keyword">using</span> <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">mutation_t</a> = <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a>;</div>
 <div class="line">std::list&lt; mutation_t &gt; <a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>;</div>
 <div class="line"><span class="comment">//This defaults to assuming that std::list&lt;mutation_t&gt; is the mutation list type</span></div>
 <div class="line"><span class="keyword">using</span> gamete_t = <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base&lt;mutation_t&gt;</a>;</div>
@@ -150,7 +150,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../df/df8/diploid_8hh.html">fwdpp/diploid.hh</a>&gt;</span></div>
 <div class="line"></div>
 <div class="line"><span class="comment">//We see that typedefs lead to improved sanity:</span></div>
-<div class="line"><span class="keyword">using</span> mutation_t = <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a>;</div>
+<div class="line"><span class="keyword">using</span> <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">mutation_t</a> = <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a>;</div>
 <div class="line"><span class="keyword">using</span> mutation_t_allocator = boost::pool_allocator&lt;mutation_t&gt;;</div>
 <div class="line"><span class="keyword">using</span> mlist_t = boost::container::list&lt; mutation_t, mutation_t_allocator &gt;;</div>
 <div class="line">mlist_t <a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>;</div>

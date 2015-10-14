@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.8</span>
+   &#160;<span id="projectnumber">0.3.9</span>
    </div>
   </td>
  </tr>
@@ -175,7 +175,7 @@ struct KTfwd::gamete_base&lt; mut_type, list_type, tag_type &gt;</h3>
 <p>The template parameter types are: mut_type = the mutation type to be used. Must be a model of <a class="el" href="../../d1/da4/structKTfwd_1_1mutation__base.html" title="Base class for mutations At minimum, a mutation must contain a position and a count in the population...">KTfwd::mutation_base</a> list_type = the (doubly-linked) list that mutations are stored in. This is mainly used for defining types for this class tag_type = A type that can be used as a "dispatch tag". Currently, these are not used elsewhere in the library, but they may be in the future, or this may disappear in future library releases. The current default (<a class="el" href="../../d3/dea/namespaceKTfwd_1_1tags.html#a5d8bb8cb0ad58525e213bf7d6f529dee" title="The &quot;regular&quot; gamete for a diploid simulation. ">KTfwd::tags::standard_gamete</a>) maintains backwards compatibility with previous library versions and does not affect compilation of existing programs based on the library.</p>
 <dl class="section note"><dt>Note</dt><dd>The typical use of this class is simply to define your mutation type (see <a class="el" href="../../d1/d7a/md_md_policies.html">Tutorial 1: Policies in fwdpp</a>) and then use a typedef to define your gamete type in the simulations: <div class="fragment"><div class="line"><span class="keyword">using</span> gamete_t = <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base&lt;mutation_type&gt;</a></div>
 </div><!-- fragment --> See <a class="el" href="../../d1/d7a/md_md_policies.html">Tutorial 1: Policies in fwdpp</a> for examples of this. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#_a2">diploid_binaryIO_ind.cc</a>, and <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#_a1">migsel_ind.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#_a3">diploid_binaryIO_ind.cc</a>, and <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#_a3">migsel_ind.cc</a>.</dd>
 </dl></div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a class="anchor" id="adf5ac70c7b455fd6a3d0f95568a20afe"></a>
 <div class="memitem">
@@ -639,7 +639,7 @@ template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, t
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/kevin/git/fwdpp.git/fwdpp/<a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">forward_types.hpp</a></li>
+<li>/home/kevin/src/fwdpp/fwdpp/<a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">forward_types.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

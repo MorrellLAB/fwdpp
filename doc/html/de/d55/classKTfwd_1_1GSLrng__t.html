@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.8</span>
+   &#160;<span id="projectnumber">0.3.9</span>
    </div>
   </td>
  </tr>
@@ -114,10 +114,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8228f2db9986da0cbb71505a59b3dbc3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a8228f2db9986da0cbb71505a59b3dbc3">GSLrng_t</a> (const unsigned &amp;seed)</td></tr>
 <tr class="memdesc:a8228f2db9986da0cbb71505a59b3dbc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct with a seed.  <a href="#a8228f2db9986da0cbb71505a59b3dbc3">More...</a><br/></td></tr>
 <tr class="separator:a8228f2db9986da0cbb71505a59b3dbc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fc21eab20c88d78402cf3e674386ec6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a9fc21eab20c88d78402cf3e674386ec6">GSLrng_t</a> (const <a class="el" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">GSLrng_t</a> &amp;rng)</td></tr>
+<tr class="memitem:a9fc21eab20c88d78402cf3e674386ec6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a9fc21eab20c88d78402cf3e674386ec6">GSLrng_t</a> (const <a class="el" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">GSLrng_t</a> &amp;<a class="el" href="../../d6/d4f/sugar__sampling_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>)</td></tr>
 <tr class="memdesc:a9fc21eab20c88d78402cf3e674386ec6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <a href="#a9fc21eab20c88d78402cf3e674386ec6">More...</a><br/></td></tr>
 <tr class="separator:a9fc21eab20c88d78402cf3e674386ec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf8f7609240da542ce2f18f00abc77ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#adf8f7609240da542ce2f18f00abc77ab">GSLrng_t</a> (<a class="el" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">GSLrng_t</a> &amp;rng)</td></tr>
+<tr class="memitem:adf8f7609240da542ce2f18f00abc77ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#adf8f7609240da542ce2f18f00abc77ab">GSLrng_t</a> (<a class="el" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">GSLrng_t</a> &amp;<a class="el" href="../../d6/d4f/sugar__sampling_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>)</td></tr>
 <tr class="memdesc:adf8f7609240da542ce2f18f00abc77ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <a href="#adf8f7609240da542ce2f18f00abc77ab">More...</a><br/></td></tr>
 <tr class="separator:adf8f7609240da542ce2f18f00abc77ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa67feee83127e46c66f18f1d2c2d8aaf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">GSLrng_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#aa67feee83127e46c66f18f1d2c2d8aaf">operator=</a> (<a class="el" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">GSLrng_t</a> &amp;)=delete</td></tr>
@@ -139,7 +139,7 @@ class KTfwd::GSLrng_t&lt; T &gt;</h3>
 <p>A wrapper around gsl_rng * objects. </p>
 <p>The template instantiation type must be a model of <a class="el" href="../../d7/d43/structKTfwd_1_1sugar_1_1GSL__RNG__TYPE__TAG.html" title="Dispatch tag for gsl_rng * types. ">KTfwd::sugar::GSL_RNG_TYPE_TAG</a>, which specifies the gsl_rng type.</p>
 <p>This type holds an object of type <a class="el" href="../../de/d6e/group__sugar.html#gaa991ef48b5f7fd6f7ea7a289e8973cee" title="Smart pointer wrapper to gsl_rng *. ">KTfwd::sugar::gsl_rng_ptr_t</a>, which is a smart pointer that manages freeing the gsl_rng * upon destruction. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#_a2">bneck_selection_ind.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#_a4">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#_a2">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#_a2">diploid_fixed_sh_ind_lambda.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#_a3">diploid_ind.cc</a>, <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#_a6">diploid_ind_2locus.cc</a>, and <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#_a10">migsel_ind.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#_a2">bneck_selection_ind.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#_a5">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#_a2">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#_a2">diploid_fixed_sh_ind_lambda.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#_a3">diploid_ind.cc</a>, <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#_a6">diploid_ind_2locus.cc</a>, and <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#_a14">migsel_ind.cc</a>.</dd>
 </dl></div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a class="anchor" id="ad699680395858135c96f8090047d83e3"></a>
 <div class="memitem">
@@ -267,7 +267,7 @@ template&lt;typename T&gt; </div>
 </div><div class="memdoc">
 
 <p>Return underlying pointer. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a4">bneck_selection_ind.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a6">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a4">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a7">diploid_fixed_sh_ind_lambda.cc</a>, and <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a5">diploid_ind.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a4">bneck_selection_ind.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a7">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a4">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../dc/dc7/diploid_fixed_sh_ind_lambda_8cc-example.html#a9">diploid_fixed_sh_ind_lambda.cc</a>, and <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a5">diploid_ind.cc</a>.</dd>
 </dl>
 </div>
 </div>
@@ -315,7 +315,7 @@ template&lt;typename T&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/kevin/git/fwdpp.git/fwdpp/sugar/<a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html">GSLrng_t.hpp</a></li>
+<li>/home/kevin/src/fwdpp/fwdpp/sugar/<a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html">GSLrng_t.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

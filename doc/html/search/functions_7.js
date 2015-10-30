@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['init_5fwith_5fms',['init_with_ms',['../da/d8b/namespaceKTfwd.html#af05d39195307329f16205963a265b41f',1,'KTfwd']]],
+  ['init_5fdeme',['init_deme',['../da/d8b/namespaceKTfwd.html#a4f25905953205047343654f8246d423e',1,'KTfwd']]],
   ['insert_5fat_5fend',['insert_at_end',['../da/d8b/namespaceKTfwd.html#ac06ca8dade5d8e9af09e117e403bf644',1,'KTfwd']]],
   ['insert_5fif_5fnot_5ffound',['insert_if_not_found',['../da/d8b/namespaceKTfwd.html#a1c9791ec9905f663089b0a52d4facb0d',1,'KTfwd::insert_if_not_found(T &amp;&amp;t, cT *ct)'],['../da/d8b/namespaceKTfwd.html#afb2fd01e4b5a2bdcadb5e7c4382bb4d2',1,'KTfwd::insert_if_not_found(T &amp;&amp;t, cT *ct, const unsigned &amp;n)']]],
   ['insert_5fmutation_5fat_5fend',['insert_mutation_at_end',['../da/d8b/namespaceKTfwd.html#a851c5d5579cbb54c0f0dffdf57e0d9b9',1,'KTfwd']]],

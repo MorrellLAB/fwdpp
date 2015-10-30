@@ -5,6 +5,7 @@ var searchData=
   ['migsel_5find_2ecc',['migsel_ind.cc',['../df/dfa/migsel__ind_8cc.html',1,'']]],
   ['migsel_5fsplit_5find_5flist_2ecc',['migsel_split_ind_list.cc',['../d5/dcc/migsel__split__ind__list_8cc.html',1,'']]],
   ['mlocuscrossovertest_2ecc',['mlocusCrossoverTest.cc',['../d9/d1d/mlocusCrossoverTest_8cc.html',1,'']]],
+  ['ms_5fsampling_2ecc',['ms_sampling.cc',['../dc/dd4/ms__sampling_8cc.html',1,'']]],
   ['ms_5fsampling_2ehpp',['ms_sampling.hpp',['../da/d42/ms__sampling_8hpp.html',1,'']]],
   ['multiloc_2ehpp',['multiloc.hpp',['../d6/d10/multiloc_8hpp.html',1,'']]],
   ['multiloc_2ehpp',['multiloc.hpp',['../d6/dd5/multiloc_2multiloc_8hpp.html',1,'']]],

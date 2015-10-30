@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.3.9</span>
+   &#160;<span id="projectnumber">0.4.0</span>
    </div>
   </td>
  </tr>
@@ -187,6 +187,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ol type="1">
 <li><a href="http://gnu.org/software/gsl">GSL</a></li>
 <li><a href="http://zlib.net">zlib</a></li>
+</ol>
+<p>In order to compile the example programs, you will also need:</p>
+<ol type="1">
 <li><a href="http://github.com/molpopgen/libsequence">libsequence</a>.</li>
 </ol>
 <p>In order to compile the unit tests, you also need:</p>
@@ -293,7 +296,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="fragment"><div class="line">make check</div>
 </div><!-- fragment --><p>Currently, the example programs will not get installed via "make install". If you want them to be installed system-wide, copy the binaries manually to where you need them.</p>
 <h2>To compile examples and unit tests</h2>
-<p><b>Note:</b> if you only wish to compile the example, issue the 'make check' command from the example subdirectory. This will allow users without boost on their system to compile the examples but not attempt to compile the unit tests (which will fail to compile on systems without boost).</p>
+<p><b>Note:</b> if you only wish to compile the example programgs, issue the 'make check' command from the example subdirectory. This will allow users without boost on their system to compile the examples but not attempt to compile the unit tests (which will fail to compile on systems without boost).</p>
+<p>You will need <a href="http://github.com/molpopgen/libsequence">libsequence</a> installed on your system in order to compile the example programs.</p>
 <h3>Using standard containers and the standard C-library malloc</h3>
 <p>This is the default:</p>
 <div class="fragment"><div class="line">./configure</div>

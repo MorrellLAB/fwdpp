@@ -1,3 +1,6 @@
+if HAVE_SIMDATA_HPP
+if HAVE_LIBSEQ_RUNTIME
+
 check_PROGRAMS=	diploid_ind \
 	diploid_binaryIO_ind \
 	diploid_gzbinaryIO_ind \
@@ -29,3 +32,6 @@ else !DEBUG
 AM_CPPFLAGS+=-DNDEBUG
 endif
 LDADD=
+
+endif
+endif

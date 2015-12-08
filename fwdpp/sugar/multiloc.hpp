@@ -31,7 +31,7 @@ namespace KTfwd
 				   multiloc_glist_t<mtype>,
 				   boost::container::vector<boost::container::vector<diploid_t>>,
 				   boost::container::vector<mtype>,
-				   boost::container::vector<unsigned>,
+				   boost::container::vector<uint_t>,
 				   boost::unordered_set<double,boost::hash<double>,KTfwd::equal_eps> >;
 
   /*!
@@ -50,7 +50,7 @@ namespace KTfwd
 							 multiloc_glist_t<mtype>,
 							 boost::container::vector<boost::container::vector<diploid_t>>,
 							 boost::container::vector<mtype>,
-							 boost::container::vector<unsigned>,
+							 boost::container::vector<uint_t>,
 							 boost::unordered_set<double,boost::hash<double>,KTfwd::equal_eps>,
 							 diploid_writer_t,
 							 diploid_reader_t>;
@@ -81,7 +81,7 @@ namespace KTfwd
 				   multiloc_glist_t<mtype>,
 				   std::vector<std::vector<diploid_t>>,
 				   std::vector<mtype>,
-				   std::vector<unsigned>,
+				   std::vector<uint_t>,
 				   std::unordered_set<double,std::hash<double>,KTfwd::equal_eps>>;
   
   /*!
@@ -101,7 +101,7 @@ namespace KTfwd
 							 multiloc_glist_t<mtype>,
 							 std::vector<std::vector<diploid_t>>,
 							 std::vector<mtype>,
-							 std::vector<unsigned>,
+							 std::vector<uint_t>,
 							 std::unordered_set<double,std::hash<double>,KTfwd::equal_eps>,
 							 diploid_writer_t,
 							 diploid_reader_t>;

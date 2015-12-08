@@ -30,7 +30,7 @@ namespace KTfwd
 		 gamete_list_type<gamete_type,gamete_list_type_allocator > * gametes,
 		 diploid_vector_type<diploid_geno_t,diploid_vector_type_allocator> * diploids,
 		 mutation_list_type<typename gamete_type::mutation_type,mutation_list_type_allocator > * mutations, 
-		 const unsigned & N_curr, 
+		 const uint_t & N_curr, 
 		 const double & mu,
 		 const mutation_model & mmodel,
 		 const recombination_policy & rec_pol,
@@ -65,8 +65,8 @@ namespace KTfwd
 		 gamete_list_type<gamete_type,gamete_list_type_allocator > * gametes,
 		 diploid_vector_type<diploid_geno_t,diploid_vector_type_allocator> * diploids,
 		 mutation_list_type<typename gamete_type::mutation_type,mutation_list_type_allocator > * mutations, 
-		 const unsigned & N_curr, 
-		 const unsigned & N_next, 
+		 const uint_t & N_curr, 
+		 const uint_t & N_next, 
 		 const double & mu,
 		 const mutation_model & mmodel,
 		 const recombination_policy & rec_pol,
@@ -82,7 +82,7 @@ namespace KTfwd
     double wbar = 0.;
     
     auto dptr = diploids->begin();
-    for( unsigned i = 0 ; i < N_curr ; ++i )
+    for( uint_t i = 0 ; i < N_curr ; ++i )
       {
 	(dptr+i)->first->n = 0;
 	(dptr+i)->second->n = 0;
@@ -106,13 +106,13 @@ namespace KTfwd
 	diploids->resize(N_next);
 	dptr = diploids->begin();
       }
-    unsigned NREC=0;
+    uint_t NREC=0;
     assert(diploids->size()==N_next);
     decltype( gametes->begin() ) p1g1,p1g2,p2g1,p2g2;
 
     auto gamete_lookup = fwdpp_internal::gamete_lookup_table(gametes);
 
-    for( unsigned i = 0 ; i < N_next ; ++i )
+    for( uint_t i = 0 ; i < N_next ; ++i )
       {
 	assert(dptr==diploids->begin());
 	assert( (dptr+i) < diploids->end() );
@@ -151,7 +151,7 @@ namespace KTfwd
 	(dptr+i)->second = mutate_gamete(r,mu,gametes,mutations,(dptr+i)->second,mmodel,mpolicy,gpolicy_mut);
       }
 #ifndef NDEBUG
-    for( unsigned i = 0 ; i < diploids->size() ; ++i )
+    for( uint_t i = 0 ; i < diploids->size() ; ++i )
       {
 	assert( (dptr+i)->first->n > 0 );
 	assert( (dptr+i)->first->n <= 2*N_next );
@@ -199,7 +199,7 @@ namespace KTfwd
 		 gamete_list_type<gamete_type,gamete_list_type_allocator> * metapop,
 		 metapop_diploid_vector_type < diploid_vector_type<diploid_geno_t,diploid_vector_type_allocator>,metapop_diploid_vector_type_allocator > * diploids,
 		 mutation_list_type<typename gamete_type::mutation_type,mutation_list_type_allocator > * mutations, 
-		 const unsigned * N_curr, 
+		 const uint_t * N_curr, 
 		 const double & mu,
 		 const mutation_model & mmodel,
 		 const recombination_policy & rec_pol,
@@ -238,8 +238,8 @@ namespace KTfwd
 		 gamete_list_type<gamete_type,gamete_list_type_allocator> * metapop,
 		 metapop_diploid_vector_type < diploid_vector_type<diploid_geno_t, diploid_vector_type_allocator>,metapop_diploid_vector_type_allocator > * diploids,
 		 mutation_list_type<typename gamete_type::mutation_type,mutation_list_type_allocator > * mutations, 
-		 const unsigned * N_curr, 
-		 const unsigned * N_next, 
+		 const uint_t * N_curr, 
+		 const uint_t * N_next, 
 		 const double & mu,
 		 const mutation_model & mmodel,
 		 const recombination_policy & rec_pol,
@@ -257,8 +257,8 @@ namespace KTfwd
 	      typename decltype(diploids->begin())::difference_type popindex = 0;
 
 	      //get max N
-	      unsigned mN=0;
-	      for( unsigned i=0;i<diploids->size();++i )
+	      uint_t mN=0;
+	      for( uint_t i=0;i<diploids->size();++i )
 		{
 		  if( *(N_curr+i) > mN )
 		    {
@@ -269,7 +269,7 @@ namespace KTfwd
 	      
 	      for( auto dptr = diploids->begin() ; dptr != diploids->end() ; ++dptr, ++popindex )
 		{
-		  unsigned demesize = *(N_curr+popindex);
+		  uint_t demesize = *(N_curr+popindex);
 		  assert( demesize == dptr->size() );
 		  size_t ith_dip = 0;
 		  for( auto gptr = dptr->begin() ; 
@@ -292,20 +292,20 @@ namespace KTfwd
 	      
 	      //Update the diploids
 	      popindex = 0;
-	      unsigned NREC=0;
+	      uint_t NREC=0;
 
 	      decltype(metapop->begin()) p1g1,p1g2,p2g1,p2g2;
 	      auto gamete_lookup = fwdpp_internal::gamete_lookup_table(metapop);
 	      for( auto ptr = diploids->begin() ; ptr != diploids->end() ; ++ptr,++popindex )
 		{
-		  unsigned demesize =*(N_next+popindex);
+		  uint_t demesize =*(N_next+popindex);
 		  if( demesize != *(N_curr+popindex) )
 		    {
 		      ptr->resize(demesize);
 		    }
 		  auto dptr = ptr->begin();
 
-		  for( unsigned i = 0 ; i < demesize ; ++i )
+		  for( uint_t i = 0 ; i < demesize ; ++i )
 		    {
 		      /* Figure out if parent 1 is migrant or not.
 
@@ -403,8 +403,8 @@ namespace KTfwd
 		 gamete_list_type<gamete_type, gamete_list_type_allocator> * gametes,
 		 diploid_vector_type<locus_vector_type<diploid_geno_t,locus_vector_type_allocator>,diploid_vector_type_allocator> * diploids,
 		 mutation_list_type<typename gamete_type::mutation_type,mutation_list_type_allocator > * mutations, 
-		 const unsigned & N_curr, 
-		 const unsigned & N_next, 
+		 const uint_t & N_curr, 
+		 const uint_t & N_next, 
 		 const double * mu,
 		 const mutation_model_container & mmodel,
 		 const recombination_policy_container & rec_policies,
@@ -425,7 +425,7 @@ namespace KTfwd
   
     //Go over parents
     auto dptr = diploids->begin();
-    for( unsigned i = 0 ; i < N_curr ; ++i,++dptr )
+    for( uint_t i = 0 ; i < N_curr ; ++i,++dptr )
       {
 	//set parental gamete counts to 0 for each locus
 	for( auto j = dptr->begin() ; j != dptr->end() ; ++j )
@@ -470,7 +470,7 @@ namespace KTfwd
     assert(diploids->size()==N_next);
 
     auto gamete_lookup = fwdpp_internal::gamete_lookup_table(gametes);
-    for( unsigned curr_dip = 0 ; curr_dip < N_next ; ++curr_dip )
+    for( uint_t curr_dip = 0 ; curr_dip < N_next ; ++curr_dip )
       {
 	assert(dptr==diploids->begin());
 	assert( (dptr+curr_dip) < diploids->end() );
@@ -537,7 +537,7 @@ namespace KTfwd
 		 gamete_list_type<gamete_type, gamete_list_type_allocator> * gametes,
 		 diploid_vector_type<locus_vector_type<diploid_geno_t,locus_vector_type_allocator>,diploid_vector_type_allocator> * diploids,
 		 mutation_list_type<typename gamete_type::mutation_type,mutation_list_type_allocator > * mutations, 
-		 const unsigned & N,
+		 const uint_t & N,
 		 const double * mu,
 		 const mutation_model_container & mmodel,
 		 const recombination_policy_container & rec_policies,

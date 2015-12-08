@@ -1,5 +1,13 @@
 # FWDPP RELEASE NOTES
 
+## 0.4.3
+
+* Fix for issue #29
+* Keyword 'mutable' replaced with 'const' throughout library
+* KTfwd::extensions::gaussian now uses ziggurat method
+* Types declared in fwdpp/extensions/callbacks.hpp now have const member data.  A unit test was added as a check on the API of this file.
+* New mutation types added: KTfwd::generalmut and KTfwd::generalmut_vec, in fwdpp/sugar/generalmut.hpp.  A new unit test file goes along with it.
+
 ## 0.4.2
 
 * Fixed error in definition of KTfwd::metapop_serialized and KTfwd::multiloc_serialized.

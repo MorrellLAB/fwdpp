@@ -78,14 +78,14 @@ namespace KTfwd
     using result_type = bool;
     template<typename iterator_type> 
     inline result_type operator()(const iterator_type & i,
-				  const unsigned & x1 ) const
+				  const uint_t & x1 ) const
     {
       return i->n == x1;
     }
     template<typename iterator_type>
     inline result_type operator()(const iterator_type & i,
-				  const unsigned & x1,
-				  const unsigned & x2) const
+				  const uint_t & x1,
+				  const uint_t & x2) const
     {
       return i->n == x1 || i->n == x2;
     }

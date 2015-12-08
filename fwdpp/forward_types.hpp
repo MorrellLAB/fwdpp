@@ -10,11 +10,15 @@
 #include <vector>
 #include <list>
 #include <cmath>
+#include <cstdint>
 #include <type_traits>
 #include <fwdpp/tags/gamete_tags.hpp>
 
 namespace KTfwd
 {
+  //! The unsigned integer type is 32 bits
+  using uint_t = std::uint32_t;
+  
   /*! \brief Base class for mutations
     At minimum, a mutation must contain a position and a count in the population.	
     You can derive from this class, for instance to add selection coefficients,
@@ -25,14 +29,14 @@ namespace KTfwd
   struct mutation_base
   {
     /// Mutation position
-    mutable double pos;
+    const double pos;
     /// Count of mutation in the population
-    unsigned n;
+    uint_t n;
     /// Is the mutation neutral or not?
     bool neutral;
     /// Used internally (don't worry about it for now...)
     bool checked;
-    mutation_base(const double & position, const unsigned & count, const bool & isneutral = true) noexcept
+    mutation_base(const double & position, const uint_t & count, const bool & isneutral = true) noexcept
       : pos(position),n(count),neutral(isneutral),checked(false)
     {	
     }
@@ -52,10 +56,10 @@ namespace KTfwd
   */
   {
     /// selection coefficient
-    mutable double s;
+    const double s;
     /// dominance coefficient
-    mutable double h;
-    mutation( const double & position, const double & sel_coeff,const unsigned & count,
+    const double h;
+    mutation( const double & position, const double & sel_coeff,const uint_t & count,
 	      const double & dominance = 0.5) 
       : mutation_base(position,count,(sel_coeff==0)),s(sel_coeff),h(dominance)
     {
@@ -94,7 +98,7 @@ namespace KTfwd
     static_assert( std::is_base_of<mutation_base,mut_type>::value,
 		   "mut_type must be derived from KTfwd::mutation_base" );
     //! Count in population
-    unsigned n;
+    uint_t n;
     using mutation_type = mut_type;
     using mutation_list_type = list_type;
     using mutation_list_type_iterator = typename list_type::iterator;
@@ -111,7 +115,7 @@ namespace KTfwd
     /*! @brief Constructor
       \param icount The number of occurrences of this gamete in the population
     */
-    gamete_base(const unsigned & icount) noexcept : n(icount),mutations( mutation_container() ),smutations(mutation_container())
+    gamete_base(const uint_t & icount) noexcept : n(icount),mutations( mutation_container() ),smutations(mutation_container())
     {
     }
 
@@ -120,7 +124,7 @@ namespace KTfwd
       \param n A container of mutations not affecting trait value/fitness
       \param s A container of mutations affecting trait value/fitness
     */
-    gamete_base(const unsigned & icount, const mutation_container & n,
+    gamete_base(const uint_t & icount, const mutation_container & n,
 		const mutation_container & s) noexcept : n(icount),mutations(n),smutations(s)
     {
     }

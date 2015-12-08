@@ -46,6 +46,13 @@ namespace KTfwd {
     */
     {
       std::function<double(gsl_rng*)> s,h;
+      //! Default constructor useful in extension situations that don't understand std::function
+      shmodel() = default;
+      //! More efficient constructor for c++11-aware situations
+      shmodel( std::function<double(gsl_rng*)> sfxn,
+	       std::function<double(gsl_rng*)> hfxn ) : s(std::move(sfxn)),h(std::move(hfxn))
+      {
+      }
     };
   
     struct constant
@@ -53,7 +60,7 @@ namespace KTfwd {
       Callback for fixed s and/or h
      */
     {
-      double x;
+      const double x;
       constant(const double & __x) : x(__x)
       {
 	if(!std::isfinite(x)) {
@@ -71,7 +78,7 @@ namespace KTfwd {
       Exponential s or h
      */
     {
-      double mean;
+      const double mean;
       exponential(const double & m) : mean(m)
       {
 	if(!std::isfinite(mean))
@@ -94,7 +101,7 @@ namespace KTfwd {
       Uniform s or h
      */
     {
-      double mn,mx;
+      const double mn,mx;
       uniform(const double & __mn,
 	      const double & __mx) : mn(__mn),mx(__mx)
       {
@@ -118,7 +125,7 @@ namespace KTfwd {
       Beta-distributed s or h
     */
     {
-      double a,b,factor;
+      const double a,b,factor;
       beta(const double & __a,
 	   const double & __b,
 	   const double & __f) : a(__a),b(__b),factor(__f)
@@ -147,7 +154,7 @@ namespace KTfwd {
       Gaussian s or h
     */
     {
-      double sd;
+      const double sd;
       gaussian(const double & __sd) : sd(__sd)
       {
 	if(sd == 0.) throw std::runtime_error("sd must not equal 0");
@@ -155,7 +162,7 @@ namespace KTfwd {
       }
       inline double operator()(const gsl_rng * r) const
       {
-	return gsl_ran_gaussian(r,sd);
+	return gsl_ran_gaussian_ziggurat(r,sd);
       }
     };
 
@@ -164,7 +171,7 @@ namespace KTfwd {
       Gamma distributed s or h
     */
     {
-      double mean,shape;
+      const double mean,shape;
       gamma(const double & __m,
 	    const double & __s ) : mean(__m),shape(__s)
       {

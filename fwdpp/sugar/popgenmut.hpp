@@ -15,7 +15,7 @@ namespace KTfwd
   struct popgenmut : public mutation_base
   {
     //! The generation when the mutation arose
-    unsigned g;
+    uint_t g;
     //! Selection coefficient
     double s;
     //! Dominance of the mutation

@@ -2,7 +2,7 @@
   \ingroup unit 
   \brief Testing KTfwd::metapop and KTfwd::metapop_serialized
 */
-#define BOOST_TEST_MODULE sugarTest2
+#define BOOST_TEST_MODULE sugarTest2_custom
 #define BOOST_TEST_DYN_LINK 
 
 #include <config.h>
@@ -17,6 +17,38 @@ using mutation_t = KTfwd::popgenmut;
 using mwriter = KTfwd::mutation_writer;
 using mreader = KTfwd::mutation_reader<mutation_t>;
 
+//Custom diploid type.
+struct diploid_t : public KTfwd::tags::custom_diploid_t
+{
+  using first_type = KTfwd::metapop_glist_t<mutation_t>::iterator;
+  using second_type = KTfwd::metapop_glist_t<mutation_t>::iterator;
+  first_type first;
+  second_type second;
+  unsigned i;
+  diploid_t() : first(first_type()),second(second_type()),i(std::numeric_limits<unsigned>::max()) {}
+  diploid_t(first_type g1, first_type g2) : first(g1),second(g2),i(std::numeric_limits<unsigned>::max()) {}
+};
+
+struct diploid_writer
+{
+  using result_type = void;
+  template<typename itr,typename streamtype>
+  inline result_type operator()( itr i, streamtype & o ) const
+  {
+    o.write( reinterpret_cast<const char *>(&i->i),sizeof(unsigned) );
+  }
+};
+
+struct diploid_reader
+{
+  using result_type = void;
+  template<typename itr,typename streamtype>
+  inline result_type operator()( itr i, streamtype & in ) const
+  {
+    in.read( reinterpret_cast<char *>(&i->i),sizeof(unsigned) );
+  }
+};
+
 size_t migpop(const size_t & source_pop, gsl_rng * r, const double & mig_prob)
 {
   if( gsl_rng_uniform(r) < mig_prob )
@@ -28,7 +60,7 @@ size_t migpop(const size_t & source_pop, gsl_rng * r, const double & mig_prob)
 
 BOOST_AUTO_TEST_CASE( metapop_sugar_test1 )
 {
-  using poptype = KTfwd::metapop<mutation_t>;
+  using poptype = KTfwd::metapop<mutation_t,diploid_t>;
   poptype pop({1000,1000});
 
   KTfwd::GSLrng_t<KTfwd::GSL_RNG_TAUS2> rng(0u);
@@ -37,9 +69,8 @@ BOOST_AUTO_TEST_CASE( metapop_sugar_test1 )
   
   //Evolve for 10 generations
   std::function<double(void)> recmap = std::bind(gsl_rng_uniform,rng.get());
-  std::vector<std::function<double (poptype::glist_t::const_iterator,
-				    poptype::glist_t::const_iterator)> > fitness_funcs(2,
-										       std::bind(KTfwd::multiplicative_diploid(),std::placeholders::_1,std::placeholders::_2,2.));
+  std::vector<std::function<double (poptype::dipvector_t::const_iterator)> > fitness_funcs(2,
+											   std::bind(KTfwd::multiplicative_diploid(),std::placeholders::_1,2.));
   for( unsigned generation= 0 ; generation < 10 ; ++generation )
     {
       std::vector<double> wbar = KTfwd::sample_diploid(rng.get(),
@@ -124,16 +155,16 @@ BOOST_AUTO_TEST_CASE( metapop_sugar_test1 )
 
 BOOST_AUTO_TEST_CASE( metapop_sugar_copy_construct_test )
 {
-  using poptype = KTfwd::metapop_serialized<mutation_t,KTfwd::mutation_writer,KTfwd::mutation_reader<KTfwd::popgenmut>>;
+  using poptype = KTfwd::metapop_serialized<mutation_t,KTfwd::mutation_writer,KTfwd::mutation_reader<KTfwd::popgenmut>,
+					    diploid_t,diploid_writer,diploid_reader>;
   poptype pop({1000,1000});
 
   KTfwd::GSLrng_t<KTfwd::GSL_RNG_TAUS2> rng(0u);
 
   //Evolve for 10 generations
   std::function<double(void)> recmap = std::bind(gsl_rng_uniform,rng.get());
-  std::vector<std::function<double (poptype::glist_t::const_iterator,
-				    poptype::glist_t::const_iterator)> > fitness_funcs(2,
-										       std::bind(KTfwd::multiplicative_diploid(),std::placeholders::_1,std::placeholders::_2,2.));
+  std::vector<std::function<double (poptype::dipvector_t::const_iterator)> > fitness_funcs(2,
+										       std::bind(KTfwd::multiplicative_diploid(),std::placeholders::_1,2.));
   for( unsigned generation= 0 ; generation < 10 ; ++generation )
     {
       std::vector<double> wbar = KTfwd::sample_diploid(rng.get(),

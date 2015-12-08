@@ -33,7 +33,7 @@ namespace KTfwd
 	     typename hdist_t>
     inline popgenmut 
     operator()(gsl_rng * r, lookup_table_t * lookup,
-	       const unsigned & generation,
+	       const uint_t & generation,
 	       const double & neutral_mutation_rate,
 	       const double & selected_mutation_rate,
 	       const position_t & posmaker,
@@ -78,7 +78,7 @@ namespace KTfwd
 	     typename hdist_t>
     inline popgenmut
     operator()(gsl_rng * r, lookup_table_t * lookup,
-	       const unsigned & generation,
+	       const uint_t & generation,
 	       const double & neutral_mutation_rate,
 	       const double & selected_mutation_rate,
 	       const nposition_t & nposmaker,
@@ -126,7 +126,7 @@ namespace KTfwd
 	     typename hdist_t>
     inline popgenmut
     operator()(gsl_rng * r, lookup_table_t * lookup,
-	       const unsigned * generation,
+	       const uint_t * generation,
 	       const double & neutral_mutation_rate,
 	       const double & selected_mutation_rate,
 	       const position_t & posmaker,

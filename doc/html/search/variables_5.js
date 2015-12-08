@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['factor',['factor',['../d2/d4d/structKTfwd_1_1extensions_1_1beta.html#a0fba1a0a2ea0324185081b905db2a8ab',1,'KTfwd::extensions::beta']]],
+  ['factor',['factor',['../d2/d4d/structKTfwd_1_1extensions_1_1beta.html#a3dfcfce4d84c0ea29d9bef1f7c3a7fde',1,'KTfwd::extensions::beta']]],
   ['first',['first',['../dc/dfb/structdiploid__t.html#a1d93eebfe52e4c4fcacace580b6837a2',1,'diploid_t']]],
   ['fitnesses',['fitnesses',['../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html#a3ad2ffb65a2d452126a126bef01110ce',1,'KTfwd::experimental::standardWFrules']]],
   ['fixation_5ftimes',['fixation_times',['../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#acf7702e9d263a9c91291fc6d87a5ec0d',1,'KTfwd::sugar::singlepop::fixation_times()'],['../d9/dee/classKTfwd_1_1sugar_1_1singlepop__serialized.html#ab6940d13356e34780a151836b418f5fd',1,'KTfwd::sugar::singlepop_serialized::fixation_times()'],['../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#ae021de7681ecb4837d91999f5a5949a0',1,'KTfwd::sugar::metapop::fixation_times()'],['../d2/d43/classKTfwd_1_1sugar_1_1metapop__serialized.html#a5823eb91bce7929d28e10ffa609215e7',1,'KTfwd::sugar::metapop_serialized::fixation_times()'],['../d3/d11/structKTfwd_1_1sugar_1_1multiloc.html#a245ec2b069b2990168ca2e54103372b7',1,'KTfwd::sugar::multiloc::fixation_times()'],['../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a89370748f4e276a9f2aff32a88212248',1,'KTfwd::sugar::multiloc_serialized::fixation_times()']]],

@@ -91,8 +91,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <h1>Simple policies using the multi-locus machinery</h1>
 <p>The main conceptual difference between this part of the library and the examples shown in the <a class="el" href="../../d1/d7a/md_md_policies.html">tutorial on policies</a> is the following:</p>
 <ul>
-<li>Instead of a single mutation model policy, you implement one mutation model per "locus". These policies are stored in a vector and passed to <a class="el" href="../../da/d8b/namespaceKTfwd.html#a18df6351fa3148914bbb844c36bc3e05">KTfwd::sample_diploid</a>.</li>
-<li>Similarly, you implement a recombination policy per locus, and pass a vector of those policies along to <a class="el" href="../../da/d8b/namespaceKTfwd.html#a18df6351fa3148914bbb844c36bc3e05">KTfwd::sample_diploid</a>.</li>
+<li>Instead of a single mutation model policy, you implement one mutation model per "locus". These policies are stored in a vector and passed to <a class="el" href="../../da/d8b/namespaceKTfwd.html#ac0adafd1954c805ce66b5f366782a01d">KTfwd::sample_diploid</a>.</li>
+<li>Similarly, you implement a recombination policy per locus, and pass a vector of those policies along to <a class="el" href="../../da/d8b/namespaceKTfwd.html#ac0adafd1954c805ce66b5f366782a01d">KTfwd::sample_diploid</a>.</li>
 <li>Instead of a single list of gametes, you have a vector of lists of gametes, where each list represents the current gametes at a particular locus.</li>
 <li>A diploid is now represented as a vector of pairs of iterators derived from the vector of lists of gametes.</li>
 <li>A fitness policy calculates individual fitnesses from an iterator pointing to that vector of pairs of iterators.</li>
@@ -105,10 +105,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <li>Return a new mutations whose position is uniformly-distributed on in interval <img class="formulaInl" alt="$(\mathrm{start},\mathrm{start}+1]$" src="../../form_33.png"/></li>
 </ol>
 <p>This is our mutation class:</p>
-<div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">mutation_with_age</a> : <span class="keyword">public</span> <a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html">KTfwd::mutation_base</a></div>
+<div class="fragment"><div class="line"><span class="keyword">struct </span>mutation_with_age : <span class="keyword">public</span> <a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html">KTfwd::mutation_base</a></div>
 <div class="line">{</div>
-<div class="line">  <span class="keywordtype">unsigned</span> <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html#af42aac73b0fef6d2b1990b110bc3d4c9">g</a>;</div>
-<div class="line">  <span class="keywordtype">double</span> <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html#ae055d7d981b19117c04def0dcc57e310">s</a>,<a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html#a60a395a305fd9d0a1f3da6b7b223bc10">h</a>;</div>
+<div class="line">  <span class="keywordtype">unsigned</span> g;</div>
+<div class="line">  <span class="keywordtype">double</span> s,h;</div>
 <div class="line">  <span class="comment">/*</span></div>
 <div class="line"><span class="comment">    The constructor initializes all class data, including that of the base class via a constructor</span></div>
 <div class="line"><span class="comment">    call to the base class.</span></div>
@@ -121,7 +121,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --><p>It contains info for selection coefficients, etc., but we won't be using any of that. (It is only there b/c I use the same mutation object for all of the example programs...)</p>
 <p>Given the requirements outlined above, a function to return a mutation at a specific locus is:</p>
 <div class="fragment"><div class="line"><span class="comment">//&quot;beg&quot; is the start position of this locus</span></div>
-<div class="line"><a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">mutation_with_age</a> neutral_mutations_inf_sites(gsl_rng * r,<span class="keyword">const</span> <span class="keywordtype">unsigned</span> * generation,mlist * mutations,</div>
+<div class="line">mutation_with_age neutral_mutations_inf_sites(gsl_rng * r,<span class="keyword">const</span> <span class="keywordtype">unsigned</span> * generation,mlist * mutations,</div>
 <div class="line">                                              lookup_table_type * lookup, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; beg)</div>
 <div class="line">{</div>
 <div class="line">  <span class="comment">//Generate new mutation position on the interval [0,1)</span></div>
@@ -137,7 +137,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">  assert(std::find_if(mutations-&gt;begin(),mutations-&gt;end(),std::bind(<a class="code" href="../../d5/d1a/structKTfwd_1_1mutation__at__pos.html">KTfwd::mutation_at_pos</a>(),std::placeholders::_1,pos)) == mutations-&gt;end());</div>
 <div class="line"></div>
 <div class="line">  <span class="comment">//return constructor call to mutation type</span></div>
-<div class="line">  <span class="keywordflow">return</span> <a class="code" href="../../d0/db9/sugar1_8cc.html#a26022ef252703a27f414647b9ad246a8">mutation_with_age</a>(*generation,pos,1,<span class="keyword">true</span>);</div>
+<div class="line">  <span class="keywordflow">return</span> mutation_with_age(*generation,pos,1,<span class="keyword">true</span>);</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>The details of the lookup table are covered in the main <a class="el" href="../../d1/d7a/md_md_policies.html">tutorial</a> on policies. It serves to efficiently ensure that we are sampling new mutation positions from an infinitely-many sites model.</p>
 <p>We may now create mutation model policies by synthesizing a function call that returns a mutation_with_age using <a href="http://en.cppreference.com/w/cpp/utility/functional/bind">std::bind</a>:</p>
@@ -155,7 +155,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">          <span class="keywordtype">double</span> a=i,b=i+1;</div>
 <div class="line">          mmodels.push_back(std::bind(<a class="code" href="../../df/d07/structKTfwd_1_1infsites.html">KTfwd::infsites</a>(),r.get(),&amp;pop.mut_lookup,&amp;generation,</div>
 <div class="line">        <span class="comment">//Capture a,b by VALUE!  Otherwise, they go out of scope and bad things can happen!</span></div>
-<div class="line">                mu[i],0.,[&amp;<a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,a,b](){ <span class="keywordflow">return</span> gsl_ran_flat(r.get(),a,b);},[](){<span class="keywordflow">return</span> 0.;},[](){<span class="keywordflow">return</span> 0.;}));</div>
+<div class="line">                mu[i],0.,[&amp;<a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,a,b](){ <span class="keywordflow">return</span> gsl_ran_flat(r.get(),a,b);},[](){<span class="keywordflow">return</span> 0.;},[](){<span class="keywordflow">return</span> 0.;}));</div>
 <div class="line">        }</div>
 </div><!-- fragment --><p>Keep this in mind for all containers of policies (in addition to this mutation example).</p>
 <h3>Digression: type signatures for for policies</h3>
@@ -218,8 +218,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">  }</div>
 <div class="line">};</div>
 </div><!-- fragment --><h3>Calling sample_diploid</h3>
-<p>The above definitions are used to evolve a population via a call to <a class="el" href="../../da/d8b/namespaceKTfwd.html#a18df6351fa3148914bbb844c36bc3e05">KTfwd::sample_diploid</a>:</p>
-<div class="fragment"><div class="line"><a class="code" href="../../da/d8b/namespaceKTfwd.html#a18df6351fa3148914bbb844c36bc3e05">KTfwd::sample_diploid</a>( r,</div>
+<p>The above definitions are used to evolve a population via a call to <a class="el" href="../../da/d8b/namespaceKTfwd.html#ac0adafd1954c805ce66b5f366782a01d">KTfwd::sample_diploid</a>:</p>
+<div class="fragment"><div class="line"><a class="code" href="../../da/d8b/namespaceKTfwd.html#ac0adafd1954c805ce66b5f366782a01d">KTfwd::sample_diploid</a>( r,</div>
 <div class="line">        &amp;gametes,</div>
 <div class="line">        &amp;diploids,</div>
 <div class="line">        &amp;mutations,</div>
@@ -242,7 +242,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </ol>
 <p>At this point, you are probably ready to see the full implementation of <a class="el" href="../../de/dce/diploid__ind__2locus_8cc.html">diploid_ind_2locus.cc</a> for the remaining details.</p>
 <h1>Sampling from a multilocus simulation</h1>
-<p>To take a sample of size <img class="formulaInl" alt="$n \ll N$" src="../../form_43.png"/> from the population, you may make a call to either <a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga2e9aee81e0abaddbb9c6e56f0d8f980f" title="Sampling from a population in an individual-based simulation. ">KTfwd::ms_sample</a>, which returns all neutral selected mutations in a single block, or <a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga235b4507a6f09b26fa9b33ef12abf59d" title="Sampling from a population in an individual-based simulation. Selected and neutral mutations returned...">KTfwd::ms_sample_separate</a>, which returns separate blocks for the selected and neutral mutations.</p>
+<p>To take a sample of size <img class="formulaInl" alt="$n \ll N$" src="../../form_43.png"/> from the population, you may make a call to either <a class="el" href="../../d7/de2/group__samplingPopsInd.html#gae620a0ed2d526906df8bf19ede0c38ff" title="Sampling from a population in an individual-based simulation. ">KTfwd::ms_sample</a>, which returns all neutral selected mutations in a single block, or <a class="el" href="../../d7/de2/group__samplingPopsInd.html#gaf2db9e89d4488cb3952a93129238ed94" title="Sampling from a population in an individual-based simulation. Selected and neutral mutations returned...">KTfwd::ms_sample_separate</a>, which returns separate blocks for the selected and neutral mutations.</p>
 <h1>Serialization: in-memory copying and file I/O</h1>
 <p>See the <a class="el" href="../../d5/d9d/md_md_serialization.html">tutorial on serialization</a>.</p>
 <h2>Mechanics of the multilocus recombination</h2>

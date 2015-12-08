@@ -109,16 +109,16 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac2065d42a2f64d670d9f9bf95c9c55d9"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type &gt; </td></tr>
-<tr class="memitem:ac2065d42a2f64d670d9f9bf95c9c55d9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/de8/structKTfwd_1_1mutation__remover.html#a5caf896f16718076ab87128f166044bb">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/de8/structKTfwd_1_1mutation__remover.html#ac2065d42a2f64d670d9f9bf95c9c55d9">operator()</a> (const iterator_type &amp;i, const unsigned &amp;x1) const </td></tr>
-<tr class="separator:ac2065d42a2f64d670d9f9bf95c9c55d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58a2b84677e3fdd729105e25110967fd"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type &gt; </td></tr>
-<tr class="memitem:a58a2b84677e3fdd729105e25110967fd"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/de8/structKTfwd_1_1mutation__remover.html#a5caf896f16718076ab87128f166044bb">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/de8/structKTfwd_1_1mutation__remover.html#a58a2b84677e3fdd729105e25110967fd">operator()</a> (const iterator_type &amp;i, const unsigned &amp;x1, const unsigned &amp;x2) const </td></tr>
-<tr class="separator:a58a2b84677e3fdd729105e25110967fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a280112a5d060aea2c56bad69e2c40a2d"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type &gt; </td></tr>
+<tr class="memitem:a280112a5d060aea2c56bad69e2c40a2d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/de8/structKTfwd_1_1mutation__remover.html#a5caf896f16718076ab87128f166044bb">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/de8/structKTfwd_1_1mutation__remover.html#a280112a5d060aea2c56bad69e2c40a2d">operator()</a> (const iterator_type &amp;i, const <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &amp;x1) const </td></tr>
+<tr class="separator:a280112a5d060aea2c56bad69e2c40a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39d0768c1c357cdcd9d4a04e976ce07b"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type &gt; </td></tr>
+<tr class="memitem:a39d0768c1c357cdcd9d4a04e976ce07b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/de8/structKTfwd_1_1mutation__remover.html#a5caf896f16718076ab87128f166044bb">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/de8/structKTfwd_1_1mutation__remover.html#a39d0768c1c357cdcd9d4a04e976ce07b">operator()</a> (const iterator_type &amp;i, const <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &amp;x1, const <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &amp;x2) const </td></tr>
+<tr class="separator:a39d0768c1c357cdcd9d4a04e976ce07b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Policy determining how mutations are removed from gametes after sampling Policy determining how mutations are removed from gametes after sampling. </p>
-<p>Typical usage is to pass to <a class="el" href="../../da/d8b/namespaceKTfwd.html#a18df6351fa3148914bbb844c36bc3e05">KTfwd::sample_diploid</a> as follows: </p>
+<p>Typical usage is to pass to <a class="el" href="../../da/d8b/namespaceKTfwd.html#ac0adafd1954c805ce66b5f366782a01d">KTfwd::sample_diploid</a> as follows: </p>
 <div class="fragment"><div class="line">std::bind( <a class="code" href="../../d4/de8/structKTfwd_1_1mutation__remover.html">KTfwd::mutation_remover</a>(), 0 ); <span class="comment">//If a mutation is at frequency zero after sampling, remove pointers to it from all gametes</span></div>
 <div class="line">std::bind( KWfwd::mutation_remover(), 0 ,twoN); <span class="comment">//If a mutation is at frequency zero or 2N after sampling, remove pointers to it from all gametes</span></div>
 </div><!-- fragment --> <dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#_a17">bneck_selection_ind.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#_a12">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#_a17">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#_a17">diploid_ind.cc</a>, <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#_a11">diploid_ind_2locus.cc</a>, and <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#_a19">migsel_ind.cc</a>.</dd>
@@ -136,7 +136,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ac2065d42a2f64d670d9f9bf95c9c55d9"></a>
+<a class="anchor" id="a280112a5d060aea2c56bad69e2c40a2d"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -154,7 +154,7 @@ template&lt;typename iterator_type &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &amp;&#160;</td>
           <td class="paramname"><em>x1</em>&#160;</td>
         </tr>
         <tr>
@@ -172,7 +172,7 @@ template&lt;typename iterator_type &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a58a2b84677e3fdd729105e25110967fd"></a>
+<a class="anchor" id="a39d0768c1c357cdcd9d4a04e976ce07b"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -190,13 +190,13 @@ template&lt;typename iterator_type &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &amp;&#160;</td>
           <td class="paramname"><em>x1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const unsigned &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &amp;&#160;</td>
           <td class="paramname"><em>x2</em>&#160;</td>
         </tr>
         <tr>

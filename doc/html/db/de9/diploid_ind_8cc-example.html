@@ -159,7 +159,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">  std::cerr &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">//Initiate random number generation system (via fwdpp/sugar/GSLrng_t.hpp)</span></div>
-<div class="line">  <a name="_a3"></a><a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">GSLrng</a> <a name="a4"></a><a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>(seed);</div>
+<div class="line">  <a name="_a3"></a><a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">GSLrng</a> <a name="a4"></a><a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>(seed);</div>
 <div class="line"></div>
 <div class="line">  <span class="keywordtype">unsigned</span> twoN = 2*N;</div>
 <div class="line"></div>
@@ -200,7 +200,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">      <span class="keywordflow">for</span>( generation = 0; generation &lt; ngens; ++generation )</div>
 <div class="line">        {</div>
 <div class="line">          <span class="comment">//Iterate the population through 1 generation</span></div>
-<div class="line">          wbar = <a name="a7"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a18df6351fa3148914bbb844c36bc3e05">KTfwd::sample_diploid</a>(r.<a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a12a336875d99337390d2231228707bc4">get</a>(),</div>
+<div class="line">          wbar = <a name="a7"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#ac0adafd1954c805ce66b5f366782a01d">KTfwd::sample_diploid</a>(r.<a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a12a336875d99337390d2231228707bc4">get</a>(),</div>
 <div class="line">                                       &amp;pop.<a name="a8"></a><a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a43776b2bc1e95f267d666298533a0462">gametes</a>,  <span class="comment">//non-const pointer to gametes</span></div>
 <div class="line">                                       &amp;pop.<a name="a9"></a><a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a5408e4bd524d8a69b018d2717c17bef1">diploids</a>, <span class="comment">//non-const pointer to diploids</span></div>
 <div class="line">                                       &amp;pop.<a name="a10"></a><a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a1ce679b909d5ccc09483452c37624846">mutations</a>, <span class="comment">//non-const pointer to mutations</span></div>
@@ -211,7 +211,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="comment">                                         sample_diploid in order to add mutations to gametes each generation.</span></div>
 <div class="line"><span class="comment">                                       */</span></div>
 <div class="line">                                       std::bind(<a name="_a11"></a><a class="code" href="../../df/d07/structKTfwd_1_1infsites.html">KTfwd::infsites</a>(),r.<a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a12a336875d99337390d2231228707bc4">get</a>(),&amp;pop.<a name="a12"></a><a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#af979a7d45f938ea5db5d2997c8dca798">mut_lookup</a>,generation,</div>
-<div class="line">                                                 mu,0.,[&amp;<a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>](){<span class="keywordflow">return</span> gsl_rng_uniform(r.<a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a12a336875d99337390d2231228707bc4">get</a>());},[](){<span class="keywordflow">return</span> 0.;},[](){<span class="keywordflow">return</span> 0.;}),</div>
+<div class="line">                                                 mu,0.,[&amp;<a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>](){<span class="keywordflow">return</span> gsl_rng_uniform(r.<a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a12a336875d99337390d2231228707bc4">get</a>());},[](){<span class="keywordflow">return</span> 0.;},[](){<span class="keywordflow">return</span> 0.;}),</div>
 <div class="line">                                       <span class="comment">//The recombination policy includes the uniform crossover rate</span></div>
 <div class="line">                                       std::bind(<a name="_a13"></a><a class="code" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a>(),std::placeholders::_1,std::placeholders::_2,</div>
 <div class="line">                                                 std::placeholders::_3,</div>
@@ -273,7 +273,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">        }</div>
 <div class="line">      Sequence::SimData sdata;</div>
 <div class="line"></div>
-<div class="line">      std::vector&lt;std::pair&lt;double,std::string&gt; &gt; mslike = <a name="a22"></a><a class="code" href="../../d7/de2/group__samplingPopsInd.html#ga2e9aee81e0abaddbb9c6e56f0d8f980f">KTfwd::ms_sample</a>(r.<a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a12a336875d99337390d2231228707bc4">get</a>(),&amp;pop.<a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a5408e4bd524d8a69b018d2717c17bef1">diploids</a>,samplesize1,<span class="keyword">true</span>);</div>
+<div class="line">      std::vector&lt;std::pair&lt;double,std::string&gt; &gt; mslike = <a name="a22"></a><a class="code" href="../../d7/de2/group__samplingPopsInd.html#gae620a0ed2d526906df8bf19ede0c38ff">KTfwd::ms_sample</a>(r.<a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html#a12a336875d99337390d2231228707bc4">get</a>(),&amp;pop.<a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a5408e4bd524d8a69b018d2717c17bef1">diploids</a>,samplesize1,<span class="keyword">true</span>);</div>
 <div class="line"></div>
 <div class="line">      <span class="keywordflow">if</span>(!mslike.empty())</div>
 <div class="line">        {</div>

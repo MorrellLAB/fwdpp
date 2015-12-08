@@ -164,9 +164,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <p>However, due to the pointer/iterator-based design of <b>fwdpp</b>, such copies require deep copies that reconstruct data structures. Such copies are complex, and can be handled manually via <a class="el" href="../../da/d8b/namespaceKTfwd.html#a373a7cb82b761c6d2a49059031fe69de" title="Write population to binary-format file for individual-based simulations. ">KTfwd::write_binary_pop</a> and <a class="el" href="../../da/d8b/namespaceKTfwd.html#a9e69664068c15f09429f9087144fec7f">KTfwd::write_binary_metapop</a> to <em>write</em> data to an internal buffer (such as std::ostringstream), and <a class="el" href="../../da/d8b/namespaceKTfwd.html#a770312024c111ecd9e065854e527cf86" title="Read the population back from a binary-format file for individual-based simulations. ">KTfwd::read_binary_pop</a> and <a class="el" href="../../da/d8b/namespaceKTfwd.html#aed5dfa35262dd186e117a0c98b7f77fb" title="Read the metapopulation back from a binary-format file for individual-based simulations Read the meta...">KTfwd::read_binary_metapop</a> to <em>read</em> populations from a buffer. These same functions can be used to implement copy constructors and assignment operators for classes representing populations. However, such objects require policies to write and read the simulation's mutation type (see <a class="el" href="../../d5/d9d/md_md_serialization.html">Tutorial 3: Data serialization</a> for how to write such policies for custom mutation types).</p>
 <p>Once such serialization policies are implemented, you may use the following types that <em>are</em> copy-constructible and assignable via operator=:</p>
 <ul>
-<li><a class="el" href="../../de/d6e/group__sugar.html#ga8c218b55653f2425a8701951ab16be1c" title="Single locus, single population with serialization. Can be copied, etc. See Tutorial 5: the &quot;sugar&quot; l...">KTfwd::singlepop_serialized</a></li>
-<li><a class="el" href="../../de/d6e/group__sugar.html#gaf7c6aaf76dded21d719d9197503ea8ae" title="Single locus metapopulation simulation with serialization. Can be copied, etc. See Tutorial 5: the &quot;s...">KTfwd::metapop_serialized</a></li>
-<li><a class="el" href="../../de/d6e/group__sugar.html#ga5ea69876641d770d4bf6ce3901307b52" title="Single population, multilocus simulation with serialization. Can be copied, etc. See Tutorial 5: the ...">KTfwd::multiloc_serialized</a></li>
+<li><a class="el" href="../../de/d6e/group__sugar.html#ga3c14a36024fca3e623f8f5a1af0e5ac1" title="Single locus, single population with serialization. Can be copied, etc. See Tutorial 5: the &quot;sugar&quot; l...">KTfwd::singlepop_serialized</a></li>
+<li><a class="el" href="../../de/d6e/group__sugar.html#ga4d358f12780f69e7492e31a195ccda1b" title="Single locus metapopulation simulation with serialization. Can be copied, etc. See Tutorial 5: the &quot;s...">KTfwd::metapop_serialized</a></li>
+<li><a class="el" href="../../de/d6e/group__sugar.html#ga00e304e282adf205b833cd0650be439f" title="Single population, multilocus simulation with serialization. Can be copied, etc. See Tutorial 5: the ...">KTfwd::multiloc_serialized</a></li>
 </ul>
 <p>Now, copy construction will work:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d8/d21/serialization_8hpp.html">fwdpp/sugar/serialization.hpp</a>&gt;</span></div>
@@ -183,14 +183,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">        <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">poptype</a> pop2(pop);</div>
 <div class="line">}</div>
 </div><!-- fragment --><h4>Details</h4>
-<p>These "poptypes" contain all of the types needed to make calls to <a class="el" href="../../da/d8b/namespaceKTfwd.html#a18df6351fa3148914bbb844c36bc3e05">KTfwd::sample_diploid</a>, etc.:</p>
+<p>These "poptypes" contain all of the types needed to make calls to <a class="el" href="../../da/d8b/namespaceKTfwd.html#ac0adafd1954c805ce66b5f366782a01d">KTfwd::sample_diploid</a>, etc.:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../df/df8/diploid_8hh.html">fwdpp/diploid.hh</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#define FWDPP_SUGAR_USE_BOOST</span></div>
 <div class="line"><span class="preprocessor"></span><span class="preprocessor">#include &lt;<a class="code" href="../../da/dd8/GSLrng__t_8hpp.html">fwdpp/sugar/GSLrng_t.hpp</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d5/dd9/singlepop_8hpp.html">fwdpp/sugar/singlepop.hpp</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../dc/d32/infsites_8hpp.html">fwdpp/sugar/infsites.hpp</a>&gt;</span></div>
 <div class="line"></div>
-<div class="line"><span class="keyword">using</span> <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">mutation_with_age</a> = <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">KTfwd::popgenmut</a>;</div>
+<div class="line"><span class="keyword">using</span> mutation_with_age = <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">KTfwd::popgenmut</a>;</div>
 <div class="line"><span class="keyword">using</span> <a class="code" href="../../de/d25/structKTfwd_1_1mutation__writer.html">mwriter</a> = <a class="code" href="../../de/d25/structKTfwd_1_1mutation__writer.html">KTfwd::mutation_writer</a>;</div>
 <div class="line"><span class="keyword">using</span> mreader = <a class="code" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">KTfwd::mutation_reader&lt;mutation_with_age&gt;</a>;</div>
 <div class="line"><span class="keyword">using</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">poptype</a> = <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::singlepop&lt;mutation_with_age&gt;</a>;</div>
@@ -205,14 +205,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">  std::function&lt;double(void)&gt; recmap = std::bind(gsl_rng_uniform,<a class="code" href="../../d6/d4f/sugar__sampling_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>);</div>
 <div class="line">  <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> generation= 0 ; generation &lt; 10 ; ++generation )</div>
 <div class="line">    {</div>
-<div class="line">      <span class="keywordtype">double</span> wbar = <a class="code" href="../../da/d8b/namespaceKTfwd.html#a18df6351fa3148914bbb844c36bc3e05">KTfwd::sample_diploid</a>(<a class="code" href="../../d6/d4f/sugar__sampling_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>,</div>
+<div class="line">      <span class="keywordtype">double</span> wbar = <a class="code" href="../../da/d8b/namespaceKTfwd.html#ac0adafd1954c805ce66b5f366782a01d">KTfwd::sample_diploid</a>(<a class="code" href="../../d6/d4f/sugar__sampling_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>,</div>
 <div class="line">                                          &amp;pop.gametes,</div>
 <div class="line">                                          &amp;pop.diploids,</div>
 <div class="line">                                          &amp;pop.mutations,</div>
 <div class="line">                                          1000,</div>
 <div class="line">                                          0.005,</div>
 <div class="line">                                          std::bind(<a class="code" href="../../df/d07/structKTfwd_1_1infsites.html">KTfwd::infsites</a>(),<a class="code" href="../../d6/d4f/sugar__sampling_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>,std::placeholders::_1,&amp;pop.mut_lookup,generation,</div>
-<div class="line">                                                    0.005,0.,[](gsl_rng * r){<span class="keywordflow">return</span> gsl_rng_uniform(r);},[](gsl_rng * <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>){<span class="keywordflow">return</span> 0.;},[](gsl_rng * <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>){<span class="keywordflow">return</span> 0.;}),</div>
+<div class="line">                                                    0.005,0.,[](gsl_rng * r){<span class="keywordflow">return</span> gsl_rng_uniform(r);},[](gsl_rng * <a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>){<span class="keywordflow">return</span> 0.;},[](gsl_rng * <a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>){<span class="keywordflow">return</span> 0.;}),</div>
 <div class="line">                                          std::bind(<a class="code" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a>(),std::placeholders::_1,std::placeholders::_2,</div>
 <div class="line">                                                    &amp;pop.gametes,</div>
 <div class="line">                                                    0., <span class="comment">//no rec</span></div>

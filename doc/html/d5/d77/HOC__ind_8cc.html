@@ -172,7 +172,7 @@ Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line"><span class="keyword">struct </span><a class="code" href="../../dc/d70/structHOChap.html">HOChap</a></div>
 <div class="line">{</div>
-<div class="line">  <span class="keyword">inline</span> <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">mtype</a> <a class="code" href="../../dc/d70/structHOChap.html#ac1c44803de49ab04a447b89bb51222ee">operator()</a>(<a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#ab6775aa6d7aea3269e3a3dfdba8857e2">poptype::gamete_t</a> &amp; g,gsl_rng * <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#ae32743465e9bcaf53d13bfd5cff8d23f">poptype::lookup_table_t</a> * lookup, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; sigmu)<span class="keyword"> const</span></div>
+<div class="line">  <span class="keyword">inline</span> <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">mtype</a> <a class="code" href="../../dc/d70/structHOChap.html#ac1c44803de49ab04a447b89bb51222ee">operator()</a>(<a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#ab6775aa6d7aea3269e3a3dfdba8857e2">poptype::gamete_t</a> &amp; g,gsl_rng * <a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#ae32743465e9bcaf53d13bfd5cff8d23f">poptype::lookup_table_t</a> * lookup, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; sigmu)<span class="keyword"> const</span></div>
 <div class="line"><span class="keyword">  </span>{</div>
 <div class="line">    <span class="keywordtype">double</span> pos = gsl_rng_uniform(r);</div>
 <div class="line">    <span class="keywordflow">while</span>( lookup-&gt;find(pos) != lookup-&gt;end() ) <span class="comment">//make sure it doesn&#39;t exist in the population</span></div>
@@ -235,7 +235,7 @@ Functions</h2></td></tr>
 <div class="line">  std::cerr &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">//Initiate random number generation system from sugar layer</span></div>
-<div class="line">  <a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">KTfwd::GSLrng_t&lt;KTfwd::GSL_RNG_MT19937&gt;</a> <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>(seed);</div>
+<div class="line">  <a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">KTfwd::GSLrng_t&lt;KTfwd::GSL_RNG_MT19937&gt;</a> <a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>(seed);</div>
 <div class="line"></div>
 <div class="line">  <span class="keywordtype">unsigned</span> twoN = 2*N;</div>
 <div class="line"></div>
@@ -250,7 +250,7 @@ Functions</h2></td></tr>
 <div class="line">      <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> generation = 0; generation &lt; ngens; ++generation )</div>
 <div class="line">        {</div>
 <div class="line">          <span class="comment">//Iterate the population through 1 generation</span></div>
-<div class="line">          <span class="keywordtype">double</span> wbar = <a class="code" href="../../da/d8b/namespaceKTfwd.html#a18df6351fa3148914bbb844c36bc3e05">KTfwd::sample_diploid</a>(r.get(),</div>
+<div class="line">          <span class="keywordtype">double</span> wbar = <a class="code" href="../../da/d8b/namespaceKTfwd.html#ac0adafd1954c805ce66b5f366782a01d">KTfwd::sample_diploid</a>(r.get(),</div>
 <div class="line">                                              &amp;pop.gametes,  <span class="comment">//non-const pointer to gametes</span></div>
 <div class="line">                                              &amp;pop.diploids, <span class="comment">//non-const pointer to diploids</span></div>
 <div class="line">                                              &amp;pop.mutations, <span class="comment">//non-const pointer to mutations</span></div>

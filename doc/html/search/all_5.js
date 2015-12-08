@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['factor',['factor',['../d2/d4d/structKTfwd_1_1extensions_1_1beta.html#a0fba1a0a2ea0324185081b905db2a8ab',1,'KTfwd::extensions::beta']]],
+  ['factor',['factor',['../d2/d4d/structKTfwd_1_1extensions_1_1beta.html#a3dfcfce4d84c0ea29d9bef1f7c3a7fde',1,'KTfwd::extensions::beta']]],
   ['faux_5fmutate',['faux_mutate',['../d7/daa/policyTests_8cc.html#aa85bd948938e3008db54408dc7612c2a',1,'policyTests.cc']]],
   ['faux_5fmutate2',['faux_mutate2',['../d7/daa/policyTests_8cc.html#a292f27d87883cb5c4b354c574eff143f',1,'policyTests.cc']]],
   ['faux_5fmutate_5fmechanics',['faux_mutate_mechanics',['../d7/daa/policyTests_8cc.html#a688fee0039fb6561c12502e1344f1d16',1,'policyTests.cc']]],
   ['first',['first',['../dc/dfb/structdiploid__t.html#a1d93eebfe52e4c4fcacace580b6837a2',1,'diploid_t']]],
-  ['first_5ftype',['first_type',['../dc/dfb/structdiploid__t.html#a3c41aff6f66667c8f51756799705efe5',1,'diploid_t']]],
+  ['first_5ftype',['first_type',['../dc/dfb/structdiploid__t.html#ad1413659d9275078297ccee624007fd6',1,'diploid_t::first_type()'],['../dc/dfb/structdiploid__t.html#a6f0484adb0da2ecffabba03497ff6e56',1,'diploid_t::first_type()']]],
   ['fitness_5fmodels_2ehpp',['fitness_models.hpp',['../db/dd7/fitness__models_8hpp.html',1,'']]],
   ['fitnesses',['fitnesses',['../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html#a3ad2ffb65a2d452126a126bef01110ce',1,'KTfwd::experimental::standardWFrules']]],
   ['fixation_5ftimes',['fixation_times',['../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#acf7702e9d263a9c91291fc6d87a5ec0d',1,'KTfwd::sugar::singlepop::fixation_times()'],['../d9/dee/classKTfwd_1_1sugar_1_1singlepop__serialized.html#ab6940d13356e34780a151836b418f5fd',1,'KTfwd::sugar::singlepop_serialized::fixation_times()'],['../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#ae021de7681ecb4837d91999f5a5949a0',1,'KTfwd::sugar::metapop::fixation_times()'],['../d2/d43/classKTfwd_1_1sugar_1_1metapop__serialized.html#a5823eb91bce7929d28e10ffa609215e7',1,'KTfwd::sugar::metapop_serialized::fixation_times()'],['../d3/d11/structKTfwd_1_1sugar_1_1multiloc.html#a245ec2b069b2990168ca2e54103372b7',1,'KTfwd::sugar::multiloc::fixation_times()'],['../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#a89370748f4e276a9f2aff32a88212248',1,'KTfwd::sugar::multiloc_serialized::fixation_times()']]],

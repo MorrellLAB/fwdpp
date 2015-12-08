@@ -15,6 +15,7 @@ var searchData=
   ['sugar1_2ecc',['sugar1.cc',['../d0/db9/sugar1_8cc.html',1,'']]],
   ['sugar1_5fcustom_2ecc',['sugar1_custom.cc',['../d8/dd2/sugar1__custom_8cc.html',1,'']]],
   ['sugar2_2ecc',['sugar2.cc',['../da/d50/sugar2_8cc.html',1,'']]],
+  ['sugar2_5fcustom_2ecc',['sugar2_custom.cc',['../d8/dcd/sugar2__custom_8cc.html',1,'']]],
   ['sugar3_2ecc',['sugar3.cc',['../de/d28/sugar3_8cc.html',1,'']]],
   ['sugar_5fsampling_2ecc',['sugar_sampling.cc',['../d6/d4f/sugar__sampling_8cc.html',1,'']]]
 ];

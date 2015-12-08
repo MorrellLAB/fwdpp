@@ -293,7 +293,7 @@ Functions</h2></td></tr>
 <div class="line">  <span class="keywordtype">unsigned</span> generation = 0;</div>
 <div class="line">  <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0 ; i &lt; ngens ; ++i,++generation )</div>
 <div class="line">    {</div>
-<div class="line">      <span class="keywordtype">double</span> wbar = <a class="code" href="../../da/d8b/namespaceKTfwd.html#a18df6351fa3148914bbb844c36bc3e05">KTfwd::sample_diploid</a>(r,</div>
+<div class="line">      <span class="keywordtype">double</span> wbar = <a class="code" href="../../da/d8b/namespaceKTfwd.html#ac0adafd1954c805ce66b5f366782a01d">KTfwd::sample_diploid</a>(r,</div>
 <div class="line">                                          &amp;pop.gametes,</div>
 <div class="line">                                          &amp;pop.diploids[0],</div>
 <div class="line">                                          &amp;pop.mutations,</div>
@@ -305,7 +305,7 @@ Functions</h2></td></tr>
 <div class="line">                                                    std::ref(pop.neutral),std::ref(pop.selected),</div>
 <div class="line">                                                    &amp;pop.gametes,</div>
 <div class="line">                                                    littler,</div>
-<div class="line">                                                    <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,</div>
+<div class="line">                                                    <a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,</div>
 <div class="line">                                                    recmap),</div>
 <div class="line">                                          std::bind(KTfwd::insert_at_end&lt;mtype,mlist&gt;,std::placeholders::_1,std::placeholders::_2),</div>
 <div class="line">                                          std::bind(KTfwd::insert_at_end&lt;gtype,glist&gt;,std::placeholders::_1,std::placeholders::_2),</div>
@@ -327,7 +327,7 @@ Functions</h2></td></tr>
 <div class="line">  <span class="keywordtype">double</span> fs[2]={f1,f2};</div>
 <div class="line">  <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0 ; i &lt; ngens2 ; ++i, ++generation )</div>
 <div class="line">    {</div>
-<div class="line">      std::vector&lt;double&gt; wbars = <a class="code" href="../../da/d8b/namespaceKTfwd.html#a18df6351fa3148914bbb844c36bc3e05">sample_diploid</a>(r,</div>
+<div class="line">      std::vector&lt;double&gt; wbars = <a class="code" href="../../da/d8b/namespaceKTfwd.html#ac0adafd1954c805ce66b5f366782a01d">sample_diploid</a>(r,</div>
 <div class="line">                                                 &amp;pop.gametes,</div>
 <div class="line">                                                 &amp;pop.diploids,</div>
 <div class="line">                                                 &amp;pop.mutations,</div>
@@ -339,7 +339,7 @@ Functions</h2></td></tr>
 <div class="line">                                                           std::ref(pop.neutral),std::ref(pop.selected),</div>
 <div class="line">                                                           &amp;pop.gametes,</div>
 <div class="line">                                                           littler,</div>
-<div class="line">                                                           <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,</div>
+<div class="line">                                                           <a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,</div>
 <div class="line">                                                           recmap),</div>
 <div class="line">                                                 std::bind(insert_at_end&lt;mtype,mlist&gt;,std::placeholders::_1,std::placeholders::_2),</div>
 <div class="line">                                                 std::bind(insert_at_end&lt;gtype,glist&gt;,std::placeholders::_1,std::placeholders::_2),</div>
@@ -352,8 +352,8 @@ Functions</h2></td></tr>
 <div class="line">      <a class="code" href="../../da/d8b/namespaceKTfwd.html#a84e666ea27d38bdfc539ffd23653eaa9">remove_fixed_lost</a>(&amp;pop.mutations,&amp;pop.fixations,&amp;pop.fixation_times,&amp;pop.mut_lookup,generation,4*N);</div>
 <div class="line">    }</div>
 <div class="line">  std::pair&lt; std::vector&lt; std::pair&lt;double,std::string&gt; &gt;,</div>
-<div class="line">             std::vector&lt; std::pair&lt;double,std::string&gt; &gt; &gt; sample1 = <a class="code" href="../../d7/de2/group__samplingPopsInd.html#ga235b4507a6f09b26fa9b33ef12abf59d">ms_sample_separate</a>(r,&amp;pop.diploids[0],n),</div>
-<div class="line">    sample2 = <a class="code" href="../../d7/de2/group__samplingPopsInd.html#ga235b4507a6f09b26fa9b33ef12abf59d">ms_sample_separate</a>(r,&amp;pop.diploids[1],n);</div>
+<div class="line">             std::vector&lt; std::pair&lt;double,std::string&gt; &gt; &gt; sample1 = <a class="code" href="../../d7/de2/group__samplingPopsInd.html#gaf2db9e89d4488cb3952a93129238ed94">ms_sample_separate</a>(r,&amp;pop.diploids[0],n),</div>
+<div class="line">    sample2 = <a class="code" href="../../d7/de2/group__samplingPopsInd.html#gaf2db9e89d4488cb3952a93129238ed94">ms_sample_separate</a>(r,&amp;pop.diploids[1],n);</div>
 <div class="line"></div>
 <div class="line">  <span class="keyword">auto</span> neutral = <a class="code" href="../../df/dfa/migsel__ind_8cc.html#ab7298240e8bb37b1cd8a9846c5421545">merge</a>(sample1.first,sample2.first,n),</div>
 <div class="line">    selected = <a class="code" href="../../df/dfa/migsel__ind_8cc.html#ab7298240e8bb37b1cd8a9846c5421545">merge</a>(sample1.second,sample2.second,n);</div>

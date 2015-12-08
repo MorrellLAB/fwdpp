@@ -82,9 +82,17 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="title">FWDPP RELEASE NOTES </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2>0.4.2</h2>
+<div class="textblock"><h2>0.4.3</h2>
 <ul>
-<li>Fixed error in definition of <a class="el" href="../../de/d6e/group__sugar.html#gaf7c6aaf76dded21d719d9197503ea8ae" title="Single locus metapopulation simulation with serialization. Can be copied, etc. See Tutorial 5: the &quot;s...">KTfwd::metapop_serialized</a> and <a class="el" href="../../de/d6e/group__sugar.html#ga5ea69876641d770d4bf6ce3901307b52" title="Single population, multilocus simulation with serialization. Can be copied, etc. See Tutorial 5: the ...">KTfwd::multiloc_serialized</a>.</li>
+<li>Fix for issue #29</li>
+<li>Keyword 'mutable' replaced with 'const' throughout library</li>
+<li><a class="el" href="../../da/d13/structKTfwd_1_1extensions_1_1gaussian.html">KTfwd::extensions::gaussian</a> now uses ziggurat method</li>
+<li>Types declared in <a class="el" href="../../d3/da7/callbacks_8hpp.html">fwdpp/extensions/callbacks.hpp</a> now have const member data. A unit test was added as a check on the API of this file.</li>
+<li>New mutation types added: <a class="el" href="../../da/dde/structKTfwd_1_1generalmut.html" title="Mutation type allowing arbitray number of &quot;s,h&quot; pairs representing effect sizes,dominance.This type represents a mutation with a number of &#39;s&#39; and &#39;h&#39; parameters that are fixed at compile time. ">KTfwd::generalmut</a> and <a class="el" href="../../d9/d9e/structKTfwd_1_1generalmut__vec.html" title="Mutation type allowing arbitray number of &quot;s,h&quot; pairs representing effect sizes,dominance.This type represents a mutation with a number of &#39;s&#39; and &#39;h&#39; parameters that are determined at run time. ">KTfwd::generalmut_vec</a>, in <a class="el" href="../../dd/d4e/generalmut_8hpp.html">fwdpp/sugar/generalmut.hpp</a>. A new unit test file goes along with it.</li>
+</ul>
+<h2>0.4.2</h2>
+<ul>
+<li>Fixed error in definition of <a class="el" href="../../de/d6e/group__sugar.html#ga4d358f12780f69e7492e31a195ccda1b" title="Single locus metapopulation simulation with serialization. Can be copied, etc. See Tutorial 5: the &quot;s...">KTfwd::metapop_serialized</a> and <a class="el" href="../../de/d6e/group__sugar.html#ga00e304e282adf205b833cd0650be439f" title="Single population, multilocus simulation with serialization. Can be copied, etc. See Tutorial 5: the ...">KTfwd::multiloc_serialized</a>.</li>
 </ul>
 <h2>0.4.1</h2>
 <ul>
@@ -113,7 +121,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <ul>
 <li>An declaration of <a class="el" href="../../da/d8b/namespaceKTfwd.html#a83d780c0a1e1421f3a17d79ec8c23ff0" title="recombination for individual-based forward simulations ">KTfwd::recombine_gametes</a> was fixed to match the implementation</li>
 <li>Minor re-organization of recombination code</li>
-<li>The details of <a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga235b4507a6f09b26fa9b33ef12abf59d" title="Sampling from a population in an individual-based simulation. Selected and neutral mutations returned...">KTfwd::ms_sample_separate</a> were moved into KTfwd::internal. This move allows access to functions that sample a specific set of diploids, which is handy in a lot of cases.</li>
+<li>The details of <a class="el" href="../../d7/de2/group__samplingPopsInd.html#gaf2db9e89d4488cb3952a93129238ed94" title="Sampling from a population in an individual-based simulation. Selected and neutral mutations returned...">KTfwd::ms_sample_separate</a> were moved into KTfwd::internal. This move allows access to functions that sample a specific set of diploids, which is handy in a lot of cases.</li>
 </ul>
 <h2>0.3.6</h2>
 <ul>
@@ -183,7 +191,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <h2>0.3.1</h2>
 <p>This release has many significant changes. With the exception of the removal of KTfwd::tags::gamete_dependent, which was released in 0.3.0, and the change in the implementation of KTfwd::infsites::operator(), the library remains source-compatible with existing simulations.</p>
 <ul>
-<li>Multilocus, single-population version of <a class="el" href="../../da/d8b/namespaceKTfwd.html#a18df6351fa3148914bbb844c36bc3e05">KTfwd::sample_diploid</a> now allows for inbreeding coefficient of 0 by default.</li>
+<li>Multilocus, single-population version of <a class="el" href="../../da/d8b/namespaceKTfwd.html#ac0adafd1954c805ce66b5f366782a01d">KTfwd::sample_diploid</a> now allows for inbreeding coefficient of 0 by default.</li>
 <li>Warnings from <a class="el" href="../../df/d07/structKTfwd_1_1infsites.html" title="Generic function object implementing the infinitely-many sites mutation model for &quot;standard&quot; populati...">KTfwd::infsites</a> suppressed w/compiler trick</li>
 <li>Extraneous gsl_rng free removed from <a class="el" href="../../d9/de8/diploid__ind_8cc.html">diploid_ind.cc</a></li>
 <li>Issue #12 in <a class="el" href="../../df/d10/common__ind_8hpp.html">examples/common_ind.hpp</a> fixed</li>
@@ -198,7 +206,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <li>experimental_examples/sex_limited_ind.cc is an example of using experimental library features to simulate separate sexes, sex-specific fitness effects, etc.</li>
 <li>Sugar typedefs in <a class="el" href="../../d5/dd9/singlepop_8hpp.html">fwdpp/sugar/singlepop.hpp</a>, <a class="el" href="../../df/dae/metapop_8hpp.html">fwdpp/sugar/metapop.hpp</a>, and in <a class="el" href="../../d6/d10/multiloc_8hpp.html">fwdpp/sugar/multiloc.hpp</a> are now compatible with custom diploid types. The template alias now defaults to a pair of iterators pointing to gametes, which you may over-ride with your own type.</li>
 <li>The devtools setup script had some bugs fixed. (<a class="el" href="../../d9/d5d/md_md_devtools.html">Tutorial 4: Starting projects based on fwdpp</a>)</li>
-<li><a class="el" href="../../da/d8b/namespaceKTfwd.html#a18df6351fa3148914bbb844c36bc3e05">KTfwd::sample_diploid</a> has been modified to make fewer calls to random number generators for the common use case of no selfing. This change results in N*generations fewer RNG calls, and can speed simulations by as much as ten percent. A side-effect is that results will differ from simulations compiled against earlier versions of the library. A preprocessor macro/symbol (FWDPP_COMPAT_0_3_0) has been introduced. Compilling programs with -DFWDPP_COMPAT_0_3_0 will result in the older/slower algorithm being used.</li>
+<li><a class="el" href="../../da/d8b/namespaceKTfwd.html#ac0adafd1954c805ce66b5f366782a01d">KTfwd::sample_diploid</a> has been modified to make fewer calls to random number generators for the common use case of no selfing. This change results in N*generations fewer RNG calls, and can speed simulations by as much as ten percent. A side-effect is that results will differ from simulations compiled against earlier versions of the library. A preprocessor macro/symbol (FWDPP_COMPAT_0_3_0) has been introduced. Compilling programs with -DFWDPP_COMPAT_0_3_0 will result in the older/slower algorithm being used.</li>
 <li>A new document describing preprocessor symbols and their effect on fwdpp has been added (<a class="el" href="../../d1/d6b/md_md_preproc.html">Preprocessor symbols</a>)</li>
 <li>All occurrences of NULL in the library have been replaced with the C++11 <a href="http://www.cplusplus.com/reference/cstddef/nullptr_t/">nullptr</a>. The latter is safer in templates because the former can evaluate to 0 in some cases.</li>
 <li>All gamete-based code has been removed from the library. If you need it for any reason, you're stuck with with 0.3.0 and earlier.</li>

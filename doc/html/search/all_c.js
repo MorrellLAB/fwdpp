@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['n',['N',['../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a4bfbefd1cf039cd3eedd8981658c83b0',1,'KTfwd::sugar::singlepop::N()'],['../d9/dee/classKTfwd_1_1sugar_1_1singlepop__serialized.html#abe3c3d53ef522f0ea7841b6c4774a260',1,'KTfwd::sugar::singlepop_serialized::N()'],['../d3/d11/structKTfwd_1_1sugar_1_1multiloc.html#a9634a9ef998b5be7351d992727d5ec27',1,'KTfwd::sugar::multiloc::N()'],['../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#aa477043f076ecc5dd35065e88153efd8',1,'KTfwd::sugar::multiloc_serialized::N()'],['../d1/da4/structKTfwd_1_1mutation__base.html#a9df75224a5f00b97dc09e68b475a517a',1,'KTfwd::mutation_base::n()'],['../d6/d90/structKTfwd_1_1gamete__base.html#ac7a637e6abbd65aaabdfc04a370bf375',1,'KTfwd::gamete_base::n()']]],
+  ['n',['n',['../d1/da4/structKTfwd_1_1mutation__base.html#ae45fdbe052a0d4d8ad498e8dca91d9b2',1,'KTfwd::mutation_base::n()'],['../d6/d90/structKTfwd_1_1gamete__base.html#a967f6d0b80027291dc1cfe86f32de9c5',1,'KTfwd::gamete_base::n()'],['../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#ab2d7b0fa12ff980e4dc050bf66698dd8',1,'KTfwd::sugar::singlepop::N()'],['../d9/dee/classKTfwd_1_1sugar_1_1singlepop__serialized.html#a51b3fa591d3f6e490181c5fdbe04139d',1,'KTfwd::sugar::singlepop_serialized::N()'],['../d3/d11/structKTfwd_1_1sugar_1_1multiloc.html#a8e8762501426f2ec4b42042e18a7e344',1,'KTfwd::sugar::multiloc::N()'],['../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#ab17217499d1ec259b2ec4a8d25a91a65',1,'KTfwd::sugar::multiloc_serialized::N()']]],
   ['n_5fis_5fzero',['n_is_zero',['../d4/dc3/structKTfwd_1_1n__is__zero.html',1,'KTfwd']]],
   ['nbeg',['nbeg',['../d8/d8d/structKTfwd_1_1extensions_1_1discrete__mut__model.html#aad340d4ff21f9cde1589bf350329c61b',1,'KTfwd::extensions::discrete_mut_model']]],
   ['nend',['nend',['../d8/d8d/structKTfwd_1_1extensions_1_1discrete__mut__model.html#a801fc432d8b8f3d034b09cc545ebb494',1,'KTfwd::extensions::discrete_mut_model']]],
@@ -8,5 +8,5 @@ var searchData=
   ['nlookup',['nlookup',['../d8/d8d/structKTfwd_1_1extensions_1_1discrete__mut__model.html#ae0af4b84169242494185601979039b58',1,'KTfwd::extensions::discrete_mut_model']]],
   ['no_5fselection',['no_selection',['../dc/d0b/structKTfwd_1_1no__selection.html',1,'KTfwd']]],
   ['no_5fselection_5fmulti',['no_selection_multi',['../d8/df2/structno__selection__multi.html',1,'']]],
-  ['ns',['Ns',['../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#ad6e1280f20d20b6d93b62c386dfae7d9',1,'KTfwd::sugar::metapop::Ns()'],['../d2/d43/classKTfwd_1_1sugar_1_1metapop__serialized.html#a7d02f4eaf333f6cd5d7089e78de0dc91',1,'KTfwd::sugar::metapop_serialized::Ns()']]]
+  ['ns',['Ns',['../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#ad2584032f4c3cb7cb8a2546c1e93ef28',1,'KTfwd::sugar::metapop::Ns()'],['../d2/d43/classKTfwd_1_1sugar_1_1metapop__serialized.html#a22e313cf39c900e6d15a82d0e4ad733c',1,'KTfwd::sugar::metapop_serialized::Ns()']]]
 ];

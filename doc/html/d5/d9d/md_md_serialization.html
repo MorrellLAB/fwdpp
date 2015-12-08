@@ -121,14 +121,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <li>Define a mutation read function, taking an input stream type as an object</li>
 </ul>
 <p>Let's look at an example. For this definition of a mutation type:</p>
-<div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">mutation_with_age</a> : <span class="keyword">public</span> <a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html">KTfwd::mutation_base</a></div>
+<div class="fragment"><div class="line"><span class="keyword">struct </span>mutation_with_age : <span class="keyword">public</span> <a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html">KTfwd::mutation_base</a></div>
 <div class="line">{</div>
-<div class="line">  <span class="keywordtype">double</span> <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html#ae055d7d981b19117c04def0dcc57e310">s</a>,<a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html#a60a395a305fd9d0a1f3da6b7b223bc10">h</a>;</div>
-<div class="line">  <span class="keywordtype">unsigned</span> <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html#af42aac73b0fef6d2b1990b110bc3d4c9">g</a>; <span class="comment">//generation in which mutation arose</span></div>
-<div class="line">  <a class="code" href="../../d0/db9/sugar1_8cc.html#a26022ef252703a27f414647b9ad246a8">mutation_with_age</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; __o,<span class="keyword">const</span> <span class="keywordtype">double</span> &amp; position, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; count, </div>
+<div class="line">  <span class="keywordtype">double</span> s,h;</div>
+<div class="line">  <span class="keywordtype">unsigned</span> g; <span class="comment">//generation in which mutation arose</span></div>
+<div class="line">  mutation_with_age(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; __o,<span class="keyword">const</span> <span class="keywordtype">double</span> &amp; position, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; count, </div>
 <div class="line">                    <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; __s, <span class="keyword">const</span> <span class="keywordtype">double</span> __h,</div>
 <div class="line">                    <span class="keyword">const</span> <span class="keywordtype">bool</span> &amp; isneutral = <span class="keyword">true</span>)</div>
-<div class="line">    : KTfwd::<a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html#a64bdb5e0758a9ab0b759b780d35ce50f">mutation_base</a>(position,count,isneutral),s(__s),h(__h),g(__o)</div>
+<div class="line">    : KTfwd::mutation_base(position,count,isneutral),s(__s),h(__h),g(__o)</div>
 <div class="line">  {     </div>
 <div class="line">  }</div>
 <div class="line">};</div>
@@ -137,19 +137,19 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="keyword">struct </span><a class="code" href="../../de/d25/structKTfwd_1_1mutation__writer.html">mwriter</a></div>
 <div class="line">{</div>
 <div class="line">  <span class="keyword">typedef</span> <span class="keywordtype">void</span> <a class="code" href="../../de/d25/structKTfwd_1_1mutation__writer.html#a0562d10bc194da5b0fa595da8784a9b6">result_type</a>;</div>
-<div class="line">  <a class="code" href="../../de/d25/structKTfwd_1_1mutation__writer.html#a0562d10bc194da5b0fa595da8784a9b6">result_type</a> <a class="code" href="../../de/d25/structKTfwd_1_1mutation__writer.html#af7bb26e19759adec8181abf1054bbe76">operator()</a>( <span class="keyword">const</span> <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">mutation_with_age</a> &amp; m, std::ostream &amp; buffer )<span class="keyword"> const</span></div>
+<div class="line">  <a class="code" href="../../de/d25/structKTfwd_1_1mutation__writer.html#a0562d10bc194da5b0fa595da8784a9b6">result_type</a> <a class="code" href="../../de/d25/structKTfwd_1_1mutation__writer.html#af7bb26e19759adec8181abf1054bbe76">operator()</a>( <span class="keyword">const</span> mutation_with_age &amp; m, std::ostream &amp; buffer )<span class="keyword"> const</span></div>
 <div class="line"><span class="keyword">  </span>{</div>
-<div class="line">    <span class="keywordtype">unsigned</span> u = m.<a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html#a9df75224a5f00b97dc09e68b475a517a">n</a>;</div>
+<div class="line">    <span class="keywordtype">unsigned</span> u = m.n;</div>
 <div class="line">    buffer.write( reinterpret_cast&lt; char * &gt;(&amp;u),<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span>) );</div>
-<div class="line">    u = m.<a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html#af42aac73b0fef6d2b1990b110bc3d4c9">g</a>;</div>
+<div class="line">    u = m.g;</div>
 <div class="line">    buffer.write( reinterpret_cast&lt; char * &gt;(&amp;u),<span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span>) );</div>
-<div class="line">    <span class="keywordtype">bool</span> b = m.<a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html#acfb3b4c94516cbbc5c28a12e1ad575b3">neutral</a>;</div>
+<div class="line">    <span class="keywordtype">bool</span> b = m.neutral;</div>
 <div class="line">    buffer.write( reinterpret_cast&lt; char * &gt;(&amp;b),<span class="keyword">sizeof</span>(<span class="keywordtype">bool</span>) );</div>
-<div class="line">    <span class="keywordtype">double</span> d = m.<a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html#aed95181f38c8e17b19a7a9da4b373b03">pos</a>;</div>
+<div class="line">    <span class="keywordtype">double</span> d = m.pos;</div>
 <div class="line">    buffer.write( reinterpret_cast&lt; char * &gt;(&amp;d),<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>) );</div>
-<div class="line">    d = m.<a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html#ae055d7d981b19117c04def0dcc57e310">s</a>;</div>
+<div class="line">    d = m.s;</div>
 <div class="line">    buffer.write( reinterpret_cast&lt; char * &gt;(&amp;d),<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>) );</div>
-<div class="line">    d = m.<a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html#a60a395a305fd9d0a1f3da6b7b223bc10">h</a>;</div>
+<div class="line">    d = m.h;</div>
 <div class="line">    buffer.write( reinterpret_cast&lt; char * &gt;(&amp;d),<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>) );</div>
 <div class="line">  }</div>
 <div class="line">};</div>
@@ -157,7 +157,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="fragment"><div class="line"><span class="comment">//function object to read mutation data in binary format</span></div>
 <div class="line"><span class="keyword">struct </span><a class="code" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">mreader</a></div>
 <div class="line">{</div>
-<div class="line">  <span class="keyword">typedef</span> <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">mutation_with_age</a> <a class="code" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html#a445d1d00f8ccab821827842bf7f78df0">result_type</a>;</div>
+<div class="line">  <span class="keyword">typedef</span> mutation_with_age <a class="code" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html#a445d1d00f8ccab821827842bf7f78df0">result_type</a>;</div>
 <div class="line">  <a class="code" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html#a445d1d00f8ccab821827842bf7f78df0">result_type</a> <a class="code" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html#af89b081c7ea0de9bc13c7ce91a559d51">operator()</a>( std::istream &amp; in )<span class="keyword"> const</span></div>
 <div class="line"><span class="keyword">  </span>{</div>
 <div class="line">    <span class="keywordtype">unsigned</span> n;</div>

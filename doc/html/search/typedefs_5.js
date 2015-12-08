@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['lookup_5ftable_5ft',['lookup_table_t',['../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#ae32743465e9bcaf53d13bfd5cff8d23f',1,'KTfwd::sugar::singlepop::lookup_table_t()'],['../d9/dee/classKTfwd_1_1sugar_1_1singlepop__serialized.html#ad303cc4e9bbf017fd539a8f19c3fde2f',1,'KTfwd::sugar::singlepop_serialized::lookup_table_t()'],['../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#aa02dde75e109b246d4e6ee13130469d8',1,'KTfwd::sugar::metapop::lookup_table_t()'],['../d2/d43/classKTfwd_1_1sugar_1_1metapop__serialized.html#ac37c702aa441f676c30514292a6c2cf3',1,'KTfwd::sugar::metapop_serialized::lookup_table_t()'],['../d3/d11/structKTfwd_1_1sugar_1_1multiloc.html#acb2ef04ef0324e4c586ef236710d5ae7',1,'KTfwd::sugar::multiloc::lookup_table_t()'],['../d0/dc0/structKTfwd_1_1sugar_1_1multiloc__serialized.html#ade01ffc3b744c3ec217fe1c7978ab15f',1,'KTfwd::sugar::multiloc_serialized::lookup_table_t()'],['../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a76a4f5d5f7cf20df1ea123b50a41ebec',1,'KTfwd::fwdpp_internal::gamete_lookup::lookup_table_t()']]]
+  ['inner_5ft',['inner_t',['../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a1de831d1f5d6fd5b0fa5ca0b809e6a2d',1,'KTfwd::fwdpp_internal::gamete_lookup']]],
+  ['is_5fbinary_5ft',['is_binary_t',['../d0/d30/namespaceKTfwd_1_1traits.html#af4c76da1580e9da1bd1babc1415b6ffb',1,'KTfwd::traits']]],
+  ['is_5fcustom_5fdiploid_5ft',['is_custom_diploid_t',['../d0/d30/namespaceKTfwd_1_1traits.html#a932d87fc5a9068585039a7a5e8bfc859',1,'KTfwd::traits']]],
+  ['is_5fnullary_5ft',['is_nullary_t',['../d0/d30/namespaceKTfwd_1_1traits.html#ad5ad6786ff26ea413b8d3585fc3452d7',1,'KTfwd::traits']]],
+  ['is_5funary_5ft',['is_unary_t',['../d0/d30/namespaceKTfwd_1_1traits.html#acbece33d510a541cb82385580fd0b27f',1,'KTfwd::traits']]]
 ];

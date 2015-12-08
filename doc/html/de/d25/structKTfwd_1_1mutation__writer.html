@@ -133,6 +133,30 @@ Public Member Functions</h2></td></tr>
 ::value, <a class="el" href="../../de/d25/structKTfwd_1_1mutation__writer.html#a0562d10bc194da5b0fa595da8784a9b6">result_type</a> &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d25/structKTfwd_1_1mutation__writer.html#a43babb6eb788e193f60f788584848db8">operator()</a> (const <a class="el" href="../../dc/dd4/ms__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a> &amp;m, gzFile gzout) const </td></tr>
 <tr class="memdesc:a43babb6eb788e193f60f788584848db8"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload for <a class="el" href="../../d1/d7f/structKTfwd_1_1mutation.html" title="The simplest mutation type, adding just a selection coefficient and dominance to the interface...">KTfwd::mutation</a> and zlib/gzFile  <a href="#a43babb6eb788e193f60f788584848db8">More...</a><br/></td></tr>
 <tr class="separator:a43babb6eb788e193f60f788584848db8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7370cd4866b82e9ad069fb4b034b46b2"><td class="memTemplParams" colspan="2">template&lt;typename mutation_t , std::size_t N = std::tuple_size&lt;typename mutation_t::array_t&gt;()&gt; </td></tr>
+<tr class="memitem:a7370cd4866b82e9ad069fb4b034b46b2"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_same<br class="typebreak"/>
+&lt; <a class="el" href="../../dc/dd4/ms__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a>, <a class="el" href="../../da/dde/structKTfwd_1_1generalmut.html">generalmut</a>&lt; N &gt;<br class="typebreak"/>
+ &gt;::value, <a class="el" href="../../de/d25/structKTfwd_1_1mutation__writer.html#a0562d10bc194da5b0fa595da8784a9b6">result_type</a> &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d25/structKTfwd_1_1mutation__writer.html#a7370cd4866b82e9ad069fb4b034b46b2">operator()</a> (const <a class="el" href="../../dc/dd4/ms__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a> &amp;t, std::ostream &amp;buffer)</td></tr>
+<tr class="memdesc:a7370cd4866b82e9ad069fb4b034b46b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload for <a class="el" href="../../da/dde/structKTfwd_1_1generalmut.html" title="Mutation type allowing arbitray number of &quot;s,h&quot; pairs representing effect sizes,dominance.This type represents a mutation with a number of &#39;s&#39; and &#39;h&#39; parameters that are fixed at compile time. ">KTfwd::generalmut</a> and ostream  <a href="#a7370cd4866b82e9ad069fb4b034b46b2">More...</a><br/></td></tr>
+<tr class="separator:a7370cd4866b82e9ad069fb4b034b46b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a894ff1f77f078c7dccc7630c79ff193d"><td class="memTemplParams" colspan="2">template&lt;typename mutation_t &gt; </td></tr>
+<tr class="memitem:a894ff1f77f078c7dccc7630c79ff193d"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_same<br class="typebreak"/>
+&lt; <a class="el" href="../../dc/dd4/ms__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a>, <a class="el" href="../../d9/d9e/structKTfwd_1_1generalmut__vec.html">generalmut_vec</a> &gt;<br class="typebreak"/>
+::value, <a class="el" href="../../de/d25/structKTfwd_1_1mutation__writer.html#a0562d10bc194da5b0fa595da8784a9b6">result_type</a> &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d25/structKTfwd_1_1mutation__writer.html#a894ff1f77f078c7dccc7630c79ff193d">operator()</a> (const <a class="el" href="../../dc/dd4/ms__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a> &amp;t, std::ostream &amp;buffer)</td></tr>
+<tr class="memdesc:a894ff1f77f078c7dccc7630c79ff193d"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload for <a class="el" href="../../d9/d9e/structKTfwd_1_1generalmut__vec.html" title="Mutation type allowing arbitray number of &quot;s,h&quot; pairs representing effect sizes,dominance.This type represents a mutation with a number of &#39;s&#39; and &#39;h&#39; parameters that are determined at run time. ">KTfwd::generalmut_vec</a> and ostream  <a href="#a894ff1f77f078c7dccc7630c79ff193d">More...</a><br/></td></tr>
+<tr class="separator:a894ff1f77f078c7dccc7630c79ff193d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3436cb26a187250795345b12263e09c7"><td class="memTemplParams" colspan="2">template&lt;typename mutation_t , std::size_t N = std::tuple_size&lt;typename mutation_t::array_t&gt;()&gt; </td></tr>
+<tr class="memitem:a3436cb26a187250795345b12263e09c7"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_same<br class="typebreak"/>
+&lt; <a class="el" href="../../dc/dd4/ms__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a>, <a class="el" href="../../da/dde/structKTfwd_1_1generalmut.html">generalmut</a>&lt; N &gt;<br class="typebreak"/>
+ &gt;::value, <a class="el" href="../../de/d25/structKTfwd_1_1mutation__writer.html#a0562d10bc194da5b0fa595da8784a9b6">result_type</a> &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d25/structKTfwd_1_1mutation__writer.html#a3436cb26a187250795345b12263e09c7">operator()</a> (const <a class="el" href="../../dc/dd4/ms__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a> &amp;t, gzFile gzout)</td></tr>
+<tr class="memdesc:a3436cb26a187250795345b12263e09c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload for <a class="el" href="../../da/dde/structKTfwd_1_1generalmut.html" title="Mutation type allowing arbitray number of &quot;s,h&quot; pairs representing effect sizes,dominance.This type represents a mutation with a number of &#39;s&#39; and &#39;h&#39; parameters that are fixed at compile time. ">KTfwd::generalmut</a> and zlib/gzFile  <a href="#a3436cb26a187250795345b12263e09c7">More...</a><br/></td></tr>
+<tr class="separator:a3436cb26a187250795345b12263e09c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31a7aed4531f072f4a4130893057e18e"><td class="memTemplParams" colspan="2">template&lt;typename mutation_t &gt; </td></tr>
+<tr class="memitem:a31a7aed4531f072f4a4130893057e18e"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_same<br class="typebreak"/>
+&lt; <a class="el" href="../../dc/dd4/ms__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a>, <a class="el" href="../../d9/d9e/structKTfwd_1_1generalmut__vec.html">generalmut_vec</a> &gt;<br class="typebreak"/>
+::value, <a class="el" href="../../de/d25/structKTfwd_1_1mutation__writer.html#a0562d10bc194da5b0fa595da8784a9b6">result_type</a> &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d25/structKTfwd_1_1mutation__writer.html#a31a7aed4531f072f4a4130893057e18e">operator()</a> (const <a class="el" href="../../dc/dd4/ms__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a> &amp;t, gzFile out)</td></tr>
+<tr class="memdesc:a31a7aed4531f072f4a4130893057e18e"><td class="mdescLeft">&#160;</td><td class="mdescRight">overload for <a class="el" href="../../d9/d9e/structKTfwd_1_1generalmut__vec.html" title="Mutation type allowing arbitray number of &quot;s,h&quot; pairs representing effect sizes,dominance.This type represents a mutation with a number of &#39;s&#39; and &#39;h&#39; parameters that are determined at run time. ">KTfwd::generalmut_vec</a> and gzFile  <a href="#a31a7aed4531f072f4a4130893057e18e">More...</a><br/></td></tr>
+<tr class="separator:a31a7aed4531f072f4a4130893057e18e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Facilitates serialization of mutation types supported by the fwdpp sugar library. </p>
@@ -300,6 +324,158 @@ template&lt;typename mutation_t &gt; </div>
 </div><div class="memdoc">
 
 <p>overload for <a class="el" href="../../d1/d7f/structKTfwd_1_1mutation.html" title="The simplest mutation type, adding just a selection coefficient and dominance to the interface...">KTfwd::mutation</a> and zlib/gzFile </p>
+
+</div>
+</div>
+<a class="anchor" id="a7370cd4866b82e9ad069fb4b034b46b2"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_t , std::size_t N = std::tuple_size&lt;typename mutation_t::array_t&gt;()&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;std::is_same&lt;<a class="el" href="../../dc/dd4/ms__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a>,<a class="el" href="../../da/dde/structKTfwd_1_1generalmut.html">generalmut</a>&lt;N&gt; &gt;::value,<a class="el" href="../../de/d25/structKTfwd_1_1mutation__writer.html#a0562d10bc194da5b0fa595da8784a9b6">result_type</a>&gt;::type KTfwd::mutation_writer::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dc/dd4/ms__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>overload for <a class="el" href="../../da/dde/structKTfwd_1_1generalmut.html" title="Mutation type allowing arbitray number of &quot;s,h&quot; pairs representing effect sizes,dominance.This type represents a mutation with a number of &#39;s&#39; and &#39;h&#39; parameters that are fixed at compile time. ">KTfwd::generalmut</a> and ostream </p>
+
+</div>
+</div>
+<a class="anchor" id="a894ff1f77f078c7dccc7630c79ff193d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;std::is_same&lt;<a class="el" href="../../dc/dd4/ms__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a>,<a class="el" href="../../d9/d9e/structKTfwd_1_1generalmut__vec.html">generalmut_vec</a> &gt;::value,<a class="el" href="../../de/d25/structKTfwd_1_1mutation__writer.html#a0562d10bc194da5b0fa595da8784a9b6">result_type</a>&gt;::type KTfwd::mutation_writer::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dc/dd4/ms__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>overload for <a class="el" href="../../d9/d9e/structKTfwd_1_1generalmut__vec.html" title="Mutation type allowing arbitray number of &quot;s,h&quot; pairs representing effect sizes,dominance.This type represents a mutation with a number of &#39;s&#39; and &#39;h&#39; parameters that are determined at run time. ">KTfwd::generalmut_vec</a> and ostream </p>
+
+</div>
+</div>
+<a class="anchor" id="a3436cb26a187250795345b12263e09c7"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_t , std::size_t N = std::tuple_size&lt;typename mutation_t::array_t&gt;()&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;std::is_same&lt;<a class="el" href="../../dc/dd4/ms__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a>,<a class="el" href="../../da/dde/structKTfwd_1_1generalmut.html">generalmut</a>&lt;N&gt; &gt;::value,<a class="el" href="../../de/d25/structKTfwd_1_1mutation__writer.html#a0562d10bc194da5b0fa595da8784a9b6">result_type</a>&gt;::type KTfwd::mutation_writer::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dc/dd4/ms__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gzFile&#160;</td>
+          <td class="paramname"><em>gzout</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>overload for <a class="el" href="../../da/dde/structKTfwd_1_1generalmut.html" title="Mutation type allowing arbitray number of &quot;s,h&quot; pairs representing effect sizes,dominance.This type represents a mutation with a number of &#39;s&#39; and &#39;h&#39; parameters that are fixed at compile time. ">KTfwd::generalmut</a> and zlib/gzFile </p>
+
+</div>
+</div>
+<a class="anchor" id="a31a7aed4531f072f4a4130893057e18e"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;std::is_same&lt;<a class="el" href="../../dc/dd4/ms__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a>,<a class="el" href="../../d9/d9e/structKTfwd_1_1generalmut__vec.html">generalmut_vec</a> &gt;::value,<a class="el" href="../../de/d25/structKTfwd_1_1mutation__writer.html#a0562d10bc194da5b0fa595da8784a9b6">result_type</a>&gt;::type KTfwd::mutation_writer::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dc/dd4/ms__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gzFile&#160;</td>
+          <td class="paramname"><em>out</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>overload for <a class="el" href="../../d9/d9e/structKTfwd_1_1generalmut__vec.html" title="Mutation type allowing arbitray number of &quot;s,h&quot; pairs representing effect sizes,dominance.This type represents a mutation with a number of &#39;s&#39; and &#39;h&#39; parameters that are determined at run time. ">KTfwd::generalmut_vec</a> and gzFile </p>
 
 </div>
 </div>

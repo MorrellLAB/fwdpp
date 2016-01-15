@@ -128,7 +128,7 @@ namespace KTfwd {
       const double a,b,factor;
       beta(const double & __a,
 	   const double & __b,
-	   const double & __f) : a(__a),b(__b),factor(__f)
+	   const double & __f = 1) : a(__a),b(__b),factor(__f)
       {
 	if(!std::isfinite(a) || a <= 0.)
 	  {
@@ -157,7 +157,7 @@ namespace KTfwd {
       const double sd;
       gaussian(const double & __sd) : sd(__sd)
       {
-	if(sd == 0.) throw std::runtime_error("sd must not equal 0");
+	if(!(sd > 0.)) throw std::runtime_error("sd must be > 0");
 	if(!std::isfinite(sd)) throw std::runtime_error("sd must be finite");
       }
       inline double operator()(const gsl_rng * r) const
@@ -175,13 +175,13 @@ namespace KTfwd {
       gamma(const double & __m,
 	    const double & __s ) : mean(__m),shape(__s)
       {
-	if(!std::isfinite(mean))
+	if(!std::isfinite(mean) || !std::isfinite(shape))
 	  {
-	    throw std::runtime_error("mean and sign must both be finite");
+	    throw std::runtime_error("mean and shape must both be finite");
 	  }
-	if(shape <= 0)
+	if(!(shape > 0))
 	  {
-	    throw std::runtime_error("shape must be >= 0");
+	    throw std::runtime_error("shape must be > 0");
 	  }
       }
       inline double operator()(const gsl_rng * r) const

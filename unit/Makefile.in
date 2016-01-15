@@ -79,7 +79,6 @@ POST_UNINSTALL = :
 @BUNIT_TEST_LIB_PRESENT_TRUE@	crossoverTest$(EXEEXT) \
 @BUNIT_TEST_LIB_PRESENT_TRUE@	gameteTest$(EXEEXT) \
 @BUNIT_TEST_LIB_PRESENT_TRUE@	mutationTest$(EXEEXT) \
-@BUNIT_TEST_LIB_PRESENT_TRUE@	policyTests$(EXEEXT) \
 @BUNIT_TEST_LIB_PRESENT_TRUE@	mlocusCrossoverTest$(EXEEXT) \
 @BUNIT_TEST_LIB_PRESENT_TRUE@	siteDepFitness$(EXEEXT) \
 @BUNIT_TEST_LIB_PRESENT_TRUE@	sugar1$(EXEEXT) sugar2$(EXEEXT) \
@@ -90,7 +89,8 @@ POST_UNINSTALL = :
 @BUNIT_TEST_LIB_PRESENT_TRUE@	callbacks$(EXEEXT) \
 @BUNIT_TEST_LIB_PRESENT_TRUE@	sugar2_custom$(EXEEXT) \
 @BUNIT_TEST_LIB_PRESENT_TRUE@	test_generalmut$(EXEEXT) \
-@BUNIT_TEST_LIB_PRESENT_TRUE@	test_generalmut_vec$(EXEEXT)
+@BUNIT_TEST_LIB_PRESENT_TRUE@	test_generalmut_vec$(EXEEXT) \
+@BUNIT_TEST_LIB_PRESENT_TRUE@	extensions$(EXEEXT)
 @BUNIT_TEST_LIB_PRESENT_TRUE@am__append_1 = $(AM_LIBS)
 subdir = unit
 DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
@@ -114,6 +114,11 @@ am__crossoverTest_SOURCES_DIST = crossoverTest.cc
 @BUNIT_TEST_LIB_PRESENT_TRUE@	crossoverTest.$(OBJEXT)
 crossoverTest_OBJECTS = $(am_crossoverTest_OBJECTS)
 crossoverTest_LDADD = $(LDADD)
+am__extensions_SOURCES_DIST = extensions.cc
+@BUNIT_TEST_LIB_PRESENT_TRUE@am_extensions_OBJECTS =  \
+@BUNIT_TEST_LIB_PRESENT_TRUE@	extensions.$(OBJEXT)
+extensions_OBJECTS = $(am_extensions_OBJECTS)
+extensions_LDADD = $(LDADD)
 am__gameteTest_SOURCES_DIST = gameteTest.cc
 @BUNIT_TEST_LIB_PRESENT_TRUE@am_gameteTest_OBJECTS =  \
 @BUNIT_TEST_LIB_PRESENT_TRUE@	gameteTest.$(OBJEXT)
@@ -139,11 +144,6 @@ am__mutationTest_SOURCES_DIST = mutationTest.cc
 @BUNIT_TEST_LIB_PRESENT_TRUE@	mutationTest.$(OBJEXT)
 mutationTest_OBJECTS = $(am_mutationTest_OBJECTS)
 mutationTest_LDADD = $(LDADD)
-am__policyTests_SOURCES_DIST = policyTests.cc
-@BUNIT_TEST_LIB_PRESENT_TRUE@am_policyTests_OBJECTS =  \
-@BUNIT_TEST_LIB_PRESENT_TRUE@	policyTests.$(OBJEXT)
-policyTests_OBJECTS = $(am_policyTests_OBJECTS)
-policyTests_LDADD = $(LDADD)
 am__siteDepFitness_SOURCES_DIST = siteDepFitness.cc
 @BUNIT_TEST_LIB_PRESENT_TRUE@am_siteDepFitness_OBJECTS =  \
 @BUNIT_TEST_LIB_PRESENT_TRUE@	siteDepFitness.$(OBJEXT)
@@ -216,9 +216,9 @@ am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
 am__v_CXXLD_0 = @echo "  CXXLD   " $@;
 am__v_CXXLD_1 = 
 SOURCES = $(callbacks_SOURCES) $(crossoverTest_SOURCES) \
-	$(gameteTest_SOURCES) $(mlocusCrossoverTest_SOURCES) \
-	$(ms_sampling_SOURCES) $(mutateTest_SOURCES) \
-	$(mutationTest_SOURCES) $(policyTests_SOURCES) \
+	$(extensions_SOURCES) $(gameteTest_SOURCES) \
+	$(mlocusCrossoverTest_SOURCES) $(ms_sampling_SOURCES) \
+	$(mutateTest_SOURCES) $(mutationTest_SOURCES) \
 	$(siteDepFitness_SOURCES) $(sugar1_SOURCES) \
 	$(sugar1_custom_SOURCES) $(sugar2_SOURCES) \
 	$(sugar2_custom_SOURCES) $(sugar3_SOURCES) \
@@ -226,11 +226,10 @@ SOURCES = $(callbacks_SOURCES) $(crossoverTest_SOURCES) \
 	$(test_generalmut_vec_SOURCES)
 DIST_SOURCES = $(am__callbacks_SOURCES_DIST) \
 	$(am__crossoverTest_SOURCES_DIST) \
-	$(am__gameteTest_SOURCES_DIST) \
+	$(am__extensions_SOURCES_DIST) $(am__gameteTest_SOURCES_DIST) \
 	$(am__mlocusCrossoverTest_SOURCES_DIST) \
 	$(am__ms_sampling_SOURCES_DIST) $(am__mutateTest_SOURCES_DIST) \
 	$(am__mutationTest_SOURCES_DIST) \
-	$(am__policyTests_SOURCES_DIST) \
 	$(am__siteDepFitness_SOURCES_DIST) $(am__sugar1_SOURCES_DIST) \
 	$(am__sugar1_custom_SOURCES_DIST) $(am__sugar2_SOURCES_DIST) \
 	$(am__sugar2_custom_SOURCES_DIST) $(am__sugar3_SOURCES_DIST) \
@@ -564,7 +563,6 @@ top_srcdir = @top_srcdir@
 @BUNIT_TEST_LIB_PRESENT_TRUE@crossoverTest_SOURCES = crossoverTest.cc
 @BUNIT_TEST_LIB_PRESENT_TRUE@gameteTest_SOURCES = gameteTest.cc
 @BUNIT_TEST_LIB_PRESENT_TRUE@mutationTest_SOURCES = mutationTest.cc
-@BUNIT_TEST_LIB_PRESENT_TRUE@policyTests_SOURCES = policyTests.cc
 @BUNIT_TEST_LIB_PRESENT_TRUE@mlocusCrossoverTest_SOURCES = mlocusCrossoverTest.cc
 @BUNIT_TEST_LIB_PRESENT_TRUE@siteDepFitness_SOURCES = siteDepFitness.cc
 @BUNIT_TEST_LIB_PRESENT_TRUE@sugar1_SOURCES = sugar1.cc
@@ -577,6 +575,7 @@ top_srcdir = @top_srcdir@
 @BUNIT_TEST_LIB_PRESENT_TRUE@callbacks_SOURCES = callbacks.cc
 @BUNIT_TEST_LIB_PRESENT_TRUE@test_generalmut_SOURCES = test_generalmut.cc
 @BUNIT_TEST_LIB_PRESENT_TRUE@test_generalmut_vec_SOURCES = test_generalmut_vec.cc
+@BUNIT_TEST_LIB_PRESENT_TRUE@extensions_SOURCES = extensions.cc
 @BUNIT_TEST_LIB_PRESENT_TRUE@AM_CXXFLAGS = 
 @BUNIT_TEST_LIB_PRESENT_TRUE@AM_LIBS = -lboost_unit_test_framework
 all: all-am
@@ -625,6 +624,10 @@ crossoverTest$(EXEEXT): $(crossoverTest_OBJECTS) $(crossoverTest_DEPENDENCIES) $
 	@rm -f crossoverTest$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(crossoverTest_OBJECTS) $(crossoverTest_LDADD) $(LIBS)
 
+extensions$(EXEEXT): $(extensions_OBJECTS) $(extensions_DEPENDENCIES) $(EXTRA_extensions_DEPENDENCIES) 
+	@rm -f extensions$(EXEEXT)
+	$(AM_V_CXXLD)$(CXXLINK) $(extensions_OBJECTS) $(extensions_LDADD) $(LIBS)
+
 gameteTest$(EXEEXT): $(gameteTest_OBJECTS) $(gameteTest_DEPENDENCIES) $(EXTRA_gameteTest_DEPENDENCIES) 
 	@rm -f gameteTest$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(gameteTest_OBJECTS) $(gameteTest_LDADD) $(LIBS)
@@ -644,10 +647,6 @@ mutateTest$(EXEEXT): $(mutateTest_OBJECTS) $(mutateTest_DEPENDENCIES) $(EXTRA_mu
 mutationTest$(EXEEXT): $(mutationTest_OBJECTS) $(mutationTest_DEPENDENCIES) $(EXTRA_mutationTest_DEPENDENCIES) 
 	@rm -f mutationTest$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(mutationTest_OBJECTS) $(mutationTest_LDADD) $(LIBS)
-
-policyTests$(EXEEXT): $(policyTests_OBJECTS) $(policyTests_DEPENDENCIES) $(EXTRA_policyTests_DEPENDENCIES) 
-	@rm -f policyTests$(EXEEXT)
-	$(AM_V_CXXLD)$(CXXLINK) $(policyTests_OBJECTS) $(policyTests_LDADD) $(LIBS)
 
 siteDepFitness$(EXEEXT): $(siteDepFitness_OBJECTS) $(siteDepFitness_DEPENDENCIES) $(EXTRA_siteDepFitness_DEPENDENCIES) 
 	@rm -f siteDepFitness$(EXEEXT)
@@ -693,12 +692,12 @@ distclean-compile:
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/callbacks.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/crossoverTest.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/extensions.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gameteTest.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mlocusCrossoverTest.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ms_sampling.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mutateTest.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mutationTest.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/policyTests.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/siteDepFitness.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sugar1.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sugar1_custom.Po@am__quote@
@@ -944,13 +943,6 @@ mutationTest.log: mutationTest$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
-policyTests.log: policyTests$(EXEEXT)
-	@p='policyTests$(EXEEXT)'; \
-	b='policyTests'; \
-	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
-	--log-file $$b.log --trs-file $$b.trs \
-	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
-	"$$tst" $(AM_TESTS_FD_REDIRECT)
 mlocusCrossoverTest.log: mlocusCrossoverTest$(EXEEXT)
 	@p='mlocusCrossoverTest$(EXEEXT)'; \
 	b='mlocusCrossoverTest'; \
@@ -1031,6 +1023,13 @@ test_generalmut.log: test_generalmut$(EXEEXT)
 test_generalmut_vec.log: test_generalmut_vec$(EXEEXT)
 	@p='test_generalmut_vec$(EXEEXT)'; \
 	b='test_generalmut_vec'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+extensions.log: extensions$(EXEEXT)
+	@p='extensions$(EXEEXT)'; \
+	b='extensions'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \

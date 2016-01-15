@@ -2,11 +2,12 @@
 #define __FWDPP_SUGAR_MUTATION_POPGENMUT_HPP__
 
 #include <fwdpp/forward_types.hpp>
-
+#include <fwdpp/tags/tags.hpp>
+#include <limits>
 namespace KTfwd
 {
   /*!
-    \brief Mutations with selection, dominance, and tracking age of origin 
+    \brief Mutations with selection, dominance, and tracking age of origin
     The "standard" mutation type for population genetic simulation.
     A mutation has its own selection and dominance coefficients.
 
@@ -29,9 +30,18 @@ namespace KTfwd
       \param __n Number of copies of mutation in population
     */
     popgenmut(const double & __pos, const double & __s, const double & __h,
-	      const unsigned & __g,const unsigned & __n)
-      : mutation_base(__pos,__n,(__s==0.) ? true : false),g(__g),s(__s),h(__h)
-    {	
+	      const unsigned & __g) noexcept
+      : mutation_base(__pos,(__s==0.) ? true : false),g(__g),s(__s),h(__h)
+    {
+    }
+
+    bool operator==(const popgenmut & rhs) const
+    {
+      return this->pos == rhs.pos &&
+	this->s == rhs.s &&
+	this->h == rhs.h &&
+	this->g == rhs.g &&
+	this->neutral == rhs.neutral;
     }
   };
 }

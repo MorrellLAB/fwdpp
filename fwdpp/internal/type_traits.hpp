@@ -1,40 +1,33 @@
-#ifndef __FWDPP_INTERNAL_TYPE_TRAITS_HPP__
-#define __FWDPP_INTERNAL_TYPE_TRAITS_HPP__
-
-#include <type_traits>
+#ifndef FWDPP_INTERNAL_TYPE_TRAITS_HPP
+#define FWDPP_INTERNAL_TYPE_TRAITS_HPP
 
 namespace KTfwd {
   namespace traits {
     namespace internal {
+      //Based on http://stackoverflow.com/questions/11813940/possible-to-use-type-traits-sfinae-to-find-if-a-class-defines-a-member-typec
+    
+      template<class T>
+      struct void_t {
+	typedef void type;
+      };
 
-      /*
-	Details of how policy arity can be checked at compile-time
-
-	Based on
-	http://stackoverflow.com/questions/20768649/standard-method-for-determining-the-arity-and-other-traits-of-stdbind-result,
-	but rearranged to inherit from the C++11 integral constant, which make things a lot better when used in combination
-	with std::enable_if, etc.
+      /* 
+	 This macro is used to generate 
+	 types able to determine if a class type
+	 has a particular member type name
       */
-      template<typename...> using void_t = void;
+#define HAS_TYPE(NAME)							\
+      template<typename,typename = void>				\
+      struct has_##NAME: std::false_type				\
+      {};								\
+      template<typename T>						\
+      struct has_##NAME<T,typename void_t<typename T::NAME>::type >: std::true_type {}; 
 
-      template<typename F, typename enable = void>
-      struct is_nullary : std::false_type {};
-      
-      template<typename F>
-      struct is_nullary<F,void_t<typename std::result_of<F()>::type> > : std::true_type {};
-
-      template<typename F, typename A1, typename enable = void>
-      struct is_unary : std::false_type {};
-      
-      template<typename F, typename A1>
-      struct is_unary<F,A1,void_t<typename std::result_of<F(A1)>::type> > : std::true_type {};
-
-      template<typename F, typename A1, typename A2, typename enable = void>
-      struct is_binary : std::false_type {};
-      
-      template<typename F, typename A1,typename A2>
-      struct is_binary<F,A1,A2,void_t<typename std::result_of<F(A1,A2)>::type> > : std::true_type {};
-      
+      HAS_TYPE(gamete_tag);
+      HAS_TYPE(mutation_list_type);
+      HAS_TYPE(mutation_type);
+      HAS_TYPE(first_type);
+      HAS_TYPE(second_type);
     }
   }
 }

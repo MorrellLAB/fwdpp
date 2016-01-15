@@ -113,46 +113,29 @@ namespace KTfwd
     A sample where 'neutral' and 'selected' variants are separated.
 
     'first' contains the 'neutral' variants, and 'second' contains the 'selected' variants.
-   */
-  using sep_sample_t = std::pair<sample_t,sample_t>;
-  
-  /* \brief Site frequency spectrum
-     \return Site frequency spectrum
   */
-  template<typename iterator_type>
-  std::vector<unsigned> population_sfs( iterator_type beg,
-					iterator_type end,
-					const unsigned & N)
-  {
-    std::vector<unsigned> psfs(N-1,0);
-    while(beg != end)
-      {
-	if(beg->n >0 && beg->n < N) psfs[beg->n-1]++;
-	beg++;
-      }
-    return psfs;
-  }
-
-
-  template< typename gamete_type,
-	    typename allocator_t,
-	    template<typename,typename> class container_t>
-  std::vector<unsigned> sample_sfs(gsl_rng * r, 
-				   const container_t<gamete_type,allocator_t > & gametes,
-				   const unsigned & n, const unsigned & N);
+  using sep_sample_t = std::pair<sample_t,sample_t>;
 
   /*!
     \brief Sampling from a population in an individual-based simulation
     \return A vector of variable sites
     \ingroup samplingPopsInd
   */
-  template<typename allocator,
+  template<typename mcont_t,
+	   typename gcont_t,
+	   typename allocator,
 	   typename diploid_geno_t,
 	   template<typename,typename> class vector_type >
-  typename std::enable_if< std::is_base_of<mutation_base,typename diploid_geno_t::first_type::value_type::mutation_type>::value,
-			   sample_t >::type
+  //typename std::enable_if< std::is_base_of<mutation_base,typename mcont_t::value_type>::value,			   
+  //			   sample_t >::type
+  //typename std::enable_if<  traits::internal::has_first_type<diploid_geno_t>::value,
+  //			      sample_t >::type
+    typename std::enable_if<traits::is_diploid_like<diploid_geno_t>::value,
+			    sample_t>::type
   ms_sample( gsl_rng * r,
-	     const vector_type< diploid_geno_t, allocator > * diploids,
+	     const mcont_t & mutations,
+	     const gcont_t & gametes,
+	     const vector_type< diploid_geno_t, allocator > & diploids,
 	     const unsigned & n,
 	     const bool & remove_fixed = true);
 
@@ -161,13 +144,21 @@ namespace KTfwd
     \return A pair of vectors of variable sites.  The first block is neutral variants, the second is non-neutral variants
     \ingroup samplingPopsInd
   */
-  template<typename allocator,
+  template<typename mcont_t,
+	   typename gcont_t,
+	   typename allocator,
 	   typename diploid_geno_t,
 	   template<typename,typename> class vector_type >
-  typename std::enable_if< std::is_base_of<mutation_base,typename diploid_geno_t::first_type::value_type::mutation_type>::value,
-			   sep_sample_t >::type
+  //typename std::enable_if< std::is_base_of<mutation_base,typename mcont_t::value_type>::value,
+  //			   sep_sample_t >::type
+  //  typename std::enable_if<  traits::internal::has_first_type<diploid_geno_t>::value,
+  //			      sep_sample_t >::type
+  typename std::enable_if<traits::is_diploid_like<diploid_geno_t>::value,
+			  sep_sample_t>::type
   ms_sample_separate( gsl_rng * r,
-		      const vector_type< diploid_geno_t, allocator > * diploids,
+		      const mcont_t & mutations,
+		      const gcont_t & gametes,
+		      const vector_type< diploid_geno_t, allocator > & diploids,
 		      const unsigned & n,
 		      const bool & remove_fixed = true);
 
@@ -177,15 +168,15 @@ namespace KTfwd
     \note Neutral + selected mutations intermixed
     \ingroup samplingPopsInd
   */
-  template<typename diploid_geno_t,
-	   typename allocator,
-	   typename outer_allocator,
-	   template<typename,typename> class vector_type,
-	   template<typename,typename> class outer_vector_type>
-  typename std::enable_if< std::is_base_of<mutation_base,typename diploid_geno_t::first_type::value_type::mutation_type>::value,
+  template<typename mcont_t,
+	   typename gcont_t,
+	   typename dcont_t>
+  typename std::enable_if< traits::is_diploid_like<typename dcont_t::value_type::value_type>::value,
 			   std::vector<sample_t> >::type
   ms_sample( gsl_rng * r,
-	     const outer_vector_type< vector_type< diploid_geno_t, allocator >, outer_allocator > * diploids,
+	     const mcont_t & mutations,
+	     const gcont_t & gametes,
+	     const dcont_t & diploids,
 	     const unsigned & n,
 	     const bool & remove_fixed);
 
@@ -195,15 +186,15 @@ namespace KTfwd
     \note For each locus, the first member of the pair corresponds to neutral sites, the second to selected.
     \ingroup samplingPopsInd
   */
-  template<typename diploid_geno_t,
-	   typename allocator,
-	   typename outer_allocator,
-	   template<typename,typename> class vector_type,
-	   template<typename,typename> class outer_vector_type>
-  typename std::enable_if< std::is_base_of<mutation_base,typename diploid_geno_t::first_type::value_type::mutation_type>::value,
-			   std::vector<sep_sample_t> >::type
+  template<typename mcont_t,
+	   typename gcont_t,
+	   typename dcont_t>
+  typename std::enable_if<traits::is_diploid_like<typename dcont_t::value_type::value_type>::value,
+			  std::vector<sep_sample_t> >::type
   ms_sample_separate( gsl_rng * r,
-		      const outer_vector_type< vector_type< diploid_geno_t, allocator >, outer_allocator > * diploids,
+		      const mcont_t & mutations,
+		      const gcont_t & gametes,
+		      const dcont_t & diploids,
 		      const unsigned & n,
 		      const bool & remove_fixed);
 }

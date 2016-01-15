@@ -8,7 +8,9 @@ pkginclude_HEADERS=mutation_internal.hpp \
 	IOhelp.hpp \
 	ms_sampling.hpp \
 	diploid_fitness_dispatch.hpp \
-	type_traits.hpp \
 	gamete_lookup_table.hpp \
-	gamete_cleaner.hpp
+	gamete_cleaner.hpp \
+	recycling.hpp \
+	sample_diploid_helpers.hpp \
+	type_traits.hpp
 

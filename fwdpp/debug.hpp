@@ -2,10 +2,10 @@
 #define __KTFWD_DEBUG_HPP__
 
 #ifndef NDEBUG
-
-#include <fwdpp/forward_types.hpp>
+#include <algorithm>
 #include <numeric>
-#include <type_traits>
+#include <fwdpp/forward_types.hpp>
+#include <fwdpp/type_traits.hpp>
 
 namespace KTfwd
 {
@@ -13,21 +13,15 @@ namespace KTfwd
   /*! \brief Returns true if the sum of counts in gametes equals twoN, false otherwise
     Returns true if the sum of counts in gametes equals twoN, false otherwise
    */
-  template<typename vector_type_allocator,
-	   typename gamete_type,
-	   template<typename,typename> class vector_type>
-  bool check_sum(const vector_type<gamete_type,vector_type_allocator> & gametes, const unsigned & twoN)
+  template<typename gcont_t>
+  bool check_sum(const gcont_t & gametes, const unsigned & twoN)
   {
-    using gamete_base_type =
-      gamete_base< typename gamete_type::mutation_type,
-		   typename gamete_type::mutation_list_type >;
-    static_assert( std::is_base_of<gamete_base_type,gamete_type>::value ||
-                   std::is_same<gamete_base_type,gamete_type>::value,
-                   "gamete_type must be, or inherit from, KTfwd::gamete_base<mutation_type,mutation_list_type>" );
+    static_assert( typename traits::is_gamete_t<typename gcont_t::value_type>::type(),
+		   "gcont_t::value_type must be a valid gamete type" );
     return ( std::accumulate( gametes.cbegin(),
 			      gametes.cend(),0u,
 			      [](unsigned & __u,
-				 const gamete_type & __g) { 
+				 const typename gcont_t::value_type & __g) { 
 				return __u + __g.n; 
 			      } ) == twoN );
   }
@@ -35,14 +29,70 @@ namespace KTfwd
   /*! \brief Returns true if the sum of counts in gametes equals twoN, false otherwise
     Returns true if the sum of counts in gametes equals twoN, false otherwise
    */
-  template<typename vector_type_allocator,
-	   typename gamete_type,
-	   template<typename,typename> class vector_type>
-  bool check_sum(const vector_type<gamete_type,vector_type_allocator> * gametes, const unsigned & twoN)
+  template<typename gcont_t>
+  bool check_sum(const gcont_t * gametes, const unsigned & twoN)
   {
     return check_sum(*gametes,twoN);
   }
 
+  template<typename gamete_t,
+	   typename mcont_t>
+  bool gamete_is_sorted_n( const gamete_t & g,
+			   const mcont_t & m )
+  {
+    return std::is_sorted(g.mutations.begin(),
+			  g.mutations.end(),
+			  [&m](const size_t i, const size_t j)
+			  {
+			    return m[i].pos <= m[j].pos;
+			  });
+  }
+
+  template<typename gamete_t,
+	   typename mcont_t>
+  bool gamete_is_sorted_s( const gamete_t & g,
+			   const mcont_t & m )
+  {
+    return std::is_sorted(g.smutations.begin(),
+			  g.smutations.end(),
+			  [&m](const size_t i, const size_t j)
+			  {
+			    return m[i].pos <= m[j].pos;
+			  });
+  }
+
+  template<typename gamete_t>
+  bool gamete_data_sane( const gamete_t & g,
+			 const std::vector<uint_t> & mutcounts)
+  {
+    for( const auto & i : g.mutations )
+      {
+	if(!mutcounts[i]) return false;
+	if(!(g.n <= mutcounts[i])) return false;
+      }
+    for( const auto & i : g.smutations )
+      {
+	if(!mutcounts[i]) return false;
+	if(!(g.n <= mutcounts[i])) return false;
+      }
+    return true;
+  }
+  
+  template<typename dipcont_t,
+	   typename gcont_t>
+  bool popdata_sane(const dipcont_t & diploids,
+		    const gcont_t & gametes,
+		    const std::vector<uint_t> & mutcounts)
+  {
+    for(const auto & d : diploids)
+      {
+	if( !gametes[d.first].n ) return false;
+	if( !gametes[d.second].n ) return false;
+	if( !gamete_data_sane(gametes[d.first],mutcounts) ) return false;
+	if( !gamete_data_sane(gametes[d.second],mutcounts) ) return false;
+      }
+    return true;
+  }
 }
 
 #endif

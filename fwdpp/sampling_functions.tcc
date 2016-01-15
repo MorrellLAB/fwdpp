@@ -26,66 +26,26 @@ namespace KTfwd
     return counts;
   }
 
-  template< typename gamete_type,
-	    typename allocator_t,
-	    template<typename,typename> class container_type>
-  std::vector<unsigned> sample_sfs(gsl_rng * r, 
-				   const container_type<gamete_type,allocator_t > & gametes,
-				   const unsigned & n, const unsigned & N)
-  {
-    std::vector<unsigned> counts = sample(r,gametes,n,N);
-    std::map<double,unsigned> samplemuts;
-    std::map<double,unsigned>::iterator itr;
-    for(unsigned i=0;i<gametes.size();++i)
-      {
-	if(counts[i]>0)
-	  {
-	    for(unsigned j=0;j<gametes[i].mutations.size();++j)
-	      {
-		itr = samplemuts.find(gametes[i].mutations[j]->pos);
-		if( itr == samplemuts.end() )
-		  {
-		    samplemuts[gametes[i].mutations[j]->pos] = counts[i];
-		  }
-		else
-		  {
-		    itr->second += counts[i];
-		  }
-	      }
-	    for(unsigned j=0;j<gametes[i].smutations.size();++j)
-	      {
-		itr = samplemuts.find(gametes[i].smutations[j]->pos);
-		if( itr == samplemuts.end() )
-		  {
-		    samplemuts[gametes[i].smutations[j]->pos] = counts[i];
-		  }
-		else
-		  {
-		    itr->second += counts[i];
-		  }
-	      }
-	  }
-      }
-    std::vector<unsigned> samplesfs(n,0);
-    for(itr=samplemuts.begin();itr!=samplemuts.end();++itr)
-      {
-	samplesfs[itr->second-1]++;
-      }
-    return samplesfs;
-  }
-
   //SAMPLERS FOR INDIVIDUAL-BASED SIMULATIONS
-  template<typename allocator,
+  template<typename mcont_t,
+	   typename gcont_t,
+	   typename allocator,
 	   typename diploid_geno_t,
 	   template<typename,typename> class vector_type >
-  typename std::enable_if< std::is_base_of<mutation_base,typename diploid_geno_t::first_type::value_type::mutation_type>::value,
-			   sample_t >::type
+  //typename std::enable_if< std::is_base_of<mutation_base,typename mcont_t::value_type>::value,
+  //			   sample_t >::type
+  //typename std::enable_if<traits::internal::has_first_type<diploid_geno_t>::value,
+  //			  sample_t>::type
+    typename std::enable_if<traits::is_diploid_like<diploid_geno_t>::value,
+			    sample_t>::type
   ms_sample( gsl_rng * r,
-	     const vector_type< diploid_geno_t, allocator > * diploids,
+	     const mcont_t & mutations,
+	     const gcont_t & gametes,
+	     const vector_type< diploid_geno_t, allocator > & diploids,
 	     const unsigned & n,
 	     const bool & remove_fixed)
   {
-    auto separate = ms_sample_separate(r,diploids,n,remove_fixed);
+    auto separate = ms_sample_separate(r,mutations,gametes,diploids,n,remove_fixed);
     std::move( separate.second.begin(), separate.second.end(), std::back_inserter(separate.first) );
     std::sort(separate.first.begin(),separate.first.end(),
 	      [](const sample_site_t & lhs,
@@ -93,13 +53,21 @@ namespace KTfwd
     return separate.first;
   }
 
-  template<typename allocator,
+  template<typename mcont_t,
+	   typename gcont_t,
+	   typename allocator,
 	   typename diploid_geno_t,
 	   template<typename,typename> class vector_type >
-  typename std::enable_if< std::is_base_of<mutation_base,typename diploid_geno_t::first_type::value_type::mutation_type>::value,
-			   sep_sample_t >::type
+  //typename std::enable_if< std::is_base_of<mutation_base,typename mcont_t::value_type>::value,
+  //			   sep_sample_t >::type
+  //typename std::enable_if<  traits::internal::has_first_type<diploid_geno_t>::value,
+  //			    sep_sample_t >::type
+  typename std::enable_if<traits::is_diploid_like<diploid_geno_t>::value,
+			  sep_sample_t>::type
   ms_sample_separate( gsl_rng * r,
-		      const vector_type< diploid_geno_t, allocator > * diploids,
+		      const mcont_t & mutations,
+		      const gcont_t & gametes,
+		      const vector_type< diploid_geno_t, allocator > & diploids,
 		      const unsigned & n,
 		      const bool & remove_fixed)
   {
@@ -107,21 +75,23 @@ namespace KTfwd
     unsigned isodd = (n%2 != 0.) ? 1u : 0u;
     for( unsigned i = 0 ; i < n/2+isodd ; ++i )
       {
-	diplist.push_back(gsl_ran_flat(r,0.,double(diploids->size())));
+	diplist.push_back(std::vector<unsigned>::value_type(gsl_ran_flat(r,0.,double(diploids.size()))));
       }
-    return fwdpp_internal::ms_sample_separate_single_deme(diploids,diplist,n,remove_fixed);
+    return fwdpp_internal::ms_sample_separate_single_deme(mutations,gametes,diploids,diplist,n,remove_fixed);
   }
 
   //Individual-based sims, multilocus algorithm
-  template<typename diploid_geno_t,
-	   typename allocator,
-	   typename outer_allocator,
-	   template<typename,typename> class vector_type,
-	   template<typename,typename> class outer_vector_type>
-  typename std::enable_if< std::is_base_of<mutation_base,typename diploid_geno_t::first_type::value_type::mutation_type>::value,
-			   std::vector<sep_sample_t > >::type
+  template<typename mcont_t,
+	   typename gcont_t,
+	   typename dcont_t>
+  //typename std::enable_if< std::is_base_of<mutation_base,typename mcont_t::value_type>::value,
+  //			   std::vector<sep_sample_t > >::type
+  typename std::enable_if<  traits::is_diploid_like<typename dcont_t::value_type::value_type>::value,
+			    std::vector<sep_sample_t> >::type
   ms_sample_separate( gsl_rng * r,
-		      const outer_vector_type< vector_type< diploid_geno_t, allocator >, outer_allocator > * diploids,
+		      const mcont_t & mutations,
+		      const gcont_t & gametes,
+		      const dcont_t & diploids,
 		      const unsigned & n,
 		      const bool & remove_fixed)
   {
@@ -129,24 +99,24 @@ namespace KTfwd
     unsigned isodd = (n%2 != 0.) ? 1u : 0u;
     for( unsigned i = 0 ; i < n/2+isodd ; ++i )
       {
-	diplist.push_back(gsl_ran_flat(r,0.,double(diploids->size())));
+	diplist.push_back(unsigned(gsl_ran_flat(r,0.,double(diploids.size()))));
       }
-    return fwdpp_internal::ms_sample_separate_mlocus(diploids,diplist,n,remove_fixed);
+    return fwdpp_internal::ms_sample_separate_mlocus(mutations,gametes,diploids,diplist,n,remove_fixed);
   }
 
- template<typename diploid_geno_t,
-	  typename allocator,
-	  typename outer_allocator,
-	  template<typename,typename> class vector_type,
-	  template<typename,typename> class outer_vector_type>
-  typename std::enable_if< std::is_base_of<mutation_base,typename diploid_geno_t::first_type::value_type::mutation_type>::value,
-			   std::vector< sample_t > >::type
+  template<typename mcont_t,
+	   typename gcont_t,
+	   typename dcont_t>
+  typename std::enable_if< traits::is_diploid_like<typename dcont_t::value_type::value_type>::value,
+			   std::vector<sample_t> >::type
   ms_sample( gsl_rng * r,
-	     const outer_vector_type< vector_type< diploid_geno_t, allocator >, outer_allocator > * diploids,
+	     const mcont_t & mutations,
+	     const gcont_t & gametes,
+	     const dcont_t & diploids,
 	     const unsigned & n,
 	     const bool & remove_fixed)
   {
-    auto separate = ms_sample_separate(r,diploids,n,remove_fixed);
+    auto separate = ms_sample_separate(r,mutations,gametes,diploids,n,remove_fixed);
     std::vector<sample_t> rv;
     for( unsigned i = 0 ; i < separate.size() ; ++i )
       {

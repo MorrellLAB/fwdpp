@@ -24,7 +24,6 @@
 //headers from this project
 #include <fwdpp/type_traits.hpp>
 #include <fwdpp/debug.hpp>
-//#include <fwdpp/diploid_functions.hpp>
 #include <fwdpp/fitness_models.hpp>
 #include <fwdpp/forward_types.hpp>
 #include <fwdpp/fwd_functional.hpp>
@@ -32,12 +31,9 @@
 #include <fwdpp/sampling_functions.hpp>
 #include <fwdpp/mutation.hpp>
 #include <fwdpp/util.hpp>
-#include <fwdpp/initms.hpp>
 #include <fwdpp/IO.hpp>
 #include <fwdpp/recombination.hpp>
 #include <fwdpp/sample_diploid.hpp>
-#include <fwdpp/genetics101.hpp>
-//#include <fwdpp/recombination_methods_ind.hpp>
 #endif
 
 /*! \namespace KTfwd

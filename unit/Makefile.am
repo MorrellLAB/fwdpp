@@ -4,7 +4,6 @@ check_PROGRAMS=mutateTest \
 	crossoverTest \
 	gameteTest \
 	mutationTest \
-	policyTests \
 	mlocusCrossoverTest \
 	siteDepFitness \
 	sugar1 \
@@ -16,7 +15,8 @@ check_PROGRAMS=mutateTest \
 	callbacks \
 	sugar2_custom \
 	test_generalmut \
-	test_generalmut_vec
+	test_generalmut_vec \
+	extensions
 
 
 TESTS=$(check_PROGRAMS)
@@ -25,7 +25,6 @@ mutateTest_SOURCES=mutateTest.cc
 crossoverTest_SOURCES=crossoverTest.cc
 gameteTest_SOURCES=gameteTest.cc
 mutationTest_SOURCES=mutationTest.cc
-policyTests_SOURCES=policyTests.cc
 mlocusCrossoverTest_SOURCES=mlocusCrossoverTest.cc
 siteDepFitness_SOURCES=siteDepFitness.cc
 sugar1_SOURCES=sugar1.cc
@@ -38,6 +37,7 @@ sugar_sampling_SOURCES=sugar_sampling.cc
 callbacks_SOURCES=callbacks.cc
 test_generalmut_SOURCES=test_generalmut.cc
 test_generalmut_vec_SOURCES=test_generalmut_vec.cc
+extensions_SOURCES=extensions.cc
 
 AM_CXXFLAGS=
 

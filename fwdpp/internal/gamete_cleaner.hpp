@@ -9,8 +9,8 @@ namespace KTfwd {
       Intended use is when std::is_same< mutation_removal_policy, KTfwd::remove_nothing >::type is true.
       Called by KTfwd::sample_diploid via dispatch.
     */
-    template<typename gamete_list_type, typename mutation_removal_policy>
-    inline void gamete_cleaner(gamete_list_type *, const mutation_removal_policy &, std::true_type) 
+    template<typename gcont_t, typename mutation_removal_policy>
+    inline void gamete_cleaner(gcont_t &,const std::vector<uint_t> &, const mutation_removal_policy &, std::true_type)
     {
       return;
     }
@@ -19,15 +19,30 @@ namespace KTfwd {
       Intended use is when std::is_same< mutation_removal_policy, KTfwd::remove_nothing >::type is false.
       Called by KTfwd::sample_diploid via dispatch.
     */
-    template<typename gamete_list_type, typename mutation_removal_policy>
-    inline void gamete_cleaner(gamete_list_type * gametes, const mutation_removal_policy & mp, std::false_type) 
+    template<typename gcont_t>//, typename mutation_removal_policy>
+    inline void gamete_cleaner(gcont_t & gametes, const std::vector<uint_t> & mcounts,
+			       const uint_t twoN, std::false_type)
     {
-      std::for_each( gametes->begin(),
-		     gametes->end(),
-		     [&mp]( typename gamete_list_type::value_type & __g ) {
-		       __g.mutations.erase(std::remove_if(__g.mutations.begin(),__g.mutations.end(),std::cref(mp)),__g.mutations.end());
-		       __g.smutations.erase(std::remove_if(__g.smutations.begin(),__g.smutations.end(),std::cref(mp)),__g.smutations.end());
-		     });
+      for( auto & g : gametes )
+	{
+	  if(g.n)
+	    {
+	      g.mutations.erase(std::remove_if(g.mutations.begin(),
+					       g.mutations.end(),
+					       [&mcounts,&twoN](const std::size_t & i) noexcept
+					       {
+						 return mcounts[i]==twoN;
+					       }),
+				g.mutations.end());
+	      g.smutations.erase(std::remove_if(g.smutations.begin(),
+						g.smutations.end(),
+						[&mcounts,&twoN](const std::size_t & i) noexcept
+						{
+						  return mcounts[i]==twoN;
+						}),
+				 g.smutations.end());
+	    }
+	}
     }
   }
 }

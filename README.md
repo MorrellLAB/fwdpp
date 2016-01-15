@@ -28,7 +28,7 @@ This README is the main page of the fwdpp documentation.  It may display some th
 
 # Build status
 
-* Status of master branch: [![Build Status](https://travis-ci.org/molpopgen/fwdpp.svg?branch=master)](https://travis-ci.org/molpopgen/fwdpp) 
+* Status of master branch: [![Build Status](https://travis-ci.org/molpopgen/fwdpp.svg?branch=master)](https://travis-ci.org/molpopgen/fwdpp)
 * Status of dev branch: [![Build Status](https://travis-ci.org/molpopgen/fwdpp.svg?branch=dev)](https://travis-ci.org/molpopgen/fwdpp)
 
 Currently, the Travis-CI setup uses the following tools:
@@ -37,7 +37,6 @@ Currently, the Travis-CI setup uses the following tools:
 * gcc 4.9
 * clang 3.6
 * GSL 1.15
-* boost 1.48
 
 # Introduction
 
@@ -51,11 +50,11 @@ The library uses advanced C++ techniques to allow arbitrary models to be impleme
 
 The first two are excellent books for people already familiar with C++ syntax but want to know more about effective software design using the language. Meyer's books are particularly good, espectially the first two.  The C++ Templates book is a bible of how to get the most out of templates.  It is a very advanced and detailed book, but I've found it helpful over the years.
 
-##A note about which version to use
+## A note about which version to use
 
 This code is distributed via my gitub [account](http://www.github.com/molpopgen).  The "master" and "dev" branches should be viewed as experimental.  The [releases](https://github.com/molpopgen/fwdpp/releases), however, correspond to tested versions of the library fit for public consumption.  This means that, while the version number in the configure script on master/dev may match that of a recent release, _that does not mean that the features/stability/bugs present in master/dev are identical to those of the release._  If you want to use fwdpp for research, use the latest [release](https://github.com/molpopgen/fwdpp/releases).  If you want to play around with the latest and (occasionally not-so) greatest, look at the dev branch.  If you want to look at the latest I believe to be stable, look at master.  Also note that master may be ahead of dev, etc., depending on what I've committed from my development server to the repo stored at github.
 
-###Revision history
+### Revision history
 
 [Release notes](@ref md_md_RELEASE_NOTES)
 
@@ -63,11 +62,12 @@ You should pay particular attention to any statements about backwards compatibil
 
 Specific version numbers ("tags" in git-ese, a.k.a. "releases") will occur when new feature are added to the library and/or bugs are fixed.  The details of what happens in each release can be found [here](@ref md_md_RELEASE_NOTES), beginning with release 0.2.4.
 
-##Which C++?
+
+## Which C++?
 
 As of version 0.2.5, fwdpp requires a compiler supporting the "C++11" version of the language.  Currently, fwdpp requires that your compiler support the flag -std=c++11 in order to use c++11 language features. Recent version of GCC  and clang both support this option, which covers most Linux and OS X users.
 
-##Citation
+## Citation
 
 The fwdpp manuscript has published in Genetics.  The accepted version of the manuscript is [here](http://www.genetics.org/content/early/2014/06/19/genetics.114.165019.abstract).  For LaTeX users:
 
@@ -89,6 +89,42 @@ The fwdpp manuscript has published in Genetics.  The accepted version of the man
 
 The version of fwdpp used in that publication is 0.2.4.
 
+### Where fwdpp is now (compared to the publication).
+
+The published version of fwdpp described a library with the following features:
+
+* Objects (mutations and gametes) are stored only once in _doubly-linked lists_.
+* Diploids are pairs of pointers to gamtes (technically, pairs of iterators derived from the list of gametes).
+* Gametes contain vectors of pointers (again, C++ iterators) to mutations.
+* Each generation, extinct mutations and gametes are removed from the population.  This removal is a constant-time operation due to the use of linked lists.
+
+This design had a certain elegance to it.  A pointer to a diploid gave you immediate access to the mutations by means of the pointer structure.  It was also compact in memory, because iterators are only 8 bytes (on a 64-bit system) while gametes and mutations are 64 and _at least_ 48 bytes, respectively.
+
+The fwdpp publication showed that the library performs well in terms of speed compared to other tools out there.  However, the original design had the following problems:
+
+* Several lookup operations were implemented using expensive linear-time searches.
+* The linked lists plus the constant insertion and deletion of new and extinct objects, respectively, resulted in memory fragmentation or poor "cache locality".
+
+The 0.3.x releases of fwdpp solved most of the first problem, and sped the library up by over an order of magnitude.  Further, I recommended that users link programs based on fwdpp to an external library replacing the built-in malloc (the main memory allocation function for the C family of languages, and C++'s "new" is a wrapper around malloc).  I specifically recommended using Google's tcmalloc.  This recommendation went a long way toward solving the second problem--simply using an industrial-strength memory allocator went a long way towards addressing the performance hit due to memory fragmentation.
+
+(These releases also introduced various sub-libraries aimed at making fwdpp easier to use.)
+
+At this point, intuition (backed up by extensive code profiling using tools like Google's profiling library and valgrind's cachegrind) told me that the main hurdle to improving performance was to address memory usage.
+
+Release 0.4.4 introduced a fundamental change in the library design:
+
+* Extinct objects are no longer deleted.  Instead, their locations are recorded in a FIFO queue.  These queues are used to "recycle" already-allocated memory.
+* (Similarly, fixed variants can be tagged for recycling under many modeling situations.)
+* Once extinct objects are no longer removed, then there are no longer insertions/removals to/from the middle of containers.  Rather, we either recycle an object, or add a newly-allocated object to the end.
+* Thus, we can replace doubly-linked lists with vectors.
+* Further, we can replace iterators with integers.
+
+All of these changes were introduced in one fell swoop in 0.4.4, along with a set of other API changes that I'd wanted to make for a while.  The current design is conceptually the same as the published version, with 8 byte keys representing where mutations and gametes are, thus ensuring that an object is only represented once in memory.
+
+However, the new design is also less elegant.  Now, the vectors of gametes and mutations have to be passed along with the diploids.
+
+So, why do this? __It is a lot faster!__  Simulations of large genomic regions in large populations can be up to 80% faster!  In fact, tcmalloc isn't necessary to get really good performance any more.  Using it still improves run-times by about 10% (on Intel systems at least...), but that isn't a lot compared to the 50% improvement that it gave to previous versions of the library.
+
 
 # Documentation
 
@@ -99,6 +135,8 @@ A tutorial on policies and the library's reference manual can be found at [molpo
 __Note:__ the links above may be out of date, as the online documentation are not regenerated automatically.  If you want the latest, builds the docs from source.
 
 ## Tutorials
+
+__The first few tutorials are out of date due to API changes in 0.4.4.  The basic ideas are the same, but you'll have to look at the example programs and unit tests for the best HOW-TOs until I fix these documents.__
 
 The [fwdpp](http://molpopgen.github.io/fwdpp) main page contains several tutorials:
 
@@ -111,7 +149,7 @@ The [fwdpp](http://molpopgen.github.io/fwdpp) main page contains several tutoria
 
 
 ##Built from source
-The source code documentation is in the doc subdirectory that comes with the library.  There are two major pieces of documentation.  First is the detailed documentation of all library functions.  This is generated via [doxygen](http://www.doxygen.org), and the output is a folder called html.  To view the documentation, point a browser to html/index.html. 
+The source code documentation is in the doc subdirectory that comes with the library.  There are two major pieces of documentation.  First is the detailed documentation of all library functions.  This is generated via [doxygen](http://www.doxygen.org), and the output is a folder called html.  To view the documentation, point a browser to html/index.html.
 
 ##Example documentation
 The examples can be read in html form via the online reference manual linked to above.  You can find the two simplest examples online at the fwdpp [wiki](https://github.com/molpopgen/fwdpp/wiki) on github.
@@ -137,75 +175,33 @@ I have tested the library on my development machine (64-bit Intel processor, Ubu
 | clang++  | 3.5  | __YES__ | |
 | clang++  | 3.6  | __YES__ | |
 
-Please note that one unit test (policyTests) will show some test failures on GCC.  This is known, and fine.  That unit test basically shows that GCC sometimes chooses to copy an objects instead of move it, even when a move is requested.  Clang++, however, moves.  This has no effect on simulation correctness.  Rather, this unit test helps me understand some of the nuances that distinguish clang++ from g++.
-
 
 ##Library dependencies
 
 The minimal dependencies required to use the library to develop simulations are:
 
-1.  [GSL](http://gnu.org/software/gsl) 
-2.  [zlib](http://zlib.net) 
+1.  [GSL](http://gnu.org/software/gsl)
+2.  [zlib](http://zlib.net)
 
 In order to compile the example programs, you will also need:
 
-1.  [libsequence](http://github.com/molpopgen/libsequence). 
+1.  [libsequence](http://github.com/molpopgen/libsequence).
 
 In order to compile the unit tests, you also need:
 
 1.  [boost](http://www.boost.org).
 
-In order to get good performance out of simulations you also need one or both of the following:
-
-1.  [boost](http://www.boost.org).
-2.  [Google's perftools](https://code.google.com/p/gperftools/)
-
 For OS X users, all of the above dependencies are available via [homebrew](http://brew.sh).
 
-### Why use boost and/or Google's perftools?
+### Why use Google's perftools?
 
-Forward simulations are constantly allocating relativel small objects whose lifetimes are random variables.  For example, mutations enter populations every generation and are typically rapidly lost.   We can improve the performance of a simulation using various techniques, including replacing the C++ standard library's allocator with a custom allocator and/or replacing the C library's malloc function with a faster replacement.
+Forward simulations are constantly allocating relativel small objects whose lifetimes are random variables.  For example, mutations enter populations every generation and are typically rapidly lost.   We can improve the performance of a simulation using various techniques, including replacing the C++ standard library's allocator with a custom allocator and/or replacing the C library's malloc function with a faster replacement. Google's perftools provide the tcmalloc library, which provides a faster malloc.
 
-The boost library provides fast_pool_allocator, which is a good replacement for the standard allocators.  Google's perftools provide the tcmalloc library, which provides a faster malloc.
-
-Empirically, on my linux systems, I have found that the fastest combination appears to be the standard C++ allocator combined with linking to tcmalloc.  See below for how to compile the examples in various ways, allowing you to benchmark performance on your own system.
+Empirically, on my linux systems, I have found that the fastest combination appears to be the standard C++ allocator combined with linking to tcmalloc. However, this may not be the case on your system, and I provide the [fwdpp_perf](http://github.com/molpopgen/fwdpp_perf) project to let you benchmark different methods on your system.
 
 ## Performance
 
-Fwdpp 0.3.3 introduced massive performance improvements, requiring several API changes to make them possible.
-
-I performed a series of benchmarks on a 4-core, 3.6Ghz 64bit Intel machine, which is the same machine where the library is developed.  I performed small-N and large-N simulations, comparing performance between the following simulations:
-
-| Simulation | Version | Container/malloc combo |
-|:-----:|:-----:|:-----:|
-|fwdpp | 0.3.2 | std |
-|fwdpp | 0.3.2 | std + tcmalloc |
-|fwdpp | 0.3.2 | boost |
-|fwdpp | 0.3.2 | boost + tcmalloc |
-|fwdpp | 0.3.3 | std |
-|fwdpp | 0.3.3 | std + tcmalloc |
-|fwdpp | 0.3.3 | boost |
-|fwdpp | 0.3.3 | boost + tcmalloc |
-|[SLiM](http://messerlab.org/software/)| 1.8 | std |
-
-All simulations were compiled with GCC 4.9.2 and using -O3.  The intent is to check "out-of-the-box" performance, meaning that the programs were compiled as the developer intends them.  In the case of fwdpp, the configure script allows all of the above combinations.  For SLiM, I simply compiled it "as is", following the author's instructions.
-
-All fwdpp jobs are based on the example program diploid_ind that comes with the library.
-
-__Links to pdfs only show up on github.  I'll try to fix this later for the doxygen reference manual page.__
-
-The parameters for the small-N simulations were \f$N=1,000\f$, \f$\theta = \rho = 5,000\f$, and evolved for \f$10N\f$ generations.  I performed 12 replicates of each of the above combinations, running 4 at a time using GNU parallel.  The [run times](performance/time_0_3_3.pdf) and [peak memory use](performance/mem_0_3_3.pdf) show that:
-
-* fwdpp 0.3.3 is about 40% faster than 0.3.2
-* fwdpp 0.3.3 is more memory efficient than previous versions
-* fwdpp 0.3.3 outperforms SLiM for this case (which is a change from the fwdpp paper, where SLiM was faster for small-N simulations with large mutation/recombination rates).
-
-The parameters for the large-N simulations wer \f$N=10,000\f$, \f$\theta = \rho = 4,000\f$, and evolved for \f$10N\f$ generations.   I performed 4 replicates of each of the above combinations, running 4 at a time using GNU parallel, imposing a 36-hour wall clock limit, at which point a simulation was killed.  For these parameters, SLiM did not complete a single replicated.  The [run time](performance/bigtime_0_3_3.pdf) and [peak memory use](performance/bigmem_0_3_3.pdf) results for fwdpp show that:
-
-* fwdpp 0.3.2 took ~19.5 hours to complete a replicate
-* fwdpp 0.3.3 takes ~9.5 hours and uses less memory than 0.3.2.
-
-This suggests that fwdpp 0.3.3 is _at least_ ~4X faster than SLiM for simulations like this (because all SLiM jobs were killed at 36 hours).
+Performance testing has been moved to the [fwdpp_perf](http://github.com/molpopgen/fwdpp_perf) project.
 
 ##Obtaining the source code
 
@@ -213,7 +209,7 @@ This suggests that fwdpp 0.3.3 is _at least_ ~4X faster than SLiM for simulation
 You have a few options:
 
 1. Clone the repo (best option): git clone https://github.com/molpopgen/fwdpp.git
-2.  Click on "Download Zip" at https://github.com/molpopgen/fwdpp 
+2.  Click on "Download Zip" at https://github.com/molpopgen/fwdpp
 
 
 ###Obtaining a specific release
@@ -300,19 +296,12 @@ This is the default:
 make check
 ~~~
 
-### Using the standard C++ containers and the Google's tcmalloc 
+### Using the standard C++ containers and the Google's tcmalloc
 
 __This is the recommended method for maximum run-time performance.__
 
 ~~~{.sh}
 ./configure --enable-tcmalloc=yes
-make check
-~~~
-
-### Using boost containers and Google's tcmalloc replacement for malloc
-
-~~~{.sh}
-./configure --enable-boost=yes --enable-tcmalloc=yes
 make check
 ~~~
 

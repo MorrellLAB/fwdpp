@@ -15,45 +15,46 @@
 #include <fwdpp/sugar/singlepop.hpp>
 #include <fwdpp/sugar/infsites.hpp>
 #include <fwdpp/sugar/generalmut.hpp>
+#include <fwdpp/sugar/serialization.hpp>
 
 BOOST_AUTO_TEST_CASE( construct_2 )
 {
-  KTfwd::generalmut_vec p( {{0.5,-1}},{{1,0}},0.001,1,2);
+  KTfwd::generalmut_vec p( {{0.5,-1}},{{1,0}},0.001,1);
   BOOST_CHECK_EQUAL(p.s.size(),2);
   BOOST_CHECK_EQUAL(p.h.size(),2);
 }
 
 BOOST_AUTO_TEST_CASE( construct_2b )
 {
-  KTfwd::generalmut_vec p( {0.5},{{1,0}},0.001,1,2);
+  KTfwd::generalmut_vec p( {0.5},{{1,0}},0.001,1);
   BOOST_CHECK_EQUAL(p.s.size(),1);
   BOOST_CHECK_EQUAL(p.h.size(),2);
 }
 
 BOOST_AUTO_TEST_CASE( construct_2c )
 {
-  KTfwd::generalmut_vec p( {0.5},{1},0.001,1,2);
+  KTfwd::generalmut_vec p( {0.5},{1},0.001,1);
   BOOST_CHECK_EQUAL(p.s.size(),1);
   BOOST_CHECK_EQUAL(p.h.size(),1);
 }
 
 BOOST_AUTO_TEST_CASE( construct_4 )
 {
-  KTfwd::generalmut_vec p( {{0.5,-1,2.0,3.0}},{{1,0,-1,1}},0.001,1,2);
+  KTfwd::generalmut_vec p( {{0.5,-1,2.0,3.0}},{{1,0,-1,1}},0.001,1);
   BOOST_CHECK_EQUAL(p.s.size(),4);
   BOOST_CHECK_EQUAL(p.h.size(),4);
 }
 
 BOOST_AUTO_TEST_CASE( construct_4b )
 {
-  KTfwd::generalmut_vec p( {0.5},{{1,0,-1,1}},0.001,1,2);
+  KTfwd::generalmut_vec p( {0.5},{{1,0,-1,1}},0.001,1);
   BOOST_CHECK_EQUAL(p.s.size(),1);
   BOOST_CHECK_EQUAL(p.h.size(),4);
 }
 
 BOOST_AUTO_TEST_CASE( construct_4c )
 {
-  KTfwd::generalmut_vec p( {0.5},{1},0.001,1,2);
+  KTfwd::generalmut_vec p( {0.5},{1},0.001,1);
   BOOST_CHECK_EQUAL(p.s.size(),1);
   BOOST_CHECK_EQUAL(p.h.size(),1);
 }
@@ -61,7 +62,7 @@ BOOST_AUTO_TEST_CASE( construct_4c )
 //Not implemented in library yet
 BOOST_AUTO_TEST_CASE( serialize )
 {
-  KTfwd::generalmut_vec p( {{0.5,-1}},{{1,0}},0.001,1,2);
+  KTfwd::generalmut_vec p( {{0.5,-1}},{{1,0}},0.001,1);
 
   std::ostringstream o;
   KTfwd::mutation_writer w;
@@ -73,14 +74,13 @@ BOOST_AUTO_TEST_CASE( serialize )
 
   BOOST_CHECK_EQUAL(p.s.size(),p2.s.size());
   BOOST_CHECK_EQUAL(p.h.size(),p2.h.size());
-  BOOST_CHECK_EQUAL(p.n,p2.n);
   BOOST_CHECK_EQUAL(p.g,p2.g);
   BOOST_CHECK_EQUAL(p.pos,p2.pos);
 }
 
 BOOST_AUTO_TEST_CASE( serialize_gz )
 {
-  KTfwd::generalmut_vec p( {{0.5,-1}},{{1,0}},0.001,1,2);
+  KTfwd::generalmut_vec p( {{0.5,-1}},{{1,0}},0.001,1);
 
   gzFile out = gzopen("test_generalmut_vec_file.gz","w");
   KTfwd::mutation_writer w;
@@ -93,9 +93,17 @@ BOOST_AUTO_TEST_CASE( serialize_gz )
 
   BOOST_CHECK_EQUAL(p.s.size(),p2.s.size());
   BOOST_CHECK_EQUAL(p.h.size(),p2.h.size());
-  BOOST_CHECK_EQUAL(p.n,p2.n);
   BOOST_CHECK_EQUAL(p.g,p2.g);
   BOOST_CHECK_EQUAL(p.pos,p2.pos);
 
   unlink("test_generalmut_vec_file.gz");
+}
+
+BOOST_AUTO_TEST_CASE( serialize_pop1 )
+{
+  using mtype = KTfwd::generalmut_vec;
+  using singlepop_t = KTfwd::singlepop<mtype>;
+  singlepop_t pop1(100);
+  singlepop_t pop2(pop1);
+  
 }

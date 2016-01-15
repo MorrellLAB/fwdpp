@@ -1,444 +1,417 @@
-//  -*- C++ -*- 
+//  -*- C++ -*-
 #ifndef __FWDPP_SAMPLE_DIPLOID_TCC__
 #define __FWDPP_SAMPLE_DIPLOID_TCC__
 
+#include <fwdpp/internal/recycling.hpp>
 #include <fwdpp/internal/gsl_discrete.hpp>
 #include <fwdpp/internal/diploid_fitness_dispatch.hpp>
 #include <fwdpp/internal/gamete_lookup_table.hpp>
 #include <fwdpp/internal/gamete_cleaner.hpp>
 #include <fwdpp/internal/multilocus_rec.hpp>
+#include <fwdpp/internal/sample_diploid_helpers.hpp>
 
 namespace KTfwd
 {
   //single deme, constant N
   template< typename gamete_type,
-	    typename gamete_list_type_allocator,
-	    typename mutation_list_type_allocator,
+	    typename gamete_cont_type_allocator,
+	    typename mutation_type,
+	    typename mutation_cont_type_allocator,
 	    typename diploid_geno_t,
 	    typename diploid_vector_type_allocator,
 	    typename diploid_fitness_function,
-	    typename mutation_removal_policy,
 	    typename mutation_model,
 	    typename recombination_policy,
-	    typename mutation_insertion_policy,
-	    typename gamete_insertion_policy,
-	    template<typename,typename> class gamete_list_type,
-	    template<typename,typename> class mutation_list_type,
-	    template<typename,typename> class diploid_vector_type>
+	    template<typename,typename> class gamete_cont_type,
+	    template<typename,typename> class mutation_cont_type,
+	    template<typename,typename> class diploid_vector_type,
+	    typename mutation_removal_policy,
+	    typename gamete_insertion_policy
+	    >
   double
   sample_diploid(gsl_rng * r,
-		 gamete_list_type<gamete_type,gamete_list_type_allocator > * gametes,
-		 diploid_vector_type<diploid_geno_t,diploid_vector_type_allocator> * diploids,
-		 mutation_list_type<typename gamete_type::mutation_type,mutation_list_type_allocator > * mutations, 
-		 const uint_t & N_curr, 
+		 gamete_cont_type<gamete_type,gamete_cont_type_allocator > & gametes,
+		 diploid_vector_type<diploid_geno_t,diploid_vector_type_allocator> & diploids,
+		 mutation_cont_type<mutation_type,mutation_cont_type_allocator > & mutations,
+		 std::vector<uint_t> & mcounts,
+		 const uint_t & N_curr,
 		 const double & mu,
 		 const mutation_model & mmodel,
 		 const recombination_policy & rec_pol,
-		 const mutation_insertion_policy & mpolicy,
-		 const gamete_insertion_policy & gpolicy_mut,
 		 const diploid_fitness_function & ff,
+		 typename gamete_type::mutation_container & neutral,
+		 typename gamete_type::mutation_container & selected,
+		 const double f,
 		 const mutation_removal_policy & mp,
-		 const double & f)
+		 const gamete_insertion_policy & gpolicy_mut)
   {
     //run changing N version with N_next == N_curr
-    return sample_diploid(r,gametes,diploids,mutations,N_curr,N_curr,mu,mmodel,rec_pol,mpolicy,
-			  gpolicy_mut,ff,mp,f);
+    return sample_diploid(r,gametes,diploids,mutations,mcounts,N_curr,N_curr,mu,mmodel,rec_pol,
+			  ff,neutral,selected,f,
+			  mp,
+			  gpolicy_mut);
   }
 
   //single deme, N changing
   template< typename gamete_type,
-	    typename gamete_list_type_allocator,
-	    typename mutation_list_type_allocator,
+	    typename gamete_cont_type_allocator,
+	    typename mutation_type,
+	    typename mutation_cont_type_allocator,
 	    typename diploid_geno_t,
 	    typename diploid_vector_type_allocator,
 	    typename diploid_fitness_function,
-	    typename mutation_removal_policy,
 	    typename mutation_model,
 	    typename recombination_policy,
-	    typename mutation_insertion_policy,
-	    typename gamete_insertion_policy,
-	    template<typename,typename> class gamete_list_type,
-	    template<typename,typename> class mutation_list_type,
-	    template<typename,typename> class diploid_vector_type>
+	    template<typename,typename> class gamete_cont_type,
+	    template<typename,typename> class mutation_cont_type,
+	    template<typename,typename> class diploid_vector_type,
+	    typename mutation_removal_policy,
+	    typename gamete_insertion_policy
+	    >
   double
   sample_diploid(gsl_rng * r,
-		 gamete_list_type<gamete_type,gamete_list_type_allocator > * gametes,
-		 diploid_vector_type<diploid_geno_t,diploid_vector_type_allocator> * diploids,
-		 mutation_list_type<typename gamete_type::mutation_type,mutation_list_type_allocator > * mutations, 
-		 const uint_t & N_curr, 
-		 const uint_t & N_next, 
+		 gamete_cont_type<gamete_type,gamete_cont_type_allocator > & gametes,
+		 diploid_vector_type<diploid_geno_t,diploid_vector_type_allocator> & diploids,
+		 mutation_cont_type<mutation_type,mutation_cont_type_allocator > & mutations,
+		 std::vector<uint_t> & mcounts,
+		 const uint_t & N_curr,
+		 const uint_t & N_next,
 		 const double & mu,
 		 const mutation_model & mmodel,
 		 const recombination_policy & rec_pol,
-		 const mutation_insertion_policy & mpolicy,
-		 const gamete_insertion_policy & gpolicy_mut,
 		 const diploid_fitness_function & ff,
+		 typename gamete_type::mutation_container & neutral,
+		 typename gamete_type::mutation_container & selected,
+		 const double f,
 		 const mutation_removal_policy & mp,
-		 const double & f)
+		 const gamete_insertion_policy & gpolicy_mut)
   {
-    assert(N_curr == diploids->size());
+    //test preconditions in debugging mode
+    assert(popdata_sane(diploids,gametes,mcounts));
+    assert(mcounts.size()==mutations.size());
+    assert(N_curr == diploids.size());
+    assert(mcounts.size()==mutations.size());
 
-    std::vector<double> fitnesses(diploids->size());
+    std::vector<double> fitnesses(diploids.size());
     double wbar = 0.;
+    auto mut_recycling_bin = fwdpp_internal::make_mut_queue(mcounts);
+    auto gam_recycling_bin = fwdpp_internal::make_gamete_queue(gametes);
+    auto gamete_lookup = fwdpp_internal::gamete_lookup_table(gametes,mutations);
     
-    auto dptr = diploids->begin();
     for( uint_t i = 0 ; i < N_curr ; ++i )
       {
-	(dptr+i)->first->n = 0;
-	(dptr+i)->second->n = 0;
-	fitnesses[i] = fwdpp_internal::diploid_fitness_dispatch(ff,(dptr+i),
+	gametes[diploids[i].first].n=gametes[diploids[i].second].n=0;
+	fitnesses[i] = fwdpp_internal::diploid_fitness_dispatch(ff,diploids[i],gametes,mutations,
 								typename traits::is_custom_diploid_t<diploid_geno_t>::type());
 	wbar += fitnesses[i];
       }
-    wbar /= double(diploids->size());
-
+    wbar /= double(diploids.size());
 #ifndef NDEBUG
-    std::for_each(gametes->cbegin(),gametes->cend(),[](decltype((*gametes->cbegin())) __g) {
-	assert( !__g.n ); } );
+    for(const auto & g : gametes) assert(!g.n);
 #endif
-    fwdpp_internal::gsl_ran_discrete_t_ptr lookup(gsl_ran_discrete_preproc(fitnesses.size(),&fitnesses[0]));
-    auto parents(*diploids); //copy the parents
-    auto pptr = parents.begin();
-    
+    fwdpp_internal::gsl_ran_discrete_t_ptr lookup(gsl_ran_discrete_preproc(N_curr,fitnesses.data()));
+    const auto parents(diploids); //copy the parents
+
     //Change the population size
-    if( diploids->size() != N_next)
+    if( diploids.size() != N_next)
       {
-	diploids->resize(N_next);
-	dptr = diploids->begin();
+	diploids.resize(N_next);
       }
-    uint_t NREC=0;
-    assert(diploids->size()==N_next);
-    decltype( gametes->begin() ) p1g1,p1g2,p2g1,p2g2;
+    assert(diploids.size()==N_next);
 
-    auto gamete_lookup = fwdpp_internal::gamete_lookup_table(gametes);
-
-    for( uint_t i = 0 ; i < N_next ; ++i )
+    for(auto & dip : diploids)
       {
-	assert(dptr==diploids->begin());
-	assert( (dptr+i) < diploids->end() );
 	size_t p1 = gsl_ran_discrete(r,lookup.get());
-#ifdef FWDPP_COMPAT_0_3_0
-	size_t p2 = (gsl_rng_uniform(r) < f) ? p1 : gsl_ran_discrete(r,lookup.get());
-#else
 	size_t p2 = (f==1. || (f>0. && gsl_rng_uniform(r) < f)) ? p1 : gsl_ran_discrete(r,lookup.get());
-#endif
 	assert(p1<parents.size());
 	assert(p2<parents.size());
-	
-	p1g1 = (pptr+typename decltype(pptr)::difference_type(p1))->first;
-	p1g2 = (pptr+typename decltype(pptr)::difference_type(p1))->second;
-	p2g1 = (pptr+typename decltype(pptr)::difference_type(p2))->first;
-	p2g2 = (pptr+typename decltype(pptr)::difference_type(p2))->second;
+
+	size_t p1g1 = parents[p1].first;
+	size_t p1g2 = parents[p1].second;
+	size_t p2g1 = parents[p2].first;
+	size_t p2g2 = parents[p2].second;
 
 	if(gsl_rng_uniform(r)<0.5) std::swap(p1g1,p1g2);
 	if(gsl_rng_uniform(r)<0.5) std::swap(p2g1,p2g2);
 
-	NREC += rec_pol(p1g1,p1g2,gamete_lookup);
-	NREC += rec_pol(p2g1,p2g2,gamete_lookup);
+	dip.first = recombination(gametes,gamete_lookup,gam_recycling_bin,
+				  neutral,selected,rec_pol,p1g1,p1g2,mutations).first;
+	dip.second = recombination(gametes,gamete_lookup,gam_recycling_bin,
+				   neutral,selected,rec_pol,p2g1,p2g2,mutations).first;
 
-	(dptr+i)->first = p1g1;
-	(dptr+i)->second = p2g1;
-	
-	(dptr+i)->first->n++;
-	assert( (dptr+i)->first->n > 0 );
-	assert( (dptr+i)->first->n <= 2*N_next );
-	(dptr+i)->second->n++;
-	assert( (dptr+i)->second->n > 0 );
-	assert( (dptr+i)->second->n <= 2*N_next );
+	gametes[dip.first].n++;
+	gametes[dip.second].n++;
 
 	//now, add new mutations
-	(dptr+i)->first = mutate_gamete(r,mu,gametes,mutations,(dptr+i)->first,mmodel,mpolicy,gpolicy_mut);
-	(dptr+i)->second = mutate_gamete(r,mu,gametes,mutations,(dptr+i)->second,mmodel,mpolicy,gpolicy_mut);
+	dip.first = mutate_gamete_recycle(mut_recycling_bin,gam_recycling_bin,r,mu,gametes,mutations,dip.first,mmodel,gpolicy_mut);
+	dip.second = mutate_gamete_recycle(mut_recycling_bin,gam_recycling_bin,r,mu,gametes,mutations,dip.second,mmodel,gpolicy_mut);
+
+	assert( gametes[dip.first].n );
+	assert( gametes[dip.second].n );
       }
-#ifndef NDEBUG
-    for( uint_t i = 0 ; i < diploids->size() ; ++i )
-      {
-	assert( (dptr+i)->first->n > 0 );
-	assert( (dptr+i)->first->n <= 2*N_next );
-	assert( (dptr+i)->second->n > 0 );
-	assert( (dptr+i)->second->n <= 2*N_next );
-      }
-#endif
-    for( auto itr = gametes->begin() ; itr != gametes->end() ; )
-      {
-	if(!itr->n) itr = gametes->erase(itr);
-	else
-	  {
-	    adjust_mutation_counts(itr,itr->n);
-	    ++itr; 
-	  }
-      }
-#ifndef NDEBUG
-    for( auto itr = mutations->begin() ; itr != mutations->end() ; ++itr ) assert( itr->n <= 2*N_next );
-#endif
-    fwdpp_internal::gamete_cleaner(gametes,mp,typename std::is_same<mutation_removal_policy,KTfwd::remove_nothing >::type());
     assert(check_sum(gametes,2*N_next));
+#ifndef NDEBUG
+    for(const auto & dip : diploids)
+      {
+	assert(gametes[dip.first].n>0);
+	assert(gametes[dip.first].n<=2*N_next);
+	assert(gametes[dip.second].n>0);
+	assert(gametes[dip.second].n<=2*N_next);
+      }
+#endif
+    fwdpp_internal::process_gametes(gametes,mutations,mcounts);
+    assert(mcounts.size()==mutations.size());
+#ifndef NDEBUG
+    for(const auto & mc : mcounts)
+      {
+	assert(mc <= 2*N_next);
+      }
+#endif
+    assert(popdata_sane(diploids,gametes,mcounts));
+    fwdpp_internal::gamete_cleaner(gametes,mcounts,2*N_next,typename std::is_same<decltype(mp),KTfwd::remove_nothing >::type());
     return wbar;
   }
-  
+
   //Metapopulation version of sample_diploid for individual-based simulations and constant N
   template< typename gamete_type,
+	    typename mutation_type,
 	    typename metapop_diploid_vector_type_allocator,
-	    typename gamete_list_type_allocator,
-	    typename mutation_list_type_allocator,
+	    typename gamete_cont_type_allocator,
+	    typename mutation_cont_type_allocator,
 	    typename diploid_geno_t,
 	    typename diploid_vector_type_allocator,
 	    typename diploid_fitness_function_container,
-	    typename mutation_removal_policy,
 	    typename mutation_model,
 	    typename recombination_policy,
 	    typename migration_policy,
-	    typename mutation_insertion_policy,
-	    typename gamete_insertion_policy,
-	    template<typename,typename> class gamete_list_type,
-	    template<typename,typename> class mutation_list_type,
+	    template<typename,typename> class gamete_cont_type,
+	    template<typename,typename> class mutation_cont_type,
 	    template<typename,typename> class diploid_vector_type,
-	    template<typename,typename> class metapop_diploid_vector_type>
+	    template<typename,typename> class metapop_diploid_vector_type,
+	    typename mutation_removal_policy,
+	    typename gamete_insertion_policy>
   std::vector< double >
   sample_diploid(gsl_rng * r,
-		 gamete_list_type<gamete_type,gamete_list_type_allocator> * metapop,
-		 metapop_diploid_vector_type < diploid_vector_type<diploid_geno_t,diploid_vector_type_allocator>,metapop_diploid_vector_type_allocator > * diploids,
-		 mutation_list_type<typename gamete_type::mutation_type,mutation_list_type_allocator > * mutations, 
-		 const uint_t * N_curr, 
+		 gamete_cont_type<gamete_type,gamete_cont_type_allocator> & metapop,
+		 metapop_diploid_vector_type < diploid_vector_type<diploid_geno_t,diploid_vector_type_allocator>,metapop_diploid_vector_type_allocator > & diploids,
+		 mutation_cont_type<mutation_type,mutation_cont_type_allocator > & mutations,
+		 std::vector<uint_t> & mcounts,
+		 const uint_t * N_curr,
 		 const double & mu,
 		 const mutation_model & mmodel,
 		 const recombination_policy & rec_pol,
-		 const mutation_insertion_policy & mpolicy,
-		 const gamete_insertion_policy & gpolicy_mut,
 		 const diploid_fitness_function_container & ffs,
-		 const mutation_removal_policy & mp,
 		 const migration_policy & mig,
-		 const double * f)
+		 typename gamete_type::mutation_container & neutral,
+		 typename gamete_type::mutation_container & selected,
+		 const double * f,
+		 const mutation_removal_policy & mp,
+		 const gamete_insertion_policy & gpolicy_mut)
   {
     //run changing-N version with no change in N
-    return sample_diploid(r,metapop,diploids,mutations,N_curr,N_curr,mu,mmodel,rec_pol,mpolicy,
-			  gpolicy_mut,ffs,mp,mig,f);
+    return sample_diploid(r,metapop,diploids,mutations,mcounts,N_curr,N_curr,mu,mmodel,rec_pol,
+			  ffs,mig,neutral,selected,f,mp,gpolicy_mut);
   }
-  
+
   //Metapopulation version of sample_diploid for individual-based simulations with changing population size
   template< typename gamete_type,
+	    typename mutation_type,
 	    typename metapop_diploid_vector_type_allocator,
-	    typename gamete_list_type_allocator,
-	    typename mutation_list_type_allocator,
+	    typename gamete_cont_type_allocator,
+	    typename mutation_cont_type_allocator,
 	    typename diploid_geno_t,
 	    typename diploid_vector_type_allocator,
 	    typename diploid_fitness_function_container,
-	    typename mutation_removal_policy,
 	    typename mutation_model,
 	    typename recombination_policy,
 	    typename migration_policy,
-	    typename mutation_insertion_policy,
-	    typename gamete_insertion_policy,
-	    template<typename,typename> class gamete_list_type,
-	    template<typename,typename> class mutation_list_type,
+	    template<typename,typename> class gamete_cont_type,
+	    template<typename,typename> class mutation_cont_type,
 	    template<typename,typename> class diploid_vector_type,
-	    template<typename,typename> class metapop_diploid_vector_type>
+	    template<typename,typename> class metapop_diploid_vector_type,
+	    typename mutation_removal_policy,
+	    typename gamete_insertion_policy>
   std::vector< double >
   sample_diploid(gsl_rng * r,
-		 gamete_list_type<gamete_type,gamete_list_type_allocator> * metapop,
-		 metapop_diploid_vector_type < diploid_vector_type<diploid_geno_t, diploid_vector_type_allocator>,metapop_diploid_vector_type_allocator > * diploids,
-		 mutation_list_type<typename gamete_type::mutation_type,mutation_list_type_allocator > * mutations, 
-		 const uint_t * N_curr, 
-		 const uint_t * N_next, 
+		 gamete_cont_type<gamete_type,gamete_cont_type_allocator> & gametes,
+		 metapop_diploid_vector_type < diploid_vector_type<diploid_geno_t,diploid_vector_type_allocator>,metapop_diploid_vector_type_allocator > & diploids,
+		 mutation_cont_type<mutation_type,mutation_cont_type_allocator > & mutations,
+		 std::vector<uint_t> & mcounts,
+		 const uint_t * N_curr,
+		 const uint_t * N_next,
 		 const double & mu,
 		 const mutation_model & mmodel,
 		 const recombination_policy & rec_pol,
-		 const mutation_insertion_policy & mpolicy,
-		 const gamete_insertion_policy & gpolicy_mut,
 		 const diploid_fitness_function_container & ffs,
-		 const mutation_removal_policy & mp,
 		 const migration_policy & mig,
-		 const double * f)
-	    {
-	      //get the fitnesses for each diploid in each deme and make the lookup table of parental fitnesses
-	      using lookup_t = fwdpp_internal::gsl_ran_discrete_t_ptr;
-	      std::vector<lookup_t> lookups;
-	      std::vector<double> wbars(diploids->size(),0);
-	      typename decltype(diploids->begin())::difference_type popindex = 0;
+		 typename gamete_type::mutation_container & neutral,
+		 typename gamete_type::mutation_container & selected,
+		 const double * f,
+		 const mutation_removal_policy & mp,
+		 const gamete_insertion_policy & gpolicy_mut)
+  {
+    //get the fitnesses for each diploid in each deme and make the lookup table of parental fitnesses
+    using lookup_t = fwdpp_internal::gsl_ran_discrete_t_ptr;
+    std::vector<lookup_t> lookups;
+    std::vector<double> wbars(diploids.size(),0);
+    auto mut_recycling_bin = fwdpp_internal::make_mut_queue(mcounts);
+    auto gamete_recycling_bin = fwdpp_internal::make_gamete_queue(gametes);
+    auto gamete_lookup = fwdpp_internal::gamete_lookup_table(gametes,mutations);
 
-	      //get max N
-	      uint_t mN=0;
-	      for( uint_t i=0;i<diploids->size();++i )
-		{
-		  if( *(N_curr+i) > mN )
-		    {
-		      mN = *(N_curr+i);
-		    }
-		}
-	      double * fitnesses = new double[mN];
-	      
-	      for( auto dptr = diploids->begin() ; dptr != diploids->end() ; ++dptr, ++popindex )
-		{
-		  uint_t demesize = *(N_curr+popindex);
-		  assert( demesize == dptr->size() );
-		  size_t ith_dip = 0;
-		  for( auto gptr = dptr->begin() ; 
-		       gptr != dptr->end() ; ++gptr,++ith_dip )
-		    {
-		      fitnesses[ith_dip] = fwdpp_internal::diploid_fitness_dispatch(ffs[typename diploid_fitness_function_container::size_type(popindex)],gptr,
-										    typename traits::is_custom_diploid_t<diploid_geno_t>::type());
-		      wbars[std::vector<double>::size_type(popindex)]+=fitnesses[ith_dip];
-		      gptr->first->n = 0;
-		      gptr->second->n = 0;
-		    }
-		  wbars[std::vector<double>::size_type(popindex)] /= double( demesize );
-		  lookups.emplace_back( lookup_t(gsl_ran_discrete_preproc(demesize,fitnesses)) );
-		}
-	      delete [] fitnesses;
-	      
-	      assert(lookups.size() == diploids->size());
-	      //copy diploids into temporary parents
-	      auto parents(*diploids);
-	      
-	      //Update the diploids
-	      popindex = 0;
-	      uint_t NREC=0;
+    //get max N
+    auto mN = *std::max_element(N_curr,N_curr+diploids.size());
 
-	      decltype(metapop->begin()) p1g1,p1g2,p2g1,p2g2;
-	      auto gamete_lookup = fwdpp_internal::gamete_lookup_table(metapop);
-	      for( auto ptr = diploids->begin() ; ptr != diploids->end() ; ++ptr,++popindex )
-		{
-		  uint_t demesize =*(N_next+popindex);
-		  if( demesize != *(N_curr+popindex) )
-		    {
-		      ptr->resize(demesize);
-		    }
-		  auto dptr = ptr->begin();
+    std::vector<double> fitnesses(mN);
+    std::size_t popi=0;
+    for(const auto & dipvec : diploids ) //go over each container of diploids...
+      {
+	unsigned i=0;
+	for(const auto & dip : dipvec) //...and each diploid
+	  {
+	    fitnesses[i]=fwdpp_internal::diploid_fitness_dispatch(ffs[popi],dip,gametes,mutations,typename traits::is_custom_diploid_t<diploid_geno_t>::type());
+	    wbars[popi]+=fitnesses[i];
+	    gametes[dip.first].n=gametes[dip.second].n=0;
+	    ++i;
+	  }
+	wbars[popi] /= double(dipvec.size());
+	lookups.emplace_back(lookup_t(gsl_ran_discrete_preproc(dipvec.size(),fitnesses.data())));
+	++popi;
+      }
 
-		  for( uint_t i = 0 ; i < demesize ; ++i )
-		    {
-		      /* Figure out if parent 1 is migrant or not.
+    assert(lookups.size() == diploids.size());
+    //copy diploids into temporary parents
+    const auto parents(diploids);
 
-			A migration policy takes the current deme (popindex) as
-			an argument.  It returns popindex if there is no migration,
-			else it returns the index of the deme of a migrant parent
-		      */
-		      decltype(popindex) deme_first_parent = decltype(popindex)(mig(size_t(popindex))),deme_other_parent=popindex;
-		      auto pptr=(parents.begin()+typename decltype(parents.begin())::difference_type(deme_first_parent))->begin();
-		      typename decltype(pptr)::difference_type p1 = 
-			typename decltype(pptr)::difference_type(gsl_ran_discrete(r,lookups[std::vector<lookup_t>::size_type(deme_first_parent)].get())),p2;
+    //Update the diploids, one deme at a time
+    for(popi = 0 ; popi < diploids.size() ; ++popi)
+      {
+	uint_t demesize = *(N_next+popi);
+	if(demesize != *(N_curr+popi))
+	  {
+	    diploids[popi].resize(demesize);
+	  }
+	for(auto & dip : diploids[popi])
+	  {
+	    /* Figure out if parent 1 is migrant or not.
+	       
+	       A migration policy takes the current deme (popindex) as
+	       an argument.  It returns popindex if there is no migration,
+	       else it returns the index of the deme of a migrant parent
+	    */
+	    std::size_t deme_p1 = mig(popi),deme_p2=popi;
 
-		      p1g1 = (pptr+p1)->first;
-		      p1g2 = (pptr+p1)->second;
+	    //Figure out who the parents are
+	    std::size_t p1 = gsl_ran_discrete(r,lookups[deme_p1].get()),p2;
 
-		      /*
-			If the individual is not inbred, then we pick a 
-			deme from the migration policy for parent 2
-		      */
-		      auto pptr2=(parents.begin()+typename decltype(parents.begin())::difference_type(deme_other_parent))->end();
-#ifdef FWDPP_COMPAT_0_3_0
-		      if( f != nullptr && gsl_rng_uniform(r) < *(f + popindex ) ) //individual is inbred
-#else
-			if( f != nullptr && ( *(f + popindex)==1. || (*(f + popindex)>0. && gsl_rng_uniform(r) < *(f + popindex)) ) ) //individual is inbred
-#endif
-			  {
-			    pptr2=(parents.begin()+typename decltype(parents.begin())::difference_type(popindex))->begin();
-			    p2=p1;
-			  }
-		      else
-			{
-			  deme_other_parent = decltype(deme_other_parent)(mig(size_t(popindex)));
-			  assert(deme_other_parent>=0);
-			  assert( decltype(diploids->size())(deme_other_parent) < diploids->size() );
-			  pptr2 = (parents.begin() + deme_other_parent)->begin();
-			  p2 = decltype(p2)(gsl_ran_discrete(r,lookups[std::vector<lookup_t>::size_type(deme_other_parent)].get()));
-			  assert( (pptr2+p2) < (parents.begin() + typename decltype(parents.begin())::difference_type(deme_other_parent))->end() );
-			}
-		      assert( pptr2 != (parents.begin() + typename decltype(parents.begin())::difference_type(deme_other_parent))->end() );
+	    /*
+	      If the individual is not inbred, then we pick a
+	      deme from the migration policy for parent 2
+	    */
+	    if( f != nullptr && ( *(f + popi)==1. || (*(f + popi)>0. && gsl_rng_uniform(r) < *(f + popi)) ) ) //individual is inbred
+	      {
+		p2=p1;
+	      }
+	    else
+	      {
+		//apply migration policy to figure out parental deme for parent #2
+		deme_p2 = mig(popi);
+		p2 = gsl_ran_discrete(r,lookups[deme_p2].get());
+	      }
 
-		      p2g1 = (pptr2+p2)->first;
-		      p2g2 = (pptr2+p2)->second;
+	    std::size_t p1g1 = parents[deme_p1][p1].first;
+	    std::size_t p1g2 = parents[deme_p1][p1].second;
+	    std::size_t p2g1 = parents[deme_p2][p2].first;
+	    std::size_t p2g2 = parents[deme_p2][p2].second;
 
-		      //0.3.3: Do "Mendel" now...
-		      if(gsl_rng_uniform(r)<0.5) std::swap(p1g1,p1g2);
-		      if(gsl_rng_uniform(r)<0.5) std::swap(p2g1,p2g2);
-		      
-		      NREC += rec_pol(p1g1,p1g2,gamete_lookup);
-		      NREC += rec_pol(p2g1,p2g2,gamete_lookup);
+	    if(gsl_rng_uniform(r)<0.5)std::swap(p1g1,p1g2);
+	    if(gsl_rng_uniform(r)<0.5)std::swap(p2g1,p2g2);
 
-		      (dptr+i)->first = p1g1;
-		      (dptr+i)->second = p2g1;
-		      assert( std::find( (metapop)->begin(), (metapop)->end(), *( (dptr+i)->second ) )
-			      != (metapop)->end() );
-
-		      (dptr+i)->first->n++;
-		      (dptr+i)->second->n++;
-
-		      (dptr+i)->first = mutate_gamete(r,mu,metapop,mutations,(dptr+i)->first,mmodel,mpolicy,gpolicy_mut);
-		      (dptr+i)->second = mutate_gamete(r,mu,metapop,mutations,(dptr+i)->second,mmodel,mpolicy,gpolicy_mut);
-		    }
-		}
-	      for( auto itr = metapop->begin() ; itr != metapop->end() ; )
-		{
-		  if(!itr->n) itr = metapop->erase(itr);
-		  else
-		    {
-		      adjust_mutation_counts(itr,itr->n);
-		      ++itr; 
-		    }
-		}
-	      fwdpp_internal::gamete_cleaner(metapop,mp,typename std::is_same<mutation_removal_policy,KTfwd::remove_nothing >::type());
-	      return wbars;
-	    }
+	    dip.first = recombination(gametes,gamete_lookup,gamete_recycling_bin,
+				      neutral,selected,rec_pol,p1g1,p1g2,mutations).first;
+	    dip.second = recombination(gametes,gamete_lookup,gamete_recycling_bin,
+				       neutral,selected,rec_pol,p2g1,p2g2,mutations).first;
+	    
+	    gametes[dip.first].n++;
+	    gametes[dip.second].n++;
+	    
+	    //now, add new mutations
+	    dip.first = mutate_gamete_recycle(mut_recycling_bin,gamete_recycling_bin,r,mu,gametes,mutations,dip.first,mmodel,gpolicy_mut);
+	    dip.second = mutate_gamete_recycle(mut_recycling_bin,gamete_recycling_bin,r,mu,gametes,mutations,dip.second,mmodel,gpolicy_mut);
+	  }
+      }
+    fwdpp_internal::process_gametes(gametes,mutations,mcounts);
+    assert(mcounts.size()==mutations.size());
+    fwdpp_internal::gamete_cleaner(gametes,mcounts,
+				   2*std::accumulate(N_next,N_next+diploids.size(),uint_t(0)),
+				   typename std::is_same<decltype(mp),KTfwd::remove_nothing >::type());
+    assert( check_sum(gametes,2*std::accumulate(N_next,N_next+diploids.size(),uint_t(0))) );
+    return wbars;
+  }
+  
+  //Multi-locus API
   //single deme, N changing
   template< typename diploid_geno_t,
 	    typename gamete_type,
-	    typename gamete_list_type_allocator,
-	    typename mutation_list_type_allocator,
+	    typename gamete_cont_type_allocator,
+	    typename mutation_type,
+	    typename mutation_cont_type_allocator,
 	    typename diploid_vector_type_allocator,
 	    typename locus_vector_type_allocator,
 	    typename diploid_fitness_function,
-	    typename mutation_removal_policy,
 	    typename mutation_model_container,
 	    typename recombination_policy_container,
-	    typename mutation_insertion_policy,
-	    typename gamete_insertion_policy,
 	    typename bw_locus_rec_fxn,
-	    template<typename,typename> class gamete_list_type,
-	    template<typename,typename> class mutation_list_type,
+	    template<typename,typename> class gamete_cont_type,
+	    template<typename,typename> class mutation_cont_type,
 	    template<typename,typename> class diploid_vector_type,
-	    template<typename,typename> class locus_vector_type>
+	    template<typename,typename> class locus_vector_type,
+	    typename mutation_removal_policy,
+	    typename gamete_insertion_policy
+	    >
   double
   sample_diploid(gsl_rng * r,
-		 gamete_list_type<gamete_type, gamete_list_type_allocator> * gametes,
-		 diploid_vector_type<locus_vector_type<diploid_geno_t,locus_vector_type_allocator>,diploid_vector_type_allocator> * diploids,
-		 mutation_list_type<typename gamete_type::mutation_type,mutation_list_type_allocator > * mutations, 
-		 const uint_t & N_curr, 
-		 const uint_t & N_next, 
+		 gamete_cont_type<gamete_type, gamete_cont_type_allocator> & gametes,
+		 diploid_vector_type<locus_vector_type< diploid_geno_t, locus_vector_type_allocator>, diploid_vector_type_allocator> & diploids,
+		 mutation_cont_type<mutation_type,mutation_cont_type_allocator > & mutations,
+		 std::vector<uint_t> & mcounts,
+		 const uint_t & N_curr,
+		 const uint_t & N_next,
 		 const double * mu,
 		 const mutation_model_container & mmodel,
 		 const recombination_policy_container & rec_policies,
 		 const double * r_between_loci,
 		 const bw_locus_rec_fxn & blrf,
-		 const mutation_insertion_policy & mpolicy,
-		 const gamete_insertion_policy & gpolicy_mut,
 		 const diploid_fitness_function & ff,
+		 typename gamete_type::mutation_container & neutral,
+		 typename gamete_type::mutation_container & selected,
+		 const double & f,
 		 const mutation_removal_policy & mp,
-		 const double & f)
+		 const gamete_insertion_policy & gpolicy_mut)
   {
+    assert(mcounts.size()==mutations.size());
 #ifndef NDEBUG
-    assert(diploids->size()==N_curr);
-#endif  
+    assert(diploids.size()==N_curr);
+#endif
     //Vector of parental fitnesses
     std::vector<double> fitnesses(N_curr);
     double wbar = 0.;
-  
+    auto mut_recycling_bin = fwdpp_internal::make_mut_queue(mcounts);
+    auto gamete_recycling_bin = fwdpp_internal::make_gamete_queue(gametes);
+    auto gamete_lookup = fwdpp_internal::gamete_lookup_table(gametes,mutations);
     //Go over parents
-    auto dptr = diploids->begin();
-    for( uint_t i = 0 ; i < N_curr ; ++i,++dptr )
+    for( uint_t i = 0 ; i < N_curr ; ++i )
       {
 	//set parental gamete counts to 0 for each locus
-	for( auto j = dptr->begin() ; j != dptr->end() ; ++j )
+	for( auto locus : diploids[i])
 	  {
-	    j->first->n=0;
-	    j->second->n=0;
+	    gametes[locus.first].n=gametes[locus.second].n=0;
 	  }
 	//Calculate the fitness of this parent
-	fitnesses[i] += ff( dptr );
+	fitnesses[i] += ff( diploids[i] );
 	//increment pop. mean fitness
 	wbar += fitnesses[i];
       }
-
+    wbar /= double(diploids.size());
 #ifndef NDEBUG
     /*
       If we are debugging, let's make sure that every gamete has been set to n = 0.
@@ -446,112 +419,82 @@ namespace KTfwd
       it is possible that the "gamete pool" contains items not carried by any diploids.
       If so, this assertion will fail.
     */
-    for ( auto i = gametes->cbegin() ; i != gametes->cend() ; ++i )
-      {
-	    assert( ! i->n );
-      }
+    for(const auto & g : gametes) assert(!g.n);
 #endif
 
-    wbar /= double(diploids->size());
-    dptr = diploids->begin();  //reset to beginning of diploids
-  
-    fwdpp_internal::gsl_ran_discrete_t_ptr lookup(gsl_ran_discrete_preproc(fitnesses.size(),&fitnesses[0]));
- 
-    auto parents(*diploids); //Copy the parents.  Exact copy of diploids--same fitnesses, etc.
-    const auto pptr = parents.cbegin();
- 
+    fwdpp_internal::gsl_ran_discrete_t_ptr lookup(gsl_ran_discrete_preproc(fitnesses.size(),fitnesses.data()));
+
+    const auto parents(diploids); //Copy the parents.  Exact copy of diploids--same fitnesses, etc.
+
     //Change the population size and reset dptr to avoid iterator invalidation
-    if( diploids->size() != N_next)
+    if( diploids.size() != N_next)
       {
-	diploids->resize(N_next);
-	dptr = diploids->begin();
+	diploids.resize(N_next);
       }
-  
-    assert(diploids->size()==N_next);
 
-    auto gamete_lookup = fwdpp_internal::gamete_lookup_table(gametes);
-    for( uint_t curr_dip = 0 ; curr_dip < N_next ; ++curr_dip )
+    assert(diploids.size()==N_next);
+
+    for(auto & dip : diploids)
       {
-	assert(dptr==diploids->begin());
-	assert( (dptr+curr_dip) < diploids->end() );
-
-	//Choose the two parents
-	typename decltype(pptr)::difference_type p1 = decltype(p1)(gsl_ran_discrete(r,lookup.get()));
-#ifdef FWDPP_COMPAT_0_3_0
-	decltype(p1) p2  = (gsl_rng_uniform(r) < f) ? p1 : decltype(p1)(gsl_ran_discrete(r,lookup.get()));
-#else
-	decltype(p1) p2 = (f==1. || (f>0. && gsl_rng_uniform(r)<f)) ? p1 :  decltype(p1)(gsl_ran_discrete(r,lookup.get()));
-#endif
+	std::size_t p1 = gsl_ran_discrete(r,lookup.get());
 	assert(p1<N_curr);
+	std::size_t p2 = (f==1.||(f>0. && gsl_rng_uniform(r)<f)) ? p1 : gsl_ran_discrete(r,lookup.get());
 	assert(p2<N_curr);
-     
-	auto cdip = (dptr+curr_dip);
-	fwdpp_internal::multilocus_rec_mut(r,*(pptr+p1),*(pptr+p2),cdip,gamete_lookup,
-					   rec_policies,blrf,r_between_loci,
-					   ((gsl_rng_uniform(r)<0.5)?1:0),
-					   ((gsl_rng_uniform(r)<0.5)?1:0),
-					   gametes,mutations,mu,mmodel,mpolicy,gpolicy_mut
-					   );
+	dip=fwdpp_internal::multilocus_rec_mut(r,parents[p1],parents[p2],
+					       mut_recycling_bin,gamete_recycling_bin,gamete_lookup,
+					       rec_policies,blrf,r_between_loci,
+					       ((gsl_rng_uniform(r)<0.5)?1:0),
+					       ((gsl_rng_uniform(r)<0.5)?1:0),
+					       gametes,mutations,neutral,selected,mu,mmodel,gpolicy_mut
+					       );
+	
       }
-
-    //0.3.3: simpler!
-    for( auto itr = gametes->begin() ; itr != gametes->end() ; )
-      {
-	if(!itr->n) itr = gametes->erase(itr);
-	else
-	  {
-	    adjust_mutation_counts(itr,itr->n);
-	    ++itr; 
-	  }
-      }
-    fwdpp_internal::gamete_cleaner(gametes,mp,typename std::is_same<mutation_removal_policy,KTfwd::remove_nothing >::type());
+    fwdpp_internal::process_gametes(gametes,mutations,mcounts);
+    fwdpp_internal::gamete_cleaner(gametes,mcounts,2*N_next,
+				   typename std::is_same<decltype(mp),KTfwd::remove_nothing >::type());
     return wbar;
   }
 
   //single deme, constant N
   template< typename diploid_geno_t,
 	    typename gamete_type,
-	    //typename glist_vector_type_allocator,
-	    typename gamete_list_type_allocator,
-	    typename mutation_list_type_allocator,
+	    typename gamete_cont_type_allocator,
+	    typename mutation_type,
+	    typename mutation_cont_type_allocator,
 	    typename diploid_vector_type_allocator,
 	    typename locus_vector_type_allocator,
 	    typename diploid_fitness_function,
-	    typename mutation_removal_policy,
 	    typename mutation_model_container,
 	    typename recombination_policy_container,
-	    typename mutation_insertion_policy,
-	    typename gamete_insertion_policy,
 	    typename bw_locus_rec_fxn,
-	    template<typename,typename> class gamete_list_type,
-	    //template<typename,typename> class glist_vector_type,
-	    template<typename,typename> class mutation_list_type,
+	    template<typename,typename> class gamete_cont_type,
+	    template<typename,typename> class mutation_cont_type,
 	    template<typename,typename> class diploid_vector_type,
-	    template<typename,typename> class locus_vector_type>
+	    template<typename,typename> class locus_vector_type,
+	    typename mutation_removal_policy,
+	    typename gamete_insertion_policy>
   double
   sample_diploid(gsl_rng * r,
-		 //IDEA:
-		 //glist_vector_type< gamete_list_type<gamete_type,
-		 //gamete_list_type_allocator> ,
-		 //glist_vector_type_allocator > * gametes,
-		 gamete_list_type<gamete_type, gamete_list_type_allocator> * gametes,
-		 diploid_vector_type<locus_vector_type<diploid_geno_t,locus_vector_type_allocator>,diploid_vector_type_allocator> * diploids,
-		 mutation_list_type<typename gamete_type::mutation_type,mutation_list_type_allocator > * mutations, 
-		 const uint_t & N,
-		 const double * mu,
-		 const mutation_model_container & mmodel,
-		 const recombination_policy_container & rec_policies,
-		 const double * r_between_loci,
-		 const bw_locus_rec_fxn & blrf,
-		 const mutation_insertion_policy & mpolicy,
-		 const gamete_insertion_policy & gpolicy_mut,
-		 const diploid_fitness_function & ff,
-		 const mutation_removal_policy & mp,
-		 const double & f)
+		      gamete_cont_type<gamete_type, gamete_cont_type_allocator> & gametes,
+		      diploid_vector_type<locus_vector_type< diploid_geno_t, locus_vector_type_allocator>, diploid_vector_type_allocator> & diploids,
+		      mutation_cont_type<mutation_type,mutation_cont_type_allocator > & mutations,
+		      std::vector<uint_t> & mcounts,
+		      const uint_t & N,
+		      const double * mu,
+		      const mutation_model_container & mmodel,
+		      const recombination_policy_container & rec_policies,
+		      const double * r_between_loci,
+		      const bw_locus_rec_fxn & blrf,
+		      const diploid_fitness_function & ff,
+		      typename gamete_type::mutation_container & neutral,
+		      typename gamete_type::mutation_container & selected,
+		      const double & f,
+		      const mutation_removal_policy & mp,
+		      const gamete_insertion_policy & gpolicy_mut)
   {
-    return sample_diploid(r,gametes,diploids,mutations,N,N,mu,mmodel,rec_policies,r_between_loci,blrf,mpolicy,gpolicy_mut,ff,mp,f);
+    return sample_diploid(r,gametes,diploids,mutations,mcounts,N,N,mu,mmodel,rec_policies,r_between_loci,blrf,ff,neutral,selected,f,mp,gpolicy_mut);
   }
 }
 
 #endif
-  
+

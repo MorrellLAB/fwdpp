@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fwdpp_20release_20notes',['FWDPP RELEASE NOTES',['../d0/d00/md_md_RELEASE_NOTES.html',1,'']]]
+  ['preprocessor_20symbols',['Preprocessor symbols',['../d1/d6b/md_md_preproc.html',1,'']]]
 ];

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>fwdpp: /home/kevin/src/fwdpp/fwdpp/sugar/metapop.hpp File Reference</title>
+<title>fwdpp: /home/kevin/git/fwdpp.git/fwdpp/sugar/metapop.hpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.3</span>
+   &#160;<span id="projectnumber">0.4.4</span>
    </div>
   </td>
  </tr>
@@ -97,7 +97,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="../../d5/d5d/metapop_2metapop_8hpp_source.html">fwdpp/sugar/metapop/metapop.hpp</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="../../d4/d62/fwd__functional_8hpp_source.html">fwdpp/fwd_functional.hpp</a>&gt;</code><br/>
-<code>#include &lt;list&gt;</code><br/>
 <code>#include &lt;vector&gt;</code><br/>
 <code>#include &lt;unordered_set&gt;</code><br/>
 </div>
@@ -111,23 +110,10 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a7166fd30bd57ade0349e85b43f02f915"><td class="memTemplParams" colspan="2">template&lt;typename mtype &gt; </td></tr>
-<tr class="memitem:a7166fd30bd57ade0349e85b43f02f915"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a7166fd30bd57ade0349e85b43f02f915">KTfwd::metapop_mlist_t</a> = std::list&lt; <a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;</td></tr>
-<tr class="separator:a7166fd30bd57ade0349e85b43f02f915"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49ab0b722744b27efb71c60da0aae3d6"><td class="memTemplParams" colspan="2">template&lt;typename mtype &gt; </td></tr>
-<tr class="memitem:a49ab0b722744b27efb71c60da0aae3d6"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a49ab0b722744b27efb71c60da0aae3d6">KTfwd::metapop_gamete_t</a> = gamete_base&lt; <a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>, metapop_mlist_t&lt; <a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;&gt;</td></tr>
-<tr class="separator:a49ab0b722744b27efb71c60da0aae3d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34e5161d1603e18b1eea341c59145b1c"><td class="memTemplParams" colspan="2">template&lt;typename mtype &gt; </td></tr>
-<tr class="memitem:a34e5161d1603e18b1eea341c59145b1c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a34e5161d1603e18b1eea341c59145b1c">KTfwd::metapop_glist_t</a> = std::list&lt; metapop_gamete_t&lt; <a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt; &gt;</td></tr>
-<tr class="separator:a34e5161d1603e18b1eea341c59145b1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga82da8de92025de8feda09b33a47cbe5b"><td class="memTemplParams" colspan="2">template&lt;typename mtype , typename diploid_t  = std::pair&lt;typename metapop_glist_t&lt;mtype&gt;::iterator,					  typename metapop_glist_t&lt;mtype&gt;::iterator&gt;&gt; </td></tr>
-<tr class="memitem:ga82da8de92025de8feda09b33a47cbe5b"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#ga82da8de92025de8feda09b33a47cbe5b">KTfwd::metapop</a> = sugar::metapop&lt; <a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>, metapop_mlist_t&lt; <a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;, metapop_glist_t&lt; <a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;, std::vector&lt; <a class="el" href="../../dc/dfb/structdiploid__t.html">diploid_t</a> &gt;, std::vector&lt; std::vector&lt; <a class="el" href="../../dc/dfb/structdiploid__t.html">diploid_t</a> &gt; &gt;, std::vector&lt; <a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;, std::vector&lt; uint_t &gt;, std::unordered_set&lt; double, std::hash&lt; double &gt;, <a class="el" href="../../dc/d8e/structKTfwd_1_1equal__eps.html">KTfwd::equal_eps</a> &gt;&gt;</td></tr>
-<tr class="memdesc:ga82da8de92025de8feda09b33a47cbe5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single locus metapopulation simulation without serialization. Cannot be copied, etc. See <a class="el" href="../../db/dd8/md_md_sugar.html">Tutorial 5: the "sugar" layer on top of fwdpp</a> for rationale, etc.  <a href="../../de/d6e/group__sugar.html#ga82da8de92025de8feda09b33a47cbe5b">More...</a><br/></td></tr>
-<tr class="separator:ga82da8de92025de8feda09b33a47cbe5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4d358f12780f69e7492e31a195ccda1b"><td class="memTemplParams" colspan="2">template&lt;typename mtype , typename mwriter_t , typename mreader_t , typename diploid_t  = std::pair&lt;typename metapop_glist_t&lt;mtype&gt;::iterator,					  typename metapop_glist_t&lt;mtype&gt;::iterator&gt;, typename diploid_writer_t  = diploidIOplaceholder, typename diploid_reader_t  = diploidIOplaceholder&gt; </td></tr>
-<tr class="memitem:ga4d358f12780f69e7492e31a195ccda1b"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#ga4d358f12780f69e7492e31a195ccda1b">KTfwd::metapop_serialized</a> = sugar::metapop_serialized&lt; <a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>, mwriter_t, mreader_t, metapop_mlist_t&lt; <a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;, metapop_glist_t&lt; <a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;, std::vector&lt; <a class="el" href="../../dc/dfb/structdiploid__t.html">diploid_t</a> &gt;, std::vector&lt; std::vector&lt; <a class="el" href="../../dc/dfb/structdiploid__t.html">diploid_t</a> &gt; &gt;, std::vector&lt; <a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;, std::vector&lt; uint_t &gt;, std::unordered_set&lt; double, std::hash&lt; double &gt;, <a class="el" href="../../dc/d8e/structKTfwd_1_1equal__eps.html">KTfwd::equal_eps</a> &gt;, diploid_writer_t, diploid_reader_t &gt;</td></tr>
-<tr class="memdesc:ga4d358f12780f69e7492e31a195ccda1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single locus metapopulation simulation with serialization. Can be copied, etc. See <a class="el" href="../../db/dd8/md_md_sugar.html">Tutorial 5: the "sugar" layer on top of fwdpp</a> for rationale, etc.  <a href="../../de/d6e/group__sugar.html#ga4d358f12780f69e7492e31a195ccda1b">More...</a><br/></td></tr>
-<tr class="separator:ga4d358f12780f69e7492e31a195ccda1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf66ce861e458d7e15f98bbbb9e87ad38"><td class="memTemplParams" colspan="2">template&lt;typename mtype , typename diploid_t  = std::pair&lt;std::size_t,std::size_t&gt;&gt; </td></tr>
+<tr class="memitem:gaf66ce861e458d7e15f98bbbb9e87ad38"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#gaf66ce861e458d7e15f98bbbb9e87ad38">KTfwd::metapop</a> = sugar::metapop&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a>, std::vector&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a> &gt;, std::vector&lt; gamete &gt;, std::vector&lt; <a class="el" href="../../dc/dfb/structdiploid__t.html">diploid_t</a> &gt;, std::vector&lt; std::vector&lt; <a class="el" href="../../dc/dfb/structdiploid__t.html">diploid_t</a> &gt; &gt;, std::vector&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a> &gt;, std::vector&lt; uint_t &gt;, std::unordered_set&lt; double, std::hash&lt; double &gt;, <a class="el" href="../../dc/d8e/structKTfwd_1_1equal__eps.html">KTfwd::equal_eps</a> &gt;&gt;</td></tr>
+<tr class="memdesc:gaf66ce861e458d7e15f98bbbb9e87ad38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single locus metapopulation simulation object.  <a href="../../de/d6e/group__sugar.html#gaf66ce861e458d7e15f98bbbb9e87ad38">More...</a><br/></td></tr>
+<tr class="separator:gaf66ce861e458d7e15f98bbbb9e87ad38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

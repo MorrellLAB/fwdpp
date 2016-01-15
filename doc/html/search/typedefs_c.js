@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['vdipvector_5ft',['vdipvector_t',['../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#ab66a65b5c6f2db61470c7d16f6b9181e',1,'KTfwd::sugar::metapop::vdipvector_t()'],['../d2/d43/classKTfwd_1_1sugar_1_1metapop__serialized.html#af4fb1b4cf81b938d53fe18e5d142b4c8',1,'KTfwd::sugar::metapop_serialized::vdipvector_t()']]],
-  ['void_5ft',['void_t',['../d9/d91/namespaceKTfwd_1_1traits_1_1internal.html#a465b9665a0c6fe06199488fbf1baa4ec',1,'KTfwd::traits::internal']]]
+  ['type',['type',['../d6/d4b/structKTfwd_1_1traits_1_1gamete__lookup__t.html#a65dd43de4f6b9c24ea6087cceccc027d',1,'KTfwd::traits::gamete_lookup_t::type()'],['../da/d2a/structKTfwd_1_1traits_1_1recycling__bin__type.html#ac3eeb824912fca769b31aeb821484fee',1,'KTfwd::traits::recycling_bin_type::type()'],['../d7/d7b/structKTfwd_1_1traits_1_1fitness__fxn__type.html#a1709c90034702d48c186715b7cffcbff',1,'KTfwd::traits::fitness_fxn_type::type()'],['../d0/d21/structKTfwd_1_1traits_1_1mmodel__t.html#af883391f680dbb802f45a3dc5b99de78',1,'KTfwd::traits::mmodel_t::type()'],['../d2/dea/structKTfwd_1_1traits_1_1mmodel__gamete__t.html#a10e4c22c2408d1ed9540fbd4b4e0b823',1,'KTfwd::traits::mmodel_gamete_t::type()'],['../d9/d13/structKTfwd_1_1traits_1_1internal_1_1void__t.html#ab4de5eee526f0f0e2c27e2b89a567d13',1,'KTfwd::traits::internal::void_t::type()']]]
 ];

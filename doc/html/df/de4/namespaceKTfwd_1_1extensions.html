@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.3</span>
+   &#160;<span id="projectnumber">0.4.4</span>
    </div>
   </td>
  </tr>
@@ -89,7 +89,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a>  </div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">KTfwd::extensions Namespace Reference</div>  </div>
 </div><!--header-->
@@ -115,6 +116,15 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d61/structKTfwd_1_1extensions_1_1discrete__rec__model.html">discrete_rec_model</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a141d6f5cba2149839fb2de428ffd555d"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename lookup_t , class... Args&gt; </td></tr>
+<tr class="memitem:a141d6f5cba2149839fb2de428ffd555d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/de4/namespaceKTfwd_1_1extensions.html#a141d6f5cba2149839fb2de428ffd555d">bind_dmm</a> (const <a class="el" href="../../d8/d8d/structKTfwd_1_1extensions_1_1discrete__mut__model.html">discrete_mut_model</a> &amp;dm, mcont_t &amp;, lookup_t &amp;mut_lookup, Args &amp;&amp;...args) -&gt; decltype(std::bind(&amp;<a class="el" href="../../d8/d8d/structKTfwd_1_1extensions_1_1discrete__mut__model.html#a4f6e0c792c78dd48e6c884a433d34528">discrete_mut_model::make_mut</a>&lt; <a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html#abb519ece58ebfa07b1fb27481d86852e">traits::recycling_bin_t</a>&lt; mcont_t &gt;, lookup_t, mcont_t &gt;,&amp;dm, std::placeholders::_1, std::placeholders::_2, std::forward&lt; Args &gt;(args)..., std::ref(mut_lookup)))</td></tr>
+<tr class="separator:a141d6f5cba2149839fb2de428ffd555d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace526105a294ce3c39fc89bd534b7025"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t , typename mcont_t , class... Args&gt; </td></tr>
+<tr class="memitem:ace526105a294ce3c39fc89bd534b7025"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/de4/namespaceKTfwd_1_1extensions.html#ace526105a294ce3c39fc89bd534b7025">bind_drm</a> (const <a class="el" href="../../dc/d61/structKTfwd_1_1extensions_1_1discrete__rec__model.html">discrete_rec_model</a> &amp;drm, const gcont_t &amp;, const mcont_t &amp;, Args &amp;&amp;...args) -&gt; decltype(std::bind(&amp;discrete_rec_model::operator()&lt; typename gcont_t::value_type, mcont_t &gt;,&amp;drm, std::forward&lt; Args &gt;(args)..., std::placeholders::_1, std::placeholders::_2, std::placeholders::_3))</td></tr>
+<tr class="separator:ace526105a294ce3c39fc89bd534b7025"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Useful types for implementing fwdpp-based simulations in enviroments like R, Python, etc.</p>
@@ -124,7 +134,123 @@ Data Structures</h2></td></tr>
 <li><a href="http://github.com/molpopgen/fwdpy">http://github.com/molpopgen/fwdpy</a></li>
 <li><a href="http://github.com/molpopgen/foRward">http://github.com/molpopgen/foRward</a> </li>
 </ol>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a141d6f5cba2149839fb2de428ffd555d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mcont_t , typename lookup_t , class... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto KTfwd::extensions::bind_dmm </td>
+          <td>(</td>
+          <td class="paramtype">const discrete_mut_model &amp;&#160;</td>
+          <td class="paramname"><em>dm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mcont_t &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">lookup_t &amp;&#160;</td>
+          <td class="paramname"><em>mut_lookup</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; decltype(std::bind(&amp;discrete_mut_model::make_mut&lt;traits::recycling_bin_t&lt;mcont_t&gt;,lookup_t,mcont_t&gt;,
+							  &amp;dm,
+							  std::placeholders::_1,
+							  std::placeholders::_2,
+							  std::forward&lt;Args&gt;(args)...,
+							  std::ref(mut_lookup))
+						)
+    </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Convenience function to return a function object bound to <a class="el" href="../../d8/d8d/structKTfwd_1_1extensions_1_1discrete__mut__model.html#a4f6e0c792c78dd48e6c884a433d34528">KTfwd::extensions::discrete_mut_model::make_mut</a></p>
+<p>This simplifies life a lot!</p>
+<p>See unit test <a class="el" href="../../d5/da7/extensions_8cc.html">extensions.cc</a> for an example of use. </p>
+
+</div>
+</div>
+<a class="anchor" id="ace526105a294ce3c39fc89bd534b7025"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename gcont_t , typename mcont_t , class... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto KTfwd::extensions::bind_drm </td>
+          <td>(</td>
+          <td class="paramtype">const discrete_rec_model &amp;&#160;</td>
+          <td class="paramname"><em>drm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const gcont_t &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mcont_t &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; decltype(std::bind(&amp;discrete_rec_model::operator()&lt;typename gcont_t::value_type,mcont_t&gt;,
+							       &amp;drm,
+							       std::forward&lt;Args&gt;(args)...,
+							       std::placeholders::_1,
+							       std::placeholders::_2,
+							       std::placeholders::_3)
+						     )
+    </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns a function call bound to discrete_rec_model::operator().</p>
+<p>See unit test <a class="el" href="../../d5/da7/extensions_8cc.html">extensions.cc</a> for example usage. </p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>fwdpp: /home/kevin/src/fwdpp/fwdpp/fwd_functional.hpp Source File</title>
+<title>fwdpp: /home/kevin/git/fwdpp.git/fwdpp/fwd_functional.hpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.3</span>
+   &#160;<span id="projectnumber">0.4.4</span>
    </div>
   </td>
  </tr>
@@ -105,112 +105,32 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span>KTfwd</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{<span class="comment"></span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">  /*! \brief Returns true if member n == 0</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">    Used internally</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../d4/dc3/structKTfwd_1_1n__is__zero.html">   17</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d4/dc3/structKTfwd_1_1n__is__zero.html">n_is_zero</a></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  {</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d4/dc3/structKTfwd_1_1n__is__zero.html#afa530c66f229237d3930660f530e9b09">   19</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="../../d4/dc3/structKTfwd_1_1n__is__zero.html#afa530c66f229237d3930660f530e9b09">result_type</a> = bool;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d4/dc3/structKTfwd_1_1n__is__zero.html#a910274711534b1ebcef26a3b640bc6fd">   21</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="../../d4/dc3/structKTfwd_1_1n__is__zero.html#a910274711534b1ebcef26a3b640bc6fd">operator()</a>(<span class="keyword">const</span> T &amp; t)<span class="keyword">const</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      <span class="keywordflow">return</span> t.n==0;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  };</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">  /*! \brief Returns true if std::fabs(m.pos-d) &lt;= std::numeric_limits&lt;double&gt;::epsilon()</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">    Returns true if std::fabs(m.pos-d) &lt;= std::numeric_limits&lt;double&gt;::epsilon()</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../d5/d1a/structKTfwd_1_1mutation__at__pos.html">   30</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d5/d1a/structKTfwd_1_1mutation__at__pos.html">mutation_at_pos</a></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  {</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../d5/d1a/structKTfwd_1_1mutation__at__pos.html#afac5f3512f528c70625389128a0fea25">   32</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="../../d5/d1a/structKTfwd_1_1mutation__at__pos.html#afac5f3512f528c70625389128a0fea25">result_type</a> = bool;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> mutation_type&gt;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../d5/d1a/structKTfwd_1_1mutation__at__pos.html#ab45bcd0f733fd7d05651a2f92c4f6444">   34</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="../../d5/d1a/structKTfwd_1_1mutation__at__pos.html#ab45bcd0f733fd7d05651a2f92c4f6444">operator()</a>(<span class="keyword">const</span> mutation_type &amp; m, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; d)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      <span class="keywordflow">return</span>( std::fabs(m.pos-d) &lt;= std::numeric_limits&lt;double&gt;::epsilon() );</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  };</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="comment"></span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">  /*!\brief Returns true if std::fabs(m1.pos-m2.pos) &lt;= std::numeric_limits&lt;double&gt;::epsilon()</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">    Returns true if std::fabs(m1.pos-m2.pos) &lt;= std::numeric_limits&lt;double&gt;::epsilon()</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">  */</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="../../da/d8f/structKTfwd_1_1same__pos.html">   43</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../da/d8f/structKTfwd_1_1same__pos.html">same_pos</a></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  {</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../da/d8f/structKTfwd_1_1same__pos.html#a50fdf4f63d943b04304d359cc360124d">   45</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="../../da/d8f/structKTfwd_1_1same__pos.html#a50fdf4f63d943b04304d359cc360124d">result_type</a> = bool;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> mutation_type&gt;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="../../da/d8f/structKTfwd_1_1same__pos.html#afd4b930dec1455dce58c927d7a7dc1b7">   47</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="../../da/d8f/structKTfwd_1_1same__pos.html#afd4b930dec1455dce58c927d7a7dc1b7">operator()</a>(<span class="keyword">const</span> mutation_type &amp; m1, <span class="keyword">const</span> mutation_type &amp; m2)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      <span class="keywordflow">return</span>( std::fabs(m1.pos-m2.pos) &lt;= std::numeric_limits&lt;double&gt;::epsilon() );</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  };</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">  /// \brief Returns true if std::max(lhs,rhs)-std::min(lhs,rhs) &lt;= std::numeric_limits&lt;T&gt;::epsilon()</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="../../dc/d8e/structKTfwd_1_1equal__eps.html">   54</a></span>&#160;<span class="comment"></span>  <span class="keyword">struct </span><a class="code" href="../../dc/d8e/structKTfwd_1_1equal__eps.html">equal_eps</a></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  {<span class="comment"></span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">    /*! \brief Returns true if std::max(lhs,rhs)-std::min(lhs,rhs) &lt;= std::numeric_limits&lt;T&gt;::epsilon()</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">      Returns true if std::max(lhs,rhs)-std::min(lhs,rhs) &lt;= std::numeric_limits&lt;T&gt;::epsilon()</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">    */</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../dc/d8e/structKTfwd_1_1equal__eps.html#abecb68a843d349e17091ced37d2d38aa">   59</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="../../dc/d8e/structKTfwd_1_1equal__eps.html#abecb68a843d349e17091ced37d2d38aa">result_type</a> = bool;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../dc/d8e/structKTfwd_1_1equal__eps.html#aa6ae4769e2ca6f82c7437ac6e1cc19c1">   61</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="../../dc/d8e/structKTfwd_1_1equal__eps.html#aa6ae4769e2ca6f82c7437ac6e1cc19c1">operator()</a>(<span class="keyword">const</span> T &amp; lhs, <span class="keyword">const</span> T &amp; rhs)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="keywordflow">return</span>( std::max(lhs,rhs)-std::min(lhs,rhs) &lt;= std::numeric_limits&lt;T&gt;::epsilon() );</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  };</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">  /*! \brief Policy determining how mutations are removed from gametes after sampling</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">    Policy determining how mutations are removed from gametes after sampling</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">    Typical usage is to pass to KTfwd::sample_diploid as follows:</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">    \code</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">    std::bind( KTfwd::mutation_remover(), 0 ); //If a mutation is at frequency zero after sampling, remove pointers to it from all gametes</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">    std::bind( KWfwd::mutation_remover(), 0 ,twoN); //If a mutation is at frequency zero or 2N after sampling, remove pointers to it from all gametes</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">    \endcode</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../d4/de8/structKTfwd_1_1mutation__remover.html">   76</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d4/de8/structKTfwd_1_1mutation__remover.html">mutation_remover</a></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  {</div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="../../d4/de8/structKTfwd_1_1mutation__remover.html#a5caf896f16718076ab87128f166044bb">   78</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="../../d4/de8/structKTfwd_1_1mutation__remover.html#a5caf896f16718076ab87128f166044bb">result_type</a> = bool;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> iterator_type&gt; </div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="../../d4/de8/structKTfwd_1_1mutation__remover.html#a280112a5d060aea2c56bad69e2c40a2d">   80</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="../../d4/de8/structKTfwd_1_1mutation__remover.html#a5caf896f16718076ab87128f166044bb">result_type</a> <a class="code" href="../../d4/de8/structKTfwd_1_1mutation__remover.html#a280112a5d060aea2c56bad69e2c40a2d">operator()</a>(<span class="keyword">const</span> iterator_type &amp; i,</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                  <span class="keyword">const</span> <a class="code" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &amp; x1 )<span class="keyword"> const</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      <span class="keywordflow">return</span> i-&gt;n == x1;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> iterator_type&gt;</div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="../../d4/de8/structKTfwd_1_1mutation__remover.html#a39d0768c1c357cdcd9d4a04e976ce07b">   86</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="../../d4/de8/structKTfwd_1_1mutation__remover.html#a5caf896f16718076ab87128f166044bb">result_type</a> <a class="code" href="../../d4/de8/structKTfwd_1_1mutation__remover.html#a39d0768c1c357cdcd9d4a04e976ce07b">operator()</a>(<span class="keyword">const</span> iterator_type &amp; i,</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                  <span class="keyword">const</span> <a class="code" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &amp; x1,</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                  <span class="keyword">const</span> <a class="code" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &amp; x2)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <span class="keywordflow">return</span> i-&gt;n == x1 || i-&gt;n == x2;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  };</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="comment">/* \brief Policy telling library not to remove any mutations from gametes after sampling</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">     \note This is an empty struct that functions as a dispatch tag for library internals</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="../../db/dcf/structKTfwd_1_1remove__nothing.html">   97</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../db/dcf/structKTfwd_1_1remove__nothing.html">remove_nothing</a></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  };</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* _FWD_FUNCTIONAL_HPP_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="structKTfwd_1_1mutation__remover_html_a280112a5d060aea2c56bad69e2c40a2d"><div class="ttname"><a href="../../d4/de8/structKTfwd_1_1mutation__remover.html#a280112a5d060aea2c56bad69e2c40a2d">KTfwd::mutation_remover::operator()</a></div><div class="ttdeci">result_type operator()(const iterator_type &amp;i, const uint_t &amp;x1) const </div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:80</div></div>
-<div class="ttc" id="structKTfwd_1_1same__pos_html_a50fdf4f63d943b04304d359cc360124d"><div class="ttname"><a href="../../da/d8f/structKTfwd_1_1same__pos.html#a50fdf4f63d943b04304d359cc360124d">KTfwd::same_pos::result_type</a></div><div class="ttdeci">bool result_type</div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:45</div></div>
-<div class="ttc" id="structKTfwd_1_1equal__eps_html"><div class="ttname"><a href="../../dc/d8e/structKTfwd_1_1equal__eps.html">KTfwd::equal_eps</a></div><div class="ttdoc">Returns true if std::max(lhs,rhs)-std::min(lhs,rhs) &lt;= std::numeric_limits&lt;T&gt;::epsilon() ...</div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:54</div></div>
-<div class="ttc" id="structKTfwd_1_1mutation__remover_html"><div class="ttname"><a href="../../d4/de8/structKTfwd_1_1mutation__remover.html">KTfwd::mutation_remover</a></div><div class="ttdoc">Policy determining how mutations are removed from gametes after sampling Policy determining how mutat...</div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:76</div></div>
-<div class="ttc" id="structKTfwd_1_1mutation__at__pos_html_ab45bcd0f733fd7d05651a2f92c4f6444"><div class="ttname"><a href="../../d5/d1a/structKTfwd_1_1mutation__at__pos.html#ab45bcd0f733fd7d05651a2f92c4f6444">KTfwd::mutation_at_pos::operator()</a></div><div class="ttdeci">bool operator()(const mutation_type &amp;m, const double &amp;d) const </div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:34</div></div>
-<div class="ttc" id="structKTfwd_1_1n__is__zero_html"><div class="ttname"><a href="../../d4/dc3/structKTfwd_1_1n__is__zero.html">KTfwd::n_is_zero</a></div><div class="ttdoc">Returns true if member n == 0 Used internally. </div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:17</div></div>
-<div class="ttc" id="structKTfwd_1_1n__is__zero_html_afa530c66f229237d3930660f530e9b09"><div class="ttname"><a href="../../d4/dc3/structKTfwd_1_1n__is__zero.html#afa530c66f229237d3930660f530e9b09">KTfwd::n_is_zero::result_type</a></div><div class="ttdeci">bool result_type</div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:19</div></div>
-<div class="ttc" id="structKTfwd_1_1equal__eps_html_aa6ae4769e2ca6f82c7437ac6e1cc19c1"><div class="ttname"><a href="../../dc/d8e/structKTfwd_1_1equal__eps.html#aa6ae4769e2ca6f82c7437ac6e1cc19c1">KTfwd::equal_eps::operator()</a></div><div class="ttdeci">bool operator()(const T &amp;lhs, const T &amp;rhs) const </div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:61</div></div>
-<div class="ttc" id="structKTfwd_1_1same__pos_html"><div class="ttname"><a href="../../da/d8f/structKTfwd_1_1same__pos.html">KTfwd::same_pos</a></div><div class="ttdoc">Returns true if std::fabs(m1.pos-m2.pos) &lt;= std::numeric_limits&lt;double&gt;::epsilon() Returns true if st...</div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:43</div></div>
-<div class="ttc" id="structKTfwd_1_1mutation__at__pos_html_afac5f3512f528c70625389128a0fea25"><div class="ttname"><a href="../../d5/d1a/structKTfwd_1_1mutation__at__pos.html#afac5f3512f528c70625389128a0fea25">KTfwd::mutation_at_pos::result_type</a></div><div class="ttdeci">bool result_type</div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:32</div></div>
-<div class="ttc" id="structKTfwd_1_1equal__eps_html_abecb68a843d349e17091ced37d2d38aa"><div class="ttname"><a href="../../dc/d8e/structKTfwd_1_1equal__eps.html#abecb68a843d349e17091ced37d2d38aa">KTfwd::equal_eps::result_type</a></div><div class="ttdeci">bool result_type</div><div class="ttdoc">Returns true if std::max(lhs,rhs)-std::min(lhs,rhs) &lt;= std::numeric_limits&lt;T&gt;::epsilon() Returns true...</div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:59</div></div>
-<div class="ttc" id="structKTfwd_1_1mutation__remover_html_a39d0768c1c357cdcd9d4a04e976ce07b"><div class="ttname"><a href="../../d4/de8/structKTfwd_1_1mutation__remover.html#a39d0768c1c357cdcd9d4a04e976ce07b">KTfwd::mutation_remover::operator()</a></div><div class="ttdeci">result_type operator()(const iterator_type &amp;i, const uint_t &amp;x1, const uint_t &amp;x2) const </div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:86</div></div>
-<div class="ttc" id="structKTfwd_1_1n__is__zero_html_a910274711534b1ebcef26a3b640bc6fd"><div class="ttname"><a href="../../d4/dc3/structKTfwd_1_1n__is__zero.html#a910274711534b1ebcef26a3b640bc6fd">KTfwd::n_is_zero::operator()</a></div><div class="ttdeci">bool operator()(const T &amp;t) const </div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:21</div></div>
-<div class="ttc" id="structKTfwd_1_1mutation__at__pos_html"><div class="ttname"><a href="../../d5/d1a/structKTfwd_1_1mutation__at__pos.html">KTfwd::mutation_at_pos</a></div><div class="ttdoc">Returns true if std::fabs(m.pos-d) &lt;= std::numeric_limits&lt;double&gt;::epsilon() Returns true if std::fab...</div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:30</div></div>
-<div class="ttc" id="structKTfwd_1_1same__pos_html_afd4b930dec1455dce58c927d7a7dc1b7"><div class="ttname"><a href="../../da/d8f/structKTfwd_1_1same__pos.html#afd4b930dec1455dce58c927d7a7dc1b7">KTfwd::same_pos::operator()</a></div><div class="ttdeci">bool operator()(const mutation_type &amp;m1, const mutation_type &amp;m2) const </div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:47</div></div>
-<div class="ttc" id="structKTfwd_1_1mutation__remover_html_a5caf896f16718076ab87128f166044bb"><div class="ttname"><a href="../../d4/de8/structKTfwd_1_1mutation__remover.html#a5caf896f16718076ab87128f166044bb">KTfwd::mutation_remover::result_type</a></div><div class="ttdeci">bool result_type</div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:78</div></div>
-<div class="ttc" id="namespaceKTfwd_html_ae44efbad5ba480ceea8c79541daf48a2"><div class="ttname"><a href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">KTfwd::uint_t</a></div><div class="ttdeci">std::uint32_t uint_t</div><div class="ttdoc">The unsigned integer type is 32 bits. </div><div class="ttdef"><b>Definition:</b> forward_types.hpp:20</div></div>
-<div class="ttc" id="structKTfwd_1_1remove__nothing_html"><div class="ttname"><a href="../../db/dcf/structKTfwd_1_1remove__nothing.html">KTfwd::remove_nothing</a></div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:97</div></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">  /// \brief Returns true if std::max(lhs,rhs)-std::min(lhs,rhs) &lt;= std::numeric_limits&lt;T&gt;::epsilon()</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../dc/d8e/structKTfwd_1_1equal__eps.html">   15</a></span>&#160;<span class="comment"></span>  <span class="keyword">struct </span><a class="code" href="../../dc/d8e/structKTfwd_1_1equal__eps.html">equal_eps</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  {<span class="comment"></span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">    /*! \brief Returns true if std::max(lhs,rhs)-std::min(lhs,rhs) &lt;= std::numeric_limits&lt;T&gt;::epsilon()</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">      Returns true if std::max(lhs,rhs)-std::min(lhs,rhs) &lt;= std::numeric_limits&lt;T&gt;::epsilon()</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">    */</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../dc/d8e/structKTfwd_1_1equal__eps.html#abecb68a843d349e17091ced37d2d38aa">   20</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="../../dc/d8e/structKTfwd_1_1equal__eps.html#abecb68a843d349e17091ced37d2d38aa">result_type</a> = bool;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../dc/d8e/structKTfwd_1_1equal__eps.html#aa6ae4769e2ca6f82c7437ac6e1cc19c1">   22</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="../../dc/d8e/structKTfwd_1_1equal__eps.html#aa6ae4769e2ca6f82c7437ac6e1cc19c1">operator()</a>(<span class="keyword">const</span> T &amp; lhs, <span class="keyword">const</span> T &amp; rhs)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      <span class="keywordflow">return</span>( std::max(lhs,rhs)-std::min(lhs,rhs) &lt;= std::numeric_limits&lt;T&gt;::epsilon() );</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  };</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="comment">/* \brief Policy telling library not to remove any mutations from gametes after sampling</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">     \note This is an empty struct that functions as a dispatch tag for library internals</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../db/dcf/structKTfwd_1_1remove__nothing.html">   31</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../db/dcf/structKTfwd_1_1remove__nothing.html">remove_nothing</a></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  };</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* _FWD_FUNCTIONAL_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="structKTfwd_1_1equal__eps_html"><div class="ttname"><a href="../../dc/d8e/structKTfwd_1_1equal__eps.html">KTfwd::equal_eps</a></div><div class="ttdoc">Returns true if std::max(lhs,rhs)-std::min(lhs,rhs) &lt;= std::numeric_limits&lt;T&gt;::epsilon() ...</div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:15</div></div>
+<div class="ttc" id="structKTfwd_1_1equal__eps_html_aa6ae4769e2ca6f82c7437ac6e1cc19c1"><div class="ttname"><a href="../../dc/d8e/structKTfwd_1_1equal__eps.html#aa6ae4769e2ca6f82c7437ac6e1cc19c1">KTfwd::equal_eps::operator()</a></div><div class="ttdeci">bool operator()(const T &amp;lhs, const T &amp;rhs) const </div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:22</div></div>
+<div class="ttc" id="structKTfwd_1_1equal__eps_html_abecb68a843d349e17091ced37d2d38aa"><div class="ttname"><a href="../../dc/d8e/structKTfwd_1_1equal__eps.html#abecb68a843d349e17091ced37d2d38aa">KTfwd::equal_eps::result_type</a></div><div class="ttdeci">bool result_type</div><div class="ttdoc">Returns true if std::max(lhs,rhs)-std::min(lhs,rhs) &lt;= std::numeric_limits&lt;T&gt;::epsilon() Returns true...</div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:20</div></div>
+<div class="ttc" id="structKTfwd_1_1remove__nothing_html"><div class="ttname"><a href="../../db/dcf/structKTfwd_1_1remove__nothing.html">KTfwd::remove_nothing</a></div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:31</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

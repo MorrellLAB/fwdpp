@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.3</span>
+   &#160;<span id="projectnumber">0.4.4</span>
    </div>
   </td>
  </tr>
@@ -110,13 +110,13 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab1a1a1fa03ea6a09e1272d3c0a466830"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type &gt; </td></tr>
-<tr class="memitem:ab1a1a1fa03ea6a09e1272d3c0a466830"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../dc/d0b/structKTfwd_1_1no__selection.html#a0e00f0a04c175f402a6ccba8117a8cee">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d0b/structKTfwd_1_1no__selection.html#ab1a1a1fa03ea6a09e1272d3c0a466830">operator()</a> (const iterator_type &amp;, const iterator_type &amp;) const </td></tr>
-<tr class="separator:ab1a1a1fa03ea6a09e1272d3c0a466830"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7bafb8f17983f1f0a907ff616b7d8de"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ae7bafb8f17983f1f0a907ff616b7d8de"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../dc/d0b/structKTfwd_1_1no__selection.html#a0e00f0a04c175f402a6ccba8117a8cee">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d0b/structKTfwd_1_1no__selection.html#ae7bafb8f17983f1f0a907ff616b7d8de">operator()</a> (const T &amp;) const </td></tr>
-<tr class="memdesc:ae7bafb8f17983f1f0a907ff616b7d8de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Naive implementation for non-standard cases.  <a href="#ae7bafb8f17983f1f0a907ff616b7d8de">More...</a><br/></td></tr>
-<tr class="separator:ae7bafb8f17983f1f0a907ff616b7d8de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9d6a2f50ec3070ad35e86481a35e9bf"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename mcont_t &gt; </td></tr>
+<tr class="memitem:af9d6a2f50ec3070ad35e86481a35e9bf"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../dc/d0b/structKTfwd_1_1no__selection.html#a0e00f0a04c175f402a6ccba8117a8cee">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d0b/structKTfwd_1_1no__selection.html#af9d6a2f50ec3070ad35e86481a35e9bf">operator()</a> (const gamete_type &amp;, const gamete_type &amp;, const mcont_t &amp;) const noexcept</td></tr>
+<tr class="separator:af9d6a2f50ec3070ad35e86481a35e9bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89908d1325911d46c8c674113e04258f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a89908d1325911d46c8c674113e04258f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../dc/d0b/structKTfwd_1_1no__selection.html#a0e00f0a04c175f402a6ccba8117a8cee">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d0b/structKTfwd_1_1no__selection.html#a89908d1325911d46c8c674113e04258f">operator()</a> (const T &amp;) const noexcept</td></tr>
+<tr class="memdesc:a89908d1325911d46c8c674113e04258f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Naive implementation for non-standard cases.  <a href="#a89908d1325911d46c8c674113e04258f">More...</a><br/></td></tr>
+<tr class="separator:a89908d1325911d46c8c674113e04258f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Returns a fitness of 1. </p>
@@ -145,11 +145,11 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ab1a1a1fa03ea6a09e1272d3c0a466830"></a>
+<a class="anchor" id="af9d6a2f50ec3070ad35e86481a35e9bf"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename iterator_type &gt; </div>
+template&lt;typename gamete_type , typename mcont_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -157,13 +157,19 @@ template&lt;typename iterator_type &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="../../dc/d0b/structKTfwd_1_1no__selection.html#a0e00f0a04c175f402a6ccba8117a8cee">result_type</a> KTfwd::no_selection::operator() </td>
           <td>(</td>
-          <td class="paramtype">const iterator_type &amp;&#160;</td>
+          <td class="paramtype">const gamete_type &amp;&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const iterator_type &amp;&#160;</td>
+          <td class="paramtype">const gamete_type &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mcont_t &amp;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -174,14 +180,14 @@ template&lt;typename iterator_type &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="ae7bafb8f17983f1f0a907ff616b7d8de"></a>
+<a class="anchor" id="a89908d1325911d46c8c674113e04258f"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -200,7 +206,7 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -210,7 +216,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/kevin/src/fwdpp/fwdpp/<a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a></li>
+<li>/home/kevin/git/fwdpp.git/fwdpp/<a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

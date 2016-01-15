@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>fwdpp: /home/kevin/src/fwdpp/fwdpp/debug.hpp File Reference</title>
+<title>fwdpp: /home/kevin/git/fwdpp.git/fwdpp/debug.hpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.3</span>
+   &#160;<span id="projectnumber">0.4.4</span>
    </div>
   </td>
  </tr>
@@ -95,9 +95,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="title">debug.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">fwdpp/forward_types.hpp</a>&gt;</code><br/>
+<div class="textblock"><code>#include &lt;algorithm&gt;</code><br/>
 <code>#include &lt;numeric&gt;</code><br/>
-<code>#include &lt;type_traits&gt;</code><br/>
+<code>#include &lt;<a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">fwdpp/forward_types.hpp</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="../../dc/d54/type__traits_8hpp_source.html">fwdpp/type_traits.hpp</a>&gt;</code><br/>
 </div>
 <p><a href="../../da/d7b/debug_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -109,14 +110,26 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a728e20cb60f82b818b5cc570722079a4"><td class="memTemplParams" colspan="2">template&lt;typename vector_type_allocator , typename gamete_type , template&lt; typename, typename &gt; class vector_type&gt; </td></tr>
-<tr class="memitem:a728e20cb60f82b818b5cc570722079a4"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a728e20cb60f82b818b5cc570722079a4">KTfwd::check_sum</a> (const vector_type&lt; gamete_type, vector_type_allocator &gt; &amp;gametes, const unsigned &amp;twoN)</td></tr>
-<tr class="memdesc:a728e20cb60f82b818b5cc570722079a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the sum of counts in gametes equals twoN, false otherwise Returns true if the sum of counts in gametes equals twoN, false otherwise.  <a href="#a728e20cb60f82b818b5cc570722079a4">More...</a><br/></td></tr>
-<tr class="separator:a728e20cb60f82b818b5cc570722079a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a49997b8e11c148177adea58dd916a6"><td class="memTemplParams" colspan="2">template&lt;typename vector_type_allocator , typename gamete_type , template&lt; typename, typename &gt; class vector_type&gt; </td></tr>
-<tr class="memitem:a3a49997b8e11c148177adea58dd916a6"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a3a49997b8e11c148177adea58dd916a6">KTfwd::check_sum</a> (const vector_type&lt; gamete_type, vector_type_allocator &gt; *gametes, const unsigned &amp;twoN)</td></tr>
-<tr class="memdesc:a3a49997b8e11c148177adea58dd916a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the sum of counts in gametes equals twoN, false otherwise Returns true if the sum of counts in gametes equals twoN, false otherwise.  <a href="#a3a49997b8e11c148177adea58dd916a6">More...</a><br/></td></tr>
-<tr class="separator:a3a49997b8e11c148177adea58dd916a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f97e26108d5f6b038e9919264e316c1"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t &gt; </td></tr>
+<tr class="memitem:a3f97e26108d5f6b038e9919264e316c1"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a3f97e26108d5f6b038e9919264e316c1">KTfwd::check_sum</a> (const gcont_t &amp;gametes, const unsigned &amp;twoN)</td></tr>
+<tr class="memdesc:a3f97e26108d5f6b038e9919264e316c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the sum of counts in gametes equals twoN, false otherwise Returns true if the sum of counts in gametes equals twoN, false otherwise.  <a href="#a3f97e26108d5f6b038e9919264e316c1">More...</a><br/></td></tr>
+<tr class="separator:a3f97e26108d5f6b038e9919264e316c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e2c287fe33a30d2ae175eedb88450d0"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t &gt; </td></tr>
+<tr class="memitem:a0e2c287fe33a30d2ae175eedb88450d0"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a0e2c287fe33a30d2ae175eedb88450d0">KTfwd::check_sum</a> (const gcont_t *gametes, const unsigned &amp;twoN)</td></tr>
+<tr class="memdesc:a0e2c287fe33a30d2ae175eedb88450d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the sum of counts in gametes equals twoN, false otherwise Returns true if the sum of counts in gametes equals twoN, false otherwise.  <a href="#a0e2c287fe33a30d2ae175eedb88450d0">More...</a><br/></td></tr>
+<tr class="separator:a0e2c287fe33a30d2ae175eedb88450d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa446dfb84b7f3376af7175884c45dfa"><td class="memTemplParams" colspan="2">template&lt;typename gamete_t , typename mcont_t &gt; </td></tr>
+<tr class="memitem:aaa446dfb84b7f3376af7175884c45dfa"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#aaa446dfb84b7f3376af7175884c45dfa">KTfwd::gamete_is_sorted_n</a> (const gamete_t &amp;g, const mcont_t &amp;m)</td></tr>
+<tr class="separator:aaa446dfb84b7f3376af7175884c45dfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e9c125b8d47f962d7c5a52fa4e61611"><td class="memTemplParams" colspan="2">template&lt;typename gamete_t , typename mcont_t &gt; </td></tr>
+<tr class="memitem:a5e9c125b8d47f962d7c5a52fa4e61611"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a5e9c125b8d47f962d7c5a52fa4e61611">KTfwd::gamete_is_sorted_s</a> (const gamete_t &amp;g, const mcont_t &amp;m)</td></tr>
+<tr class="separator:a5e9c125b8d47f962d7c5a52fa4e61611"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a087b18b515d2a6e16ddebfef66870d80"><td class="memTemplParams" colspan="2">template&lt;typename gamete_t &gt; </td></tr>
+<tr class="memitem:a087b18b515d2a6e16ddebfef66870d80"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a087b18b515d2a6e16ddebfef66870d80">KTfwd::gamete_data_sane</a> (const gamete_t &amp;g, const std::vector&lt; uint_t &gt; &amp;mutcounts)</td></tr>
+<tr class="separator:a087b18b515d2a6e16ddebfef66870d80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a7ac1da62ede605434d75593e2bb833"><td class="memTemplParams" colspan="2">template&lt;typename dipcont_t , typename gcont_t &gt; </td></tr>
+<tr class="memitem:a9a7ac1da62ede605434d75593e2bb833"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a9a7ac1da62ede605434d75593e2bb833">KTfwd::popdata_sane</a> (const dipcont_t &amp;diploids, const gcont_t &amp;gametes, const std::vector&lt; uint_t &gt; &amp;mutcounts)</td></tr>
+<tr class="separator:a9a7ac1da62ede605434d75593e2bb833"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

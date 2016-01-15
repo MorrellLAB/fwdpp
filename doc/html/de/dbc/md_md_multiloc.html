@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.3</span>
+   &#160;<span id="projectnumber">0.4.4</span>
    </div>
   </td>
  </tr>
@@ -91,8 +91,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <h1>Simple policies using the multi-locus machinery</h1>
 <p>The main conceptual difference between this part of the library and the examples shown in the <a class="el" href="../../d1/d7a/md_md_policies.html">tutorial on policies</a> is the following:</p>
 <ul>
-<li>Instead of a single mutation model policy, you implement one mutation model per "locus". These policies are stored in a vector and passed to <a class="el" href="../../da/d8b/namespaceKTfwd.html#ac0adafd1954c805ce66b5f366782a01d">KTfwd::sample_diploid</a>.</li>
-<li>Similarly, you implement a recombination policy per locus, and pass a vector of those policies along to <a class="el" href="../../da/d8b/namespaceKTfwd.html#ac0adafd1954c805ce66b5f366782a01d">KTfwd::sample_diploid</a>.</li>
+<li>Instead of a single mutation model policy, you implement one mutation model per "locus". These policies are stored in a vector and passed to <a class="el" href="../../da/d8b/namespaceKTfwd.html#ac44ca61d8a73f1c63127509413bd3a21">KTfwd::sample_diploid</a>.</li>
+<li>Similarly, you implement a recombination policy per locus, and pass a vector of those policies along to <a class="el" href="../../da/d8b/namespaceKTfwd.html#ac44ca61d8a73f1c63127509413bd3a21">KTfwd::sample_diploid</a>.</li>
 <li>Instead of a single list of gametes, you have a vector of lists of gametes, where each list represents the current gametes at a particular locus.</li>
 <li>A diploid is now represented as a vector of pairs of iterators derived from the vector of lists of gametes.</li>
 <li>A fitness policy calculates individual fitnesses from an iterator pointing to that vector of pairs of iterators.</li>
@@ -102,7 +102,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <p>For this example, we simulate only neutral mutations, and the model has two loci. Our function to return a new mutation will do the following:</p>
 <ol type="1">
 <li>Take the start position of a locus as an argument.</li>
-<li>Return a new mutations whose position is uniformly-distributed on in interval <img class="formulaInl" alt="$(\mathrm{start},\mathrm{start}+1]$" src="../../form_33.png"/></li>
+<li>Return a new mutations whose position is uniformly-distributed on in interval <img class="formulaInl" alt="$(\mathrm{start},\mathrm{start}+1]$" src="../../form_28.png"/></li>
 </ol>
 <p>This is our mutation class:</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>mutation_with_age : <span class="keyword">public</span> <a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html">KTfwd::mutation_base</a></div>
@@ -121,8 +121,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --><p>It contains info for selection coefficients, etc., but we won't be using any of that. (It is only there b/c I use the same mutation object for all of the example programs...)</p>
 <p>Given the requirements outlined above, a function to return a mutation at a specific locus is:</p>
 <div class="fragment"><div class="line"><span class="comment">//&quot;beg&quot; is the start position of this locus</span></div>
-<div class="line">mutation_with_age neutral_mutations_inf_sites(gsl_rng * r,<span class="keyword">const</span> <span class="keywordtype">unsigned</span> * generation,mlist * mutations,</div>
-<div class="line">                                              lookup_table_type * lookup, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; beg)</div>
+<div class="line">mutation_with_age neutral_mutations_inf_sites(gsl_rng * <a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,<span class="keyword">const</span> <span class="keywordtype">unsigned</span> * generation,mlist * mutations,</div>
+<div class="line">                                              <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> * lookup, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; beg)</div>
 <div class="line">{</div>
 <div class="line">  <span class="comment">//Generate new mutation position on the interval [0,1)</span></div>
 <div class="line">  <span class="keywordtype">double</span> pos = gsl_ran_flat(r,beg,beg+1.);</div>
@@ -134,7 +134,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">  lookup-&gt;insert(pos);</div>
 <div class="line"></div>
 <div class="line">  <span class="comment">//In absence of DEBUG, make sure lookup table is working</span></div>
-<div class="line">  assert(std::find_if(mutations-&gt;begin(),mutations-&gt;end(),std::bind(<a class="code" href="../../d5/d1a/structKTfwd_1_1mutation__at__pos.html">KTfwd::mutation_at_pos</a>(),std::placeholders::_1,pos)) == mutations-&gt;end());</div>
+<div class="line">  assert(std::find_if(mutations-&gt;begin(),mutations-&gt;end(),std::bind(KTfwd::mutation_at_pos(),std::placeholders::_1,pos)) == mutations-&gt;end());</div>
 <div class="line"></div>
 <div class="line">  <span class="comment">//return constructor call to mutation type</span></div>
 <div class="line">  <span class="keywordflow">return</span> mutation_with_age(*generation,pos,1,<span class="keyword">true</span>);</div>
@@ -143,11 +143,11 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <p>We may now create mutation model policies by synthesizing a function call that returns a mutation_with_age using <a href="http://en.cppreference.com/w/cpp/utility/functional/bind">std::bind</a>:</p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> mmodel0 = std::bind(neutral_mutations_inf_sites,r,&amp;generation,std::placeholders::_1,&amp;lookup,0.);</div>
 <div class="line"><span class="keyword">auto</span> mmodel1 = std::bind(neutral_mutations_inf_sites,r,&amp;generation,std::placeholders::_1,&amp;lookup,1.);</div>
-</div><!-- fragment --><p>The placeholder is for a pointer to a doubly-linked list of mutations (see argument 3 in the definition of neutral_mutations_inf_sites above). Each of these is identical to what we do in a single-locus simulation. The only "trick" here is that we pass a 0 to mmodel0, and a 1 to mmodel1 to represent the starting position for each locus, thus guaranteeing that neutral_mutations_inf_sites returns a mutation with positions <img class="formulaInl" alt="$(0,1]$" src="../../form_34.png"/> or <img class="formulaInl" alt="$(1,2]$" src="../../form_35.png"/>.</p>
+</div><!-- fragment --><p>The placeholder is for a pointer to a doubly-linked list of mutations (see argument 3 in the definition of neutral_mutations_inf_sites above). Each of these is identical to what we do in a single-locus simulation. The only "trick" here is that we pass a 0 to mmodel0, and a 1 to mmodel1 to represent the starting position for each locus, thus guaranteeing that neutral_mutations_inf_sites returns a mutation with positions <img class="formulaInl" alt="$(0,1]$" src="../../form_29.png"/> or <img class="formulaInl" alt="$(1,2]$" src="../../form_30.png"/>.</p>
 <p>We need to store these policies in a vector. The easiest way to do that is to use the C++11 features <a href="http://en.cppreference.com/w/cpp/language/decltype">decltype</a> and <a href="http://en.cppreference.com/w/cpp/language/list_initialization">list initialization</a>:</p>
 <div class="fragment"><div class="line">std::vector&lt;decltype(mmodel0)&gt; mmodels { mmodel0, mmodel1 };</div>
 </div><!-- fragment --><h3>Caveat: vectors of policies containing values captured in lambda expressions.</h3>
-<p>The above examples all consider a fixed number of loci. However, if the number of loci is to be determined at run-time, then your mutation models, etc., will need to be created dynamically. When using <em>lambda expressions</em>, be sure to capture <em>by value</em> and not <em>by reference</em>. For example, this loop results in a vector of mutation policies where mutation positions at the <img class="formulaInl" alt="$i^{th}$" src="../../form_36.png"/> locus are continuous on the interval <img class="formulaInl" alt="$[i,i+1)$" src="../../form_37.png"/>:</p>
+<p>The above examples all consider a fixed number of loci. However, if the number of loci is to be determined at run-time, then your mutation models, etc., will need to be created dynamically. When using <em>lambda expressions</em>, be sure to capture <em>by value</em> and not <em>by reference</em>. For example, this loop results in a vector of mutation policies where mutation positions at the <img class="formulaInl" alt="$i^{th}$" src="../../form_31.png"/> locus are continuous on the interval <img class="formulaInl" alt="$[i,i+1)$" src="../../form_32.png"/>:</p>
 <div class="fragment"><div class="line">std::vector&lt; std::function&lt;mtype(multiloc_t::mlist_t *)&gt; &gt; mmodels;</div>
 <div class="line"><span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i = 0 ; i &lt; nloci ; ++i)</div>
 <div class="line">        {</div>
@@ -177,15 +177,15 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="fragment"><div class="line">std::function&lt;double(void)&gt; recmap = std::bind(gsl_rng_uniform,r),</div>
 <div class="line">        recmap2 = std::bind(gsl_ran_flat,r,1.,2.);</div>
 </div><!-- fragment --><p>We use the above genetic maps to synthesize recombination policies:</p>
-<div class="fragment"><div class="line"><span class="keyword">auto</span> recpol0 = std::bind(<a class="code" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a>(),std::placeholders::_1,std::placeholders::_2,std::placeholders::_3,&amp;gametes,littler,r,recmap);</div>
-<div class="line"><span class="keyword">auto</span> recpol1 = std::bind(<a class="code" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a>(),std::placeholders::_1,std::placeholders::_2,std::placeholders::_3,&amp;gametes,littler,r,recmap2);</div>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> recpol0 = std::bind(KTfwd::genetics101(),std::placeholders::_1,std::placeholders::_2,std::placeholders::_3,&amp;gametes,littler,r,recmap);</div>
+<div class="line"><span class="keyword">auto</span> recpol1 = std::bind(KTfwd::genetics101(),std::placeholders::_1,std::placeholders::_2,std::placeholders::_3,&amp;gametes,littler,r,recmap2);</div>
 <div class="line">std::vector&lt; decltype(recpol0) &gt; recpols{ recpol0 , recpol1 };</div>
 </div><!-- fragment --><p>Why did I declare the recmaps with std::function instead of auto? The reason is that the type deduction is more complex here, and the compiler will deduce bizarre signatures for recmap and recmap2 if left to its own devices. I am still exploring if this can be addressed in the future to allow automatic type deduction via auto/decltype.</p>
 <h3>Recombination between loci</h3>
 <p>To model recombination between loci, you need the following two ingredients:</p>
 <ol type="1">
-<li>An array of doubles of length <img class="formulaInl" alt="$L-1$" src="../../form_38.png"/>, where <img class="formulaInl" alt="$L$" src="../../form_39.png"/> is the number of loci in the simulation.</li>
-<li>A policy specifying how to apply those values. For example, you may choose to model crossing over between loci as a binomial process or a Poisson process. This policy must return an unsinged integer, representing the number of crossovers between loci <img class="formulaInl" alt="$i$" src="../../form_40.png"/> and <img class="formulaInl" alt="$i-1$" src="../../form_41.png"/> ( <img class="formulaInl" alt="$1 \leq i \leq L-1$" src="../../form_42.png"/>). What really matters is that the return value from this policy is odd or even.</li>
+<li>An array of doubles of length <img class="formulaInl" alt="$L-1$" src="../../form_33.png"/>, where <img class="formulaInl" alt="$L$" src="../../form_34.png"/> is the number of loci in the simulation.</li>
+<li>A policy specifying how to apply those values. For example, you may choose to model crossing over between loci as a binomial process or a Poisson process. This policy must return an unsinged integer, representing the number of crossovers between loci <img class="formulaInl" alt="$i$" src="../../form_35.png"/> and <img class="formulaInl" alt="$i-1$" src="../../form_36.png"/> ( <img class="formulaInl" alt="$1 \leq i \leq L-1$" src="../../form_37.png"/>). What really matters is that the return value from this policy is odd or even.</li>
 </ol>
 <p>In our simulation, there are only two loci, so our array may be defined as:</p>
 <div class="fragment"><div class="line"><span class="keywordtype">double</span> rbw = 0. <span class="comment">//no crossing over between loci</span></div>
@@ -195,14 +195,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <h4>Poisson or not?</h4>
 <p>Biologically, the interpretation of the values in the array of doubles matters. For example, let's assume that we wanted to model two unlinked loci. Our genetic classes tell us that this corresponds to:</p>
 <div class="fragment"><div class="line"><span class="keywordtype">double</span> rbw = 0.5; <span class="comment">//50 centiMorgans</span></div>
-</div><!-- fragment --><p>However, that value of 0.5 correponds to the probability of success in a single Bernoulli trial, because the definition of the <img class="formulaInl" alt="$r$" src="../../form_12.png"/> term from genetics is the probability that markers separated by that distance are observed to have recombined in the progeny. If we were to pass 0.5 and a Poisson model like the one above, there would only be a recombinant about 30% of the time, which you can verify using R (noting that an odd number of crossovers corresponds to the terminal ends of the region being recombined in the offspring):</p>
+</div><!-- fragment --><p>However, that value of 0.5 correponds to the probability of success in a single Bernoulli trial, because the definition of the <img class="formulaInl" alt="$r$" src="../../form_7.png"/> term from genetics is the probability that markers separated by that distance are observed to have recombined in the progeny. If we were to pass 0.5 and a Poisson model like the one above, there would only be a recombinant about 30% of the time, which you can verify using R (noting that an odd number of crossovers corresponds to the terminal ends of the region being recombined in the offspring):</p>
 <div class="fragment"><div class="line">&lt;blockquote&gt;</div>
 <div class="line">x=rpois(1e6,0.5)</div>
 <div class="line">length(which (x%%2==1))/length(x)</div>
 <div class="line"></div>
 <div class="line">&lt;/blockquote&gt;</div>
 <div class="line">[1] 0.315705</div>
-</div><!-- fragment --><p>Of course, for small <img class="formulaInl" alt="$r$" src="../../form_12.png"/>, the Poisson and the Binomial approach would give very similar results. But, for larger <img class="formulaInl" alt="$r$" src="../../form_12.png"/>, be sure to model what you mean!</p>
+</div><!-- fragment --><p>Of course, for small <img class="formulaInl" alt="$r$" src="../../form_7.png"/>, the Poisson and the Binomial approach would give very similar results. But, for larger <img class="formulaInl" alt="$r$" src="../../form_7.png"/>, be sure to model what you mean!</p>
 <h3>A (trivial) mutilocus fitness model</h3>
 <p>In this example program, there is no selection, so our fitness model will return 1 for the fitness of any diploid. Just like the single-locus API, multilocus fitness policies take a diploid as an argument and return a double. The difference here is that a diploid is now a vector of pairs of iterators to gametes:</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code" href="../../d8/df2/structno__selection__multi.html">no_selection_multi</a></div>
@@ -212,14 +212,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">  <span class="comment">//and therefore points to a std::vector&lt; std::pair&lt;gamete_itr_t,gamete_itr_r&gt; &gt;,</span></div>
 <div class="line">  <span class="comment">//where the gamete_itr_t are iterators pointing to gametes</span></div>
 <div class="line">  <span class="keyword">template</span>&lt; <span class="keyword">typename</span> dipo<span class="keywordtype">id</span>_vec_itr_t &gt;</div>
-<div class="line">  <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="../../d8/df2/structno__selection__multi.html#ae0a0cfe8318bd927bc12cf864abe2dc4">operator()</a>( <span class="keyword">const</span> diploid_vec_itr_t &amp; diploid )<span class="keyword"> const</span></div>
+<div class="line">  <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="../../d8/df2/structno__selection__multi.html#a183bc38efafd9a1670f91bff064296f6">operator()</a>( <span class="keyword">const</span> diploid_vec_itr_t &amp; diploid )<span class="keyword"> const</span></div>
 <div class="line"><span class="keyword">  </span>{</div>
 <div class="line">    <span class="keywordflow">return</span> 1.;</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 </div><!-- fragment --><h3>Calling sample_diploid</h3>
-<p>The above definitions are used to evolve a population via a call to <a class="el" href="../../da/d8b/namespaceKTfwd.html#ac0adafd1954c805ce66b5f366782a01d">KTfwd::sample_diploid</a>:</p>
-<div class="fragment"><div class="line"><a class="code" href="../../da/d8b/namespaceKTfwd.html#ac0adafd1954c805ce66b5f366782a01d">KTfwd::sample_diploid</a>( r,</div>
+<p>The above definitions are used to evolve a population via a call to <a class="el" href="../../da/d8b/namespaceKTfwd.html#ac44ca61d8a73f1c63127509413bd3a21">KTfwd::sample_diploid</a>:</p>
+<div class="fragment"><div class="line"><a class="code" href="../../da/d8b/namespaceKTfwd.html#ac44ca61d8a73f1c63127509413bd3a21">KTfwd::sample_diploid</a>( r,</div>
 <div class="line">        &amp;gametes,</div>
 <div class="line">        &amp;diploids,</div>
 <div class="line">        &amp;mutations,</div>
@@ -233,16 +233,16 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">        std::bind(KTfwd::insert_at_end&lt;mtype,mlist&gt;,std::placeholders::_1,std::placeholders::_2),</div>
 <div class="line">        std::bind(KTfwd::insert_at_end&lt;gtype,glist&gt;,std::placeholders::_1,std::placeholders::_2),</div>
 <div class="line">        std::bind(<a class="code" href="../../d8/df2/structno__selection__multi.html">no_selection_multi</a>(),std::placeholders::_1),</div>
-<div class="line">        std::bind(<a class="code" href="../../d4/de8/structKTfwd_1_1mutation__remover.html">KTfwd::mutation_remover</a>(),std::placeholders::_1,0,2*N),</div>
+<div class="line">        std::bind(KTfwd::mutation_remover(),std::placeholders::_1,0,2*N),</div>
 <div class="line">        0.);</div>
 </div><!-- fragment --><p>The above call is very similar to the single-locus method, except that vectors of policies are passed. Two other differences are:</p>
 <ol type="1">
-<li>We need an array of per-locus mutation rates. This should be a double * of length <img class="formulaInl" alt="$L$" src="../../form_39.png"/>, and &amp;mu[0] passes that pointer on to the mutation policies.</li>
+<li>We need an array of per-locus mutation rates. This should be a double * of length <img class="formulaInl" alt="$L$" src="../../form_34.png"/>, and &amp;mu[0] passes that pointer on to the mutation policies.</li>
 <li>We include our Poisson model of interlocus recombination.</li>
 </ol>
 <p>At this point, you are probably ready to see the full implementation of <a class="el" href="../../de/dce/diploid__ind__2locus_8cc.html">diploid_ind_2locus.cc</a> for the remaining details.</p>
 <h1>Sampling from a multilocus simulation</h1>
-<p>To take a sample of size <img class="formulaInl" alt="$n \ll N$" src="../../form_43.png"/> from the population, you may make a call to either <a class="el" href="../../d7/de2/group__samplingPopsInd.html#gae620a0ed2d526906df8bf19ede0c38ff" title="Sampling from a population in an individual-based simulation. ">KTfwd::ms_sample</a>, which returns all neutral selected mutations in a single block, or <a class="el" href="../../d7/de2/group__samplingPopsInd.html#gaf2db9e89d4488cb3952a93129238ed94" title="Sampling from a population in an individual-based simulation. Selected and neutral mutations returned...">KTfwd::ms_sample_separate</a>, which returns separate blocks for the selected and neutral mutations.</p>
+<p>To take a sample of size <img class="formulaInl" alt="$n \ll N$" src="../../form_38.png"/> from the population, you may make a call to either <a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga592a1d6b977c5aca8656a118a944ddbf" title="Sampling from a population in an individual-based simulation. ">KTfwd::ms_sample</a>, which returns all neutral selected mutations in a single block, or <a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga0672f69f8014c3093881f258ae2b3beb" title="Sampling from a population in an individual-based simulation. Selected and neutral mutations returned...">KTfwd::ms_sample_separate</a>, which returns separate blocks for the selected and neutral mutations.</p>
 <h1>Serialization: in-memory copying and file I/O</h1>
 <p>See the <a class="el" href="../../d5/d9d/md_md_serialization.html">tutorial on serialization</a>.</p>
 <h2>Mechanics of the multilocus recombination</h2>

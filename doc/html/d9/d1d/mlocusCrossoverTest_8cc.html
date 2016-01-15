@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>fwdpp: /home/kevin/src/fwdpp/unit/mlocusCrossoverTest.cc File Reference</title>
+<title>fwdpp: /home/kevin/git/fwdpp.git/unit/mlocusCrossoverTest.cc File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.3</span>
+   &#160;<span id="projectnumber">0.4.4</span>
    </div>
   </td>
  </tr>
@@ -107,7 +107,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <code>#include &lt;unistd.h&gt;</code><br/>
 <code>#include &lt;iterator&gt;</code><br/>
 <code>#include &lt;functional&gt;</code><br/>
-<code>#include &lt;list&gt;</code><br/>
+<code>#include &lt;vector&gt;</code><br/>
 <code>#include &lt;gsl/gsl_rng.h&gt;</code><br/>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -123,19 +123,19 @@ Macros</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr class="memitem:ad9baf2d3214da5c5b5710791a07c22a6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#ad9baf2d3214da5c5b5710791a07c22a6">mut</a> = <a class="el" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a></td></tr>
 <tr class="separator:ad9baf2d3214da5c5b5710791a07c22a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace9428d4aa6205eaf777c2c9f398d9ea"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#ace9428d4aa6205eaf777c2c9f398d9ea">gtype</a> = <a class="el" href="../../d2/d07/group__basicTypes.html#ga33091eb3417c4c993f3964c278ff30a4">KTfwd::gamete</a></td></tr>
+<tr class="memitem:ace9428d4aa6205eaf777c2c9f398d9ea"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#ace9428d4aa6205eaf777c2c9f398d9ea">gtype</a> = <a class="el" href="../../da/d8b/namespaceKTfwd.html#aca6f33f7098e1fe93aba5bd52c0b5427">KTfwd::gamete</a></td></tr>
 <tr class="separator:ace9428d4aa6205eaf777c2c9f398d9ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43adc418ba4093dd1c7d3ad5dbf8fa3a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a> = std::list&lt; <a class="el" href="../../d1/dbe/crossoverTest_8cc.html#ace9428d4aa6205eaf777c2c9f398d9ea">gtype</a> &gt;</td></tr>
-<tr class="separator:a43adc418ba4093dd1c7d3ad5dbf8fa3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb6fa0168e07296495fea7661b96c455"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#abb6fa0168e07296495fea7661b96c455">mutlist</a> = std::list&lt; <a class="el" href="../../de/d89/structmut.html">mut</a> &gt;</td></tr>
-<tr class="separator:abb6fa0168e07296495fea7661b96c455"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a5f1954bb541f5016cc0844385c6758"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a1a5f1954bb541f5016cc0844385c6758">diploid_t</a> = std::vector&lt; std::pair&lt; glist::iterator, glist::iterator &gt; &gt;</td></tr>
-<tr class="separator:a1a5f1954bb541f5016cc0844385c6758"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c481d8125282d4465bf12ce51eaf8ce"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a2c481d8125282d4465bf12ce51eaf8ce">gvector</a> = std::vector&lt; <a class="el" href="../../d1/dbe/crossoverTest_8cc.html#ace9428d4aa6205eaf777c2c9f398d9ea">gtype</a> &gt;</td></tr>
+<tr class="separator:a2c481d8125282d4465bf12ce51eaf8ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92f06cfbcc2cd1a5e89b1376680779be"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a92f06cfbcc2cd1a5e89b1376680779be">mutvector</a> = std::vector&lt; <a class="el" href="../../de/d89/structmut.html">mut</a> &gt;</td></tr>
+<tr class="separator:a92f06cfbcc2cd1a5e89b1376680779be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0c68748c19d7441735693f6de1868e7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#ab0c68748c19d7441735693f6de1868e7">diploid_t</a> = std::vector&lt; std::pair&lt; std::size_t, std::size_t &gt; &gt;</td></tr>
+<tr class="separator:ab0c68748c19d7441735693f6de1868e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aaaa8c80d6b37ed1d36ceb6877cc5c3b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#aaaa8c80d6b37ed1d36ceb6877cc5c3b9">setup3locus2</a> (<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a> &amp;gametes, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#abb6fa0168e07296495fea7661b96c455">mutlist</a> &amp;<a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>, <a class="el" href="../../dc/dfb/structdiploid__t.html">diploid_t</a> &amp;diploid)</td></tr>
-<tr class="separator:aaaa8c80d6b37ed1d36ceb6877cc5c3b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a07134a7568b8e289547f79637a7439"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a9a07134a7568b8e289547f79637a7439">setup3locus2</a> (<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a2c481d8125282d4465bf12ce51eaf8ce">gvector</a> &amp;gametes, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a92f06cfbcc2cd1a5e89b1376680779be">mutvector</a> &amp;<a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, <a class="el" href="../../dc/dfb/structdiploid__t.html">diploid_t</a> &amp;diploid)</td></tr>
+<tr class="separator:a9a07134a7568b8e289547f79637a7439"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e2ebd8c852ac6558478fb65a430cc74"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a7e2ebd8c852ac6558478fb65a430cc74">BOOST_AUTO_TEST_CASE</a> (three_locus_test_1)</td></tr>
 <tr class="separator:a7e2ebd8c852ac6558478fb65a430cc74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa312b642b8c37d39dfd0335345b79b55"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#aa312b642b8c37d39dfd0335345b79b55">BOOST_AUTO_TEST_CASE</a> (three_locus_test_2)</td></tr>
@@ -190,24 +190,12 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="a1a5f1954bb541f5016cc0844385c6758"></a>
+<a class="anchor" id="ab0c68748c19d7441735693f6de1868e7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../dc/dfb/structdiploid__t.html">diploid_t</a> =  std::vector&lt; std::pair&lt; glist::iterator, glist::iterator&gt; &gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a43adc418ba4093dd1c7d3ad5dbf8fa3a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a> =  std::list&lt;<a class="el" href="../../d1/dbe/crossoverTest_8cc.html#ace9428d4aa6205eaf777c2c9f398d9ea">gtype</a>&gt;</td>
+          <td class="memname">using <a class="el" href="../../dc/dfb/structdiploid__t.html">diploid_t</a> =  std::vector&lt; std::pair&lt; std::size_t,std::size_t&gt; &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -219,7 +207,19 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d1/dbe/crossoverTest_8cc.html#ace9428d4aa6205eaf777c2c9f398d9ea">gtype</a> =  <a class="el" href="../../d2/d07/group__basicTypes.html#ga33091eb3417c4c993f3964c278ff30a4">KTfwd::gamete</a></td>
+          <td class="memname">using <a class="el" href="../../d1/dbe/crossoverTest_8cc.html#ace9428d4aa6205eaf777c2c9f398d9ea">gtype</a> =  <a class="el" href="../../da/d8b/namespaceKTfwd.html#aca6f33f7098e1fe93aba5bd52c0b5427">KTfwd::gamete</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2c481d8125282d4465bf12ce51eaf8ce"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a2c481d8125282d4465bf12ce51eaf8ce">gvector</a> =  std::vector&lt;<a class="el" href="../../d1/dbe/crossoverTest_8cc.html#ace9428d4aa6205eaf777c2c9f398d9ea">gtype</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -238,12 +238,12 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="abb6fa0168e07296495fea7661b96c455"></a>
+<a class="anchor" id="a92f06cfbcc2cd1a5e89b1376680779be"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#abb6fa0168e07296495fea7661b96c455">mutlist</a> =  std::list&lt;<a class="el" href="../../de/d89/structmut.html">mut</a>&gt;</td>
+          <td class="memname">using <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a92f06cfbcc2cd1a5e89b1376680779be">mutvector</a> =  std::vector&lt;<a class="el" href="../../de/d89/structmut.html">mut</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -315,21 +315,21 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aaaa8c80d6b37ed1d36ceb6877cc5c3b9"></a>
+<a class="anchor" id="a9a07134a7568b8e289547f79637a7439"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void setup3locus2 </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a2c481d8125282d4465bf12ce51eaf8ce">gvector</a> &amp;&#160;</td>
           <td class="paramname"><em>gametes</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#abb6fa0168e07296495fea7661b96c455">mutlist</a> &amp;&#160;</td>
-          <td class="paramname"><em>mlist</em>, </td>
+          <td class="paramtype"><a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a92f06cfbcc2cd1a5e89b1376680779be">mutvector</a> &amp;&#160;</td>
+          <td class="paramname"><em>mvector</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

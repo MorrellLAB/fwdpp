@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>fwdpp: KTfwd::gamete_base&lt; mut_type, list_type, tag_type &gt; Struct Template Reference</title>
+<title>fwdpp: KTfwd::gamete_base&lt; TAG &gt; Struct Template Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.3</span>
+   &#160;<span id="projectnumber">0.4.4</span>
    </div>
   </td>
  </tr>
@@ -94,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">KTfwd::gamete_base&lt; mut_type, list_type, tag_type &gt; Struct Template Reference<div class="ingroups"><a class="el" href="../../d2/d07/group__basicTypes.html">Mutation and gamete data types</a></div></div>  </div>
+<div class="title">KTfwd::gamete_base&lt; TAG &gt; Struct Template Reference<div class="ingroups"><a class="el" href="../../d2/d07/group__basicTypes.html">Mutation and gamete data types</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -105,86 +105,78 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a567d7dec765dddeb9f990eb530ec1e8a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a567d7dec765dddeb9f990eb530ec1e8a">mutation_type</a> = mut_type</td></tr>
-<tr class="separator:a567d7dec765dddeb9f990eb530ec1e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4979a3374483c8a7fc47ac9a87006511"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a4979a3374483c8a7fc47ac9a87006511">mutation_list_type</a> = list_type</td></tr>
-<tr class="separator:a4979a3374483c8a7fc47ac9a87006511"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae45098b8c676ee735e5e6d9b5873fbbb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ae45098b8c676ee735e5e6d9b5873fbbb">mutation_list_type_iterator</a> = typename list_type::iterator</td></tr>
-<tr class="separator:ae45098b8c676ee735e5e6d9b5873fbbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a700c3c22df5aaf658b3d61d11e654e06"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a700c3c22df5aaf658b3d61d11e654e06">mutation_container</a> = std::vector&lt; <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ae45098b8c676ee735e5e6d9b5873fbbb">mutation_list_type_iterator</a> &gt;</td></tr>
-<tr class="separator:a700c3c22df5aaf658b3d61d11e654e06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1421fad364a8cbed8d587490b415523d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a1421fad364a8cbed8d587490b415523d">mcont_iterator</a> = typename mutation_container::iterator</td></tr>
-<tr class="separator:a1421fad364a8cbed8d587490b415523d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d5835c3f1da9febace40b7be2cb9b76"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a6d5835c3f1da9febace40b7be2cb9b76">mcont_const_iterator</a> = typename mutation_container::const_iterator</td></tr>
-<tr class="separator:a6d5835c3f1da9febace40b7be2cb9b76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf5ac70c7b455fd6a3d0f95568a20afe"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#adf5ac70c7b455fd6a3d0f95568a20afe">gamete_tag</a> = tag_type</td></tr>
-<tr class="memdesc:adf5ac70c7b455fd6a3d0f95568a20afe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispatch tag type.  <a href="#adf5ac70c7b455fd6a3d0f95568a20afe">More...</a><br/></td></tr>
-<tr class="separator:adf5ac70c7b455fd6a3d0f95568a20afe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae423c715b62ae3badb9556a2e0f1b9a9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ae423c715b62ae3badb9556a2e0f1b9a9">gamete_tag</a> = TAG</td></tr>
+<tr class="memdesc:ae423c715b62ae3badb9556a2e0f1b9a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispatch tag type.  <a href="#ae423c715b62ae3badb9556a2e0f1b9a9">More...</a><br/></td></tr>
+<tr class="separator:ae423c715b62ae3badb9556a2e0f1b9a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae45b0df7d3aaa223558031131da04816"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ae45b0df7d3aaa223558031131da04816">index_t</a> = std::size_t</td></tr>
+<tr class="separator:ae45b0df7d3aaa223558031131da04816"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9d624b1845a66236a3687ab551bd28f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ab9d624b1845a66236a3687ab551bd28f">mutation_container</a> = std::vector&lt; <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ae45b0df7d3aaa223558031131da04816">index_t</a> &gt;</td></tr>
+<tr class="separator:ab9d624b1845a66236a3687ab551bd28f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0b94f2c3deaa472b8d4b5049c40014d4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a0b94f2c3deaa472b8d4b5049c40014d4">gamete_base</a> (const <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &amp;icount) noexcept</td></tr>
-<tr class="memdesc:a0b94f2c3deaa472b8d4b5049c40014d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a0b94f2c3deaa472b8d4b5049c40014d4">More...</a><br/></td></tr>
-<tr class="separator:a0b94f2c3deaa472b8d4b5049c40014d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe4ee56ce3fb71a67dbfaa9dcad5e542"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#afe4ee56ce3fb71a67dbfaa9dcad5e542">gamete_base</a> (const <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &amp;icount, const <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a700c3c22df5aaf658b3d61d11e654e06">mutation_container</a> &amp;<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a967f6d0b80027291dc1cfe86f32de9c5">n</a>, const <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a700c3c22df5aaf658b3d61d11e654e06">mutation_container</a> &amp;s) noexcept</td></tr>
-<tr class="memdesc:afe4ee56ce3fb71a67dbfaa9dcad5e542"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#afe4ee56ce3fb71a67dbfaa9dcad5e542">More...</a><br/></td></tr>
-<tr class="separator:afe4ee56ce3fb71a67dbfaa9dcad5e542"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39c532872cf52f1b8ce34b37bf8dbbdd"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a39c532872cf52f1b8ce34b37bf8dbbdd">~gamete_base</a> () noexcept</td></tr>
-<tr class="memdesc:a39c532872cf52f1b8ce34b37bf8dbbdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor is virtual, so you may inherit from this type.  <a href="#a39c532872cf52f1b8ce34b37bf8dbbdd">More...</a><br/></td></tr>
-<tr class="separator:a39c532872cf52f1b8ce34b37bf8dbbdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f33741eb637b2583727a668fcab2d97"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a0f33741eb637b2583727a668fcab2d97">gamete_base</a> (<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> &amp;)=default</td></tr>
-<tr class="memdesc:a0f33741eb637b2583727a668fcab2d97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <a href="#a0f33741eb637b2583727a668fcab2d97">More...</a><br/></td></tr>
-<tr class="separator:a0f33741eb637b2583727a668fcab2d97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab5e896a3b17806fc5e45df411d4c0f6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#aab5e896a3b17806fc5e45df411d4c0f6">gamete_base</a> (<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> const &amp;)=default</td></tr>
-<tr class="memdesc:aab5e896a3b17806fc5e45df411d4c0f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <a href="#aab5e896a3b17806fc5e45df411d4c0f6">More...</a><br/></td></tr>
-<tr class="separator:aab5e896a3b17806fc5e45df411d4c0f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57144754dd38c0634af5217aeccf1d45"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a57144754dd38c0634af5217aeccf1d45">gamete_base</a> (<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> &amp;&amp;)=default</td></tr>
-<tr class="memdesc:a57144754dd38c0634af5217aeccf1d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor.  <a href="#a57144754dd38c0634af5217aeccf1d45">More...</a><br/></td></tr>
-<tr class="separator:a57144754dd38c0634af5217aeccf1d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e2dc44821e05a1a1f35d5beda4b67cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a1e2dc44821e05a1a1f35d5beda4b67cd">operator=</a> (<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> &amp;)=default</td></tr>
-<tr class="memdesc:a1e2dc44821e05a1a1f35d5beda4b67cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator.  <a href="#a1e2dc44821e05a1a1f35d5beda4b67cd">More...</a><br/></td></tr>
-<tr class="separator:a1e2dc44821e05a1a1f35d5beda4b67cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1d30106acd9cd2713ef53f79912a425"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ad1d30106acd9cd2713ef53f79912a425">operator=</a> (<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> const &amp;)=default</td></tr>
-<tr class="memdesc:ad1d30106acd9cd2713ef53f79912a425"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator.  <a href="#ad1d30106acd9cd2713ef53f79912a425">More...</a><br/></td></tr>
-<tr class="separator:ad1d30106acd9cd2713ef53f79912a425"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37c5de357ec915bcd03f957c1fa9ebcd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a37c5de357ec915bcd03f957c1fa9ebcd">operator=</a> (<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> &amp;&amp;)=default</td></tr>
-<tr class="memdesc:a37c5de357ec915bcd03f957c1fa9ebcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator.  <a href="#a37c5de357ec915bcd03f957c1fa9ebcd">More...</a><br/></td></tr>
-<tr class="separator:a37c5de357ec915bcd03f957c1fa9ebcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68fce4b208279be3453a2fe7ccdf6113"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a68fce4b208279be3453a2fe7ccdf6113">operator==</a> (const <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a>&lt; mut_type, list_type &gt; &amp;rhs) const </td></tr>
-<tr class="memdesc:a68fce4b208279be3453a2fe7ccdf6113"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality operation.  <a href="#a68fce4b208279be3453a2fe7ccdf6113">More...</a><br/></td></tr>
-<tr class="separator:a68fce4b208279be3453a2fe7ccdf6113"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0d12d80031b8b421923649b96704224"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#af0d12d80031b8b421923649b96704224">gamete_base</a> (const <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &amp;icount) noexcept</td></tr>
+<tr class="memdesc:af0d12d80031b8b421923649b96704224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#af0d12d80031b8b421923649b96704224">More...</a><br/></td></tr>
+<tr class="separator:af0d12d80031b8b421923649b96704224"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5ba39224ce35f558a3c77591fb2385f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ad5ba39224ce35f558a3c77591fb2385f">gamete_base</a> (const <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &amp;icount, const <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ab9d624b1845a66236a3687ab551bd28f">mutation_container</a> &amp;<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a2a5576d94e5ef555ce9c731a75852b18">n</a>, const <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ab9d624b1845a66236a3687ab551bd28f">mutation_container</a> &amp;s) noexcept</td></tr>
+<tr class="memdesc:ad5ba39224ce35f558a3c77591fb2385f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#ad5ba39224ce35f558a3c77591fb2385f">More...</a><br/></td></tr>
+<tr class="separator:ad5ba39224ce35f558a3c77591fb2385f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9c1e4dc2e36634fbf8d39c29eb41097"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ad9c1e4dc2e36634fbf8d39c29eb41097">~gamete_base</a> () noexcept</td></tr>
+<tr class="memdesc:ad9c1e4dc2e36634fbf8d39c29eb41097"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor is virtual, so you may inherit from this type.  <a href="#ad9c1e4dc2e36634fbf8d39c29eb41097">More...</a><br/></td></tr>
+<tr class="separator:ad9c1e4dc2e36634fbf8d39c29eb41097"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21e777a02babc34765e95d87c24d966a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a21e777a02babc34765e95d87c24d966a">gamete_base</a> (<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> &amp;)=default</td></tr>
+<tr class="memdesc:a21e777a02babc34765e95d87c24d966a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <a href="#a21e777a02babc34765e95d87c24d966a">More...</a><br/></td></tr>
+<tr class="separator:a21e777a02babc34765e95d87c24d966a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad17baee9c9335ac446909c4ec59d735f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ad17baee9c9335ac446909c4ec59d735f">gamete_base</a> (<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> const &amp;)=default</td></tr>
+<tr class="memdesc:ad17baee9c9335ac446909c4ec59d735f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <a href="#ad17baee9c9335ac446909c4ec59d735f">More...</a><br/></td></tr>
+<tr class="separator:ad17baee9c9335ac446909c4ec59d735f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96ac18753d5d871dfc7a16af064fbbeb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a96ac18753d5d871dfc7a16af064fbbeb">gamete_base</a> (<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> &amp;&amp;)=default</td></tr>
+<tr class="memdesc:a96ac18753d5d871dfc7a16af064fbbeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor.  <a href="#a96ac18753d5d871dfc7a16af064fbbeb">More...</a><br/></td></tr>
+<tr class="separator:a96ac18753d5d871dfc7a16af064fbbeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7fc30a0594a4ac47422fdf57a3ed5aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ab7fc30a0594a4ac47422fdf57a3ed5aa">operator=</a> (<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> &amp;)=default</td></tr>
+<tr class="memdesc:ab7fc30a0594a4ac47422fdf57a3ed5aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator.  <a href="#ab7fc30a0594a4ac47422fdf57a3ed5aa">More...</a><br/></td></tr>
+<tr class="separator:ab7fc30a0594a4ac47422fdf57a3ed5aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53fd2354e724ea9fdb0f7a7da66beba2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a53fd2354e724ea9fdb0f7a7da66beba2">operator=</a> (<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> const &amp;)=default</td></tr>
+<tr class="memdesc:a53fd2354e724ea9fdb0f7a7da66beba2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator.  <a href="#a53fd2354e724ea9fdb0f7a7da66beba2">More...</a><br/></td></tr>
+<tr class="separator:a53fd2354e724ea9fdb0f7a7da66beba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37fe9c5441387411a0f8fa3ae78786fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a37fe9c5441387411a0f8fa3ae78786fe">operator=</a> (<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> &amp;&amp;)=default</td></tr>
+<tr class="memdesc:a37fe9c5441387411a0f8fa3ae78786fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator.  <a href="#a37fe9c5441387411a0f8fa3ae78786fe">More...</a><br/></td></tr>
+<tr class="separator:a37fe9c5441387411a0f8fa3ae78786fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e75e0473d8a80670a4b134000f5a193"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a7e75e0473d8a80670a4b134000f5a193">operator==</a> (const <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a>&lt; TAG &gt; &amp;rhs) const </td></tr>
+<tr class="memdesc:a7e75e0473d8a80670a4b134000f5a193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality operation.  <a href="#a7e75e0473d8a80670a4b134000f5a193">More...</a><br/></td></tr>
+<tr class="separator:a7e75e0473d8a80670a4b134000f5a193"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a967f6d0b80027291dc1cfe86f32de9c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a967f6d0b80027291dc1cfe86f32de9c5">n</a></td></tr>
-<tr class="memdesc:a967f6d0b80027291dc1cfe86f32de9c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Count in population.  <a href="#a967f6d0b80027291dc1cfe86f32de9c5">More...</a><br/></td></tr>
-<tr class="separator:a967f6d0b80027291dc1cfe86f32de9c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95c4a3b4cbbfae659d0bd2a4735f7739"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a700c3c22df5aaf658b3d61d11e654e06">mutation_container</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a95c4a3b4cbbfae659d0bd2a4735f7739">mutations</a></td></tr>
-<tr class="memdesc:a95c4a3b4cbbfae659d0bd2a4735f7739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container of mutations not affecting trait value/fitness ("neutral mutations")  <a href="#a95c4a3b4cbbfae659d0bd2a4735f7739">More...</a><br/></td></tr>
-<tr class="separator:a95c4a3b4cbbfae659d0bd2a4735f7739"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76edcc938a527a8d21a5807dab2cb412"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a700c3c22df5aaf658b3d61d11e654e06">mutation_container</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a76edcc938a527a8d21a5807dab2cb412">smutations</a></td></tr>
-<tr class="memdesc:a76edcc938a527a8d21a5807dab2cb412"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container of mutations affecting trait value/fitness ("neutral mutations")  <a href="#a76edcc938a527a8d21a5807dab2cb412">More...</a><br/></td></tr>
-<tr class="separator:a76edcc938a527a8d21a5807dab2cb412"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a5576d94e5ef555ce9c731a75852b18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a2a5576d94e5ef555ce9c731a75852b18">n</a></td></tr>
+<tr class="memdesc:a2a5576d94e5ef555ce9c731a75852b18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Count in population.  <a href="#a2a5576d94e5ef555ce9c731a75852b18">More...</a><br/></td></tr>
+<tr class="separator:a2a5576d94e5ef555ce9c731a75852b18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae3500d24064153ab48f51540038b588"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ab9d624b1845a66236a3687ab551bd28f">mutation_container</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#aae3500d24064153ab48f51540038b588">mutations</a></td></tr>
+<tr class="memdesc:aae3500d24064153ab48f51540038b588"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container of mutations not affecting trait value/fitness ("neutral mutations")  <a href="#aae3500d24064153ab48f51540038b588">More...</a><br/></td></tr>
+<tr class="separator:aae3500d24064153ab48f51540038b588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6fdbc5dfdb6950574f2c81557215d25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ab9d624b1845a66236a3687ab551bd28f">mutation_container</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ac6fdbc5dfdb6950574f2c81557215d25">smutations</a></td></tr>
+<tr class="memdesc:ac6fdbc5dfdb6950574f2c81557215d25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container of mutations affecting trait value/fitness ("selected" mutations")  <a href="#ac6fdbc5dfdb6950574f2c81557215d25">More...</a><br/></td></tr>
+<tr class="separator:ac6fdbc5dfdb6950574f2c81557215d25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, typename tag_type = tags::standard_gamete&gt;<br/>
-struct KTfwd::gamete_base&lt; mut_type, list_type, tag_type &gt;</h3>
+<div class="textblock"><h3>template&lt;typename TAG = void&gt;<br/>
+struct KTfwd::gamete_base&lt; TAG &gt;</h3>
 
 <p>Base class for gametes. </p>
 <p>A gamete is a container of pointers (iterators) to mutations + a count in the population.</p>
 <p>The template parameter types are: mut_type = the mutation type to be used. Must be a model of <a class="el" href="../../d1/da4/structKTfwd_1_1mutation__base.html" title="Base class for mutations At minimum, a mutation must contain a position and a count in the population...">KTfwd::mutation_base</a> list_type = the (doubly-linked) list that mutations are stored in. This is mainly used for defining types for this class tag_type = A type that can be used as a "dispatch tag". Currently, these are not used elsewhere in the library, but they may be in the future, or this may disappear in future library releases. The current default (<a class="el" href="../../d3/dea/namespaceKTfwd_1_1tags.html#a5d8bb8cb0ad58525e213bf7d6f529dee" title="The &quot;regular&quot; gamete for a diploid simulation. ">KTfwd::tags::standard_gamete</a>) maintains backwards compatibility with previous library versions and does not affect compilation of existing programs based on the library.</p>
 <dl class="section note"><dt>Note</dt><dd>The typical use of this class is simply to define your mutation type (see <a class="el" href="../../d1/d7a/md_md_policies.html">Tutorial 1: Policies in fwdpp</a>) and then use a typedef to define your gamete type in the simulations: <div class="fragment"><div class="line"><span class="keyword">using</span> gamete_t = <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base&lt;mutation_type&gt;</a></div>
 </div><!-- fragment --> See <a class="el" href="../../d1/d7a/md_md_policies.html">Tutorial 1: Policies in fwdpp</a> for examples of this. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#_a3">diploid_binaryIO_ind.cc</a>, and <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#_a3">migsel_ind.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#_a5">diploid_binaryIO_ind.cc</a>, and <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#_a2">migsel_ind.cc</a>.</dd>
 </dl></div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a class="anchor" id="adf5ac70c7b455fd6a3d0f95568a20afe"></a>
+<a class="anchor" id="ae423c715b62ae3badb9556a2e0f1b9a9"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, typename tag_type = tags::standard_gamete&gt; </div>
+template&lt;typename TAG = void&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; mut_type, list_type, tag_type &gt;::<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#adf5ac70c7b455fd6a3d0f95568a20afe">gamete_tag</a> =  tag_type</td>
+          <td class="memname">using <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; TAG &gt;::<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ae423c715b62ae3badb9556a2e0f1b9a9">gamete_tag</a> =  TAG</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -193,84 +185,28 @@ template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, t
 
 </div>
 </div>
-<a class="anchor" id="a6d5835c3f1da9febace40b7be2cb9b76"></a>
+<a class="anchor" id="ae45b0df7d3aaa223558031131da04816"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, typename tag_type = tags::standard_gamete&gt; </div>
+template&lt;typename TAG = void&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; mut_type, list_type, tag_type &gt;::<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a6d5835c3f1da9febace40b7be2cb9b76">mcont_const_iterator</a> =  typename mutation_container::const_iterator</td>
+          <td class="memname">using <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; TAG &gt;::<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ae45b0df7d3aaa223558031131da04816">index_t</a> =  std::size_t</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a1421fad364a8cbed8d587490b415523d"></a>
+<a class="anchor" id="ab9d624b1845a66236a3687ab551bd28f"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, typename tag_type = tags::standard_gamete&gt; </div>
+template&lt;typename TAG = void&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; mut_type, list_type, tag_type &gt;::<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a1421fad364a8cbed8d587490b415523d">mcont_iterator</a> =  typename mutation_container::iterator</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a700c3c22df5aaf658b3d61d11e654e06"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, typename tag_type = tags::standard_gamete&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; mut_type, list_type, tag_type &gt;::<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a700c3c22df5aaf658b3d61d11e654e06">mutation_container</a> =  std::vector&lt; <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ae45098b8c676ee735e5e6d9b5873fbbb">mutation_list_type_iterator</a> &gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a4979a3374483c8a7fc47ac9a87006511"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, typename tag_type = tags::standard_gamete&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; mut_type, list_type, tag_type &gt;::<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a4979a3374483c8a7fc47ac9a87006511">mutation_list_type</a> =  list_type</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ae45098b8c676ee735e5e6d9b5873fbbb"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, typename tag_type = tags::standard_gamete&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; mut_type, list_type, tag_type &gt;::<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ae45098b8c676ee735e5e6d9b5873fbbb">mutation_list_type_iterator</a> =  typename list_type::iterator</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a567d7dec765dddeb9f990eb530ec1e8a"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, typename tag_type = tags::standard_gamete&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; mut_type, list_type, tag_type &gt;::<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a567d7dec765dddeb9f990eb530ec1e8a">mutation_type</a> =  mut_type</td>
+          <td class="memname">using <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; TAG &gt;::<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ab9d624b1845a66236a3687ab551bd28f">mutation_container</a> =  std::vector&lt;<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ae45b0df7d3aaa223558031131da04816">index_t</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -278,17 +214,17 @@ template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, t
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a0b94f2c3deaa472b8d4b5049c40014d4"></a>
+<a class="anchor" id="af0d12d80031b8b421923649b96704224"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, typename tag_type = tags::standard_gamete&gt; </div>
+template&lt;typename TAG = void&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; mut_type, list_type, tag_type &gt;::<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> </td>
+          <td class="memname"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; TAG &gt;::<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &amp;&#160;</td>
           <td class="paramname"><em>icount</em></td><td>)</td>
@@ -312,17 +248,17 @@ template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, t
 
 </div>
 </div>
-<a class="anchor" id="afe4ee56ce3fb71a67dbfaa9dcad5e542"></a>
+<a class="anchor" id="ad5ba39224ce35f558a3c77591fb2385f"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, typename tag_type = tags::standard_gamete&gt; </div>
+template&lt;typename TAG = void&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; mut_type, list_type, tag_type &gt;::<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> </td>
+          <td class="memname"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; TAG &gt;::<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &amp;&#160;</td>
           <td class="paramname"><em>icount</em>, </td>
@@ -330,13 +266,13 @@ template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, t
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a700c3c22df5aaf658b3d61d11e654e06">mutation_container</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ab9d624b1845a66236a3687ab551bd28f">mutation_container</a> &amp;&#160;</td>
           <td class="paramname"><em>n</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a700c3c22df5aaf658b3d61d11e654e06">mutation_container</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ab9d624b1845a66236a3687ab551bd28f">mutation_container</a> &amp;&#160;</td>
           <td class="paramname"><em>s</em>&#160;</td>
         </tr>
         <tr>
@@ -364,17 +300,17 @@ template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, t
 
 </div>
 </div>
-<a class="anchor" id="a39c532872cf52f1b8ce34b37bf8dbbdd"></a>
+<a class="anchor" id="ad9c1e4dc2e36634fbf8d39c29eb41097"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, typename tag_type = tags::standard_gamete&gt; </div>
+template&lt;typename TAG = void&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; mut_type, list_type, tag_type &gt;::~<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> </td>
+          <td class="memname">virtual <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; TAG &gt;::~<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -391,19 +327,19 @@ template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, t
 
 </div>
 </div>
-<a class="anchor" id="a0f33741eb637b2583727a668fcab2d97"></a>
+<a class="anchor" id="a21e777a02babc34765e95d87c24d966a"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, typename tag_type = tags::standard_gamete&gt; </div>
+template&lt;typename TAG = void&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; mut_type, list_type, tag_type &gt;::<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> </td>
+          <td class="memname"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; TAG &gt;::<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a>&lt; mut_type, list_type, tag_type &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a>&lt; TAG &gt; &amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -419,19 +355,19 @@ template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, t
 
 </div>
 </div>
-<a class="anchor" id="aab5e896a3b17806fc5e45df411d4c0f6"></a>
+<a class="anchor" id="ad17baee9c9335ac446909c4ec59d735f"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, typename tag_type = tags::standard_gamete&gt; </div>
+template&lt;typename TAG = void&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; mut_type, list_type, tag_type &gt;::<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> </td>
+          <td class="memname"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; TAG &gt;::<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a>&lt; mut_type, list_type, tag_type &gt; const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a>&lt; TAG &gt; const &amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -447,19 +383,19 @@ template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, t
 
 </div>
 </div>
-<a class="anchor" id="a57144754dd38c0634af5217aeccf1d45"></a>
+<a class="anchor" id="a96ac18753d5d871dfc7a16af064fbbeb"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, typename tag_type = tags::standard_gamete&gt; </div>
+template&lt;typename TAG = void&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; mut_type, list_type, tag_type &gt;::<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> </td>
+          <td class="memname"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; TAG &gt;::<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a>&lt; mut_type, list_type, tag_type &gt; &amp;&amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a>&lt; TAG &gt; &amp;&amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -476,19 +412,19 @@ template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, t
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a1e2dc44821e05a1a1f35d5beda4b67cd"></a>
+<a class="anchor" id="ab7fc30a0594a4ac47422fdf57a3ed5aa"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, typename tag_type = tags::standard_gamete&gt; </div>
+template&lt;typename TAG = void&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a>&amp; <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; mut_type, list_type, tag_type &gt;::operator= </td>
+          <td class="memname"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a>&amp; <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; TAG &gt;::operator= </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a>&lt; mut_type, list_type, tag_type &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a>&lt; TAG &gt; &amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -504,19 +440,19 @@ template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, t
 
 </div>
 </div>
-<a class="anchor" id="ad1d30106acd9cd2713ef53f79912a425"></a>
+<a class="anchor" id="a53fd2354e724ea9fdb0f7a7da66beba2"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, typename tag_type = tags::standard_gamete&gt; </div>
+template&lt;typename TAG = void&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a>&amp; <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; mut_type, list_type, tag_type &gt;::operator= </td>
+          <td class="memname"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a>&amp; <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; TAG &gt;::operator= </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a>&lt; mut_type, list_type, tag_type &gt; const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a>&lt; TAG &gt; const &amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -532,19 +468,19 @@ template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, t
 
 </div>
 </div>
-<a class="anchor" id="a37c5de357ec915bcd03f957c1fa9ebcd"></a>
+<a class="anchor" id="a37fe9c5441387411a0f8fa3ae78786fe"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, typename tag_type = tags::standard_gamete&gt; </div>
+template&lt;typename TAG = void&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a>&amp; <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; mut_type, list_type, tag_type &gt;::operator= </td>
+          <td class="memname"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a>&amp; <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; TAG &gt;::operator= </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a>&lt; mut_type, list_type, tag_type &gt; &amp;&amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a>&lt; TAG &gt; &amp;&amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -560,19 +496,19 @@ template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, t
 
 </div>
 </div>
-<a class="anchor" id="a68fce4b208279be3453a2fe7ccdf6113"></a>
+<a class="anchor" id="a7e75e0473d8a80670a4b134000f5a193"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, typename tag_type = tags::standard_gamete&gt; </div>
+template&lt;typename TAG = void&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; mut_type, list_type, tag_type &gt;::operator== </td>
+          <td class="memname">bool <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; TAG &gt;::operator== </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a>&lt; mut_type, list_type &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gamete_base</a>&lt; TAG &gt; &amp;&#160;</td>
           <td class="paramname"><em>rhs</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -585,19 +521,18 @@ template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, t
 </div><div class="memdoc">
 
 <p>Equality operation. </p>
-<dl class="section note"><dt>Note</dt><dd>Given that mutations and smutations contains ITERATORS to actual mutations, operator== does not need to be defined for the corresponding mutation type </dd></dl>
 
 </div>
 </div>
 <h2 class="groupheader">Field Documentation</h2>
-<a class="anchor" id="a95c4a3b4cbbfae659d0bd2a4735f7739"></a>
+<a class="anchor" id="aae3500d24064153ab48f51540038b588"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, typename tag_type = tags::standard_gamete&gt; </div>
+template&lt;typename TAG = void&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a700c3c22df5aaf658b3d61d11e654e06">mutation_container</a> <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; mut_type, list_type, tag_type &gt;::mutations</td>
+          <td class="memname"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ab9d624b1845a66236a3687ab551bd28f">mutation_container</a> <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; TAG &gt;::mutations</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -606,14 +541,14 @@ template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, t
 
 </div>
 </div>
-<a class="anchor" id="a967f6d0b80027291dc1cfe86f32de9c5"></a>
+<a class="anchor" id="a2a5576d94e5ef555ce9c731a75852b18"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, typename tag_type = tags::standard_gamete&gt; </div>
+template&lt;typename TAG = void&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; mut_type, list_type, tag_type &gt;::n</td>
+          <td class="memname"><a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; TAG &gt;::n</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -622,24 +557,24 @@ template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, t
 
 </div>
 </div>
-<a class="anchor" id="a76edcc938a527a8d21a5807dab2cb412"></a>
+<a class="anchor" id="ac6fdbc5dfdb6950574f2c81557215d25"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mut_type, typename list_type = std::list&lt;mut_type&gt;, typename tag_type = tags::standard_gamete&gt; </div>
+template&lt;typename TAG = void&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a700c3c22df5aaf658b3d61d11e654e06">mutation_container</a> <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; mut_type, list_type, tag_type &gt;::smutations</td>
+          <td class="memname"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ab9d624b1845a66236a3687ab551bd28f">mutation_container</a> <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; TAG &gt;::smutations</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Container of mutations affecting trait value/fitness ("neutral mutations") </p>
+<p>Container of mutations affecting trait value/fitness ("selected" mutations") </p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/kevin/src/fwdpp/fwdpp/<a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">forward_types.hpp</a></li>
+<li>/home/kevin/git/fwdpp.git/fwdpp/<a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">forward_types.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>fwdpp: /home/kevin/src/fwdpp/unit/sugar2_custom.cc File Reference</title>
+<title>fwdpp: /home/kevin/git/fwdpp.git/unit/sugar2_custom.cc File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.3</span>
+   &#160;<span id="projectnumber">0.4.4</span>
    </div>
   </td>
  </tr>
@@ -89,7 +89,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
@@ -104,16 +103,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <code>#include &lt;<a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html">fwdpp/sugar/GSLrng_t.hpp</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="../../df/dae/metapop_8hpp_source.html">fwdpp/sugar/metapop.hpp</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="../../dc/d32/infsites_8hpp_source.html">fwdpp/sugar/infsites.hpp</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="../../d8/d21/serialization_8hpp_source.html">fwdpp/sugar/serialization.hpp</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="../../d6/dff/custom__dip_8hpp_source.html">custom_dip.hpp</a>&gt;</code><br/>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfb/structdiploid__t.html">diploid_t</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d21/structdiploid__writer.html">diploid_writer</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d15/structdiploid__reader.html">diploid_reader</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a6b2a3852db8bb19ab6909bac01859985"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dcd/sugar2__custom_8cc.html#a6b2a3852db8bb19ab6909bac01859985">BOOST_TEST_MODULE</a>&#160;&#160;&#160;sugarTest2_custom</td></tr>
@@ -129,17 +121,23 @@ Typedefs</h2></td></tr>
 <tr class="separator:adc4cb78b331fc4385057a2f785457cae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaebd18385ab3036c07b4bcbe6be0d305"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dcd/sugar2__custom_8cc.html#aaebd18385ab3036c07b4bcbe6be0d305">mreader</a> = <a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">KTfwd::mutation_reader</a>&lt; <a class="el" href="../../dc/dd4/ms__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a> &gt;</td></tr>
 <tr class="separator:aaebd18385ab3036c07b4bcbe6be0d305"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a173892d6c7b636f2a5a817d7615367c4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dcd/sugar2__custom_8cc.html#a173892d6c7b636f2a5a817d7615367c4">poptype</a> = <a class="el" href="../../de/d6e/group__sugar.html#gaf66ce861e458d7e15f98bbbb9e87ad38">KTfwd::metapop</a>&lt; <a class="el" href="../../dc/dd4/ms__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a>, <a class="el" href="../../dc/dfb/structdiploid__t.html">diploid_t</a> &gt;</td></tr>
+<tr class="separator:a173892d6c7b636f2a5a817d7615367c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a4862499cb62bfa43943001b59fe6dc0d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dcd/sugar2__custom_8cc.html#a4862499cb62bfa43943001b59fe6dc0d">migpop</a> (const size_t &amp;source_pop, gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const double &amp;mig_prob)</td></tr>
 <tr class="separator:a4862499cb62bfa43943001b59fe6dc0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a504d3fd06759f53fb4158ee967c6db30"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dcd/sugar2__custom_8cc.html#a504d3fd06759f53fb4158ee967c6db30">BOOST_AUTO_TEST_CASE</a> (metapop_sugar_test1)</td></tr>
-<tr class="separator:a504d3fd06759f53fb4158ee967c6db30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae14e5c3d2560df7ceea7e7e4f5a4e349"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dcd/sugar2__custom_8cc.html#ae14e5c3d2560df7ceea7e7e4f5a4e349">BOOST_AUTO_TEST_CASE</a> (metapop_sugar_copy_construct_test)</td></tr>
-<tr class="separator:ae14e5c3d2560df7ceea7e7e4f5a4e349"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cbed8fdb87b4f33bf9f2149007ab763"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dcd/sugar2__custom_8cc.html#a6cbed8fdb87b4f33bf9f2149007ab763">BOOST_AUTO_TEST_CASE</a> (metapop_sugar_assign_test)</td></tr>
-<tr class="separator:a6cbed8fdb87b4f33bf9f2149007ab763"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e606ae3de9354470917a1fc1ec852c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dcd/sugar2__custom_8cc.html#a1e606ae3de9354470917a1fc1ec852c3">simulate</a> (<a class="el" href="../../d5/da7/extensions_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;pop)</td></tr>
+<tr class="separator:a1e606ae3de9354470917a1fc1ec852c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83242e9f3c1a5355bad3cbaf03645125"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dcd/sugar2__custom_8cc.html#a83242e9f3c1a5355bad3cbaf03645125">BOOST_AUTO_TEST_CASE</a> (metapop_sugar_custom_test1)</td></tr>
+<tr class="separator:a83242e9f3c1a5355bad3cbaf03645125"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a80752f65a741131f3c815cd30dc59f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dcd/sugar2__custom_8cc.html#a5a80752f65a741131f3c815cd30dc59f">BOOST_AUTO_TEST_CASE</a> (metapop_sugar_custom_test2)</td></tr>
+<tr class="separator:a5a80752f65a741131f3c815cd30dc59f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf426a0485ac081cd83f2c4ea2b8f7f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dcd/sugar2__custom_8cc.html#abf426a0485ac081cd83f2c4ea2b8f7f8">BOOST_AUTO_TEST_CASE</a> (metapop_sugar_custom_test3)</td></tr>
+<tr class="separator:abf426a0485ac081cd83f2c4ea2b8f7f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf0e36aefac20447478c463bc411055d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dcd/sugar2__custom_8cc.html#adf0e36aefac20447478c463bc411055d">BOOST_AUTO_TEST_CASE</a> (metapop_sugar_custom_test4)</td></tr>
+<tr class="separator:adf0e36aefac20447478c463bc411055d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="a139f00d2466d591f60b8d6a73c8273f1"></a>
@@ -172,7 +170,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../dc/dd4/ms__sampling_8cc.html#aaebd18385ab3036c07b4bcbe6be0d305">mreader</a> =  <a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">KTfwd::mutation_reader</a>&lt;<a class="el" href="../../dc/dd4/ms__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a>&gt;</td>
+          <td class="memname">using <a class="el" href="../../d0/db9/sugar1_8cc.html#aaebd18385ab3036c07b4bcbe6be0d305">mreader</a> =  <a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">KTfwd::mutation_reader</a>&lt;<a class="el" href="../../dc/dd4/ms__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -196,7 +194,19 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../dc/dd4/ms__sampling_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a> =  <a class="el" href="../../de/d25/structKTfwd_1_1mutation__writer.html">KTfwd::mutation_writer</a></td>
+          <td class="memname">using <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a> =  <a class="el" href="../../de/d25/structKTfwd_1_1mutation__writer.html">KTfwd::mutation_writer</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a173892d6c7b636f2a5a817d7615367c4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d5/da7/extensions_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> =  <a class="el" href="../../de/d6e/group__sugar.html#gaf66ce861e458d7e15f98bbbb9e87ad38">KTfwd::metapop</a>&lt;<a class="el" href="../../dc/dd4/ms__sampling_8cc.html#a30dd52cee5b71fa73c7edaa535059d7c">mutation_t</a>,<a class="el" href="../../dc/dfb/structdiploid__t.html">diploid_t</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -204,14 +214,14 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a504d3fd06759f53fb4158ee967c6db30"></a>
+<a class="anchor" id="a83242e9f3c1a5355bad3cbaf03645125"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">BOOST_AUTO_TEST_CASE </td>
           <td>(</td>
-          <td class="paramtype">metapop_sugar_test1&#160;</td>
+          <td class="paramtype">metapop_sugar_custom_test1&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -220,14 +230,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae14e5c3d2560df7ceea7e7e4f5a4e349"></a>
+<a class="anchor" id="a5a80752f65a741131f3c815cd30dc59f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">BOOST_AUTO_TEST_CASE </td>
           <td>(</td>
-          <td class="paramtype">metapop_sugar_copy_construct_test&#160;</td>
+          <td class="paramtype">metapop_sugar_custom_test2&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -236,14 +246,30 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a6cbed8fdb87b4f33bf9f2149007ab763"></a>
+<a class="anchor" id="abf426a0485ac081cd83f2c4ea2b8f7f8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">BOOST_AUTO_TEST_CASE </td>
           <td>(</td>
-          <td class="paramtype">metapop_sugar_assign_test&#160;</td>
+          <td class="paramtype">metapop_sugar_custom_test3&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adf0e36aefac20447478c463bc411055d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">metapop_sugar_custom_test4&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -278,6 +304,22 @@ Functions</h2></td></tr>
           <td></td>
           <td>)</td>
           <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1e606ae3de9354470917a1fc1ec852c3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void simulate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/da7/extensions_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;&#160;</td>
+          <td class="paramname"><em>pop</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">

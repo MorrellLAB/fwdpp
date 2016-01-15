@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>fwdpp: /home/kevin/src/fwdpp/examples/migsel_split_ind_list.cc File Reference</title>
+<title>fwdpp: /home/kevin/git/fwdpp.git/examples/migsel_split_ind_list.cc File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.3</span>
+   &#160;<span id="projectnumber">0.4.4</span>
    </div>
   </td>
  </tr>
@@ -98,10 +98,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;config.h&gt;</code><br/>
-<code>#include &lt;<a class="el" href="../../df/df8/diploid_8hh_source.html">fwdpp/diploid.hh</a>&gt;</code><br/>
-<code>#include &lt;Sequence/SimData.hpp&gt;</code><br/>
-<code>#include &lt;Sequence/SimDataIO.hpp&gt;</code><br/>
-<code>#include &lt;Sequence/FST.hpp&gt;</code><br/>
 <code>#include &lt;numeric&gt;</code><br/>
 <code>#include &lt;cmath&gt;</code><br/>
 <code>#include &lt;functional&gt;</code><br/>
@@ -109,16 +105,16 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <code>#include &lt;iomanip&gt;</code><br/>
 <code>#include &lt;fstream&gt;</code><br/>
 <code>#include &lt;iostream&gt;</code><br/>
+<code>#include &lt;<a class="el" href="../../df/df8/diploid_8hh_source.html">fwdpp/diploid.hh</a>&gt;</code><br/>
+<code>#include &lt;Sequence/SimData.hpp&gt;</code><br/>
+<code>#include &lt;Sequence/SimDataIO.hpp&gt;</code><br/>
+<code>#include &lt;Sequence/FST.hpp&gt;</code><br/>
 <code>#include &lt;<a class="el" href="../../dc/d32/infsites_8hpp_source.html">fwdpp/sugar/infsites.hpp</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="../../d8/d21/serialization_8hpp_source.html">fwdpp/sugar/serialization.hpp</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="../../df/d10/common__ind_8hpp_source.html">common_ind.hpp</a>&gt;</code><br/>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d86/structmultiplicative__fitness__updater__hom__minus.html">multiplicative_fitness_updater_hom_minus</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dd0/structmultiplicative__fitness__updater__het__minus.html">multiplicative_fitness_updater_het_minus</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d9f/structmultiplicative__diploid__minus.html">multiplicative_diploid_minus</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -133,16 +129,12 @@ Typedefs</h2></td></tr>
 <tr class="separator:ab95d5809de5b32335213c961a4e895af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03a1cc418a74d1311b6869c0ef0aa607"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc.html#a03a1cc418a74d1311b6869c0ef0aa607">poptype</a> = <a class="el" href="../../d6/d4f/sugar__sampling_8cc.html#a73a155af957d76e8f1045f9c2c0c6562">metapop_t</a></td></tr>
 <tr class="separator:a03a1cc418a74d1311b6869c0ef0aa607"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeef95b1f57b1b26ef5a260c9b12527ad"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc.html#aeef95b1f57b1b26ef5a260c9b12527ad">glist</a> = <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#ad839a9120e6bc475ff6530bb3f90180c">poptype::glist_t</a></td></tr>
-<tr class="separator:aeef95b1f57b1b26ef5a260c9b12527ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e86d63f81a0e0402a54a27284c57f37"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc.html#a9e86d63f81a0e0402a54a27284c57f37">mlist</a> = <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a78399b27fedbc1fec3e749ceaf6e76b2">poptype::mlist_t</a></td></tr>
-<tr class="separator:a9e86d63f81a0e0402a54a27284c57f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d31e1f75f6e15dd68be154dcf89e069"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc.html#a3d31e1f75f6e15dd68be154dcf89e069">gtype</a> = <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#ab6775aa6d7aea3269e3a3dfdba8857e2">poptype::gamete_t</a></td></tr>
+<tr class="memitem:a52d245589a466889aa40f3ccd4b9b716"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc.html#a52d245589a466889aa40f3ccd4b9b716">mcont</a> = <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a953f4dc4fcd3747a53a1cf09b75bbc00">poptype::mcont_t</a></td></tr>
+<tr class="separator:a52d245589a466889aa40f3ccd4b9b716"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d31e1f75f6e15dd68be154dcf89e069"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc.html#a3d31e1f75f6e15dd68be154dcf89e069">gtype</a> = <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#af6a8d7a641b27fa63bb37800f1f3548c">poptype::gamete_t</a></td></tr>
 <tr class="separator:a3d31e1f75f6e15dd68be154dcf89e069"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24ee041808896db64e51b79a61cefd50"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc.html#a24ee041808896db64e51b79a61cefd50">diploid_bucket</a> = <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a930399671212be8215375cab38ba46fe">poptype::dipvector_t</a></td></tr>
-<tr class="separator:a24ee041808896db64e51b79a61cefd50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a683a7a92132c42a3ebad506c8dadf6f6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc.html#a683a7a92132c42a3ebad506c8dadf6f6">diploid_bucket_vec</a> = poptype::vdipvector_t</td></tr>
-<tr class="separator:a683a7a92132c42a3ebad506c8dadf6f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a440c697536cc894c5a8c86126e519855"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc.html#a440c697536cc894c5a8c86126e519855">gcont</a> = <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a574ee0936029cc45c99b29990e22dfb0">poptype::gcont_t</a></td></tr>
+<tr class="separator:a440c697536cc894c5a8c86126e519855"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -170,13 +162,8 @@ Functions</h2></td></tr>
 <div class="line"><span class="comment"></span></div>
 <div class="line"><span class="comment">  Output is a &quot;ms&quot; block for neutral and non-neutral variants.  Ancestral</span></div>
 <div class="line"><span class="comment">  population first.</span></div>
-<div class="line"><span class="comment"> */</span></div>
+<div class="line"><span class="comment">*/</span></div>
 <div class="line"><span class="preprocessor">#include &lt;config.h&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../df/df8/diploid_8hh.html">fwdpp/diploid.hh</a>&gt;</span></div>
-<div class="line"></div>
-<div class="line"><span class="preprocessor">#include &lt;Sequence/SimData.hpp&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;Sequence/SimDataIO.hpp&gt;</span> <span class="comment">//for writing &amp; reading SimData objects in binary format</span></div>
-<div class="line"><span class="preprocessor">#include &lt;Sequence/FST.hpp&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;numeric&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;cmath&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;functional&gt;</span></div>
@@ -184,6 +171,11 @@ Functions</h2></td></tr>
 <div class="line"><span class="preprocessor">#include &lt;iomanip&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;fstream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../df/df8/diploid_8hh.html">fwdpp/diploid.hh</a>&gt;</span></div>
+<div class="line"></div>
+<div class="line"><span class="preprocessor">#include &lt;Sequence/SimData.hpp&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;Sequence/SimDataIO.hpp&gt;</span> <span class="comment">//for writing &amp; reading SimData objects in binary format</span></div>
+<div class="line"><span class="preprocessor">#include &lt;Sequence/FST.hpp&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../dc/d32/infsites_8hpp.html">fwdpp/sugar/infsites.hpp</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../dc/d32/infsites_8hpp.html">fwdpp/sugar/infsites.hpp</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../d8/d21/serialization_8hpp.html">fwdpp/sugar/serialization.hpp</a>&gt;</span></div>
@@ -197,11 +189,9 @@ Functions</h2></td></tr>
 <div class="line"><span class="keyword">using namespace </span>Sequence;</div>
 <div class="line"></div>
 <div class="line"><span class="keyword">using</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">poptype</a> = <a class="code" href="../../d6/d4f/sugar__sampling_8cc.html#a73a155af957d76e8f1045f9c2c0c6562">metapop_t</a>;</div>
-<div class="line"><span class="keyword">using</span> <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a> = <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#ad839a9120e6bc475ff6530bb3f90180c">poptype::glist_t</a>;</div>
-<div class="line"><span class="keyword">using</span> <a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a> = <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a78399b27fedbc1fec3e749ceaf6e76b2">poptype::mlist_t</a>;</div>
-<div class="line"><span class="keyword">using</span> <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gtype</a> = <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#ab6775aa6d7aea3269e3a3dfdba8857e2">poptype::gamete_t</a>;</div>
-<div class="line"><span class="keyword">using</span> <a class="code" href="../../d5/dcc/migsel__split__ind__list_8cc.html#a24ee041808896db64e51b79a61cefd50">diploid_bucket</a> = <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a930399671212be8215375cab38ba46fe">poptype::dipvector_t</a>;</div>
-<div class="line"><span class="keyword">using</span> <a class="code" href="../../d5/dcc/migsel__split__ind__list_8cc.html#a683a7a92132c42a3ebad506c8dadf6f6">diploid_bucket_vec</a> = poptype::vdipvector_t;</div>
+<div class="line"><span class="keyword">using</span> <a class="code" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a> = <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a953f4dc4fcd3747a53a1cf09b75bbc00">poptype::mcont_t</a>;</div>
+<div class="line"><span class="keyword">using</span> <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gtype</a> = <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#af6a8d7a641b27fa63bb37800f1f3548c">poptype::gamete_t</a>;</div>
+<div class="line"><span class="keyword">using</span> <a class="code" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a> = <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a574ee0936029cc45c99b29990e22dfb0">poptype::gcont_t</a>;</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">size_t</span> <a class="code" href="../../da/d50/sugar2_8cc.html#a4862499cb62bfa43943001b59fe6dc0d">migpop</a>(<span class="keyword">const</span> <span class="keywordtype">size_t</span> &amp; source_pop, gsl_rng * r, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; mig_prob)</div>
 <div class="line">{</div>
@@ -217,41 +207,28 @@ Functions</h2></td></tr>
 <div class="line">               <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; nsam);</div>
 <div class="line"></div>
 <div class="line"><span class="comment">//fitness model details -- s will be treated as -s in population 2</span></div>
-<div class="line"><span class="keyword">struct </span><a class="code" href="../../dd/d86/structmultiplicative__fitness__updater__hom__minus.html">multiplicative_fitness_updater_hom_minus</a></div>
-<div class="line">{</div>
-<div class="line">  <span class="keyword">typedef</span> <span class="keywordtype">void</span> result_type;</div>
-<div class="line">  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> iterator_type&gt;</div>
-<div class="line">  <span class="keyword">inline</span> <span class="keywordtype">void</span> operator()(<span class="keywordtype">double</span> &amp; fitness, <span class="keyword">const</span> iterator_type &amp; m1,<span class="keyword">const</span> <span class="keywordtype">double</span> &amp; scaling = 2.)<span class="keyword"> const</span></div>
-<div class="line"><span class="keyword">  </span>{</div>
-<div class="line">    fitness *= ( 1. - scaling*m1-&gt;s );</div>
-<div class="line">  }</div>
-<div class="line">};</div>
-<div class="line"></div>
-<div class="line"><span class="keyword">struct </span><a class="code" href="../../de/dd0/structmultiplicative__fitness__updater__het__minus.html">multiplicative_fitness_updater_het_minus</a></div>
-<div class="line">{</div>
-<div class="line">  <span class="keyword">typedef</span> <span class="keywordtype">void</span> result_type;</div>
-<div class="line">  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> iterator_type&gt;</div>
-<div class="line">  <span class="keyword">inline</span> <span class="keywordtype">void</span> operator()(<span class="keywordtype">double</span> &amp; fitness, <span class="keyword">const</span> iterator_type &amp; m1)<span class="keyword"> const</span></div>
-<div class="line"><span class="keyword">  </span>{</div>
-<div class="line">    fitness *= ( 1. - m1-&gt;s*m1-&gt;h );</div>
-<div class="line">  }</div>
-<div class="line">};</div>
-<div class="line"></div>
 <div class="line"><span class="keyword">struct </span><a class="code" href="../../de/d9f/structmultiplicative__diploid__minus.html">multiplicative_diploid_minus</a></div>
 <div class="line">{</div>
 <div class="line">  <span class="keyword">typedef</span> <span class="keywordtype">double</span> result_type;</div>
-<div class="line">  <span class="keyword">template</span>&lt; <span class="keyword">typename</span> iterator_type&gt;</div>
-<div class="line">  <span class="keyword">inline</span> <span class="keywordtype">double</span> operator()(<span class="keyword">const</span> iterator_type &amp; g1, <span class="keyword">const</span> iterator_type &amp; g2, </div>
+<div class="line">  <span class="keyword">inline</span> <span class="keywordtype">double</span> operator()(<span class="keyword">const</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#af6a8d7a641b27fa63bb37800f1f3548c">poptype::gamete_t</a> &amp; g1, <span class="keyword">const</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#af6a8d7a641b27fa63bb37800f1f3548c">poptype::gamete_t</a> &amp; g2,</div>
+<div class="line">                           <span class="keyword">const</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a953f4dc4fcd3747a53a1cf09b75bbc00">poptype::mcont_t</a> &amp; mutations,</div>
 <div class="line">                           <span class="keyword">const</span> <span class="keywordtype">double</span> scaling = 1.)<span class="keyword"> const</span></div>
 <div class="line"><span class="keyword">  </span>{</div>
-<div class="line">    <span class="keywordflow">return</span> std::max(0.,<a class="code" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html">site_dependent_fitness</a>()(g1,g2,</div>
-<div class="line">                                                std::bind(<a class="code" href="../../dd/d86/structmultiplicative__fitness__updater__hom__minus.html">multiplicative_fitness_updater_hom_minus</a>(),std::placeholders::_1,std::placeholders::_2,scaling),</div>
-<div class="line">                                                std::bind(<a class="code" href="../../de/dd0/structmultiplicative__fitness__updater__het__minus.html">multiplicative_fitness_updater_het_minus</a>(),std::placeholders::_1,std::placeholders::_2),</div>
-<div class="line">                                                1.));</div>
+<div class="line">    <span class="keyword">using</span> mut_t = poptype::mcont_t::value_type;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html">site_dependent_fitness</a>()(g1,g2,mutations,</div>
+<div class="line">                                    [&amp;](<span class="keywordtype">double</span> &amp; fitness,<span class="keyword">const</span> mut_t &amp; <a class="code" href="../../d1/dbe/crossoverTest_8cc.html#ad9baf2d3214da5c5b5710791a07c22a6">mut</a>)</div>
+<div class="line">                                    {</div>
+<div class="line">                                      fitness *= (1. - scaling*<a class="code" href="../../de/d89/structmut.html">mut</a>.s);</div>
+<div class="line">                                    },</div>
+<div class="line">                                    [](<span class="keywordtype">double</span> &amp; fitness,<span class="keyword">const</span> mut_t &amp; <a class="code" href="../../d1/dbe/crossoverTest_8cc.html#ad9baf2d3214da5c5b5710791a07c22a6">mut</a>)</div>
+<div class="line">                                    {</div>
+<div class="line">                                      fitness *= (1. - <a class="code" href="../../de/d89/structmut.html">mut</a>.h*<a class="code" href="../../de/d89/structmut.html">mut</a>.s);</div>
+<div class="line">                                    },</div>
+<div class="line">                                    1.);</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">int</span> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv )</div>
+<div class="line"><span class="keywordtype">int</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv )</div>
 <div class="line">{</div>
 <div class="line">  <span class="keywordflow">if</span> (argc != 14)</div>
 <div class="line">    {</div>
@@ -289,147 +266,142 @@ Functions</h2></td></tr>
 <div class="line">  gsl_rng_set(r,seed);</div>
 <div class="line"></div>
 <div class="line">  <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">poptype</a> pop({N}); <span class="comment">//Initialize a SINGLE population in the metapop sim!</span></div>
+<div class="line">  pop.<a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a2d94e252c30aa1f27d8e60c9e7f1bcef">mutations</a>.reserve(<span class="keywordtype">size_t</span>(std::ceil(std::log(2*N)*(theta_neut+theta_del)+0.667*(theta_neut+theta_del))));</div>
 <div class="line">  std::function&lt;double(void)&gt; recmap = std::bind(gsl_rng_uniform,r);</div>
 <div class="line">  <span class="keywordtype">unsigned</span> generation = 0;</div>
 <div class="line">  <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0 ; i &lt; ngens ; ++i,++generation )</div>
 <div class="line">    {</div>
-<div class="line">      <span class="keywordtype">double</span> wbar = <a class="code" href="../../da/d8b/namespaceKTfwd.html#ac0adafd1954c805ce66b5f366782a01d">KTfwd::sample_diploid</a>(r,</div>
-<div class="line">                                          &amp;pop.gametes,</div>
-<div class="line">                                          &amp;pop.diploids[0],</div>
-<div class="line">                                          &amp;pop.mutations,</div>
-<div class="line">                                          N,</div>
-<div class="line">                                          mu_neutral+mu_del,</div>
-<div class="line">                                          std::bind(<a class="code" href="../../df/d07/structKTfwd_1_1infsites.html">KTfwd::infsites</a>(),r,&amp;pop.mut_lookup,</div>
-<div class="line">                                                    mu_neutral,mu_del,[&amp;r](){<span class="keywordflow">return</span> gsl_rng_uniform(r);},[&amp;s](){<span class="keywordflow">return</span> s;},[&amp;h](){<span class="keywordflow">return</span> h;}),</div>
-<div class="line">                                          std::bind(<a class="code" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a>(),std::placeholders::_1,std::placeholders::_2,std::placeholders::_3,</div>
-<div class="line">                                                    std::ref(pop.neutral),std::ref(pop.selected),</div>
-<div class="line">                                                    &amp;pop.gametes,</div>
-<div class="line">                                                    littler,</div>
-<div class="line">                                                    <a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,</div>
-<div class="line">                                                    recmap),</div>
-<div class="line">                                          std::bind(KTfwd::insert_at_end&lt;mtype,mlist&gt;,std::placeholders::_1,std::placeholders::_2),</div>
-<div class="line">                                          std::bind(KTfwd::insert_at_end&lt;gtype,glist&gt;,std::placeholders::_1,std::placeholders::_2),</div>
-<div class="line">                                          std::bind(<a class="code" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html">KTfwd::multiplicative_diploid</a>(),std::placeholders::_1,std::placeholders::_2,2.),</div>
-<div class="line">                                          std::bind(<a class="code" href="../../d4/de8/structKTfwd_1_1mutation__remover.html">KTfwd::mutation_remover</a>(),std::placeholders::_1,0,2*N));</div>
-<div class="line">      <a class="code" href="../../da/d8b/namespaceKTfwd.html#a84e666ea27d38bdfc539ffd23653eaa9">KTfwd::remove_fixed_lost</a>(&amp;pop.mutations,&amp;pop.fixations,&amp;pop.fixation_times,&amp;pop.mut_lookup,generation,2*N);</div>
+<div class="line">      <span class="keywordtype">double</span> wbar = <a class="code" href="../../da/d8b/namespaceKTfwd.html#ac44ca61d8a73f1c63127509413bd3a21">KTfwd::sample_diploid</a>(r,</div>
+<div class="line">                                          pop.gametes,  <span class="comment">//non-const reference to gametes</span></div>
+<div class="line">                                          pop.diploids[0], <span class="comment">//non-const reference to diploids</span></div>
+<div class="line">                                          pop.mutations, <span class="comment">//non-const reference to mutations</span></div>
+<div class="line">                                          pop.mcounts,</div>
+<div class="line">                                          N,     <span class="comment">//current pop size, remains constant</span></div>
+<div class="line">                                          mu_neutral+mu_del,    <span class="comment">//mutation rate per gamete</span></div>
+<div class="line">                                          std::bind(<a class="code" href="../../df/d07/structKTfwd_1_1infsites.html">KTfwd::infsites</a>(),std::placeholders::_1,std::placeholders::_2,r,std::ref(pop.mut_lookup),</div>
+<div class="line">                                                    mu_neutral,mu_del,[&amp;r](){<span class="keywordflow">return</span> gsl_rng_uniform(r);},[&amp;s](){<span class="keywordflow">return</span> s;},[&amp;h](){<span class="keywordflow">return</span> h;}),                                    </div>
+<div class="line">                                          <span class="comment">//The function to generation recombination positions:</span></div>
+<div class="line">                                          std::bind(<a class="code" href="../../d2/df0/structKTfwd_1_1poisson__xover.html">KTfwd::poisson_xover</a>(),<a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,littler,0.,1.,</div>
+<div class="line">                                                    std::placeholders::_1,std::placeholders::_2,std::placeholders::_3),</div>
+<div class="line">                                          std::bind(<a class="code" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html">KTfwd::multiplicative_diploid</a>(),std::placeholders::_1,std::placeholders::_2,</div>
+<div class="line">                                                    std::placeholders::_3,2.),</div>
+<div class="line">                                          pop.neutral,</div>
+<div class="line">                                          pop.selected);</div>
+<div class="line">      <span class="comment">//4*N b/c it needs to be fixed in the metapopulation</span></div>
+<div class="line">      <a class="code" href="../../da/d8b/namespaceKTfwd.html#ae746c8b4f9c980b1baf010f34290ff57">update_mutations</a>(pop.mutations,pop.fixations,pop.fixation_times,pop.mut_lookup,pop.mcounts,generation,4*N);</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">  <span class="comment">//Make an exact copy of the diploids</span></div>
 <div class="line">  pop.diploids.push_back(pop.diploids[0]);</div>
 <div class="line"></div>
-<div class="line">  std::vector&lt;std::function&lt;double (glist::const_iterator,</div>
-<div class="line">                                    glist::const_iterator)&gt; &gt; vbf = {</div>
-<div class="line">    std::bind(<a class="code" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html">multiplicative_diploid</a>(),std::placeholders::_1,std::placeholders::_2,2.),</div>
-<div class="line">    std::bind(<a class="code" href="../../de/d9f/structmultiplicative__diploid__minus.html">multiplicative_diploid_minus</a>(),std::placeholders::_1,std::placeholders::_2,2.)</div>
-<div class="line">  };</div>
+<div class="line">  std::vector&lt;std::function&lt;double(<span class="keyword">const</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#af6a8d7a641b27fa63bb37800f1f3548c">poptype::gamete_t</a> &amp;,</div>
+<div class="line">                                   <span class="keyword">const</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#af6a8d7a641b27fa63bb37800f1f3548c">poptype::gamete_t</a> &amp;,</div>
+<div class="line">                                   <span class="keyword">const</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a953f4dc4fcd3747a53a1cf09b75bbc00">poptype::mcont_t</a> &amp; )&gt; &gt; vbf;</div>
+<div class="line">  vbf.push_back(std::bind(<a class="code" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html">multiplicative_diploid</a>(),std::placeholders::_1,std::placeholders::_2,std::placeholders::_3,2.));</div>
+<div class="line">  vbf.push_back(std::bind(<a class="code" href="../../de/d9f/structmultiplicative__diploid__minus.html">multiplicative_diploid_minus</a>(),std::placeholders::_1,std::placeholders::_2,std::placeholders::_3,2.));</div>
 <div class="line"></div>
 <div class="line">  <span class="keywordtype">unsigned</span> Ns[2] = {N,N};</div>
 <div class="line">  <span class="keywordtype">double</span> fs[2]={f1,f2};</div>
 <div class="line">  <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0 ; i &lt; ngens2 ; ++i, ++generation )</div>
 <div class="line">    {</div>
-<div class="line">      std::vector&lt;double&gt; wbars = <a class="code" href="../../da/d8b/namespaceKTfwd.html#ac0adafd1954c805ce66b5f366782a01d">sample_diploid</a>(r,</div>
-<div class="line">                                                 &amp;pop.gametes,</div>
-<div class="line">                                                 &amp;pop.diploids,</div>
-<div class="line">                                                 &amp;pop.mutations,</div>
+<div class="line">      std::vector&lt;double&gt; wbars = <a class="code" href="../../da/d8b/namespaceKTfwd.html#ac44ca61d8a73f1c63127509413bd3a21">sample_diploid</a>(r,</div>
+<div class="line">                                                 pop.gametes,</div>
+<div class="line">                                                 pop.diploids,</div>
+<div class="line">                                                 pop.mutations,</div>
+<div class="line">                                                 pop.mcounts,</div>
 <div class="line">                                                 &amp;Ns[0],</div>
 <div class="line">                                                 mu_neutral + mu_del,</div>
-<div class="line">                                                 std::bind(<a class="code" href="../../df/d07/structKTfwd_1_1infsites.html">KTfwd::infsites</a>(),r,&amp;pop.mut_lookup,</div>
+<div class="line">                                                 std::bind(<a class="code" href="../../df/d07/structKTfwd_1_1infsites.html">KTfwd::infsites</a>(),std::placeholders::_1,std::placeholders::_2,r,std::ref(pop.mut_lookup),</div>
 <div class="line">                                                           mu_neutral,mu_del,[&amp;r](){<span class="keywordflow">return</span> gsl_rng_uniform(r);},[&amp;s](){<span class="keywordflow">return</span> s;},[&amp;h](){<span class="keywordflow">return</span> h;}),</div>
-<div class="line">                                                 std::bind(<a class="code" href="../../d1/d5b/structKTfwd_1_1genetics101.html">KTfwd::genetics101</a>(),std::placeholders::_1,std::placeholders::_2,std::placeholders::_3,</div>
-<div class="line">                                                           std::ref(pop.neutral),std::ref(pop.selected),</div>
-<div class="line">                                                           &amp;pop.gametes,</div>
-<div class="line">                                                           littler,</div>
-<div class="line">                                                           <a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,</div>
-<div class="line">                                                           recmap),</div>
-<div class="line">                                                 std::bind(insert_at_end&lt;mtype,mlist&gt;,std::placeholders::_1,std::placeholders::_2),</div>
-<div class="line">                                                 std::bind(insert_at_end&lt;gtype,glist&gt;,std::placeholders::_1,std::placeholders::_2),</div>
+<div class="line">                                                 std::bind(<a class="code" href="../../d2/df0/structKTfwd_1_1poisson__xover.html">KTfwd::poisson_xover</a>(),<a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,littler,0.,1.,</div>
+<div class="line">                                                           std::placeholders::_1,std::placeholders::_2,std::placeholders::_3),</div>
 <div class="line">                                                 vbf,</div>
-<div class="line">                                                 <span class="comment">//4*N b/c it needs to be fixed in the metapopulation</span></div>
-<div class="line">                                                 std::bind(<a class="code" href="../../d4/de8/structKTfwd_1_1mutation__remover.html">mutation_remover</a>(),std::placeholders::_1,0,4*N),</div>
 <div class="line">                                                 std::bind(<a class="code" href="../../da/d50/sugar2_8cc.html#a4862499cb62bfa43943001b59fe6dc0d">migpop</a>,std::placeholders::_1,r,m),</div>
+<div class="line">                                                 pop.neutral,</div>
+<div class="line">                                                 pop.selected,</div>
 <div class="line">                                                 &amp;fs[0]);</div>
 <div class="line">      <span class="comment">//4*N b/c it needs to be fixed in the metapopulation</span></div>
-<div class="line">      <a class="code" href="../../da/d8b/namespaceKTfwd.html#a84e666ea27d38bdfc539ffd23653eaa9">remove_fixed_lost</a>(&amp;pop.mutations,&amp;pop.fixations,&amp;pop.fixation_times,&amp;pop.mut_lookup,generation,4*N);</div>
+<div class="line">      <a class="code" href="../../da/d8b/namespaceKTfwd.html#ae746c8b4f9c980b1baf010f34290ff57">update_mutations</a>(pop.mutations,pop.fixations,pop.fixation_times,pop.mut_lookup,pop.mcounts,generation,4*N);</div>
 <div class="line">    }</div>
 <div class="line">  std::pair&lt; std::vector&lt; std::pair&lt;double,std::string&gt; &gt;,</div>
-<div class="line">             std::vector&lt; std::pair&lt;double,std::string&gt; &gt; &gt; sample1 = <a class="code" href="../../d7/de2/group__samplingPopsInd.html#gaf2db9e89d4488cb3952a93129238ed94">ms_sample_separate</a>(r,&amp;pop.diploids[0],n),</div>
-<div class="line">    sample2 = <a class="code" href="../../d7/de2/group__samplingPopsInd.html#gaf2db9e89d4488cb3952a93129238ed94">ms_sample_separate</a>(r,&amp;pop.diploids[1],n);</div>
+<div class="line">             std::vector&lt; std::pair&lt;double,std::string&gt; &gt; &gt; sample1 = <a class="code" href="../../d7/de2/group__samplingPopsInd.html#ga0672f69f8014c3093881f258ae2b3beb">ms_sample_separate</a>(r,pop.mutations,pop.gametes,pop.diploids[0],n),</div>
+<div class="line">    sample2 = <a class="code" href="../../d7/de2/group__samplingPopsInd.html#ga0672f69f8014c3093881f258ae2b3beb">ms_sample_separate</a>(r,pop.mutations,pop.gametes,pop.diploids[1],n);</div>
 <div class="line"></div>
 <div class="line">  <span class="keyword">auto</span> neutral = <a class="code" href="../../df/dfa/migsel__ind_8cc.html#ab7298240e8bb37b1cd8a9846c5421545">merge</a>(sample1.first,sample2.first,n),</div>
 <div class="line">    selected = <a class="code" href="../../df/dfa/migsel__ind_8cc.html#ab7298240e8bb37b1cd8a9846c5421545">merge</a>(sample1.second,sample2.second,n);</div>
 <div class="line"></div>
 <div class="line">  <span class="comment">//Write the metapop in binary format to outstream</span></div>
-<div class="line">  std::ostringstream outstream;</div>
-<div class="line">  <a class="code" href="../../da/d8b/namespaceKTfwd.html#a9e69664068c15f09429f9087144fec7f">KTfwd::write_binary_metapop</a>(&amp;pop.gametes,&amp;pop.mutations,&amp;pop.diploids,</div>
-<div class="line">                              std::bind(<a class="code" href="../../de/d25/structKTfwd_1_1mutation__writer.html">KTfwd::mutation_writer</a>(),std::placeholders::_1,std::placeholders::_2),</div>
-<div class="line">                              outstream);</div>
+<div class="line">  <span class="comment">// std::ostringstream outstream;</span></div>
+<div class="line">  <span class="comment">// KTfwd::write_binary_metapop(&amp;pop.gametes,&amp;pop.mutations,&amp;pop.diploids,</span></div>
+<div class="line">  <span class="comment">//                          std::bind(KTfwd::mutation_writer(),std::placeholders::_1,std::placeholders::_2),</span></div>
+<div class="line">  <span class="comment">//                          outstream);</span></div>
 <div class="line"></div>
-<div class="line">  std::istringstream instream(outstream.str());</div>
-<div class="line">  <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a> metapop_gametes2;</div>
-<div class="line">  <a class="code" href="../../d5/dcc/migsel__split__ind__list_8cc.html#a683a7a92132c42a3ebad506c8dadf6f6">diploid_bucket_vec</a> metapop_diploids2;</div>
-<div class="line">  <a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a> mutations2;</div>
+<div class="line">  <span class="comment">// std::istringstream instream(outstream.str());</span></div>
+<div class="line">  <span class="comment">// glist metapop_gametes2;</span></div>
+<div class="line">  <span class="comment">// diploid_bucket_vec metapop_diploids2;</span></div>
+<div class="line">  <span class="comment">// mlist mutations2;</span></div>
 <div class="line"></div>
-<div class="line">  <a class="code" href="../../da/d8b/namespaceKTfwd.html#aed5dfa35262dd186e117a0c98b7f77fb">KTfwd::read_binary_metapop</a>(&amp;metapop_gametes2,&amp;mutations2,&amp;metapop_diploids2,</div>
-<div class="line">                             std::bind(<a class="code" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">KTfwd::mutation_reader&lt;mtype&gt;</a>(),std::placeholders::_1),</div>
-<div class="line">                             instream);</div>
+<div class="line">  <span class="comment">// KTfwd::read_binary_metapop(&amp;metapop_gametes2,&amp;mutations2,&amp;metapop_diploids2,</span></div>
+<div class="line">  <span class="comment">//                         std::bind(KTfwd::mutation_reader&lt;mtype&gt;(),std::placeholders::_1),</span></div>
+<div class="line">  <span class="comment">//                         instream);</span></div>
 <div class="line"></div>
-<div class="line">  <span class="comment">//Make sure that the output and the input are the same</span></div>
-<div class="line">  <span class="keywordflow">if</span>(pop.mutations.size() != mutations2.size())</div>
-<div class="line">    {</div>
-<div class="line">      std::cerr &lt;&lt; <span class="stringliteral">&quot;Error: mutation containers are different sizes. &quot;</span></div>
-<div class="line">           &lt;&lt; <span class="stringliteral">&quot;Line &quot;</span> &lt;&lt; __LINE__ &lt;&lt; <span class="stringliteral">&quot; of &quot;</span> &lt;&lt; __FILE__ &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line">      std::exit(EXIT_FAILURE);</div>
-<div class="line">    }</div>
-<div class="line">  <span class="keyword">auto</span> mitr1 = pop.mutations.begin(),mitr2=mutations2.begin();</div>
-<div class="line">  <span class="keywordflow">for</span>( ; mitr1 != pop.mutations.end() ; ++mitr1,++mitr2 ) </div>
-<div class="line">    {</div>
-<div class="line">      <span class="keywordflow">if</span>(mitr1-&gt;n != mitr2-&gt;n)</div>
-<div class="line">        {</div>
-<div class="line">          std::cerr &lt;&lt; <span class="stringliteral">&quot;Error: mutation counts differ. &quot;</span></div>
-<div class="line">               &lt;&lt; <span class="stringliteral">&quot;Line &quot;</span> &lt;&lt; __LINE__ &lt;&lt; <span class="stringliteral">&quot; of &quot;</span> &lt;&lt; __FILE__ &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line">          std::exit(EXIT_FAILURE);</div>
-<div class="line">        }</div>
-<div class="line">      <span class="keywordflow">if</span>(mitr1-&gt;pos != mitr2-&gt;pos)</div>
-<div class="line">        {</div>
-<div class="line">          std::cerr &lt;&lt; <span class="stringliteral">&quot;Error: mutation positions differ. &quot;</span></div>
-<div class="line">               &lt;&lt; <span class="stringliteral">&quot;Line &quot;</span> &lt;&lt; __LINE__ &lt;&lt; <span class="stringliteral">&quot; of &quot;</span> &lt;&lt; __FILE__ &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line">          std::exit(EXIT_FAILURE);</div>
-<div class="line">        }</div>
-<div class="line">      <span class="keywordflow">if</span>(mitr1-&gt;s != mitr2-&gt;s)</div>
-<div class="line">        {</div>
-<div class="line">          std::cerr &lt;&lt; <span class="stringliteral">&quot;Error: mutation selection coefficients differ. &quot;</span></div>
-<div class="line">               &lt;&lt; <span class="stringliteral">&quot;Line &quot;</span> &lt;&lt; __LINE__ &lt;&lt; <span class="stringliteral">&quot; of &quot;</span> &lt;&lt; __FILE__ &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line">          std::exit(EXIT_FAILURE);</div>
-<div class="line">        }</div>
-<div class="line">      <span class="keywordflow">if</span>(mitr1-&gt;h != mitr2-&gt;h)</div>
-<div class="line">        {</div>
-<div class="line">          std::cerr &lt;&lt; <span class="stringliteral">&quot;Error: mutation dominance coefficients differ. &quot;</span></div>
-<div class="line">               &lt;&lt; <span class="stringliteral">&quot;Line &quot;</span> &lt;&lt; __LINE__ &lt;&lt; <span class="stringliteral">&quot; of &quot;</span> &lt;&lt; __FILE__ &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line">          std::exit(EXIT_FAILURE);</div>
-<div class="line">        }</div>
-<div class="line">    }</div>
+<div class="line">  <span class="comment">// //Make sure that the output and the input are the same</span></div>
+<div class="line">  <span class="comment">// if(pop.mutations.size() != mutations2.size())</span></div>
+<div class="line">  <span class="comment">//   {</span></div>
+<div class="line">  <span class="comment">//     std::cerr &lt;&lt; &quot;Error: mutation containers are different sizes. &quot;</span></div>
+<div class="line">  <span class="comment">//       &lt;&lt; &quot;Line &quot; &lt;&lt; __LINE__ &lt;&lt; &quot; of &quot; &lt;&lt; __FILE__ &lt;&lt; &#39;\n&#39;;</span></div>
+<div class="line">  <span class="comment">//     std::exit(EXIT_FAILURE);</span></div>
+<div class="line">  <span class="comment">//   }</span></div>
+<div class="line">  <span class="comment">// auto mitr1 = pop.mutations.begin(),mitr2=mutations2.begin();</span></div>
+<div class="line">  <span class="comment">// for( ; mitr1 != pop.mutations.end() ; ++mitr1,++mitr2 ) </span></div>
+<div class="line">  <span class="comment">//   {</span></div>
+<div class="line">  <span class="comment">//     if(mitr1-&gt;n != mitr2-&gt;n)</span></div>
+<div class="line">  <span class="comment">//    {</span></div>
+<div class="line">  <span class="comment">//      std::cerr &lt;&lt; &quot;Error: mutation counts differ. &quot;</span></div>
+<div class="line">  <span class="comment">//           &lt;&lt; &quot;Line &quot; &lt;&lt; __LINE__ &lt;&lt; &quot; of &quot; &lt;&lt; __FILE__ &lt;&lt; &#39;\n&#39;;</span></div>
+<div class="line">  <span class="comment">//      std::exit(EXIT_FAILURE);</span></div>
+<div class="line">  <span class="comment">//    }</span></div>
+<div class="line">  <span class="comment">//     if(mitr1-&gt;pos != mitr2-&gt;pos)</span></div>
+<div class="line">  <span class="comment">//    {</span></div>
+<div class="line">  <span class="comment">//      std::cerr &lt;&lt; &quot;Error: mutation positions differ. &quot;</span></div>
+<div class="line">  <span class="comment">//           &lt;&lt; &quot;Line &quot; &lt;&lt; __LINE__ &lt;&lt; &quot; of &quot; &lt;&lt; __FILE__ &lt;&lt; &#39;\n&#39;;</span></div>
+<div class="line">  <span class="comment">//      std::exit(EXIT_FAILURE);</span></div>
+<div class="line">  <span class="comment">//    }</span></div>
+<div class="line">  <span class="comment">//     if(mitr1-&gt;s != mitr2-&gt;s)</span></div>
+<div class="line">  <span class="comment">//    {</span></div>
+<div class="line">  <span class="comment">//      std::cerr &lt;&lt; &quot;Error: mutation selection coefficients differ. &quot;</span></div>
+<div class="line">  <span class="comment">//           &lt;&lt; &quot;Line &quot; &lt;&lt; __LINE__ &lt;&lt; &quot; of &quot; &lt;&lt; __FILE__ &lt;&lt; &#39;\n&#39;;</span></div>
+<div class="line">  <span class="comment">//      std::exit(EXIT_FAILURE);</span></div>
+<div class="line">  <span class="comment">//    }</span></div>
+<div class="line">  <span class="comment">//     if(mitr1-&gt;h != mitr2-&gt;h)</span></div>
+<div class="line">  <span class="comment">//    {</span></div>
+<div class="line">  <span class="comment">//      std::cerr &lt;&lt; &quot;Error: mutation dominance coefficients differ. &quot;</span></div>
+<div class="line">  <span class="comment">//           &lt;&lt; &quot;Line &quot; &lt;&lt; __LINE__ &lt;&lt; &quot; of &quot; &lt;&lt; __FILE__ &lt;&lt; &#39;\n&#39;;</span></div>
+<div class="line">  <span class="comment">//      std::exit(EXIT_FAILURE);</span></div>
+<div class="line">  <span class="comment">//    }</span></div>
+<div class="line">  <span class="comment">//   }</span></div>
 <div class="line"></div>
-<div class="line">  <span class="keyword">auto</span> pptr1 = pop.gametes.begin(),pptr2=metapop_gametes2.begin();</div>
-<div class="line">  <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0 ; i &lt; pop.diploids.size() ; ++i)<span class="comment">//,++pptr1,++pptr2 )</span></div>
-<div class="line">    {</div>
-<div class="line">      <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> j = 0 ; j &lt; N ; ++j )</div>
-<div class="line">        {</div>
-<div class="line">          <span class="keywordflow">if</span> ( std::distance( pptr1,pop.diploids[i][j].first ) !=</div>
-<div class="line">               std::distance( pptr2,metapop_diploids2[i][j].first ) )</div>
-<div class="line">            {</div>
-<div class="line">              std::cerr &lt;&lt; <span class="stringliteral">&quot;Error: first gametes differ. &quot;</span> </div>
-<div class="line">                        &lt;&lt; <span class="stringliteral">&quot;Line &quot;</span> &lt;&lt; __LINE__ &lt;&lt; <span class="stringliteral">&quot; of &quot;</span> &lt;&lt; __FILE__ &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line">              std::exit(EXIT_FAILURE);</div>
-<div class="line">            }</div>
-<div class="line">          <span class="keywordflow">if</span> ( std::distance( pptr1,pop.diploids[i][j].second ) !=</div>
-<div class="line">               std::distance( pptr2,metapop_diploids2[i][j].second ) )</div>
-<div class="line">            {</div>
-<div class="line">              std::cerr &lt;&lt; <span class="stringliteral">&quot;Error: second gametes differ. &quot;</span> </div>
-<div class="line">                        &lt;&lt; <span class="stringliteral">&quot;Line &quot;</span> &lt;&lt; __LINE__ &lt;&lt; <span class="stringliteral">&quot; of &quot;</span> &lt;&lt; __FILE__ &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line">              std::exit(EXIT_FAILURE);</div>
-<div class="line">            }</div>
-<div class="line">        }</div>
-<div class="line">    }</div>
+<div class="line">  <span class="comment">// auto pptr1 = pop.gametes.begin(),pptr2=metapop_gametes2.begin();</span></div>
+<div class="line">  <span class="comment">// for( unsigned i = 0 ; i &lt; pop.diploids.size() ; ++i)//,++pptr1,++pptr2 )</span></div>
+<div class="line">  <span class="comment">//   {</span></div>
+<div class="line">  <span class="comment">//     for(unsigned j = 0 ; j &lt; N ; ++j )</span></div>
+<div class="line">  <span class="comment">//    {</span></div>
+<div class="line">  <span class="comment">//      if ( std::distance( pptr1,pop.diploids[i][j].first ) !=</span></div>
+<div class="line">  <span class="comment">//           std::distance( pptr2,metapop_diploids2[i][j].first ) )</span></div>
+<div class="line">  <span class="comment">//        {</span></div>
+<div class="line">  <span class="comment">//          std::cerr &lt;&lt; &quot;Error: first gametes differ. &quot; </span></div>
+<div class="line">  <span class="comment">//                    &lt;&lt; &quot;Line &quot; &lt;&lt; __LINE__ &lt;&lt; &quot; of &quot; &lt;&lt; __FILE__ &lt;&lt; &#39;\n&#39;;</span></div>
+<div class="line">  <span class="comment">//          std::exit(EXIT_FAILURE);</span></div>
+<div class="line">  <span class="comment">//        }</span></div>
+<div class="line">  <span class="comment">//      if ( std::distance( pptr1,pop.diploids[i][j].second ) !=</span></div>
+<div class="line">  <span class="comment">//           std::distance( pptr2,metapop_diploids2[i][j].second ) )</span></div>
+<div class="line">  <span class="comment">//        {</span></div>
+<div class="line">  <span class="comment">//          std::cerr &lt;&lt; &quot;Error: second gametes differ. &quot; </span></div>
+<div class="line">  <span class="comment">//                    &lt;&lt; &quot;Line &quot; &lt;&lt; __LINE__ &lt;&lt; &quot; of &quot; &lt;&lt; __FILE__ &lt;&lt; &#39;\n&#39;;</span></div>
+<div class="line">  <span class="comment">//          std::exit(EXIT_FAILURE);</span></div>
+<div class="line">  <span class="comment">//        }</span></div>
+<div class="line">  <span class="comment">//    }</span></div>
+<div class="line">  <span class="comment">//   }</span></div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line">SimData <a class="code" href="../../df/dfa/migsel__ind_8cc.html#ab7298240e8bb37b1cd8a9846c5421545">merge</a>( <span class="keyword">const</span> std::vector&lt;std::pair&lt;double,std::string&gt; &gt; &amp; sample1,</div>
@@ -457,8 +429,8 @@ Functions</h2></td></tr>
 <div class="line">    }</div>
 <div class="line">  std::vector&lt;std::pair&lt;double,std::string&gt; &gt; rv( temp.begin(),temp.end() );</div>
 <div class="line">  std::sort(rv.begin(),rv.end(),</div>
-<div class="line">                [](std::pair&lt;double,std::string&gt; lhs,</div>
-<div class="line">                   std::pair&lt;double,std::string&gt; rhs) { <span class="keywordflow">return</span> lhs.first &lt; rhs.first; });</div>
+<div class="line">            [](std::pair&lt;double,std::string&gt; lhs,</div>
+<div class="line">               std::pair&lt;double,std::string&gt; rhs) { <span class="keywordflow">return</span> lhs.first &lt; rhs.first; });</div>
 <div class="line">  <span class="keywordflow">return</span> SimData(rv.begin(),rv.end());</div>
 <div class="line">}</div>
 </div><!-- fragment --><p> Evolve a constant-N pop, split it off, then evolve both with migration.</p>
@@ -468,36 +440,12 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="a24ee041808896db64e51b79a61cefd50"></a>
+<a class="anchor" id="a440c697536cc894c5a8c86126e519855"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc.html#a24ee041808896db64e51b79a61cefd50">diploid_bucket</a> =  <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a930399671212be8215375cab38ba46fe">poptype::dipvector_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a683a7a92132c42a3ebad506c8dadf6f6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc.html#a683a7a92132c42a3ebad506c8dadf6f6">diploid_bucket_vec</a> =  poptype::vdipvector_t</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aeef95b1f57b1b26ef5a260c9b12527ad"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a43adc418ba4093dd1c7d3ad5dbf8fa3a">glist</a> =  <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#ad839a9120e6bc475ff6530bb3f90180c">poptype::glist_t</a></td>
+          <td class="memname">using <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a> =  <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a574ee0936029cc45c99b29990e22dfb0">poptype::gcont_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -509,19 +457,19 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d1/dbe/crossoverTest_8cc.html#ace9428d4aa6205eaf777c2c9f398d9ea">gtype</a> =  <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#ab6775aa6d7aea3269e3a3dfdba8857e2">poptype::gamete_t</a></td>
+          <td class="memname">using <a class="el" href="../../d1/dbe/crossoverTest_8cc.html#ace9428d4aa6205eaf777c2c9f398d9ea">gtype</a> =  <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#af6a8d7a641b27fa63bb37800f1f3548c">poptype::gamete_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a9e86d63f81a0e0402a54a27284c57f37"></a>
+<a class="anchor" id="a52d245589a466889aa40f3ccd4b9b716"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a> =  <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a78399b27fedbc1fec3e749ceaf6e76b2">poptype::mlist_t</a></td>
+          <td class="memname">using <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a> =  <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a953f4dc4fcd3747a53a1cf09b75bbc00">poptype::mcont_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -533,7 +481,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> =  <a class="el" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a></td>
+          <td class="memname">using <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a> =  <a class="el" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -545,7 +493,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../dc/dd4/ms__sampling_8cc.html#a955a0597ed2c21c1035ba096d896d516">poptype</a> =  <a class="el" href="../../d6/d4f/sugar__sampling_8cc.html#a73a155af957d76e8f1045f9c2c0c6562">metapop_t</a></td>
+          <td class="memname">using <a class="el" href="../../d5/da7/extensions_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> =  <a class="el" href="../../d6/d4f/sugar__sampling_8cc.html#a73a155af957d76e8f1045f9c2c0c6562">metapop_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">

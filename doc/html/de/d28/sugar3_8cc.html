@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>fwdpp: /home/kevin/src/fwdpp/unit/sugar3.cc File Reference</title>
+<title>fwdpp: /home/kevin/git/fwdpp.git/unit/sugar3.cc File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.3</span>
+   &#160;<span id="projectnumber">0.4.4</span>
    </div>
   </td>
  </tr>
@@ -98,7 +98,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Testing <a class="el" href="../../de/d6e/group__sugar.html#gad28b001eec5f9aceb22c1122a55543d3" title="Single population, multilocus simulation without serialization. Cannot be copied, etc...">KTfwd::multiloc</a> and <a class="el" href="../../de/d6e/group__sugar.html#ga00e304e282adf205b833cd0650be439f" title="Single population, multilocus simulation with serialization. Can be copied, etc. See Tutorial 5: the ...">KTfwd::multiloc_serialized</a>.  
+<p>Testing <a class="el" href="../../de/d6e/group__sugar.html#ga5993990a90021e4eeb4170bde943ff54" title="Single population, multilocus simulation. See Tutorial 5: the &quot;sugar&quot; layer on top of fwdpp for ratio...">KTfwd::multiloc</a>.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br/>
 <code>#include &lt;unistd.h&gt;</code><br/>
@@ -110,6 +110,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <code>#include &lt;<a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html">fwdpp/sugar/GSLrng_t.hpp</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="../../d6/d10/multiloc_8hpp_source.html">fwdpp/sugar/multiloc.hpp</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="../../dc/d32/infsites_8hpp_source.html">fwdpp/sugar/infsites.hpp</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="../../d8/d21/serialization_8hpp_source.html">fwdpp/sugar/serialization.hpp</a>&gt;</code><br/>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
@@ -129,20 +130,24 @@ Typedefs</h2></td></tr>
 <tr class="separator:adc4cb78b331fc4385057a2f785457cae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e85114a7f9de994e5544b94ab1744ad"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d28/sugar3_8cc.html#a6e85114a7f9de994e5544b94ab1744ad">mreader</a> = <a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">KTfwd::mutation_reader</a>&lt; <a class="el" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">KTfwd::popgenmut</a> &gt;</td></tr>
 <tr class="separator:a6e85114a7f9de994e5544b94ab1744ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bdcfbd548e150a7d3a53d74e0fcd64f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d28/sugar3_8cc.html#a7bdcfbd548e150a7d3a53d74e0fcd64f">poptype</a> = <a class="el" href="../../de/d6e/group__sugar.html#ga5993990a90021e4eeb4170bde943ff54">KTfwd::multiloc</a>&lt; <a class="el" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">KTfwd::popgenmut</a> &gt;</td></tr>
+<tr class="separator:a7bdcfbd548e150a7d3a53d74e0fcd64f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a1e606ae3de9354470917a1fc1ec852c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d28/sugar3_8cc.html#a1e606ae3de9354470917a1fc1ec852c3">simulate</a> (<a class="el" href="../../d5/da7/extensions_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;pop)</td></tr>
+<tr class="separator:a1e606ae3de9354470917a1fc1ec852c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0eb3f4d550f3ed9a85c156a3f454e3a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d28/sugar3_8cc.html#a0eb3f4d550f3ed9a85c156a3f454e3a7">BOOST_AUTO_TEST_CASE</a> (multiloc_sugar_test1)</td></tr>
 <tr class="separator:a0eb3f4d550f3ed9a85c156a3f454e3a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93ed7779aeaea943a3ddb72c5ad5dea3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d28/sugar3_8cc.html#a93ed7779aeaea943a3ddb72c5ad5dea3">BOOST_AUTO_TEST_CASE</a> (multiloc_sugar_gzserialize_test)</td></tr>
-<tr class="separator:a93ed7779aeaea943a3ddb72c5ad5dea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fd32c1e26f253b9fba3a7235b23988e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d28/sugar3_8cc.html#a9fd32c1e26f253b9fba3a7235b23988e">BOOST_AUTO_TEST_CASE</a> (multiloc_sugar_copy_construct)</td></tr>
-<tr class="separator:a9fd32c1e26f253b9fba3a7235b23988e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab885f186664bfc42987851124aef2996"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d28/sugar3_8cc.html#ab885f186664bfc42987851124aef2996">BOOST_AUTO_TEST_CASE</a> (multiloc_sugar_assigment_operator)</td></tr>
-<tr class="separator:ab885f186664bfc42987851124aef2996"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5c4b8ee0ef75bb61dd419580a0b9bda"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d28/sugar3_8cc.html#af5c4b8ee0ef75bb61dd419580a0b9bda">BOOST_AUTO_TEST_CASE</a> (multiloc_sugar_test2)</td></tr>
+<tr class="separator:af5c4b8ee0ef75bb61dd419580a0b9bda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0d94b11bb58e5962e4ffa38072f0ccf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d28/sugar3_8cc.html#ad0d94b11bb58e5962e4ffa38072f0ccf">BOOST_AUTO_TEST_CASE</a> (multiloc_sugar_test3)</td></tr>
+<tr class="separator:ad0d94b11bb58e5962e4ffa38072f0ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb2536eaa06fead392d69ac53ffe1814"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d28/sugar3_8cc.html#abb2536eaa06fead392d69ac53ffe1814">BOOST_AUTO_TEST_CASE</a> (multiloc_sugar_test4)</td></tr>
+<tr class="separator:abb2536eaa06fead392d69ac53ffe1814"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Testing <a class="el" href="../../de/d6e/group__sugar.html#gad28b001eec5f9aceb22c1122a55543d3" title="Single population, multilocus simulation without serialization. Cannot be copied, etc...">KTfwd::multiloc</a> and <a class="el" href="../../de/d6e/group__sugar.html#ga00e304e282adf205b833cd0650be439f" title="Single population, multilocus simulation with serialization. Can be copied, etc. See Tutorial 5: the ...">KTfwd::multiloc_serialized</a>. </p>
+<div class="textblock"><p>Testing <a class="el" href="../../de/d6e/group__sugar.html#ga5993990a90021e4eeb4170bde943ff54" title="Single population, multilocus simulation. See Tutorial 5: the &quot;sugar&quot; layer on top of fwdpp for ratio...">KTfwd::multiloc</a>. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="a139f00d2466d591f60b8d6a73c8273f1"></a>
 <div class="memitem">
@@ -174,7 +179,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../dc/dd4/ms__sampling_8cc.html#aaebd18385ab3036c07b4bcbe6be0d305">mreader</a> =  <a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">KTfwd::mutation_reader</a>&lt;<a class="el" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">KTfwd::popgenmut</a>&gt;</td>
+          <td class="memname">using <a class="el" href="../../d0/db9/sugar1_8cc.html#aaebd18385ab3036c07b4bcbe6be0d305">mreader</a> =  <a class="el" href="../../d7/d1a/structKTfwd_1_1mutation__reader.html">KTfwd::mutation_reader</a>&lt;<a class="el" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">KTfwd::popgenmut</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -186,7 +191,19 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../dc/dd4/ms__sampling_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a> =  <a class="el" href="../../de/d25/structKTfwd_1_1mutation__writer.html">KTfwd::mutation_writer</a></td>
+          <td class="memname">using <a class="el" href="../../d0/db9/sugar1_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a> =  <a class="el" href="../../de/d25/structKTfwd_1_1mutation__writer.html">KTfwd::mutation_writer</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7bdcfbd548e150a7d3a53d74e0fcd64f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d5/da7/extensions_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> =  <a class="el" href="../../de/d6e/group__sugar.html#ga5993990a90021e4eeb4170bde943ff54">KTfwd::multiloc</a>&lt;<a class="el" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">KTfwd::popgenmut</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -210,14 +227,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a93ed7779aeaea943a3ddb72c5ad5dea3"></a>
+<a class="anchor" id="af5c4b8ee0ef75bb61dd419580a0b9bda"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">BOOST_AUTO_TEST_CASE </td>
           <td>(</td>
-          <td class="paramtype">multiloc_sugar_gzserialize_test&#160;</td>
+          <td class="paramtype">multiloc_sugar_test2&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -226,14 +243,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a9fd32c1e26f253b9fba3a7235b23988e"></a>
+<a class="anchor" id="ad0d94b11bb58e5962e4ffa38072f0ccf"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">BOOST_AUTO_TEST_CASE </td>
           <td>(</td>
-          <td class="paramtype">multiloc_sugar_copy_construct&#160;</td>
+          <td class="paramtype">multiloc_sugar_test3&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -242,15 +259,31 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab885f186664bfc42987851124aef2996"></a>
+<a class="anchor" id="abb2536eaa06fead392d69ac53ffe1814"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">BOOST_AUTO_TEST_CASE </td>
           <td>(</td>
-          <td class="paramtype">multiloc_sugar_assigment_operator&#160;</td>
+          <td class="paramtype">multiloc_sugar_test4&#160;</td>
           <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1e606ae3de9354470917a1fc1ec852c3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void simulate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/da7/extensions_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;&#160;</td>
+          <td class="paramname"><em>pop</em></td><td>)</td>
           <td></td>
         </tr>
       </table>

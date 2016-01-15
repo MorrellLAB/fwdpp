@@ -8,7 +8,6 @@ var searchData=
   ['diploid_5fbinaryio_5find_2ecc',['diploid_binaryIO_ind.cc',['../d3/da9/diploid__binaryIO__ind_8cc.html',1,'']]],
   ['diploid_5ffitness_5fdispatch_2ehpp',['diploid_fitness_dispatch.hpp',['../de/d8d/diploid__fitness__dispatch_8hpp.html',1,'']]],
   ['diploid_5ffixed_5fsh_5find_2ecc',['diploid_fixed_sh_ind.cc',['../d8/d7e/diploid__fixed__sh__ind_8cc.html',1,'']]],
-  ['diploid_5ffixed_5fsh_5find_5flambda_2ecc',['diploid_fixed_sh_ind_lambda.cc',['../df/d55/diploid__fixed__sh__ind__lambda_8cc.html',1,'']]],
   ['diploid_5fgzbinaryio_5find_2ecc',['diploid_gzbinaryIO_ind.cc',['../d0/d03/diploid__gzbinaryIO__ind_8cc.html',1,'']]],
   ['diploid_5find_2ecc',['diploid_ind.cc',['../d9/de8/diploid__ind_8cc.html',1,'']]],
   ['diploid_5find_5f2locus_2ecc',['diploid_ind_2locus.cc',['../de/dce/diploid__ind__2locus_8cc.html',1,'']]],

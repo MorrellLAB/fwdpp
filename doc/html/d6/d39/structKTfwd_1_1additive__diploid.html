@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.3</span>
+   &#160;<span id="projectnumber">0.4.4</span>
    </div>
   </td>
  </tr>
@@ -109,20 +109,21 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac2d35de82370a73c4bf599d30f415541"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type &gt; </td></tr>
-<tr class="memitem:ac2d35de82370a73c4bf599d30f415541"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d6/d39/structKTfwd_1_1additive__diploid.html#a6ada71361520aa09528c08e4f5c4a447">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d6/d39/structKTfwd_1_1additive__diploid.html#ac2d35de82370a73c4bf599d30f415541">operator()</a> (const iterator_type &amp;g1, const iterator_type &amp;g2, const double &amp;scaling=1.) const </td></tr>
-<tr class="separator:ac2d35de82370a73c4bf599d30f415541"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54c111c5dfbdbaa5be64f749cfdea9ea"><td class="memTemplParams" colspan="2">template&lt;typename diploid2dispatch &gt; </td></tr>
-<tr class="memitem:a54c111c5dfbdbaa5be64f749cfdea9ea"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d6/d39/structKTfwd_1_1additive__diploid.html#a6ada71361520aa09528c08e4f5c4a447">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d6/d39/structKTfwd_1_1additive__diploid.html#a54c111c5dfbdbaa5be64f749cfdea9ea">operator()</a> (const diploid2dispatch &amp;dip, const double &amp;scaling=1.) const </td></tr>
-<tr class="memdesc:a54c111c5dfbdbaa5be64f749cfdea9ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload for custom diploids. This is what a programmer's functions will call.  <a href="#a54c111c5dfbdbaa5be64f749cfdea9ea">More...</a><br/></td></tr>
-<tr class="separator:a54c111c5dfbdbaa5be64f749cfdea9ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a807922d1bdb268e0e0a99abda9a78e9a"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename mcont_t &gt; </td></tr>
+<tr class="memitem:a807922d1bdb268e0e0a99abda9a78e9a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d6/d39/structKTfwd_1_1additive__diploid.html#a6ada71361520aa09528c08e4f5c4a447">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d6/d39/structKTfwd_1_1additive__diploid.html#a807922d1bdb268e0e0a99abda9a78e9a">operator()</a> (const gamete_type &amp;g1, const gamete_type &amp;g2, const mcont_t &amp;mutations, const double &amp;scaling=1.) const noexcept</td></tr>
+<tr class="separator:a807922d1bdb268e0e0a99abda9a78e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa65361fdd683a1920842114037b4da20"><td class="memTemplParams" colspan="2">template&lt;typename diploid2dispatch , typename gcont_t , typename mcont_t &gt; </td></tr>
+<tr class="memitem:aa65361fdd683a1920842114037b4da20"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d6/d39/structKTfwd_1_1additive__diploid.html#a6ada71361520aa09528c08e4f5c4a447">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d6/d39/structKTfwd_1_1additive__diploid.html#aa65361fdd683a1920842114037b4da20">operator()</a> (const diploid2dispatch &amp;dip, const gcont_t &amp;gametes, const mcont_t &amp;mutations, const double &amp;scaling=1.) const noexcept</td></tr>
+<tr class="memdesc:aa65361fdd683a1920842114037b4da20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload for custom diploids. This is what a programmer's functions will call.  <a href="#aa65361fdd683a1920842114037b4da20">More...</a><br/></td></tr>
+<tr class="separator:aa65361fdd683a1920842114037b4da20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Additive fitness across sites. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">g1</td><td>An iterator pointing to a gamete </td></tr>
-    <tr><td class="paramname">g2</td><td>An iterator pointing to a gamete </td></tr>
+    <tr><td class="paramname">g1</td><td>A gamete </td></tr>
+    <tr><td class="paramname">g2</td><td>A gamete </td></tr>
+    <tr><td class="paramname">mutations</td><td>A container of mutations </td></tr>
     <tr><td class="paramname">scaling</td><td>Fitnesses are 1, 1+h*s, 1+scaling*s, for AA,Aa,aa, resp. This parameter lets you make sure your simulation is on the same scale as various formula in the literature </td></tr>
   </table>
   </dd>
@@ -143,11 +144,11 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ac2d35de82370a73c4bf599d30f415541"></a>
+<a class="anchor" id="a807922d1bdb268e0e0a99abda9a78e9a"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename iterator_type &gt; </div>
+template&lt;typename gamete_type , typename mcont_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -155,14 +156,20 @@ template&lt;typename iterator_type &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="../../d6/d39/structKTfwd_1_1additive__diploid.html#a6ada71361520aa09528c08e4f5c4a447">result_type</a> KTfwd::additive_diploid::operator() </td>
           <td>(</td>
-          <td class="paramtype">const iterator_type &amp;&#160;</td>
+          <td class="paramtype">const gamete_type &amp;&#160;</td>
           <td class="paramname"><em>g1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const iterator_type &amp;&#160;</td>
+          <td class="paramtype">const gamete_type &amp;&#160;</td>
           <td class="paramname"><em>g2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mcont_t &amp;&#160;</td>
+          <td class="paramname"><em>mutations</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -178,18 +185,18 @@ template&lt;typename iterator_type &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a54c111c5dfbdbaa5be64f749cfdea9ea"></a>
+<a class="anchor" id="aa65361fdd683a1920842114037b4da20"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename diploid2dispatch &gt; </div>
+template&lt;typename diploid2dispatch , typename gcont_t , typename mcont_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -203,6 +210,18 @@ template&lt;typename diploid2dispatch &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const gcont_t &amp;&#160;</td>
+          <td class="paramname"><em>gametes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mcont_t &amp;&#160;</td>
+          <td class="paramname"><em>mutations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const double &amp;&#160;</td>
           <td class="paramname"><em>scaling</em> = <code>1.</code>&#160;</td>
         </tr>
@@ -214,7 +233,7 @@ template&lt;typename diploid2dispatch &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -225,7 +244,7 @@ template&lt;typename diploid2dispatch &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/kevin/src/fwdpp/fwdpp/<a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a></li>
+<li>/home/kevin/git/fwdpp.git/fwdpp/<a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>fwdpp: /home/kevin/src/fwdpp/fwdpp/internal/ms_sampling.hpp File Reference</title>
+<title>fwdpp: /home/kevin/git/fwdpp.git/fwdpp/internal/ms_sampling.hpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.3</span>
+   &#160;<span id="projectnumber">0.4.4</span>
    </div>
   </td>
  </tr>
@@ -95,7 +95,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="title">ms_sampling.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &lt;cassert&gt;</code><br/>
+</div>
 <p><a href="../../da/d42/ms__sampling_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -113,15 +114,17 @@ Functions</h2></td></tr>
 <tr class="separator:a92825eeacf0f363fb9b49423dc4af024"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5553fd30c1fd98b0bd4459008211b0f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a5553fd30c1fd98b0bd4459008211b0f0">KTfwd::fwdpp_internal::trim_last</a> (sample_t *block)</td></tr>
 <tr class="separator:a5553fd30c1fd98b0bd4459008211b0f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b5440becef6203145b4ad26d217f725"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename pos_finder &gt; </td></tr>
-<tr class="memitem:a8b5440becef6203145b4ad26d217f725"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a8b5440becef6203145b4ad26d217f725">KTfwd::fwdpp_internal::update_sample_block</a> (sample_t &amp;block, const mcont_t &amp;mutations, const unsigned &amp;i, const unsigned &amp;n, const pos_finder &amp;pf, const unsigned &amp;offset=0, const unsigned &amp;scalar=2)</td></tr>
-<tr class="separator:a8b5440becef6203145b4ad26d217f725"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02717a99e5bb04abfc0659513234fdda"><td class="memTemplParams" colspan="2">template&lt;typename dipvector_t &gt; </td></tr>
-<tr class="memitem:a02717a99e5bb04abfc0659513234fdda"><td class="memTemplItemLeft" align="right" valign="top">sep_sample_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a02717a99e5bb04abfc0659513234fdda">KTfwd::fwdpp_internal::ms_sample_separate_single_deme</a> (const dipvector_t *diploids, const std::vector&lt; unsigned &gt; &amp;diplist, const unsigned &amp;n, const bool &amp;remove_fixed)</td></tr>
-<tr class="separator:a02717a99e5bb04abfc0659513234fdda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a915425788bfbafa39903b24606576793"><td class="memTemplParams" colspan="2">template&lt;typename dipvector_t &gt; </td></tr>
-<tr class="memitem:a915425788bfbafa39903b24606576793"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; sep_sample_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a915425788bfbafa39903b24606576793">KTfwd::fwdpp_internal::ms_sample_separate_mlocus</a> (const dipvector_t *diploids, const std::vector&lt; unsigned &gt; &amp;diplist, const unsigned &amp;n, const bool &amp;remove_fixed)</td></tr>
-<tr class="separator:a915425788bfbafa39903b24606576793"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a907e5c839e948d222b0bf5b4c1c45750"><td class="memTemplParams" colspan="2">template&lt;typename gamete_mcont_t , typename mcont_t , typename pos_finder &gt; </td></tr>
+<tr class="memitem:a907e5c839e948d222b0bf5b4c1c45750"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a907e5c839e948d222b0bf5b4c1c45750">KTfwd::fwdpp_internal::update_sample_block</a> (sample_t &amp;block, const gamete_mcont_t &amp;variants, const mcont_t &amp;mutations, const size_t &amp;i, const size_t &amp;n, const pos_finder &amp;pf, const size_t &amp;offset=0, const size_t &amp;scalar=2)</td></tr>
+<tr class="separator:a907e5c839e948d222b0bf5b4c1c45750"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace2a60bf8fb1736cd5e6488b4225e0a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ace2a60bf8fb1736cd5e6488b4225e0a8">KTfwd::fwdpp_internal::remove_fixed_variants_from_sample</a> (std::vector&lt; sample_site_t &gt; &amp;sample, const std::vector&lt; sample_site_t &gt;::size_type nsam)</td></tr>
+<tr class="separator:ace2a60bf8fb1736cd5e6488b4225e0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac39e782e7051529d343e240d89b697eb"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename gcont_t , typename dipvector_t &gt; </td></tr>
+<tr class="memitem:ac39e782e7051529d343e240d89b697eb"><td class="memTemplItemLeft" align="right" valign="top">sep_sample_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ac39e782e7051529d343e240d89b697eb">KTfwd::fwdpp_internal::ms_sample_separate_single_deme</a> (const mcont_t &amp;mutations, const gcont_t &amp;gametes, const dipvector_t &amp;diploids, const std::vector&lt; unsigned &gt; &amp;diplist, const unsigned &amp;n, const bool &amp;remove_fixed)</td></tr>
+<tr class="separator:ac39e782e7051529d343e240d89b697eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84faf1714115d620323d2d6df4006f0f"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename gcont_t , typename dipvector_t &gt; </td></tr>
+<tr class="memitem:a84faf1714115d620323d2d6df4006f0f"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; sep_sample_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a84faf1714115d620323d2d6df4006f0f">KTfwd::fwdpp_internal::ms_sample_separate_mlocus</a> (const mcont_t &amp;mutations, const gcont_t &amp;gametes, const dipvector_t &amp;diploids, const std::vector&lt; unsigned &gt; &amp;diplist, const unsigned &amp;n, const bool &amp;remove_fixed)</td></tr>
+<tr class="separator:a84faf1714115d620323d2d6df4006f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

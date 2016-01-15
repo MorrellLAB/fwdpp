@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.3</span>
+   &#160;<span id="projectnumber">0.4.4</span>
    </div>
   </td>
  </tr>
@@ -109,16 +109,17 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad75598d80f20aa2e7986bf0d8127b8bf"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type , typename haplotype_policy , typename diploid_policy &gt; </td></tr>
-<tr class="memitem:ad75598d80f20aa2e7986bf0d8127b8bf"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../de/d99/structKTfwd_1_1haplotype__dependent__fitness.html#a3fa95acbaf554b5a3ae2fb6fef690f8e">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d99/structKTfwd_1_1haplotype__dependent__fitness.html#ad75598d80f20aa2e7986bf0d8127b8bf">operator()</a> (const iterator_type &amp;g1, const iterator_type &amp;g2, const haplotype_policy &amp;hpol, const diploid_policy &amp;dpol) const </td></tr>
-<tr class="separator:ad75598d80f20aa2e7986bf0d8127b8bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a36cdd64f78c37b00ef7e46f40f6f72"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename mcont_t , typename haplotype_policy , typename diploid_policy &gt; </td></tr>
+<tr class="memitem:a6a36cdd64f78c37b00ef7e46f40f6f72"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../de/d99/structKTfwd_1_1haplotype__dependent__fitness.html#a3fa95acbaf554b5a3ae2fb6fef690f8e">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d99/structKTfwd_1_1haplotype__dependent__fitness.html#a6a36cdd64f78c37b00ef7e46f40f6f72">operator()</a> (const gamete_type &amp;g1, const gamete_type &amp;g2, const mcont_t &amp;mutations, const haplotype_policy &amp;hpol, const diploid_policy &amp;dpol) const noexcept</td></tr>
+<tr class="separator:a6a36cdd64f78c37b00ef7e46f40f6f72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Function object for fitness as a function of the two haplotypes in a diploid. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">g1</td><td>An iterator to a gamete </td></tr>
-    <tr><td class="paramname">g2</td><td>An iterator to a gamete </td></tr>
+    <tr><td class="paramname">g1</td><td>A gamete </td></tr>
+    <tr><td class="paramname">g2</td><td>A gamete </td></tr>
+    <tr><td class="paramname">mutation</td><td>Container of mutations </td></tr>
     <tr><td class="paramname">hpol</td><td>A policy whose first argument is an iterator to a gamete. Remaining arguments may be bound via std::bind or the equivalent. The policy returns a double representing the effect of this haplotype on fitness </td></tr>
     <tr><td class="paramname">dpol</td><td>A policy whose first two arguments are doubles, each of which represents the effect of g1 and g2, respectively. Remaining arguments may be bound via std::bind or the equivalent. The policy returns a double representing the fitness of a diploid genotype g1/g2 </td></tr>
   </table>
@@ -140,11 +141,11 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ad75598d80f20aa2e7986bf0d8127b8bf"></a>
+<a class="anchor" id="a6a36cdd64f78c37b00ef7e46f40f6f72"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename iterator_type , typename haplotype_policy , typename diploid_policy &gt; </div>
+template&lt;typename gamete_type , typename mcont_t , typename haplotype_policy , typename diploid_policy &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -152,14 +153,20 @@ template&lt;typename iterator_type , typename haplotype_policy , typename diploi
         <tr>
           <td class="memname"><a class="el" href="../../de/d99/structKTfwd_1_1haplotype__dependent__fitness.html#a3fa95acbaf554b5a3ae2fb6fef690f8e">result_type</a> KTfwd::haplotype_dependent_fitness::operator() </td>
           <td>(</td>
-          <td class="paramtype">const iterator_type &amp;&#160;</td>
+          <td class="paramtype">const gamete_type &amp;&#160;</td>
           <td class="paramname"><em>g1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const iterator_type &amp;&#160;</td>
+          <td class="paramtype">const gamete_type &amp;&#160;</td>
           <td class="paramname"><em>g2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mcont_t &amp;&#160;</td>
+          <td class="paramname"><em>mutations</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -181,7 +188,7 @@ template&lt;typename iterator_type , typename haplotype_policy , typename diploi
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -189,7 +196,7 @@ template&lt;typename iterator_type , typename haplotype_policy , typename diploi
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/kevin/src/fwdpp/fwdpp/<a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a></li>
+<li>/home/kevin/git/fwdpp.git/fwdpp/<a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

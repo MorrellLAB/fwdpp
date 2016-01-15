@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>fwdpp: KTfwd::fwdpp_internal::gamete_lookup&lt; gcont_t &gt; Struct Template Reference</title>
+<title>fwdpp: KTfwd::fwdpp_internal::gamete_lookup&lt; gcont_t, mcont_t &gt; Struct Template Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.3</span>
+   &#160;<span id="projectnumber">0.4.4</span>
    </div>
   </td>
  </tr>
@@ -94,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">KTfwd::fwdpp_internal::gamete_lookup&lt; gcont_t &gt; Struct Template Reference</div>  </div>
+<div class="title">KTfwd::fwdpp_internal::gamete_lookup&lt; gcont_t, mcont_t &gt; Struct Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -102,91 +102,91 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:aa824fd47c3f0be64623460115ca49a49"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#aa824fd47c3f0be64623460115ca49a49">gcont_t_itr</a> = typename gcont_t::iterator</td></tr>
-<tr class="separator:aa824fd47c3f0be64623460115ca49a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76a4f5d5f7cf20df1ea123b50a41ebec"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a76a4f5d5f7cf20df1ea123b50a41ebec">lookup_table_t</a> = std::multimap&lt; double, <a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#aa824fd47c3f0be64623460115ca49a49">gcont_t_itr</a> &gt;</td></tr>
-<tr class="separator:a76a4f5d5f7cf20df1ea123b50a41ebec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78a682e326f668a52449c4f3a0076169"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a78a682e326f668a52449c4f3a0076169">result_type</a> = std::pair&lt; typename lookup_table_t::iterator, typename lookup_table_t::iterator &gt;</td></tr>
-<tr class="separator:a78a682e326f668a52449c4f3a0076169"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1de831d1f5d6fd5b0fa5ca0b809e6a2d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a1de831d1f5d6fd5b0fa5ca0b809e6a2d">inner_t</a> = typename lookup_table_t::value_type</td></tr>
-<tr class="separator:a1de831d1f5d6fd5b0fa5ca0b809e6a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91d67551eb9d2974dd640298bb2b3c94"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a91d67551eb9d2974dd640298bb2b3c94">key_t</a> = double</td></tr>
+<tr class="separator:a91d67551eb9d2974dd640298bb2b3c94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9712548806b9b523dda4517a7886f4f9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a9712548806b9b523dda4517a7886f4f9">lookup_table_t</a> = std::multimap&lt; <a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a91d67551eb9d2974dd640298bb2b3c94">key_t</a>, size_t &gt;</td></tr>
+<tr class="separator:a9712548806b9b523dda4517a7886f4f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeab54b3c6251eed127fdfa2e06f9d482"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#aeab54b3c6251eed127fdfa2e06f9d482">result_type</a> = std::pair&lt; lookup_table_t::iterator, lookup_table_t::iterator &gt;</td></tr>
+<tr class="separator:aeab54b3c6251eed127fdfa2e06f9d482"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade35514acdcf46fede3dbf95924c0a65"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#ade35514acdcf46fede3dbf95924c0a65">inner_t</a> = typename lookup_table_t::value_type</td></tr>
+<tr class="separator:ade35514acdcf46fede3dbf95924c0a65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2d8a9995a1d34fa7c06859e2f5a913dd"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a2d8a9995a1d34fa7c06859e2f5a913dd">keyit</a> (const typename gcont_t_itr::value_type::mutation_container &amp;mc) const </td></tr>
-<tr class="separator:a2d8a9995a1d34fa7c06859e2f5a913dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb1eb0cfd1176c4f8b1d43a5cb4fe74f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#afb1eb0cfd1176c4f8b1d43a5cb4fe74f">update_details</a> (const <a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#aa824fd47c3f0be64623460115ca49a49">gcont_t_itr</a> &amp;g)</td></tr>
-<tr class="separator:afb1eb0cfd1176c4f8b1d43a5cb4fe74f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25637d3e05e20b6c7453689dcd2f1210"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a25637d3e05e20b6c7453689dcd2f1210">gamete_lookup</a> (gcont_t *gametes)</td></tr>
-<tr class="separator:a25637d3e05e20b6c7453689dcd2f1210"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa02ed00a3f5c09555c0080e5e2353dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a78a682e326f668a52449c4f3a0076169">result_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#aaa02ed00a3f5c09555c0080e5e2353dd">lookup</a> (const typename gcont_t::value_type &amp;g)</td></tr>
-<tr class="separator:aaa02ed00a3f5c09555c0080e5e2353dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06bf617abf631ccab89d5a41fee1bc02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a06bf617abf631ccab89d5a41fee1bc02">update</a> (const <a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#aa824fd47c3f0be64623460115ca49a49">gcont_t_itr</a> &amp;g)</td></tr>
-<tr class="separator:a06bf617abf631ccab89d5a41fee1bc02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a666dda20ba68dfe38dcdd8847401d95a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a91d67551eb9d2974dd640298bb2b3c94">key_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a666dda20ba68dfe38dcdd8847401d95a">keyit</a> (const std::vector&lt; size_t &gt; &amp;mc, const mcont_t &amp;mutations) const </td></tr>
+<tr class="separator:a666dda20ba68dfe38dcdd8847401d95a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13cbe7764b837a57b3f01108c50c3212"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a13cbe7764b837a57b3f01108c50c3212">update_details</a> (size_t g, const gcont_t &amp;gametes, const mcont_t &amp;mutations)</td></tr>
+<tr class="separator:a13cbe7764b837a57b3f01108c50c3212"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a435afdd11d7110554a4ba5a087503263"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#aeab54b3c6251eed127fdfa2e06f9d482">result_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a435afdd11d7110554a4ba5a087503263">lookup</a> (const std::vector&lt; size_t &gt; &amp;n, const std::vector&lt; size_t &gt; &amp;s, const mcont_t &amp;mutations)</td></tr>
+<tr class="separator:a435afdd11d7110554a4ba5a087503263"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96488da3825dbb05dee4b9b9137675d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a96488da3825dbb05dee4b9b9137675d1">update</a> (size_t idx, const gcont_t &amp;gametes, const mcont_t &amp;mutations)</td></tr>
+<tr class="separator:a96488da3825dbb05dee4b9b9137675d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b42e5c874abf94dc99ebca77702b696"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a1b42e5c874abf94dc99ebca77702b696">gamete_lookup</a> (const gcont_t &amp;gametes, const mcont_t &amp;mutations)</td></tr>
+<tr class="separator:a1b42e5c874abf94dc99ebca77702b696"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a8a30775336ea4f3c3cfd1a069cb830d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a76a4f5d5f7cf20df1ea123b50a41ebec">lookup_table_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a8a30775336ea4f3c3cfd1a069cb830d3">lookup_table</a></td></tr>
-<tr class="separator:a8a30775336ea4f3c3cfd1a069cb830d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9aac669b9f717bc74792c544cad5eaa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a9712548806b9b523dda4517a7886f4f9">lookup_table_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#af9aac669b9f717bc74792c544cad5eaa">lookup_table</a></td></tr>
+<tr class="separator:af9aac669b9f717bc74792c544cad5eaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename gcont_t&gt;<br/>
-struct KTfwd::fwdpp_internal::gamete_lookup&lt; gcont_t &gt;</h3>
+<div class="textblock"><h3>template&lt;typename gcont_t, typename mcont_t&gt;<br/>
+struct KTfwd::fwdpp_internal::gamete_lookup&lt; gcont_t, mcont_t &gt;</h3>
 
-<p>Allows <a class="el" href="../../da/d8b/namespaceKTfwd.html#a83d780c0a1e1421f3a17d79ec8c23ff0" title="recombination for individual-based forward simulations ">KTfwd::recombine_gametes</a> to quickly decide if a recombinant is a gamete that does, or does not, currently exist in the population.</p>
+<p>Allows <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae097a70b2ba7195a61f8744b0f0ecd3b">KTfwd::recombine_gametes</a> to quickly decide if a recombinant is a gamete that does, or does not, currently exist in the population.</p>
 <p>Introduced in fwdpp 0.3.5, replacing the multimap introduced in 0.3.3 that simply associated iterators to gametes with the number of mutations.</p>
 <p>fwdpp 0.3.6 further changed the lookup scheme to have a friendlier API as well as a much faster lookup for the case of simulations involving selected mutations </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a class="anchor" id="aa824fd47c3f0be64623460115ca49a49"></a>
+<a class="anchor" id="ade35514acdcf46fede3dbf95924c0a65"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename gcont_t &gt; </div>
+template&lt;typename gcont_t, typename mcont_t&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">KTfwd::fwdpp_internal::gamete_lookup</a>&lt; gcont_t &gt;::<a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#aa824fd47c3f0be64623460115ca49a49">gcont_t_itr</a> =  typename gcont_t::iterator</td>
+          <td class="memname">using <a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">KTfwd::fwdpp_internal::gamete_lookup</a>&lt; gcont_t, mcont_t &gt;::<a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#ade35514acdcf46fede3dbf95924c0a65">inner_t</a> =  typename lookup_table_t::value_type</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a1de831d1f5d6fd5b0fa5ca0b809e6a2d"></a>
+<a class="anchor" id="a91d67551eb9d2974dd640298bb2b3c94"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename gcont_t &gt; </div>
+template&lt;typename gcont_t, typename mcont_t&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">KTfwd::fwdpp_internal::gamete_lookup</a>&lt; gcont_t &gt;::<a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a1de831d1f5d6fd5b0fa5ca0b809e6a2d">inner_t</a> =  typename lookup_table_t::value_type</td>
+          <td class="memname">using <a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">KTfwd::fwdpp_internal::gamete_lookup</a>&lt; gcont_t, mcont_t &gt;::<a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a91d67551eb9d2974dd640298bb2b3c94">key_t</a> =  double</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a76a4f5d5f7cf20df1ea123b50a41ebec"></a>
+<a class="anchor" id="a9712548806b9b523dda4517a7886f4f9"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename gcont_t &gt; </div>
+template&lt;typename gcont_t, typename mcont_t&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">KTfwd::fwdpp_internal::gamete_lookup</a>&lt; gcont_t &gt;::<a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a76a4f5d5f7cf20df1ea123b50a41ebec">lookup_table_t</a> =  std::multimap&lt;double,<a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#aa824fd47c3f0be64623460115ca49a49">gcont_t_itr</a>&gt;</td>
+          <td class="memname">using <a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">KTfwd::fwdpp_internal::gamete_lookup</a>&lt; gcont_t, mcont_t &gt;::<a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a9712548806b9b523dda4517a7886f4f9">lookup_table_t</a> =  std::multimap&lt;<a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a91d67551eb9d2974dd640298bb2b3c94">key_t</a>,size_t&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a78a682e326f668a52449c4f3a0076169"></a>
+<a class="anchor" id="aeab54b3c6251eed127fdfa2e06f9d482"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename gcont_t &gt; </div>
+template&lt;typename gcont_t, typename mcont_t&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">KTfwd::fwdpp_internal::gamete_lookup</a>&lt; gcont_t &gt;::<a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a78a682e326f668a52449c4f3a0076169">result_type</a> =  std::pair&lt;typename lookup_table_t::iterator,typename lookup_table_t::iterator&gt;</td>
+          <td class="memname">using <a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">KTfwd::fwdpp_internal::gamete_lookup</a>&lt; gcont_t, mcont_t &gt;::<a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#aeab54b3c6251eed127fdfa2e06f9d482">result_type</a> =  std::pair&lt; lookup_table_t::iterator, lookup_table_t::iterator&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -194,21 +194,31 @@ template&lt;typename gcont_t &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a25637d3e05e20b6c7453689dcd2f1210"></a>
+<a class="anchor" id="a1b42e5c874abf94dc99ebca77702b696"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename gcont_t &gt; </div>
+template&lt;typename gcont_t, typename mcont_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">KTfwd::fwdpp_internal::gamete_lookup</a>&lt; gcont_t &gt;::<a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">gamete_lookup</a> </td>
+          <td class="memname"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">KTfwd::fwdpp_internal::gamete_lookup</a>&lt; gcont_t, mcont_t &gt;::<a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">gamete_lookup</a> </td>
           <td>(</td>
-          <td class="paramtype">gcont_t *&#160;</td>
-          <td class="paramname"><em>gametes</em></td><td>)</td>
+          <td class="paramtype">const gcont_t &amp;&#160;</td>
+          <td class="paramname"><em>gametes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const mcont_t &amp;&#160;</td>
+          <td class="paramname"><em>mutations</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -221,21 +231,31 @@ template&lt;typename gcont_t &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a2d8a9995a1d34fa7c06859e2f5a913dd"></a>
+<a class="anchor" id="a666dda20ba68dfe38dcdd8847401d95a"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename gcont_t &gt; </div>
+template&lt;typename gcont_t, typename mcont_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double <a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">KTfwd::fwdpp_internal::gamete_lookup</a>&lt; gcont_t &gt;::keyit </td>
+          <td class="memname"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a91d67551eb9d2974dd640298bb2b3c94">key_t</a> <a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">KTfwd::fwdpp_internal::gamete_lookup</a>&lt; gcont_t, mcont_t &gt;::keyit </td>
           <td>(</td>
-          <td class="paramtype">const typename gcont_t_itr::value_type::mutation_container &amp;&#160;</td>
-          <td class="paramname"><em>mc</em></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">const std::vector&lt; size_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mcont_t &amp;&#160;</td>
+          <td class="paramname"><em>mutations</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
         </tr>
       </table>
   </td>
@@ -247,21 +267,37 @@ template&lt;typename gcont_t &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="aaa02ed00a3f5c09555c0080e5e2353dd"></a>
+<a class="anchor" id="a435afdd11d7110554a4ba5a087503263"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename gcont_t &gt; </div>
+template&lt;typename gcont_t, typename mcont_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a78a682e326f668a52449c4f3a0076169">result_type</a> <a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">KTfwd::fwdpp_internal::gamete_lookup</a>&lt; gcont_t &gt;::lookup </td>
+          <td class="memname"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#aeab54b3c6251eed127fdfa2e06f9d482">result_type</a> <a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">KTfwd::fwdpp_internal::gamete_lookup</a>&lt; gcont_t, mcont_t &gt;::lookup </td>
           <td>(</td>
-          <td class="paramtype">const typename gcont_t::value_type &amp;&#160;</td>
-          <td class="paramname"><em>g</em></td><td>)</td>
+          <td class="paramtype">const std::vector&lt; size_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const std::vector&lt; size_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mcont_t &amp;&#160;</td>
+          <td class="paramname"><em>mutations</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -273,21 +309,37 @@ template&lt;typename gcont_t &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a06bf617abf631ccab89d5a41fee1bc02"></a>
+<a class="anchor" id="a96488da3825dbb05dee4b9b9137675d1"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename gcont_t &gt; </div>
+template&lt;typename gcont_t, typename mcont_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">KTfwd::fwdpp_internal::gamete_lookup</a>&lt; gcont_t &gt;::update </td>
+          <td class="memname">void <a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">KTfwd::fwdpp_internal::gamete_lookup</a>&lt; gcont_t, mcont_t &gt;::update </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#aa824fd47c3f0be64623460115ca49a49">gcont_t_itr</a> &amp;&#160;</td>
-          <td class="paramname"><em>g</em></td><td>)</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const gcont_t &amp;&#160;</td>
+          <td class="paramname"><em>gametes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mcont_t &amp;&#160;</td>
+          <td class="paramname"><em>mutations</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -299,21 +351,37 @@ template&lt;typename gcont_t &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="afb1eb0cfd1176c4f8b1d43a5cb4fe74f"></a>
+<a class="anchor" id="a13cbe7764b837a57b3f01108c50c3212"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename gcont_t &gt; </div>
+template&lt;typename gcont_t, typename mcont_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">KTfwd::fwdpp_internal::gamete_lookup</a>&lt; gcont_t &gt;::update_details </td>
+          <td class="memname">void <a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">KTfwd::fwdpp_internal::gamete_lookup</a>&lt; gcont_t, mcont_t &gt;::update_details </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#aa824fd47c3f0be64623460115ca49a49">gcont_t_itr</a> &amp;&#160;</td>
-          <td class="paramname"><em>g</em></td><td>)</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const gcont_t &amp;&#160;</td>
+          <td class="paramname"><em>gametes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mcont_t &amp;&#160;</td>
+          <td class="paramname"><em>mutations</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -326,14 +394,14 @@ template&lt;typename gcont_t &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Field Documentation</h2>
-<a class="anchor" id="a8a30775336ea4f3c3cfd1a069cb830d3"></a>
+<a class="anchor" id="af9aac669b9f717bc74792c544cad5eaa"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename gcont_t &gt; </div>
+template&lt;typename gcont_t, typename mcont_t&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a76a4f5d5f7cf20df1ea123b50a41ebec">lookup_table_t</a> <a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">KTfwd::fwdpp_internal::gamete_lookup</a>&lt; gcont_t &gt;::lookup_table</td>
+          <td class="memname"><a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a9712548806b9b523dda4517a7886f4f9">lookup_table_t</a> <a class="el" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">KTfwd::fwdpp_internal::gamete_lookup</a>&lt; gcont_t, mcont_t &gt;::lookup_table</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -341,7 +409,7 @@ template&lt;typename gcont_t &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/kevin/src/fwdpp/fwdpp/internal/<a class="el" href="../../d1/da2/gamete__lookup__table_8hpp_source.html">gamete_lookup_table.hpp</a></li>
+<li>/home/kevin/git/fwdpp.git/fwdpp/internal/<a class="el" href="../../d1/da2/gamete__lookup__table_8hpp_source.html">gamete_lookup_table.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

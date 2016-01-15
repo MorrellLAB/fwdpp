@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>fwdpp: /home/kevin/src/fwdpp/fwdpp/internal/rec_gamete_updater.hpp File Reference</title>
+<title>fwdpp: /home/kevin/git/fwdpp.git/fwdpp/internal/rec_gamete_updater.hpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.3</span>
+   &#160;<span id="projectnumber">0.4.4</span>
    </div>
   </td>
  </tr>
@@ -96,8 +96,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;algorithm&gt;</code><br/>
-<code>#include &lt;iterator&gt;</code><br/>
 <code>#include &lt;functional&gt;</code><br/>
+<code>#include &lt;cassert&gt;</code><br/>
 </div>
 <p><a href="../../d1/d01/rec__gamete__updater_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -112,12 +112,12 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a42596d19d583d411b23eed1e80100410"><td class="memTemplParams" colspan="2">template&lt;typename itr_type &gt; </td></tr>
-<tr class="memitem:a42596d19d583d411b23eed1e80100410"><td class="memTemplItemLeft" align="right" valign="top">itr_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a42596d19d583d411b23eed1e80100410">KTfwd::fwdpp_internal::rec_update_itr</a> (itr_type __first, itr_type __last, const double &amp;val)</td></tr>
-<tr class="separator:a42596d19d583d411b23eed1e80100410"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ef02166cf6e4b3c913d3a9da1410b8b"><td class="memTemplParams" colspan="2">template&lt;typename itr_type , typename cont_type &gt; </td></tr>
-<tr class="memitem:a0ef02166cf6e4b3c913d3a9da1410b8b"><td class="memTemplItemLeft" align="right" valign="top">itr_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a0ef02166cf6e4b3c913d3a9da1410b8b">KTfwd::fwdpp_internal::rec_gam_updater</a> (itr_type __first, itr_type __last, cont_type &amp;muts, const double &amp;val)</td></tr>
-<tr class="separator:a0ef02166cf6e4b3c913d3a9da1410b8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a803f98881d73e7898f3337791597af66"><td class="memTemplParams" colspan="2">template&lt;typename itr_type , typename mcont_t &gt; </td></tr>
+<tr class="memitem:a803f98881d73e7898f3337791597af66"><td class="memTemplItemLeft" align="right" valign="top">itr_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a803f98881d73e7898f3337791597af66">KTfwd::fwdpp_internal::rec_update_itr</a> (itr_type __first, itr_type __last, const mcont_t &amp;mutations, const double &amp;val)</td></tr>
+<tr class="separator:a803f98881d73e7898f3337791597af66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d79a62220bab6efce5160281659c22c"><td class="memTemplParams" colspan="2">template&lt;typename itr_type , typename mcont_t &gt; </td></tr>
+<tr class="memitem:a5d79a62220bab6efce5160281659c22c"><td class="memTemplItemLeft" align="right" valign="top">itr_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a5d79a62220bab6efce5160281659c22c">KTfwd::fwdpp_internal::rec_gam_updater</a> (itr_type __first, itr_type __last, const mcont_t &amp;mutations, std::vector&lt; std::size_t &gt; &amp;muts, const double &amp;val)</td></tr>
+<tr class="separator:a5d79a62220bab6efce5160281659c22c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

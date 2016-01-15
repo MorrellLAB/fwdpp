@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>fwdpp: /home/kevin/src/fwdpp/fwdpp/util.hpp File Reference</title>
+<title>fwdpp: /home/kevin/git/fwdpp.git/fwdpp/util.hpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.3</span>
+   &#160;<span id="projectnumber">0.4.4</span>
    </div>
   </td>
  </tr>
@@ -97,6 +97,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">fwdpp/forward_types.hpp</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="../../d4/d62/fwd__functional_8hpp_source.html">fwdpp/fwd_functional.hpp</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="../../dc/d54/type__traits_8hpp_source.html">fwdpp/type_traits.hpp</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="../../d5/dba/gsl__discrete_8hpp_source.html">fwdpp/internal/gsl_discrete.hpp</a>&gt;</code><br/>
 <code>#include &lt;set&gt;</code><br/>
 <code>#include &lt;map&gt;</code><br/>
@@ -117,29 +118,12 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a91ac7525d84cfec32e3007029da92cee"><td class="memTemplParams" colspan="2">template&lt;typename mutation_type , typename list_type_allocator , template&lt; typename, typename &gt; class list_type&gt; </td></tr>
-<tr class="memitem:a91ac7525d84cfec32e3007029da92cee"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a91ac7525d84cfec32e3007029da92cee">KTfwd::uncheck</a> (list_type&lt; mutation_type, list_type_allocator &gt; *mutations)</td></tr>
-<tr class="separator:a91ac7525d84cfec32e3007029da92cee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86a4fcecb15c101816ccdd15eefd6a1b"><td class="memTemplParams" colspan="2">template&lt;typename mutation_type , typename list_type_allocator , template&lt; typename, typename &gt; class list_type&gt; </td></tr>
-<tr class="memitem:a86a4fcecb15c101816ccdd15eefd6a1b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a86a4fcecb15c101816ccdd15eefd6a1b">KTfwd::remove_lost</a> (list_type&lt; mutation_type, list_type_allocator &gt; *mutations)</td></tr>
-<tr class="memdesc:a86a4fcecb15c101816ccdd15eefd6a1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove mutations from population Removes mutations that are lost.  <a href="#a86a4fcecb15c101816ccdd15eefd6a1b">More...</a><br/></td></tr>
-<tr class="separator:a86a4fcecb15c101816ccdd15eefd6a1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad73eeda26047df89b8ea303c0d8a6b74"><td class="memTemplParams" colspan="2">template&lt;typename mutation_type , typename list_type_allocator , template&lt; typename, typename &gt; class list_type, typename mutation_lookup_table &gt; </td></tr>
-<tr class="memitem:ad73eeda26047df89b8ea303c0d8a6b74"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#ad73eeda26047df89b8ea303c0d8a6b74">KTfwd::remove_lost</a> (list_type&lt; mutation_type, list_type_allocator &gt; *mutations, mutation_lookup_table *lookup)</td></tr>
-<tr class="memdesc:ad73eeda26047df89b8ea303c0d8a6b74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove mutations from population Removes mutations that are lost.  <a href="#ad73eeda26047df89b8ea303c0d8a6b74">More...</a><br/></td></tr>
-<tr class="separator:ad73eeda26047df89b8ea303c0d8a6b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84e666ea27d38bdfc539ffd23653eaa9"><td class="memTemplParams" colspan="2">template&lt;typename mutation_type , typename vector_type_allocator1 , typename vector_type_allocator2 , typename list_type_allocator , template&lt; typename, typename &gt; class vector_type, template&lt; typename, typename &gt; class list_type&gt; </td></tr>
-<tr class="memitem:a84e666ea27d38bdfc539ffd23653eaa9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a84e666ea27d38bdfc539ffd23653eaa9">KTfwd::remove_fixed_lost</a> (list_type&lt; mutation_type, list_type_allocator &gt; *mutations, vector_type&lt; mutation_type, vector_type_allocator1 &gt; *fixations, vector_type&lt; unsigned, vector_type_allocator2 &gt; *fixation_times, const unsigned &amp;generation, const unsigned &amp;twoN)</td></tr>
-<tr class="memdesc:a84e666ea27d38bdfc539ffd23653eaa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove mutations from population Removes mutations that are fixed or lost.  <a href="#a84e666ea27d38bdfc539ffd23653eaa9">More...</a><br/></td></tr>
-<tr class="separator:a84e666ea27d38bdfc539ffd23653eaa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbc0bd4b96e6164ec339823c85de235e"><td class="memTemplParams" colspan="2">template&lt;typename mutation_type , typename vector_type_allocator1 , typename vector_type_allocator2 , typename list_type_allocator , template&lt; typename, typename &gt; class vector_type, template&lt; typename, typename &gt; class list_type, typename mutation_lookup_table &gt; </td></tr>
-<tr class="memitem:adbc0bd4b96e6164ec339823c85de235e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#adbc0bd4b96e6164ec339823c85de235e">KTfwd::remove_fixed_lost</a> (list_type&lt; mutation_type, list_type_allocator &gt; *mutations, vector_type&lt; mutation_type, vector_type_allocator1 &gt; *fixations, vector_type&lt; unsigned, vector_type_allocator2 &gt; *fixation_times, mutation_lookup_table *lookup, const unsigned &amp;generation, const unsigned &amp;twoN)</td></tr>
-<tr class="memdesc:adbc0bd4b96e6164ec339823c85de235e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove mutations from population Removes mutations that are fixed or lost.  <a href="#adbc0bd4b96e6164ec339823c85de235e">More...</a><br/></td></tr>
-<tr class="separator:adbc0bd4b96e6164ec339823c85de235e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af72f8145754db271c7c696293de00ee9"><td class="memTemplParams" colspan="2">template&lt;typename iterator_type &gt; </td></tr>
-<tr class="memitem:af72f8145754db271c7c696293de00ee9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#af72f8145754db271c7c696293de00ee9">KTfwd::adjust_mutation_counts</a> (iterator_type &amp;g, const unsigned &amp;n)</td></tr>
-<tr class="memdesc:af72f8145754db271c7c696293de00ee9"><td class="mdescLeft">&#160;</td><td class="mdescRight">used internally  <a href="#af72f8145754db271c7c696293de00ee9">More...</a><br/></td></tr>
-<tr class="separator:af72f8145754db271c7c696293de00ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae746c8b4f9c980b1baf010f34290ff57"><td class="memTemplParams" colspan="2">template&lt;typename mutation_list_type , typename mutation_lookup_table &gt; </td></tr>
+<tr class="memitem:ae746c8b4f9c980b1baf010f34290ff57"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#ae746c8b4f9c980b1baf010f34290ff57">KTfwd::update_mutations</a> (mutation_list_type &amp;mutations, mutation_lookup_table &amp;lookup, std::vector&lt; uint_t &gt; &amp;mcounts, const unsigned twoN)</td></tr>
+<tr class="separator:ae746c8b4f9c980b1baf010f34290ff57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a4f1904b3e87431973a98f60981c871"><td class="memTemplParams" colspan="2">template&lt;typename mutation_list_type , typename fixation_container_t , typename fixation_time_container_t , typename mutation_lookup_table &gt; </td></tr>
+<tr class="memitem:a7a4f1904b3e87431973a98f60981c871"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a7a4f1904b3e87431973a98f60981c871">KTfwd::update_mutations</a> (mutation_list_type &amp;mutations, fixation_container_t &amp;fixations, fixation_time_container_t &amp;fixation_times, mutation_lookup_table &amp;lookup, std::vector&lt; uint_t &gt; &amp;mcounts, const unsigned &amp;generation, const unsigned &amp;twoN)</td></tr>
+<tr class="separator:a7a4f1904b3e87431973a98f60981c871"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

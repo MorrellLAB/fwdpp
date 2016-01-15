@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>fwdpp: /home/kevin/src/fwdpp/fwdpp/internal/multilocus_rec.hpp Source File</title>
+<title>fwdpp: /home/kevin/git/fwdpp.git/fwdpp/internal/multilocus_rec.hpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.3</span>
+   &#160;<span id="projectnumber">0.4.4</span>
    </div>
   </td>
  </tr>
@@ -117,95 +117,105 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">      stuff is skipped during compilation.</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">    */</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> diploid_type,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;             <span class="keyword">typename</span> diploid_type_itr,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;             <span class="keyword">typename</span> gamete_lookup_t,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;             <span class="keyword">typename</span> recombination_policy_container,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#ifndef FWDPP_UNIT_TESTING</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor"></span>             <span class="keyword">typename</span> bw_locus_rec_fxn,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;             <span class="keyword">typename</span> mlist_t,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;             <span class="keyword">typename</span> glist_t,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;             <span class="keyword">typename</span> mutation_model_container,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;             <span class="keyword">typename</span> mutation_insertion_policy,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;             <span class="keyword">typename</span> gamete_lookup_t,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;             <span class="keyword">typename</span> recombination_policy_container,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;             <span class="keyword">typename</span> mqueue_t,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;             <span class="keyword">typename</span> gqueue_t,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#ifndef FWDPP_UNIT_TESTING</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor"></span>             <span class="keyword">typename</span> bw_locus_rec_fxn,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;             <span class="keyword">typename</span> mlist_t,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;             <span class="keyword">typename</span> glist_t,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;             <span class="keyword">typename</span> mutation_model_container,</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;             <span class="keyword">typename</span> gamete_insertion_policy</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor"></span>             <span class="keyword">typename</span> bw_locus_rec_fxn</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor"></span>    &gt;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a0eec8ef0271944bf9a41178430735a58">   40</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a0eec8ef0271944bf9a41178430735a58">multilocus_rec_mut</a>(gsl_rng * <a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                            diploid_type parent1, <span class="comment">//Copy--this is intentional</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                            diploid_type parent2, <span class="comment">//Copy--this is intentional</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                            diploid_type_itr &amp; offspring, <span class="comment">//non-const ref, again intentional</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                            gamete_lookup_t &amp; <a class="code" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">gamete_lookup</a>,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                            <span class="keyword">const</span> recombination_policy_container &amp; rec_pols,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                            <span class="keyword">const</span> bw_locus_rec_fxn &amp; blrf,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">double</span> * r_bw_loci,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">int</span> iswitch1,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;#<a class="code" href="../../d2/d67/gamete__tags_8hpp.html#a410830563466400906cdfcea89558e0a">ifndef</a> <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#acd5c5f0d118268f5e39c858b57b839ea">FWDPP_UNIT_TESTING</a></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">int</span> iswitch2,</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                            glist_t * gametes,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                            mlist_t * mutations,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">double</span> * mu,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                            <span class="keyword">const</span> mutation_model_container &amp; mmodel,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                            <span class="keyword">const</span> mutation_insertion_policy &amp; mpolicy,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                            <span class="keyword">const</span> gamete_insertion_policy &amp; gpolicy_mut</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;#<span class="keywordflow">else</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">int</span> iswitch2</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;#endif                  </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                            )</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <span class="comment">//I see the problem: how to get the positions ahead of time...</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="comment">//Maybe we can simply increment all downstream values by 1 if a swap is needed, and do so if odd?</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      std::vector&lt;int&gt; nswaps1(parent1.size(),iswitch1),nswaps2(parent2.size(),iswitch2);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      std::vector&lt;int&gt;::iterator s1 = nswaps1.begin(),s2=nswaps2.begin();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <span class="keyword">typename</span> diploid_type_itr::value_type::iterator optr = offspring-&gt;begin();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0 ; i &lt; parent1.size() ; ++i,++s1,++s2,++optr )</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;          <span class="keywordflow">if</span>(i)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;              <span class="comment">// between-locus rec, parent 1</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;              <span class="keywordtype">unsigned</span> nrbw = blrf(r,r_bw_loci[i-1]);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;              <span class="comment">//only modify if odd</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;              <span class="keywordflow">if</span>(nrbw%2!=0.) std::transform( s1,nswaps1.end(),s1,std::bind(std::plus&lt;int&gt;(),std::placeholders::_1,nrbw) );</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;              <span class="comment">// between-locus rec, parent 2</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;              nrbw = blrf(r,r_bw_loci[i-1]);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;              <span class="comment">//only modify if odd</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;              <span class="keywordflow">if</span>(nrbw%2!=0.) std::transform( s2,nswaps2.end(),s2,std::bind(std::plus&lt;int&gt;(),std::placeholders::_1,nrbw) );</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;          <span class="comment">//if ttl # recs before now is odd, swap parental pointers</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;          <span class="keywordflow">if</span>( *s1 % 2 != 0.) std::swap(parent1[i].first,parent1[i].second);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;          <span class="keywordflow">if</span>( *s2 % 2 != 0.) std::swap(parent2[i].first,parent2[i].second);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;          <span class="comment">//Assign pointers to offspring</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;          optr-&gt;first = parent1[i].first;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;          optr-&gt;second = parent2[i].first;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;          <span class="comment">//mechanics of recombination</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;          <span class="keywordtype">unsigned</span> nrec = rec_pols[i](optr-&gt;first,parent1[i].second,gamete_lookup);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;          <span class="keywordflow">if</span>(nrec%2!=0.) std::transform( s1+1,nswaps1.end(),s1+1,std::bind(std::plus&lt;int&gt;(),std::placeholders::_1,nrec) );</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor"></span>             <span class="keyword">typename</span> mlist_t,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;             <span class="keyword">typename</span> glist_t,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;             <span class="keyword">typename</span> bw_locus_rec_fxn</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor"></span>    &gt;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#aec3ba4c15794402fcf70a9ea72cf5417">   42</a></span>&#160;    diploid_type <a class="code" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#aec3ba4c15794402fcf70a9ea72cf5417">multilocus_rec_mut</a>(gsl_rng * <a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                    diploid_type parent1,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                    diploid_type parent2,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                    mqueue_t &amp; mutation_recycling_bin,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                    gqueue_t &amp; gamete_recycling_bin,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                    gamete_lookup_t &amp; <a class="code" href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">gamete_lookup</a>,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                    <span class="keyword">const</span> recombination_policy_container &amp; rec_pols,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                    <span class="keyword">const</span> bw_locus_rec_fxn &amp; blrf,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                    <span class="keyword">const</span> <span class="keywordtype">double</span> * r_bw_loci,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                    <span class="keyword">const</span> <span class="keywordtype">int</span> iswitch1,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;#<a class="code" href="../../d2/d67/gamete__tags_8hpp.html#a410830563466400906cdfcea89558e0a">ifndef</a> <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#acd5c5f0d118268f5e39c858b57b839ea">FWDPP_UNIT_TESTING</a></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                    <span class="keyword">const</span> <span class="keywordtype">int</span> iswitch2,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                    glist_t &amp; gametes,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                    mlist_t &amp; mutations,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                    <span class="keyword">typename</span> glist_t::value_type::mutation_container &amp; neutral,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                    <span class="keyword">typename</span> glist_t::value_type::mutation_container &amp; selected,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                    <span class="keyword">const</span> <span class="keywordtype">double</span> * mu,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                    <span class="keyword">const</span> mutation_model_container &amp; mmodel,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                    <span class="keyword">const</span> gamete_insertion_policy &amp; gpolicy_mut</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;#<span class="keywordflow">else</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                    <span class="keyword">const</span> <span class="keywordtype">int</span> iswitch2,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                    glist_t &amp; gametes,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                    mlist_t &amp; mutations,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                    <span class="keyword">typename</span> glist_t::value_type::mutation_container &amp; neutral,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                    <span class="keyword">typename</span> glist_t::value_type::mutation_container &amp; selected</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;#endif                  </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                    )</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="comment">//I see the problem: how to get the positions ahead of time...</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <span class="comment">//Maybe we can simply increment all downstream values by 1 if a swap is needed, and do so if odd?</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      diploid_type offspring(parent1.size());</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      std::vector&lt;int&gt; nswaps1(parent1.size(),iswitch1),nswaps2(parent2.size(),iswitch2);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      std::vector&lt;int&gt;::iterator s1 = nswaps1.begin(),s2=nswaps2.begin();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i = 0 ; i &lt; parent1.size() ; ++i,++s1,++s2)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;          <span class="keywordflow">if</span>(i)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;              <span class="comment">// between-locus rec, parent 1</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;              <span class="keywordtype">unsigned</span> nrbw = blrf(r,r_bw_loci[i-1]);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;              <span class="comment">//only modify if odd</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;              <span class="keywordflow">if</span>(nrbw%2!=0.) std::transform( s1,nswaps1.end(),s1,std::bind(std::plus&lt;int&gt;(),std::placeholders::_1,nrbw) );</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;              <span class="comment">// between-locus rec, parent 2</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;              nrbw = blrf(r,r_bw_loci[i-1]);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;              <span class="comment">//only modify if odd</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;              <span class="keywordflow">if</span>(nrbw%2!=0.) std::transform( s2,nswaps2.end(),s2,std::bind(std::plus&lt;int&gt;(),std::placeholders::_1,nrbw) );</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;          <span class="comment">//if ttl # recs before now is odd, swap parental pointers</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;          <span class="keywordflow">if</span>( *s1 % 2 != 0.) std::swap(parent1[i].first,parent1[i].second);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;          <span class="keywordflow">if</span>( *s2 % 2 != 0.) std::swap(parent2[i].first,parent2[i].second);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;          nrec = rec_pols[i](optr-&gt;second,parent2[i].second,gamete_lookup);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;          <span class="keywordflow">if</span>(nrec%2!=0.) std::transform( s2+1,nswaps2.end(),s2+1,std::bind(std::plus&lt;int&gt;(),std::placeholders::_1,nrec) );</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#ifndef FWDPP_UNIT_TESTING</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor"></span>          optr-&gt;first-&gt;n++;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;          optr-&gt;second-&gt;n++;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;          optr-&gt;first = <a class="code" href="../../da/d8b/namespaceKTfwd.html#a949b79d4df5bc10c6c1b31d311e4a392">mutate_gamete</a>( r,mu[i],gametes,mutations,optr-&gt;first,mmodel[i],mpolicy,gpolicy_mut);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;          optr-&gt;second = <a class="code" href="../../da/d8b/namespaceKTfwd.html#a949b79d4df5bc10c6c1b31d311e4a392">mutate_gamete</a>( r,mu[i],gametes,mutations,optr-&gt;second,mmodel[i],mpolicy,gpolicy_mut);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor"></span>        }</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;          <span class="comment">//mechanics of recombination</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;          <span class="keyword">auto</span> xx = <a class="code" href="../../da/d8b/namespaceKTfwd.html#a5a8e91783590918a0db6da72636ed17e">recombination</a>(gametes,gamete_lookup,gamete_recycling_bin,neutral,selected,rec_pols[i],</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                  parent1[i].first,parent1[i].second,mutations);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;          offspring[i].first = xx.first;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;          <span class="keywordflow">if</span>(xx.second%2!=0.) std::transform( s1+1,nswaps1.end(),s1+1,std::bind(std::plus&lt;int&gt;(),std::placeholders::_1,xx.second) );</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;          xx = <a class="code" href="../../da/d8b/namespaceKTfwd.html#a5a8e91783590918a0db6da72636ed17e">recombination</a>(gametes,gamete_lookup,gamete_recycling_bin,neutral,selected,rec_pols[i],</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                            parent2[i].first,parent2[i].second,mutations);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;          offspring[i].second = xx.first;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;          <span class="keywordflow">if</span>(xx.second%2!=0.) std::transform( s2+1,nswaps2.end(),s2+1,std::bind(std::plus&lt;int&gt;(),std::placeholders::_1,xx.second) );</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#ifndef FWDPP_UNIT_TESTING</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor"></span>          gametes[offspring[i].first].n++;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;          gametes[offspring[i].second].n++;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;          offspring[i].first = <a class="code" href="../../da/d8b/namespaceKTfwd.html#aa8c283a06dc6206f3356795f619b1870">mutate_gamete_recycle</a>(mutation_recycling_bin,gamete_recycling_bin,r,mu[i],gametes,mutations,offspring[i].first,mmodel[i],gpolicy_mut);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;          offspring[i].second = <a class="code" href="../../da/d8b/namespaceKTfwd.html#aa8c283a06dc6206f3356795f619b1870">mutate_gamete_recycle</a>(mutation_recycling_bin,gamete_recycling_bin,r,mu[i],gametes,mutations,offspring[i].second,mmodel[i],gpolicy_mut);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor"></span>        }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      <span class="keywordflow">return</span> offspring;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="gamete__tags_8hpp_html_a410830563466400906cdfcea89558e0a"><div class="ttname"><a href="../../d2/d67/gamete__tags_8hpp.html#a410830563466400906cdfcea89558e0a">ifndef</a></div><div class="ttdeci">#define ifndef</div><div class="ttdef"><b>Definition:</b> gamete_tags.hpp:2</div></div>
-<div class="ttc" id="namespaceKTfwd_html_a949b79d4df5bc10c6c1b31d311e4a392"><div class="ttname"><a href="../../da/d8b/namespaceKTfwd.html#a949b79d4df5bc10c6c1b31d311e4a392">KTfwd::mutate_gamete</a></div><div class="ttdeci">iterator_type mutate_gamete(gsl_rng *r, const double &amp;mu, list_type&lt; typename iterator_type::value_type, list_type_allocator &gt; *gametes, list_type2&lt; typename iterator_type::value_type::mutation_type, list_type_allocator2 &gt; *mutations, iterator_type &amp;g, const mutation_model &amp;mmodel, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy)</div><div class="ttdoc">Apply mutation model to an individual gamete. Used for individual-based forward simulations. </div></div>
-<div class="ttc" id="namespaceKTfwd_1_1fwdpp__internal_html_a0eec8ef0271944bf9a41178430735a58"><div class="ttname"><a href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a0eec8ef0271944bf9a41178430735a58">KTfwd::fwdpp_internal::multilocus_rec_mut</a></div><div class="ttdeci">void multilocus_rec_mut(gsl_rng *r, diploid_type parent1, diploid_type parent2, diploid_type_itr &amp;offspring, gamete_lookup_t &amp;gamete_lookup, const recombination_policy_container &amp;rec_pols, const bw_locus_rec_fxn &amp;blrf, const double *r_bw_loci, const int iswitch1, const int iswitch2, glist_t *gametes, mlist_t *mutations, const double *mu, const mutation_model_container &amp;mmodel, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy_mut)</div><div class="ttdef"><b>Definition:</b> multilocus_rec.hpp:40</div></div>
-<div class="ttc" id="structKTfwd_1_1fwdpp__internal_1_1gamete__lookup_html"><div class="ttname"><a href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">KTfwd::fwdpp_internal::gamete_lookup</a></div><div class="ttdef"><b>Definition:</b> gamete_lookup_table.hpp:23</div></div>
+<div class="ttc" id="namespaceKTfwd_1_1fwdpp__internal_html_aec3ba4c15794402fcf70a9ea72cf5417"><div class="ttname"><a href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#aec3ba4c15794402fcf70a9ea72cf5417">KTfwd::fwdpp_internal::multilocus_rec_mut</a></div><div class="ttdeci">diploid_type multilocus_rec_mut(gsl_rng *r, diploid_type parent1, diploid_type parent2, mqueue_t &amp;mutation_recycling_bin, gqueue_t &amp;gamete_recycling_bin, gamete_lookup_t &amp;gamete_lookup, const recombination_policy_container &amp;rec_pols, const bw_locus_rec_fxn &amp;blrf, const double *r_bw_loci, const int iswitch1, const int iswitch2, glist_t &amp;gametes, mlist_t &amp;mutations, typename glist_t::value_type::mutation_container &amp;neutral, typename glist_t::value_type::mutation_container &amp;selected, const double *mu, const mutation_model_container &amp;mmodel, const gamete_insertion_policy &amp;gpolicy_mut)</div><div class="ttdef"><b>Definition:</b> multilocus_rec.hpp:42</div></div>
+<div class="ttc" id="structKTfwd_1_1fwdpp__internal_1_1gamete__lookup_html"><div class="ttname"><a href="../../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html">KTfwd::fwdpp_internal::gamete_lookup</a></div><div class="ttdef"><b>Definition:</b> gamete_lookup_table.hpp:24</div></div>
+<div class="ttc" id="namespaceKTfwd_html_aa8c283a06dc6206f3356795f619b1870"><div class="ttname"><a href="../../da/d8b/namespaceKTfwd.html#aa8c283a06dc6206f3356795f619b1870">KTfwd::mutate_gamete_recycle</a></div><div class="ttdeci">std::size_t mutate_gamete_recycle(queue_type &amp;recycling_bin, queue_type2 &amp;gamete_recycling_bin, gsl_rng *r, const double &amp;mu, gcont_t &amp;gametes, mcont_t &amp;mutations, const size_t g, const mutation_model &amp;mmodel, const gamete_insertion_policy &amp;gpolicy)</div><div class="ttdoc">Apply mutation model to an individual gamete. Used for individual-based forward simulations. </div></div>
 <div class="ttc" id="callbacks_8cc_html_a53b3e4bb1bd287d2150b9c128e15a316"><div class="ttname"><a href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a></div><div class="ttdeci">gsl_rng * r</div><div class="ttdef"><b>Definition:</b> callbacks.cc:15</div></div>
 <div class="ttc" id="mlocusCrossoverTest_8cc_html_acd5c5f0d118268f5e39c858b57b839ea"><div class="ttname"><a href="../../d9/d1d/mlocusCrossoverTest_8cc.html#acd5c5f0d118268f5e39c858b57b839ea">FWDPP_UNIT_TESTING</a></div><div class="ttdeci">#define FWDPP_UNIT_TESTING</div><div class="ttdef"><b>Definition:</b> mlocusCrossoverTest.cc:15</div></div>
+<div class="ttc" id="namespaceKTfwd_html_a5a8e91783590918a0db6da72636ed17e"><div class="ttname"><a href="../../da/d8b/namespaceKTfwd.html#a5a8e91783590918a0db6da72636ed17e">KTfwd::recombination</a></div><div class="ttdeci">std::pair&lt; std::size_t, unsigned &gt; recombination(gcont_t &amp;gametes, lookup_t &amp;gamete_lookup, recbin_t &amp;gamete_recycling_bin, typename gcont_t::value_type::mutation_container &amp;neutral, typename gcont_t::value_type::mutation_container &amp;selected, const recpol_t &amp;rec_pol, const std::size_t g1, const std::size_t g2, const mcont_t &amp;mutations)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

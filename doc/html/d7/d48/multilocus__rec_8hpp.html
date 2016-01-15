@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>fwdpp: /home/kevin/src/fwdpp/fwdpp/internal/multilocus_rec.hpp File Reference</title>
+<title>fwdpp: /home/kevin/git/fwdpp.git/fwdpp/internal/multilocus_rec.hpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.3</span>
+   &#160;<span id="projectnumber">0.4.4</span>
    </div>
   </td>
  </tr>
@@ -112,9 +112,9 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0eec8ef0271944bf9a41178430735a58"><td class="memTemplParams" colspan="2">template&lt;typename diploid_type , typename diploid_type_itr , typename gamete_lookup_t , typename recombination_policy_container , typename bw_locus_rec_fxn , typename mlist_t , typename glist_t , typename mutation_model_container , typename mutation_insertion_policy , typename gamete_insertion_policy &gt; </td></tr>
-<tr class="memitem:a0eec8ef0271944bf9a41178430735a58"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a0eec8ef0271944bf9a41178430735a58">KTfwd::fwdpp_internal::multilocus_rec_mut</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, diploid_type parent1, diploid_type parent2, diploid_type_itr &amp;offspring, gamete_lookup_t &amp;gamete_lookup, const recombination_policy_container &amp;rec_pols, const bw_locus_rec_fxn &amp;blrf, const double *r_bw_loci, const int iswitch1, const int iswitch2, glist_t *gametes, mlist_t *mutations, const double *mu, const mutation_model_container &amp;mmodel, const mutation_insertion_policy &amp;mpolicy, const gamete_insertion_policy &amp;gpolicy_mut)</td></tr>
-<tr class="separator:a0eec8ef0271944bf9a41178430735a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec3ba4c15794402fcf70a9ea72cf5417"><td class="memTemplParams" colspan="2">template&lt;typename diploid_type , typename gamete_lookup_t , typename recombination_policy_container , typename mqueue_t , typename gqueue_t , typename bw_locus_rec_fxn , typename mlist_t , typename glist_t , typename mutation_model_container , typename gamete_insertion_policy &gt; </td></tr>
+<tr class="memitem:aec3ba4c15794402fcf70a9ea72cf5417"><td class="memTemplItemLeft" align="right" valign="top">diploid_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#aec3ba4c15794402fcf70a9ea72cf5417">KTfwd::fwdpp_internal::multilocus_rec_mut</a> (gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, diploid_type parent1, diploid_type parent2, mqueue_t &amp;mutation_recycling_bin, gqueue_t &amp;gamete_recycling_bin, gamete_lookup_t &amp;gamete_lookup, const recombination_policy_container &amp;rec_pols, const bw_locus_rec_fxn &amp;blrf, const double *r_bw_loci, const int iswitch1, const int iswitch2, glist_t &amp;gametes, mlist_t &amp;mutations, typename glist_t::value_type::mutation_container &amp;neutral, typename glist_t::value_type::mutation_container &amp;selected, const double *mu, const mutation_model_container &amp;mmodel, const gamete_insertion_policy &amp;gpolicy_mut)</td></tr>
+<tr class="separator:aec3ba4c15794402fcf70a9ea72cf5417"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

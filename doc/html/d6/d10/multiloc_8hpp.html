@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>fwdpp: /home/kevin/src/fwdpp/fwdpp/sugar/multiloc.hpp File Reference</title>
+<title>fwdpp: /home/kevin/git/fwdpp.git/fwdpp/sugar/multiloc.hpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.3</span>
+   &#160;<span id="projectnumber">0.4.4</span>
    </div>
   </td>
  </tr>
@@ -95,11 +95,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="title">multiloc.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="../../d6/dd5/multiloc_2multiloc_8hpp_source.html">fwdpp/sugar/multiloc/multiloc.hpp</a>&gt;</code><br/>
-<code>#include &lt;<a class="el" href="../../d4/d62/fwd__functional_8hpp_source.html">fwdpp/fwd_functional.hpp</a>&gt;</code><br/>
-<code>#include &lt;list&gt;</code><br/>
-<code>#include &lt;vector&gt;</code><br/>
+<div class="textblock"><code>#include &lt;vector&gt;</code><br/>
 <code>#include &lt;unordered_set&gt;</code><br/>
+<code>#include &lt;<a class="el" href="../../d6/dd5/multiloc_2multiloc_8hpp_source.html">fwdpp/sugar/multiloc/multiloc.hpp</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="../../d4/d62/fwd__functional_8hpp_source.html">fwdpp/fwd_functional.hpp</a>&gt;</code><br/>
 </div>
 <p><a href="../../d6/d10/multiloc_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -111,23 +110,10 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a9cfa6f797c02d26ac60e49774096829b"><td class="memTemplParams" colspan="2">template&lt;typename mtype &gt; </td></tr>
-<tr class="memitem:a9cfa6f797c02d26ac60e49774096829b"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a9cfa6f797c02d26ac60e49774096829b">KTfwd::multiloc_mlist_t</a> = std::list&lt; <a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;</td></tr>
-<tr class="separator:a9cfa6f797c02d26ac60e49774096829b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40afd65fd9ec426bfef16969d7c8c1c4"><td class="memTemplParams" colspan="2">template&lt;typename mtype &gt; </td></tr>
-<tr class="memitem:a40afd65fd9ec426bfef16969d7c8c1c4"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a40afd65fd9ec426bfef16969d7c8c1c4">KTfwd::multiloc_gamete_t</a> = gamete_base&lt; <a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>, multiloc_mlist_t&lt; <a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;&gt;</td></tr>
-<tr class="separator:a40afd65fd9ec426bfef16969d7c8c1c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28b6af326e670138f1077b17be3c8038"><td class="memTemplParams" colspan="2">template&lt;typename mtype &gt; </td></tr>
-<tr class="memitem:a28b6af326e670138f1077b17be3c8038"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a28b6af326e670138f1077b17be3c8038">KTfwd::multiloc_glist_t</a> = std::list&lt; multiloc_gamete_t&lt; <a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;&gt;</td></tr>
-<tr class="separator:a28b6af326e670138f1077b17be3c8038"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad28b001eec5f9aceb22c1122a55543d3"><td class="memTemplParams" colspan="2">template&lt;typename mtype , typename diploid_t  = std::pair&lt;typename multiloc_glist_t&lt;mtype&gt;::iterator,					  typename multiloc_glist_t&lt;mtype&gt;::iterator&gt;&gt; </td></tr>
-<tr class="memitem:gad28b001eec5f9aceb22c1122a55543d3"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#gad28b001eec5f9aceb22c1122a55543d3">KTfwd::multiloc</a> = sugar::multiloc&lt; <a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>, multiloc_mlist_t&lt; <a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;, multiloc_glist_t&lt; <a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;, std::vector&lt; std::vector&lt; <a class="el" href="../../dc/dfb/structdiploid__t.html">diploid_t</a> &gt;&gt;, std::vector&lt; <a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;, std::vector&lt; uint_t &gt;, std::unordered_set&lt; double, std::hash&lt; double &gt;, <a class="el" href="../../dc/d8e/structKTfwd_1_1equal__eps.html">KTfwd::equal_eps</a> &gt;&gt;</td></tr>
-<tr class="memdesc:gad28b001eec5f9aceb22c1122a55543d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single population, multilocus simulation without serialization. Cannot be copied, etc. See <a class="el" href="../../db/dd8/md_md_sugar.html">Tutorial 5: the "sugar" layer on top of fwdpp</a> for rationale, etc.  <a href="../../de/d6e/group__sugar.html#gad28b001eec5f9aceb22c1122a55543d3">More...</a><br/></td></tr>
-<tr class="separator:gad28b001eec5f9aceb22c1122a55543d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga00e304e282adf205b833cd0650be439f"><td class="memTemplParams" colspan="2">template&lt;typename mtype , typename mwriter , typename mreader , typename diploid_t  = std::pair&lt;typename multiloc_glist_t&lt;mtype&gt;::iterator,					  typename multiloc_glist_t&lt;mtype&gt;::iterator&gt;, typename diploid_writer_t  = diploidIOplaceholder, typename diploid_reader_t  = diploidIOplaceholder&gt; </td></tr>
-<tr class="memitem:ga00e304e282adf205b833cd0650be439f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#ga00e304e282adf205b833cd0650be439f">KTfwd::multiloc_serialized</a> = sugar::multiloc_serialized&lt; <a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a>, <a class="el" href="../../dc/dd4/ms__sampling_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>, <a class="el" href="../../dc/dd4/ms__sampling_8cc.html#aaebd18385ab3036c07b4bcbe6be0d305">mreader</a>, multiloc_mlist_t&lt; <a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;, multiloc_glist_t&lt; <a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;, std::vector&lt; std::vector&lt; <a class="el" href="../../dc/dfb/structdiploid__t.html">diploid_t</a> &gt;&gt;, std::vector&lt; <a class="el" href="../../d3/d01/bneck__selection__ind_8cc.html#a4bf33686d51ed468e9bae483e741965a">mtype</a> &gt;, std::vector&lt; uint_t &gt;, std::unordered_set&lt; double, std::hash&lt; double &gt;, <a class="el" href="../../dc/d8e/structKTfwd_1_1equal__eps.html">KTfwd::equal_eps</a> &gt;, diploid_writer_t, diploid_reader_t &gt;</td></tr>
-<tr class="memdesc:ga00e304e282adf205b833cd0650be439f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single population, multilocus simulation with serialization. Can be copied, etc. See <a class="el" href="../../db/dd8/md_md_sugar.html">Tutorial 5: the "sugar" layer on top of fwdpp</a> for rationale, etc.  <a href="../../de/d6e/group__sugar.html#ga00e304e282adf205b833cd0650be439f">More...</a><br/></td></tr>
-<tr class="separator:ga00e304e282adf205b833cd0650be439f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5993990a90021e4eeb4170bde943ff54"><td class="memTemplParams" colspan="2">template&lt;typename mtype , typename diploid_t  = std::pair&lt;std::size_t,std::size_t&gt;&gt; </td></tr>
+<tr class="memitem:ga5993990a90021e4eeb4170bde943ff54"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#ga5993990a90021e4eeb4170bde943ff54">KTfwd::multiloc</a> = sugar::multiloc&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a>, std::vector&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a> &gt;, std::vector&lt; gamete &gt;, std::vector&lt; std::vector&lt; <a class="el" href="../../dc/dfb/structdiploid__t.html">diploid_t</a> &gt;&gt;, std::vector&lt; <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a> &gt;, std::vector&lt; uint_t &gt;, std::unordered_set&lt; double, std::hash&lt; double &gt;, <a class="el" href="../../dc/d8e/structKTfwd_1_1equal__eps.html">KTfwd::equal_eps</a> &gt;&gt;</td></tr>
+<tr class="memdesc:ga5993990a90021e4eeb4170bde943ff54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single population, multilocus simulation. See <a class="el" href="../../db/dd8/md_md_sugar.html">Tutorial 5: the "sugar" layer on top of fwdpp</a> for rationale, etc.  <a href="../../de/d6e/group__sugar.html#ga5993990a90021e4eeb4170bde943ff54">More...</a><br/></td></tr>
+<tr class="separator:ga5993990a90021e4eeb4170bde943ff54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

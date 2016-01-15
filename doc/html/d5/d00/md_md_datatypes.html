@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.3</span>
+   &#160;<span id="projectnumber">0.4.4</span>
    </div>
   </td>
  </tr>
@@ -106,14 +106,14 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <h3>Notes</h3>
 <ul>
 <li>Remember to <em>properly</em> initialize the base class from your derived mutation classes!</li>
-<li>All fitness models provided by the library require a mutation type to contain a double called <img class="formulaInl" alt="$s$" src="../../form_18.png"/> representing the selection coefficient (or effect size). For example, see <a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html" title="Function object for fitness as a function of individual mutations in a diploid. ">KTfwd::site_dependent_fitness</a>. Hoewever, if you write your own fitness models, then your mutations can contain whatever they want.</li>
+<li>All fitness models provided by the library require a mutation type to contain a double called <img class="formulaInl" alt="$s$" src="../../form_13.png"/> representing the selection coefficient (or effect size). For example, see <a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html" title="Function object for fitness as a function of individual mutations in a diploid. ">KTfwd::site_dependent_fitness</a>. Hoewever, if you write your own fitness models, then your mutations can contain whatever they want.</li>
 </ul>
 <h2>Mutation lists</h2>
 <p>Mutations must be stored in double-linked lists. In the C++ standard library, use std::list:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;list&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../df/df8/diploid_8hh.html">fwdpp/diploid.hh</a>&gt;</span></div>
 <div class="line"></div>
-<div class="line">std::list&lt; KTfwd::mutation &gt; <a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>;</div>
+<div class="line">std::list&lt; KTfwd::mutation &gt; <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a>;</div>
 </div><!-- fragment --><p>The standard list type works well, and simulations will be pretty fast. However, we can do better. In any forward simulations, mutations enter the population and then quickly exit because they are lost due to drift and/or selection. Situations where small objects are coming and going rapidly screams for a memory pool allocation model, rather than the standard allocator that the above code block is implying:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;list&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../df/df8/diploid_8hh.html">fwdpp/diploid.hh</a>&gt;</span></div>
@@ -121,7 +121,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="comment">//This is equivalent to the above block,</span></div>
 <div class="line"><span class="comment">//which relies on the default allocator</span></div>
 <div class="line"><span class="comment">//being the standard one.</span></div>
-<div class="line">std::list&lt; KTfwd::mutation, std::allocator&lt;KTfwd::mutation&gt; &gt; <a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>;</div>
+<div class="line">std::list&lt; KTfwd::mutation, std::allocator&lt;KTfwd::mutation&gt; &gt; <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a>;</div>
 </div><!-- fragment --><p>The <a href="http://www.boost.org">boost</a> C++ libraries provide nicely-implemented memory pool objects:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;boost/container/list.hpp&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;boost/pool/pool_alloc.hpp&gt;</span></div>
@@ -130,7 +130,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="comment">//We see that typedefs lead to improved sanity:</span></div>
 <div class="line"><span class="keyword">using</span> <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">mutation_t</a> = <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a>;</div>
 <div class="line"><span class="keyword">using</span> mutation_t_allocator = boost::pool_allocator&lt;mutation_t&gt;;</div>
-<div class="line">boost::container::list&lt; mutation_t, mutation_t_allocator &gt; <a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>;</div>
+<div class="line">boost::container::list&lt; mutation_t, mutation_t_allocator &gt; <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a>;</div>
 </div><!-- fragment --><p>For simulations with large mutation and/or recombination rates, using the boost types can result is substantially faster simulations. It is well worth it to have boost available on your systems!</p>
 <p>Note that you can use the boost allocators with the standard containers, etc.</p>
 <p>Further note that I have done <em>zero</em> experimentation with parameters to the pool_allocator template, which itself can be tweaked in various ways.</p>
@@ -141,7 +141,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../df/df8/diploid_8hh.html">fwdpp/diploid.hh</a>&gt;</span></div>
 <div class="line"></div>
 <div class="line"><span class="keyword">using</span> <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">mutation_t</a> = <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a>;</div>
-<div class="line">std::list&lt; mutation_t &gt; <a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>;</div>
+<div class="line">std::list&lt; mutation_t &gt; <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a>;</div>
 <div class="line"><span class="comment">//This defaults to assuming that std::list&lt;mutation_t&gt; is the mutation list type</span></div>
 <div class="line"><span class="keyword">using</span> gamete_t = <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base&lt;mutation_t&gt;</a>;</div>
 </div><!-- fragment --><p>If your mutation list type is not std::list, then you must provide an additional template parameter:</p>
@@ -153,7 +153,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="keyword">using</span> <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">mutation_t</a> = <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a>;</div>
 <div class="line"><span class="keyword">using</span> mutation_t_allocator = boost::pool_allocator&lt;mutation_t&gt;;</div>
 <div class="line"><span class="keyword">using</span> mlist_t = boost::container::list&lt; mutation_t, mutation_t_allocator &gt;;</div>
-<div class="line">mlist_t <a class="code" href="../../dd/d6c/siteDepFitness_8cc.html#a5343ffa32173d1ca8624a7d19e41f658">mlist</a>;</div>
+<div class="line">mlist_t <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a>;</div>
 <div class="line"><span class="keyword">using</span> gamete_t = <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base&lt;mutation_t,mlist_t&gt;</a>;</div>
 </div><!-- fragment --><p>That's basically it for gametes.</p>
 <h3>Notes</h3>

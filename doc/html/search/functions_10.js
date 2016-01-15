@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['uncheck',['uncheck',['../da/d8b/namespaceKTfwd.html#a91ac7525d84cfec32e3007029da92cee',1,'KTfwd']]],
   ['uniform',['uniform',['../d0/db2/structKTfwd_1_1extensions_1_1uniform.html#acf10bfbcb7875abe9f0593231aaf7589',1,'KTfwd::extensions::uniform']]],
-  ['update',['update',['../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a06bf617abf631ccab89d5a41fee1bc02',1,'KTfwd::fwdpp_internal::gamete_lookup::update()'],['../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html#a070fa336c463725730068eb2ced8ca20',1,'KTfwd::experimental::standardWFrules::update()']]],
-  ['update_5fdetails',['update_details',['../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#afb1eb0cfd1176c4f8b1d43a5cb4fe74f',1,'KTfwd::fwdpp_internal::gamete_lookup']]],
-  ['update_5fif_5fexists_5finsert',['update_if_exists_insert',['../da/d8b/namespaceKTfwd.html#a5f6270abe1bf379c5458a3d09bc99455',1,'KTfwd']]],
-  ['update_5fif_5fexists_5fpush',['update_if_exists_push',['../da/d8b/namespaceKTfwd.html#a4f12d7c4af0b0d5b6dc48772d1cae49d',1,'KTfwd']]],
-  ['update_5fsample_5fblock',['update_sample_block',['../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a8b5440becef6203145b4ad26d217f725',1,'KTfwd::fwdpp_internal']]]
+  ['update',['update',['../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a96488da3825dbb05dee4b9b9137675d1',1,'KTfwd::fwdpp_internal::gamete_lookup::update()'],['../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html#af30ad0635d934bbab21904f476513633',1,'KTfwd::experimental::standardWFrules::update()']]],
+  ['update_5fdetails',['update_details',['../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#a13cbe7764b837a57b3f01108c50c3212',1,'KTfwd::fwdpp_internal::gamete_lookup']]],
+  ['update_5fmutations',['update_mutations',['../da/d8b/namespaceKTfwd.html#ae746c8b4f9c980b1baf010f34290ff57',1,'KTfwd::update_mutations(mutation_list_type &amp;mutations, mutation_lookup_table &amp;lookup, std::vector&lt; uint_t &gt; &amp;mcounts, const unsigned twoN)'],['../da/d8b/namespaceKTfwd.html#a7a4f1904b3e87431973a98f60981c871',1,'KTfwd::update_mutations(mutation_list_type &amp;mutations, fixation_container_t &amp;fixations, fixation_time_container_t &amp;fixation_times, mutation_lookup_table &amp;lookup, std::vector&lt; uint_t &gt; &amp;mcounts, const unsigned &amp;generation, const unsigned &amp;twoN)']]],
+  ['update_5fsample_5fblock',['update_sample_block',['../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a907e5c839e948d222b0bf5b4c1c45750',1,'KTfwd::fwdpp_internal']]]
 ];

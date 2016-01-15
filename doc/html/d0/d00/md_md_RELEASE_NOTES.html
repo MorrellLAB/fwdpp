@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.3</span>
+   &#160;<span id="projectnumber">0.4.4</span>
    </div>
   </td>
  </tr>
@@ -82,7 +82,54 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="title">FWDPP RELEASE NOTES </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2>0.4.3</h2>
+<div class="textblock"><h2>0.4.4</h2>
+<p>TL;DR Big performance improvements due to better handling of objects in memory. Yay! API changes. Boo!</p>
+<p><b>The library documentation is likely to be out of date until a future release</b></p>
+<ul>
+<li>Vastly improved management of object lifetimes:<ul>
+<li>Extinct mutations/gametes are no longer removed each generation.</li>
+<li>FIFO queues are constructed each generation in order to "recycle" those objects as new mutations/gametes.<ul>
+<li>The queue is implemented as std::queue&lt;mlist::iterator&gt; or std::queue&lt;glist::iterator&gt; for mutations and gametes, respectively.</li>
+<li>These queues result in big performance improvements for "big" simulations, at the cost of breaking API compatibility. The performance improvement is both reduced run time and reduced memory usage.</li>
+<li>In order to accomodate the "recycling", mutation models must now return iterators derived from the mutation list, rather than mutation types themselves.</li>
+<li>Additionally, the internal mutation/recombination functions must take non-const references to "recycling bins", which are the FIFO queues.</li>
+</ul>
+</li>
+<li>Mutation type data members (objects inheriting from <a class="el" href="../../d1/da4/structKTfwd_1_1mutation__base.html" title="Base class for mutations At minimum, a mutation must contain a position and a count in the population...">KTfwd::mutation_base</a>) are no longer const. This is required in order to enable the "recycling".</li>
+<li>In order to take advantage of this feature, extinct mutations must not be removed each generation. The function <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae746c8b4f9c980b1baf010f34290ff57">KTfwd::update_mutations</a> should be removed instead of KTfwd::remove_lost, KTfwd::remove_fixed_lost, etc. The latter functions are marked as deprecated.</li>
+<li>The details of recycling are handled by <a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a688fc3676315f726275f3e57231e462e">KTfwd::fwdpp_internal::make_mut_queue</a>, <a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a2c946b559f170310a55b775e7013e644">KTfwd::fwdpp_internal::make_gamete_queue</a>, <a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#aca25e4952d0cfa3cdc440ea759c203ac">KTfwd::fwdpp_internal::recycle_gamete</a>, and the very cool variadic template function <a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a6422cbeb4862e3527fff695e1cc2fba5" title="Helper function for mutation policies. ">KTfwd::fwdpp_internal::recycle_mutation_helper</a>. These types/functions are found in <a class="el" href="../../d6/d3f/recycling_8hpp.html">fwdpp/internal/recycling.hpp</a>.</li>
+</ul>
+</li>
+<li>Improved memory managament:<ul>
+<li>"Recycling" means that the linked lists used are much more constant in memory with respect to allocations. Thus, it makes sense to allocate objects prior to simulation.</li>
+<li>The functions KTfwd::add_elements in the main library and KTfwd::add_recyclable in the sugar sub-library allow the addition of recylable objects. See example programs for how to use these functions.</li>
+</ul>
+</li>
+<li>Other API changes:<ul>
+<li>As a result of the changes described above, the data structures of the library were changed from linked lists of iterators to vectors of std::size_t. This is a radical change to the data layout, and results in further speedups.</li>
+<li><a class="el" href="../../da/d8b/namespaceKTfwd.html#ac44ca61d8a73f1c63127509413bd3a21">KTfwd::sample_diploid</a> has been streamlined in light of common defaults</li>
+<li>Recombination policies have been simplified. See <a class="el" href="../../d2/df0/structKTfwd_1_1poisson__xover.html">KTfwd::poisson_xover</a> for an example.</li>
+</ul>
+</li>
+<li>Behavior changes:<ul>
+<li>As a result of object recycling, data structures (mutation and gamete lists, specifically) at the end of a simulation contain both extant and extinct objects.</li>
+</ul>
+</li>
+<li>Implementation changes:<ul>
+<li>Serialized populations may contain extinct mutations and gametes.</li>
+<li>A lot of redundant code has been replaced with function calls. This should help prevent bugs like Issue #27, which was due to a botched copy-paste, which happens when code is written in a hurry...</li>
+<li>Simpler dispatch method for mutation models (KTfwd::fwdpp_internal::mutation_model_dispatcher)</li>
+</ul>
+</li>
+<li>Improved "type traits" sub-library (namespace <a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html" title="Nested namespace type traits. ">KTfwd::traits</a>)</li>
+<li>Deprecated functions/objects removed from library</li>
+<li>Bug fixes:<ul>
+<li>Issue #30 fixed regarding serialization of <a class="el" href="../../da/dde/structKTfwd_1_1generalmut.html" title="Mutation type allowing arbitray number of &quot;s,h&quot; pairs representing effect sizes,dominance.This type represents a mutation with a number of &#39;s&#39; and &#39;h&#39; parameters that are fixed at compile time. ">KTfwd::generalmut</a> and <a class="el" href="../../d9/d9e/structKTfwd_1_1generalmut__vec.html" title="Mutation type allowing arbitray number of &quot;s,h&quot; pairs representing effect sizes,dominance.This type represents a mutation with a number of &#39;s&#39; and &#39;h&#39; parameters that are determined at run time. ">KTfwd::generalmut_vec</a></li>
+<li>A bug in <a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga592a1d6b977c5aca8656a118a944ddbf" title="Sampling from a population in an individual-based simulation. ">KTfwd::ms_sample</a> and <a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga592a1d6b977c5aca8656a118a944ddbf" title="Sampling from a population in an individual-based simulation. ">KTfwd::ms_sample</a> separate was identified and fixed. The bug only applied to multilocus simulations. The bug was that the first 'n' chromosomes were sampled, rather than 'n' randomly-chosen chromosomes. The effect of the bug is that the first sample is truly random (as chromosomes are not sorted in any meaningful way), but a second sample would overlap with the first, etc.</li>
+</ul>
+</li>
+</ul>
+<h2>0.4.3</h2>
 <ul>
 <li>Fix for issue #29</li>
 <li>Keyword 'mutable' replaced with 'const' throughout library</li>
@@ -92,12 +139,12 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </ul>
 <h2>0.4.2</h2>
 <ul>
-<li>Fixed error in definition of <a class="el" href="../../de/d6e/group__sugar.html#ga4d358f12780f69e7492e31a195ccda1b" title="Single locus metapopulation simulation with serialization. Can be copied, etc. See Tutorial 5: the &quot;s...">KTfwd::metapop_serialized</a> and <a class="el" href="../../de/d6e/group__sugar.html#ga00e304e282adf205b833cd0650be439f" title="Single population, multilocus simulation with serialization. Can be copied, etc. See Tutorial 5: the ...">KTfwd::multiloc_serialized</a>.</li>
+<li>Fixed error in definition of KTfwd::metapop_serialized and KTfwd::multiloc_serialized.</li>
 </ul>
 <h2>0.4.1</h2>
 <ul>
 <li>fwdppConfig no longer attempts linkage to dependent libraries</li>
-<li>fixed errors in <a class="el" href="../../d4/d28/initms_8hpp.html">fwdpp/initms.hpp</a> caught by clang++</li>
+<li>fixed errors in fwdpp/initms.hpp caught by clang++</li>
 </ul>
 <h2>0.4.0</h2>
 <ul>
@@ -119,9 +166,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </ul>
 <h2>0.3.7</h2>
 <ul>
-<li>An declaration of <a class="el" href="../../da/d8b/namespaceKTfwd.html#a83d780c0a1e1421f3a17d79ec8c23ff0" title="recombination for individual-based forward simulations ">KTfwd::recombine_gametes</a> was fixed to match the implementation</li>
+<li>An declaration of <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae097a70b2ba7195a61f8744b0f0ecd3b">KTfwd::recombine_gametes</a> was fixed to match the implementation</li>
 <li>Minor re-organization of recombination code</li>
-<li>The details of <a class="el" href="../../d7/de2/group__samplingPopsInd.html#gaf2db9e89d4488cb3952a93129238ed94" title="Sampling from a population in an individual-based simulation. Selected and neutral mutations returned...">KTfwd::ms_sample_separate</a> were moved into KTfwd::internal. This move allows access to functions that sample a specific set of diploids, which is handy in a lot of cases.</li>
+<li>The details of <a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga0672f69f8014c3093881f258ae2b3beb" title="Sampling from a population in an individual-based simulation. Selected and neutral mutations returned...">KTfwd::ms_sample_separate</a> were moved into KTfwd::internal. This move allows access to functions that sample a specific set of diploids, which is handy in a lot of cases.</li>
 </ul>
 <h2>0.3.6</h2>
 <ul>
@@ -143,7 +190,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --><ul>
 <li>Travis-CI integration was added for the Git repo.</li>
 <li>Getting the Travis-CI integration to work resulted in changes to the unit tests and the experimental examples to improve their handling of boost-related things.</li>
-<li><a class="el" href="../../d7/daa/policyTests_8cc.html" title="Checks whether or not move or copy constructors are called. Results can vary system-to-system/compile...">unit/policyTests.cc</a> was modified. Previously, it was failing on GCC for the "wrong" reason. The moves were actually happening, but the return value was being set at the wrong time.</li>
+<li>unit/policyTests.cc was modified. Previously, it was failing on GCC for the "wrong" reason. The moves were actually happening, but the return value was being set at the wrong time.</li>
 <li>Various code cleanup</li>
 </ul>
 <h2>0.3.4</h2>
@@ -191,7 +238,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <h2>0.3.1</h2>
 <p>This release has many significant changes. With the exception of the removal of KTfwd::tags::gamete_dependent, which was released in 0.3.0, and the change in the implementation of KTfwd::infsites::operator(), the library remains source-compatible with existing simulations.</p>
 <ul>
-<li>Multilocus, single-population version of <a class="el" href="../../da/d8b/namespaceKTfwd.html#ac0adafd1954c805ce66b5f366782a01d">KTfwd::sample_diploid</a> now allows for inbreeding coefficient of 0 by default.</li>
+<li>Multilocus, single-population version of <a class="el" href="../../da/d8b/namespaceKTfwd.html#ac44ca61d8a73f1c63127509413bd3a21">KTfwd::sample_diploid</a> now allows for inbreeding coefficient of 0 by default.</li>
 <li>Warnings from <a class="el" href="../../df/d07/structKTfwd_1_1infsites.html" title="Generic function object implementing the infinitely-many sites mutation model for &quot;standard&quot; populati...">KTfwd::infsites</a> suppressed w/compiler trick</li>
 <li>Extraneous gsl_rng free removed from <a class="el" href="../../d9/de8/diploid__ind_8cc.html">diploid_ind.cc</a></li>
 <li>Issue #12 in <a class="el" href="../../df/d10/common__ind_8hpp.html">examples/common_ind.hpp</a> fixed</li>
@@ -206,7 +253,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <li>experimental_examples/sex_limited_ind.cc is an example of using experimental library features to simulate separate sexes, sex-specific fitness effects, etc.</li>
 <li>Sugar typedefs in <a class="el" href="../../d5/dd9/singlepop_8hpp.html">fwdpp/sugar/singlepop.hpp</a>, <a class="el" href="../../df/dae/metapop_8hpp.html">fwdpp/sugar/metapop.hpp</a>, and in <a class="el" href="../../d6/d10/multiloc_8hpp.html">fwdpp/sugar/multiloc.hpp</a> are now compatible with custom diploid types. The template alias now defaults to a pair of iterators pointing to gametes, which you may over-ride with your own type.</li>
 <li>The devtools setup script had some bugs fixed. (<a class="el" href="../../d9/d5d/md_md_devtools.html">Tutorial 4: Starting projects based on fwdpp</a>)</li>
-<li><a class="el" href="../../da/d8b/namespaceKTfwd.html#ac0adafd1954c805ce66b5f366782a01d">KTfwd::sample_diploid</a> has been modified to make fewer calls to random number generators for the common use case of no selfing. This change results in N*generations fewer RNG calls, and can speed simulations by as much as ten percent. A side-effect is that results will differ from simulations compiled against earlier versions of the library. A preprocessor macro/symbol (FWDPP_COMPAT_0_3_0) has been introduced. Compilling programs with -DFWDPP_COMPAT_0_3_0 will result in the older/slower algorithm being used.</li>
+<li><a class="el" href="../../da/d8b/namespaceKTfwd.html#ac44ca61d8a73f1c63127509413bd3a21">KTfwd::sample_diploid</a> has been modified to make fewer calls to random number generators for the common use case of no selfing. This change results in N*generations fewer RNG calls, and can speed simulations by as much as ten percent. A side-effect is that results will differ from simulations compiled against earlier versions of the library. A preprocessor macro/symbol (FWDPP_COMPAT_0_3_0) has been introduced. Compilling programs with -DFWDPP_COMPAT_0_3_0 will result in the older/slower algorithm being used.</li>
 <li>A new document describing preprocessor symbols and their effect on fwdpp has been added (<a class="el" href="../../d1/d6b/md_md_preproc.html">Preprocessor symbols</a>)</li>
 <li>All occurrences of NULL in the library have been replaced with the C++11 <a href="http://www.cplusplus.com/reference/cstddef/nullptr_t/">nullptr</a>. The latter is safer in templates because the former can evaluate to 0 in some cases.</li>
 <li>All gamete-based code has been removed from the library. If you need it for any reason, you're stuck with with 0.3.0 and earlier.</li>
@@ -250,7 +297,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <li>const mutation lists now passed to binary output routines</li>
 <li>The library internals now fully support C++11 move semantics</li>
 <li>Default policies now support C++11 "perfect forwarding"</li>
-<li>The function <a class="el" href="../../da/d8b/namespaceKTfwd.html#a83d780c0a1e1421f3a17d79ec8c23ff0" title="recombination for individual-based forward simulations ">KTfwd::recombine_gametes</a>, which is provided for recombination in individual-based simulations, has an overloaded version. This new version takes a fixed set of positions representing recombination breakpoints, allowing more modeling flexibility and making unit testing easier.</li>
+<li>The function <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae097a70b2ba7195a61f8744b0f0ecd3b">KTfwd::recombine_gametes</a>, which is provided for recombination in individual-based simulations, has an overloaded version. This new version takes a fixed set of positions representing recombination breakpoints, allowing more modeling flexibility and making unit testing easier.</li>
 <li>The mechanics of recombination in multilocus simulations moved to function multilocus_rec in namesapce <a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html" title="Nested namespace for nuts and bolts of certain library functions. ">KTfwd::fwdpp_internal</a>.</li>
 <li>A unit test for the function KTfwd::fwdpp_internal::multilocus_rec was added.</li>
 <li>Added tutorial for multilocus simulation implmentation</li>

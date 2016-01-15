@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>fwdpp: /home/kevin/src/fwdpp/fwdpp/extensions/regions.hpp File Reference</title>
+<title>fwdpp: /home/kevin/git/fwdpp.git/fwdpp/extensions/regions.hpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.3</span>
+   &#160;<span id="projectnumber">0.4.4</span>
    </div>
   </td>
  </tr>
@@ -90,7 +90,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">regions.hpp File Reference</div>  </div>
 </div><!--header-->
@@ -98,8 +99,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 
 <p>!  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;<a class="el" href="../../dc/d32/infsites_8hpp_source.html">fwdpp/sugar/infsites.hpp</a>&gt;</code><br/>
+<div class="textblock"><code>#include &lt;limits&gt;</code><br/>
+<code>#include &lt;algorithm&gt;</code><br/>
+<code>#include &lt;gsl/gsl_randist.h&gt;</code><br/>
+<code>#include &lt;<a class="el" href="../../dc/d54/type__traits_8hpp_source.html">fwdpp/type_traits.hpp</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="../../dc/d32/infsites_8hpp_source.html">fwdpp/sugar/infsites.hpp</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="../../d5/dba/gsl__discrete_8hpp_source.html">fwdpp/internal/gsl_discrete.hpp</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="../../d6/d3f/recycling_8hpp_source.html">fwdpp/internal/recycling.hpp</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="../../d3/da7/callbacks_8hpp_source.html">fwdpp/extensions/callbacks.hpp</a>&gt;</code><br/>
 </div>
 <p><a href="../../d0/de1/regions_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -118,6 +124,15 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:df/de4/namespaceKTfwd_1_1extensions"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de4/namespaceKTfwd_1_1extensions.html">KTfwd::extensions</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a141d6f5cba2149839fb2de428ffd555d"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename lookup_t , class... Args&gt; </td></tr>
+<tr class="memitem:a141d6f5cba2149839fb2de428ffd555d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/de4/namespaceKTfwd_1_1extensions.html#a141d6f5cba2149839fb2de428ffd555d">KTfwd::extensions::bind_dmm</a> (const discrete_mut_model &amp;dm, mcont_t &amp;, lookup_t &amp;mut_lookup, Args &amp;&amp;...args) -&gt; decltype(std::bind(&amp;discrete_mut_model::make_mut&lt; traits::recycling_bin_t&lt; mcont_t &gt;, lookup_t, mcont_t &gt;,&amp;dm, std::placeholders::_1, std::placeholders::_2, std::forward&lt; Args &gt;(args)..., std::ref(mut_lookup)))</td></tr>
+<tr class="separator:a141d6f5cba2149839fb2de428ffd555d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace526105a294ce3c39fc89bd534b7025"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t , typename mcont_t , class... Args&gt; </td></tr>
+<tr class="memitem:ace526105a294ce3c39fc89bd534b7025"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/de4/namespaceKTfwd_1_1extensions.html#ace526105a294ce3c39fc89bd534b7025">KTfwd::extensions::bind_drm</a> (const discrete_rec_model &amp;drm, const gcont_t &amp;, const mcont_t &amp;, Args &amp;&amp;...args) -&gt; decltype(std::bind(&amp;discrete_rec_model::operator()&lt; typename gcont_t::value_type, mcont_t &gt;,&amp;drm, std::forward&lt; Args &gt;(args)..., std::placeholders::_1, std::placeholders::_2, std::placeholders::_3))</td></tr>
+<tr class="separator:ace526105a294ce3c39fc89bd534b7025"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>! </p>

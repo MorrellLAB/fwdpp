@@ -10,6 +10,10 @@ The library code is [here](https://github.com/molpopgen/fwdpp)
 
 * [Reference manual](doc/html/index.html) generated from the library source code.  The manual also contains a tutorial on writing policies for simulations.
 
+### Google group
+
+There is a [Google Group](https://groups.google.com/forum/#!forum/fwdpp-users) for fwdpp users.
+
 ###Citation
 
 If you use __fwdpp__ for yor research, either to develop simulations or you use the example programs, please cite the following manuscript:

@@ -1,8 +1,8 @@
-/*! \file sugar2.cc
+/*! \file sugar_metapop_custom_diploid.cc
   \ingroup unit 
-  \brief Testing KTfwd::metapop
+  \brief Testing KTfwd::metapop with custom diploid type
 */
-#define BOOST_TEST_MODULE sugarTest2
+#define BOOST_TEST_MODULE sugar_metapop_custom_diploid
 #define BOOST_TEST_DYN_LINK 
 
 #include <config.h>
@@ -13,6 +13,7 @@
 #include <fwdpp/sugar/metapop.hpp>
 #include <fwdpp/sugar/infsites.hpp>
 #include <fwdpp/sugar/serialization.hpp>
+#include <custom_dip.hpp>
 
 using mutation_t = KTfwd::popgenmut;
 using mwriter = KTfwd::mutation_writer;
@@ -27,16 +28,21 @@ size_t migpop(const size_t & source_pop, gsl_rng * r, const double & mig_prob)
   return source_pop;
 }
 
-using poptype = KTfwd::metapop<mutation_t>;
+using poptype = KTfwd::metapop<mutation_t,diploid_t>;
 
 void simulate(poptype & pop)
 {
   //Evolve for 10 generations
-  std::vector<std::function<double (const poptype::gamete_t &,
-				    const poptype::gamete_t &,
+  std::vector<std::function<double (const poptype::diploid_t &,
+				    const poptype::gcont_t &,
 				    const poptype::mcont_t &)> > fitness_funcs(2,
-									       std::bind(KTfwd::multiplicative_diploid(),std::placeholders::_1,std::placeholders::_2,
-											 std::placeholders::_3,2.));
+									       [](const poptype::diploid_t & d,
+										  const poptype::gcont_t & g,
+										  const poptype::mcont_t & m)
+									       {
+										 return KTfwd::multiplicative_diploid()(g[d.first],g[d.second],m);
+									       }
+									       );
   KTfwd::GSLrng_t<KTfwd::GSL_RNG_TAUS2> rng(0u);
   for( unsigned generation= 0 ; generation < 10 ; ++generation )
     {
@@ -58,7 +64,7 @@ void simulate(poptype & pop)
     }
 }
 
-BOOST_AUTO_TEST_CASE( metapop_sugar_test1 )
+BOOST_AUTO_TEST_CASE( metapop_sugar_custom_test1 )
 {
   poptype pop({1000,1000});
   simulate(pop);
@@ -66,18 +72,18 @@ BOOST_AUTO_TEST_CASE( metapop_sugar_test1 )
   BOOST_CHECK_EQUAL(pop==pop2,true);
 }
 
-BOOST_AUTO_TEST_CASE( metapop_sugar_test2 )
+BOOST_AUTO_TEST_CASE( metapop_sugar_custom_test2 )
 {
   poptype pop({1000,1000});
   simulate(pop);
   poptype pop2{0,0};
   KTfwd::serialize s;
-  s(pop,mwriter());
-  KTfwd::deserialize()(pop2,s,mreader());
+  s(pop,mwriter(),diploid_writer());
+  KTfwd::deserialize()(pop2,s,mreader(),diploid_reader());
   BOOST_CHECK_EQUAL(pop==pop2,true);
 }
 
-BOOST_AUTO_TEST_CASE( metapop_sugar_test3 )
+BOOST_AUTO_TEST_CASE( metapop_sugar_custom_test3 )
 {
   poptype pop({1000,1000});
   simulate(pop);
@@ -85,7 +91,7 @@ BOOST_AUTO_TEST_CASE( metapop_sugar_test3 )
   BOOST_CHECK_EQUAL(pop==pop2,false);
 }
 
-BOOST_AUTO_TEST_CASE( metapop_sugar_test4 )
+BOOST_AUTO_TEST_CASE( metapop_sugar_custom_test4 )
 {
   poptype pop({1000,1000});
   simulate(pop);

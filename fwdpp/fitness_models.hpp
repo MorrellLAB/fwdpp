@@ -64,8 +64,8 @@ namespace KTfwd
   /*! \brief Function object for fitness as a function of individual mutations in a diploid
 
     Function object for fitness as a function of mutations in a diploid.  Examples include the standard multiplicative and additive models of population genetics.  This routine idenfifies all homozygous/heterozygous mutations in a diploid and updates the diploid's fitness according to user-defined policies.  See the code for KTfwd::multiplicative_diploid and KTfwd::additive_diploid for specific examples.
-    \param g1 An gamete
-    \param g2 An gamete
+    \param g1 A gamete
+    \param g2 A gamete
     \param mutations Container of mutations
     \param fpol_hom Policy for updating fitness for the case of homozygosity for a mutant
     \param fpol_het Policy for updating fitness for the case of heterozygosity for a mutant
@@ -114,27 +114,30 @@ namespace KTfwd
 	return w;
       }
       typename gamete_type::mutation_container::size_type b2 = 0;
+      const typename gamete_type::mutation_container::size_type g2size=g2.smutations.size();
       for(const auto & b1 : g1.smutations)
 	{
-	  bool found = false;
-	  for( ; !found && b2 < g2.smutations.size() && !( mutations[g2.smutations[b2]].pos > mutations[b1].pos ) ; ++b2 )
+	  for(  ; b2 < g2size &&
+		 b1!=g2.smutations[b2] && !( mutations[g2.smutations[b2]].pos > mutations[b1].pos ) ; ++b2 )
 	    {
-	      if (b1==g2.smutations[b2])
-		{
-		  assert(mutations[b1].pos == mutations[g2.smutations[b2]].pos);
-		  fpol_hom(w,mutations[b1]);
-		  found=true;
-		}
-	      else
-		{
-		  assert(mutations[g2.smutations[b2]].pos < mutations[b1].pos);
-		  fpol_het(w,mutations[g2.smutations[b2]]);
-		}
+	      assert(mutations[g2.smutations[b2]].pos < mutations[b1].pos);
+	      fpol_het(w,mutations[g2.smutations[b2]]);
 	    }
-	  if(!found) fpol_het(w,mutations[b1]);
+	  if(b2<g2.smutations.size()&&b1==g2.smutations[b2]) //mutation with index b1 is homozygous
+	    {
+	      assert(mutations[g2.smutations[b2]].pos == mutations[b1].pos);
+	      fpol_hom(w,mutations[b1]);
+	      ++b2; //increment so that we don't re-process this site as a het next time 'round
+	    }
+	  else //mutation b1 is heterozygous
+	    {
+	      fpol_het(w,mutations[b1]);
+	    }
 	}
-      for( ; b2 < g2.smutations.size() ; ++b2 ) fpol_het(w,mutations[g2.smutations[b2]]);
-      
+      for( ; b2 < g2size ; ++b2 )
+	{
+	  fpol_het(w,mutations[g2.smutations[b2]]);
+	}
       return w;
     }
     
@@ -162,7 +165,7 @@ namespace KTfwd
     \param mutation Container of mutations
     \param hpol A policy whose first argument is an iterator to a gamete. Remaining arguments may be bound via std::bind or the equivalent.  The policy returns a double representing the effect of this haplotype on fitness
     \param dpol A policy whose first two arguments are doubles, each of which represents the effect of g1 and g2, respectively.  Remaining arguments may be bound via std::bind or the equivalent.  The policy returns a double representing the fitness of a diploid genotype g1/g2
-    \return dpol( hpol(g1), hpol(g2) )
+    \return dpol( hpol(g1,mutations), hpol(g2,mutations) )
     \note This really is just a convenience function. Depending on the specifics of the model, this function may be totally unnecessary.
     \ingroup fitness
   */
@@ -183,7 +186,7 @@ namespace KTfwd
                      "gamete_type must be a gamete type" );
       static_assert( traits::is_mutation_t<typename mcont_t::value_type>::value,
 		     "mcont_t::value_type must be a mutation type" );
-      return dpol( hpol(g1), hpol(g2) );
+      return dpol( hpol(g1,mutations), hpol(g2,mutations) );
     }
   };
 

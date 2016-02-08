@@ -1,9 +1,9 @@
 /*! 
-  \file sugar1.cc 
+  \file sugar_singlepop_custom_diploid.cc
   \ingroup unit 
-  \brief Testing KTfwd::singlepop 
+  \brief Testing single-deme sugar functionality with custom diploids
 */
-#define BOOST_TEST_MODULE sugarTest1
+#define BOOST_TEST_MODULE sugar_singlepop_custom_diploid
 #define BOOST_TEST_DYN_LINK 
 
 #include <config.h>
@@ -13,11 +13,13 @@
 #include <fwdpp/sugar/singlepop.hpp>
 #include <fwdpp/sugar/infsites.hpp>
 #include <fwdpp/sugar/serialization.hpp>
+#include <custom_dip.hpp>
 
 using mutation_t = KTfwd::popgenmut;
 using mwriter = KTfwd::mutation_writer;
 using mreader = KTfwd::mutation_reader<mutation_t>;
-using singlepop_t = KTfwd::singlepop<mutation_t>;
+
+using singlepop_t = KTfwd::singlepop<mutation_t,diploid_t>;
 
 void simulate( singlepop_t & pop )
 {
@@ -39,14 +41,15 @@ void simulate( singlepop_t & pop )
 					  std::bind(KTfwd::poisson_xover(),rng.get(),0.005,0.,1.,
 						    std::placeholders::_1,std::placeholders::_2,std::placeholders::_3),
 					  std::bind(KTfwd::multiplicative_diploid(),std::placeholders::_1,std::placeholders::_2,
-						    std::placeholders::_3,2.),
+						    std::placeholders::_3,2),
+					  //[]( const diploid_t & dip, const singlepop_t::gcont_t & gametes,
+					  //    const singlepop_t::mcont_t & mutations) { return KTfwd::multiplicative_diploid()(gametes[dip.first],gametes[dip.second],mutations,2.); },
 					  pop.neutral,pop.selected);
       KTfwd::update_mutations(pop.mutations,pop.fixations,pop.fixation_times,pop.mut_lookup,pop.mcounts,generation,2*pop.N);
     }
 }
-  
 
-BOOST_AUTO_TEST_CASE( singlepop_sugar_test1 )
+BOOST_AUTO_TEST_CASE( singlepop_sugar_custom_test1 )
 {
   singlepop_t pop(1000);
   simulate(pop);
@@ -56,19 +59,19 @@ BOOST_AUTO_TEST_CASE( singlepop_sugar_test1 )
   BOOST_CHECK_EQUAL(pop==pop2,true);
 }
 
-BOOST_AUTO_TEST_CASE( singlepop_sugar_test2 )
+BOOST_AUTO_TEST_CASE( singlepop_sugar_custom_test2 )
 {
   singlepop_t pop(1000);
   simulate(pop);
 
   KTfwd::serialize s;
-  s(pop,mwriter());
+  s(pop,mwriter(),diploid_writer());
   singlepop_t pop2(0);
-  KTfwd::deserialize()(pop2,s,mreader());
+  KTfwd::deserialize()(pop2,s,mreader(),diploid_reader());
   BOOST_CHECK_EQUAL(pop==pop2,true);
 }
 
-BOOST_AUTO_TEST_CASE( singlepop_sugar_test3 )
+BOOST_AUTO_TEST_CASE( singlepop_sugar_custom_test3 )
 {
   singlepop_t pop(1000);
   simulate(pop);
@@ -79,7 +82,7 @@ BOOST_AUTO_TEST_CASE( singlepop_sugar_test3 )
   BOOST_CHECK_EQUAL(pop==pop2,false);
 }
 
-BOOST_AUTO_TEST_CASE( singlepop_sugar_test4 )
+BOOST_AUTO_TEST_CASE( singlepop_sugar_custom_test4 )
 {
   singlepop_t pop(1000);
   simulate(pop);

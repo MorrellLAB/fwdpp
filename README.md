@@ -26,6 +26,14 @@ Comments are welcome.
 
 This README is the main page of the fwdpp documentation.  It may display some things oddly when viewed on GitHub and/or links to other documentation pages may be broken.  These issues are not bugs -- please see the Reference Manual at the [fwdpp home page](http://molpopgen.github.io/fwdpp/) for a fully-formatted version of this document.
 
+# Using simulations in Python
+
+If you are reading this, I'm guessing that you are more interested in _running_ forward simulations than you are in _developing_ them.  This package is about the latter.  I'd recommend that you check out [fwdpy](https://github.com/molpopgen/fwdpy), which is a Python library for running forward simulations.  [fwdpy](https://github.com/molpopgen/fwdpy) is developed using fwdpp (this package).  [fwdpy](https://github.com/molpopgen/fwdpy) is obtainable from GitHub, but many users may prefer to install it from [PyPi](http://pypi.python.org).
+
+# fwdpp-users mailing list
+
+There is a [Google Group](https://groups.google.com/forum/#!forum/fwdpp-users) for fwdpp users.  It is called fwdpp-users.  I prefer that questions, etc., are raised there.  Questions on that list that are determined to be real issues will result in issue tickets on the GitHub repo for this site.  The group is also a good place for installation help, use questions, etc.
+
 # Build status
 
 * Status of master branch: [![Build Status](https://travis-ci.org/molpopgen/fwdpp.svg?branch=master)](https://travis-ci.org/molpopgen/fwdpp)
@@ -153,6 +161,12 @@ The source code documentation is in the doc subdirectory that comes with the lib
 
 ##Example documentation
 The examples can be read in html form via the online reference manual linked to above.  You can find the two simplest examples online at the fwdpp [wiki](https://github.com/molpopgen/fwdpp/wiki) on github.
+
+# Projects using fwdpp:
+
+* [fwdpp_perf](https://github.com/molpopgen/fwdpp_perf) is a collection of programs showing how to run independent simulations in a multi-core/many-core environment.  Example programs use either C++11 threads or MPI to run simulations.  I also use this package for performance testing/benchmarking/profiling/etc.
+* [fwdpy](https://github.com/molpopgen/fwdpy) brings fwdpp-powered simulations to the Python programming language.
+
 
 # Dependencies
 

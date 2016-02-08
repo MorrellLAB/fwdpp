@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.4</span>
+   &#160;<span id="projectnumber">0.4.5</span>
    </div>
   </td>
  </tr>
@@ -91,8 +91,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <h1>Simple policies using the multi-locus machinery</h1>
 <p>The main conceptual difference between this part of the library and the examples shown in the <a class="el" href="../../d1/d7a/md_md_policies.html">tutorial on policies</a> is the following:</p>
 <ul>
-<li>Instead of a single mutation model policy, you implement one mutation model per "locus". These policies are stored in a vector and passed to <a class="el" href="../../da/d8b/namespaceKTfwd.html#ac44ca61d8a73f1c63127509413bd3a21">KTfwd::sample_diploid</a>.</li>
-<li>Similarly, you implement a recombination policy per locus, and pass a vector of those policies along to <a class="el" href="../../da/d8b/namespaceKTfwd.html#ac44ca61d8a73f1c63127509413bd3a21">KTfwd::sample_diploid</a>.</li>
+<li>Instead of a single mutation model policy, you implement one mutation model per "locus". These policies are stored in a vector and passed to <a class="el" href="../../da/d8b/namespaceKTfwd.html#a0a185fec49aa68f3435e003b377cafd1">KTfwd::sample_diploid</a>.</li>
+<li>Similarly, you implement a recombination policy per locus, and pass a vector of those policies along to <a class="el" href="../../da/d8b/namespaceKTfwd.html#a0a185fec49aa68f3435e003b377cafd1">KTfwd::sample_diploid</a>.</li>
 <li>Instead of a single list of gametes, you have a vector of lists of gametes, where each list represents the current gametes at a particular locus.</li>
 <li>A diploid is now represented as a vector of pairs of iterators derived from the vector of lists of gametes.</li>
 <li>A fitness policy calculates individual fitnesses from an iterator pointing to that vector of pairs of iterators.</li>
@@ -218,8 +218,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">  }</div>
 <div class="line">};</div>
 </div><!-- fragment --><h3>Calling sample_diploid</h3>
-<p>The above definitions are used to evolve a population via a call to <a class="el" href="../../da/d8b/namespaceKTfwd.html#ac44ca61d8a73f1c63127509413bd3a21">KTfwd::sample_diploid</a>:</p>
-<div class="fragment"><div class="line"><a class="code" href="../../da/d8b/namespaceKTfwd.html#ac44ca61d8a73f1c63127509413bd3a21">KTfwd::sample_diploid</a>( r,</div>
+<p>The above definitions are used to evolve a population via a call to <a class="el" href="../../da/d8b/namespaceKTfwd.html#a0a185fec49aa68f3435e003b377cafd1">KTfwd::sample_diploid</a>:</p>
+<div class="fragment"><div class="line"><a class="code" href="../../da/d8b/namespaceKTfwd.html#a0a185fec49aa68f3435e003b377cafd1">KTfwd::sample_diploid</a>( r,</div>
 <div class="line">        &amp;gametes,</div>
 <div class="line">        &amp;diploids,</div>
 <div class="line">        &amp;mutations,</div>

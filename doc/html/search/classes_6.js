@@ -1,8 +1,6 @@
 var searchData=
 [
   ['gamete_5fbase',['gamete_base',['../d6/d90/structKTfwd_1_1gamete__base.html',1,'KTfwd']]],
-  ['gamete_5flookup',['gamete_lookup',['../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html',1,'KTfwd::fwdpp_internal']]],
-  ['gamete_5flookup_5ft',['gamete_lookup_t',['../d6/d4b/structKTfwd_1_1traits_1_1gamete__lookup__t.html',1,'KTfwd::traits']]],
   ['gamete_5ftype_5ftag',['gamete_type_tag',['../dd/dbf/structKTfwd_1_1tags_1_1gamete__type__tag.html',1,'KTfwd::tags']]],
   ['gamma',['gamma',['../dd/df9/structKTfwd_1_1extensions_1_1gamma.html',1,'KTfwd::extensions']]],
   ['gaussian',['gaussian',['../da/d13/structKTfwd_1_1extensions_1_1gaussian.html',1,'KTfwd::extensions']]],

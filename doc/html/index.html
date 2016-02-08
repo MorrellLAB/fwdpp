@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.4</span>
+   &#160;<span id="projectnumber">0.4.5</span>
    </div>
   </td>
  </tr>
@@ -91,6 +91,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <pre class="fragment">    - Kevin Thornton &lt;krthornt@uci.edu&gt;
 </pre><h1>Preface</h1>
 <p>This README is the main page of the fwdpp documentation. It may display some things oddly when viewed on GitHub and/or links to other documentation pages may be broken. These issues are not bugs &ndash; please see the Reference Manual at the <a href="http://molpopgen.github.io/fwdpp/">fwdpp home page</a> for a fully-formatted version of this document.</p>
+<h1>Using simulations in Python</h1>
+<p>If you are reading this, I'm guessing that you are more interested in <em>running</em> forward simulations than you are in <em>developing</em> them. This package is about the latter. I'd recommend that you check out <a href="https://github.com/molpopgen/fwdpy">fwdpy</a>, which is a Python library for running forward simulations. <a href="https://github.com/molpopgen/fwdpy">fwdpy</a> is developed using fwdpp (this package). <a href="https://github.com/molpopgen/fwdpy">fwdpy</a> is obtainable from GitHub, but many users may prefer to install it from <a href="http://pypi.python.org">PyPi</a>.</p>
+<h1>fwdpp-users mailing list</h1>
+<p>There is a <a href="https://groups.google.com/forum/#!forum/fwdpp-users">Google Group</a> for fwdpp users. It is called fwdpp-users. I prefer that questions, etc., are raised there. Questions on that list that are determined to be real issues will result in issue tickets on the GitHub repo for this site. The group is also a good place for installation help, use questions, etc.</p>
 <h1>Build status</h1>
 <ul>
 <li>Status of master branch: <a href="https://travis-ci.org/molpopgen/fwdpp">![Build Status](https://travis-ci.org/molpopgen/fwdpp.svg?branch=master)</a></li>
@@ -183,6 +187,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The source code documentation is in the doc subdirectory that comes with the library. There are two major pieces of documentation. First is the detailed documentation of all library functions. This is generated via <a href="http://www.doxygen.org">doxygen</a>, and the output is a folder called html. To view the documentation, point a browser to html/index.html.</p>
 <h2>Example documentation</h2>
 <p>The examples can be read in html form via the online reference manual linked to above. You can find the two simplest examples online at the fwdpp <a href="https://github.com/molpopgen/fwdpp/wiki">wiki</a> on github.</p>
+<h1>Projects using fwdpp:</h1>
+<ul>
+<li><a href="https://github.com/molpopgen/fwdpp_perf">fwdpp_perf</a> is a collection of programs showing how to run independent simulations in a multi-core/many-core environment. Example programs use either C++11 threads or MPI to run simulations. I also use this package for performance testing/benchmarking/profiling/etc.</li>
+<li><a href="https://github.com/molpopgen/fwdpy">fwdpy</a> brings fwdpp-powered simulations to the Python programming language.</li>
+</ul>
 <h1>Dependencies</h1>
 <h2>System requirements</h2>
 <p>You must have the following on your system:</p>

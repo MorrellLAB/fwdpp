@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.4</span>
+   &#160;<span id="projectnumber">0.4.5</span>
    </div>
   </td>
  </tr>
@@ -144,6 +144,9 @@ Public Types</h2></td></tr>
 <tr class="memitem:a4fab991230eb2151a95c18b4bb12f99a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a4fab991230eb2151a95c18b4bb12f99a">fitness_t</a> = <a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html#a230fa8b851a6d3891316daacd30bce6f">KTfwd::traits::fitness_fxn_t</a>&lt; <a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#ae84b90362dbc6fdb5ce3f9201a856716">dipvector_t</a>, <a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#ad9d637ba989cd368a90210dfbd36541c">gcont_t</a>, <a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a42efeb2e218192269ddf6f08e0a9a438">mcont_t</a> &gt;</td></tr>
 <tr class="memdesc:a4fab991230eb2151a95c18b4bb12f99a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fitness function signature compatible with this type.  <a href="#a4fab991230eb2151a95c18b4bb12f99a">More...</a><br/></td></tr>
 <tr class="separator:a4fab991230eb2151a95c18b4bb12f99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7c8909a5304ea921826f25d295940da"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#ac7c8909a5304ea921826f25d295940da">compat_singlepop_t</a> = <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">sugar::singlepop</a>&lt; <a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#aed00456e02ae16830e90e1964e6cc723">mutation_t</a>, <a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a42efeb2e218192269ddf6f08e0a9a438">mcont_t</a>, <a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#ad9d637ba989cd368a90210dfbd36541c">gcont_t</a>, <a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#ae84b90362dbc6fdb5ce3f9201a856716">dipvector_t</a>, <a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#afc1520687765e5a3e53225dfd01f21ea">mvector_t</a>, <a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#ab1e3ed434b70ea0efa92fd49b264a614">ftvector_t</a>, <a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a6eed56671a6015f457b34a47d13a381e">lookup_table_t</a> &gt;</td></tr>
+<tr class="memdesc:ac7c8909a5304ea921826f25d295940da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metapops can be constructed from singlepops of this type.  <a href="#ac7c8909a5304ea921826f25d295940da">More...</a><br/></td></tr>
+<tr class="separator:ac7c8909a5304ea921826f25d295940da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -153,6 +156,48 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a318dcd0e884234841854e46a4646d8db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a318dcd0e884234841854e46a4646d8db">metapop</a> (const <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> *__Ns, const size_t num_Ns, typename gamete_t::mutation_container::size_type reserve_size=100)</td></tr>
 <tr class="memdesc:a318dcd0e884234841854e46a4646d8db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct with array of deme sizes.  <a href="#a318dcd0e884234841854e46a4646d8db">More...</a><br/></td></tr>
 <tr class="separator:a318dcd0e884234841854e46a4646d8db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48a4f3779b1deae694fba79387df6a8e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a48a4f3779b1deae694fba79387df6a8e">metapop</a> (const <a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#ac7c8909a5304ea921826f25d295940da">compat_singlepop_t</a> &amp;spop)</td></tr>
+<tr class="memdesc:a48a4f3779b1deae694fba79387df6a8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy construct from a singlepop based on the same basic types.  <a href="#a48a4f3779b1deae694fba79387df6a8e">More...</a><br/></td></tr>
+<tr class="separator:a48a4f3779b1deae694fba79387df6a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace0bb74dd30119b0b427f280da743e3c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#ace0bb74dd30119b0b427f280da743e3c">mutations</a> (spop.mutations)</td></tr>
+<tr class="separator:ace0bb74dd30119b0b427f280da743e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10344e6f90cbbdb3d6d28b7fc0266e6a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a10344e6f90cbbdb3d6d28b7fc0266e6a">mcounts</a> (spop.mcounts)</td></tr>
+<tr class="separator:a10344e6f90cbbdb3d6d28b7fc0266e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46481ba9af6b0bd6a019fd8d22a5a13d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a46481ba9af6b0bd6a019fd8d22a5a13d">gametes</a> (spop.gametes)</td></tr>
+<tr class="separator:a46481ba9af6b0bd6a019fd8d22a5a13d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade33e41887c23c45c41b79170371bd94"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#ade33e41887c23c45c41b79170371bd94">diploids</a> (<a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#af4332b8978bccf4c99ab18605927f3fe">vdipvector_t</a>(1, spop.diploids))</td></tr>
+<tr class="separator:ade33e41887c23c45c41b79170371bd94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b7aef236ea8e23eea3b7f1fa571ba1f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a4b7aef236ea8e23eea3b7f1fa571ba1f">neutral</a> (spop.neutral)</td></tr>
+<tr class="separator:a4b7aef236ea8e23eea3b7f1fa571ba1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78578b2d707b5dc01a2b284f2748d4f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a78578b2d707b5dc01a2b284f2748d4f1">selected</a> (spop.selected)</td></tr>
+<tr class="separator:a78578b2d707b5dc01a2b284f2748d4f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af41abb3d202c547df6da0cf018f3c720"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#af41abb3d202c547df6da0cf018f3c720">mut_lookup</a> (spop.mut_lookup)</td></tr>
+<tr class="separator:af41abb3d202c547df6da0cf018f3c720"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb45e60b97d492712b2831788876cd26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#acb45e60b97d492712b2831788876cd26">fixations</a> (spop.fixations)</td></tr>
+<tr class="separator:acb45e60b97d492712b2831788876cd26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd2665e1c82960384c0e6afa536f8d7c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#abd2665e1c82960384c0e6afa536f8d7c">fixation_times</a> (spop.fixation_times)</td></tr>
+<tr class="separator:abd2665e1c82960384c0e6afa536f8d7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51e53b61471dca99154a4c54a2174f0b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a51e53b61471dca99154a4c54a2174f0b">metapop</a> (<a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#ac7c8909a5304ea921826f25d295940da">compat_singlepop_t</a> &amp;&amp;spop)</td></tr>
+<tr class="memdesc:a51e53b61471dca99154a4c54a2174f0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move construct from a singlepop based on the same basic types.  <a href="#a51e53b61471dca99154a4c54a2174f0b">More...</a><br/></td></tr>
+<tr class="separator:a51e53b61471dca99154a4c54a2174f0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7d6036bf536fa83486637c8383eaefd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#ab7d6036bf536fa83486637c8383eaefd">mutations</a> (std::move(spop.mutations))</td></tr>
+<tr class="separator:ab7d6036bf536fa83486637c8383eaefd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab11c86daca9dcdf4b541f2f99b15e589"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#ab11c86daca9dcdf4b541f2f99b15e589">mcounts</a> (std::move(spop.mcounts))</td></tr>
+<tr class="separator:ab11c86daca9dcdf4b541f2f99b15e589"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a01af7b73c8c0cfdc248759b354d9aa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a5a01af7b73c8c0cfdc248759b354d9aa">gametes</a> (std::move(spop.gametes))</td></tr>
+<tr class="separator:a5a01af7b73c8c0cfdc248759b354d9aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e393ff65d35d2f0bb60104dc9f8e06f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a3e393ff65d35d2f0bb60104dc9f8e06f">diploids</a> (<a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#af4332b8978bccf4c99ab18605927f3fe">vdipvector_t</a>(1, std::move(spop.diploids)))</td></tr>
+<tr class="separator:a3e393ff65d35d2f0bb60104dc9f8e06f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8884475751d66c75fd00ae2989aff781"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a8884475751d66c75fd00ae2989aff781">neutral</a> (std::move(spop.neutral))</td></tr>
+<tr class="separator:a8884475751d66c75fd00ae2989aff781"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5750ee02048c19585763ad7754487e6d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a5750ee02048c19585763ad7754487e6d">selected</a> (std::move(spop.selected))</td></tr>
+<tr class="separator:a5750ee02048c19585763ad7754487e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66809c1abc4508b9464cc777d002cd41"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a66809c1abc4508b9464cc777d002cd41">mut_lookup</a> (std::move(spop.mut_lookup))</td></tr>
+<tr class="separator:a66809c1abc4508b9464cc777d002cd41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20f910a225befc37da96894baa1e0ab8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a20f910a225befc37da96894baa1e0ab8">fixations</a> (std::move(spop.fixations))</td></tr>
+<tr class="separator:a20f910a225befc37da96894baa1e0ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24e8a50e1adeafd4d2a0afc47f535ccf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a24e8a50e1adeafd4d2a0afc47f535ccf">fixation_times</a> (std::move(spop.fixation_times))</td></tr>
+<tr class="separator:a24e8a50e1adeafd4d2a0afc47f535ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a276af7c9a1ae72c4618a080aed0a9dc6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a276af7c9a1ae72c4618a080aed0a9dc6">operator==</a> (const <a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">metapop</a> &amp;rhs) const </td></tr>
 <tr class="separator:a276af7c9a1ae72c4618a080aed0a9dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32cb56375d9ca1e7cb8f83472d0e114b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a32cb56375d9ca1e7cb8f83472d0e114b">clear</a> ()</td></tr>
@@ -195,6 +240,22 @@ class KTfwd::sugar::metapop&lt; mutation_type, mcont, gcont, dipvector, vdipvect
 <p>Does not allow copy construction/assignment!</p>
 <p>See <a class="el" href="../../db/dd8/md_md_sugar.html">Tutorial 5: the "sugar" layer on top of fwdpp</a> for rationale, etc. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a class="anchor" id="ac7c8909a5304ea921826f25d295940da"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename vdipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::sugar::metapop</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, vdipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#ac7c8909a5304ea921826f25d295940da">compat_singlepop_t</a> =  <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">sugar::singlepop</a>&lt;<a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#aed00456e02ae16830e90e1964e6cc723">mutation_t</a>, <a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a42efeb2e218192269ddf6f08e0a9a438">mcont_t</a>, <a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#ad9d637ba989cd368a90210dfbd36541c">gcont_t</a>, <a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#ae84b90362dbc6fdb5ce3f9201a856716">dipvector_t</a>, <a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#afc1520687765e5a3e53225dfd01f21ea">mvector_t</a>, <a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#ab1e3ed434b70ea0efa92fd49b264a614">ftvector_t</a>, <a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a6eed56671a6015f457b34a47d13a381e">lookup_table_t</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Metapops can be constructed from singlepops of this type. </p>
+
+</div>
+</div>
 <a class="anchor" id="a117dae74d433477d0cc609fe3af0ce27"></a>
 <div class="memitem">
 <div class="memproto">
@@ -486,6 +547,62 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 
 </div>
 </div>
+<a class="anchor" id="a48a4f3779b1deae694fba79387df6a8e"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename vdipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::sugar::metapop</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, vdipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">metapop</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#ac7c8909a5304ea921826f25d295940da">compat_singlepop_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>spop</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy construct from a singlepop based on the same basic types. </p>
+
+</div>
+</div>
+<a class="anchor" id="a51e53b61471dca99154a4c54a2174f0b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename vdipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::sugar::metapop</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, vdipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::<a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">metapop</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#ac7c8909a5304ea921826f25d295940da">compat_singlepop_t</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>spop</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Move construct from a singlepop based on the same basic types. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a32cb56375d9ca1e7cb8f83472d0e114b"></a>
 <div class="memitem">
@@ -514,6 +631,310 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 
 </div>
 </div>
+<a class="anchor" id="ade33e41887c23c45c41b79170371bd94"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename vdipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::sugar::metapop</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, vdipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::diploids </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#af4332b8978bccf4c99ab18605927f3fe">vdipvector_t</a>(1, spop.diploids)&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3e393ff65d35d2f0bb60104dc9f8e06f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename vdipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::sugar::metapop</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, vdipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::diploids </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#af4332b8978bccf4c99ab18605927f3fe">vdipvector_t</a>(1, std::move(spop.diploids))&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abd2665e1c82960384c0e6afa536f8d7c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename vdipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::sugar::metapop</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, vdipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::fixation_times </td>
+          <td>(</td>
+          <td class="paramtype">spop.&#160;</td>
+          <td class="paramname"><em>fixation_times</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a24e8a50e1adeafd4d2a0afc47f535ccf"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename vdipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::sugar::metapop</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, vdipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::fixation_times </td>
+          <td>(</td>
+          <td class="paramtype">std::&#160;</td>
+          <td class="paramname"><em>move</em>spop.fixation_times</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acb45e60b97d492712b2831788876cd26"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename vdipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::sugar::metapop</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, vdipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::fixations </td>
+          <td>(</td>
+          <td class="paramtype">spop.&#160;</td>
+          <td class="paramname"><em>fixations</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a20f910a225befc37da96894baa1e0ab8"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename vdipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::sugar::metapop</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, vdipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::fixations </td>
+          <td>(</td>
+          <td class="paramtype">std::&#160;</td>
+          <td class="paramname"><em>move</em>spop.fixations</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a46481ba9af6b0bd6a019fd8d22a5a13d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename vdipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::sugar::metapop</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, vdipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::gametes </td>
+          <td>(</td>
+          <td class="paramtype">spop.&#160;</td>
+          <td class="paramname"><em>gametes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5a01af7b73c8c0cfdc248759b354d9aa"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename vdipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::sugar::metapop</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, vdipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::gametes </td>
+          <td>(</td>
+          <td class="paramtype">std::&#160;</td>
+          <td class="paramname"><em>move</em>spop.gametes</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a10344e6f90cbbdb3d6d28b7fc0266e6a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename vdipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::sugar::metapop</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, vdipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::mcounts </td>
+          <td>(</td>
+          <td class="paramtype">spop.&#160;</td>
+          <td class="paramname"><em>mcounts</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab11c86daca9dcdf4b541f2f99b15e589"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename vdipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::sugar::metapop</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, vdipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::mcounts </td>
+          <td>(</td>
+          <td class="paramtype">std::&#160;</td>
+          <td class="paramname"><em>move</em>spop.mcounts</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af41abb3d202c547df6da0cf018f3c720"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename vdipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::sugar::metapop</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, vdipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::mut_lookup </td>
+          <td>(</td>
+          <td class="paramtype">spop.&#160;</td>
+          <td class="paramname"><em>mut_lookup</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a66809c1abc4508b9464cc777d002cd41"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename vdipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::sugar::metapop</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, vdipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::mut_lookup </td>
+          <td>(</td>
+          <td class="paramtype">std::&#160;</td>
+          <td class="paramname"><em>move</em>spop.mut_lookup</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ace0bb74dd30119b0b427f280da743e3c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename vdipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::sugar::metapop</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, vdipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::mutations </td>
+          <td>(</td>
+          <td class="paramtype">spop.&#160;</td>
+          <td class="paramname"><em>mutations</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab7d6036bf536fa83486637c8383eaefd"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename vdipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::sugar::metapop</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, vdipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::mutations </td>
+          <td>(</td>
+          <td class="paramtype">std::&#160;</td>
+          <td class="paramname"><em>move</em>spop.mutations</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4b7aef236ea8e23eea3b7f1fa571ba1f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename vdipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::sugar::metapop</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, vdipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::neutral </td>
+          <td>(</td>
+          <td class="paramtype">spop.&#160;</td>
+          <td class="paramname"><em>neutral</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8884475751d66c75fd00ae2989aff781"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename vdipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::sugar::metapop</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, vdipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::neutral </td>
+          <td>(</td>
+          <td class="paramtype">std::&#160;</td>
+          <td class="paramname"><em>move</em>spop.neutral</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a276af7c9a1ae72c4618a080aed0a9dc6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -536,6 +957,42 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 <span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a78578b2d707b5dc01a2b284f2748d4f1"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename vdipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::sugar::metapop</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, vdipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::selected </td>
+          <td>(</td>
+          <td class="paramtype">spop.&#160;</td>
+          <td class="paramname"><em>selected</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5750ee02048c19585763ad7754487e6d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename vdipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html">KTfwd::sugar::metapop</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, vdipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a0731e2ed14d3858427a2552e4944b778">lookup_table_type</a> &gt;::selected </td>
+          <td>(</td>
+          <td class="paramtype">std::&#160;</td>
+          <td class="paramname"><em>move</em>spop.selected</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 </div>

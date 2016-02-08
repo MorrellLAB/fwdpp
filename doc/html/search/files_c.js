@@ -13,10 +13,10 @@ var searchData=
   ['sugar_2ehpp',['sugar.hpp',['../d0/d95/sugar_2sugar_8hpp.html',1,'']]],
   ['sugar_2ehpp',['sugar.hpp',['../d7/d63/sugar_8hpp.html',1,'']]],
   ['sugar_2emd',['sugar.md',['../df/df9/sugar_8md.html',1,'']]],
-  ['sugar1_2ecc',['sugar1.cc',['../d0/db9/sugar1_8cc.html',1,'']]],
-  ['sugar1_5fcustom_2ecc',['sugar1_custom.cc',['../d8/dd2/sugar1__custom_8cc.html',1,'']]],
-  ['sugar2_2ecc',['sugar2.cc',['../da/d50/sugar2_8cc.html',1,'']]],
-  ['sugar2_5fcustom_2ecc',['sugar2_custom.cc',['../d8/dcd/sugar2__custom_8cc.html',1,'']]],
-  ['sugar3_2ecc',['sugar3.cc',['../de/d28/sugar3_8cc.html',1,'']]],
-  ['sugar_5fsampling_2ecc',['sugar_sampling.cc',['../d6/d4f/sugar__sampling_8cc.html',1,'']]]
+  ['sugar_5fmetapop_2ecc',['sugar_metapop.cc',['../d5/d0a/sugar__metapop_8cc.html',1,'']]],
+  ['sugar_5fmetapop_5fcustom_5fdiploid_2ecc',['sugar_metapop_custom_diploid.cc',['../da/d34/sugar__metapop__custom__diploid_8cc.html',1,'']]],
+  ['sugar_5fmultilocus_2ecc',['sugar_multilocus.cc',['../d4/d8f/sugar__multilocus_8cc.html',1,'']]],
+  ['sugar_5fsampling_2ecc',['sugar_sampling.cc',['../d6/d4f/sugar__sampling_8cc.html',1,'']]],
+  ['sugar_5fsinglepop_2ecc',['sugar_singlepop.cc',['../db/dc1/sugar__singlepop_8cc.html',1,'']]],
+  ['sugar_5fsinglepop_5fcustom_5fdiploid_2ecc',['sugar_singlepop_custom_diploid.cc',['../dc/d4e/sugar__singlepop__custom__diploid_8cc.html',1,'']]]
 ];

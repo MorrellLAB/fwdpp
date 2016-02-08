@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.4</span>
+   &#160;<span id="projectnumber">0.4.5</span>
    </div>
   </td>
  </tr>
@@ -191,12 +191,12 @@ Policies in C++</h1>
 </ul>
 <h1><a class="anchor" id="TutAlgo"></a>
 Algorithms in fwdpp</h1>
-<p>For individual-based simulations, the primary algorithms are <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#ac44ca61d8a73f1c63127509413bd3a21">KTfwd::sample_diploid</a></b> and <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#ae746c8b4f9c980b1baf010f34290ff57">KTfwd::update_mutations</a></b>. All of these functions are in the name space <b><a class="el" href="../../da/d8b/namespaceKTfwd.html" title="The primary namespace defined by this library. ">KTfwd</a></b> and are documented both in the source code, via the doxygen output based on the source code, and finally in the example code that comes with the library.</p>
+<p>For individual-based simulations, the primary algorithms are <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#a0a185fec49aa68f3435e003b377cafd1">KTfwd::sample_diploid</a></b> and <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#ae746c8b4f9c980b1baf010f34290ff57">KTfwd::update_mutations</a></b>. All of these functions are in the name space <b><a class="el" href="../../da/d8b/namespaceKTfwd.html" title="The primary namespace defined by this library. ">KTfwd</a></b> and are documented both in the source code, via the doxygen output based on the source code, and finally in the example code that comes with the library.</p>
 <p>Some of the code in some of these algorithms is quite complex, largely because generic templates can have hideous syntax. You should't have to worry about that unless you like seeing how the sausage is made. Most users of <b>fwdpp</b> will be writing custom policies to stick into these algorithms and will likely be starting from the examples in order to get oriented. For them, the necessary information is to understand what is required of a policy. That is the subject of the remainder of this document.</p>
 <h1><a class="anchor" id="TutPolicies"></a>
 Policy requirements in fwdpp</h1>
 <p>This section discusses the requirements placed on policies in <b>fwdpp</b>. These requirements are essentially standards placed on data types in order to ensure that simulations behave properly. (Note that ""behave properly'' is not the same as "are implemented correctly''! It is totally possible to have a simulation that compiles with no warnings and runs without crashing but is not the model you had in mind.) The policy requirements are enforced during compilation, such that a nonconforming policy cannot result in a compiled simulation program.</p>
-<p>In the following sections, we will discuss policy requirements, how the built-in policies work, and also create some new policies. We'll build some policies for a simple quantitative trait with selection simulation, and later on combine them all to see how <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#ac44ca61d8a73f1c63127509413bd3a21">KTfwd::sample_diploid</a></b> would actually be called (for the case of a constant-sized population in an individual-based simulation). For additional and more complex examples, see the code for the example programs that come with the library.</p>
+<p>In the following sections, we will discuss policy requirements, how the built-in policies work, and also create some new policies. We'll build some policies for a simple quantitative trait with selection simulation, and later on combine them all to see how <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#a0a185fec49aa68f3435e003b377cafd1">KTfwd::sample_diploid</a></b> would actually be called (for the case of a constant-sized population in an individual-based simulation). For additional and more complex examples, see the code for the example programs that come with the library.</p>
 <p>Caveat emptor:</p>
 <ol type="1">
 <li>This document has been written ad lib, and there may be errors in the implementation of policies below. (The policies that are directly from the library have been copy/pasted, and so will be ok.)</li>
@@ -228,7 +228,7 @@ Policy requirements in fwdpp</h1>
 <div class="line">}</div>
 </div><!-- fragment --><p>So, std::function is a concrete type defining the <em>signature</em> of a function (return type and arguments). Internally, that signature must be met by your policies, and you can "bind" additional arguments to them in order to implement specific models.</p>
 <p>For the sake of being explicit, let's assume that we are using the following types in an individual-based simulation (in C++11, "using'' statements replace typedefs.):</p>
-<div class="fragment"><div class="line"><span class="keyword">using</span> <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">mtype</a> = <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a>;</div>
+<div class="fragment"><div class="line"><span class="keyword">using</span> <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">mtype</a> = <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a>;</div>
 <div class="line"><span class="keyword">using</span> mlist = std::list&lt;mtype&gt;;</div>
 <div class="line"><span class="keyword">using</span> <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">gtype</a> = <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base&lt;mtype&gt;</a>;</div>
 <div class="line"><span class="keyword">using</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a4cacd5f42d23c852c8b8a072f49b83bd">glist</a> = std::list&lt;gtype&gt;;</div>
@@ -250,7 +250,7 @@ Policy requirements in fwdpp</h1>
 <div class="line">}</div>
 </div><!-- fragment --><p>See the header file <b><a class="el" href="../../db/dd7/fitness__models_8hpp.html">fwdpp/fitness_models.hpp</a></b> for examples of fitness policies that I provide for "standard'' cases.</p>
 <p>A recombination policy takes two non-const references to <b>glist::iterator</b>, scrambles up those gametes appropriately, and returns an unsigned integer representing the number of crossovers, etc., between the two gametes.</p>
-<p>Typically, recombination would work via a call to <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#ae097a70b2ba7195a61f8744b0f0ecd3b">KTfwd::recombine_gametes</a></b>, or the convenience wrapper <b>KTfwd::genetics101</b>. Here is an example of the latter, taken from the example file <a class="el" href="../../d9/de8/diploid__ind_8cc.html">diploid_ind.cc</a>:</p>
+<p>Typically, recombination would work via a call to <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#aa61deb23ca543c4508c83be0690ae408">KTfwd::recombine_gametes</a></b>, or the convenience wrapper <b>KTfwd::genetics101</b>. Here is an example of the latter, taken from the example file <a class="el" href="../../d9/de8/diploid__ind_8cc.html">diploid_ind.cc</a>:</p>
 <div class="fragment"><div class="line">std::bind(KTfwd::genetics101(),</div>
 <div class="line">        <span class="comment">//These two placeholders are for  iterators to the two parental gametes</span></div>
 <div class="line">        std::placeholders::_1,std::placeholders::_2,</div>
@@ -396,7 +396,7 @@ Mutation policies</h2>
 <div class="line">  }</div>
 <div class="line">};</div>
 </div><!-- fragment --><p>We can now completely define our mutation model as a function (we could do it as a function object, too). In this example, We assume that we are using the boost list type and boost's memory pool allocator:</p>
-<div class="fragment"><div class="line"><span class="keyword">typedef</span> <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a>;</div>
+<div class="fragment"><div class="line"><span class="keyword">typedef</span> <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a> <a class="code" href="../../df/d24/demography_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a>;</div>
 <div class="line"><span class="keyword">typedef</span> boost::pool_allocator&lt;mtype&gt; <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a8da95455b301321cb0a4a7064ed8fe3d">mut_allocator</a>;</div>
 <div class="line"><span class="keyword">typedef</span> boost::container::list&lt;mtype,mut_allocator &gt; <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a>;</div>
 <div class="line">mtype mutmodel( gsl_rng * r,</div>
@@ -419,17 +419,17 @@ Mutation policies</h2>
 <div class="line">    <span class="keywordtype">bool</span> neutral = (gsl_rng_uniform(r) &lt; (mu_neutral)/(mu_neutral+mu_selected)) ? <span class="keyword">true</span> : <span class="keyword">false</span>;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//return neutral mutation</span></div>
-<div class="line">    <span class="keywordflow">if</span> ( neutral ) { <span class="keywordflow">return</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a>(pos,0,1,0); }</div>
+<div class="line">    <span class="keywordflow">if</span> ( neutral ) { <span class="keywordflow">return</span> <a class="code" href="../../df/d24/demography_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a>(pos,0,1,0); }</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//get selection coefficient</span></div>
 <div class="line">    <span class="keywordtype">double</span> s = gsl_ran_exponential(r,mean_s);</div>
 <div class="line">    <span class="keywordflow">if</span>( gsl_ran_uniform(r) &lt;= 0.5 ) { s = -1.*s; }</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">//the gsl_ran_flat call generates the dominance</span></div>
-<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a>(pos,s,1,gsl_ran_flat(r,0.,2.));</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="../../df/d24/demography_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a>(pos,s,1,gsl_ran_flat(r,0.,2.));</div>
 <div class="line">  }</div>
 </div><!-- fragment --><p>That is is&ndash;the mutation model is complete. We still need to deal with how mutations are entered into data structures representing the population, but we'll treat that later.</p>
-<p>The mutation policy is passed to any of the various <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#ac44ca61d8a73f1c63127509413bd3a21">KTfwd::sample_diploid</a></b> functions in the library like this:</p>
+<p>The mutation policy is passed to any of the various <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#a0a185fec49aa68f3435e003b377cafd1">KTfwd::sample_diploid</a></b> functions in the library like this:</p>
 <div class="fragment"><div class="line">std::bind(mutmodel,r, mu_neutral, mu_selected, mean_s, &amp;lookup);</div>
 </div><!-- fragment --><p>Or, using C++11 lambda expressions:</p>
 <div class="fragment"><div class="line">[&amp;](){ <span class="keywordflow">return</span> mutmodel(r,mu_neutral, mu_selected,mean_s,&amp;lookup); }</div>
@@ -451,9 +451,9 @@ Mutation policies</h2>
 <div class="line">          }</div>
 <div class="line"> };</div>
 <div class="line"></div>
-<div class="line"><span class="keyword">typedef</span> mut_e <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a>;</div>
+<div class="line"><span class="keyword">typedef</span> mut_e <a class="code" href="../../df/d24/demography_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a>;</div>
 </div><!-- fragment --><p>OK, our mutation model is going to be the following. It is infinitely-many sites with both neutral and non-neutral mutations:</p>
-<div class="fragment"><div class="line"><span class="keyword">typedef</span> <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a>;</div>
+<div class="fragment"><div class="line"><span class="keyword">typedef</span> <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a> <a class="code" href="../../df/d24/demography_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a>;</div>
 <div class="line"><span class="keyword">typedef</span> boost::pool_allocator&lt;mtype&gt; <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a8da95455b301321cb0a4a7064ed8fe3d">mut_allocator</a>;</div>
 <div class="line"><span class="keyword">typedef</span> boost::container::list&lt;mtype,mut_allocator &gt; <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#aeb0d6c95466be026b693c2c09289d58e">mlist</a>;</div>
 <div class="line">mtype mutmodel_Qtrait( gsl_rng * r, mlist * mutations,</div>
@@ -476,10 +476,10 @@ Mutation policies</h2>
 <div class="line">   <span class="keywordtype">bool</span> neutral = (gsl_rng_uniform(r) &lt; (mu_neutral)/(mu_neutral+mu_selected)) ? <span class="keyword">true</span> : <span class="keyword">false</span>;</div>
 <div class="line"></div>
 <div class="line">   <span class="comment">//return neutral mutation</span></div>
-<div class="line">   <span class="keywordflow">if</span> ( neutral ) { <span class="keywordflow">return</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a>(pos,1,<span class="keyword">true</span>,0); }</div>
+<div class="line">   <span class="keywordflow">if</span> ( neutral ) { <span class="keywordflow">return</span> <a class="code" href="../../df/d24/demography_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a>(pos,1,<span class="keyword">true</span>,0); }</div>
 <div class="line"></div>
 <div class="line">   <span class="comment">//the gsl_ran_gaussian call determines the effect size</span></div>
-<div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a>(pos,1,gsl_ran_gaussian(r,sigma_e),<span class="keyword">false</span>);</div>
+<div class="line">   <span class="keywordflow">return</span> <a class="code" href="../../df/d24/demography_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a>(pos,1,gsl_ran_gaussian(r,sigma_e),<span class="keyword">false</span>);</div>
 <div class="line"> }</div>
 </div><!-- fragment --><h2><a class="anchor" id="TutRec"></a>
 Recombination</h2>
@@ -540,7 +540,7 @@ Recombination</h2>
 <div class="line"><span class="comment">  }</span></div>
 <div class="line"><span class="comment">};</span></div>
 </div><!-- fragment --><p>The main thing a library user needs to focus on is the argument list for <b>operator()</b>. Specifically, it requires a variable of type <b>rec_pos_generator</b> which is stated in the documentation to be a recombination map policy. Thus, a recombination model is a policy that requires another policy. Further, __a recombination policy is passed non-const references to iterators to two gametes (g1 and g2 in the code above). Those iterators point to the parental gametes, and (as of fwdpp 0.3.3), they get "swapped' half to time to represent Mendelian segregation. Ultimately, g1 represents the chromosome that will be passed on to the offspring, and the data that it points to will be modified by the library's internal functions for recombination. See <a class="el" href="../../dc/d81/md_md_algo.html">Algorithmic details of recombination</a> for more details on how this works. (The details of crossing over changed radically in version 0.3.3, resulting in much faster simulations.)</p>
-<p>We pass this recombination model in an individual-based simulation to <a class="el" href="../../da/d8b/namespaceKTfwd.html#ac44ca61d8a73f1c63127509413bd3a21">KTfwd::sample_diploid</a> like this:</p>
+<p>We pass this recombination model in an individual-based simulation to <a class="el" href="../../da/d8b/namespaceKTfwd.html#a0a185fec49aa68f3435e003b377cafd1">KTfwd::sample_diploid</a> like this:</p>
 <div class="fragment"><div class="line"><span class="keyword">using</span> std::placeholders; <span class="comment">//_1,_2, etc.</span></div>
 <div class="line">std::bind(KTfwd::genetics101(),  <span class="comment">//the rec. model</span></div>
 <div class="line">_1,_2,                  <span class="comment">//placeholder for iterators to gametes</span></div>
@@ -550,13 +550,13 @@ Recombination</h2>
 <div class="line">           littler,                <span class="comment">//Avg. # of crossovers b/w two gametes per region per generation</span></div>
 <div class="line">           r,                      <span class="comment">//a gsl_rng *</span></div>
 <div class="line">           recmap)                 <span class="comment">//A genetic map policy like the one we made above</span></div>
-</div><!-- fragment --><p>Note: if you want to write a new recombination policy, you probably want to proceed by modifying how it interacts with the the recombination map policy. For example, if a recombination at position <img class="formulaInl" alt="$x$" src="../../form_22.png"/> means that the next position must be <img class="formulaInl" alt="$\geq 1.5x$" src="../../form_50.png"/> (in some model of interference). Doing so requires making a custom version of the <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#ae097a70b2ba7195a61f8744b0f0ecd3b">KTfwd::recombine_gametes</a></b> function. If you read the code for that function, you will see where the recombination map policy is called. If you try to modify the code below that, then good luck to you. It isn't super-complicated, but tread with caution.</p>
+</div><!-- fragment --><p>Note: if you want to write a new recombination policy, you probably want to proceed by modifying how it interacts with the the recombination map policy. For example, if a recombination at position <img class="formulaInl" alt="$x$" src="../../form_22.png"/> means that the next position must be <img class="formulaInl" alt="$\geq 1.5x$" src="../../form_50.png"/> (in some model of interference). Doing so requires making a custom version of the <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#aa61deb23ca543c4508c83be0690ae408">KTfwd::recombine_gametes</a></b> function. If you read the code for that function, you will see where the recombination map policy is called. If you try to modify the code below that, then good luck to you. It isn't super-complicated, but tread with caution.</p>
 <h2><a class="anchor" id="TutMig"></a>
 Migration</h2>
 <p>Migration policies are only used in individual-based simulations.</p>
 <p>For individual-based simulations involving a metapopulations, parent 1 comes from population <img class="formulaInl" alt="$i$" src="../../form_35.png"/> and may or not be a migrant. Parent two comes from population <img class="formulaInl" alt="$j$" src="../../form_51.png"/> and <img class="formulaInl" alt="$j = i$" src="../../form_52.png"/> in the case of no migration, otherwise <img class="formulaInl" alt="$j \neq i$" src="../../form_53.png"/>. Migration policies may be the trickiest to write effectively because spatial models of migration can be complicated. However, a migration policies requirements are simple. A migration policy is a function or function object taking an argument if type size_t and returning a value of type size_t. The argument is the index of population <img class="formulaInl" alt="$i$" src="../../form_35.png"/>, and the return value is the index of population <img class="formulaInl" alt="$j$" src="../../form_51.png"/>.</p>
 <p>For example, let's assume two demes with migration rate <img class="formulaInl" alt="$m$" src="../../form_54.png"/>. Here, <img class="formulaInl" alt="$m$" src="../../form_54.png"/> is the probability that a parent is a migrant. This migration rate is equal between the two demes. Because we are in a C-like language, the values allowed for the <b>size_t</b> are <img class="formulaInl" alt="$0 \leq i \leq 1$" src="../../form_55.png"/>. The migration policy is thus defined as follows:</p>
-<div class="fragment"><div class="line"><span class="keywordtype">size_t</span> <a class="code" href="../../da/d50/sugar2_8cc.html#a4862499cb62bfa43943001b59fe6dc0d">migpop</a>(<span class="keyword">const</span> <span class="keywordtype">size_t</span> &amp; source_pop, gsl_rng * r, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; mig_prob)</div>
+<div class="fragment"><div class="line"><span class="keywordtype">size_t</span> <a class="code" href="../../d5/d0a/sugar__metapop_8cc.html#a4862499cb62bfa43943001b59fe6dc0d">migpop</a>(<span class="keyword">const</span> <span class="keywordtype">size_t</span> &amp; source_pop, gsl_rng * r, <span class="keyword">const</span> <span class="keywordtype">double</span> &amp; mig_prob)</div>
 <div class="line">{</div>
 <div class="line">  <span class="comment">//if parent is a migrant</span></div>
 <div class="line">  <span class="keywordflow">if</span>( gsl_rng_uniform(r) &lt; mig_prob )</div>
@@ -568,7 +568,7 @@ Migration</h2>
 <div class="line">  <span class="keywordflow">return</span> source_pop;</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>And we pass it to <b>KTfwd::ample_diploid</b> like this:</p>
-<div class="fragment"><div class="line">std::bind(<a class="code" href="../../da/d50/sugar2_8cc.html#a4862499cb62bfa43943001b59fe6dc0d">migpop</a>, <span class="comment">//the policy</span></div>
+<div class="fragment"><div class="line">std::bind(<a class="code" href="../../d5/d0a/sugar__metapop_8cc.html#a4862499cb62bfa43943001b59fe6dc0d">migpop</a>, <span class="comment">//the policy</span></div>
 <div class="line">std::placeholders::_1,     <span class="comment">//placeholder for population index i</span></div>
 <div class="line">r,     <span class="comment">//gsl_rng *</span></div>
 <div class="line">m)     <span class="comment">//migration rate</span></div>
@@ -601,7 +601,7 @@ Fitness</h2>
 <div class="line">  }</div>
 <div class="line">};</div>
 </div><!-- fragment --><p>That last variable, scaling, means that fitness is the product of <img class="formulaInl" alt="$1, 1+sh, 1+s \times \mathrm{scaling}$" src="../../form_56.png"/> over sites. This allows you to recreate results from the different parts of the literature that use <img class="formulaInl" alt="$scaling = 1$" src="../../form_57.png"/> and 2. Many classic results are based on a scaling of 2.</p>
-<p>To use the multiplicative fitness policy in your simulations, this goes to <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#ac44ca61d8a73f1c63127509413bd3a21">KTfwd::sample_diploid</a></b>:</p>
+<p>To use the multiplicative fitness policy in your simulations, this goes to <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#a0a185fec49aa68f3435e003b377cafd1">KTfwd::sample_diploid</a></b>:</p>
 <div class="fragment"><div class="line">std::bind(multiplicative_diploid(),std::placeholders::_1,std::placeholders::_2,2.)</div>
 </div><!-- fragment --><p>If you wish to create your own site-dependent fitness policies, the recipe is:</p>
 <ol type="1">
@@ -668,7 +668,7 @@ Updating and removal policies</h2>
 Putting it all togeter (kinda)</h1>
 <p>Ok, once we have defined our mutation types, our containers, and our policies, a single generation of a constant-sized population in an individual-based simulation is evolved a follows:</p>
 <div class="fragment"><div class="line"><span class="keyword">using</span> std::placeholders; <span class="comment">//_1,_2, etc.</span></div>
-<div class="line"><span class="keywordtype">double</span> wbar = <a class="code" href="../../da/d8b/namespaceKTfwd.html#ac44ca61d8a73f1c63127509413bd3a21">KTfwd::sample_diploid</a>(r,</div>
+<div class="line"><span class="keywordtype">double</span> wbar = <a class="code" href="../../da/d8b/namespaceKTfwd.html#a0a185fec49aa68f3435e003b377cafd1">KTfwd::sample_diploid</a>(r,</div>
 <div class="line">                                    &amp;gametes,  <span class="comment">//non-const pointer to gametes</span></div>
 <div class="line">                                    &amp;diploids, <span class="comment">//non-const pointer to diploids</span></div>
 <div class="line">                                    &amp;mutations, <span class="comment">//non-const pointer to mutations</span></div>

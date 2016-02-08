@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.4</span>
+   &#160;<span id="projectnumber">0.4.5</span>
    </div>
   </td>
  </tr>
@@ -183,7 +183,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">        <a class="code" href="../../d5/da7/extensions_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> pop2(pop);</div>
 <div class="line">}</div>
 </div><!-- fragment --><h4>Details</h4>
-<p>These "poptypes" contain all of the types needed to make calls to <a class="el" href="../../da/d8b/namespaceKTfwd.html#ac44ca61d8a73f1c63127509413bd3a21">KTfwd::sample_diploid</a>, etc.:</p>
+<p>These "poptypes" contain all of the types needed to make calls to <a class="el" href="../../da/d8b/namespaceKTfwd.html#a0a185fec49aa68f3435e003b377cafd1">KTfwd::sample_diploid</a>, etc.:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../df/df8/diploid_8hh.html">fwdpp/diploid.hh</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#define FWDPP_SUGAR_USE_BOOST</span></div>
 <div class="line"><span class="preprocessor"></span><span class="preprocessor">#include &lt;<a class="code" href="../../da/dd8/GSLrng__t_8hpp.html">fwdpp/sugar/GSLrng_t.hpp</a>&gt;</span></div>
@@ -205,7 +205,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">  std::function&lt;double(void)&gt; recmap = std::bind(gsl_rng_uniform,<a class="code" href="../../d6/d4f/sugar__sampling_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>);</div>
 <div class="line">  <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> generation= 0 ; generation &lt; 10 ; ++generation )</div>
 <div class="line">    {</div>
-<div class="line">      <span class="keywordtype">double</span> wbar = <a class="code" href="../../da/d8b/namespaceKTfwd.html#ac44ca61d8a73f1c63127509413bd3a21">KTfwd::sample_diploid</a>(<a class="code" href="../../d6/d4f/sugar__sampling_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>,</div>
+<div class="line">      <span class="keywordtype">double</span> wbar = <a class="code" href="../../da/d8b/namespaceKTfwd.html#a0a185fec49aa68f3435e003b377cafd1">KTfwd::sample_diploid</a>(<a class="code" href="../../d6/d4f/sugar__sampling_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>,</div>
 <div class="line">                                          &amp;pop.gametes,</div>
 <div class="line">                                          &amp;pop.diploids,</div>
 <div class="line">                                          &amp;pop.mutations,</div>
@@ -240,7 +240,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> mtype&gt; <span class="keyword">using</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop_t</a> = <span class="comment">//something</span></div>
 </div><!-- fragment --><div class="fragment"><div class="line"><span class="comment">//In 0.3.1, the default diploid_t is a pair of iterators pointing to gametes.</span></div>
 <div class="line"><span class="comment">//You may over-ride this by providing your own diploid type.</span></div>
-<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> <a class="code" href="../../d8/d48/bneck__selection__dist_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a>,</div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> <a class="code" href="../../df/d24/demography_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a>,</div>
 <div class="line">        <span class="keyword">typename</span> <a class="code" href="../../dc/dfb/structdiploid__t.html">diploid_t</a> = std::pair&lt;typename glist_t&lt;mtype&gt;::iterator,</div>
 <div class="line">                                       <span class="keyword">typename</span> glist_t&lt;mtype&gt;::iterator&gt; &gt; <span class="keyword">using</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop_t</a> = <span class="comment">//something</span></div>
 </div><!-- fragment --><h3>Simplifying serializing of simulated data</h3>
@@ -261,7 +261,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">        s(pop,<a class="code" href="../../de/d25/structKTfwd_1_1mutation__writer.html">mwriter</a>);</div>
 <div class="line">        <a class="code" href="../../d5/da7/extensions_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> pop2(0);</div>
 <div class="line">        <span class="comment">//Copy pop into pop2 via the buffer in s</span></div>
-<div class="line">        <a class="code" href="../../d6/dde/structKTfwd_1_1deserialize.html">KTfwd::deserialize</a>()(pop2,s,<a class="code" href="../../d0/db9/sugar1_8cc.html#aaebd18385ab3036c07b4bcbe6be0d305">mreader</a>());</div>
+<div class="line">        <a class="code" href="../../d6/dde/structKTfwd_1_1deserialize.html">KTfwd::deserialize</a>()(pop2,s,<a class="code" href="../../d5/d0a/sugar__metapop_8cc.html#aaebd18385ab3036c07b4bcbe6be0d305">mreader</a>());</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>The above will also work with the _serialized versions of the various "poptypes".</p>
 <h4>Details</h4>

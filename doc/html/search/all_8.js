@@ -5,7 +5,6 @@ var searchData=
   ['index_5ft',['index_t',['../d6/d90/structKTfwd_1_1gamete__base.html#ae45b0df7d3aaa223558031131da04816',1,'KTfwd::gamete_base']]],
   ['infsites',['infsites',['../df/d07/structKTfwd_1_1infsites.html',1,'KTfwd']]],
   ['infsites_2ehpp',['infsites.hpp',['../dc/d32/infsites_8hpp.html',1,'']]],
-  ['inner_5ft',['inner_t',['../d0/d7e/structKTfwd_1_1fwdpp__internal_1_1gamete__lookup.html#ade35514acdcf46fede3dbf95924c0a65',1,'KTfwd::fwdpp_internal::gamete_lookup']]],
   ['insertion_5fpolicies_2ehpp',['insertion_policies.hpp',['../d0/d13/insertion__policies_8hpp.html',1,'']]],
   ['io_2ehpp',['IO.hpp',['../df/d9f/IO_8hpp.html',1,'']]],
   ['iohelp_2ehpp',['IOhelp.hpp',['../d6/d27/IOhelp_8hpp.html',1,'']]],

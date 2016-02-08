@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.4</span>
+   &#160;<span id="projectnumber">0.4.5</span>
    </div>
   </td>
  </tr>
@@ -119,7 +119,7 @@ Macros</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr class="memitem:ab95d5809de5b32335213c961a4e895af"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d77/HOC__ind_8cc.html#ab95d5809de5b32335213c961a4e895af">mtype</a> = <a class="el" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a></td></tr>
 <tr class="separator:ab95d5809de5b32335213c961a4e895af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1797c37ecd3700357dbddadc6838b6d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d77/HOC__ind_8cc.html#aa1797c37ecd3700357dbddadc6838b6d">poptype</a> = <a class="el" href="../../d0/db9/sugar1_8cc.html#aa00dd5387565dec3455a42fdce5a26f5">singlepop_t</a></td></tr>
+<tr class="memitem:aa1797c37ecd3700357dbddadc6838b6d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d77/HOC__ind_8cc.html#aa1797c37ecd3700357dbddadc6838b6d">poptype</a> = <a class="el" href="../../dc/dec/gamete__cleaner_8cc.html#aa00dd5387565dec3455a42fdce5a26f5">singlepop_t</a></td></tr>
 <tr class="separator:aa1797c37ecd3700357dbddadc6838b6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -148,7 +148,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a> =  <a class="el" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a></td>
+          <td class="memname">using <a class="el" href="../../df/d24/demography_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a> =  <a class="el" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -163,10 +163,10 @@ Functions</h2></td></tr>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../df/df8/diploid_8hh.html">fwdpp/diploid.hh</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../da/dd8/GSLrng__t_8hpp.html">fwdpp/sugar/GSLrng_t.hpp</a>&gt;</span></div>
 <div class="line"></div>
-<div class="line"><span class="keyword">using</span> <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">mtype</a> = <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a>;</div>
+<div class="line"><span class="keyword">using</span> <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">mtype</a> = <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a>;</div>
 <div class="line"><span class="preprocessor">#define SINGLEPOP_SIM</span></div>
 <div class="line"><span class="preprocessor"></span><span class="preprocessor">#include &lt;<a class="code" href="../../df/d10/common__ind_8hpp.html">common_ind.hpp</a>&gt;</span></div>
-<div class="line"><span class="keyword">using</span> <a class="code" href="../../d5/da7/extensions_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> = <a class="code" href="../../d0/db9/sugar1_8cc.html#aa00dd5387565dec3455a42fdce5a26f5">singlepop_t</a>;</div>
+<div class="line"><span class="keyword">using</span> <a class="code" href="../../d5/da7/extensions_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> = <a class="code" href="../../dc/dec/gamete__cleaner_8cc.html#aa00dd5387565dec3455a42fdce5a26f5">singlepop_t</a>;</div>
 <div class="line"></div>
 <div class="line"><span class="keyword">struct </span><a class="code" href="../../dc/d70/structHOChap.html">HOChap</a></div>
 <div class="line">{</div>
@@ -252,7 +252,7 @@ Functions</h2></td></tr>
 <div class="line">      <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> generation = 0; generation &lt; ngens; ++generation )</div>
 <div class="line">        {</div>
 <div class="line">          <span class="comment">//Iterate the population through 1 generation</span></div>
-<div class="line">          <span class="keywordtype">double</span> wbar = <a class="code" href="../../da/d8b/namespaceKTfwd.html#ac44ca61d8a73f1c63127509413bd3a21">KTfwd::sample_diploid</a>(r.get(),</div>
+<div class="line">          <span class="keywordtype">double</span> wbar = <a class="code" href="../../da/d8b/namespaceKTfwd.html#a0a185fec49aa68f3435e003b377cafd1">KTfwd::sample_diploid</a>(r.get(),</div>
 <div class="line">                                              pop.gametes,  <span class="comment">//non-const pointer to gametes</span></div>
 <div class="line">                                              pop.diploids, <span class="comment">//non-const pointer to diploids</span></div>
 <div class="line">                                              pop.mutations, <span class="comment">//non-const pointer to mutations</span></div>
@@ -302,7 +302,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d5/da7/extensions_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> =  <a class="el" href="../../d0/db9/sugar1_8cc.html#aa00dd5387565dec3455a42fdce5a26f5">singlepop_t</a></td>
+          <td class="memname">using <a class="el" href="../../d5/da7/extensions_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> =  <a class="el" href="../../dc/dec/gamete__cleaner_8cc.html#aa00dd5387565dec3455a42fdce5a26f5">singlepop_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">

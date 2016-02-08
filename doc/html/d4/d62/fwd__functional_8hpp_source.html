@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.4</span>
+   &#160;<span id="projectnumber">0.4.5</span>
    </div>
   </td>
  </tr>
@@ -118,18 +118,33 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      <span class="keywordflow">return</span>( std::max(lhs,rhs)-std::min(lhs,rhs) &lt;= std::numeric_limits&lt;T&gt;::epsilon() );</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  };</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="comment">/* \brief Policy telling library not to remove any mutations from gametes after sampling</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">     \note This is an empty struct that functions as a dispatch tag for library internals</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">   */</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../db/dcf/structKTfwd_1_1remove__nothing.html">   31</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../db/dcf/structKTfwd_1_1remove__nothing.html">remove_nothing</a></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  {</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  };</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* _FWD_FUNCTIONAL_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">  /*! \brief Policy telling library to remove neutral mutations from gametes after sampling</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../d1/db9/structKTfwd_1_1remove__neutral.html">   37</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="../../d1/db9/structKTfwd_1_1remove__neutral.html">remove_neutral</a></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> mtype&gt;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../d1/db9/structKTfwd_1_1remove__neutral.html#a7522e1784894cb890265b585fe85edc6">   40</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="../../d1/db9/structKTfwd_1_1remove__neutral.html#a7522e1784894cb890265b585fe85edc6">operator()</a>(<span class="keyword">const</span> <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">mtype</a> &amp; m)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <span class="keywordflow">return</span> m.<a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html#acfb3b4c94516cbbc5c28a12e1ad575b3">neutral</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  };</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* _FWD_FUNCTIONAL_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="structKTfwd_1_1remove__neutral_html_a7522e1784894cb890265b585fe85edc6"><div class="ttname"><a href="../../d1/db9/structKTfwd_1_1remove__neutral.html#a7522e1784894cb890265b585fe85edc6">KTfwd::remove_neutral::operator()</a></div><div class="ttdeci">bool operator()(const mtype &amp;m) const </div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:40</div></div>
 <div class="ttc" id="structKTfwd_1_1equal__eps_html"><div class="ttname"><a href="../../dc/d8e/structKTfwd_1_1equal__eps.html">KTfwd::equal_eps</a></div><div class="ttdoc">Returns true if std::max(lhs,rhs)-std::min(lhs,rhs) &lt;= std::numeric_limits&lt;T&gt;::epsilon() ...</div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:15</div></div>
+<div class="ttc" id="structKTfwd_1_1popgenmut_html"><div class="ttname"><a href="../../dc/dcc/structKTfwd_1_1popgenmut.html">KTfwd::popgenmut</a></div><div class="ttdoc">Mutations with selection, dominance, and tracking age of origin The &quot;standard&quot; mutation type for popu...</div><div class="ttdef"><b>Definition:</b> popgenmut.hpp:16</div></div>
 <div class="ttc" id="structKTfwd_1_1equal__eps_html_aa6ae4769e2ca6f82c7437ac6e1cc19c1"><div class="ttname"><a href="../../dc/d8e/structKTfwd_1_1equal__eps.html#aa6ae4769e2ca6f82c7437ac6e1cc19c1">KTfwd::equal_eps::operator()</a></div><div class="ttdeci">bool operator()(const T &amp;lhs, const T &amp;rhs) const </div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:22</div></div>
+<div class="ttc" id="structKTfwd_1_1remove__neutral_html"><div class="ttname"><a href="../../d1/db9/structKTfwd_1_1remove__neutral.html">KTfwd::remove_neutral</a></div><div class="ttdoc">Policy telling library to remove neutral mutations from gametes after sampling. </div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:37</div></div>
 <div class="ttc" id="structKTfwd_1_1equal__eps_html_abecb68a843d349e17091ced37d2d38aa"><div class="ttname"><a href="../../dc/d8e/structKTfwd_1_1equal__eps.html#abecb68a843d349e17091ced37d2d38aa">KTfwd::equal_eps::result_type</a></div><div class="ttdeci">bool result_type</div><div class="ttdoc">Returns true if std::max(lhs,rhs)-std::min(lhs,rhs) &lt;= std::numeric_limits&lt;T&gt;::epsilon() Returns true...</div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:20</div></div>
+<div class="ttc" id="structKTfwd_1_1mutation__base_html_acfb3b4c94516cbbc5c28a12e1ad575b3"><div class="ttname"><a href="../../d1/da4/structKTfwd_1_1mutation__base.html#acfb3b4c94516cbbc5c28a12e1ad575b3">KTfwd::mutation_base::neutral</a></div><div class="ttdeci">bool neutral</div><div class="ttdoc">Is the mutation neutral or not? </div><div class="ttdef"><b>Definition:</b> forward_types.hpp:34</div></div>
 <div class="ttc" id="structKTfwd_1_1remove__nothing_html"><div class="ttname"><a href="../../db/dcf/structKTfwd_1_1remove__nothing.html">KTfwd::remove_nothing</a></div><div class="ttdef"><b>Definition:</b> fwd_functional.hpp:31</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

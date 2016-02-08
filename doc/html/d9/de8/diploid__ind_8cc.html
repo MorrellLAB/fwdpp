@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.4</span>
+   &#160;<span id="projectnumber">0.4.5</span>
    </div>
   </td>
  </tr>
@@ -137,7 +137,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d8/d48/bneck__selection__dist_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a> =  <a class="el" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">KTfwd::popgenmut</a></td>
+          <td class="memname">using <a class="el" href="../../df/d24/demography_8cc.html#a083a8b5227372e716d8614732edb6c0b">mtype</a> =  <a class="el" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">KTfwd::popgenmut</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -159,7 +159,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="comment">//Pull mutation model from fwdpp&#39;s &quot;sugar&quot; layer  (@ref md_md_sugar)</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../dc/d32/infsites_8hpp.html">fwdpp/sugar/infsites.hpp</a>&gt;</span></div>
 <div class="line"><span class="comment">//typedef mutation_with_age mtype;</span></div>
-<div class="line"><span class="keyword">using</span> <a class="code" href="../../d1/d7f/structKTfwd_1_1mutation.html">mtype</a> = <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">KTfwd::popgenmut</a>;</div>
+<div class="line"><span class="keyword">using</span> <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">mtype</a> = <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">KTfwd::popgenmut</a>;</div>
 <div class="line"><span class="preprocessor">#define SINGLEPOP_SIM</span></div>
 <div class="line"><span class="preprocessor"></span><span class="preprocessor">#include &lt;<a class="code" href="../../df/d10/common__ind_8hpp.html">common_ind.hpp</a>&gt;</span></div>
 <div class="line"></div>
@@ -204,13 +204,6 @@ Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">  <span class="keywordflow">while</span>(nreps--)</div>
 <div class="line">    {</div>
-<div class="line">      <span class="comment">/*</span></div>
-<div class="line"><span class="comment">         Initialize a population of N diploids via KTfwd::singlepop (fwdpp/sugar/singlepop.hpp)</span></div>
-<div class="line"><span class="comment">         Starting in fwdpp 0.3.3, the sugar struct constructor may take a second argument,</span></div>
-<div class="line"><span class="comment">         which reserves memory for the containers used to hold the intermediate results of</span></div>
-<div class="line"><span class="comment">         recombination events.  The default is 100, which is probably too small for large-4Nu</span></div>
-<div class="line"><span class="comment">         simulations, so we use the call to std::max to select something better.</span></div>
-<div class="line"><span class="comment">      */</span></div>
 <div class="line">      <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop_t</a> pop(N);</div>
 <div class="line">      pop.mutations.reserve(<span class="keywordtype">size_t</span>(std::ceil(std::log(2*N)*theta+0.667*theta)));</div>
 <div class="line">      <span class="keywordtype">unsigned</span> generation;</div>
@@ -219,7 +212,7 @@ Functions</h2></td></tr>
 <div class="line">      <span class="keywordflow">for</span>( generation = 0; generation &lt; ngens; ++generation )</div>
 <div class="line">        {</div>
 <div class="line">          <span class="comment">//Iterate the population through 1 generation</span></div>
-<div class="line">          wbar = <a class="code" href="../../da/d8b/namespaceKTfwd.html#ac44ca61d8a73f1c63127509413bd3a21">KTfwd::sample_diploid</a>(<a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>.get(),</div>
+<div class="line">          wbar = <a class="code" href="../../da/d8b/namespaceKTfwd.html#a0a185fec49aa68f3435e003b377cafd1">KTfwd::sample_diploid</a>(<a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>.get(),</div>
 <div class="line">                                       pop.gametes,  <span class="comment">//non-const reference to gametes</span></div>
 <div class="line">                                       pop.diploids, <span class="comment">//non-const reference to diploids</span></div>
 <div class="line">                                       pop.mutations, <span class="comment">//non-const reference to mutations</span></div>
@@ -259,9 +252,9 @@ Functions</h2></td></tr>
 <div class="line">          assert(<a class="code" href="../../da/d8b/namespaceKTfwd.html#a3f97e26108d5f6b038e9919264e316c1">KTfwd::check_sum</a>(pop.gametes,twoN));</div>
 <div class="line">        }</div>
 <div class="line">      Sequence::SimData sdata;</div>
-<div class="line">      </div>
+<div class="line"></div>
 <div class="line">      std::vector&lt;std::pair&lt;double,std::string&gt; &gt; mslike = <a class="code" href="../../d7/de2/group__samplingPopsInd.html#ga592a1d6b977c5aca8656a118a944ddbf">KTfwd::ms_sample</a>(<a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>.get(),pop.mutations,pop.gametes,pop.diploids,samplesize1,<span class="keyword">true</span>);</div>
-<div class="line">      </div>
+<div class="line"></div>
 <div class="line">      <span class="keywordflow">if</span>(!mslike.empty())</div>
 <div class="line">        {</div>
 <div class="line">          sdata.assign(mslike.begin(),mslike.end());</div>
@@ -310,7 +303,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a2">diploid_ind.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a1">diploid_ind.cc</a>.</dd>
 </dl>
 </div>
 </div>

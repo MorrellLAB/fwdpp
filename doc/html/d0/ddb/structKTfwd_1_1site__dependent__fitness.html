@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.4</span>
+   &#160;<span id="projectnumber">0.4.5</span>
    </div>
   </td>
  </tr>
@@ -122,8 +122,8 @@ Public Member Functions</h2></td></tr>
 <p>Function object for fitness as a function of mutations in a diploid. Examples include the standard multiplicative and additive models of population genetics. This routine idenfifies all homozygous/heterozygous mutations in a diploid and updates the diploid's fitness according to user-defined policies. See the code for <a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html" title="Multiplicative fitness across sites. ">KTfwd::multiplicative_diploid</a> and <a class="el" href="../../d6/d39/structKTfwd_1_1additive__diploid.html" title="Additive fitness across sites. ">KTfwd::additive_diploid</a> for specific examples. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">g1</td><td>An gamete </td></tr>
-    <tr><td class="paramname">g2</td><td>An gamete </td></tr>
+    <tr><td class="paramname">g1</td><td>A gamete </td></tr>
+    <tr><td class="paramname">g2</td><td>A gamete </td></tr>
     <tr><td class="paramname">mutations</td><td>Container of mutations </td></tr>
     <tr><td class="paramname">fpol_hom</td><td>Policy for updating fitness for the case of homozygosity for a mutant </td></tr>
     <tr><td class="paramname">fpol_het</td><td>Policy for updating fitness for the case of heterozygosity for a mutant </td></tr>
@@ -133,7 +133,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The fitness of a diploid with genotype g1 and g2 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The updating policies must take a non-const reference to a double as the first argument and an mcont_t::value_type as the second. Further, they must not return anything. Any remaining arguments needed should be passed via a mechanism such as std::bind and a function object, or via a lambda expression. See <a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html" title="Multiplicative fitness across sites. ">KTfwd::multiplicative_diploid</a> for an example implementation. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#_a7">migsel_ind.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#_a8">migsel_ind.cc</a>.</dd>
 </dl></div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a class="anchor" id="a0eeb4a26d85d44fefe0a2122c18413e9"></a>
 <div class="memitem">

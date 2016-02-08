@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.4</span>
+   &#160;<span id="projectnumber">0.4.5</span>
    </div>
   </td>
  </tr>
@@ -134,80 +134,74 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">    Recombine gametes[g1] and gametes[g2] at positions determined by rec_pol</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">    \param Gametes A container of gametes</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">    \param gamete_lookup</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">    \param gamete_recycling_bin</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">    \param neutral A container for neutral mutations. Will be cleared and updated.</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">    \param selected A container for non-neutral mutations. Will be cleared and updated.</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">    \param rec_pol Function to generate recombination positions</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">    \param g1 Index of gamete 1 to recombine</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">    \param g2 Index of gamete 2 to recombine</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">    \param mutation A container of mutations</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">    </span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">    \return A pair.  The first element is the index of the recombinant gamete.  The second element is the number of breakpoints </span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">    where recombination occurred.  Typically, the latter is not needed.</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">  */</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> gcont_t,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;           <span class="keyword">typename</span> mcont_t,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;           <span class="keyword">typename</span> lookup_t,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;           <span class="keyword">typename</span> recbin_t,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;           <span class="keyword">typename</span> recpol_t&gt;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  std::pair&lt;std::size_t,unsigned&gt; <a class="code" href="../../da/d8b/namespaceKTfwd.html#a5a8e91783590918a0db6da72636ed17e">recombination</a>(gcont_t &amp; gametes,</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                                lookup_t &amp; gamete_lookup,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                                recbin_t &amp; gamete_recycling_bin,</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                                <span class="keyword">typename</span> gcont_t::value_type::mutation_container &amp; neutral,</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                                <span class="keyword">typename</span> gcont_t::value_type::mutation_container &amp; selected,</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                                <span class="keyword">const</span> recpol_t &amp; rec_pol,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                                <span class="keyword">const</span> std::size_t g1,</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                                <span class="keyword">const</span> std::size_t g2,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                                <span class="keyword">const</span> mcont_t &amp; mutations);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="comment"></span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">  /*!</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">    Overload for fixed xover positions.</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">    Typically, this is called by the version taking </span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">    a recombination policy as an argument.</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">    If you wish to call this version directly,</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">    only do so if length pos &gt; 1, pos is sorted</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">    in ascending order, and the last value in </span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">    pos is std::numeric_limits&lt;double&gt;::max(),</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">    which is assumed to be a terminating value </span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">    larger than any possible value for a mutation&#39;s position.</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">    \param pos A vector (with interface of std::vector) containing recombination breakpoints.  See note below.</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">    \param gametes A container of the gametes segregating in the population</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">    \param g1 An iterator, derived from gametes, representing one parental gamete.</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">    \param g2 An iterator, derived from gametes, representing the other parental gamete.</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">    \param gamete_lookup The return value of KTfwd::fwdpp_internal::gamete_lookup_table, which gets passed in via sample_diploid</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">    \param gamete_recycling_bin An object returned by a call to KTfwd::fwdpp_internal::make_gamete_queue</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">    \param neutral A container for neutral mutations. Will be cleared and updated.</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">    \param selected A container for non-neutral mutations. Will be cleared and updated.</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">    \return The number of breakpoints, which equals pos.size() - 1, as that is fixed in this case.</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">    \note The vector pos must be sorted (ascending order) and must contain the value std::numeric_limits&lt;double&gt;::max() as a terminating value.</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">  */</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keyword">template</span>&lt; <span class="keyword">typename</span> iterator_type,</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keyword">typename</span> vec_t,</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keyword">typename</span> glist_t,</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keyword">typename</span> glookup_t,</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keyword">typename</span> queue_t&gt;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordtype">unsigned</span> <a class="code" href="../../da/d8b/namespaceKTfwd.html#ae097a70b2ba7195a61f8744b0f0ecd3b">recombine_gametes</a>( <span class="keyword">const</span> vec_t &amp; pos,</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                              glist_t * gametes,</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                              iterator_type &amp; g1,</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                              iterator_type &amp; g2,</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                              glookup_t &amp; gamete_lookup,</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                              queue_t &amp; gamete_recycling_bin,</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                              <span class="keyword">typename</span> iterator_type::value_type::mutation_container &amp; neutral,</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                              <span class="keyword">typename</span> iterator_type::value_type::mutation_container &amp; selected );</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#endif // __FWDPP_RECOMBINATION_HPP__ </span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;fwdpp/recombination.tcc&gt;</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">    \param gamete_recycling_bin</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">    \param neutral A container for neutral mutations. Will be cleared and updated.</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">    \param selected A container for non-neutral mutations. Will be cleared and updated.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">    \param rec_pol Function to generate recombination positions</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">    \param g1 Index of gamete 1 to recombine</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">    \param g2 Index of gamete 2 to recombine</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">    \param mutation A container of mutations</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">    \return A pair.  The first element is the index of the recombinant gamete.  The second element is the number of breakpoints</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">    where recombination occurred.  Typically, the latter is not needed.</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">  */</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> gcont_t,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;           <span class="keyword">typename</span> mcont_t,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;           <span class="keyword">typename</span> recbin_t,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;           <span class="keyword">typename</span> recpol_t&gt;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  std::pair&lt;std::size_t,unsigned&gt; <a class="code" href="../../da/d8b/namespaceKTfwd.html#ace5a12fb8d848a75a76ab00412bad241">recombination</a>(gcont_t &amp; gametes,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                                recbin_t &amp; gamete_recycling_bin,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                                <span class="keyword">typename</span> gcont_t::value_type::mutation_container &amp; neutral,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                                <span class="keyword">typename</span> gcont_t::value_type::mutation_container &amp; selected,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                                <span class="keyword">const</span> recpol_t &amp; rec_pol,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                                <span class="keyword">const</span> std::size_t g1,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                                <span class="keyword">const</span> std::size_t g2,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                                <span class="keyword">const</span> mcont_t &amp; mutations);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">  /*!</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">    Overload for fixed xover positions.</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">    Typically, this is called by the version taking</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">    a recombination policy as an argument.</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">    If you wish to call this version directly,</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">    only do so if length pos &gt; 1, pos is sorted</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">    in ascending order, and the last value in</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">    pos is std::numeric_limits&lt;double&gt;::max(),</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">    which is assumed to be a terminating value</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">    larger than any possible value for a mutation&#39;s position.</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">    \param pos A vector (with interface of std::vector) containing recombination breakpoints.  See note below.</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">    \param gametes A container of the gametes segregating in the population</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">    \param g1 An iterator, derived from gametes, representing one parental gamete.</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">    \param g2 An iterator, derived from gametes, representing the other parental gamete.</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">    \param gamete_recycling_bin An object returned by a call to KTfwd::fwdpp_internal::make_gamete_queue</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">    \param neutral A container for neutral mutations. Will be cleared and updated.</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">    \param selected A container for non-neutral mutations. Will be cleared and updated.</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">    \return The number of breakpoints, which equals pos.size() - 1, as that is fixed in this case.</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">    \note The vector pos must be sorted (ascending order) and must contain the value std::numeric_limits&lt;double&gt;::max() as a terminating value.</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">  */</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keyword">template</span>&lt; <span class="keyword">typename</span> iterator_type,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keyword">typename</span> vec_t,</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keyword">typename</span> glist_t,</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keyword">typename</span> queue_t&gt;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordtype">unsigned</span> <a class="code" href="../../da/d8b/namespaceKTfwd.html#aa61deb23ca543c4508c83be0690ae408">recombine_gametes</a>( <span class="keyword">const</span> vec_t &amp; pos,</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                              glist_t * gametes,</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                              iterator_type &amp; g1,</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                              iterator_type &amp; g2,</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                              queue_t &amp; gamete_recycling_bin,</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                              <span class="keyword">typename</span> iterator_type::value_type::mutation_container &amp; neutral,</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                              <span class="keyword">typename</span> iterator_type::value_type::mutation_container &amp; selected );</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif // __FWDPP_RECOMBINATION_HPP__</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;fwdpp/recombination.tcc&gt;</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="ttc" id="namespaceKTfwd_html_ace5a12fb8d848a75a76ab00412bad241"><div class="ttname"><a href="../../da/d8b/namespaceKTfwd.html#ace5a12fb8d848a75a76ab00412bad241">KTfwd::recombination</a></div><div class="ttdeci">std::pair&lt; std::size_t, unsigned &gt; recombination(gcont_t &amp;gametes, recbin_t &amp;gamete_recycling_bin, typename gcont_t::value_type::mutation_container &amp;neutral, typename gcont_t::value_type::mutation_container &amp;selected, const recpol_t &amp;rec_pol, const std::size_t g1, const std::size_t g2, const mcont_t &amp;mutations)</div></div>
 <div class="ttc" id="structKTfwd_1_1poisson__xover_html"><div class="ttname"><a href="../../d2/df0/structKTfwd_1_1poisson__xover.html">KTfwd::poisson_xover</a></div><div class="ttdef"><b>Definition:</b> recombination.hpp:9</div></div>
-<div class="ttc" id="namespaceKTfwd_html_ae097a70b2ba7195a61f8744b0f0ecd3b"><div class="ttname"><a href="../../da/d8b/namespaceKTfwd.html#ae097a70b2ba7195a61f8744b0f0ecd3b">KTfwd::recombine_gametes</a></div><div class="ttdeci">unsigned recombine_gametes(const vec_t &amp;pos, glist_t *gametes, iterator_type &amp;g1, iterator_type &amp;g2, glookup_t &amp;gamete_lookup, queue_t &amp;gamete_recycling_bin, typename iterator_type::value_type::mutation_container &amp;neutral, typename iterator_type::value_type::mutation_container &amp;selected)</div></div>
+<div class="ttc" id="namespaceKTfwd_html_aa61deb23ca543c4508c83be0690ae408"><div class="ttname"><a href="../../da/d8b/namespaceKTfwd.html#aa61deb23ca543c4508c83be0690ae408">KTfwd::recombine_gametes</a></div><div class="ttdeci">unsigned recombine_gametes(const vec_t &amp;pos, glist_t *gametes, iterator_type &amp;g1, iterator_type &amp;g2, queue_t &amp;gamete_recycling_bin, typename iterator_type::value_type::mutation_container &amp;neutral, typename iterator_type::value_type::mutation_container &amp;selected)</div></div>
 <div class="ttc" id="namespaceKTfwd_1_1tags_html_af816e12f7b8648716658bd3f7dbc5382"><div class="ttname"><a href="../../d3/dea/namespaceKTfwd_1_1tags.html#af816e12f7b8648716658bd3f7dbc5382">KTfwd::tags::gamete_type</a></div><div class="ttdeci">gamete_type</div><div class="ttdoc">Built-in types of gametes for which dispatch tags exist. </div><div class="ttdef"><b>Definition:</b> gamete_tags.hpp:7</div></div>
 <div class="ttc" id="callbacks_8cc_html_a53b3e4bb1bd287d2150b9c128e15a316"><div class="ttname"><a href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a></div><div class="ttdeci">gsl_rng * r</div><div class="ttdef"><b>Definition:</b> callbacks.cc:15</div></div>
 <div class="ttc" id="structKTfwd_1_1poisson__xover_html_a963f0c6c908f46f46997db2cbea2d406"><div class="ttname"><a href="../../d2/df0/structKTfwd_1_1poisson__xover.html#a963f0c6c908f46f46997db2cbea2d406">KTfwd::poisson_xover::operator()</a></div><div class="ttdeci">std::vector&lt; double &gt; operator()(gsl_rng *r, const double littler, const double minpos, const double maxpos, const gamete_type &amp;, const gamete_type &amp;, const mcont_t &amp;) const </div><div class="ttdef"><b>Definition:</b> recombination.hpp:13</div></div>
-<div class="ttc" id="namespaceKTfwd_html_a5a8e91783590918a0db6da72636ed17e"><div class="ttname"><a href="../../da/d8b/namespaceKTfwd.html#a5a8e91783590918a0db6da72636ed17e">KTfwd::recombination</a></div><div class="ttdeci">std::pair&lt; std::size_t, unsigned &gt; recombination(gcont_t &amp;gametes, lookup_t &amp;gamete_lookup, recbin_t &amp;gamete_recycling_bin, typename gcont_t::value_type::mutation_container &amp;neutral, typename gcont_t::value_type::mutation_container &amp;selected, const recpol_t &amp;rec_pol, const std::size_t g1, const std::size_t g2, const mcont_t &amp;mutations)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

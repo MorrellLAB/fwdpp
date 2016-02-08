@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.4</span>
+   &#160;<span id="projectnumber">0.4.5</span>
    </div>
   </td>
  </tr>
@@ -96,6 +96,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;type_traits&gt;</code><br/>
+<code>#include &lt;<a class="el" href="../../d4/d62/fwd__functional_8hpp_source.html">fwdpp/fwd_functional.hpp</a>&gt;</code><br/>
 </div>
 <p><a href="../../de/d15/gamete__cleaner_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -110,14 +111,30 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab1c30d2a061633ed419de03aa97b8285"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t , typename mutation_removal_policy &gt; </td></tr>
-<tr class="memitem:ab1c30d2a061633ed419de03aa97b8285"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ab1c30d2a061633ed419de03aa97b8285">KTfwd::fwdpp_internal::gamete_cleaner</a> (gcont_t &amp;, const std::vector&lt; uint_t &gt; &amp;, const mutation_removal_policy &amp;, std::true_type)</td></tr>
-<tr class="memdesc:ab1c30d2a061633ed419de03aa97b8285"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles removal of pointers to mutations from gametes after sampling Intended use is when std::is_same&lt; mutation_removal_policy, KTfwd::remove_nothing &gt;::type is true. Called by <a class="el" href="../../da/d8b/namespaceKTfwd.html#ac44ca61d8a73f1c63127509413bd3a21">KTfwd::sample_diploid</a> via dispatch.  <a href="#ab1c30d2a061633ed419de03aa97b8285">More...</a><br/></td></tr>
-<tr class="separator:ab1c30d2a061633ed419de03aa97b8285"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7f24293a7685e25f52655e710b98d79"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t &gt; </td></tr>
-<tr class="memitem:ae7f24293a7685e25f52655e710b98d79"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ae7f24293a7685e25f52655e710b98d79">KTfwd::fwdpp_internal::gamete_cleaner</a> (gcont_t &amp;gametes, const std::vector&lt; uint_t &gt; &amp;mcounts, const uint_t twoN, std::false_type)</td></tr>
-<tr class="memdesc:ae7f24293a7685e25f52655e710b98d79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles removal of pointers to mutations from gametes after sampling Intended use is when std::is_same&lt; mutation_removal_policy, KTfwd::remove_nothing &gt;::type is false. Called by <a class="el" href="../../da/d8b/namespaceKTfwd.html#ac44ca61d8a73f1c63127509413bd3a21">KTfwd::sample_diploid</a> via dispatch.  <a href="#ae7f24293a7685e25f52655e710b98d79">More...</a><br/></td></tr>
-<tr class="separator:ae7f24293a7685e25f52655e710b98d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a491c3e370a41ceb07d0db61a675f4ae2"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t , typename mcont_t , typename mutation_removal_policy &gt; </td></tr>
+<tr class="memitem:a491c3e370a41ceb07d0db61a675f4ae2"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_same<br class="typebreak"/>
+&lt; mutation_removal_policy, <br class="typebreak"/>
+<a class="el" href="../../db/dcf/structKTfwd_1_1remove__nothing.html">KTfwd::remove_nothing</a> &gt;::value &gt;<br class="typebreak"/>
+::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a491c3e370a41ceb07d0db61a675f4ae2">KTfwd::fwdpp_internal::gamete_cleaner</a> (gcont_t &amp;, const mcont_t &amp;, const std::vector&lt; uint_t &gt; &amp;, const uint_t, const mutation_removal_policy &amp;)</td></tr>
+<tr class="memdesc:a491c3e370a41ceb07d0db61a675f4ae2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles removal of pointers to mutations from gametes after sampling Intended use is when std::is_same&lt; mutation_removal_policy, KTfwd::remove_nothing &gt;::type is true. Called by <a class="el" href="../../da/d8b/namespaceKTfwd.html#a0a185fec49aa68f3435e003b377cafd1">KTfwd::sample_diploid</a>.  <a href="#a491c3e370a41ceb07d0db61a675f4ae2">More...</a><br/></td></tr>
+<tr class="separator:a491c3e370a41ceb07d0db61a675f4ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a107d34f674ba9b31446d84dcc838c7c2"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t , typename mcont_t , typename mutation_removal_policy &gt; </td></tr>
+<tr class="memitem:a107d34f674ba9b31446d84dcc838c7c2"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_same<br class="typebreak"/>
+&lt; mutation_removal_policy, <br class="typebreak"/>
+std::true_type &gt;::value &gt;<br class="typebreak"/>
+::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a107d34f674ba9b31446d84dcc838c7c2">KTfwd::fwdpp_internal::gamete_cleaner</a> (gcont_t &amp;gametes, const mcont_t &amp;, const std::vector&lt; uint_t &gt; &amp;mcounts, const uint_t twoN, const mutation_removal_policy &amp;)</td></tr>
+<tr class="memdesc:a107d34f674ba9b31446d84dcc838c7c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles removal of pointers to mutations from gametes after sampling Intended use is when std::is_same&lt; mutation_removal_policy, KTfwd::true_type &gt;::type is true. Called by <a class="el" href="../../da/d8b/namespaceKTfwd.html#a0a185fec49aa68f3435e003b377cafd1">KTfwd::sample_diploid</a>.  <a href="#a107d34f674ba9b31446d84dcc838c7c2">More...</a><br/></td></tr>
+<tr class="separator:a107d34f674ba9b31446d84dcc838c7c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaa90238c89b73be5887acf8a5beed73"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t , typename mcont_t , typename mutation_removal_policy &gt; </td></tr>
+<tr class="memitem:aaaa90238c89b73be5887acf8a5beed73"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; !std::is_same<br class="typebreak"/>
+&lt; mutation_removal_policy, <br class="typebreak"/>
+std::true_type &gt;::value <br class="typebreak"/>
+&amp;&amp;!std::is_same<br class="typebreak"/>
+&lt; mutation_removal_policy, <br class="typebreak"/>
+<a class="el" href="../../db/dcf/structKTfwd_1_1remove__nothing.html">KTfwd::remove_nothing</a> &gt;::value &gt;<br class="typebreak"/>
+::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#aaaa90238c89b73be5887acf8a5beed73">KTfwd::fwdpp_internal::gamete_cleaner</a> (gcont_t &amp;gametes, const mcont_t &amp;mutations, const std::vector&lt; uint_t &gt; &amp;mcounts, const uint_t twoN, const mutation_removal_policy &amp;mp)</td></tr>
+<tr class="memdesc:aaaa90238c89b73be5887acf8a5beed73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles removal of pointers to mutations from gametes after sampling This overload handles truly custom policies, which must take a mutation type as an argument. Called by <a class="el" href="../../da/d8b/namespaceKTfwd.html#a0a185fec49aa68f3435e003b377cafd1">KTfwd::sample_diploid</a>.  <a href="#aaaa90238c89b73be5887acf8a5beed73">More...</a><br/></td></tr>
+<tr class="separator:aaaa90238c89b73be5887acf8a5beed73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

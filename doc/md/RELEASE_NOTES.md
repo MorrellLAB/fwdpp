@@ -1,5 +1,10 @@
 # FWDPP RELEASE NOTES
 
+## 0.4.6
+
+* Issue #34 fixed
+* Issue #35 fixed
+
 ## 0.4.5
 
 * Issues #31 and #32 fixed

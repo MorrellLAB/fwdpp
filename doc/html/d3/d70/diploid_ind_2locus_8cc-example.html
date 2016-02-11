@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.5</span>
+   &#160;<span id="projectnumber">0.4.6</span>
    </div>
   </td>
  </tr>
@@ -99,23 +99,18 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="keyword">using</span> <a name="_a0"></a><a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">mtype</a> = <a class="code" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">KTfwd::popgenmut</a>;</div>
 <div class="line"><span class="preprocessor">#define MULTILOCUS_SIM</span></div>
 <div class="line"><span class="preprocessor"></span><span class="preprocessor">#include &lt;<a class="code" href="../../df/d10/common__ind_8hpp.html">common_ind.hpp</a>&gt;</span></div>
-<div class="line"> </div>
+<div class="line"></div>
 <div class="line"><span class="comment">//Fitness function</span></div>
 <div class="line"><span class="keyword">struct </span><a name="_a1"></a><a class="code" href="../../d8/df2/structno__selection__multi.html">no_selection_multi</a></div>
 <div class="line">{</div>
-<div class="line">  <span class="keyword">typedef</span> <span class="keywordtype">double</span> <a name="a2"></a><a class="code" href="../../d8/df2/structno__selection__multi.html#ac8d3abd4176b215a58de070fe9111483">result_type</a>;</div>
-<div class="line">  <span class="keyword">inline</span> <span class="keywordtype">double</span> <a name="a3"></a><a class="code" href="../../d8/df2/structno__selection__multi.html#a183bc38efafd9a1670f91bff064296f6">operator()</a>( <span class="keyword">const</span> multiloc_t::dipvector_t::value_type &amp; )<span class="keyword"> const</span></div>
+<div class="line">  <span class="keyword">typedef</span> <span class="keywordtype">double</span> <a name="a2"></a><a class="code" href="../../d8/df2/structno__selection__multi.html#af97428c15deb527bc450d5eb697423fd">result_type</a>;</div>
+<div class="line">  <span class="keyword">inline</span> <span class="keywordtype">double</span> <a name="a3"></a><a class="code" href="../../d8/df2/structno__selection__multi.html#a151d42fce1c820c81741e04b766eff85">operator()</a>( <span class="keyword">const</span> multiloc_t::dipvector_t::value_type &amp;,</div>
+<div class="line">                            <span class="keyword">const</span> multiloc_t::gcont_t &amp;,</div>
+<div class="line">                            <span class="keyword">const</span> multiloc_t::mcont_t &amp; )<span class="keyword"> const</span></div>
 <div class="line"><span class="keyword">  </span>{</div>
 <div class="line">    <span class="keywordflow">return</span> 1.;</div>
 <div class="line">  }</div>
 <div class="line">};</div>
-<div class="line"></div>
-<div class="line"><span class="comment">/*</span></div>
-<div class="line"><span class="comment">struct posmaker</span></div>
-<div class="line"><span class="comment">{</span></div>
-<div class="line"><span class="comment">  inline double operator()(gsl_rng * r, double a,double b) const { return gsl_ran_flat(r,a,b); }</span></div>
-<div class="line"><span class="comment">};</span></div>
-<div class="line"><span class="comment">*/</span></div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> <a name="a4"></a><a class="code" href="../../de/dce/diploid__ind__2locus_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv)</div>
 <div class="line">{</div>
@@ -146,7 +141,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> seed = atoi(argv[argument++]);        <span class="comment">//Random number seed</span></div>
 <div class="line"></div>
 <div class="line">  <span class="keyword">const</span> std::vector&lt;double&gt; mu(2,theta/<span class="keywordtype">double</span>(4*N));   <span class="comment">//per-gamete mutation rate per locus</span></div>
-<div class="line">  </div>
+<div class="line"></div>
 <div class="line">  <span class="comment">/*</span></div>
 <div class="line"><span class="comment">    littler r is the recombination rate per region per generation.</span></div>
 <div class="line"><span class="comment"></span></div>
@@ -154,7 +149,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="comment">    r = rho/(4N)</span></div>
 <div class="line"><span class="comment">  */</span></div>
 <div class="line">  <span class="keyword">const</span> <span class="keywordtype">double</span> littler = rho/double(4*N);</div>
-<div class="line">  </div>
+<div class="line"></div>
 <div class="line">  <span class="comment">//Initiate random number generation system</span></div>
 <div class="line">  <a name="_a5"></a><a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">GSLrng</a> <a name="a6"></a><a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>(seed);</div>
 <div class="line"></div>
@@ -170,12 +165,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">      <span class="keywordtype">unsigned</span> generation=0;</div>
 <div class="line">      <span class="keywordtype">double</span> wbar;</div>
 <div class="line"></div>
-<div class="line">      <span class="comment">//within-locus recombination policies -- one per locus</span></div>
-<div class="line">      <span class="comment">// deduce_recmodel_t&lt;multiloc_serialized_t::glist_t&gt;::type recpol0 = std::bind(KTfwd::genetics101(),std::placeholders::_1,std::placeholders::_2,std::placeholders::_3,std::placeholders::_4,</span></div>
-<div class="line">      <span class="comment">//                               std::ref(pop.neutral),std::ref(pop.selected),&amp;pop.gametes,littler,r.get(),recmap);</span></div>
-<div class="line">      <span class="comment">// deduce_recmodel_t&lt;multiloc_serialized_t::glist_t&gt;::type recpol1 = std::bind(KTfwd::genetics101(),std::placeholders::_1,std::placeholders::_2,std::placeholders::_3,std::placeholders::_4,</span></div>
-<div class="line">      <span class="comment">//                               std::ref(pop.neutral),std::ref(pop.selected),&amp;pop.gametes,littler,r.get(),recmap2);</span></div>
-<div class="line"></div>
 <div class="line">      std::vector&lt;std::function&lt;std::vector&lt;double&gt;(<span class="keyword">const</span> multiloc_t::gamete_t &amp;,</div>
 <div class="line">                                                    <span class="keyword">const</span> multiloc_t::gamete_t &amp;,</div>
 <div class="line">                                                    <span class="keyword">const</span> multiloc_t::mcont_t &amp;)&gt; &gt; recpols</div>
@@ -185,14 +174,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">          std::bind(<a class="code" href="../../d2/df0/structKTfwd_1_1poisson__xover.html">KTfwd::poisson_xover</a>(),<a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>.get(),littler,1.,2.,</div>
 <div class="line">                                                 std::placeholders::_1,std::placeholders::_2,std::placeholders::_3)</div>
 <div class="line">      };</div>
-<div class="line">      <span class="comment">// std::vector&lt; KTfwd::traits::recmodel_t&lt;multiloc_serialized_t::glist_t&gt;::type &gt; recpols{</span></div>
-<div class="line">      <span class="comment">//        std::bind(KTfwd::genetics101(),std::placeholders::_1,std::placeholders::_2,std::placeholders::_3,std::placeholders::_4,</span></div>
-<div class="line">      <span class="comment">//                  std::ref(pop.neutral),std::ref(pop.selected),&amp;pop.gametes,littler,r.get(),recmap),</span></div>
-<div class="line">      <span class="comment">//          std::bind(KTfwd::genetics101(),std::placeholders::_1,std::placeholders::_2,std::placeholders::_3,std::placeholders::_4,</span></div>
-<div class="line">      <span class="comment">//                    std::ref(pop.neutral),std::ref(pop.selected),&amp;pop.gametes,littler,r.get(),recmap2)</span></div>
-<div class="line">      <span class="comment">//          };</span></div>
 <div class="line"></div>
-<div class="line">      <span class="comment">//std::vector&lt; KTfwd::traits::mmodel_t&lt;multiloc_t::mcont_t&gt;::type  &gt; mmodels {</span></div>
 <div class="line">      std::vector&lt;std::function&lt;std::size_t(std::queue&lt;std::size_t&gt; &amp;,multiloc_t::mcont_t &amp;)&gt; &gt; mmodels {</div>
 <div class="line">        <span class="comment">//Locus 0: positions Uniform [0,1)</span></div>
 <div class="line">        std::bind(<a name="_a8"></a><a class="code" href="../../df/d07/structKTfwd_1_1infsites.html">KTfwd::infsites</a>(),std::placeholders::_1,std::placeholders::_2,<a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>.get(),std::ref(pop.mut_lookup),&amp;generation,</div>
@@ -202,21 +184,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">                    mu[1],0.,[&amp;<a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>](){<span class="keywordflow">return</span> gsl_ran_flat(<a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>.get(),1.,2.);},[](){<span class="keywordflow">return</span> 0.;},[](){<span class="keywordflow">return</span> 0.;})</div>
 <div class="line">          };</div>
 <div class="line"></div>
-<div class="line">      <span class="comment">// auto mmodel1 = std::bind(KTfwd::infsites(),std::placeholders::_1,std::placeholders::_2,r.get(),&amp;pop.mut_lookup,&amp;generation,</span></div>
-<div class="line">      <span class="comment">//                               mu[0],0.,std::bind(posmaker(),r.get(),0.,1.),shmaker,shmaker);</span></div>
-<div class="line">      <span class="comment">// auto mmodel2 = std::bind(KTfwd::infsites(),std::placeholders::_1,std::placeholders::_2,r.get(),&amp;pop.mut_lookup,&amp;generation,</span></div>
-<div class="line">      <span class="comment">//                               mu[1],0.,std::bind(posmaker(),r.get(),1.,2.),shmaker,shmaker);</span></div>
-<div class="line">      </div>
-<div class="line">      <span class="comment">//std::vector&lt; decltype(mmodel1) &gt; mmodels{mmodel1,mmodel2};</span></div>
-<div class="line">      <span class="comment">// auto mmodels = {    </span></div>
-<div class="line">      <span class="comment">//        //Locus 0: positions Uniform [0,1)</span></div>
-<div class="line">      <span class="comment">//        std::bind(KTfwd::infsites(),std::placeholders::_1,std::placeholders::_2,r.get(),&amp;pop.mut_lookup,&amp;generation,</span></div>
-<div class="line">      <span class="comment">//                  mu[0],0.,[&amp;r](){return gsl_rng_uniform(r.get());},[](){return 0.;},[](){return 0.;}) ,</span></div>
-<div class="line">      <span class="comment">//        //Locus 1: positions Uniform [1,2)</span></div>
-<div class="line">      <span class="comment">//        std::bind(KTfwd::infsites(),std::placeholders::_1,std::placeholders::_2,r.get(),&amp;pop.mut_lookup,&amp;generation,</span></div>
-<div class="line">      <span class="comment">//                  mu[1],0.,[&amp;r](){return gsl_ran_flat(r.get(),1.,2.);},[](){return 0.;},[](){return 0.;})</span></div>
-<div class="line">      <span class="comment">// };</span></div>
-<div class="line">      </div>
 <div class="line">      <span class="keywordflow">for</span>( generation = 0; generation &lt; ngens; ++generation )</div>
 <div class="line">        {</div>
 <div class="line">          <span class="comment">//Iterate the population through 1 generation</span></div>
@@ -231,7 +198,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">                                recpols,</div>
 <div class="line">                                &amp;rbw,</div>
 <div class="line">                                [](gsl_rng * __r, <span class="keyword">const</span> <span class="keywordtype">double</span> __d){ <span class="keywordflow">return</span> gsl_ran_binomial(__r,__d,1); },</div>
-<div class="line">                                std::bind(<a class="code" href="../../d8/df2/structno__selection__multi.html">no_selection_multi</a>(),std::placeholders::_1),</div>
+<div class="line">                                std::bind(<a class="code" href="../../d8/df2/structno__selection__multi.html">no_selection_multi</a>(),std::placeholders::_1,std::placeholders::_2,std::placeholders::_3),</div>
 <div class="line">                                pop.neutral,</div>
 <div class="line">                                pop.selected);</div>
 <div class="line">          assert( <a name="a10"></a><a class="code" href="../../da/d8b/namespaceKTfwd.html#a3f97e26108d5f6b038e9919264e316c1">check_sum</a>(pop.gametes,2*twoN) );</div>

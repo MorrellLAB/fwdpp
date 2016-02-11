@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.5</span>
+   &#160;<span id="projectnumber">0.4.6</span>
    </div>
   </td>
  </tr>
@@ -692,7 +692,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;      pop.clear();</div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;      <span class="comment">//Step 0: read N</span></div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;      gzread( gzin, reinterpret_cast&lt;char*&gt;(&amp;pop.N),<span class="keyword">sizeof</span>(<a class="code" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a>) );</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;      <a class="code" href="../../da/d8b/namespaceKTfwd.html#a9b42ca41482e129f07fc25c944d35b37">KTfwd::read_binary_pop_mloc</a>( &amp;pop.gametes,&amp;pop.mutations,&amp;pop.diploids,rt,gzin,dr );</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;      <a class="code" href="../../da/d8b/namespaceKTfwd.html#a9b42ca41482e129f07fc25c944d35b37">KTfwd::read_binary_pop_mloc</a>( pop.gametes,pop.mutations,pop.diploids,rt,gzin,dr );</div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;      <span class="comment">//update the mutation counts</span></div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;      <a class="code" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#adf5a1900ec36a4db99c94d86f8ca9453">fwdpp_internal::process_gametes</a>(pop.gametes,pop.mutations,pop.mcounts);</div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;      <a class="code" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> temp;</div>
@@ -734,7 +734,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;      pop.Ns.resize(numNs);</div>
 <div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;      gzread( gzin, reinterpret_cast&lt;char*&gt;(&amp;pop.Ns[0]),numNs*<span class="keyword">sizeof</span>(<a class="code" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a>) );</div>
 <div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;      <span class="comment">//Step 1: write the mutations, diploids, gametes to the stream</span></div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;      <a class="code" href="../../da/d8b/namespaceKTfwd.html#ad1076a590e2ed2e9b7501423a4b87942">KTfwd::read_binary_metapop</a>( &amp;pop.gametes,&amp;pop.mutations,&amp;pop.diploids,rt,gzin,dr );</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;      <a class="code" href="../../da/d8b/namespaceKTfwd.html#ad1076a590e2ed2e9b7501423a4b87942">KTfwd::read_binary_metapop</a>( pop.gametes,pop.mutations,pop.diploids,rt,gzin,dr );</div>
 <div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;      <span class="comment">//update the mutation counts</span></div>
 <div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;      <a class="code" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#adf5a1900ec36a4db99c94d86f8ca9453">fwdpp_internal::process_gametes</a>(pop.gametes,pop.mutations,pop.mcounts);</div>
 <div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;      <a class="code" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> temp;</div>

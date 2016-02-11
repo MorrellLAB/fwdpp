@@ -4,6 +4,7 @@ var searchData=
   ['mmodel_5fgamete_5ft',['mmodel_gamete_t',['../d2/dea/structKTfwd_1_1traits_1_1mmodel__gamete__t.html',1,'KTfwd::traits']]],
   ['mmodel_5ft',['mmodel_t',['../d0/d21/structKTfwd_1_1traits_1_1mmodel__t.html',1,'KTfwd::traits']]],
   ['multiloc',['multiloc',['../d3/d11/structKTfwd_1_1sugar_1_1multiloc.html',1,'KTfwd::sugar']]],
+  ['multilocus_5fadditive',['multilocus_additive',['../d8/d63/structmultilocus__additive.html',1,'']]],
   ['multiplicative_5fdiploid',['multiplicative_diploid',['../dd/de5/structKTfwd_1_1multiplicative__diploid.html',1,'KTfwd']]],
   ['multiplicative_5fdiploid_5fminus',['multiplicative_diploid_minus',['../de/d9f/structmultiplicative__diploid__minus.html',1,'']]],
   ['mut',['mut',['../de/d89/structmut.html',1,'']]],

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.5</span>
+   &#160;<span id="projectnumber">0.4.6</span>
    </div>
   </td>
  </tr>
@@ -207,12 +207,12 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <p>In this example program, there is no selection, so our fitness model will return 1 for the fitness of any diploid. Just like the single-locus API, multilocus fitness policies take a diploid as an argument and return a double. The difference here is that a diploid is now a vector of pairs of iterators to gametes:</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code" href="../../d8/df2/structno__selection__multi.html">no_selection_multi</a></div>
 <div class="line">{</div>
-<div class="line">  <span class="keyword">typedef</span> <span class="keywordtype">double</span> <a class="code" href="../../d8/df2/structno__selection__multi.html#ac8d3abd4176b215a58de070fe9111483">result_type</a>;</div>
+<div class="line">  <span class="keyword">typedef</span> <span class="keywordtype">double</span> <a class="code" href="../../d8/df2/structno__selection__multi.html#af97428c15deb527bc450d5eb697423fd">result_type</a>;</div>
 <div class="line">  <span class="comment">//The template type is an iterator derived from the vector containing the diploids,</span></div>
 <div class="line">  <span class="comment">//and therefore points to a std::vector&lt; std::pair&lt;gamete_itr_t,gamete_itr_r&gt; &gt;,</span></div>
 <div class="line">  <span class="comment">//where the gamete_itr_t are iterators pointing to gametes</span></div>
 <div class="line">  <span class="keyword">template</span>&lt; <span class="keyword">typename</span> dipo<span class="keywordtype">id</span>_vec_itr_t &gt;</div>
-<div class="line">  <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="../../d8/df2/structno__selection__multi.html#a183bc38efafd9a1670f91bff064296f6">operator()</a>( <span class="keyword">const</span> diploid_vec_itr_t &amp; diploid )<span class="keyword"> const</span></div>
+<div class="line">  <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="../../d8/df2/structno__selection__multi.html#a151d42fce1c820c81741e04b766eff85">operator()</a>( <span class="keyword">const</span> diploid_vec_itr_t &amp; diploid )<span class="keyword"> const</span></div>
 <div class="line"><span class="keyword">  </span>{</div>
 <div class="line">    <span class="keywordflow">return</span> 1.;</div>
 <div class="line">  }</div>

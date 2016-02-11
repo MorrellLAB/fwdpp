@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.5</span>
+   &#160;<span id="projectnumber">0.4.6</span>
    </div>
   </td>
  </tr>
@@ -82,7 +82,12 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="title">FWDPP RELEASE NOTES </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2>0.4.5</h2>
+<div class="textblock"><h2>0.4.6</h2>
+<ul>
+<li>Issue #34 fixed</li>
+<li>Issue #35 fixed</li>
+</ul>
+<h2>0.4.5</h2>
 <ul>
 <li>Issues #31 and #32 fixed The file fwdpp/internal/gamete_lookup_table.hpp was removed and the library updated to stop using this method to check for gamete uniqueness. The result is a 20% reduction in run times and a slight reduction in peak memory use. This change was enabled by the changes introduced in 0.4.4, and comes with no change in output.</li>
 <li>Partial loop unrolling and branch removal from <a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ae38f0d7081d2dc8e9f605833124d197c">KTfwd::fwdpp_internal::recombine_gametes</a></li>

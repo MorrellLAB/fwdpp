@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['s',['s',['../d1/d7f/structKTfwd_1_1mutation.html#a9a7e60b11eec95550d7fb26ad8d69b28',1,'KTfwd::mutation::s()'],['../da/dde/structKTfwd_1_1generalmut.html#a770f52744226eeb19cffefeeaa4cf3a0',1,'KTfwd::generalmut::s()'],['../d9/d9e/structKTfwd_1_1generalmut__vec.html#ae09018d472db03fc8d3b8f9d7187d4f4',1,'KTfwd::generalmut_vec::s()'],['../dc/dcc/structKTfwd_1_1popgenmut.html#ae055d7d981b19117c04def0dcc57e310',1,'KTfwd::popgenmut::s()'],['../db/dbe/structKTfwd_1_1extensions_1_1shmodel.html#a7a6904fa786f6e4e71685d2d2d7d6447',1,'KTfwd::extensions::shmodel::s()']]],
+  ['s',['s',['../d1/d7f/structKTfwd_1_1mutation.html#a9a7e60b11eec95550d7fb26ad8d69b28',1,'KTfwd::mutation::s()'],['../da/dde/structKTfwd_1_1generalmut.html#a770f52744226eeb19cffefeeaa4cf3a0',1,'KTfwd::generalmut::s()'],['../d9/d9e/structKTfwd_1_1generalmut__vec.html#ae09018d472db03fc8d3b8f9d7187d4f4',1,'KTfwd::generalmut_vec::s()'],['../dc/dcc/structKTfwd_1_1popgenmut.html#ae055d7d981b19117c04def0dcc57e310',1,'KTfwd::popgenmut::s()'],['../db/dbe/structKTfwd_1_1extensions_1_1shmodel.html#aef562ae02253c49e89f4147211d3e184',1,'KTfwd::extensions::shmodel::s()']]],
   ['sbeg',['sbeg',['../d8/d8d/structKTfwd_1_1extensions_1_1discrete__mut__model.html#a58f11e76966a33f3abffeaaf6996fe09',1,'KTfwd::extensions::discrete_mut_model']]],
   ['sd',['sd',['../da/d13/structKTfwd_1_1extensions_1_1gaussian.html#aac57daa15618f079529e4e05fde78ff3',1,'KTfwd::extensions::gaussian']]],
   ['second',['second',['../dc/dfb/structdiploid__t.html#ae41a7c599eed324dfe10ec1908fb4e41',1,'diploid_t']]],

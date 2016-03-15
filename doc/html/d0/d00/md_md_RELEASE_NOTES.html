@@ -87,6 +87,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <p>Thanks to Alexander Nater for pointing out issue #36, which lead to #37 being discovered, too.</p>
 <ul>
 <li>remove include&lt;iostream&gt; from <a class="el" href="../../df/d26/recombination__common_8hpp.html">fwdpp/internal/recombination_common.hpp</a></li>
+<li>Isssue #36 fixed</li>
 <li>Issue #37 fixed</li>
 <li><a class="el" href="../../de/d55/classKTfwd_1_1GSLrng__t.html" title="A wrapper around gsl_rng * objects. ">KTfwd::GSLrng_t</a> has improved copy constructor and is now move-constructible.</li>
 <li>The library is now const-correct vis-a-vis gsl_rng *. This is an API change.</li>
@@ -94,9 +95,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <li>More extensive checking done by functions in <a class="el" href="../../da/d7b/debug_8hpp.html">fwdpp/debug.hpp</a></li>
 <li>Improvements (and bug fixes) to namespace <a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html" title="Nested namespace type traits. ">KTfwd::traits</a>. Unit tests added for this namespace.</li>
 <li>Fixed templates for serializing mutation type <a class="el" href="../../da/dde/structKTfwd_1_1generalmut.html" title="Mutation type allowing arbitray number of &quot;s,h&quot; pairs representing effect sizes,dominance.This type represents a mutation with a number of &#39;s&#39; and &#39;h&#39; parameters that are fixed at compile time. ">KTfwd::generalmut</a>. Attempting to compile using icc revealed the error.</li>
-<li><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a491c3e370a41ceb07d0db61a675f4ae2" title="Handles removal of indexes to mutations from gametes after sampling Intended use is when std::is_same...">KTfwd::fwdpp_internal::gamete_cleaner</a> has a new, and generally much faster, implementation. <h2>0.4.6</h2>
-</li>
+<li><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a491c3e370a41ceb07d0db61a675f4ae2" title="Handles removal of indexes to mutations from gametes after sampling Intended use is when std::is_same...">KTfwd::fwdpp_internal::gamete_cleaner</a> has a new, and generally much faster, implementation.</li>
 </ul>
+<h2>0.4.6</h2>
 <ul>
 <li>Issue #34 fixed</li>
 <li>Issue #35 fixed. Thanks to Alexander Nater for catching this.</li>

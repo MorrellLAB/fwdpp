@@ -3,6 +3,8 @@
 #define __FWDPP_EXTENSIONS_REGIONS_HPP__
 
 #include <limits>
+#include <cassert>
+#include <stdexcept>
 #include <algorithm>
 #include <gsl/gsl_randist.h>
 #include <fwdpp/type_traits.hpp>
@@ -49,6 +51,18 @@ namespace KTfwd
 							    sbeg(std::move(__sbeg)),send(std::move(__send)),
 							    shmodels(std::move(__shmodels))
       {
+	if(nbeg.size()!=nend.size() || nbeg.size()!=nweights.size())
+	  {
+	    throw std::runtime_error("input vectors must all be the same size");
+	  }
+	if(sbeg.size()!=send.size() || sbeg.size()!=sweights.size())
+	  {
+	    throw std::runtime_error("input vectors must all be the same size");
+	  }
+	if(!sweights.empty() && sweights.size() != shmodels.size())
+	  {
+	    throw std::runtime_error("incorrect number of shmodels");
+	  }
 	if(nweights.size())
 	  nlookup = KTfwd::fwdpp_internal::gsl_ran_discrete_t_ptr(gsl_ran_discrete_preproc(nweights.size(),&nweights[0]));
 	if(sweights.size())
@@ -59,7 +73,7 @@ namespace KTfwd
 	Helper function.  Not to be called externally.
       */
       template<typename lookup_table_t>
-      inline double posmaker( gsl_rng * r,
+      inline double posmaker( const gsl_rng * r,
 			      const double & beg,
 			      const double & end,
 			      lookup_table_t & lookup) const
@@ -83,26 +97,36 @@ namespace KTfwd
 	\param recycling_bin A recycling bin for mutations
 	\param mutations A container of mutations
 	\param lookup Lookup table for mutations
+
+	\precondition If nmu == 0, then nbeg/nend cannot be empty.  Similarly,
+	if smu == 0, then sbeg,end cannot be empty.  These conditions are checked in debug 
+	mode via the assert macro.  It is up to the calling environment to prevent this situation
+	from arising.  Also, nmu+smu must be > 0, and is also checked by assert.
       */
       template<typename queue_t,
 	       typename lookup_table_t,
 	       typename mcont_t>
       inline result_type make_mut(queue_t & recycling_bin,
 				  mcont_t & mutations,
-				  gsl_rng * r,
+				  const gsl_rng * r,
 				  const double & nmu,
 				  const double & smu,
 				  unsigned generation,
 				  lookup_table_t & lookup) const
       {
+	assert(nmu+smu>0.);
 	bool is_neutral = (gsl_rng_uniform(r) < nmu/(nmu+smu)) ? true : false;
 	if( is_neutral )
 	  {
+	    assert(!nbeg.empty());
+	    assert(!nend.empty());
 	    size_t region = gsl_ran_discrete(r,nlookup.get());
 	    double pos = posmaker(r,nbeg[region],nend[region],lookup);
 	    return fwdpp_internal::recycle_mutation_helper(recycling_bin,mutations,
 							   pos,0.,0.,generation);
 	  }
+	assert(!sbeg.empty());
+	assert(!send.empty());
 	size_t region = gsl_ran_discrete(r,slookup.get());
 	double pos = posmaker(r,sbeg[region],send[region],lookup);
 	return fwdpp_internal::recycle_mutation_helper(recycling_bin,mutations,
@@ -162,21 +186,32 @@ namespace KTfwd
 			  const std::vector<double> & __end,
 			  const std::vector<double> & __weight ) : beg(__beg),end(__end)
       {
-	lookup = KTfwd::fwdpp_internal::gsl_ran_discrete_t_ptr(gsl_ran_discrete_preproc(__weight.size(),&__weight[0]));
+	if(beg.size() != end.size() || beg.size() != __weight.size())
+	  {
+	    throw std::runtime_error("input vectors must all be the same size");
+	  }
+	
+	if(__weight.size())
+	  lookup = KTfwd::fwdpp_internal::gsl_ran_discrete_t_ptr(gsl_ran_discrete_preproc(__weight.size(),&__weight[0]));
       }
       /*!
 	Returns a position from a region that is chosen based on region weights.
+
+	\precondition If recrate == 0, then beg and end cannot be empty.  It is up to the calling environment to make sure
+	that this cannot happen.  This is checked in debug mode via the assert macro.
       */
       template<typename gamete_t,
 	       typename mcont_t>
-      inline result_type operator()(gsl_rng * r,
+      inline result_type operator()(const gsl_rng * r,
 				    const double recrate,
 				    const gamete_t &,
 				    const gamete_t &,
 				    const mcont_t &) const
       {
+	assert( !(recrate==0. && (beg.empty()||end.empty())) );
 	auto nbreaks = gsl_ran_poisson(r,recrate);
 	if(!nbreaks) return {};
+
 	result_type rv;
 	for( unsigned i=0;i<nbreaks;++i )
 	  {

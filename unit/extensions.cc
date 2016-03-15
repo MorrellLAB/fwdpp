@@ -322,6 +322,78 @@ BOOST_AUTO_TEST_CASE( discrete_rec_model_test_5 )
 				    pop.neutral,
 				    pop.selected);
 }
+
+//Tests of raising exceptions
+BOOST_AUTO_TEST_CASE( discrete_rec_model_constructor_should_throw )
+{
+  {
+    BOOST_REQUIRE_THROW(extensions::discrete_rec_model drm( {0},
+							    {1,2},
+							    {1,2}
+							    ),
+			std::runtime_error
+			);
+  }
+  {
+    BOOST_REQUIRE_THROW(extensions::discrete_rec_model drm( {0,1},
+							    {1},
+							    {1,2}
+							    ),
+			std::runtime_error
+			);
+  }
+  {
+    BOOST_REQUIRE_THROW(extensions::discrete_rec_model drm( {0,1},
+							    {1,2},
+							    {1,2,3}
+							    ),
+			std::runtime_error
+			);
+  }
+}
+
+BOOST_AUTO_TEST_CASE( discrete_mut_model_constructor_should_throw )
+{
+  {
+    BOOST_REQUIRE_THROW(extensions::discrete_mut_model dm({0,1},
+							  {1,2},
+							  {1},
+							  {},
+							  {},
+							  {},
+							  {}
+							  ),
+			std::runtime_error
+			);
+  }
+  {
+    BOOST_REQUIRE_THROW(extensions::discrete_mut_model dm({0,1},
+							  {1,2},
+							  {1,2},
+							  //incorrect number of weights
+							  {0,1},
+							  {1,2},
+							  {1},
+							  {}
+							  ),
+			std::runtime_error
+			);
+  }
+  {
+    BOOST_REQUIRE_THROW(extensions::discrete_mut_model dm({0,1},
+							  {1,2},
+							  {1,2},
+							  //There are selected regions, but no "sh models"
+							  {0,1},
+							  {1,2},
+							  {1},
+							  {}
+							  ),
+			std::runtime_error
+			);
+  }
+}
+
 //Tests of fwdpp/extensions/callbacks.hpp
 
 //This test makes sure that each type of callback compiles
@@ -337,128 +409,4 @@ BOOST_AUTO_TEST_CASE( vector_shmodel )
 	      {extensions::gaussian(1.),extensions::gaussian(1.)},
 		{extensions::gamma(1.,0.1),extensions::gamma(1.,0.1)}
   };
-}
-
-//The callbacks can throw exceptions if their parameters aren't valid
-
-BOOST_AUTO_TEST_CASE( callback_exceptions )
-{
-  {
-    //inf
-    BOOST_REQUIRE_THROW( extensions::constant(1./0.), 
-			 std::runtime_error
-			 );
-  }
-  
-  {
-    //nan
-    BOOST_REQUIRE_THROW( extensions::constant(std::nan("")), 
-     			 std::runtime_error
-     			 );
-  }
-
-  {
-    //first arg not finite
-    BOOST_REQUIRE_THROW( extensions::uniform(1./0., 1.),
-			 std::runtime_error
-			 );
-  }
-
-  {
-    //2nd arg not finite
-    BOOST_REQUIRE_THROW( extensions::uniform(1., 1./0.),
-			 std::runtime_error
-			 );
-  }
-
-  {
-    //min > max
-    BOOST_REQUIRE_THROW( extensions::uniform(1., 0.99),
-			 std::runtime_error
-			 );
-  }
-
-  {
-    //a not finite
-    BOOST_REQUIRE_THROW( extensions::beta(std::nan(""),1.),
-			 std::runtime_error
-			 );
-  }
-
-  {
-    //b not finite
-    BOOST_REQUIRE_THROW( extensions::beta(1.,std::nan("")),
-			 std::runtime_error
-			 );
-  }
-
-  {
-    //f not finite
-    BOOST_REQUIRE_THROW( extensions::beta(1.,1.,std::nan("")),
-			 std::runtime_error
-			 );
-  }
-
-  {
-    //a <= 0.
-    BOOST_REQUIRE_THROW( extensions::beta(0.,1.),
-			 std::runtime_error
-			 );
-  }
-
-  {
-    //b <= 0.
-    BOOST_REQUIRE_THROW( extensions::beta(1.,0.),
-			 std::runtime_error
-			 );
-  }
-
-  {
-    //f <= 0.
-    BOOST_REQUIRE_THROW( extensions::beta(1.,1.,0.),
-			 std::runtime_error
-			 );
-  }
-
-  {
-    //sd = 0
-    BOOST_REQUIRE_THROW( extensions::gaussian(0.),
-			 std::runtime_error
-			 );
-  }
-  
-  {
-    //sd < 0
-    BOOST_REQUIRE_THROW( extensions::gaussian(-1e-6),
-			 std::runtime_error
-			 );
-  }
-
-  {
-    //sd not finite
-    BOOST_REQUIRE_THROW( extensions::gaussian(1./0.),
-			 std::runtime_error
-			 );
-  }
-
-  {
-    //mean not finite
-    BOOST_REQUIRE_THROW( extensions::gamma(1./0.,1.),
-			 std::runtime_error
-			 );
-  }
-
-  {
-    //shape not finite
-    BOOST_REQUIRE_THROW( extensions::gamma(1.0,1./0.),
-			 std::runtime_error
-			 );
-  }
-
-  {
-    //!(shape>0)
-    BOOST_REQUIRE_THROW( extensions::gamma(1.0,0.),
-			 std::runtime_error
-			 );
-  }
 }

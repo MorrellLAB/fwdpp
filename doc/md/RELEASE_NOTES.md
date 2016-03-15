@@ -1,9 +1,24 @@
 # FWDPP RELEASE NOTES
 
+## 0.4.7
+
+Thanks to Alexander Nater for pointing out issue #36, which lead to #37 being discovered, too.
+
+* remove include<iostream> from fwdpp/internal/recombination_common.hpp
+* Issue #37 fixed
+* KTfwd::GSLrng_t has improved copy constructor and is now move-constructible.
+* The library is now const-correct vis-a-vis gsl_rng *.  This is an API change.
+* "debug mode" (compiling _without_ -DNDEBUG) makes more tests about samples from populations being sorted by position
+* More extensive checking done by functions in fwdpp/debug.hpp
+* Improvements (and bug fixes) to namespace KTfwd::traits.  Unit tests added for this namespace.
+* Fixed templates for serializing mutation type KTfwd::generalmut.  Attempting to compile using icc revealed the error.
+* KTfwd::fwdpp_internal::gamete_cleaner has a new, and generally much faster, implementation.
 ## 0.4.6
 
 * Issue #34 fixed
-* Issue #35 fixed
+* Issue #35 fixed.  Thanks to Alexander Nater for catching this.
+* KTfwd::extensions::discrete_rec_model no longer generates empty lookup tables when there are no regions
+* KTfwd::extensions::discrete_rec_model and KTfwd::discrete_mut_model may now throw exceptions from their constructors if input data are incorrect
 
 ## 0.4.5
 

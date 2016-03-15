@@ -1,7 +1,6 @@
 #ifndef __KTFWD_DEBUG_HPP__
 #define __KTFWD_DEBUG_HPP__
 
-#ifndef NDEBUG
 #include <algorithm>
 #include <numeric>
 #include <fwdpp/forward_types.hpp>
@@ -14,7 +13,7 @@ namespace KTfwd
     Returns true if the sum of counts in gametes equals twoN, false otherwise
    */
   template<typename gcont_t>
-  bool check_sum(const gcont_t & gametes, const unsigned & twoN)
+  bool check_sum(const gcont_t & gametes, const unsigned twoN)
   {
     static_assert( typename traits::is_gamete_t<typename gcont_t::value_type>::type(),
 		   "gcont_t::value_type must be a valid gamete type" );
@@ -30,7 +29,7 @@ namespace KTfwd
     Returns true if the sum of counts in gametes equals twoN, false otherwise
    */
   template<typename gcont_t>
-  bool check_sum(const gcont_t * gametes, const unsigned & twoN)
+  bool check_sum(const gcont_t * gametes, const unsigned twoN)
   {
     return check_sum(*gametes,twoN);
   }
@@ -61,39 +60,43 @@ namespace KTfwd
 			  });
   }
 
-  template<typename gamete_t>
+  template<typename gamete_t,typename mcont_t>
   bool gamete_data_sane( const gamete_t & g,
+			 const mcont_t & mutations,
 			 const std::vector<uint_t> & mutcounts)
   {
     for( const auto & i : g.mutations )
       {
 	if(!mutcounts[i]) return false;
+	if(!mutations[i].neutral) return false;  
 	if(!(g.n <= mutcounts[i])) return false;
       }
     for( const auto & i : g.smutations )
       {
 	if(!mutcounts[i]) return false;
+	if(mutations[i].neutral) return false;
 	if(!(g.n <= mutcounts[i])) return false;
       }
     return true;
   }
   
   template<typename dipcont_t,
-	   typename gcont_t>
+	   typename gcont_t,
+	   typename mcont_t>
   bool popdata_sane(const dipcont_t & diploids,
 		    const gcont_t & gametes,
+		    const mcont_t & mutations,
 		    const std::vector<uint_t> & mutcounts)
   {
     for(const auto & d : diploids)
       {
 	if( !gametes[d.first].n ) return false;
 	if( !gametes[d.second].n ) return false;
-	if( !gamete_data_sane(gametes[d.first],mutcounts) ) return false;
-	if( !gamete_data_sane(gametes[d.second],mutcounts) ) return false;
+	if( !gamete_data_sane(gametes[d.first],mutations,mutcounts) ) return false;
+	if( !gamete_data_sane(gametes[d.second],mutations,mutcounts) ) return false;
       }
     return true;
   }
 }
 
-#endif
 #endif

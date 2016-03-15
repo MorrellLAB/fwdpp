@@ -21,7 +21,9 @@ namespace KTfwd {
     //! Evaluates to std::true_type if T publicly inherits from KTfwd::tags::custom_diploid_t
     template<typename T>
     struct is_custom_diploid_t : std::integral_constant<bool,
-							std::is_base_of<KTfwd::tags::custom_diploid_t,T>::value>
+							std::is_base_of<KTfwd::tags::custom_diploid_t,T>::value &&
+							traits::internal::has_first_type<T>::value &&
+							traits::internal::has_second_type<T>::value>
     {
     };
 
@@ -39,22 +41,11 @@ namespace KTfwd {
     {
     };
 
-    // //! Gives the "gamete lookup table" type corresponding to gcont_t and mcont_t
-    // template<typename gcont_t,typename mcont_t>
-    // struct gamete_lookup_t
-    // {
-    //   static_assert( is_gamete_t<typename gcont_t::value_type>::value,
-    // 		     "gcont_t::value_type must be a gamete type");
-    //   static_assert( is_mutation_t<typename mcont_t::value_type>::value,
-    // 		     "mcont_t::value_type must be a mutation type");
-    //   using type = typename std::result_of<decltype(&fwdpp_internal::gamete_lookup_table<gcont_t,mcont_t>)(gcont_t &,mcont_t &)>::type;
-    // };
-
     //! Gives the "recycling bin" type corresponding to cont_t
     template<typename cont_t>
     struct recycling_bin_type
     {
-      using type = KTfwd::fwdpp_internal::recycling_bin_t<std::size_t>;
+      using type = KTfwd::fwdpp_internal::recycling_bin_t<typename cont_t::size_type>;
     };
 
     template<typename T>
@@ -122,22 +113,15 @@ namespace KTfwd {
       Applies to mutation policies that only take recycling bins and  mcont_t *
       as arguments
     */
-    template<typename mcont_t>
-    struct mmodel_t
-    {
-      using type = std::function<typename mcont_t::iterator(recycling_bin_t<mcont_t> &,mcont_t &)>;
-    };
+    template<typename mcont_t> using mmodel_t = std::function<std::size_t(recycling_bin_t<mcont_t> &,mcont_t &)>;
 
     /*!
       Gives mutation model function signature for models requiring gametes as arguments
     */
     template<typename mcont_t,typename gcont_t>
-    struct mmodel_gamete_t
-    {
-      using type = std::function<typename mcont_t::iterator(recycling_bin_t<mcont_t> &,
-							    typename gcont_t::value_type &,
-							    mcont_t *)>;
-    };
+    using mmodel_gamete_t = std::function<std::size_t(recycling_bin_t<mcont_t> &,
+						      typename gcont_t::value_type &,
+						      mcont_t &)>;
   }
 }
 #endif

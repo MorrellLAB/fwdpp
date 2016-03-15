@@ -1,7 +1,6 @@
 #ifndef __FDWPP_INTERNAL_RECOMBINATION_COMMON_HPP__
 #define __FDWPP_INTERNAL_RECOMBINATION_COMMON_HPP__
 
-#include <iostream>
 #include <fwdpp/internal/rec_gamete_updater.hpp>
 #include <cassert>
 namespace KTfwd {
@@ -16,8 +15,8 @@ namespace KTfwd {
 			    const std::size_t jbeg,
 			    gcont_t & gametes,
 			    const mcont_t & mutations,
-			    std::vector<std::size_t> & neutral,
-			    std::vector<std::size_t> & selected)
+			    typename gcont_t::value_type::mutation_container & neutral,
+			    typename gcont_t::value_type::mutation_container & selected)
     {
       assert( std::is_sorted(pos.cbegin(),pos.cend()) );
 

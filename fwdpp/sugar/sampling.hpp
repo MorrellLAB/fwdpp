@@ -17,7 +17,7 @@ namespace KTfwd
     Take a random sample of size 'nsam' from a population
    */
   template<typename poptype>
-  sample_t sample( gsl_rng * r,
+  sample_t sample( const gsl_rng * r,
 		   const poptype & p,
 		   const unsigned nsam,
 		   const bool removeFixed)
@@ -40,7 +40,7 @@ namespace KTfwd
   }
 
   template<typename poptype>
-  sep_sample_t sample_separate( gsl_rng * r,
+  sep_sample_t sample_separate( const gsl_rng * r,
 				const poptype & p,
 				const unsigned nsam,
 				const bool removeFixed)
@@ -120,7 +120,7 @@ namespace KTfwd
   }
 
   template<typename poptype>
-  sample_t sample( gsl_rng * r,
+  sample_t sample( const gsl_rng * r,
 		   const poptype & p,
 		   const unsigned deme,
 		   const unsigned nsam,
@@ -146,17 +146,12 @@ namespace KTfwd
     auto temp = ms_sample_separate(r,p.mutations,p.gametes,p.diploids[deme],nsam,removeFixed);
     auto rv = std::move(temp.first);
     std::move(temp.second.begin(),temp.second.end(),std::back_inserter(rv));
-    std::sort(rv.begin(),rv.end(),[](const sample_site_t & a,
-				     const sample_site_t & b){
-		return a.first<b.first;
-	      });
-    if(!removeFixed)
-      add_fixations(&rv,p.fixations,nsam,sugar::treat_neutral::ALL);
+    finish_sample(rv,p.fixations,nsam,removeFixed,sugar::treat_neutral::ALL);
     return rv;
   }
   
   template<typename poptype>
-  sep_sample_t sample_separate( gsl_rng * r,
+  sep_sample_t sample_separate( const gsl_rng * r,
 				const poptype & p,
 				const unsigned deme,
 				const unsigned nsam,
@@ -179,7 +174,10 @@ namespace KTfwd
       {
 	throw std::out_of_range("KTfwd::sample_separate: deme index out of range");
       }
-    return ms_sample_separate(r,p.mutations,p.gametes,p.diploids[deme],nsam,removeFixed);
+    auto x = ms_sample_separate(r,p.mutations,p.gametes,p.diploids[deme],nsam,removeFixed);
+    finish_sample(x.first,p.fixations,nsam,removeFixed,sugar::treat_neutral::NEUTRAL);
+    finish_sample(x.second,p.fixations,nsam,removeFixed,sugar::treat_neutral::SELECTED);
+    return x;
   }
 
   template<typename poptype>
@@ -215,12 +213,7 @@ namespace KTfwd
     auto temp = fwdpp_internal::ms_sample_separate_single_deme(p.mutations,p.gametes,p.diploids[deme],individuals,2*individuals.size(),removeFixed);
     auto rv = std::move(temp.first);
     std::move(temp.second.begin(),temp.second.end(),std::back_inserter(rv));
-    std::sort(rv.begin(),rv.end(),[](const sample_site_t & a,
-				     const sample_site_t & b){
-		return a.first<b.first;
-	      });
-    if(!removeFixed)
-      add_fixations(&rv,p.fixations,2*individuals.size(),sugar::treat_neutral::ALL);
+    finish_sample(rv,p.fixations,2*individuals.size(),removeFixed,sugar::treat_neutral::ALL);
     return rv;
   }
   
@@ -254,7 +247,10 @@ namespace KTfwd
 	    throw std::out_of_range("KTfwd::sample_separate: individual index out of range");
 	  }
       }
-    return fwdpp_internal::ms_sample_separate_single_deme(p.mutations,p.gametes,p.diploids[deme],individuals,2*individuals.size(),removeFixed);
+    auto x = fwdpp_internal::ms_sample_separate_single_deme(p.mutations,p.gametes,p.diploids[deme],individuals,2*individuals.size(),removeFixed);
+    finish_sample(x.first,p.fixations,2*individuals.size(),removeFixed,sugar::treat_neutral::NEUTRAL);
+    finish_sample(x.second,p.fixations,2*individuals.size(),removeFixed,sugar::treat_neutral::SELECTED);
+    return x;
   }
 }
 

@@ -49,19 +49,21 @@ namespace KTfwd {
 	  This type has its own deleter, which is convenient, because
 	  operator= for unique_ptrs automagically calls the deleter before assignment!
 	  Details: http://www.cplusplus.com/reference/memory/unique_ptr/operator=
+
+	  This only works b/c the rhs of the expression below may be treated as an rvalue reference.
 	*/
 	lookup = fwdpp_internal::gsl_ran_discrete_t_ptr(gsl_ran_discrete_preproc(N_curr,&fitnesses[0]));
       }
 
       //! \brief Pick parent one
-      inline size_t pick1(gsl_rng * r) const
+      inline size_t pick1(const gsl_rng * r) const
       {
 	return gsl_ran_discrete(r,lookup.get());
       }
 
       //! \brief Pick parent 2.  Parent 1's data are passed along for models where that is relevant
       template<typename diploid_t,typename gcont_t,typename mcont_t>
-      inline size_t pick2(gsl_rng * r, const size_t & p1, const double & f,
+      inline size_t pick2(const gsl_rng * r, const size_t & p1, const double & f,
 			  const diploid_t &, const gcont_t &, const mcont_t &) const
       {
 	return ((f==1.)||(f>0.&&gsl_rng_uniform(r) < f)) ? p1 : gsl_ran_discrete(r,lookup.get());
@@ -69,7 +71,7 @@ namespace KTfwd {
 
       //! \brief Update some property of the offspring based on properties of the parents
       template<typename diploid_t,typename gcont_t,typename mcont_t>
-      void update(gsl_rng * , diploid_t &, const diploid_t & ,
+      void update(const gsl_rng * , diploid_t &, const diploid_t & ,
 		  const diploid_t &,
 		  const gcont_t &,
 		  const mcont_t &) const
@@ -82,26 +84,26 @@ namespace KTfwd {
 
     //! \brief Experimental variant where the population rules are implemented via an external policy
     template< typename gamete_type,
-	      typename gamete_list_type_allocator,
+	      typename gcont_t_allocator,
 	      typename mutation_type,
-	      typename mutation_list_type_allocator,
+	      typename mcont_t_allocator,
 	      typename diploid_geno_t,
 	      typename diploid_vector_type_allocator,
 	      typename diploid_fitness_function,
 	      typename mutation_model,
 	      typename recombination_policy,
-	      template<typename,typename> class gamete_list_type,
-	      template<typename,typename> class mutation_list_type,
+	      template<typename,typename> class gcont_t,
+	      template<typename,typename> class mcont_t,
 	      template<typename,typename> class diploid_vector_type,
 	      typename popmodel_rules = standardWFrules,
 	      typename mutation_removal_policy = std::true_type,
 	      typename gamete_insertion_policy = KTfwd::emplace_back
 	      >
     double
-    sample_diploid(gsl_rng * r,
-		   gamete_list_type<gamete_type,gamete_list_type_allocator > & gametes,
+    sample_diploid(const gsl_rng * r,
+		   gcont_t<gamete_type,gcont_t_allocator > & gametes,
 		   diploid_vector_type<diploid_geno_t,diploid_vector_type_allocator> & diploids,
-		   mutation_list_type<mutation_type,mutation_list_type_allocator > & mutations,
+		   mcont_t<mutation_type,mcont_t_allocator > & mutations,
 		   std::vector<uint_t> & mcounts,
 		   const unsigned & N_curr,
 		   const unsigned & N_next,
@@ -177,7 +179,7 @@ namespace KTfwd {
 	}
 #endif
       fwdpp_internal::process_gametes(gametes,mutations,mcounts);
-      assert(popdata_sane(diploids,gametes,mcounts));
+      assert(popdata_sane(diploids,gametes,mutations,mcounts));
       fwdpp_internal::gamete_cleaner(gametes,mutations,mcounts,2*N_next,mp);
       assert(check_sum(gametes,2*N_next));
       return pmr.wbar;
@@ -187,26 +189,26 @@ namespace KTfwd {
 
     //! \brief Experimental variant where the population rules are implemented via an external policy
      template< typename gamete_type,
-	      typename gamete_list_type_allocator,
+	      typename gcont_t_allocator,
 	      typename mutation_type,
-	      typename mutation_list_type_allocator,
+	      typename mcont_t_allocator,
 	      typename diploid_geno_t,
 	      typename diploid_vector_type_allocator,
 	      typename diploid_fitness_function,
 	      typename mutation_model,
 	      typename recombination_policy,
-	      template<typename,typename> class gamete_list_type,
-	      template<typename,typename> class mutation_list_type,
+	      template<typename,typename> class gcont_t,
+	      template<typename,typename> class mcont_t,
 	      template<typename,typename> class diploid_vector_type,
 	      typename popmodel_rules = standardWFrules,
 	      typename mutation_removal_policy = std::true_type,
 	      typename gamete_insertion_policy = KTfwd::emplace_back
 	      >
     double
-    sample_diploid(gsl_rng * r,
-		   gamete_list_type<gamete_type,gamete_list_type_allocator > & gametes,
+    sample_diploid(const gsl_rng * r,
+		   gcont_t<gamete_type,gcont_t_allocator > & gametes,
 		   diploid_vector_type<diploid_geno_t,diploid_vector_type_allocator> & diploids,
-		   mutation_list_type<mutation_type,mutation_list_type_allocator > & mutations,
+		   mcont_t<mutation_type,mcont_t_allocator > & mutations,
 		   std::vector<uint_t> & mcounts,
 		   const unsigned & N_curr,
 		   const double & mu,

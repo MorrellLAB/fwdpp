@@ -18,7 +18,10 @@ check_PROGRAMS=mutateTest \
 	test_generalmut_vec \
 	extensions \
 	demography \
-	gamete_cleaner
+	gamete_cleaner \
+	GSLrng_test \
+	type_traits_test \
+	recycling_integration
 
 
 TESTS=$(check_PROGRAMS)
@@ -42,6 +45,9 @@ test_generalmut_vec_SOURCES=test_generalmut_vec.cc
 extensions_SOURCES=extensions.cc
 demography_SOURCES=demography.cc
 gamete_cleaner_SOURCES=gamete_cleaner.cc
+GSLrng_test_SOURCES=GSLrng_test.cc
+type_traits_test_SOURCES=type_traits_test.cc
+recycling_integration_SOURCES=recycling_integration.cc
 
 AM_CXXFLAGS=
 

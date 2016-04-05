@@ -15,6 +15,7 @@ var searchData=
   ['split_5fdeme_5fno_5freplacement',['split_deme_no_replacement',['../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a1ba15bf6ba947ba609e8ee4c973e58a8',1,'KTfwd::fwdpp_internal']]],
   ['split_5fdeme_5freplacement',['split_deme_replacement',['../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a8220a2631128c1a8336f4c231a000748',1,'KTfwd::fwdpp_internal']]],
   ['split_5fpop',['split_pop',['../da/d8b/namespaceKTfwd.html#a1269206f37a8af782c348df38b926767',1,'KTfwd']]],
+  ['spop_5fderived',['spop_derived',['../de/d68/structspop__derived.html#ab4b07b433d88aee38cd920a27a2e87e2',1,'spop_derived::spop_derived(unsigned N)'],['../de/d68/structspop__derived.html#ab4b07b433d88aee38cd920a27a2e87e2',1,'spop_derived::spop_derived(unsigned N)']]],
   ['standardwfrules',['standardWFrules',['../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html#a6e8d00e04d117e88c13979d0a805f028',1,'KTfwd::experimental::standardWFrules']]],
   ['swap_5fdemes',['swap_demes',['../dc/d14/group__demography.html#gaf0123b287b34e04d773d224ab021067d',1,'KTfwd']]],
   ['swap_5fpops',['swap_pops',['../da/d8b/namespaceKTfwd.html#a60f658b75c95eae2bd13fcc0cd55f6e8',1,'KTfwd']]]

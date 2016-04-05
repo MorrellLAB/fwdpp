@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.7</span>
+   &#160;<span id="projectnumber">0.4.8</span>
    </div>
   </td>
  </tr>
@@ -110,28 +110,30 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">    /*!</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">      For every non-extinct gamete, increment the count of its mutations</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">      using the frequency of the gamete.</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">    */</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      <span class="keywordflow">if</span>(mutations.size()&gt;mcounts.size())</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;          mcounts.resize(mutations.size(),0);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      <span class="comment">//zero out mcounts</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <span class="keywordflow">for</span>(<span class="keyword">auto</span> &amp; mc : mcounts) mc=0;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      <span class="comment">//update mutation counts</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span> &amp; g : gametes)</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;          <span class="keywordflow">if</span>(g.n) <span class="comment">//only do this for extant gametes</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;              <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span> &amp; m : g.mutations) mcounts[m]+=g.n;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;              <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span> &amp; m : g.smutations) mcounts[m]+=g.n;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">      This is usually the most expensive function call in a simulation.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">    */</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      <span class="keywordflow">if</span>(mutations.size()&gt;mcounts.size())</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;          mcounts.resize(mutations.size(),0);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      <span class="comment">//zero out mcounts</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      <span class="keywordflow">for</span>(<span class="keyword">auto</span> &amp; mc : mcounts) mc=0;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      <span class="comment">//update mutation counts</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span> &amp; g : gametes)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;          <span class="keywordflow">if</span>(g.n) <span class="comment">//only do this for extant gametes</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;              <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span> &amp; m : g.mutations) mcounts[m]+=g.n;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;              <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span> &amp; m : g.smutations) mcounts[m]+=g.n;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="namespaceKTfwd_1_1fwdpp__internal_html_adf5a1900ec36a4db99c94d86f8ca9453"><div class="ttname"><a href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#adf5a1900ec36a4db99c94d86f8ca9453">KTfwd::fwdpp_internal::process_gametes</a></div><div class="ttdeci">void process_gametes(const gcont_t &amp;gametes, const mcont_t &amp;mutations, std::vector&lt; uint_t &gt; &amp;mcounts)</div><div class="ttdef"><b>Definition:</b> sample_diploid_helpers.hpp:12</div></div>
 <div class="ttc" id="namespaceKTfwd_html"><div class="ttname"><a href="../../da/d8b/namespaceKTfwd.html">KTfwd</a></div><div class="ttdoc">The primary namespace defined by this library. </div><div class="ttdef"><b>Definition:</b> debug.hpp:9</div></div>
 </div><!-- fragment --></div><!-- contents -->

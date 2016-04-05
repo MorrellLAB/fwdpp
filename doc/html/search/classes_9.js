@@ -1,6 +1,7 @@
 var searchData=
 [
   ['metapop',['metapop',['../d3/de0/classKTfwd_1_1sugar_1_1metapop.html',1,'KTfwd::sugar']]],
+  ['mpop_5fderived',['mpop_derived',['../d1/da4/structmpop__derived.html',1,'']]],
   ['multiloc',['multiloc',['../d3/d11/structKTfwd_1_1sugar_1_1multiloc.html',1,'KTfwd::sugar']]],
   ['multilocus_5fadditive',['multilocus_additive',['../d8/d63/structmultilocus__additive.html',1,'']]],
   ['multiplicative_5fdiploid',['multiplicative_diploid',['../dd/de5/structKTfwd_1_1multiplicative__diploid.html',1,'KTfwd']]],

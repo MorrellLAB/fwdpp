@@ -21,7 +21,9 @@ check_PROGRAMS=mutateTest \
 	gamete_cleaner \
 	GSLrng_test \
 	type_traits_test \
-	recycling_integration
+	recycling_integration \
+	test_sugar_add_mutation \
+	test_sugar_change_neutral
 
 
 TESTS=$(check_PROGRAMS)
@@ -48,6 +50,8 @@ gamete_cleaner_SOURCES=gamete_cleaner.cc
 GSLrng_test_SOURCES=GSLrng_test.cc
 type_traits_test_SOURCES=type_traits_test.cc
 recycling_integration_SOURCES=recycling_integration.cc
+test_sugar_add_mutation_SOURCES=test_sugar_add_mutation.cc
+test_sugar_change_neutral_SOURCES=test_sugar_change_neutral.cc
 
 AM_CXXFLAGS=
 

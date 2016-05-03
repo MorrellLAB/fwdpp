@@ -23,11 +23,20 @@ namespace KTfwd
     assert(g1 < gametes.size());
     assert(g2 < gametes.size());
     assert( std::is_sorted(pos.begin(),pos.end()) );
+    assert(!pos.empty());
     assert( *(pos.end()-1) == std::numeric_limits<double>::max() );
 
     //We defer clearing all the way to this point
+    //Note that this just adjusts the value of end,
+    //and capacity() is not affected, meaning
+    //we can insert into these containers relatively
+    //efficiently
     neutral.clear();
     selected.clear();
+    /*
+      Fill neutral and selected by recombining gametes[g1] and gametes[g2]
+      at positions contains in pos
+    */
     fwdpp_internal::recombine_gametes(pos,g1,g2,gametes,mutations,neutral,selected);
     return fwdpp_internal::recycle_gamete(gametes,gamete_recycling_bin,neutral,selected);
   }

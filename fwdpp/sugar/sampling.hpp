@@ -17,10 +17,10 @@ namespace KTfwd
     Take a random sample of size 'nsam' from a population
    */
   template<typename poptype>
-  sample_t sample( const gsl_rng * r,
-		   const poptype & p,
-		   const unsigned nsam,
-		   const bool removeFixed)
+  auto sample( const gsl_rng * r,
+	       const poptype & p,
+	       const unsigned nsam,
+	       const bool removeFixed) -> decltype(ms_sample(r,p.mutations,p.gametes,p.diploids,nsam,removeFixed))
   /*!
     Take a random sample of nsam chromosomes from a population
 
@@ -36,14 +36,16 @@ namespace KTfwd
 		    std::is_same<typename poptype::popmodel_t,sugar::MULTILOCPOP_TAG>::value ),
 		   "poptype must be SINGLEPOP_TAG or MULTILOCPOP_TAG"
 		   );
-    return sample_details(r,p,nsam,removeFixed,typename std::is_same<typename poptype::popmodel_t,sugar::SINGLEPOP_TAG>::type());
+    auto rv = ms_sample(r,p.mutations,p.gametes,p.diploids,nsam,removeFixed);
+    finish_sample(rv,p.fixations,nsam,removeFixed,sugar::treat_neutral::ALL);
+    return rv;
   }
 
   template<typename poptype>
-  sep_sample_t sample_separate( const gsl_rng * r,
-				const poptype & p,
-				const unsigned nsam,
-				const bool removeFixed)
+  auto sample_separate( const gsl_rng * r,
+			const poptype & p,
+			const unsigned nsam,
+			const bool removeFixed) -> decltype(ms_sample_separate(r,p.mutations,p.gametes,p.diploids,nsam,removeFixed))
   /*!
     Take a random sample of nsam chromosomes from a population
 
@@ -59,13 +61,15 @@ namespace KTfwd
 		    std::is_same<typename poptype::popmodel_t,sugar::MULTILOCPOP_TAG>::value ),
 		   "poptype must be SINGLEPOP_TAG or MULTILOCPOP_TAG"
 		   );
-    return sample_sep_details(r,p,nsam,removeFixed,typename std::is_same<typename poptype::popmodel_t,sugar::SINGLEPOP_TAG>::type());
+    auto rv =  ms_sample_separate(r,p.mutations,p.gametes,p.diploids,nsam,removeFixed);
+    finish_sample(rv,p.fixations,nsam,removeFixed,sugar::treat_neutral::ALL);
+    return rv;
   }
 
   template<typename poptype>
-  sample_t sample(const poptype & p,
-		  const std::vector<unsigned> & individuals,
-		  const bool removeFixed)
+  auto sample(const poptype & p,
+	      const std::vector<unsigned> & individuals,
+	      const bool removeFixed) -> decltype(sample_details(p,individuals,removeFixed,typename std::is_same<typename poptype::popmodel_t,sugar::SINGLEPOP_TAG>::type()))
   /*!
     Take a non-random sample of diploids from a population
 
@@ -87,13 +91,15 @@ namespace KTfwd
       {
 	throw std::out_of_range("KTfwd::sample_separate: individual index out of range");
       }
-    return sample_details(p,individuals,removeFixed,typename std::is_same<typename poptype::popmodel_t,sugar::SINGLEPOP_TAG>::type()); 
+
+    auto rv = sample_details(p,individuals,removeFixed,typename std::is_same<typename poptype::popmodel_t,sugar::SINGLEPOP_TAG>::type());
+    return rv;
   }
   
   template<typename poptype>
-  sep_sample_t sample_separate(const poptype & p,
-			       const std::vector<unsigned> & individuals,
-			       const bool removeFixed)
+  auto sample_separate(const poptype & p,
+		       const std::vector<unsigned> & individuals,
+		       const bool removeFixed) -> decltype(fwdpp_internal::ms_sample_separate_single_deme(p.mutations,p.gametes,p.diploids,individuals,2*individuals.size(),removeFixed))
   /*!
     Take a non-random sample of nsam chromosomes from a population
     
@@ -116,7 +122,9 @@ namespace KTfwd
       {
 	throw std::out_of_range("KTfwd::sample_separate: individual index out of range");
       }
-    return sample_sep_details(p,individuals,removeFixed,typename std::is_same<typename poptype::popmodel_t,sugar::SINGLEPOP_TAG>::type()); 
+    auto rv = fwdpp_internal::ms_sample_separate_single_deme(p.mutations,p.gametes,p.diploids,individuals,2*individuals.size(),removeFixed);
+    finish_sample(rv,p.fixations,2*individuals.size(),removeFixed,sugar::treat_neutral::ALL);
+    return rv;
   }
 
   template<typename poptype>
@@ -189,7 +197,7 @@ namespace KTfwd
     Take a non-random sample of nsam chromosomes from a meta-population
     
     \param p A population
-    \param p the index of the deme to sample
+    \param deme the index of the deme to sample
     \param nsam The sample size
     \param removeFixed Whether or not to remove variants present in all nsam chromosomes
     

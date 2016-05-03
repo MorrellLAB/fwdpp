@@ -6,5 +6,6 @@ var searchData=
   ['singlepop',['singlepop',['../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html',1,'KTfwd::sugar']]],
   ['site_5fdependent_5ffitness',['site_dependent_fitness',['../d0/ddb/structKTfwd_1_1site__dependent__fitness.html',1,'KTfwd']]],
   ['spop_5fderived',['spop_derived',['../de/d68/structspop__derived.html',1,'']]],
-  ['standardwfrules',['standardWFrules',['../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html',1,'KTfwd::experimental']]]
+  ['standardwfrules',['standardWFrules',['../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html',1,'KTfwd::experimental']]],
+  ['standardwfrules_5fmloc',['standardWFrules_mloc',['../d8/d1d/structKTfwd_1_1experimental_1_1standardWFrules__mloc.html',1,'KTfwd::experimental']]]
 ];

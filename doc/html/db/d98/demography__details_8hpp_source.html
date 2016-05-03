@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.8</span>
+   &#160;<span id="projectnumber">0.4.9</span>
    </div>
   </td>
  </tr>
@@ -112,7 +112,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                                                       <span class="keyword">const</span> <span class="keywordtype">bool</span> with_replacement)</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      std::vector&lt;std::size_t&gt; rv;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      <span class="keywordflow">for</span>( std::size_t i = 0 ; i &lt; N2 ; ++i )</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      <span class="keywordflow">for</span>( std::size_t <a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a> = 0 ; <a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a> &lt; N2 ; ++<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a> )</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;          std::size_t ind = std::size_t(gsl_ran_flat(r,0.,<span class="keywordtype">double</span>(N)));</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;          <span class="keywordflow">if</span>(!with_replacement)</div>
@@ -125,7 +125,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;          rv.push_back(ind);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      <span class="comment">//sort in descending order</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      std::sort(rv.begin(),rv.end(),[](<span class="keywordtype">size_t</span> i, <span class="keywordtype">size_t</span> j)noexcept { <span class="keywordflow">return</span> i&gt;j; });</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      std::sort(rv.begin(),rv.end(),[](<span class="keywordtype">size_t</span> <a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>, <span class="keywordtype">size_t</span> j)noexcept { <span class="keywordflow">return</span> i&gt;j; });</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      <span class="keywordflow">return</span> rv;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
@@ -138,7 +138,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                mcount_t &amp; mcounts,</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                gcont_t &amp; gametes,</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                vdipvector_t &amp; diploids,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                <span class="keyword">const</span> <span class="keywordtype">size_t</span> i,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>,</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                <span class="keyword">const</span> <a class="code" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> N_new )</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      <span class="keyword">auto</span> indlist_n = <a class="code" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a1a0bf6b06cf8847e172e1ee615e9cf80">sample_individuals</a>(r,diploids[i].size(),N_new,<span class="keyword">true</span>);</div>
@@ -155,16 +155,16 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      <span class="keyword">typename</span> vdipvector_t::value_type deme_i(diploids[i]);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <span class="comment">//delete diploids from deme i</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      std::size_t rsize = diploids[i].size()-std::size_t(N_new);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      diploids[i].clear();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      diploids[i].reserve(rsize);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      std::size_t rsize = diploids[<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>].size()-std::size_t(N_new);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      diploids[<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>].clear();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      diploids[<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>].reserve(rsize);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <span class="comment">//add a new deme</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      diploids.emplace_back(<span class="keyword">typename</span> vdipvector_t::value_type());</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      diploids[i].reserve(N_new);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      diploids[<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>].reserve(N_new);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <span class="comment">//get references to current and new deme</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="keyword">auto</span> &amp; curr_deme = diploids[i];</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="keyword">auto</span> &amp; curr_deme = diploids[<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>];</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <span class="keyword">auto</span> &amp; new_deme = diploids[diploids.size()-1];</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <span class="comment">//populate new deme based on copy of deme i</span></div>
@@ -203,7 +203,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                   mcount_t &amp;,</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                                   gcont_t &amp;,</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                                   vdipvector_t &amp; diploids,</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                                   <span class="keyword">const</span> <span class="keywordtype">size_t</span> i,</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                                   <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>,</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                                   <span class="keyword">const</span> <a class="code" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> N_new )</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    {</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      <span class="keyword">auto</span> indlist = <a class="code" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a1a0bf6b06cf8847e172e1ee615e9cf80">sample_individuals</a>(r,diploids[i].size(),N_new,<span class="keyword">false</span>);</div>
@@ -211,7 +211,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      diploids.emplace_back( <span class="keyword">typename</span> vdipvector_t::value_type() );</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      <span class="comment">//get reference to new deme and current deme</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      <span class="keyword">auto</span> &amp; new_deme = diploids[diploids.size()-1];</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      <span class="keyword">auto</span> &amp; curr_deme = diploids[i];</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      <span class="keyword">auto</span> &amp; curr_deme = diploids[<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>];</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">#ifndef NDEBUG</span></div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;      <span class="keyword">auto</span> curr_deme_size = curr_deme.size();</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -239,7 +239,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                            mcount_t &amp; mcounts,</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                            gcont_t &amp; gametes,</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                            vdipvector_t &amp; diploids,</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">size_t</span> i,</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">size_t</span> <a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>,</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                            <span class="keyword">const</span> <a class="code" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> N_new,</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">bool</span> replacement = <span class="keyword">false</span>)</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    {</div>
@@ -250,15 +250,16 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;}</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="namespaceKTfwd_1_1fwdpp__internal_html_adf5a1900ec36a4db99c94d86f8ca9453"><div class="ttname"><a href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#adf5a1900ec36a4db99c94d86f8ca9453">KTfwd::fwdpp_internal::process_gametes</a></div><div class="ttdeci">void process_gametes(const gcont_t &amp;gametes, const mcont_t &amp;mutations, std::vector&lt; uint_t &gt; &amp;mcounts)</div><div class="ttdef"><b>Definition:</b> sample_diploid_helpers.hpp:12</div></div>
-<div class="ttc" id="namespaceKTfwd_1_1fwdpp__internal_html_a3a57bffe0f73432ae388539c1d42cebe"><div class="ttname"><a href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a3a57bffe0f73432ae388539c1d42cebe">KTfwd::fwdpp_internal::split_deme_details</a></div><div class="ttdeci">int split_deme_details(const gsl_rng *r, const mcont_t &amp;mutations, mcount_t &amp;mcounts, gcont_t &amp;gametes, vdipvector_t &amp;diploids, const size_t i, const uint_t N_new, const bool replacement=false)</div><div class="ttdef"><b>Definition:</b> demography_details.hpp:142</div></div>
+<div class="ttc" id="test__sugar__add__mutation_8cc_html_a904ff4f9ee77665963d354fe4c6a86e0"><div class="ttname"><a href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a></div><div class="ttdeci">std::size_t i</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dc2/test__sugar__add__mutation_8cc_source.html#l00239">test_sugar_add_mutation.cc:239</a></div></div>
+<div class="ttc" id="namespaceKTfwd_1_1fwdpp__internal_html_adf5a1900ec36a4db99c94d86f8ca9453"><div class="ttname"><a href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#adf5a1900ec36a4db99c94d86f8ca9453">KTfwd::fwdpp_internal::process_gametes</a></div><div class="ttdeci">void process_gametes(const gcont_t &amp;gametes, const mcont_t &amp;mutations, std::vector&lt; uint_t &gt; &amp;mcounts)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d69/sample__diploid__helpers_8hpp_source.html#l00012">sample_diploid_helpers.hpp:12</a></div></div>
+<div class="ttc" id="namespaceKTfwd_1_1fwdpp__internal_html_a3a57bffe0f73432ae388539c1d42cebe"><div class="ttname"><a href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a3a57bffe0f73432ae388539c1d42cebe">KTfwd::fwdpp_internal::split_deme_details</a></div><div class="ttdeci">int split_deme_details(const gsl_rng *r, const mcont_t &amp;mutations, mcount_t &amp;mcounts, gcont_t &amp;gametes, vdipvector_t &amp;diploids, const size_t i, const uint_t N_new, const bool replacement=false)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d98/demography__details_8hpp_source.html#l00142">demography_details.hpp:142</a></div></div>
 <div class="ttc" id="sample__diploid__helpers_8hpp_html"><div class="ttname"><a href="../../d3/d69/sample__diploid__helpers_8hpp.html">sample_diploid_helpers.hpp</a></div></div>
-<div class="ttc" id="namespaceKTfwd_1_1fwdpp__internal_html_a1a0bf6b06cf8847e172e1ee615e9cf80"><div class="ttname"><a href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a1a0bf6b06cf8847e172e1ee615e9cf80">KTfwd::fwdpp_internal::sample_individuals</a></div><div class="ttdeci">std::vector&lt; std::size_t &gt; sample_individuals(const gsl_rng *r, const std::size_t N, const uint_t N2, const bool with_replacement)</div><div class="ttdef"><b>Definition:</b> demography_details.hpp:14</div></div>
-<div class="ttc" id="namespaceKTfwd_1_1fwdpp__internal_html_a8220a2631128c1a8336f4c231a000748"><div class="ttname"><a href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a8220a2631128c1a8336f4c231a000748">KTfwd::fwdpp_internal::split_deme_replacement</a></div><div class="ttdeci">int split_deme_replacement(const gsl_rng *r, const mcont_t &amp;mutations, mcount_t &amp;mcounts, gcont_t &amp;gametes, vdipvector_t &amp;diploids, const size_t i, const uint_t N_new)</div><div class="ttdef"><b>Definition:</b> demography_details.hpp:41</div></div>
-<div class="ttc" id="namespaceKTfwd_1_1fwdpp__internal_html_a1ba15bf6ba947ba609e8ee4c973e58a8"><div class="ttname"><a href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a1ba15bf6ba947ba609e8ee4c973e58a8">KTfwd::fwdpp_internal::split_deme_no_replacement</a></div><div class="ttdeci">int split_deme_no_replacement(const gsl_rng *r, const mcont_t &amp;, mcount_t &amp;, gcont_t &amp;, vdipvector_t &amp;diploids, const size_t i, const uint_t N_new)</div><div class="ttdef"><b>Definition:</b> demography_details.hpp:106</div></div>
-<div class="ttc" id="callbacks_8cc_html_a53b3e4bb1bd287d2150b9c128e15a316"><div class="ttname"><a href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a></div><div class="ttdeci">gsl_rng * r</div><div class="ttdef"><b>Definition:</b> callbacks.cc:15</div></div>
-<div class="ttc" id="namespaceKTfwd_html_ae44efbad5ba480ceea8c79541daf48a2"><div class="ttname"><a href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">KTfwd::uint_t</a></div><div class="ttdeci">std::uint32_t uint_t</div><div class="ttdoc">The unsigned integer type is 32 bits. </div><div class="ttdef"><b>Definition:</b> forward_types.hpp:20</div></div>
-<div class="ttc" id="namespaceKTfwd_html"><div class="ttname"><a href="../../da/d8b/namespaceKTfwd.html">KTfwd</a></div><div class="ttdoc">The primary namespace defined by this library. </div><div class="ttdef"><b>Definition:</b> debug.hpp:9</div></div>
+<div class="ttc" id="namespaceKTfwd_1_1fwdpp__internal_html_a1a0bf6b06cf8847e172e1ee615e9cf80"><div class="ttname"><a href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a1a0bf6b06cf8847e172e1ee615e9cf80">KTfwd::fwdpp_internal::sample_individuals</a></div><div class="ttdeci">std::vector&lt; std::size_t &gt; sample_individuals(const gsl_rng *r, const std::size_t N, const uint_t N2, const bool with_replacement)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d98/demography__details_8hpp_source.html#l00014">demography_details.hpp:14</a></div></div>
+<div class="ttc" id="namespaceKTfwd_1_1fwdpp__internal_html_a8220a2631128c1a8336f4c231a000748"><div class="ttname"><a href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a8220a2631128c1a8336f4c231a000748">KTfwd::fwdpp_internal::split_deme_replacement</a></div><div class="ttdeci">int split_deme_replacement(const gsl_rng *r, const mcont_t &amp;mutations, mcount_t &amp;mcounts, gcont_t &amp;gametes, vdipvector_t &amp;diploids, const size_t i, const uint_t N_new)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d98/demography__details_8hpp_source.html#l00041">demography_details.hpp:41</a></div></div>
+<div class="ttc" id="namespaceKTfwd_1_1fwdpp__internal_html_a1ba15bf6ba947ba609e8ee4c973e58a8"><div class="ttname"><a href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a1ba15bf6ba947ba609e8ee4c973e58a8">KTfwd::fwdpp_internal::split_deme_no_replacement</a></div><div class="ttdeci">int split_deme_no_replacement(const gsl_rng *r, const mcont_t &amp;, mcount_t &amp;, gcont_t &amp;, vdipvector_t &amp;diploids, const size_t i, const uint_t N_new)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d98/demography__details_8hpp_source.html#l00106">demography_details.hpp:106</a></div></div>
+<div class="ttc" id="callbacks_8cc_html_a53b3e4bb1bd287d2150b9c128e15a316"><div class="ttname"><a href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a></div><div class="ttdeci">gsl_rng * r</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dba/callbacks_8cc_source.html#l00015">callbacks.cc:15</a></div></div>
+<div class="ttc" id="namespaceKTfwd_html_ae44efbad5ba480ceea8c79541daf48a2"><div class="ttname"><a href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">KTfwd::uint_t</a></div><div class="ttdeci">std::uint32_t uint_t</div><div class="ttdoc">The unsigned integer type is 32 bits. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d1d/forward__types_8hpp_source.html#l00020">forward_types.hpp:20</a></div></div>
+<div class="ttc" id="namespaceKTfwd_html"><div class="ttname"><a href="../../da/d8b/namespaceKTfwd.html">KTfwd</a></div><div class="ttdoc">The primary namespace defined by this library. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d7b/debug_8hpp_source.html#l00009">debug.hpp:9</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

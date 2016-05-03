@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.8</span>
+   &#160;<span id="projectnumber">0.4.9</span>
    </div>
   </td>
  </tr>
@@ -150,13 +150,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- fragment --><h3>Caveat: vectors of policies containing values captured in lambda expressions.</h3>
 <p>The above examples all consider a fixed number of loci. However, if the number of loci is to be determined at run-time, then your mutation models, etc., will need to be created dynamically. When using <em>lambda expressions</em>, be sure to capture <em>by value</em> and not <em>by reference</em>. For example, this loop results in a vector of mutation policies where mutation positions at the <img class="formulaInl" alt="$i^{th}$" src="../../form_31.png"/> locus are continuous on the interval <img class="formulaInl" alt="$[i,i+1)$" src="../../form_32.png"/>:</p>
 <div class="fragment"><div class="line">std::vector&lt; std::function&lt;mtype(multiloc_t::mlist_t *)&gt; &gt; mmodels;</div>
-<div class="line"><span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i = 0 ; i &lt; nloci ; ++i)</div>
+<div class="line"><span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a> = 0 ; <a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a> &lt; nloci ; ++<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>)</div>
 <div class="line">        {</div>
 <div class="line">        <span class="comment">//Establish the range of positions for this locus</span></div>
-<div class="line">          <span class="keywordtype">double</span> a=i,b=i+1;</div>
+<div class="line">          <span class="keywordtype">double</span> a=<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>,b=<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>+1;</div>
 <div class="line">          mmodels.push_back(std::bind(<a class="code" href="../../df/d07/structKTfwd_1_1infsites.html">KTfwd::infsites</a>(),r.get(),&amp;pop.mut_lookup,&amp;generation,</div>
 <div class="line">        <span class="comment">//Capture a,b by VALUE!  Otherwise, they go out of scope and bad things can happen!</span></div>
-<div class="line">                mu[i],0.,[&amp;<a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,a,b](){ <span class="keywordflow">return</span> gsl_ran_flat(r.get(),a,b);},[](){<span class="keywordflow">return</span> 0.;},[](){<span class="keywordflow">return</span> 0.;}));</div>
+<div class="line">                mu[<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>],0.,[&amp;<a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,a,b](){ <span class="keywordflow">return</span> gsl_ran_flat(r.get(),a,b);},[](){<span class="keywordflow">return</span> 0.;},[](){<span class="keywordflow">return</span> 0.;}));</div>
 <div class="line">        }</div>
 </div><!-- fragment --><p>Keep this in mind for all containers of policies (in addition to this mutation example).</p>
 <h3>Digression: type signatures for for policies</h3>
@@ -240,7 +240,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </ol>
 <p>At this point, you are probably ready to see the full implementation of <a class="el" href="../../de/dce/diploid__ind__2locus_8cc.html">diploid_ind_2locus.cc</a> for the remaining details.</p>
 <h1>Sampling from a multilocus simulation</h1>
-<p>To take a sample of size <img class="formulaInl" alt="$n \ll N$" src="../../form_38.png"/> from the population, you may make a call to either <a class="el" href="../../d7/de2/group__samplingPopsInd.html#gacae02330d0037097ccba03e87384cdbd" title="Sampling from a population in an individual-based simulation. ">KTfwd::ms_sample</a>, which returns all neutral selected mutations in a single block, or <a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga687df92ca45521808bc24c09f437ff04" title="Sampling from a population in an individual-based simulation. Selected and neutral mutations returned...">KTfwd::ms_sample_separate</a>, which returns separate blocks for the selected and neutral mutations.</p>
+<p>To take a sample of size <img class="formulaInl" alt="$n \ll N$" src="../../form_38.png"/> from the population, you may make a call to either <a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga0c8ef6cc18f22e0135ab0e9635bf63b6" title="Sampling from a population in an individual-based simulation. ">KTfwd::ms_sample</a>, which returns all neutral selected mutations in a single block, or <a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga515d5785177f22ed1b9d307bd7b708f9" title="Sampling from a population in an individual-based simulation. Selected and neutral mutations returned...">KTfwd::ms_sample_separate</a>, which returns separate blocks for the selected and neutral mutations.</p>
 <h1>Serialization: in-memory copying and file I/O</h1>
 <p>See the <a class="el" href="../../d5/d9d/md_md_serialization.html">tutorial on serialization</a>.</p>
 <h2>Mechanics of the multilocus recombination</h2>

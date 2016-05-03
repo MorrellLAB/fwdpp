@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.8</span>
+   &#160;<span id="projectnumber">0.4.9</span>
    </div>
   </td>
  </tr>
@@ -106,7 +106,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <code>#include &lt;sstream&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../dc/d32/infsites_8hpp_source.html">fwdpp/sugar/infsites.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../df/d10/common__ind_8hpp_source.html">common_ind.hpp</a>&gt;</code><br />
-</div><table class="memberdecls">
+</div>
+<p><a href="../../de/dce/diploid__ind__2locus_8cc_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/df2/structno__selection__multi.html">no_selection_multi</a></td></tr>
@@ -137,6 +139,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dce/diploid__ind__2locus_8cc_source.html#l00015">15</a> of file <a class="el" href="../../de/dce/diploid__ind__2locus_8cc_source.html">diploid_ind_2locus.cc</a>.</p>
 
 </div>
 </div>
@@ -230,7 +234,7 @@ Functions</h2></td></tr>
 <div class="line">      <a class="code" href="../../d3/d11/structKTfwd_1_1sugar_1_1multiloc.html">multiloc_t</a> pop(N,2);</div>
 <div class="line">      pop.mutations.reserve(<span class="keywordtype">size_t</span>(2*std::ceil(std::log(2*N)*(theta)+0.667*(theta))));</div>
 <div class="line">      <span class="keywordtype">unsigned</span> generation=0;</div>
-<div class="line">      <span class="keywordtype">double</span> wbar;</div>
+<div class="line">      <span class="keywordtype">double</span> <a class="code" href="../../d5/da7/extensions_8cc.html#a0f29eb9f5997fb6191af2c906b84fbf0">wbar</a>;</div>
 <div class="line"></div>
 <div class="line">      std::vector&lt;std::function&lt;std::vector&lt;double&gt;(<span class="keyword">const</span> <a class="code" href="../../d3/d11/structKTfwd_1_1sugar_1_1multiloc.html#a64ee8953f5b5639e6a56826e752919f9">multiloc_t::gamete_t</a> &amp;,</div>
 <div class="line">                                                    <span class="keyword">const</span> multiloc_t::gamete_t &amp;,</div>
@@ -274,7 +278,7 @@ Functions</h2></td></tr>
 <div class="line">      <span class="comment">//For giggles, make sure that the pop. is copy-constructible...</span></div>
 <div class="line">      <a class="code" href="../../d3/d11/structKTfwd_1_1sugar_1_1multiloc.html">multiloc_t</a> pop2(pop);</div>
 <div class="line">      <span class="comment">//Take a sample and print it to screen.</span></div>
-<div class="line">      <span class="keyword">auto</span> x = <a class="code" href="../../d7/de2/group__samplingPopsInd.html#gacae02330d0037097ccba03e87384cdbd">KTfwd::ms_sample</a>(<a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>.get(),pop.mutations,pop.gametes,pop.diploids,samplesize1,<span class="keyword">true</span>);</div>
+<div class="line">      <span class="keyword">auto</span> x = <a class="code" href="../../d7/de2/group__samplingPopsInd.html#ga0c8ef6cc18f22e0135ab0e9635bf63b6">KTfwd::ms_sample</a>(<a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>.get(),pop.mutations,pop.gametes,pop.diploids,samplesize1,<span class="keyword">true</span>);</div>
 <div class="line">      Sequence::SimData l1(x[0].begin(),x[0].end()),</div>
 <div class="line">        l2(x[1].begin(),x[1].end());</div>
 <div class="line">      std::cout &lt;&lt; l1 &lt;&lt; <span class="charliteral">&#39;\n&#39;</span> &lt;&lt; l2 &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
@@ -282,6 +286,8 @@ Functions</h2></td></tr>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 </div><!-- fragment --><p> Simple example of a two-locus simulation using the multilocus API in fwdpp. </p>
+
+<p>Definition at line <a class="el" href="../../de/dce/diploid__ind__2locus_8cc_source.html#l00014">14</a> of file <a class="el" href="../../de/dce/diploid__ind__2locus_8cc_source.html">diploid_ind_2locus.cc</a>.</p>
 
 </div>
 </div>
@@ -311,6 +317,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a4">diploid_ind_2locus.cc</a>.</dd>
 </dl>
+<p>Definition at line <a class="el" href="../../de/dce/diploid__ind__2locus_8cc_source.html#l00030">30</a> of file <a class="el" href="../../de/dce/diploid__ind__2locus_8cc_source.html">diploid_ind_2locus.cc</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->

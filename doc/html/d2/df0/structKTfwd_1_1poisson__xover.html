@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.8</span>
+   &#160;<span id="projectnumber">0.4.9</span>
    </div>
   </td>
  </tr>
@@ -97,6 +97,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Simple model of crossing-over. Generates a Poisson-distribued number of recombination breakpoints with mean <em>littler</em> that are uniformly-distributed between <em>minpos</em> and <em>maxpos</em>.  
+ <a href="../../d2/df0/structKTfwd_1_1poisson__xover.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="../../dc/d85/recombination_8hpp_source.html">recombination.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -106,8 +109,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae97316b989e15f035100384b51045458"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#_a15">bneck_selection_ind.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#_a18">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#_a15">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#_a13">diploid_ind.cc</a>, <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#_a8">diploid_ind_2locus.cc</a>, and <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#_a18">migsel_ind.cc</a>.</dd>
-</dl></div><h2 class="groupheader">Member Function Documentation</h2>
+<div class="textblock"><p>Simple model of crossing-over. Generates a Poisson-distribued number of recombination breakpoints with mean <em>littler</em> that are uniformly-distributed between <em>minpos</em> and <em>maxpos</em>. </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#_a17">bneck_selection_ind.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#_a19">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#_a16">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#_a14">diploid_ind.cc</a>, <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#_a9">diploid_ind_2locus.cc</a>, and <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#_a18">migsel_ind.cc</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="../../dc/d85/recombination_8hpp_source.html#l00009">9</a> of file <a class="el" href="../../dc/d85/recombination_8hpp_source.html">recombination.hpp</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="ae97316b989e15f035100384b51045458"></a>
 <div class="memitem">
 <div class="memproto">
@@ -171,6 +177,18 @@ template&lt;typename gamete_type , typename mcont_t &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>A gsl_rng </td></tr>
+    <tr><td class="paramname">littler</td><td>The recombination rate (per diploid, per region) </td></tr>
+    <tr><td class="paramname">minpos</td><td>The minimum recombination position allowed </td></tr>
+    <tr><td class="paramname">maxpos</td><td>The maximum recombination position allowed</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The remaining arguments are unnnamed and are API placeholders for policies that need to know something about the gametes &amp; mutations involve in an x-over. </p>
+
+<p>Definition at line <a class="el" href="../../dc/d85/recombination_8hpp_source.html#l00018">18</a> of file <a class="el" href="../../dc/d85/recombination_8hpp_source.html">recombination.hpp</a>.</p>
 
 </div>
 </div>

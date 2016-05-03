@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.8</span>
+   &#160;<span id="projectnumber">0.4.9</span>
    </div>
   </td>
  </tr>
@@ -103,7 +103,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <code>#include &lt;<a class="el" href="../../df/df8/diploid_8hh_source.html">fwdpp/diploid.hh</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../dc/d32/infsites_8hpp_source.html">fwdpp/sugar/infsites.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../df/d10/common__ind_8hpp_source.html">common_ind.hpp</a>&gt;</code><br />
-</div><table class="memberdecls">
+</div>
+<p><a href="../../d9/de8/diploid__ind_8cc_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a31e3d5523df86ceef258de9a3e0ca01e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/de8/diploid__ind_8cc.html#a31e3d5523df86ceef258de9a3e0ca01e">SINGLEPOP_SIM</a></td></tr>
@@ -129,6 +131,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d9/de8/diploid__ind_8cc_source.html#l00020">20</a> of file <a class="el" href="../../d9/de8/diploid__ind_8cc_source.html">diploid_ind.cc</a>.</p>
 
 </div>
 </div>
@@ -205,7 +209,7 @@ Functions</h2></td></tr>
 <div class="line">      <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">singlepop_t</a> pop(N);</div>
 <div class="line">      pop.mutations.reserve(<span class="keywordtype">size_t</span>(std::ceil(std::log(2*N)*theta+0.667*theta)));</div>
 <div class="line">      <span class="keywordtype">unsigned</span> generation;</div>
-<div class="line">      <span class="keywordtype">double</span> wbar;</div>
+<div class="line">      <span class="keywordtype">double</span> <a class="code" href="../../d5/da7/extensions_8cc.html#a0f29eb9f5997fb6191af2c906b84fbf0">wbar</a>;</div>
 <div class="line"></div>
 <div class="line">      <span class="keywordflow">for</span>( generation = 0; generation &lt; ngens; ++generation )</div>
 <div class="line">        {</div>
@@ -254,7 +258,7 @@ Functions</h2></td></tr>
 <div class="line">      Sequence::SimData sdata;</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">//Take a sample of size samplesize1 from the population</span></div>
-<div class="line">      std::vector&lt;std::pair&lt;double,std::string&gt; &gt; mslike = <a class="code" href="../../d7/de2/group__samplingPopsInd.html#gacae02330d0037097ccba03e87384cdbd">KTfwd::ms_sample</a>(<a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>.get(),pop.mutations,pop.gametes,pop.diploids,samplesize1,<span class="keyword">true</span>);</div>
+<div class="line">      std::vector&lt;std::pair&lt;double,std::string&gt; &gt; mslike = <a class="code" href="../../d7/de2/group__samplingPopsInd.html#ga0c8ef6cc18f22e0135ab0e9635bf63b6">KTfwd::ms_sample</a>(<a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>.get(),pop.mutations,pop.gametes,pop.diploids,samplesize1,<span class="keyword">true</span>);</div>
 <div class="line"></div>
 <div class="line">      <span class="comment">//Write the sample date a to libsequence&#39;s Sequence::SimData and print to screen</span></div>
 <div class="line">      <span class="keywordflow">if</span>(!mslike.empty())</div>
@@ -277,6 +281,8 @@ Functions</h2></td></tr>
 <li>Iterating a population through its life cycle</li>
 <li>Outputting a sample in "ms" format </li>
 </ol>
+
+<p>Definition at line <a class="el" href="../../d9/de8/diploid__ind_8cc_source.html#l00019">19</a> of file <a class="el" href="../../d9/de8/diploid__ind_8cc_source.html">diploid_ind.cc</a>.</p>
 
 </div>
 </div>
@@ -306,6 +312,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a1">diploid_ind.cc</a>.</dd>
 </dl>
+<p>Definition at line <a class="el" href="../../d9/de8/diploid__ind_8cc_source.html#l00023">23</a> of file <a class="el" href="../../d9/de8/diploid__ind_8cc_source.html">diploid_ind.cc</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->

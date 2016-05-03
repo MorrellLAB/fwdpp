@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.8</span>
+   &#160;<span id="projectnumber">0.4.9</span>
    </div>
   </td>
  </tr>
@@ -243,10 +243,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">  std::pair&lt; std::vector&lt;std::pair&lt;double,std::string&gt; &gt;,</div>
-<div class="line">             std::vector&lt;std::pair&lt;double,std::string&gt; &gt; &gt; spop1 = <a name="a20"></a><a class="code" href="../../d7/de2/group__samplingPopsInd.html#ga687df92ca45521808bc24c09f437ff04">ms_sample_separate</a>(<a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>.get(),pop.mutations,pop.gametes,pop.diploids[0],n);</div>
+<div class="line">             std::vector&lt;std::pair&lt;double,std::string&gt; &gt; &gt; spop1 = <a name="a20"></a><a class="code" href="../../d7/de2/group__samplingPopsInd.html#ga515d5785177f22ed1b9d307bd7b708f9">ms_sample_separate</a>(<a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>.get(),pop.mutations,pop.gametes,pop.diploids[0],n);</div>
 <div class="line"></div>
 <div class="line">  std::pair&lt; std::vector&lt;std::pair&lt;double,std::string&gt; &gt;,</div>
-<div class="line">             std::vector&lt;std::pair&lt;double,std::string&gt; &gt; &gt; spop2 = <a class="code" href="../../d7/de2/group__samplingPopsInd.html#ga687df92ca45521808bc24c09f437ff04">ms_sample_separate</a>(<a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>.get(),pop.mutations,pop.gametes,pop.diploids[1],n);</div>
+<div class="line">             std::vector&lt;std::pair&lt;double,std::string&gt; &gt; &gt; spop2 = <a class="code" href="../../d7/de2/group__samplingPopsInd.html#ga515d5785177f22ed1b9d307bd7b708f9">ms_sample_separate</a>(<a class="code" href="../../d4/dba/callbacks_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>.get(),pop.mutations,pop.gametes,pop.diploids[1],n);</div>
 <div class="line"></div>
 <div class="line">  SimData neutral = <a class="code" href="../../df/dfa/migsel__ind_8cc.html#ab7298240e8bb37b1cd8a9846c5421545">merge</a>( spop1.first,spop2.first,n );</div>
 <div class="line">  SimData selected = <a class="code" href="../../df/dfa/migsel__ind_8cc.html#ab7298240e8bb37b1cd8a9846c5421545">merge</a>( spop1.second,spop2.second,n );</div>
@@ -328,21 +328,21 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">{</div>
 <div class="line">  std::map&lt;double, std::string&gt; temp;</div>
 <div class="line"></div>
-<div class="line">  <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i=0;i&lt;sample1.size();++i)</div>
+<div class="line">  <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> <a name="a25"></a><a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>=0;<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>&lt;sample1.size();++<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>)</div>
 <div class="line">    {</div>
-<div class="line">      temp[sample1[i].first] = std::string(sample1[i].second + std::string(nsam,<span class="charliteral">&#39;0&#39;</span>));</div>
+<div class="line">      temp[sample1[<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>].first] = std::string(sample1[<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>].second + std::string(nsam,<span class="charliteral">&#39;0&#39;</span>));</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">  <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i=0;i&lt;sample2.size();++i)</div>
+<div class="line">  <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> <a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>=0;<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>&lt;sample2.size();++<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>)</div>
 <div class="line">    {</div>
-<div class="line">      std::map&lt;double,std::string&gt;::iterator itr = temp.find(sample2[i].first);</div>
+<div class="line">      std::map&lt;double,std::string&gt;::iterator itr = temp.find(sample2[<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>].first);</div>
 <div class="line">      <span class="keywordflow">if</span>( itr == temp.end() )</div>
 <div class="line">        {</div>
-<div class="line">          temp[sample2[i].first] = std::string( std::string(nsam,<span class="charliteral">&#39;0&#39;</span>) + sample2[i].second );</div>
+<div class="line">          temp[sample2[<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>].first] = std::string( std::string(nsam,<span class="charliteral">&#39;0&#39;</span>) + sample2[<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>].second );</div>
 <div class="line">        }</div>
 <div class="line">      <span class="keywordflow">else</span></div>
 <div class="line">        {</div>
-<div class="line">          std::copy( sample2[i].second.begin(),sample2[i].second.end(),itr-&gt;second.begin()+nsam );</div>
+<div class="line">          std::copy( sample2[<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>].second.begin(),sample2[<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>].second.end(),itr-&gt;second.begin()+nsam );</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">  std::vector&lt;std::pair&lt;double,std::string&gt; &gt; rv( temp.begin(),temp.end() );</div>

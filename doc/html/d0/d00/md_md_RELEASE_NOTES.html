@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.8</span>
+   &#160;<span id="projectnumber">0.4.9</span>
    </div>
   </td>
  </tr>
@@ -83,7 +83,18 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="title">FWDPP RELEASE NOTES </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2>0.4.8</h2>
+<div class="textblock"><h2>0.4.9</h2>
+<ul>
+<li>Doxygen file changed so that all library source is browsable.</li>
+<li>Single-deme version of sample_diploid is commented in detail.</li>
+<li>Added <a class="el" href="../../de/d6e/group__sugar.html#gabcf95af0822bbd57f0aa85408c026201" title="Add a mutation into a population at a given frequency. ">KTfwd::add_mutation</a>, <a class="el" href="../../de/d6e/group__sugar.html#ga34c0af3daeea9be414949bedf525f160" title="Add a set of mutations into a set of individuals in a population. ">KTfwd::add_mutations</a> and unit test <a class="el" href="../../d9/dc2/test__sugar__add__mutation_8cc.html" title="test KTfwd::add_mutation ">unit/test_sugar_add_mutation.cc</a>. These new functions allow the addition of mutations to diploids in a non-random way, which also means you can fill in a population from external data (e.g., something in a file). These features resolve Issue #28, albeit at a low level.</li>
+<li>Member <a class="el" href="../../d1/da4/structKTfwd_1_1mutation__base.html#ae94d9d4e3cebc50a34b2239549356e82">KTfwd::mutation_base::xtra</a> squeezed into unused space in this type. No extra RAM used, and programs may assign values to that type to represent "stuff", whatever that is.</li>
+<li><a class="el" href="../../d8/d8d/structKTfwd_1_1extensions_1_1discrete__mut__model.html">KTfwd::extensions::discrete_mut_model</a> got a new constructor allowing <a class="el" href="../../d8/d8d/structKTfwd_1_1extensions_1_1discrete__mut__model.html#aba01ce38f7f4b37277d9e3cd91951b3f">KTfwd::extensions::discrete_mut_model::make_mut</a> to assign values to <a class="el" href="../../d1/da4/structKTfwd_1_1mutation__base.html#ae94d9d4e3cebc50a34b2239549356e82">KTfwd::mutation_base::xtra</a>.</li>
+<li>Added <a class="el" href="../../de/d6e/group__sugar.html#ga1ecff0aaea92ec0ef0af5a541f63d822" title="Change the value of mutation_base::neutral. ">KTfwd::change_neutral</a>, which allows simulations to update the value of <a class="el" href="../../d1/da4/structKTfwd_1_1mutation__base.html#acfb3b4c94516cbbc5c28a12e1ad575b3" title="Is the mutation neutral or not? ">KTfwd::mutation_base::neutral</a> and correctly update storage of the affected mutation in all gametes.</li>
+<li>#39 fixed</li>
+<li>#40 fixed</li>
+</ul>
+<h2>0.4.8</h2>
 <ul>
 <li>#38 fixed</li>
 <li>Updates to unit tests</li>
@@ -147,7 +158,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <li>Other API changes:<ul>
 <li>As a result of the changes described above, the data structures of the library were changed from linked lists of iterators to vectors of std::size_t. This is a radical change to the data layout, and results in further speedups.</li>
 <li><a class="el" href="../../da/d8b/namespaceKTfwd.html#a9fa8c6fd5d6b79550163c64a6cb0353a">KTfwd::sample_diploid</a> has been streamlined in light of common defaults</li>
-<li>Recombination policies have been simplified. See <a class="el" href="../../d2/df0/structKTfwd_1_1poisson__xover.html">KTfwd::poisson_xover</a> for an example.</li>
+<li>Recombination policies have been simplified. See <a class="el" href="../../d2/df0/structKTfwd_1_1poisson__xover.html" title="Simple model of crossing-over. Generates a Poisson-distribued number of recombination breakpoints wit...">KTfwd::poisson_xover</a> for an example.</li>
 </ul>
 </li>
 <li>Behavior changes:<ul>
@@ -164,7 +175,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <li>Deprecated functions/objects removed from library</li>
 <li>Bug fixes:<ul>
 <li>Issue #30 fixed regarding serialization of <a class="el" href="../../da/dde/structKTfwd_1_1generalmut.html" title="Mutation type allowing arbitray number of &quot;s,h&quot; pairs representing effect sizes,dominance.This type represents a mutation with a number of &#39;s&#39; and &#39;h&#39; parameters that are fixed at compile time. ">KTfwd::generalmut</a> and <a class="el" href="../../d9/d9e/structKTfwd_1_1generalmut__vec.html" title="Mutation type allowing arbitray number of &quot;s,h&quot; pairs representing effect sizes,dominance.This type represents a mutation with a number of &#39;s&#39; and &#39;h&#39; parameters that are determined at run time. ">KTfwd::generalmut_vec</a></li>
-<li>A bug in <a class="el" href="../../d7/de2/group__samplingPopsInd.html#gacae02330d0037097ccba03e87384cdbd" title="Sampling from a population in an individual-based simulation. ">KTfwd::ms_sample</a> and <a class="el" href="../../d7/de2/group__samplingPopsInd.html#gacae02330d0037097ccba03e87384cdbd" title="Sampling from a population in an individual-based simulation. ">KTfwd::ms_sample</a> separate was identified and fixed. The bug only applied to multilocus simulations. The bug was that the first 'n' chromosomes were sampled, rather than 'n' randomly-chosen chromosomes. The effect of the bug is that the first sample is truly random (as chromosomes are not sorted in any meaningful way), but a second sample would overlap with the first, etc.</li>
+<li>A bug in <a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga0c8ef6cc18f22e0135ab0e9635bf63b6" title="Sampling from a population in an individual-based simulation. ">KTfwd::ms_sample</a> and <a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga0c8ef6cc18f22e0135ab0e9635bf63b6" title="Sampling from a population in an individual-based simulation. ">KTfwd::ms_sample</a> separate was identified and fixed. The bug only applied to multilocus simulations. The bug was that the first 'n' chromosomes were sampled, rather than 'n' randomly-chosen chromosomes. The effect of the bug is that the first sample is truly random (as chromosomes are not sorted in any meaningful way), but a second sample would overlap with the first, etc.</li>
 </ul>
 </li>
 </ul>
@@ -205,9 +216,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </ul>
 <h2>0.3.7</h2>
 <ul>
-<li>An declaration of <a class="el" href="../../da/d8b/namespaceKTfwd.html#aa61deb23ca543c4508c83be0690ae408">KTfwd::recombine_gametes</a> was fixed to match the implementation</li>
+<li>An declaration of <a class="el" href="../../da/d8b/namespaceKTfwd.html#ab324772c17001eba12fc75f8e902a3b1">KTfwd::recombine_gametes</a> was fixed to match the implementation</li>
 <li>Minor re-organization of recombination code</li>
-<li>The details of <a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga687df92ca45521808bc24c09f437ff04" title="Sampling from a population in an individual-based simulation. Selected and neutral mutations returned...">KTfwd::ms_sample_separate</a> were moved into KTfwd::internal. This move allows access to functions that sample a specific set of diploids, which is handy in a lot of cases.</li>
+<li>The details of <a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga515d5785177f22ed1b9d307bd7b708f9" title="Sampling from a population in an individual-based simulation. Selected and neutral mutations returned...">KTfwd::ms_sample_separate</a> were moved into KTfwd::internal. This move allows access to functions that sample a specific set of diploids, which is handy in a lot of cases.</li>
 </ul>
 <h2>0.3.6</h2>
 <ul>
@@ -324,7 +335,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <li>Fixed issue #6, which was a bug in how parents were copied in multi-population, individual-based simulations.</li>
 <li>Fixed issue #7, which was a bug in when gametes were updated post-sampling in multi-population, individual-based simulations.</li>
 <li>Two new example programs added: migsel_split_ind and migsel_split_ind_list</li>
-<li>fwdpp/IO.tcc streamlined using C++11 "auto" instead of nasty typedefs</li>
+<li><a class="el" href="../../d3/ddb/IO_8tcc.html">fwdpp/IO.tcc</a> streamlined using C++11 "auto" instead of nasty typedefs</li>
 </ul>
 <h2>0.2.7</h2>
 <ul>
@@ -336,13 +347,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <li>const mutation lists now passed to binary output routines</li>
 <li>The library internals now fully support C++11 move semantics</li>
 <li>Default policies now support C++11 "perfect forwarding"</li>
-<li>The function <a class="el" href="../../da/d8b/namespaceKTfwd.html#aa61deb23ca543c4508c83be0690ae408">KTfwd::recombine_gametes</a>, which is provided for recombination in individual-based simulations, has an overloaded version. This new version takes a fixed set of positions representing recombination breakpoints, allowing more modeling flexibility and making unit testing easier.</li>
+<li>The function <a class="el" href="../../da/d8b/namespaceKTfwd.html#ab324772c17001eba12fc75f8e902a3b1">KTfwd::recombine_gametes</a>, which is provided for recombination in individual-based simulations, has an overloaded version. This new version takes a fixed set of positions representing recombination breakpoints, allowing more modeling flexibility and making unit testing easier.</li>
 <li>The mechanics of recombination in multilocus simulations moved to function multilocus_rec in namesapce <a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html" title="Nested namespace for nuts and bolts of certain library functions. ">KTfwd::fwdpp_internal</a>.</li>
 <li>A unit test for the function KTfwd::fwdpp_internal::multilocus_rec was added.</li>
 <li>Added tutorial for multilocus simulation implmentation</li>
 <li>Minor cleanups to the build system</li>
-<li>Reorganization of <a class="el" href="../../df/d9f/IO_8hpp.html">fwdpp/IO.hpp</a> and fwdpp/IO.tcc to reduce code duplication and provide output routines for multilocus simulations. There are no longer separate read functions for gzFiles. The necessary operations are handled automatically by overloads of template functions in namespace <a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html" title="Nested namespace for nuts and bolts of certain library functions. ">KTfwd::fwdpp_internal</a>.</li>
-<li>Reorganization of fwdpp/sampling_functions.tcc: overloads of ms_sample are now implemented via calls to ms_sample_separate. The results from the latter function are then merged using C++11 move semantics. This reduces code redundancy, reduces the possible locations of bugs, and should keep efficiency about the same.</li>
+<li>Reorganization of <a class="el" href="../../df/d9f/IO_8hpp.html">fwdpp/IO.hpp</a> and <a class="el" href="../../d3/ddb/IO_8tcc.html">fwdpp/IO.tcc</a> to reduce code duplication and provide output routines for multilocus simulations. There are no longer separate read functions for gzFiles. The necessary operations are handled automatically by overloads of template functions in namespace <a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html" title="Nested namespace for nuts and bolts of certain library functions. ">KTfwd::fwdpp_internal</a>.</li>
+<li>Reorganization of <a class="el" href="../../d1/d07/sampling__functions_8tcc.html">fwdpp/sampling_functions.tcc</a>: overloads of ms_sample are now implemented via calls to ms_sample_separate. The results from the latter function are then merged using C++11 move semantics. This reduces code redundancy, reduces the possible locations of bugs, and should keep efficiency about the same.</li>
 </ul>
 <h2>0.2.5</h2>
 <p>The following changes:</p>
@@ -365,7 +376,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <h2>0.2.4</h2>
 <p>The following changes:</p>
 <ol type="1">
-<li><a class="el" href="../../df/d9f/IO_8hpp.html">fwdpp/IO.hpp</a> and fwdpp/IO.tcc were updated to include the ability to read/write binary-format data to/from gzip files. The gzip compression uses <a href="http://zlib.net">zlib</a>. Note that the combination of POSIX file locking + gzip output requires more work than "plain" binary output + file locking. Please see the new examples. Differences in how gztell vs. ftell mean that the index files generated are different. See my <a href="https://github.com/molpopgen/BigDataFormats">tutorial</a> on on "big data" file formats for more detail.</li>
+<li><a class="el" href="../../df/d9f/IO_8hpp.html">fwdpp/IO.hpp</a> and <a class="el" href="../../d3/ddb/IO_8tcc.html">fwdpp/IO.tcc</a> were updated to include the ability to read/write binary-format data to/from gzip files. The gzip compression uses <a href="http://zlib.net">zlib</a>. Note that the combination of POSIX file locking + gzip output requires more work than "plain" binary output + file locking. Please see the new examples. Differences in how gztell vs. ftell mean that the index files generated are different. See my <a href="https://github.com/molpopgen/BigDataFormats">tutorial</a> on on "big data" file formats for more detail.</li>
 <li>examples/pfix.cc was added. This estimates the fixation probability of a mutation subject to genic selection in a constant-sized population of N diploids.</li>
 <li>examples/diploid_gzbinaryIO.cc and <a class="el" href="../../d0/d03/diploid__gzbinaryIO__ind_8cc.html">examples/diploid_gzbinaryIO_ind.cc</a> were added. They illustrate the new functions mentioned in point 1.</li>
 <li>The folder "test" was added. This contains several Rmd (<a href="http://rmarkdown.rstudio.com/">R Markdown</a>) documents that you can process either in <a href="http://www.rstudio.com/">R studio</a> or plain old <a href="http://www.r-project.org">R</a>. In either case, you'll need <a href="http://cran.r-project.org/web/packages/knitr/index.html">knitr</a> installed. </li>

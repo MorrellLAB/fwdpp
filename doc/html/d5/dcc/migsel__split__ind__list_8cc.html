@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.8</span>
+   &#160;<span id="projectnumber">0.4.9</span>
    </div>
   </td>
  </tr>
@@ -113,7 +113,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <code>#include &lt;<a class="el" href="../../dc/d32/infsites_8hpp_source.html">fwdpp/sugar/infsites.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d8/d21/serialization_8hpp_source.html">fwdpp/sugar/serialization.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../df/d10/common__ind_8hpp_source.html">common_ind.hpp</a>&gt;</code><br />
-</div><table class="memberdecls">
+</div>
+<p><a href="../../d5/dcc/migsel__split__ind__list_8cc_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d9f/structmultiplicative__diploid__minus.html">multiplicative_diploid_minus</a></td></tr>
@@ -270,7 +272,7 @@ Functions</h2></td></tr>
 <div class="line">  pop.<a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a2d94e252c30aa1f27d8e60c9e7f1bcef">mutations</a>.reserve(<span class="keywordtype">size_t</span>(std::ceil(std::log(2*N)*(theta_neut+theta_del)+0.667*(theta_neut+theta_del))));</div>
 <div class="line">  std::function&lt;double(void)&gt; recmap = std::bind(gsl_rng_uniform,r);</div>
 <div class="line">  <span class="keywordtype">unsigned</span> generation = 0;</div>
-<div class="line">  <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0 ; i &lt; ngens ; ++i,++generation )</div>
+<div class="line">  <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> <a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a> = 0 ; <a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a> &lt; ngens ; ++<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>,++generation )</div>
 <div class="line">    {</div>
 <div class="line">      <span class="keywordtype">double</span> wbar = <a class="code" href="../../da/d8b/namespaceKTfwd.html#a9fa8c6fd5d6b79550163c64a6cb0353a">KTfwd::sample_diploid</a>(r,</div>
 <div class="line">                                          pop.gametes,  <span class="comment">//non-const reference to gametes</span></div>
@@ -303,7 +305,7 @@ Functions</h2></td></tr>
 <div class="line"></div>
 <div class="line">  <span class="keywordtype">unsigned</span> Ns[2] = {N,N};</div>
 <div class="line">  <span class="keywordtype">double</span> fs[2]={f1,f2};</div>
-<div class="line">  <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0 ; i &lt; ngens2 ; ++i, ++generation )</div>
+<div class="line">  <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> <a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a> = 0 ; <a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a> &lt; ngens2 ; ++<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>, ++generation )</div>
 <div class="line">    {</div>
 <div class="line">      std::vector&lt;double&gt; wbars = <a class="code" href="../../da/d8b/namespaceKTfwd.html#a9fa8c6fd5d6b79550163c64a6cb0353a">sample_diploid</a>(r,</div>
 <div class="line">                                                 pop.gametes,</div>
@@ -325,8 +327,8 @@ Functions</h2></td></tr>
 <div class="line">      <a class="code" href="../../da/d8b/namespaceKTfwd.html#ae765f7942701fdee8d23b4d8be63e11c">update_mutations</a>(pop.mutations,pop.fixations,pop.fixation_times,pop.mut_lookup,pop.mcounts,generation,4*N);</div>
 <div class="line">    }</div>
 <div class="line">  std::pair&lt; std::vector&lt; std::pair&lt;double,std::string&gt; &gt;,</div>
-<div class="line">             std::vector&lt; std::pair&lt;double,std::string&gt; &gt; &gt; sample1 = <a class="code" href="../../d7/de2/group__samplingPopsInd.html#ga687df92ca45521808bc24c09f437ff04">ms_sample_separate</a>(r,pop.mutations,pop.gametes,pop.diploids[0],n),</div>
-<div class="line">    sample2 = <a class="code" href="../../d7/de2/group__samplingPopsInd.html#ga687df92ca45521808bc24c09f437ff04">ms_sample_separate</a>(r,pop.mutations,pop.gametes,pop.diploids[1],n);</div>
+<div class="line">             std::vector&lt; std::pair&lt;double,std::string&gt; &gt; &gt; sample1 = <a class="code" href="../../d7/de2/group__samplingPopsInd.html#ga515d5785177f22ed1b9d307bd7b708f9">ms_sample_separate</a>(r,pop.mutations,pop.gametes,pop.diploids[0],n),</div>
+<div class="line">    sample2 = <a class="code" href="../../d7/de2/group__samplingPopsInd.html#ga515d5785177f22ed1b9d307bd7b708f9">ms_sample_separate</a>(r,pop.mutations,pop.gametes,pop.diploids[1],n);</div>
 <div class="line"></div>
 <div class="line">  <span class="keyword">auto</span> neutral = <a class="code" href="../../df/dfa/migsel__ind_8cc.html#ab7298240e8bb37b1cd8a9846c5421545">merge</a>(sample1.first,sample2.first,n),</div>
 <div class="line">    selected = <a class="code" href="../../df/dfa/migsel__ind_8cc.html#ab7298240e8bb37b1cd8a9846c5421545">merge</a>(sample1.second,sample2.second,n);</div>
@@ -411,21 +413,21 @@ Functions</h2></td></tr>
 <div class="line">{</div>
 <div class="line">  std::map&lt;double, std::string&gt; temp;</div>
 <div class="line"></div>
-<div class="line">  <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i=0;i&lt;sample1.size();++i)</div>
+<div class="line">  <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> <a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>=0;<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>&lt;sample1.size();++<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>)</div>
 <div class="line">    {</div>
-<div class="line">      temp[sample1[i].first] = std::string(sample1[i].second + std::string(nsam,<span class="charliteral">&#39;0&#39;</span>));</div>
+<div class="line">      temp[sample1[<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>].first] = std::string(sample1[<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>].second + std::string(nsam,<span class="charliteral">&#39;0&#39;</span>));</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">  <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i=0;i&lt;sample2.size();++i)</div>
+<div class="line">  <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> <a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>=0;<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>&lt;sample2.size();++<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>)</div>
 <div class="line">    {</div>
-<div class="line">      std::map&lt;double,std::string&gt;::iterator itr = temp.find(sample2[i].first);</div>
+<div class="line">      std::map&lt;double,std::string&gt;::iterator itr = temp.find(sample2[<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>].first);</div>
 <div class="line">      <span class="keywordflow">if</span>( itr == temp.end() )</div>
 <div class="line">        {</div>
-<div class="line">          temp[sample2[i].first] = std::string( std::string(nsam,<span class="charliteral">&#39;0&#39;</span>) + sample2[i].second );</div>
+<div class="line">          temp[sample2[<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>].first] = std::string( std::string(nsam,<span class="charliteral">&#39;0&#39;</span>) + sample2[<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>].second );</div>
 <div class="line">        }</div>
 <div class="line">      <span class="keywordflow">else</span></div>
 <div class="line">        {</div>
-<div class="line">          std::copy( sample2[i].second.begin(),sample2[i].second.end(),itr-&gt;second.begin()+nsam );</div>
+<div class="line">          std::copy( sample2[<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>].second.begin(),sample2[<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>].second.end(),itr-&gt;second.begin()+nsam );</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">  std::vector&lt;std::pair&lt;double,std::string&gt; &gt; rv( temp.begin(),temp.end() );</div>
@@ -437,6 +439,8 @@ Functions</h2></td></tr>
 </div><!-- fragment --><p> Evolve a constant-N pop, split it off, then evolve both with migration.</p>
 <p>The selection coefficient, s, is treated as -s in deme 2, just for fun.</p>
 <p>Output is a "ms" block for neutral and non-neutral variants. Ancestral population first. </p>
+
+<p>Definition at line <a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc_source.html#l00025">25</a> of file <a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc_source.html">migsel_split_ind_list.cc</a>.</p>
 
 </div>
 </div>
@@ -451,6 +455,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc_source.html#l00037">37</a> of file <a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc_source.html">migsel_split_ind_list.cc</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a3d31e1f75f6e15dd68be154dcf89e069"></a>
@@ -462,6 +468,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc_source.html#l00036">36</a> of file <a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc_source.html">migsel_split_ind_list.cc</a>.</p>
 
 </div>
 </div>
@@ -475,6 +483,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc_source.html#l00035">35</a> of file <a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc_source.html">migsel_split_ind_list.cc</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ab95d5809de5b32335213c961a4e895af"></a>
@@ -487,6 +497,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc_source.html#l00026">26</a> of file <a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc_source.html">migsel_split_ind_list.cc</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a03a1cc418a74d1311b6869c0ef0aa607"></a>
@@ -498,6 +510,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc_source.html#l00034">34</a> of file <a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc_source.html">migsel_split_ind_list.cc</a>.</p>
 
 </div>
 </div>
@@ -525,6 +539,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc_source.html#l00074">74</a> of file <a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc_source.html">migsel_split_ind_list.cc</a>.</p>
 
 </div>
 </div>
@@ -558,6 +574,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc_source.html#l00250">250</a> of file <a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc_source.html">migsel_split_ind_list.cc</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a4862499cb62bfa43943001b59fe6dc0d"></a>
@@ -589,6 +607,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc_source.html#l00039">39</a> of file <a class="el" href="../../d5/dcc/migsel__split__ind__list_8cc_source.html">migsel_split_ind_list.cc</a>.</p>
 
 </div>
 </div>

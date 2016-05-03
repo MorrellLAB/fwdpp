@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.8</span>
+   &#160;<span id="projectnumber">0.4.9</span>
    </div>
   </td>
  </tr>
@@ -105,10 +105,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="../../da/dd8/GSLrng__t_8hpp.html">fwdpp/sugar/GSLrng_t.hpp</a>&gt;</span></div>
 </div><!-- fragment --><p>To specify the use of the Mersenne twister:</p>
 <div class="fragment"><div class="line"><span class="keyword">using</span> <a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">GSLrng</a> = <a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">KTfwd::GSLrng_t&lt;KTfwd::GSL_RNG_MT19937&gt;</a>;</div>
-<div class="line"><a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">GSLrng</a> <a class="code" href="../../d6/d4f/sugar__sampling_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>(101); <span class="comment">//101 is the seed value </span></div>
+<div class="line"><a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">GSLrng</a> <a class="code" href="../../d5/da7/extensions_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>(101); <span class="comment">//101 is the seed value </span></div>
 </div><!-- fragment --><p>The taus generator may be declared like this:</p>
 <div class="fragment"><div class="line"><span class="keyword">using</span> <a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">GSLrng</a> = <a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">KTfwd::GSLrng_t&lt;KTfwd::GSL_RNG_TAUS2&gt;</a>;</div>
-<div class="line"><a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">GSLrng</a> <a class="code" href="../../d6/d4f/sugar__sampling_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>(101); <span class="comment">//101 is the seed value </span></div>
+<div class="line"><a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">GSLrng</a> <a class="code" href="../../d5/da7/extensions_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>(101); <span class="comment">//101 is the seed value </span></div>
 </div><!-- fragment --><p>This wrapper has the following properties:</p><ul>
 <li>It is constructed with an unsigned integer, which will be used as a seed</li>
 <li>It is implemented in terms of a std::unique_ptr</li>
@@ -199,25 +199,25 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">{</div>
 <div class="line">  <a class="code" href="../../d5/da7/extensions_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> pop(1000);</div>
 <div class="line"></div>
-<div class="line">  <a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">KTfwd::GSLrng_t&lt;KTfwd::GSL_RNG_TAUS2&gt;</a> <a class="code" href="../../d6/d4f/sugar__sampling_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>(0u);</div>
+<div class="line">  <a class="code" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">KTfwd::GSLrng_t&lt;KTfwd::GSL_RNG_TAUS2&gt;</a> <a class="code" href="../../d5/da7/extensions_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>(0u);</div>
 <div class="line"></div>
 <div class="line">  <span class="comment">//Evolve for 10 generations</span></div>
-<div class="line">  std::function&lt;double(void)&gt; recmap = std::bind(gsl_rng_uniform,<a class="code" href="../../d6/d4f/sugar__sampling_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>);</div>
+<div class="line">  std::function&lt;double(void)&gt; recmap = std::bind(gsl_rng_uniform,<a class="code" href="../../d5/da7/extensions_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>);</div>
 <div class="line">  <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> generation= 0 ; generation &lt; 10 ; ++generation )</div>
 <div class="line">    {</div>
-<div class="line">      <span class="keywordtype">double</span> wbar = <a class="code" href="../../da/d8b/namespaceKTfwd.html#a9fa8c6fd5d6b79550163c64a6cb0353a">KTfwd::sample_diploid</a>(<a class="code" href="../../d6/d4f/sugar__sampling_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>,</div>
+<div class="line">      <span class="keywordtype">double</span> wbar = <a class="code" href="../../da/d8b/namespaceKTfwd.html#a9fa8c6fd5d6b79550163c64a6cb0353a">KTfwd::sample_diploid</a>(<a class="code" href="../../d5/da7/extensions_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>,</div>
 <div class="line">                                          &amp;pop.gametes,</div>
 <div class="line">                                          &amp;pop.diploids,</div>
 <div class="line">                                          &amp;pop.mutations,</div>
 <div class="line">                                          1000,</div>
 <div class="line">                                          0.005,</div>
-<div class="line">                                          std::bind(<a class="code" href="../../df/d07/structKTfwd_1_1infsites.html">KTfwd::infsites</a>(),<a class="code" href="../../d6/d4f/sugar__sampling_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>,std::placeholders::_1,std::placeholders::_2,&amp;pop.mut_lookup,generation,</div>
+<div class="line">                                          std::bind(<a class="code" href="../../df/d07/structKTfwd_1_1infsites.html">KTfwd::infsites</a>(),<a class="code" href="../../d5/da7/extensions_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>,std::placeholders::_1,std::placeholders::_2,&amp;pop.mut_lookup,generation,</div>
 <div class="line">                                                    0.005,0.,[](gsl_rng * r){return gsl_rng_uniform(r);},[](gsl_rng * r){return 0.;},[](gsl_rng * r){return 0.;}),</div>
 <div class="line">                                          std::bind(KTfwd::genetics101(),std::placeholders::_1,std::placeholders::_2,</div>
 <div class="line">                                                    std::placeholders::_3,std::placeholders::_4,</div>
 <div class="line">                                                    &amp;pop.gametes,</div>
 <div class="line">                                                    0., <span class="comment">//no rec</span></div>
-<div class="line">                                                    <a class="code" href="../../d6/d4f/sugar__sampling_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>,</div>
+<div class="line">                                                    <a class="code" href="../../d5/da7/extensions_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a>,</div>
 <div class="line">                                                    recmap),</div>
 <div class="line">                                          std::bind(KTfwd::insert_at_end&lt;poptype::gamete_t,poptype::glist_t&gt;,std::placeholders::_1,std::placeholders::_2),</div>
 <div class="line">                                          std::bind(<a class="code" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html">KTfwd::multiplicative_diploid</a>(),std::placeholders::_1,std::placeholders::_2,2.),</div>

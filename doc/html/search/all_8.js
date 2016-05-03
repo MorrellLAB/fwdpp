@@ -1,15 +1,8 @@
 var searchData=
 [
-  ['i',['i',['../dc/dfb/structdiploid__t.html#a2beffac5bbdc370e8cb154af4a94a73e',1,'diploid_t']]],
-  ['ifndef',['ifndef',['../d2/d67/gamete__tags_8hpp.html#a410830563466400906cdfcea89558e0a',1,'gamete_tags.hpp']]],
-  ['index_5ft',['index_t',['../d6/d90/structKTfwd_1_1gamete__base.html#ae45b0df7d3aaa223558031131da04816',1,'KTfwd::gamete_base']]],
-  ['infsites',['infsites',['../df/d07/structKTfwd_1_1infsites.html',1,'KTfwd']]],
-  ['infsites_2ehpp',['infsites.hpp',['../dc/d32/infsites_8hpp.html',1,'']]],
-  ['insertion_5fpolicies_2ehpp',['insertion_policies.hpp',['../d0/d13/insertion__policies_8hpp.html',1,'']]],
-  ['io_2ehpp',['IO.hpp',['../df/d9f/IO_8hpp.html',1,'']]],
-  ['iohelp_2ehpp',['IOhelp.hpp',['../d6/d27/IOhelp_8hpp.html',1,'']]],
-  ['is_5fcustom_5fdiploid_5ft',['is_custom_diploid_t',['../d5/d1b/structKTfwd_1_1traits_1_1is__custom__diploid__t.html',1,'KTfwd::traits']]],
-  ['is_5fdiploid_5flike',['is_diploid_like',['../d9/dee/structKTfwd_1_1traits_1_1is__diploid__like.html',1,'KTfwd::traits']]],
-  ['is_5fgamete_5ft',['is_gamete_t',['../df/d25/structKTfwd_1_1traits_1_1is__gamete__t.html',1,'KTfwd::traits']]],
-  ['is_5fmutation_5ft',['is_mutation_t',['../d0/dc2/structKTfwd_1_1traits_1_1is__mutation__t.html',1,'KTfwd::traits']]]
+  ['h',['h',['../d1/d7f/structKTfwd_1_1mutation.html#a45166a8ac131f277f06a261f6e16f5a0',1,'KTfwd::mutation::h()'],['../da/dde/structKTfwd_1_1generalmut.html#a993503ebaef39dde73246c10167704c9',1,'KTfwd::generalmut::h()'],['../d9/d9e/structKTfwd_1_1generalmut__vec.html#afeb7ecb96c7eda52f9fdfb647447d926',1,'KTfwd::generalmut_vec::h()'],['../dc/dcc/structKTfwd_1_1popgenmut.html#a60a395a305fd9d0a1f3da6b7b223bc10',1,'KTfwd::popgenmut::h()'],['../db/dbe/structKTfwd_1_1extensions_1_1shmodel.html#a82e4c0ae66c1eb5c8f8bae8b735e34ea',1,'KTfwd::extensions::shmodel::h()']]],
+  ['haplotype_5fdependent_5ffitness',['haplotype_dependent_fitness',['../de/d99/structKTfwd_1_1haplotype__dependent__fitness.html',1,'KTfwd']]],
+  ['has_5ftype',['HAS_TYPE',['../d4/d26/internal_2type__traits_8hpp.html#a53bd3922cdf37c7649a4e9a85f50e26b',1,'HAS_TYPE():&#160;type_traits.hpp'],['../d9/d91/namespaceKTfwd_1_1traits_1_1internal.html#a677408681dfb117e4debfc5e06d551aa',1,'KTfwd::traits::internal::HAS_TYPE(gamete_tag)'],['../d9/d91/namespaceKTfwd_1_1traits_1_1internal.html#a9c115ec7736d01de65da255e5c50dfdd',1,'KTfwd::traits::internal::HAS_TYPE(mutation_type)'],['../d9/d91/namespaceKTfwd_1_1traits_1_1internal.html#ada31ac76d0a8097beb5427cf0d3e7bd3',1,'KTfwd::traits::internal::HAS_TYPE(first_type)'],['../d9/d91/namespaceKTfwd_1_1traits_1_1internal.html#ab0eb8865c17e80fcf5176d6be4efe117',1,'KTfwd::traits::internal::HAS_TYPE(second_type)']]],
+  ['hoc_5find_2ecc',['HOC_ind.cc',['../d5/d77/HOC__ind_8cc.html',1,'']]],
+  ['hochap',['HOChap',['../dc/d70/structHOChap.html',1,'']]]
 ];

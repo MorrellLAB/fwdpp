@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.8</span>
+   &#160;<span id="projectnumber">0.4.9</span>
    </div>
   </td>
  </tr>
@@ -121,7 +121,7 @@ Data Structures</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a141d6f5cba2149839fb2de428ffd555d"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename lookup_t , class... Args&gt; </td></tr>
-<tr class="memitem:a141d6f5cba2149839fb2de428ffd555d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/de4/namespaceKTfwd_1_1extensions.html#a141d6f5cba2149839fb2de428ffd555d">bind_dmm</a> (const <a class="el" href="../../d8/d8d/structKTfwd_1_1extensions_1_1discrete__mut__model.html">discrete_mut_model</a> &amp;dm, mcont_t &amp;, lookup_t &amp;mut_lookup, Args &amp;&amp;...args) -&gt; decltype(std::bind(&amp;<a class="el" href="../../d8/d8d/structKTfwd_1_1extensions_1_1discrete__mut__model.html#aba01ce38f7f4b37277d9e3cd91951b3f">discrete_mut_model::make_mut</a>&lt; <a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html#abb519ece58ebfa07b1fb27481d86852e">traits::recycling_bin_t</a>&lt; mcont_t &gt;, lookup_t, mcont_t &gt;,&amp;dm, std::placeholders::_1, std::placeholders::_2, std::forward&lt; Args &gt;(args)..., std::ref(mut_lookup)))</td></tr>
+<tr class="memitem:a141d6f5cba2149839fb2de428ffd555d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/de4/namespaceKTfwd_1_1extensions.html#a141d6f5cba2149839fb2de428ffd555d">bind_dmm</a> (const <a class="el" href="../../d8/d8d/structKTfwd_1_1extensions_1_1discrete__mut__model.html">discrete_mut_model</a> &amp;<a class="el" href="../../d5/da7/extensions_8cc.html#aacc39829645a01d2730b19313419d864">dm</a>, mcont_t &amp;, lookup_t &amp;mut_lookup, Args &amp;&amp;...args) -&gt; decltype(std::bind(&amp;<a class="el" href="../../d8/d8d/structKTfwd_1_1extensions_1_1discrete__mut__model.html#aba01ce38f7f4b37277d9e3cd91951b3f">discrete_mut_model::make_mut</a>&lt; <a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html#abb519ece58ebfa07b1fb27481d86852e">traits::recycling_bin_t</a>&lt; mcont_t &gt;, lookup_t, mcont_t &gt;,&amp;<a class="el" href="../../d5/da7/extensions_8cc.html#aacc39829645a01d2730b19313419d864">dm</a>, std::placeholders::_1, std::placeholders::_2, std::forward&lt; Args &gt;(args)..., std::ref(mut_lookup)))</td></tr>
 <tr class="separator:a141d6f5cba2149839fb2de428ffd555d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace526105a294ce3c39fc89bd534b7025"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t , typename mcont_t , class... Args&gt; </td></tr>
 <tr class="memitem:ace526105a294ce3c39fc89bd534b7025"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/de4/namespaceKTfwd_1_1extensions.html#ace526105a294ce3c39fc89bd534b7025">bind_drm</a> (const <a class="el" href="../../dc/d61/structKTfwd_1_1extensions_1_1discrete__rec__model.html">discrete_rec_model</a> &amp;drm, const gcont_t &amp;, const mcont_t &amp;, Args &amp;&amp;...args) -&gt; decltype(std::bind(&amp;discrete_rec_model::operator()&lt; typename gcont_t::value_type, mcont_t &gt;,&amp;drm, std::forward&lt; Args &gt;(args)..., std::placeholders::_1, std::placeholders::_2, std::placeholders::_3))</td></tr>
@@ -173,7 +173,7 @@ template&lt;typename mcont_t , typename lookup_t , class... Args&gt; </div>
           <td></td>
           <td>)</td>
           <td></td><td> -&gt; decltype(std::bind(&amp;<a class="el" href="../../d8/d8d/structKTfwd_1_1extensions_1_1discrete__mut__model.html#aba01ce38f7f4b37277d9e3cd91951b3f">discrete_mut_model::make_mut</a>&lt;<a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html#abb519ece58ebfa07b1fb27481d86852e">traits::recycling_bin_t</a>&lt;mcont_t&gt;,lookup_t,mcont_t&gt;,
-							  &amp;dm,
+							  &amp;<a class="el" href="../../d5/da7/extensions_8cc.html#aacc39829645a01d2730b19313419d864">dm</a>,
 							  std::placeholders::_1,
 							  std::placeholders::_2,
 							  std::forward&lt;Args&gt;(args)...,
@@ -191,6 +191,8 @@ template&lt;typename mcont_t , typename lookup_t , class... Args&gt; </div>
 <p>Convenience function to return a function object bound to <a class="el" href="../../d8/d8d/structKTfwd_1_1extensions_1_1discrete__mut__model.html#aba01ce38f7f4b37277d9e3cd91951b3f">KTfwd::extensions::discrete_mut_model::make_mut</a></p>
 <p>This simplifies life a lot!</p>
 <p>See unit test <a class="el" href="../../d5/da7/extensions_8cc.html">extensions.cc</a> for an example of use. </p>
+
+<p>Definition at line <a class="el" href="../../d0/de1/regions_8hpp_source.html#l00198">198</a> of file <a class="el" href="../../d0/de1/regions_8hpp_source.html">regions.hpp</a>.</p>
 
 </div>
 </div>
@@ -248,6 +250,8 @@ template&lt;typename gcont_t , typename mcont_t , class... Args&gt; </div>
 </div><div class="memdoc">
 <p>Returns a function call bound to discrete_rec_model::operator().</p>
 <p>See unit test <a class="el" href="../../d5/da7/extensions_8cc.html">extensions.cc</a> for example usage. </p>
+
+<p>Definition at line <a class="el" href="../../d0/de1/regions_8hpp_source.html#l00280">280</a> of file <a class="el" href="../../d0/de1/regions_8hpp_source.html">regions.hpp</a>.</p>
 
 </div>
 </div>

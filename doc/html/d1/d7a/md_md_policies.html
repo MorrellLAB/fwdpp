@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.8</span>
+   &#160;<span id="projectnumber">0.4.9</span>
    </div>
   </td>
  </tr>
@@ -221,10 +221,10 @@ Policy requirements in fwdpp</h1>
 <div class="line"><span class="keywordtype">int</span> <a class="code" href="../../d3/d01/bneck__selection__ind_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>()</div>
 <div class="line">{</div>
 <div class="line">  std::cout &lt;&lt; mypow(3,2) &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line">  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i=1;i&lt;11;++i)</div>
+<div class="line">  <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>=1;<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>&lt;11;++<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>)</div>
 <div class="line">    {</div>
 <div class="line">      <span class="comment">//These two calls will give the same result:</span></div>
-<div class="line">      std::cout &lt;&lt; mypow_over_x(3,2,i) &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt;  mypow_over_x_wrapper(i) &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line">      std::cout &lt;&lt; mypow_over_x(3,2,<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>) &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt;  mypow_over_x_wrapper(<a class="code" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>) &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>So, std::function is a concrete type defining the <em>signature</em> of a function (return type and arguments). Internally, that signature must be met by your policies, and you can "bind" additional arguments to them in order to implement specific models.</p>
@@ -251,7 +251,7 @@ Policy requirements in fwdpp</h1>
 <div class="line">}</div>
 </div><!-- fragment --><p>See the header file <b><a class="el" href="../../db/dd7/fitness__models_8hpp.html">fwdpp/fitness_models.hpp</a></b> for examples of fitness policies that I provide for "standard'' cases.</p>
 <p>A recombination policy takes two non-const references to <b>glist::iterator</b>, scrambles up those gametes appropriately, and returns an unsigned integer representing the number of crossovers, etc., between the two gametes.</p>
-<p>Typically, recombination would work via a call to <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#aa61deb23ca543c4508c83be0690ae408">KTfwd::recombine_gametes</a></b>, or the convenience wrapper <b>KTfwd::genetics101</b>. Here is an example of the latter, taken from the example file <a class="el" href="../../d9/de8/diploid__ind_8cc.html">diploid_ind.cc</a>:</p>
+<p>Typically, recombination would work via a call to <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#ab324772c17001eba12fc75f8e902a3b1">KTfwd::recombine_gametes</a></b>, or the convenience wrapper <b>KTfwd::genetics101</b>. Here is an example of the latter, taken from the example file <a class="el" href="../../d9/de8/diploid__ind_8cc.html">diploid_ind.cc</a>:</p>
 <div class="fragment"><div class="line">std::bind(KTfwd::genetics101(),</div>
 <div class="line">        <span class="comment">//These two placeholders are for  iterators to the two parental gametes</span></div>
 <div class="line">        std::placeholders::_1,std::placeholders::_2,</div>
@@ -328,7 +328,7 @@ Mutation policies</h2>
 <div class="line"><span class="comment"></span>    <span class="keywordtype">bool</span> <a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html#acfb3b4c94516cbbc5c28a12e1ad575b3">neutral</a>;<span class="comment"></span></div>
 <div class="line"><span class="comment">    /// Used internally (don&#39;t worry about it for now...)</span></div>
 <div class="line"><span class="comment"></span>    <span class="keywordtype">bool</span> checked;</div>
-<div class="line">    <a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html#a0f14f132bc952ba0eebfe68c21a5db1f">mutation_base</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> &amp; position, </div>
+<div class="line">    <a class="code" href="../../d1/da4/structKTfwd_1_1mutation__base.html#afe59e9cde9a614ed2f67ea89f4a2993b">mutation_base</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> &amp; position, </div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> &amp; count, <span class="keyword">const</span> <span class="keywordtype">bool</span> &amp; isneutral = <span class="keyword">true</span>)</div>
 <div class="line">      : pos(position),n(count),neutral(isneutral),checked(false)</div>
 <div class="line">    {   </div>
@@ -535,7 +535,7 @@ Recombination</h2>
 <div class="line">    <span class="keywordflow">if</span>( g1 != g2 )</div>
 <div class="line">      <span class="comment">//then a non-parental type is inherited from p1 and p1 has two different gametes</span></div>
 <div class="line">      {</div>
-<div class="line">        NREC += <a class="code" href="../../da/d8b/namespaceKTfwd.html#aa61deb23ca543c4508c83be0690ae408">recombine_gametes</a>(r,littler,gametes,g1,g2,gamete_lookup,neutral,selected,rp);</div>
+<div class="line">        NREC += <a class="code" href="../../da/d8b/namespaceKTfwd.html#ab324772c17001eba12fc75f8e902a3b1">recombine_gametes</a>(r,littler,gametes,g1,g2,gamete_lookup,neutral,selected,rp);</div>
 <div class="line">      }</div>
 <div class="line">    <span class="keywordflow">return</span> NREC;</div>
 <div class="line">  }</div>
@@ -551,7 +551,7 @@ Recombination</h2>
 <div class="line">           littler,                <span class="comment">//Avg. # of crossovers b/w two gametes per region per generation</span></div>
 <div class="line">           r,                      <span class="comment">//a gsl_rng *</span></div>
 <div class="line">           recmap)                 <span class="comment">//A genetic map policy like the one we made above</span></div>
-</div><!-- fragment --><p>Note: if you want to write a new recombination policy, you probably want to proceed by modifying how it interacts with the the recombination map policy. For example, if a recombination at position <img class="formulaInl" alt="$x$" src="../../form_22.png"/> means that the next position must be <img class="formulaInl" alt="$\geq 1.5x$" src="../../form_50.png"/> (in some model of interference). Doing so requires making a custom version of the <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#aa61deb23ca543c4508c83be0690ae408">KTfwd::recombine_gametes</a></b> function. If you read the code for that function, you will see where the recombination map policy is called. If you try to modify the code below that, then good luck to you. It isn't super-complicated, but tread with caution.</p>
+</div><!-- fragment --><p>Note: if you want to write a new recombination policy, you probably want to proceed by modifying how it interacts with the the recombination map policy. For example, if a recombination at position <img class="formulaInl" alt="$x$" src="../../form_22.png"/> means that the next position must be <img class="formulaInl" alt="$\geq 1.5x$" src="../../form_50.png"/> (in some model of interference). Doing so requires making a custom version of the <b><a class="el" href="../../da/d8b/namespaceKTfwd.html#ab324772c17001eba12fc75f8e902a3b1">KTfwd::recombine_gametes</a></b> function. If you read the code for that function, you will see where the recombination map policy is called. If you try to modify the code below that, then good luck to you. It isn't super-complicated, but tread with caution.</p>
 <h2><a class="anchor" id="TutMig"></a>
 Migration</h2>
 <p>Migration policies are only used in individual-based simulations.</p>
@@ -668,7 +668,7 @@ Updating and removal policies</h2>
 Putting it all togeter (kinda)</h1>
 <p>Ok, once we have defined our mutation types, our containers, and our policies, a single generation of a constant-sized population in an individual-based simulation is evolved a follows:</p>
 <div class="fragment"><div class="line"><span class="keyword">using</span> std::placeholders; <span class="comment">//_1,_2, etc.</span></div>
-<div class="line"><span class="keywordtype">double</span> wbar = <a class="code" href="../../da/d8b/namespaceKTfwd.html#a9fa8c6fd5d6b79550163c64a6cb0353a">KTfwd::sample_diploid</a>(r,</div>
+<div class="line"><span class="keywordtype">double</span> <a class="code" href="../../d5/da7/extensions_8cc.html#a0f29eb9f5997fb6191af2c906b84fbf0">wbar</a> = <a class="code" href="../../da/d8b/namespaceKTfwd.html#a9fa8c6fd5d6b79550163c64a6cb0353a">KTfwd::sample_diploid</a>(r,</div>
 <div class="line">                                    &amp;gametes,  <span class="comment">//non-const pointer to gametes</span></div>
 <div class="line">                                    &amp;diploids, <span class="comment">//non-const pointer to diploids</span></div>
 <div class="line">                                    &amp;mutations, <span class="comment">//non-const pointer to mutations</span></div>

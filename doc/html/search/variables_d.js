@@ -8,6 +8,7 @@ var searchData=
   ['send',['send',['../d8/d8d/structKTfwd_1_1extensions_1_1discrete__mut__model.html#a9e942bcb623c722f38e949ac467093d7',1,'KTfwd::extensions::discrete_mut_model']]],
   ['shape',['shape',['../dd/df9/structKTfwd_1_1extensions_1_1gamma.html#a300f4e977ab66ac5419ed9dd85827d3b',1,'KTfwd::extensions::gamma']]],
   ['shmodels',['shmodels',['../d8/d8d/structKTfwd_1_1extensions_1_1discrete__mut__model.html#a96e1880aaf6cbc0a3ac271ad1b888652',1,'KTfwd::extensions::discrete_mut_model']]],
+  ['slabels',['slabels',['../d8/d8d/structKTfwd_1_1extensions_1_1discrete__mut__model.html#a8f68a7221b92becacb2bfc2f47ad03e6',1,'KTfwd::extensions::discrete_mut_model']]],
   ['slookup',['slookup',['../d8/d8d/structKTfwd_1_1extensions_1_1discrete__mut__model.html#a65939a5ed247de02096d4fda48739eee',1,'KTfwd::extensions::discrete_mut_model']]],
   ['smutations',['smutations',['../d6/d90/structKTfwd_1_1gamete__base.html#ac6fdbc5dfdb6950574f2c81557215d25',1,'KTfwd::gamete_base']]],
   ['stuff',['stuff',['../de/d89/structmut.html#aa421bf4b07871f87d269b0a200f32dba',1,'mut']]]

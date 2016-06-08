@@ -18,6 +18,89 @@
 
 namespace KTfwd
 {
+  template<typename mcont_t,
+	   typename gcont_t,
+	   typename mkey_cont_t,
+	   typename mqueue_t,
+	   typename gqueue_t,
+	   typename mutmodel_t>
+  void single_region_rec_mut(std::size_t & dipgam,
+			     mcont_t & mutations,
+			     mqueue_t & mut_recycling_bin,
+			     gcont_t & gametes,
+			     gqueue_t & gam_recycling_bin,
+			     mkey_cont_t & neutral,
+			     mkey_cont_t & selected,
+			     const unsigned rv_rec,
+			     const unsigned nmuts,
+			     const std::size_t pgam,
+			     const mutmodel_t &mmodel
+			     )
+  {
+    switch (rv_rec)
+      {
+      case 0:
+	switch(nmuts)
+	  {
+	  case 0: //0 rec, 0 mut = nothing has happened
+	    dipgam = pgam;
+	    break;
+	  default: //0 rec, > 0 mut
+	    neutral.assign(gametes[pgam].mutations.cbegin(),
+			   gametes[pgam].mutations.cend());
+	    selected.assign(gametes[pgam].smutations.cbegin(),
+			    gametes[pgam].smutations.cend());
+	    assert(neutral.size()==gametes[pgam].mutations.size());
+	    assert(selected.size()==gametes[pgam].smutations.size());
+	    mutate_test(mut_recycling_bin,nmuts,mutations,mmodel,neutral,selected);
+	    assert(std::is_sorted(neutral.begin(),neutral.end(),
+				  [&mutations](const std::size_t i, const std::size_t j)noexcept
+				  {
+				    return mutations[i].pos<mutations[j].pos;
+				  }));
+	    assert(std::is_sorted(selected.begin(),selected.end(),
+				  [&mutations](const std::size_t i, const std::size_t j)noexcept
+				  {
+				    return mutations[i].pos<mutations[j].pos;
+				  }));
+	    dipgam = fwdpp_internal::recycle_gamete(gametes,gam_recycling_bin,neutral,selected);
+	    break;
+	  }
+	break;
+      default:
+	switch(nmuts)
+	  {
+	  case 0://>0 rec, 0 mut
+	    assert(std::is_sorted(neutral.begin(),neutral.end(),
+				  [&mutations](const std::size_t i, const std::size_t j)noexcept
+				  {
+				    return mutations[i].pos<mutations[j].pos;
+				  }));
+	    assert(std::is_sorted(selected.begin(),selected.end(),
+				  [&mutations](const std::size_t i, const std::size_t j)noexcept
+				  {
+				    return mutations[i].pos<mutations[j].pos;
+				  }));
+	    dipgam = fwdpp_internal::recycle_gamete(gametes,gam_recycling_bin,neutral,selected);
+	    break;
+	  default://>0 rec, >0 mut
+	    mutate_test(mut_recycling_bin,nmuts,mutations,mmodel,neutral,selected);
+	    assert(std::is_sorted(neutral.begin(),neutral.end(),
+				  [&mutations](const std::size_t i, const std::size_t j)noexcept
+				  {
+				    return mutations[i].pos<mutations[j].pos;
+				  }));
+	    assert(std::is_sorted(selected.begin(),selected.end(),
+				  [&mutations](const std::size_t i, const std::size_t j)noexcept
+				  {
+				    return mutations[i].pos<mutations[j].pos;
+				  }));
+	    dipgam = fwdpp_internal::recycle_gamete(gametes,gam_recycling_bin,neutral,selected);
+	    break;
+	  }
+	break;
+      }
+  }
   //single deme, constant N
   template< typename gamete_type,
 	    typename gamete_cont_type_allocator,
@@ -161,7 +244,7 @@ namespace KTfwd
 	  The dispatch itself is implemented in fwdpp/internal/diploid_fitness_dispatch.hpp
 
 	  See the tutorial on custom diploids for more details.
-	 */
+	*/
 	fitnesses[i] = fwdpp_internal::diploid_fitness_dispatch(ff,diploids[i],gametes,mutations,
 								typename traits::is_custom_diploid_t<diploid_geno_t>::type());
 	wbar += fitnesses[i];
@@ -238,7 +321,7 @@ namespace KTfwd
 	  2. We then generate nmuts, a Poisson deviate based on the mutation rate
 	  2a. if (!rv_rec && ! nmuts) { dip.first = p1g1; }
 	  2b. if (rv_rec && ! nmuts) { dip.first = recycle_gamete(neutral,seleted); }
-	  2c. if (! rv_rec && nmuts ) { mutate(nmuts,neutral,selected); dip.first = recycle_gamete(neutral,seleted);}
+	  2c. if (! rv_rec && nmuts ) { assign(neutral,selected) from p1g1; mutate(nmuts,neutral,selected); dip.first = recycle_gamete(neutral,seleted);}
 	  2d. if( rv_rec && nmuts ) { mutate(nmuts,neutral,selected); }
 
 	  Case 2d is the most important: in limit of large mutation rate & large rec. rate,
@@ -249,11 +332,29 @@ namespace KTfwd
 	  and therefore will change the output.
 
 	  A lot of this should be handed off to new code in internal/sample_diploid_helpers.hpp
-	 */
-	dip.first = recombination(gametes,gam_recycling_bin,
-				  neutral,selected,rec_pol,p1g1,p1g2,mutations).first;
-	dip.second = recombination(gametes,gam_recycling_bin,
-				   neutral,selected,rec_pol,p2g1,p2g2,mutations).first;
+	*/
+	auto rv_rec = recombination_test(gametes,neutral,selected,rec_pol,p1g1,p1g2,mutations);
+	auto nmuts = gsl_ran_poisson(r,mu);
+
+  	single_region_rec_mut(dip.first,
+			      mutations,mut_recycling_bin,
+			      gametes,gam_recycling_bin,
+			      neutral,selected,
+			      rv_rec,nmuts,p1g1,mmodel);
+
+	//again for dip.second....
+	rv_rec = recombination_test(gametes,neutral,selected,rec_pol,p2g1,p2g2,mutations);
+	nmuts = gsl_ran_poisson(r,mu);
+  	single_region_rec_mut(dip.second,
+			      mutations,mut_recycling_bin,
+			      gametes,gam_recycling_bin,
+			      neutral,selected,
+			      rv_rec,nmuts,p2g1,mmodel);
+	
+	//dip.first = recombination(gametes,gam_recycling_bin,
+	//neutral,selected,rec_pol,p1g1,p1g2,mutations).first;
+	//dip.second = recombination(gametes,gam_recycling_bin,
+	//neutral,selected,rec_pol,p2g1,p2g2,mutations).first;
 
 	//update gamete counts
 	gametes[dip.first].n++;
@@ -273,8 +374,8 @@ namespace KTfwd
 
 	  The implementation details are found in fwdpp/mutation.hpp
 	*/
-	dip.first = mutate_gamete_recycle(mut_recycling_bin,gam_recycling_bin,r,mu,gametes,mutations,dip.first,mmodel,gpolicy_mut);
-	dip.second = mutate_gamete_recycle(mut_recycling_bin,gam_recycling_bin,r,mu,gametes,mutations,dip.second,mmodel,gpolicy_mut);
+	//dip.first = mutate_gamete_recycle(mut_recycling_bin,gam_recycling_bin,r,mu,gametes,mutations,dip.first,mmodel,gpolicy_mut);
+	//dip.second = mutate_gamete_recycle(mut_recycling_bin,gam_recycling_bin,r,mu,gametes,mutations,dip.second,mmodel,gpolicy_mut);
 
 	assert( gametes[dip.first].n );
 	assert( gametes[dip.second].n );
@@ -307,7 +408,7 @@ namespace KTfwd
       but never saw any performance improvement, and the code got complex, and possibly less portable.
 
       The implementation is in fwdpp/internal/sample_diploid_helpers.hpp
-     */
+    */
     fwdpp_internal::process_gametes(gametes,mutations,mcounts);
     assert(mcounts.size()==mutations.size());
 #ifndef NDEBUG

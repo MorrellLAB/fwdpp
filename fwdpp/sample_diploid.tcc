@@ -226,6 +226,30 @@ namespace KTfwd
 	  Briefly, recombination is implemented via a series of sequential updates to iterators using binary
 	  searches (std::upper_bound).
 	*/
+
+	/*
+	  Ideas for refactoring:
+
+	  To figure out "dip.first":
+	  1. Recombination should return (unsigned) rv_rec = # breakpoints
+	  1a. If rv_rec != 0, then neutral, selected are now filled with recombinant gametes
+	  1b. If rv_rec == 0, then neutral, selected are unchanged (but NOT necessarily empty..)
+
+	  2. We then generate nmuts, a Poisson deviate based on the mutation rate
+	  2a. if (!rv_rec && ! nmuts) { dip.first = p1g1; }
+	  2b. if (rv_rec && ! nmuts) { dip.first = recycle_gamete(neutral,seleted); }
+	  2c. if (! rv_rec && nmuts ) { mutate(nmuts,neutral,selected); dip.first = recycle_gamete(neutral,seleted);}
+	  2d. if( rv_rec && nmuts ) { mutate(nmuts,neutral,selected); }
+
+	  Case 2d is the most important: in limit of large mutation rate & large rec. rate,
+	  this should 1/2 the calls to the gamete recycling machinery, maximizing re-use of
+	  neutral & selected temporary containers.
+
+	  Con: this changes the order from rec, rec, mut, mut to rec, mut, rec, mut,
+	  and therefore will change the output.
+
+	  A lot of this should be handed off to new code in internal/sample_diploid_helpers.hpp
+	 */
 	dip.first = recombination(gametes,gam_recycling_bin,
 				  neutral,selected,rec_pol,p1g1,p1g2,mutations).first;
 	dip.second = recombination(gametes,gam_recycling_bin,

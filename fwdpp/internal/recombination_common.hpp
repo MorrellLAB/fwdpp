@@ -18,6 +18,8 @@ namespace KTfwd {
 			    typename gcont_t::value_type::mutation_container & neutral,
 			    typename gcont_t::value_type::mutation_container & selected)
     {
+      assert(gamete_is_sorted_n(gametes[ibeg],mutations));
+      assert(gamete_is_sorted_s(gametes[ibeg],mutations));
       assert( std::is_sorted(pos.cbegin(),pos.cend()) );
 
       auto itr = gametes[ibeg].mutations.cbegin();
@@ -56,8 +58,6 @@ namespace KTfwd {
 	  itr_s = fwdpp_internal::rec_gam_updater(itr_s,itr_s_e,mutations,
 						  selected,*p);
 	}
-      assert(gamete_is_sorted_n(gametes[ibeg],mutations));
-      assert(gamete_is_sorted_s(gametes[ibeg],mutations));
     }    
   }
 }

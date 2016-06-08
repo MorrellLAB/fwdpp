@@ -43,6 +43,34 @@ namespace KTfwd {
 			    }));
     }
 
+    template< typename mcont_t,
+	      typename mkey_cont_t>
+    void add_new_mutation_test( const std::size_t idx,
+				const mcont_t & mutations,
+				mkey_cont_t & neutral,
+				mkey_cont_t & selected)
+    {
+      assert(idx<mutations.size());
+      //Establish a pointer to the container to be modified
+      auto mc = (mutations[idx].neutral) ? &neutral : &selected;
+
+      assert( std::find(mc->cbegin(),mc->cend(),idx) == mc->end() );
+      //Insert new mutation at position retaining sort-by-position order
+      mc->emplace(std::upper_bound(mc->begin(),
+				   mc->end(),mutations[idx].pos,
+				   [&mutations](const double & __value,const std::size_t __mut) noexcept {
+				     assert(__mut<mutations.size());
+				     return __value < mutations[__mut].pos;}),
+		  idx );
+
+      //Check post-condition in debug mode...
+      assert(std::is_sorted(mc->cbegin(),mc->cend(),
+			    [&mutations](const std::size_t i, const std::size_t j)noexcept
+			    {
+			      return mutations[i].pos<mutations[j].pos;
+			    }));
+    }
+
     template<typename mmodel,
     	     typename gamete_type,
     	     typename mlist_type,
@@ -88,6 +116,37 @@ namespace KTfwd {
       for( unsigned i = 0 ; i < n ; ++i )
     	{
 	  add_new_mutation(mmodel_dispatcher(mmodel,g,mutations,recycling_bin),mutations,g);
+    	}
+    }
+
+    template<typename queue_type,
+	     typename mutation_model,
+    	     typename mlist_type,
+	     typename mkey_cont_t>
+    void add_N_mutations_recycle_test(queue_type & recycling_bin,
+				       const mutation_model & mmodel,
+				       const unsigned & n,
+				       mlist_type & mutations,
+				       mkey_cont_t & neutral,
+				       mkey_cont_t & selected)
+    {
+      assert(std::is_sorted(neutral.begin(),neutral.end(),
+			    [&mutations](const std::size_t i, const std::size_t j)noexcept
+			    {
+			      return mutations[i].pos<mutations[j].pos;
+			    }));
+      assert(std::is_sorted(selected.begin(),selected.end(),
+			    [&mutations](const std::size_t i, const std::size_t j)noexcept
+			    {
+			      return mutations[i].pos<mutations[j].pos;
+			    }));
+      //WARNING: need to redo these assertions
+      //assert(gamete_is_sorted_n(g,mutations));
+      //assert(gamete_is_sorted_s(g,mutations));
+      for( unsigned i = 0 ; i < n ; ++i )
+    	{
+	  //WARNING: DISPATCH IS NOT HAPPENING -- how to deal with this???
+	  add_new_mutation_test(mmodel(recycling_bin,mutations),mutations,neutral,selected);
     	}
     }
   }

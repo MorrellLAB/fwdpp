@@ -53,5 +53,19 @@ namespace KTfwd
     fwdpp_internal::add_N_mutations_recycle(recycling_bin,mmodel,nm,mutations,ng);
     return gpolicy(std::move(ng),gametes);
   }
+
+   template<typename queue_type,
+	    typename mutation_model,
+	    typename mcont_t,
+	    typename mkey_cont_t>
+   void mutate_test( queue_type & recycling_bin,
+		     const unsigned & nm,
+		     mcont_t & mutations,
+		     const mutation_model &mmodel,
+		     mkey_cont_t & neutral,
+		     mkey_cont_t & selected )
+   {
+     fwdpp_internal::add_N_mutations_recycle_test(recycling_bin,mmodel,nm,mutations,neutral,selected);
+   }
 }
 #endif /* _FWDPP_MUTATION_TCC_ */

@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.9</span>
+   &#160;<span id="projectnumber">0.5.0</span>
    </div>
   </td>
  </tr>
@@ -108,10 +108,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6e8d00e04d117e88c13979d0a805f028"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html#a6e8d00e04d117e88c13979d0a805f028">standardWFrules</a> ()</td></tr>
 <tr class="memdesc:a6e8d00e04d117e88c13979d0a805f028"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a6e8d00e04d117e88c13979d0a805f028">More...</a><br /></td></tr>
 <tr class="separator:a6e8d00e04d117e88c13979d0a805f028"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abeb0cc10e2a179af9f755bf8773aefe9"><td class="memTemplParams" colspan="2">template&lt;typename dipcont_t , typename gcont_t , typename mcont_t , typename fitness_func &gt; </td></tr>
-<tr class="memitem:abeb0cc10e2a179af9f755bf8773aefe9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html#abeb0cc10e2a179af9f755bf8773aefe9">w</a> (const dipcont_t &amp;diploids, gcont_t &amp;gametes, const mcont_t &amp;mutations, const fitness_func &amp;ff) const </td></tr>
-<tr class="memdesc:abeb0cc10e2a179af9f755bf8773aefe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The "fitness manager".  <a href="#abeb0cc10e2a179af9f755bf8773aefe9">More...</a><br /></td></tr>
-<tr class="separator:abeb0cc10e2a179af9f755bf8773aefe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29f8bda06f71c9a88d393699ebb7b94c"><td class="memTemplParams" colspan="2">template&lt;typename dipcont_t , typename gcont_t , typename mcont_t , typename fitness_func &gt; </td></tr>
+<tr class="memitem:a29f8bda06f71c9a88d393699ebb7b94c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html#a29f8bda06f71c9a88d393699ebb7b94c">w</a> (const dipcont_t &amp;diploids, gcont_t &amp;gametes, const mcont_t &amp;mutations, const fitness_func &amp;ff)</td></tr>
+<tr class="memdesc:a29f8bda06f71c9a88d393699ebb7b94c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The "fitness manager".  <a href="#a29f8bda06f71c9a88d393699ebb7b94c">More...</a><br /></td></tr>
+<tr class="separator:a29f8bda06f71c9a88d393699ebb7b94c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae182097a7f0e6b16b866f39bb659f90d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html#ae182097a7f0e6b16b866f39bb659f90d">pick1</a> (const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>) const </td></tr>
 <tr class="memdesc:ae182097a7f0e6b16b866f39bb659f90d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pick parent one.  <a href="#ae182097a7f0e6b16b866f39bb659f90d">More...</a><br /></td></tr>
 <tr class="separator:ae182097a7f0e6b16b866f39bb659f90d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -322,7 +322,7 @@ template&lt;typename diploid_t , typename gcont_t , typename mcont_t &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="abeb0cc10e2a179af9f755bf8773aefe9"></a>
+<a class="anchor" id="a29f8bda06f71c9a88d393699ebb7b94c"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -358,7 +358,7 @@ template&lt;typename dipcont_t , typename gcont_t , typename mcont_t , typename 
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> const</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -380,19 +380,11 @@ template&lt;typename dipcont_t , typename gcont_t , typename mcont_t , typename 
 <a class="anchor" id="a3ad2ffb65a2d452126a126bef01110ce"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::vector&lt;double&gt; KTfwd::experimental::standardWFrules::fitnesses</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">mutable</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="../../d8/d59/experimental_2sample__diploid_8hpp_source.html#l00018">18</a> of file <a class="el" href="../../d8/d59/experimental_2sample__diploid_8hpp_source.html">sample_diploid.hpp</a>.</p>
@@ -402,19 +394,11 @@ template&lt;typename dipcont_t , typename gcont_t , typename mcont_t , typename 
 <a class="anchor" id="ae7971038e9afab30dad01a8aefbca3fb"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a918c9bb71df790dfa5e93683339620f2">fwdpp_internal::gsl_ran_discrete_t_ptr</a> KTfwd::experimental::standardWFrules::lookup</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">mutable</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="../../d8/d59/experimental_2sample__diploid_8hpp_source.html#l00020">20</a> of file <a class="el" href="../../d8/d59/experimental_2sample__diploid_8hpp_source.html">sample_diploid.hpp</a>.</p>
@@ -424,19 +408,11 @@ template&lt;typename dipcont_t , typename gcont_t , typename mcont_t , typename 
 <a class="anchor" id="a1fb72d9245e2806c87878103aa7d1398"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">double KTfwd::experimental::standardWFrules::wbar</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">mutable</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="../../d8/d59/experimental_2sample__diploid_8hpp_source.html#l00017">17</a> of file <a class="el" href="../../d8/d59/experimental_2sample__diploid_8hpp_source.html">sample_diploid.hpp</a>.</p>

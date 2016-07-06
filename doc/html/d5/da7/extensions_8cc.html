@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.9</span>
+   &#160;<span id="projectnumber">0.5.0</span>
    </div>
   </td>
  </tr>
@@ -476,7 +476,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">{</div>
 <div class="line">  <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">poptype</a> pop(1000)</div>
-<div class="ttc" id="classKTfwd_1_1sugar_1_1singlepop_html"><div class="ttname"><a href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a></div><div class="ttdoc">Abstraction of what is needed to simulate a single population using an individual-based sampler from ...</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d82/singlepop_2singlepop_8hpp_source.html#l00033">singlepop.hpp:33</a></div></div>
+<div class="ttc" id="classKTfwd_1_1sugar_1_1singlepop_html"><div class="ttname"><a href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">KTfwd::sugar::singlepop</a></div><div class="ttdoc">Abstraction of what is needed to simulate a single population using an individual-based sampler from ...</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d82/singlepop_2singlepop_8hpp_source.html#l00030">singlepop.hpp:30</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -534,12 +534,12 @@ Variables</h2></td></tr>
 <div class="line">                                              std::placeholders::_3,2.),</div>
 <div class="line">                                    pop.neutral,</div>
 <div class="line">                                    pop.selected)</div>
-<div class="ttc" id="structKTfwd_1_1poisson__xover_html"><div class="ttname"><a href="../../d2/df0/structKTfwd_1_1poisson__xover.html">KTfwd::poisson_xover</a></div><div class="ttdoc">Simple model of crossing-over. Generates a Poisson-distribued number of recombination breakpoints wit...</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d85/recombination_8hpp_source.html#l00009">recombination.hpp:9</a></div></div>
-<div class="ttc" id="structKTfwd_1_1multiplicative__diploid_html"><div class="ttname"><a href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html">KTfwd::multiplicative_diploid</a></div><div class="ttdoc">Multiplicative fitness across sites. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/dd7/fitness__models_8hpp_source.html#l00202">fitness_models.hpp:202</a></div></div>
+<div class="ttc" id="structKTfwd_1_1poisson__xover_html"><div class="ttname"><a href="../../d2/df0/structKTfwd_1_1poisson__xover.html">KTfwd::poisson_xover</a></div><div class="ttdoc">Simple model of crossing-over. Generates a Poisson-distributed number of recombination breakpoints wi...</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d85/recombination_8hpp_source.html#l00009">recombination.hpp:9</a></div></div>
+<div class="ttc" id="structKTfwd_1_1multiplicative__diploid_html"><div class="ttname"><a href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html">KTfwd::multiplicative_diploid</a></div><div class="ttdoc">Multiplicative fitness across sites. </div><div class="ttdef"><b>Definition:</b> <a href="../../db/dd7/fitness__models_8hpp_source.html#l00289">fitness_models.hpp:289</a></div></div>
 <div class="ttc" id="extensions_8cc_html_a886705dc02755fd5f188a640b37b6c8a"><div class="ttname"><a href="../../d5/da7/extensions_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a></div><div class="ttdeci">KTfwd::GSLrng_t&lt; KTfwd::GSL_RNG_TAUS2 &gt; rng(0u)</div></div>
 <div class="ttc" id="extensions_8cc_html_ab281a7cf5d229ecee9a30282f764d60a"><div class="ttname"><a href="../../d5/da7/extensions_8cc.html#ab281a7cf5d229ecee9a30282f764d60a">mmodel</a></div><div class="ttdeci">auto mmodel</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/da7/extensions_8cc_source.html#l00209">extensions.cc:209</a></div></div>
 <div class="ttc" id="namespaceKTfwd_html_a9fa8c6fd5d6b79550163c64a6cb0353a"><div class="ttname"><a href="../../da/d8b/namespaceKTfwd.html#a9fa8c6fd5d6b79550163c64a6cb0353a">KTfwd::sample_diploid</a></div><div class="ttdeci">double sample_diploid(const gsl_rng *r, gamete_cont_type&lt; gamete_type, gamete_cont_type_allocator &gt; &amp;gametes, diploid_vector_type&lt; diploid_geno_t, diploid_vector_type_allocator &gt; &amp;diploids, mutation_cont_type&lt; mutation_type, mutation_cont_type_allocator &gt; &amp;mutations, std::vector&lt; uint_t &gt; &amp;mcounts, const uint_t &amp;N_curr, const double &amp;mu, const mutation_model &amp;mmodel, const recombination_policy &amp;rec_pol, const diploid_fitness_function &amp;ff, typename gamete_type::mutation_container &amp;neutral, typename gamete_type::mutation_container &amp;selected, const double f=0., const mutation_removal_policy mp=mutation_removal_policy(), const gamete_insertion_policy &amp;gpolicy_mut=gamete_insertion_policy())</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d91/sample__diploid_8tcc_source.html#l00038">sample_diploid.tcc:38</a></div></div>
-</div><!-- fragment --><dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a9">bneck_selection_ind.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a11">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a8">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a7">diploid_ind.cc</a>, and <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a8">diploid_ind_2locus.cc</a>.</dd>
+</div><!-- fragment --><dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a9">bneck_selection_ind.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a11">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a7">diploid_ind.cc</a>, and <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a10">diploid_ind_2locus.cc</a>.</dd>
 </dl>
 <p>Definition at line <a class="el" href="../../d5/da7/extensions_8cc_source.html#l00213">213</a> of file <a class="el" href="../../d5/da7/extensions_8cc_source.html">extensions.cc</a>.</p>
 

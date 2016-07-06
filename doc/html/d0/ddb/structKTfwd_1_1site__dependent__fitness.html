@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.9</span>
+   &#160;<span id="projectnumber">0.5.0</span>
    </div>
   </td>
  </tr>
@@ -106,36 +106,27 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a0eeb4a26d85d44fefe0a2122c18413e9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html#a0eeb4a26d85d44fefe0a2122c18413e9">result_type</a> = double</td></tr>
+<tr class="memdesc:a0eeb4a26d85d44fefe0a2122c18413e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The return value type.  <a href="#a0eeb4a26d85d44fefe0a2122c18413e9">More...</a><br /></td></tr>
 <tr class="separator:a0eeb4a26d85d44fefe0a2122c18413e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:aaedcedfa5cfd286a3859d6c5c152f44c"><td class="memTemplParams" colspan="2">template&lt;typename iterator_t , typename mcont_t , typename fitness_updating_policy_hom , typename fitness_updating_policy_het &gt; </td></tr>
+<tr class="memitem:aaedcedfa5cfd286a3859d6c5c152f44c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html#a0eeb4a26d85d44fefe0a2122c18413e9">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html#aaedcedfa5cfd286a3859d6c5c152f44c">operator()</a> (iterator_t first1, iterator_t last1, iterator_t first2, iterator_t last2, const mcont_t &amp;mutations, const fitness_updating_policy_hom &amp;fpol_hom, const fitness_updating_policy_het &amp;fpol_het, const double &amp;starting_fitness=1.) const noexcept</td></tr>
+<tr class="separator:aaedcedfa5cfd286a3859d6c5c152f44c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11d6ec9cb85154bd68b45ccf017bbfdd"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename mcont_t , typename fitness_updating_policy_hom , typename fitness_updating_policy_het &gt; </td></tr>
 <tr class="memitem:a11d6ec9cb85154bd68b45ccf017bbfdd"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html#a0eeb4a26d85d44fefe0a2122c18413e9">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html#a11d6ec9cb85154bd68b45ccf017bbfdd">operator()</a> (const gamete_type &amp;g1, const gamete_type &amp;g2, const mcont_t &amp;mutations, const fitness_updating_policy_hom &amp;fpol_hom, const fitness_updating_policy_het &amp;fpol_het, const double &amp;starting_fitness=1.) const noexcept</td></tr>
 <tr class="separator:a11d6ec9cb85154bd68b45ccf017bbfdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7bf03fa2bdfe21a8739dbaa008787b4"><td class="memTemplParams" colspan="2">template&lt;typename diploid2dispatch , typename fitness_updating_policy_hom , typename fitness_updating_policy_het &gt; </td></tr>
-<tr class="memitem:ae7bf03fa2bdfe21a8739dbaa008787b4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html#a0eeb4a26d85d44fefe0a2122c18413e9">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html#ae7bf03fa2bdfe21a8739dbaa008787b4">operator()</a> (const diploid2dispatch &amp;dip, const fitness_updating_policy_hom &amp;fpol_hom, const fitness_updating_policy_het &amp;fpol_het, const double &amp;starting_fitness=1.) const noexcept</td></tr>
-<tr class="memdesc:ae7bf03fa2bdfe21a8739dbaa008787b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload for custom diploids. This is what a programmer's functions will call.  <a href="#ae7bf03fa2bdfe21a8739dbaa008787b4">More...</a><br /></td></tr>
-<tr class="separator:ae7bf03fa2bdfe21a8739dbaa008787b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07414bdb856f59b87c2b7d495d572ba4"><td class="memTemplParams" colspan="2">template&lt;typename diploid2dispatch , typename gcont_t , typename mcont_t , typename fitness_updating_policy_hom , typename fitness_updating_policy_het &gt; </td></tr>
+<tr class="memitem:a07414bdb856f59b87c2b7d495d572ba4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html#a0eeb4a26d85d44fefe0a2122c18413e9">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html#a07414bdb856f59b87c2b7d495d572ba4">operator()</a> (const diploid2dispatch &amp;dip, const gcont_t &amp;gametes, const mcont_t &amp;mutations, const fitness_updating_policy_hom &amp;fpol_hom, const fitness_updating_policy_het &amp;fpol_het, const double &amp;starting_fitness=1.) const noexcept</td></tr>
+<tr class="separator:a07414bdb856f59b87c2b7d495d572ba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Function object for fitness as a function of individual mutations in a diploid. </p>
-<p>Function object for fitness as a function of mutations in a diploid. Examples include the standard multiplicative and additive models of population genetics. This routine idenfifies all homozygous/heterozygous mutations in a diploid and updates the diploid's fitness according to user-defined policies. See the code for <a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html" title="Multiplicative fitness across sites. ">KTfwd::multiplicative_diploid</a> and <a class="el" href="../../d6/d39/structKTfwd_1_1additive__diploid.html" title="Additive fitness across sites. ">KTfwd::additive_diploid</a> for specific examples. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">g1</td><td>A gamete </td></tr>
-    <tr><td class="paramname">g2</td><td>A gamete </td></tr>
-    <tr><td class="paramname">mutations</td><td>Container of mutations </td></tr>
-    <tr><td class="paramname">fpol_hom</td><td>Policy for updating fitness for the case of homozygosity for a mutant </td></tr>
-    <tr><td class="paramname">fpol_het</td><td>Policy for updating fitness for the case of heterozygosity for a mutant </td></tr>
-    <tr><td class="paramname">starting_fitness</td><td>The value to which the function will initialize the return value </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The fitness of a diploid with genotype g1 and g2 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The updating policies must take a non-const reference to a double as the first argument and an mcont_t::value_type as the second. Further, they must not return anything. Any remaining arguments needed should be passed via a mechanism such as std::bind and a function object, or via a lambda expression. See <a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html" title="Multiplicative fitness across sites. ">KTfwd::multiplicative_diploid</a> for an example implementation. </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#_a8">migsel_ind.cc</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00078">78</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00089">89</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a class="anchor" id="a0eeb4a26d85d44fefe0a2122c18413e9"></a>
 <div class="memitem">
@@ -147,11 +138,102 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00080">80</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
+<p>The return value type. </p>
+
+<p>Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00092">92</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aaedcedfa5cfd286a3859d6c5c152f44c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename iterator_t , typename mcont_t , typename fitness_updating_policy_hom , typename fitness_updating_policy_het &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html#a0eeb4a26d85d44fefe0a2122c18413e9">result_type</a> KTfwd::site_dependent_fitness::operator() </td>
+          <td>(</td>
+          <td class="paramtype">iterator_t&#160;</td>
+          <td class="paramname"><em>first1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">iterator_t&#160;</td>
+          <td class="paramname"><em>last1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">iterator_t&#160;</td>
+          <td class="paramname"><em>first2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">iterator_t&#160;</td>
+          <td class="paramname"><em>last2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mcont_t &amp;&#160;</td>
+          <td class="paramname"><em>mutations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const fitness_updating_policy_hom &amp;&#160;</td>
+          <td class="paramname"><em>fpol_hom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const fitness_updating_policy_het &amp;&#160;</td>
+          <td class="paramname"><em>fpol_het</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>starting_fitness</em> = <code>1.</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Range-based call operator. Calculates fitnesses over ranges of mutation keys first1/last1 and first2/last2, which are iterators derived from the 'smutations' of two gametes in a diploid.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first1</td><td>Iterator to first mutation derived from gamete 1 </td></tr>
+    <tr><td class="paramname">last1</td><td>Iterator to one past the last mutation derived from gamete 1 </td></tr>
+    <tr><td class="paramname">first2</td><td>Iterator to first mutation derived from gamete 2 </td></tr>
+    <tr><td class="paramname">last2</td><td>Iterator to one past the last mutation derived from gamete 2 </td></tr>
+    <tr><td class="paramname">mutations</td><td>The container of mutations for the simulation </td></tr>
+    <tr><td class="paramname">fpol_hom</td><td>Policy that updates fitness for a homozygous mutation. </td></tr>
+    <tr><td class="paramname">fpol_het</td><td>Policy that updates fitness for a heterozygous mutation. </td></tr>
+    <tr><td class="paramname">starting_fitness</td><td>The initial fitness value.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Fitness (double) </dd></dl>
+
+<p>Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00098">98</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a11d6ec9cb85154bd68b45ccf017bbfdd"></a>
 <div class="memitem">
 <div class="memproto">
@@ -209,16 +291,29 @@ template&lt;typename gamete_type , typename mcont_t , typename fitness_updating_
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Calculates fitnesses for a diploid whose genotype across sites is given by gametes g1 and g2.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g1</td><td>A gamete </td></tr>
+    <tr><td class="paramname">g2</td><td>A gamete </td></tr>
+    <tr><td class="paramname">mutations</td><td>The container of mutations for the simulation </td></tr>
+    <tr><td class="paramname">fpol_hom</td><td>Policy that updates fitness for a homozygous mutation. </td></tr>
+    <tr><td class="paramname">fpol_het</td><td>Policy that updates fitness for a heterozygous mutation. </td></tr>
+    <tr><td class="paramname">starting_fitness</td><td>The initial fitness value.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Fitness (double) </dd></dl>
 
-<p>Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00086">86</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00176">176</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ae7bf03fa2bdfe21a8739dbaa008787b4"></a>
+<a class="anchor" id="a07414bdb856f59b87c2b7d495d572ba4"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename diploid2dispatch , typename fitness_updating_policy_hom , typename fitness_updating_policy_het &gt; </div>
+template&lt;typename diploid2dispatch , typename gcont_t , typename mcont_t , typename fitness_updating_policy_hom , typename fitness_updating_policy_het &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -228,6 +323,18 @@ template&lt;typename diploid2dispatch , typename fitness_updating_policy_hom , t
           <td>(</td>
           <td class="paramtype">const diploid2dispatch &amp;&#160;</td>
           <td class="paramname"><em>dip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const gcont_t &amp;&#160;</td>
+          <td class="paramname"><em>gametes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mcont_t &amp;&#160;</td>
+          <td class="paramname"><em>mutations</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -259,11 +366,21 @@ template&lt;typename diploid2dispatch , typename fitness_updating_policy_hom , t
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Calculates fitnesses for a custom diploid type. See <a class="el" href="../../d2/dcd/md_md_customdip.html">Advanced topics: custom diploid genotypes</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dip</td><td>A diploid </td></tr>
+    <tr><td class="paramname">gametes</td><td>The container of gametes for the simulation. </td></tr>
+    <tr><td class="paramname">mutations</td><td>The container of mutations for the simulation </td></tr>
+    <tr><td class="paramname">fpol_hom</td><td>Policy that updates fitness for a homozygous mutation. </td></tr>
+    <tr><td class="paramname">fpol_het</td><td>Policy that updates fitness for a heterozygous mutation. </td></tr>
+    <tr><td class="paramname">starting_fitness</td><td>The initial fitness value.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Fitness (double) </dd></dl>
 
-<p>Overload for custom diploids. This is what a programmer's functions will call. </p>
-<dl class="section note"><dt>Note</dt><dd>See <a class="el" href="../../d2/dcd/md_md_customdip.html">Advanced topics: custom diploid genotypes</a> </dd></dl>
-
-<p>Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00152">152</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00209">209</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
 
 </div>
 </div>

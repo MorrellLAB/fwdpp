@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.9</span>
+   &#160;<span id="projectnumber">0.5.0</span>
    </div>
   </td>
  </tr>
@@ -83,7 +83,19 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="title">FWDPP RELEASE NOTES </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2>0.4.9</h2>
+<div class="textblock"><h2>0.5.0</h2>
+<ul>
+<li>Example file <a class="el" href="../../d6/d42/K__linked__regions__multilocus_8cc.html">examples/K_linked_regions_multilocus.cc</a> added</li>
+<li>Streamlined <a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a460de37cb2a78abf209b28cbf7f9f3f6">KTfwd::fwdpp_internal::multilocus_rec_mut</a></li>
+<li>The sugar types <a class="el" href="../../de/d6e/group__sugar.html#ga618c1f80e050a17d765e89f784f6abdb" title="Single locus, single population object. ">KTfwd::singlepop</a>, <a class="el" href="../../de/d6e/group__sugar.html#gaf66ce861e458d7e15f98bbbb9e87ad38" title="Single locus metapopulation simulation object. ">KTfwd::metapop</a>, and <a class="el" href="../../de/d6e/group__sugar.html#ga5993990a90021e4eeb4170bde943ff54" title="Single population, multilocus simulation. See Tutorial 5: the &quot;sugar&quot; layer on top of fwdpp for ratio...">KTfwd::multiloc</a> were refactored to inerit from <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html" title="Base class for population objects. ">KTfwd::sugar::popbase</a>.</li>
+<li>Fixed error in <a class="el" href="../../de/d6e/group__sugar.html#ga5993990a90021e4eeb4170bde943ff54" title="Single population, multilocus simulation. See Tutorial 5: the &quot;sugar&quot; layer on top of fwdpp for ratio...">KTfwd::multiloc</a> where gametes were initialized with the incorrect count</li>
+<li>KTfwd::gamete_data_sane_multiloc was added to <a class="el" href="../../da/d7b/debug_8hpp.html">fwdpp/debug.hpp</a></li>
+<li>Issue #41 fixed. This issue affected simulations using the multi-locus API, and all simulations using that API need to be rerun. Sorry.</li>
+<li>The experimental API to sample_diploid was made more flexible via a new header file, <a class="el" href="../../df/dff/dispatch_8hpp.html" title="SFINAE dispatch of operations involving &quot;custom rules&quot;. ">fwdpp/experimental/dispatch.hpp</a>. This addition allows better fine-tuning of "rules" classes</li>
+<li>The experimental API now takes rvalue refrence (&amp;&amp;) instead of const reference (const &amp;) for rules classes. This allows the rules to be written and be more idiomatic, avoiding use of mutable variables.</li>
+<li>Add overload of KTfwd::haplotype_dependent_fitness::operator() for custom diploids</li>
+</ul>
+<h2>0.4.9</h2>
 <ul>
 <li>Doxygen file changed so that all library source is browsable.</li>
 <li>Single-deme version of sample_diploid is commented in detail.</li>
@@ -158,7 +170,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <li>Other API changes:<ul>
 <li>As a result of the changes described above, the data structures of the library were changed from linked lists of iterators to vectors of std::size_t. This is a radical change to the data layout, and results in further speedups.</li>
 <li><a class="el" href="../../da/d8b/namespaceKTfwd.html#a9fa8c6fd5d6b79550163c64a6cb0353a">KTfwd::sample_diploid</a> has been streamlined in light of common defaults</li>
-<li>Recombination policies have been simplified. See <a class="el" href="../../d2/df0/structKTfwd_1_1poisson__xover.html" title="Simple model of crossing-over. Generates a Poisson-distribued number of recombination breakpoints wit...">KTfwd::poisson_xover</a> for an example.</li>
+<li>Recombination policies have been simplified. See <a class="el" href="../../d2/df0/structKTfwd_1_1poisson__xover.html" title="Simple model of crossing-over. Generates a Poisson-distributed number of recombination breakpoints wi...">KTfwd::poisson_xover</a> for an example.</li>
 </ul>
 </li>
 <li>Behavior changes:<ul>

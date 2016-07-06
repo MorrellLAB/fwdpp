@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.9</span>
+   &#160;<span id="projectnumber">0.5.0</span>
    </div>
   </td>
  </tr>
@@ -204,11 +204,37 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      }</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> dipcont_t,</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;           <span class="keyword">typename</span> gcont_t,</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;           <span class="keyword">typename</span> mcont_t&gt;</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="../../da/d8b/namespaceKTfwd.html#abae8b8d62d7d18f7b71b27099b7a6f50">  116</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="../../da/d8b/namespaceKTfwd.html#abae8b8d62d7d18f7b71b27099b7a6f50">popdata_sane_multilocus</a>(<span class="keyword">const</span> dipcont_t &amp; diploids,</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                               <span class="keyword">const</span> gcont_t &amp; gametes,</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                               <span class="keyword">const</span> mcont_t &amp; mutations,</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                               <span class="keyword">const</span> std::vector&lt;uint_t&gt; &amp; mutcounts)</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="comment">/*</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">    \brief Check that all diploids refer to extant gametes with sane data.</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">    \note This is for the case where diploids are equivalent to vector&lt;pair&lt;key,key&gt;&gt;</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span> &amp; d : diploids)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;      {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">for</span>( <span class="keyword">const</span> <span class="keyword">auto</span> &amp; locus : d)</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;          {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordflow">if</span>( !gametes[locus.first].n ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="keywordflow">if</span>( !gametes[locus.second].n ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="keywordflow">if</span>( !<a class="code" href="../../da/d8b/namespaceKTfwd.html#af3dfc86297cc06562ff50b87e9a2af73">gamete_data_sane</a>(gametes[locus.first],mutations,mutcounts) ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="keywordflow">if</span>( !<a class="code" href="../../da/d8b/namespaceKTfwd.html#af3dfc86297cc06562ff50b87e9a2af73">gamete_data_sane</a>(gametes[locus.second],mutations,mutcounts) ) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;          }</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;      }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="test__sugar__add__mutation_8cc_html_a904ff4f9ee77665963d354fe4c6a86e0"><div class="ttname"><a href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a></div><div class="ttdeci">std::size_t i</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dc2/test__sugar__add__mutation_8cc_source.html#l00239">test_sugar_add_mutation.cc:239</a></div></div>
 <div class="ttc" id="structKTfwd_1_1traits_1_1is__gamete__t_html"><div class="ttname"><a href="../../df/d25/structKTfwd_1_1traits_1_1is__gamete__t.html">KTfwd::traits::is_gamete_t</a></div><div class="ttdoc">Determine if T is/is derived from KTfwd::gamete_base. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d54/type__traits_8hpp_source.html#l00032">type_traits.hpp:32</a></div></div>
+<div class="ttc" id="namespaceKTfwd_html_abae8b8d62d7d18f7b71b27099b7a6f50"><div class="ttname"><a href="../../da/d8b/namespaceKTfwd.html#abae8b8d62d7d18f7b71b27099b7a6f50">KTfwd::popdata_sane_multilocus</a></div><div class="ttdeci">bool popdata_sane_multilocus(const dipcont_t &amp;diploids, const gcont_t &amp;gametes, const mcont_t &amp;mutations, const std::vector&lt; uint_t &gt; &amp;mutcounts)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d7b/debug_8hpp_source.html#l00116">debug.hpp:116</a></div></div>
 <div class="ttc" id="namespaceKTfwd_html_ac881fce16e60f885fe6514e6d62a08ae"><div class="ttname"><a href="../../da/d8b/namespaceKTfwd.html#ac881fce16e60f885fe6514e6d62a08ae">KTfwd::popdata_sane</a></div><div class="ttdeci">bool popdata_sane(const dipcont_t &amp;diploids, const gcont_t &amp;gametes, const mcont_t &amp;mutations, const std::vector&lt; uint_t &gt; &amp;mutcounts)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d7b/debug_8hpp_source.html#l00095">debug.hpp:95</a></div></div>
 <div class="ttc" id="forward__types_8hpp_html"><div class="ttname"><a href="../../d5/d1d/forward__types_8hpp.html">forward_types.hpp</a></div></div>
 <div class="ttc" id="namespaceKTfwd_html_a2ac32042dadfd84498d3fd0683fba04f"><div class="ttname"><a href="../../da/d8b/namespaceKTfwd.html#a2ac32042dadfd84498d3fd0683fba04f">KTfwd::check_sum</a></div><div class="ttdeci">bool check_sum(const gcont_t &amp;gametes, const unsigned twoN)</div><div class="ttdoc">Returns true if the sum of counts in gametes equals twoN, false otherwise Returns true if the sum of ...</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d7b/debug_8hpp_source.html#l00016">debug.hpp:16</a></div></div>

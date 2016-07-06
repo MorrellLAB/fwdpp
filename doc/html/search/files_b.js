@@ -1,13 +1,7 @@
 var searchData=
 [
-  ['readme_2emd',['README.md',['../d7/dce/unit_2README_8md.html',1,'']]],
-  ['readme_2emd',['README.md',['../da/ddd/README_8md.html',1,'']]],
-  ['rec_5fgamete_5fupdater_2ehpp',['rec_gamete_updater.hpp',['../d1/d01/rec__gamete__updater_8hpp.html',1,'']]],
-  ['recombination_2ehpp',['recombination.hpp',['../dc/d85/recombination_8hpp.html',1,'']]],
-  ['recombination_2etcc',['recombination.tcc',['../df/d06/recombination_8tcc.html',1,'']]],
-  ['recombination_5fcommon_2ehpp',['recombination_common.hpp',['../df/d26/recombination__common_8hpp.html',1,'']]],
-  ['recycling_2ehpp',['recycling.hpp',['../d6/d3f/recycling_8hpp.html',1,'']]],
-  ['recycling_5fintegration_2ecc',['recycling_integration.cc',['../d0/dc6/recycling__integration_8cc.html',1,'']]],
-  ['regions_2ehpp',['regions.hpp',['../d0/de1/regions_8hpp.html',1,'']]],
-  ['release_5fnotes_2emd',['RELEASE_NOTES.md',['../d9/de4/RELEASE__NOTES_8md.html',1,'']]]
+  ['policies_2emd',['policies.md',['../df/d75/policies_8md.html',1,'']]],
+  ['popbase_2ehpp',['popbase.hpp',['../da/d83/popbase_8hpp.html',1,'']]],
+  ['popbase_2ehpp',['popbase.hpp',['../de/dde/poptypes_2popbase_8hpp.html',1,'']]],
+  ['popgenmut_2ehpp',['popgenmut.hpp',['../d6/d96/popgenmut_8hpp.html',1,'']]]
 ];

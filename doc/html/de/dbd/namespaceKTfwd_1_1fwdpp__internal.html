@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.9</span>
+   &#160;<span id="projectnumber">0.5.0</span>
    </div>
   </td>
  </tr>
@@ -162,6 +162,13 @@ Functions</h2></td></tr>
 <tr class="memitem:a5df5cf70b19fe56a50d78009d6c409df"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t , typename fixation_finder , typename idiom_wrapper &gt; </td></tr>
 <tr class="memitem:a5df5cf70b19fe56a50d78009d6c409df"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a5df5cf70b19fe56a50d78009d6c409df">gamete_cleaner_details</a> (gcont_t &amp;gametes, const fixation_finder &amp;ff, const idiom_wrapper &amp;iw) noexcept</td></tr>
 <tr class="separator:a5df5cf70b19fe56a50d78009d6c409df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83a1cbb6438af4d198d6c3a794d872cb"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t , typename fixation_finder &gt; </td></tr>
+<tr class="memitem:a83a1cbb6438af4d198d6c3a794d872cb"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; bool, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a83a1cbb6438af4d198d6c3a794d872cb">fixation_finder_search_all</a> (const gcont_t &amp;gametes, const fixation_finder &amp;ff) noexcept</td></tr>
+<tr class="separator:a83a1cbb6438af4d198d6c3a794d872cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88f81b742fe15dec6b0d8fe984b1d8c0"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t , typename fixation_finder , typename idiom_wrapper &gt; </td></tr>
+<tr class="memitem:a88f81b742fe15dec6b0d8fe984b1d8c0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a88f81b742fe15dec6b0d8fe984b1d8c0">gamete_cleaner_details</a> (gcont_t &amp;gametes, const fixation_finder &amp;ff, const idiom_wrapper &amp;iw, std::true_type) noexcept</td></tr>
+<tr class="memdesc:a88f81b742fe15dec6b0d8fe984b1d8c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload for case where a model must search all gametes to figure out if a fixation exists. Use case is the multi-locus API.  <a href="#a88f81b742fe15dec6b0d8fe984b1d8c0">More...</a><br /></td></tr>
+<tr class="separator:a88f81b742fe15dec6b0d8fe984b1d8c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a107d34f674ba9b31446d84dcc838c7c2"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t , typename mcont_t , typename mutation_removal_policy &gt; </td></tr>
 <tr class="memitem:a107d34f674ba9b31446d84dcc838c7c2"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_same&lt; mutation_removal_policy, std::true_type &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a107d34f674ba9b31446d84dcc838c7c2">gamete_cleaner</a> (gcont_t &amp;gametes, const mcont_t &amp;, const std::vector&lt; <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &gt; &amp;mcounts, const <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> twoN, const mutation_removal_policy &amp;)</td></tr>
 <tr class="memdesc:a107d34f674ba9b31446d84dcc838c7c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles removal of indexes to mutations from gametes after sampling Intended use is when std::is_same&lt; mutation_removal_policy, KTfwd::true_type &gt;::type is true. Called by <a class="el" href="../../da/d8b/namespaceKTfwd.html#a9fa8c6fd5d6b79550163c64a6cb0353a">KTfwd::sample_diploid</a>.  <a href="#a107d34f674ba9b31446d84dcc838c7c2">More...</a><br /></td></tr>
@@ -170,6 +177,14 @@ Functions</h2></td></tr>
 <tr class="memitem:aaaa90238c89b73be5887acf8a5beed73"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; !std::is_same&lt; mutation_removal_policy, std::true_type &gt;::value &amp;&amp;!std::is_same&lt; mutation_removal_policy, <a class="el" href="../../db/dcf/structKTfwd_1_1remove__nothing.html">KTfwd::remove_nothing</a> &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#aaaa90238c89b73be5887acf8a5beed73">gamete_cleaner</a> (gcont_t &amp;gametes, const mcont_t &amp;mutations, const std::vector&lt; <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &gt; &amp;mcounts, const <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> twoN, const mutation_removal_policy &amp;mp)</td></tr>
 <tr class="memdesc:aaaa90238c89b73be5887acf8a5beed73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles removal of indexes to mutations from gametes after sampling This overload handles truly custom policies, which must take a mutation type as an argument. Called by <a class="el" href="../../da/d8b/namespaceKTfwd.html#a9fa8c6fd5d6b79550163c64a6cb0353a">KTfwd::sample_diploid</a>.  <a href="#aaaa90238c89b73be5887acf8a5beed73">More...</a><br /></td></tr>
 <tr class="separator:aaaa90238c89b73be5887acf8a5beed73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aa56b912e4f8dd1c35ee1ed3e1af8dd"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t , typename mcont_t , typename mutation_removal_policy &gt; </td></tr>
+<tr class="memitem:a6aa56b912e4f8dd1c35ee1ed3e1af8dd"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_same&lt; mutation_removal_policy, std::true_type &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a6aa56b912e4f8dd1c35ee1ed3e1af8dd">gamete_cleaner</a> (gcont_t &amp;gametes, const mcont_t &amp;, const std::vector&lt; <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &gt; &amp;mcounts, const <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> twoN, const mutation_removal_policy &amp;, std::true_type)</td></tr>
+<tr class="memdesc:a6aa56b912e4f8dd1c35ee1ed3e1af8dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles removal of indexes to mutations from gametes after sampling Intended use is when std::is_same&lt; mutation_removal_policy, KTfwd::true_type &gt;::type is true. Called by <a class="el" href="../../da/d8b/namespaceKTfwd.html#a9fa8c6fd5d6b79550163c64a6cb0353a">KTfwd::sample_diploid</a>.  <a href="#a6aa56b912e4f8dd1c35ee1ed3e1af8dd">More...</a><br /></td></tr>
+<tr class="separator:a6aa56b912e4f8dd1c35ee1ed3e1af8dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16b46ef15f5a9e25c3534c3b7c2ccef4"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t , typename mcont_t , typename mutation_removal_policy &gt; </td></tr>
+<tr class="memitem:a16b46ef15f5a9e25c3534c3b7c2ccef4"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; !std::is_same&lt; mutation_removal_policy, std::true_type &gt;::value &amp;&amp;!std::is_same&lt; mutation_removal_policy, <a class="el" href="../../db/dcf/structKTfwd_1_1remove__nothing.html">KTfwd::remove_nothing</a> &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a16b46ef15f5a9e25c3534c3b7c2ccef4">gamete_cleaner</a> (gcont_t &amp;gametes, const mcont_t &amp;mutations, const std::vector&lt; <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &gt; &amp;mcounts, const <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> twoN, const mutation_removal_policy &amp;mp, std::true_type)</td></tr>
+<tr class="memdesc:a16b46ef15f5a9e25c3534c3b7c2ccef4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles removal of indexes to mutations from gametes after sampling This overload handles truly custom policies, which must take a mutation type as an argument. Called by <a class="el" href="../../da/d8b/namespaceKTfwd.html#a9fa8c6fd5d6b79550163c64a6cb0353a">KTfwd::sample_diploid</a>.  <a href="#a16b46ef15f5a9e25c3534c3b7c2ccef4">More...</a><br /></td></tr>
+<tr class="separator:a16b46ef15f5a9e25c3534c3b7c2ccef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92825eeacf0f363fb9b49423dc4af024"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a92825eeacf0f363fb9b49423dc4af024">remove_no_derived</a> (<a class="el" href="../../da/d8b/namespaceKTfwd.html#a6c7bd80e03e8abe59677d25a5c2cde09">sample_t</a> *block)</td></tr>
 <tr class="separator:a92825eeacf0f363fb9b49423dc4af024"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5553fd30c1fd98b0bd4459008211b0f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a5553fd30c1fd98b0bd4459008211b0f0">trim_last</a> (<a class="el" href="../../da/d8b/namespaceKTfwd.html#a6c7bd80e03e8abe59677d25a5c2cde09">sample_t</a> *block)</td></tr>
@@ -185,9 +200,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a84faf1714115d620323d2d6df4006f0f"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename gcont_t , typename dipvector_t &gt; </td></tr>
 <tr class="memitem:a84faf1714115d620323d2d6df4006f0f"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../da/d8b/namespaceKTfwd.html#a52b398fc158f9a8d28f32c5d2564267b">sep_sample_t</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a84faf1714115d620323d2d6df4006f0f">ms_sample_separate_mlocus</a> (const mcont_t &amp;mutations, const gcont_t &amp;gametes, const dipvector_t &amp;diploids, const std::vector&lt; unsigned &gt; &amp;diplist, const unsigned &amp;n, const bool &amp;remove_fixed)</td></tr>
 <tr class="separator:a84faf1714115d620323d2d6df4006f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26b84ec5894e5836a5655d91a2eb4b8c"><td class="memTemplParams" colspan="2">template&lt;typename diploid_type , typename recombination_policy_container , typename mqueue_t , typename gqueue_t , typename bw_locus_rec_fxn , typename mlist_t , typename glist_t , typename mutation_model_container , typename gamete_insertion_policy &gt; </td></tr>
-<tr class="memitem:a26b84ec5894e5836a5655d91a2eb4b8c"><td class="memTemplItemLeft" align="right" valign="top">diploid_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a26b84ec5894e5836a5655d91a2eb4b8c">multilocus_rec_mut</a> (const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, diploid_type parent1, diploid_type parent2, mqueue_t &amp;mutation_recycling_bin, gqueue_t &amp;gamete_recycling_bin, const recombination_policy_container &amp;rec_pols, const bw_locus_rec_fxn &amp;blrf, const double *r_bw_loci, const int iswitch1, const int iswitch2, glist_t &amp;gametes, mlist_t &amp;mutations, typename glist_t::value_type::mutation_container &amp;neutral, typename glist_t::value_type::mutation_container &amp;selected, const double *mu, const mutation_model_container &amp;<a class="el" href="../../d5/da7/extensions_8cc.html#ab281a7cf5d229ecee9a30282f764d60a">mmodel</a>, const gamete_insertion_policy &amp;gpolicy_mut)</td></tr>
-<tr class="separator:a26b84ec5894e5836a5655d91a2eb4b8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a460de37cb2a78abf209b28cbf7f9f3f6"><td class="memTemplParams" colspan="2">template&lt;typename diploid_type , typename recombination_policy_container , typename mqueue_t , typename gqueue_t , typename bw_locus_rec_fxn , typename mlist_t , typename glist_t , typename mutation_model_container , typename gamete_insertion_policy &gt; </td></tr>
+<tr class="memitem:a460de37cb2a78abf209b28cbf7f9f3f6"><td class="memTemplItemLeft" align="right" valign="top">diploid_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a460de37cb2a78abf209b28cbf7f9f3f6">multilocus_rec_mut</a> (const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const diploid_type &amp;parent1, const diploid_type &amp;parent2, mqueue_t &amp;mutation_recycling_bin, gqueue_t &amp;gamete_recycling_bin, const recombination_policy_container &amp;rec_pols, const bw_locus_rec_fxn &amp;blrf, const double *r_bw_loci, const int iswitch1, const int iswitch2, glist_t &amp;gametes, mlist_t &amp;mutations, typename glist_t::value_type::mutation_container &amp;neutral, typename glist_t::value_type::mutation_container &amp;selected, const double *mu, const mutation_model_container &amp;<a class="el" href="../../d5/da7/extensions_8cc.html#ab281a7cf5d229ecee9a30282f764d60a">mmodel</a>, const gamete_insertion_policy &amp;gpolicy_mut)</td></tr>
+<tr class="separator:a460de37cb2a78abf209b28cbf7f9f3f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a111eed9535387f6341dab21bd39c2710"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename gamete_type &gt; </td></tr>
 <tr class="memitem:a111eed9535387f6341dab21bd39c2710"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a111eed9535387f6341dab21bd39c2710">add_new_mutation</a> (const std::size_t idx, const mcont_t &amp;mutations, gamete_type &amp;new_gamete)</td></tr>
 <tr class="separator:a111eed9535387f6341dab21bd39c2710"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -465,6 +480,45 @@ template&lt;typename fitness_policy_type , typename diploid_t , typename gcont_t
 
 </div>
 </div>
+<a class="anchor" id="a83a1cbb6438af4d198d6c3a794d872cb"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename gcont_t , typename fixation_finder &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;bool,bool&gt; KTfwd::fwdpp_internal::fixation_finder_search_all </td>
+          <td>(</td>
+          <td class="paramtype">const gcont_t &amp;&#160;</td>
+          <td class="paramname"><em>gametes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const fixation_finder &amp;&#160;</td>
+          <td class="paramname"><em>ff</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Determines whether a fixation exists in ANY gamete. </p>
+
+<p>Definition at line <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html#l00218">218</a> of file <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html">gamete_cleaner.hpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a491c3e370a41ceb07d0db61a675f4ae2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -519,7 +573,7 @@ template&lt;typename gcont_t , typename mcont_t , typename mutation_removal_poli
 
 <p>Handles removal of indexes to mutations from gametes after sampling Intended use is when std::is_same&lt; mutation_removal_policy, KTfwd::remove_nothing &gt;::type is true. Called by <a class="el" href="../../da/d8b/namespaceKTfwd.html#a9fa8c6fd5d6b79550163c64a6cb0353a">KTfwd::sample_diploid</a>. </p>
 
-<p>Definition at line <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html#l00137">137</a> of file <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html">gamete_cleaner.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html#l00176">176</a> of file <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html">gamete_cleaner.hpp</a>.</p>
 
 </div>
 </div>
@@ -577,7 +631,7 @@ template&lt;typename gcont_t , typename mcont_t , typename mutation_removal_poli
 
 <p>Handles removal of indexes to mutations from gametes after sampling Intended use is when std::is_same&lt; mutation_removal_policy, KTfwd::true_type &gt;::type is true. Called by <a class="el" href="../../da/d8b/namespaceKTfwd.html#a9fa8c6fd5d6b79550163c64a6cb0353a">KTfwd::sample_diploid</a>. </p>
 
-<p>Definition at line <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html#l00191">191</a> of file <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html">gamete_cleaner.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html#l00297">297</a> of file <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html">gamete_cleaner.hpp</a>.</p>
 
 </div>
 </div>
@@ -635,7 +689,137 @@ template&lt;typename gcont_t , typename mcont_t , typename mutation_removal_poli
 
 <p>Handles removal of indexes to mutations from gametes after sampling This overload handles truly custom policies, which must take a mutation type as an argument. Called by <a class="el" href="../../da/d8b/namespaceKTfwd.html#a9fa8c6fd5d6b79550163c64a6cb0353a">KTfwd::sample_diploid</a>. </p>
 
-<p>Definition at line <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html#l00209">209</a> of file <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html">gamete_cleaner.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html#l00315">315</a> of file <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html">gamete_cleaner.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6aa56b912e4f8dd1c35ee1ed3e1af8dd"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename gcont_t , typename mcont_t , typename mutation_removal_policy &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt; std::is_same&lt;mutation_removal_policy,std::true_type&gt;::value &gt;::type KTfwd::fwdpp_internal::gamete_cleaner </td>
+          <td>(</td>
+          <td class="paramtype">gcont_t &amp;&#160;</td>
+          <td class="paramname"><em>gametes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mcont_t &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mcounts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a>&#160;</td>
+          <td class="paramname"><em>twoN</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mutation_removal_policy &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::true_type&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handles removal of indexes to mutations from gametes after sampling Intended use is when std::is_same&lt; mutation_removal_policy, KTfwd::true_type &gt;::type is true. Called by <a class="el" href="../../da/d8b/namespaceKTfwd.html#a9fa8c6fd5d6b79550163c64a6cb0353a">KTfwd::sample_diploid</a>. </p>
+<dl class="section note"><dt>Note</dt><dd>Added in 0.5.0 to deal with issue #41 involving multi-locus sims </dd></dl>
+
+<p>Definition at line <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html#l00332">332</a> of file <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html">gamete_cleaner.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a16b46ef15f5a9e25c3534c3b7c2ccef4"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename gcont_t , typename mcont_t , typename mutation_removal_policy &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt; !std::is_same&lt;mutation_removal_policy,std::true_type&gt;::value &amp;&amp; !std::is_same&lt;mutation_removal_policy,<a class="el" href="../../db/dcf/structKTfwd_1_1remove__nothing.html">KTfwd::remove_nothing</a>&gt;::value &gt;::type KTfwd::fwdpp_internal::gamete_cleaner </td>
+          <td>(</td>
+          <td class="paramtype">gcont_t &amp;&#160;</td>
+          <td class="paramname"><em>gametes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mcont_t &amp;&#160;</td>
+          <td class="paramname"><em>mutations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mcounts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a>&#160;</td>
+          <td class="paramname"><em>twoN</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mutation_removal_policy &amp;&#160;</td>
+          <td class="paramname"><em>mp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::true_type&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handles removal of indexes to mutations from gametes after sampling This overload handles truly custom policies, which must take a mutation type as an argument. Called by <a class="el" href="../../da/d8b/namespaceKTfwd.html#a9fa8c6fd5d6b79550163c64a6cb0353a">KTfwd::sample_diploid</a>. </p>
+<dl class="section note"><dt>Note</dt><dd>Added in 0.5.0 to deal with issue #41 involving multi-locus sims </dd></dl>
+
+<p>Definition at line <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html#l00353">353</a> of file <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html">gamete_cleaner.hpp</a>.</p>
 
 </div>
 </div>
@@ -680,7 +864,60 @@ template&lt;typename gcont_t , typename fixation_finder , typename idiom_wrapper
 </div><div class="memdoc">
 <p>The two overloads of gamete_cleaner dispatch the above policies into this function. </p>
 
-<p>Definition at line <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html#l00145">145</a> of file <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html">gamete_cleaner.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html#l00184">184</a> of file <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html">gamete_cleaner.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a88f81b742fe15dec6b0d8fe984b1d8c0"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename gcont_t , typename fixation_finder , typename idiom_wrapper &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void KTfwd::fwdpp_internal::gamete_cleaner_details </td>
+          <td>(</td>
+          <td class="paramtype">gcont_t &amp;&#160;</td>
+          <td class="paramname"><em>gametes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const fixation_finder &amp;&#160;</td>
+          <td class="paramname"><em>ff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const idiom_wrapper &amp;&#160;</td>
+          <td class="paramname"><em>iw</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::true_type&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overload for case where a model must search all gametes to figure out if a fixation exists. Use case is the multi-locus API. </p>
+<p>The two overloads of gamete_cleaner dispatch the above policies into this function. </p><dl class="section note"><dt>Note</dt><dd>Added in 0.5.0 to address issue #41 where the logic of this routine failed if the first extant gamete was in "locus 1" but the first fixation is in "locus 0" </dd></dl>
+
+<p>Definition at line <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html#l00251">251</a> of file <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html">gamete_cleaner.hpp</a>.</p>
 
 </div>
 </div>
@@ -934,7 +1171,7 @@ template&lt;typename mcont_t , typename gcont_t , typename dipvector_t &gt; </di
 
 </div>
 </div>
-<a class="anchor" id="a26b84ec5894e5836a5655d91a2eb4b8c"></a>
+<a class="anchor" id="a460de37cb2a78abf209b28cbf7f9f3f6"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -949,13 +1186,13 @@ template&lt;typename diploid_type , typename recombination_policy_container , ty
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">diploid_type&#160;</td>
+          <td class="paramtype">const diploid_type &amp;&#160;</td>
           <td class="paramname"><em>parent1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">diploid_type&#160;</td>
+          <td class="paramtype">const diploid_type &amp;&#160;</td>
           <td class="paramname"><em>parent2</em>, </td>
         </tr>
         <tr>
@@ -1053,7 +1290,7 @@ template&lt;typename diploid_type , typename recombination_policy_container , ty
 <p>The reason is that I want to be able to unit test the recombination portion of this code in isolation, w/o having to do anything involving mutation policies.</p>
 <p>Thus, the relevant unit tests define FWDPP_UNIT_TESTING so that the mutation-related stuff is skipped during compilation. </p>
 
-<p>Definition at line <a class="el" href="../../d7/d48/multilocus__rec_8hpp_source.html#l00041">41</a> of file <a class="el" href="../../d7/d48/multilocus__rec_8hpp_source.html">multilocus_rec.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d48/multilocus__rec_8hpp_source.html#l00039">39</a> of file <a class="el" href="../../d7/d48/multilocus__rec_8hpp_source.html">multilocus_rec.hpp</a>.</p>
 
 </div>
 </div>
@@ -1093,7 +1330,7 @@ template&lt;typename gcont_t_iterator &gt; </div>
 
 <p>Wrapper around std::find_if to find next gamete where n &gt; 0. </p>
 
-<p>Definition at line <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html#l00046">46</a> of file <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html">gamete_cleaner.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html#l00048">48</a> of file <a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html">gamete_cleaner.hpp</a>.</p>
 
 </div>
 </div>

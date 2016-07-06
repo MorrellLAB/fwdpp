@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.9</span>
+   &#160;<span id="projectnumber">0.5.0</span>
    </div>
   </td>
  </tr>
@@ -160,8 +160,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><span class="keyword">struct </span><a name="_a7"></a><a class="code" href="../../de/d9f/structmultiplicative__diploid__minus.html">multiplicative_diploid_minus</a></div>
 <div class="line">{</div>
 <div class="line">  <span class="keyword">typedef</span> <span class="keywordtype">double</span> result_type;</div>
-<div class="line">  <span class="keyword">inline</span> <span class="keywordtype">double</span> operator()(<span class="keyword">const</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#af6a8d7a641b27fa63bb37800f1f3548c">poptype::gamete_t</a> &amp; g1, <span class="keyword">const</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#af6a8d7a641b27fa63bb37800f1f3548c">poptype::gamete_t</a> &amp; g2,</div>
-<div class="line">                           <span class="keyword">const</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a953f4dc4fcd3747a53a1cf09b75bbc00">poptype::mcont_t</a> &amp; mutations,</div>
+<div class="line">  <span class="keyword">inline</span> <span class="keywordtype">double</span> operator()(<span class="keyword">const</span> <a class="code" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#abedc264037fceb681447491a16efe4db">poptype::gamete_t</a> &amp; g1, <span class="keyword">const</span> <a class="code" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#abedc264037fceb681447491a16efe4db">poptype::gamete_t</a> &amp; g2,</div>
+<div class="line">                           <span class="keyword">const</span> <a class="code" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a4196729ff067a1e2aa109bc57dd6f4b3">poptype::mcont_t</a> &amp; mutations,</div>
 <div class="line">                           <span class="keyword">const</span> <span class="keywordtype">double</span> scaling = 1.)<span class="keyword"> const</span></div>
 <div class="line"><span class="keyword">  </span>{</div>
 <div class="line">    <span class="keyword">using</span> mut_t = poptype::mcont_t::value_type;</div>
@@ -212,11 +212,11 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">  <span class="keywordtype">unsigned</span> Ns[2] = {N,N};</div>
 <div class="line">  <span class="keywordtype">double</span> fs[2] = {f1,f2};</div>
 <div class="line">  <a name="_a13"></a><a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html">poptype</a> pop({N,N});</div>
-<div class="line">  pop.<a name="a14"></a><a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a2d94e252c30aa1f27d8e60c9e7f1bcef">mutations</a>.reserve(2*<span class="keywordtype">size_t</span>(std::ceil(std::log(2*N)*(theta_neut+theta_del)+0.667*(theta_neut+theta_del))));</div>
+<div class="line">  pop.<a name="a14"></a><a class="code" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a33bbaed793ed0921d558ca5c29870cc4">mutations</a>.reserve(2*<span class="keywordtype">size_t</span>(std::ceil(std::log(2*N)*(theta_neut+theta_del)+0.667*(theta_neut+theta_del))));</div>
 <div class="line">  <span class="comment">//create a vector of fitness functions for each population</span></div>
-<div class="line">  std::vector&lt;std::function&lt;double(<span class="keyword">const</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#af6a8d7a641b27fa63bb37800f1f3548c">poptype::gamete_t</a> &amp;,</div>
-<div class="line">                                   <span class="keyword">const</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#af6a8d7a641b27fa63bb37800f1f3548c">poptype::gamete_t</a> &amp;,</div>
-<div class="line">                                   <span class="keyword">const</span> <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a953f4dc4fcd3747a53a1cf09b75bbc00">poptype::mcont_t</a> &amp; )&gt; &gt; vbf;</div>
+<div class="line">  std::vector&lt;std::function&lt;double(<span class="keyword">const</span> <a class="code" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#abedc264037fceb681447491a16efe4db">poptype::gamete_t</a> &amp;,</div>
+<div class="line">                                   <span class="keyword">const</span> <a class="code" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#abedc264037fceb681447491a16efe4db">poptype::gamete_t</a> &amp;,</div>
+<div class="line">                                   <span class="keyword">const</span> <a class="code" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a4196729ff067a1e2aa109bc57dd6f4b3">poptype::mcont_t</a> &amp; )&gt; &gt; vbf;</div>
 <div class="line">  vbf.push_back(std::bind(<a name="_a15"></a><a class="code" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html">multiplicative_diploid</a>(),std::placeholders::_1,std::placeholders::_2,std::placeholders::_3,2.));</div>
 <div class="line">  vbf.push_back(std::bind(<a class="code" href="../../de/d9f/structmultiplicative__diploid__minus.html">multiplicative_diploid_minus</a>(),std::placeholders::_1,std::placeholders::_2,std::placeholders::_3,2.));</div>
 <div class="line"></div>
@@ -263,9 +263,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line">  Sequence::write_SimData_binary(outstream,selected);</div>
 <div class="line">  outstream.close();</div>
 <div class="line"></div>
-<div class="line">  <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a574ee0936029cc45c99b29990e22dfb0">poptype::gcont_t</a> metapop2;</div>
+<div class="line">  <a class="code" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a4a1d20c01ef5aba90d7d06daa1dc94e3">poptype::gcont_t</a> metapop2;</div>
 <div class="line">  poptype::vdipvector_t diploids2;</div>
-<div class="line">  <a class="code" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a953f4dc4fcd3747a53a1cf09b75bbc00">poptype::mcont_t</a> mutations2;</div>
+<div class="line">  <a class="code" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a4196729ff067a1e2aa109bc57dd6f4b3">poptype::mcont_t</a> mutations2;</div>
 <div class="line">  Sequence::SimData neutral2,selected2;</div>
 <div class="line"></div>
 <div class="line">  ifstream in(outfilename);</div>

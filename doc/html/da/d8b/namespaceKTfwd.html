@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.9</span>
+   &#160;<span id="projectnumber">0.5.0</span>
    </div>
   </td>
  </tr>
@@ -175,7 +175,7 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a fitness of 1.  <a href="../../dc/d0b/structKTfwd_1_1no__selection.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/df0/structKTfwd_1_1poisson__xover.html">poisson_xover</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple model of crossing-over. Generates a Poisson-distribued number of recombination breakpoints with mean <em>littler</em> that are uniformly-distributed between <em>minpos</em> and <em>maxpos</em>.  <a href="../../d2/df0/structKTfwd_1_1poisson__xover.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple model of crossing-over. Generates a Poisson-distributed number of recombination breakpoints with mean <em>littler</em> that are uniformly-distributed between <em>minpos</em> and <em>maxpos</em>.  <a href="../../d2/df0/structKTfwd_1_1poisson__xover.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">popgenmut</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutations with selection, dominance, and tracking age of origin The "standard" mutation type for population genetic simulation. A mutation has its own selection and dominance coefficients.  <a href="../../dc/dcc/structKTfwd_1_1popgenmut.html#details">More...</a><br /></td></tr>
@@ -249,6 +249,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ac881fce16e60f885fe6514e6d62a08ae"><td class="memTemplParams" colspan="2">template&lt;typename dipcont_t , typename gcont_t , typename mcont_t &gt; </td></tr>
 <tr class="memitem:ac881fce16e60f885fe6514e6d62a08ae"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#ac881fce16e60f885fe6514e6d62a08ae">popdata_sane</a> (const dipcont_t &amp;diploids, const gcont_t &amp;gametes, const mcont_t &amp;mutations, const std::vector&lt; <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &gt; &amp;mutcounts)</td></tr>
 <tr class="separator:ac881fce16e60f885fe6514e6d62a08ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abae8b8d62d7d18f7b71b27099b7a6f50"><td class="memTemplParams" colspan="2">template&lt;typename dipcont_t , typename gcont_t , typename mcont_t &gt; </td></tr>
+<tr class="memitem:abae8b8d62d7d18f7b71b27099b7a6f50"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#abae8b8d62d7d18f7b71b27099b7a6f50">popdata_sane_multilocus</a> (const dipcont_t &amp;diploids, const gcont_t &amp;gametes, const mcont_t &amp;mutations, const std::vector&lt; <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &gt; &amp;mutcounts)</td></tr>
+<tr class="separator:abae8b8d62d7d18f7b71b27099b7a6f50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga53c40c73e3488232b7f4d7a48ebdfc86"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename mcount_t , typename gcont_t , typename vdipvector_t &gt; </td></tr>
 <tr class="memitem:ga53c40c73e3488232b7f4d7a48ebdfc86"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d14/group__demography.html#ga53c40c73e3488232b7f4d7a48ebdfc86">copy_deme</a> (const mcont_t &amp;mutations, mcount_t &amp;mcounts, gcont_t &amp;gametes, vdipvector_t &amp;diploids, const size_t <a class="el" href="../../d9/dc2/test__sugar__add__mutation_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>)</td></tr>
 <tr class="memdesc:ga53c40c73e3488232b7f4d7a48ebdfc86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a deme.  <a href="../../dc/d14/group__demography.html#ga53c40c73e3488232b7f4d7a48ebdfc86">More...</a><br /></td></tr>
@@ -388,6 +391,15 @@ Functions</h2></td></tr>
 <tr class="memitem:ga1ecff0aaea92ec0ef0af5a541f63d822"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#ga1ecff0aaea92ec0ef0af5a541f63d822">change_neutral</a> (<a class="el" href="../../d5/da7/extensions_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;p, const std::size_t mindex)</td></tr>
 <tr class="memdesc:ga1ecff0aaea92ec0ef0af5a541f63d822"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the value of <a class="el" href="../../d1/da4/structKTfwd_1_1mutation__base.html#acfb3b4c94516cbbc5c28a12e1ad575b3" title="Is the mutation neutral or not? ">mutation_base::neutral</a>.  <a href="../../de/d6e/group__sugar.html#ga1ecff0aaea92ec0ef0af5a541f63d822">More...</a><br /></td></tr>
 <tr class="separator:ga1ecff0aaea92ec0ef0af5a541f63d822"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad20d0a49862f03bfd5909ec825b67dee"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t &gt; </td></tr>
+<tr class="memitem:ad20d0a49862f03bfd5909ec825b67dee"><td class="memTemplItemLeft" align="right" valign="top">std::unordered_map&lt; std::size_t, std::size_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#ad20d0a49862f03bfd5909ec825b67dee">remap_gametes</a> (gcont_t &amp;gametes)</td></tr>
+<tr class="separator:ad20d0a49862f03bfd5909ec825b67dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0ce9f178fe727fddf8c08502b6db2ad"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
+<tr class="memitem:ac0ce9f178fe727fddf8c08502b6db2ad"><td class="memTemplItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#ac0ce9f178fe727fddf8c08502b6db2ad">collect_gametes</a> (<a class="el" href="../../d5/da7/extensions_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;p, <a class="el" href="../../de/d6e/group__sugar.html#ga1d1b3a08c798b89fea7c36a7180d8a0b">KTfwd::sugar::SINGLEPOP_TAG</a>)</td></tr>
+<tr class="separator:ac0ce9f178fe727fddf8c08502b6db2ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a930f12a57436daa0685b1fe2cce140de"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
+<tr class="memitem:a930f12a57436daa0685b1fe2cce140de"><td class="memTemplItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a930f12a57436daa0685b1fe2cce140de">collect_gametes</a> (<a class="el" href="../../d5/da7/extensions_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;p)</td></tr>
+<tr class="separator:a930f12a57436daa0685b1fe2cce140de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a510cf1745f9d2361f6b0e5b48f15781a"><td class="memTemplParams" colspan="2">template&lt;typename mpoptype &gt; </td></tr>
 <tr class="memitem:a510cf1745f9d2361f6b0e5b48f15781a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a510cf1745f9d2361f6b0e5b48f15781a">update_Ns</a> (mpoptype &amp;mpop)</td></tr>
 <tr class="separator:a510cf1745f9d2361f6b0e5b48f15781a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -661,7 +673,7 @@ template&lt;typename gcont_t &gt; </div>
 </div><div class="memdoc">
 
 <p>Returns true if the sum of counts in gametes equals twoN, false otherwise Returns true if the sum of counts in gametes equals twoN, false otherwise. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a10">bneck_selection_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a9">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a21">diploid_ind.cc</a>, and <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a12">diploid_ind_2locus.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a10">bneck_selection_ind.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a21">diploid_ind.cc</a>, and <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a8">diploid_ind_2locus.cc</a>.</dd>
 </dl>
 <p>Definition at line <a class="el" href="../../da/d7b/debug_8hpp_source.html#l00016">16</a> of file <a class="el" href="../../da/d7b/debug_8hpp_source.html">debug.hpp</a>.</p>
 
@@ -696,6 +708,56 @@ template&lt;typename gcont_t &gt; </div>
 <p>Returns true if the sum of counts in gametes equals twoN, false otherwise Returns true if the sum of counts in gametes equals twoN, false otherwise. </p>
 
 <p>Definition at line <a class="el" href="../../da/d7b/debug_8hpp_source.html#l00032">32</a> of file <a class="el" href="../../da/d7b/debug_8hpp_source.html">debug.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac0ce9f178fe727fddf8c08502b6db2ad"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename poptype &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned KTfwd::collect_gametes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/da7/extensions_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/d6e/group__sugar.html#ga1d1b3a08c798b89fea7c36a7180d8a0b">KTfwd::sugar::SINGLEPOP_TAG</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d22/collect__gametes_8hpp_source.html#l00032">32</a> of file <a class="el" href="../../da/d22/collect__gametes_8hpp_source.html">collect_gametes.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a930f12a57436daa0685b1fe2cce140de"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename poptype &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned KTfwd::collect_gametes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/da7/extensions_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d22/collect__gametes_8hpp_source.html#l00053">53</a> of file <a class="el" href="../../da/d22/collect__gametes_8hpp_source.html">collect_gametes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1092,6 +1154,49 @@ template&lt;typename dipcont_t , typename gcont_t , typename mcont_t &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="abae8b8d62d7d18f7b71b27099b7a6f50"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename dipcont_t , typename gcont_t , typename mcont_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool KTfwd::popdata_sane_multilocus </td>
+          <td>(</td>
+          <td class="paramtype">const dipcont_t &amp;&#160;</td>
+          <td class="paramname"><em>diploids</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const gcont_t &amp;&#160;</td>
+          <td class="paramname"><em>gametes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mcont_t &amp;&#160;</td>
+          <td class="paramname"><em>mutations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mutcounts</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a9">diploid_ind_2locus.cc</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="../../da/d7b/debug_8hpp_source.html#l00116">116</a> of file <a class="el" href="../../da/d7b/debug_8hpp_source.html">debug.hpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ad1076a590e2ed2e9b7501423a4b87942"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1360,7 +1465,7 @@ template&lt;typename gcont_t , typename mcont_t , typename recbin_t , typename r
     <tr><td class="paramname">gamete_recycling_bin</td><td>An object returned from <a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a16b9864f99e52a7333a5d123e05d1253">KTfwd::fwdpp_internal::make_gamete_queue</a> </td></tr>
     <tr><td class="paramname">neutral</td><td>A container for neutral mutations. Will be cleared and updated. </td></tr>
     <tr><td class="paramname">selected</td><td>A container for non-neutral mutations. Will be cleared and updated. </td></tr>
-    <tr><td class="paramname">rec_pol</td><td>Function to generate recombination positions. For example, <a class="el" href="../../d2/df0/structKTfwd_1_1poisson__xover.html" title="Simple model of crossing-over. Generates a Poisson-distribued number of recombination breakpoints wit...">KTfwd::poisson_xover</a>. </td></tr>
+    <tr><td class="paramname">rec_pol</td><td>Function to generate recombination positions. For example, <a class="el" href="../../d2/df0/structKTfwd_1_1poisson__xover.html" title="Simple model of crossing-over. Generates a Poisson-distributed number of recombination breakpoints wi...">KTfwd::poisson_xover</a>. </td></tr>
     <tr><td class="paramname">g1</td><td>Index of gamete 1 to recombine </td></tr>
     <tr><td class="paramname">g2</td><td>Index of gamete 2 to recombine </td></tr>
     <tr><td class="paramname">mutations</td><td>A container of mutations</td></tr>
@@ -1458,6 +1563,26 @@ template&lt;typename vec_t , typename gcont_t , typename mcont_t , typename queu
 
 </div>
 </div>
+<a class="anchor" id="ad20d0a49862f03bfd5909ec825b67dee"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename gcont_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;std::size_t,std::size_t&gt; KTfwd::remap_gametes </td>
+          <td>(</td>
+          <td class="paramtype">gcont_t &amp;&#160;</td>
+          <td class="paramname"><em>gametes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d22/collect__gametes_8hpp_source.html#l00011">11</a> of file <a class="el" href="../../da/d22/collect__gametes_8hpp_source.html">collect_gametes.hpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a8f36b2f57bf6fd0284223ef0b9ecbff9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1536,7 +1661,7 @@ template&lt;typename gamete_type , typename allocator_t , template&lt; typename,
         </tr>
       </table>
 </div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a24">bneck_selection_ind.cc</a>, and <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a23">diploid_fixed_sh_ind.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a24">bneck_selection_ind.cc</a>.</dd>
 </dl>
 <p>Definition at line <a class="el" href="../../d1/d07/sampling__functions_8tcc_source.html#l00016">16</a> of file <a class="el" href="../../d1/d07/sampling__functions_8tcc_source.html">sampling_functions.tcc</a>.</p>
 
@@ -1841,7 +1966,7 @@ template&lt;typename gamete_type , typename gamete_cont_type_allocator , typenam
         </tr>
       </table>
 </div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a12">bneck_selection_ind.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a13">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a11">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a8">diploid_ind.cc</a>, <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a11">diploid_ind_2locus.cc</a>, and <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a16">migsel_ind.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a12">bneck_selection_ind.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a13">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a8">diploid_ind.cc</a>, <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a13">diploid_ind_2locus.cc</a>, and <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a16">migsel_ind.cc</a>.</dd>
 </dl>
 <p>Definition at line <a class="el" href="../../dd/d91/sample__diploid_8tcc_source.html#l00038">38</a> of file <a class="el" href="../../dd/d91/sample__diploid_8tcc_source.html">sample_diploid.tcc</a>.</p>
 
@@ -2812,7 +2937,7 @@ template&lt;typename mcont_t , typename mutation_lookup_table &gt; </div>
 </div><div class="memdoc">
 <p>Label all extinct and fixed variants for recycling</p>
 <dl class="section note"><dt>Note</dt><dd>: lookup must be compatible with lookup-&gt;erase(lookup-&gt;find(double)) </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a21">bneck_selection_ind.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a23">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a20">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a18">diploid_ind.cc</a>, <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a13">diploid_ind_2locus.cc</a>, and <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a19">migsel_ind.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a21">bneck_selection_ind.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a23">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a18">diploid_ind.cc</a>, <a class="el" href="../../d3/d70/diploid_ind_2locus_8cc-example.html#a14">diploid_ind_2locus.cc</a>, and <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a19">migsel_ind.cc</a>.</dd>
 </dl>
 <p>Definition at line <a class="el" href="../../d0/d3f/util_8hpp_source.html#l00027">27</a> of file <a class="el" href="../../d0/d3f/util_8hpp_source.html">util.hpp</a>.</p>
 
@@ -2852,7 +2977,7 @@ template&lt;typename mcont_t , typename mutation_lookup_table &gt; </div>
 <p>Label all extinct variants for recycling</p>
 <p>: lookup must be compatible with lookup-&gt;erase(lookup-&gt;find(double)) </p>
 
-<p>Definition at line <a class="el" href="../../d0/d3f/util_8hpp_source.html#l00052">52</a> of file <a class="el" href="../../d0/d3f/util_8hpp_source.html">util.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d3f/util_8hpp_source.html#l00053">53</a> of file <a class="el" href="../../d0/d3f/util_8hpp_source.html">util.hpp</a>.</p>
 
 </div>
 </div>
@@ -2914,7 +3039,7 @@ template&lt;typename mcont_t , typename fixation_container_t , typename fixation
 <p>Label all fixed and all extinct variants for recycling. Copy fixations and fixation times into containers.</p>
 <dl class="section note"><dt>Note</dt><dd>: lookup must be compatible with lookup-&gt;erase(lookup-&gt;find(double)) </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d0/d3f/util_8hpp_source.html#l00079">79</a> of file <a class="el" href="../../d0/d3f/util_8hpp_source.html">util.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d3f/util_8hpp_source.html#l00080">80</a> of file <a class="el" href="../../d0/d3f/util_8hpp_source.html">util.hpp</a>.</p>
 
 </div>
 </div>
@@ -2976,7 +3101,7 @@ template&lt;typename mcont_t , typename fixation_container_t , typename fixation
 <p>Label all fixed neutral variant and all extinct variants for recycling. Copy fixations and fixation times for neutral mutations into containers.</p>
 <dl class="section note"><dt>Note</dt><dd>: lookup must be compatible with lookup-&gt;erase(lookup-&gt;find(double)) </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d0/d3f/util_8hpp_source.html#l00112">112</a> of file <a class="el" href="../../d0/d3f/util_8hpp_source.html">util.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/d3f/util_8hpp_source.html#l00114">114</a> of file <a class="el" href="../../d0/d3f/util_8hpp_source.html">util.hpp</a>.</p>
 
 </div>
 </div>
@@ -2995,7 +3120,7 @@ template&lt;typename mpoptype &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Ensure that <a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a9f2633f3b63f732e9a9c230575ebfa9f" title="Deme sizes. ">KTfwd::sugar::metapop::Ns</a> contain sizes of all elements in <a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a2cabf4bf8b47f6985c3da68e3eafa4d5">KTfwd::sugar::metapop::diploids</a></p>
+<p>Ensure that <a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a9f2633f3b63f732e9a9c230575ebfa9f" title="Deme sizes. ">KTfwd::sugar::metapop::Ns</a> contain sizes of all elements in <a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#a2cabf4bf8b47f6985c3da68e3eafa4d5" title="Container of diploids. ">KTfwd::sugar::metapop::diploids</a></p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mpop</td><td>An object of type <a class="el" href="../../de/d6e/group__sugar.html#gaf66ce861e458d7e15f98bbbb9e87ad38" title="Single locus metapopulation simulation object. ">KTfwd::metapop</a> or <a class="el" href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html" title="Abstraction of what is needed to simulate a metapopulation using an individual-based sampler from fwd...">KTfwd::sugar::metapop</a> </td></tr>

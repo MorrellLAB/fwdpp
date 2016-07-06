@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>fwdpp: KTfwd::sugar::popbase&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type, tag_type &gt; Class Template Reference</title>
+<title>fwdpp: KTfwd::sugar::popbase&lt; mutation_type, mcont, gcont, dipvector, mvector, ftvector, lookup_table_type &gt; Class Template Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.4.9</span>
+   &#160;<span id="projectnumber">0.5.0</span>
    </div>
   </td>
  </tr>
@@ -95,268 +95,509 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">KTfwd::sugar::popbase&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type, tag_type &gt; Class Template Reference<div class="ingroups"><a class="el" href="../../de/d6e/group__sugar.html">Syntactic sugar layer</a></div></div>  </div>
+<div class="title">KTfwd::sugar::popbase&lt; mutation_type, mcont, gcont, dipvector, mvector, ftvector, lookup_table_type &gt; Class Template Reference<div class="ingroups"><a class="el" href="../../de/d6e/group__sugar.html">Syntactic sugar layer</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Abstraction of what is needed to simulate a population using fwdpp using an individual-based sampler from fwdpp.  
+<p>Base class for population objects.  
  <a href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for KTfwd::sugar::popbase&lt; mutation_type, mcont, gcont, dipvector, mvector, ftvector, lookup_table_type &gt;:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.png" usemap="#KTfwd::sugar::popbase&lt; mutation_type, mcont, gcont, dipvector, mvector, ftvector, lookup_table_type &gt;_map" alt=""/>
+  <map id="KTfwd::sugar::popbase&lt; mutation_type, mcont, gcont, dipvector, mvector, ftvector, lookup_table_type &gt;_map" name="KTfwd::sugar::popbase&lt; mutation_type, mcont, gcont, dipvector, mvector, ftvector, lookup_table_type &gt;_map">
+<area href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html" title="Abstraction of what is needed to simulate a metapopulation using an individual-based sampler from fwd..." alt="KTfwd::sugar::metapop&lt; mutation_type, mcont, gcont, dipvector, vdipvector, mvector, ftvector, lookup_table_type &gt;" shape="rect" coords="0,56,669,80"/>
+<area href="../../d3/d11/structKTfwd_1_1sugar_1_1multiloc.html" title="Abstraction of what is needed to simulate a multilocus simulation using an individual-based sampler f..." alt="KTfwd::sugar::multiloc&lt; mutation_type, mcont, gcont, dipvector, mvector, ftvector, lookup_table_type &gt;" shape="rect" coords="679,56,1348,80"/>
+<area href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html" title="Abstraction of what is needed to simulate a single population using an individual-based sampler from ..." alt="KTfwd::sugar::singlepop&lt; mutation_type, mcont, gcont, dipvector, mvector, ftvector, lookup_table_type &gt;" shape="rect" coords="1358,56,2027,80"/>
+<area href="../../de/d68/structspop__derived.html" alt="spop_derived" shape="rect" coords="1018,112,1687,136"/>
+<area href="../../de/d68/structspop__derived.html" alt="spop_derived" shape="rect" coords="1697,112,2366,136"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a5e720bc9845e4ed4aa6aba5bd7c61f7f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a5e720bc9845e4ed4aa6aba5bd7c61f7f">popmodel_t</a> = tag_type</td></tr>
-<tr class="memdesc:a5e720bc9845e4ed4aa6aba5bd7c61f7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispatch tag for other parts of sugar layer.  <a href="#a5e720bc9845e4ed4aa6aba5bd7c61f7f">More...</a><br /></td></tr>
-<tr class="separator:a5e720bc9845e4ed4aa6aba5bd7c61f7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae35132365237a69f06cb5701ed448413"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#ae35132365237a69f06cb5701ed448413">mutation_t</a> = mutation_type</td></tr>
-<tr class="memdesc:ae35132365237a69f06cb5701ed448413"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutation type.  <a href="#ae35132365237a69f06cb5701ed448413">More...</a><br /></td></tr>
-<tr class="separator:ae35132365237a69f06cb5701ed448413"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfddb0d44f0ea206a953c1bcddf7b240"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#acfddb0d44f0ea206a953c1bcddf7b240">gamete_t</a> = typename gcont::value_type</td></tr>
-<tr class="memdesc:acfddb0d44f0ea206a953c1bcddf7b240"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gamete type.  <a href="#acfddb0d44f0ea206a953c1bcddf7b240">More...</a><br /></td></tr>
-<tr class="separator:acfddb0d44f0ea206a953c1bcddf7b240"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a153523d07f3b9623412b3f6dd831ac79"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a153523d07f3b9623412b3f6dd831ac79">mcont_t</a> = <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a></td></tr>
-<tr class="memdesc:a153523d07f3b9623412b3f6dd831ac79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutation vec type.  <a href="#a153523d07f3b9623412b3f6dd831ac79">More...</a><br /></td></tr>
-<tr class="separator:a153523d07f3b9623412b3f6dd831ac79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e16ee3ebe29453cd7a4e69155c9b22b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a7e16ee3ebe29453cd7a4e69155c9b22b">mcount_t</a> = std::vector&lt; <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &gt;</td></tr>
-<tr class="memdesc:a7e16ee3ebe29453cd7a4e69155c9b22b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutation count vector type.  <a href="#a7e16ee3ebe29453cd7a4e69155c9b22b">More...</a><br /></td></tr>
-<tr class="separator:a7e16ee3ebe29453cd7a4e69155c9b22b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7a4429042c95c197261407ff1cca7fa"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#ac7a4429042c95c197261407ff1cca7fa">gcont_t</a> = <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a></td></tr>
-<tr class="memdesc:ac7a4429042c95c197261407ff1cca7fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gamete vec type.  <a href="#ac7a4429042c95c197261407ff1cca7fa">More...</a><br /></td></tr>
-<tr class="separator:ac7a4429042c95c197261407ff1cca7fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38fef016cd8ffa97a37cf9c328a23fc0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a38fef016cd8ffa97a37cf9c328a23fc0">lookup_table_t</a> = lookup_table_type</td></tr>
-<tr class="memdesc:a38fef016cd8ffa97a37cf9c328a23fc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lookup table type for recording mutation positions, etc.  <a href="#a38fef016cd8ffa97a37cf9c328a23fc0">More...</a><br /></td></tr>
-<tr class="separator:a38fef016cd8ffa97a37cf9c328a23fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b89dd57cffc0b79ce974bab724420d3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a2b89dd57cffc0b79ce974bab724420d3">mvector_t</a> = <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a></td></tr>
-<tr class="memdesc:a2b89dd57cffc0b79ce974bab724420d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">container type for fixations  <a href="#a2b89dd57cffc0b79ce974bab724420d3">More...</a><br /></td></tr>
-<tr class="separator:a2b89dd57cffc0b79ce974bab724420d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc023df5def0b28951aca21b6ccf6b27"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#afc023df5def0b28951aca21b6ccf6b27">ftvector_t</a> = ftvector</td></tr>
-<tr class="memdesc:afc023df5def0b28951aca21b6ccf6b27"><td class="mdescLeft">&#160;</td><td class="mdescRight">container type for fixation times  <a href="#afc023df5def0b28951aca21b6ccf6b27">More...</a><br /></td></tr>
-<tr class="separator:afc023df5def0b28951aca21b6ccf6b27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04754474fe2ac7c653fd2f72916f9d34"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a04754474fe2ac7c653fd2f72916f9d34">mutation_t</a> = mutation_type</td></tr>
+<tr class="memdesc:a04754474fe2ac7c653fd2f72916f9d34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutation type.  <a href="#a04754474fe2ac7c653fd2f72916f9d34">More...</a><br /></td></tr>
+<tr class="separator:a04754474fe2ac7c653fd2f72916f9d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abedc264037fceb681447491a16efe4db"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#abedc264037fceb681447491a16efe4db">gamete_t</a> = typename gcont::value_type</td></tr>
+<tr class="memdesc:abedc264037fceb681447491a16efe4db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gamete type.  <a href="#abedc264037fceb681447491a16efe4db">More...</a><br /></td></tr>
+<tr class="separator:abedc264037fceb681447491a16efe4db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3cc47c1d8a23d8c9b2cd44cad6b4965"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#af3cc47c1d8a23d8c9b2cd44cad6b4965">dipvector_t</a> = dipvector</td></tr>
+<tr class="memdesc:af3cc47c1d8a23d8c9b2cd44cad6b4965"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diploid vector type.  <a href="#af3cc47c1d8a23d8c9b2cd44cad6b4965">More...</a><br /></td></tr>
+<tr class="separator:af3cc47c1d8a23d8c9b2cd44cad6b4965"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad844b9458b564c9ab2e5f8f74629b6d2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#ad844b9458b564c9ab2e5f8f74629b6d2">diploid_t</a> = typename dipvector_t::value_type</td></tr>
+<tr class="memdesc:ad844b9458b564c9ab2e5f8f74629b6d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diploid type.  <a href="#ad844b9458b564c9ab2e5f8f74629b6d2">More...</a><br /></td></tr>
+<tr class="separator:ad844b9458b564c9ab2e5f8f74629b6d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4196729ff067a1e2aa109bc57dd6f4b3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a4196729ff067a1e2aa109bc57dd6f4b3">mcont_t</a> = <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a></td></tr>
+<tr class="memdesc:a4196729ff067a1e2aa109bc57dd6f4b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutation vec type.  <a href="#a4196729ff067a1e2aa109bc57dd6f4b3">More...</a><br /></td></tr>
+<tr class="separator:a4196729ff067a1e2aa109bc57dd6f4b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a712b2710cf90116b051c605a06b5ebf0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a712b2710cf90116b051c605a06b5ebf0">mcount_t</a> = std::vector&lt; <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &gt;</td></tr>
+<tr class="memdesc:a712b2710cf90116b051c605a06b5ebf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutation count vector type.  <a href="#a712b2710cf90116b051c605a06b5ebf0">More...</a><br /></td></tr>
+<tr class="separator:a712b2710cf90116b051c605a06b5ebf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a1d20c01ef5aba90d7d06daa1dc94e3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a4a1d20c01ef5aba90d7d06daa1dc94e3">gcont_t</a> = <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a></td></tr>
+<tr class="memdesc:a4a1d20c01ef5aba90d7d06daa1dc94e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gamete vec type.  <a href="#a4a1d20c01ef5aba90d7d06daa1dc94e3">More...</a><br /></td></tr>
+<tr class="separator:a4a1d20c01ef5aba90d7d06daa1dc94e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd74d0e11691afa3381a0164b3376437"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#acd74d0e11691afa3381a0164b3376437">lookup_table_t</a> = lookup_table_type</td></tr>
+<tr class="memdesc:acd74d0e11691afa3381a0164b3376437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lookup table type for recording mutation positions, etc.  <a href="#acd74d0e11691afa3381a0164b3376437">More...</a><br /></td></tr>
+<tr class="separator:acd74d0e11691afa3381a0164b3376437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2a2c6ec4fc754b814e9afb4138a443a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#af2a2c6ec4fc754b814e9afb4138a443a">mvector_t</a> = <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a></td></tr>
+<tr class="memdesc:af2a2c6ec4fc754b814e9afb4138a443a"><td class="mdescLeft">&#160;</td><td class="mdescRight">container type for fixations  <a href="#af2a2c6ec4fc754b814e9afb4138a443a">More...</a><br /></td></tr>
+<tr class="separator:af2a2c6ec4fc754b814e9afb4138a443a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa66f45bb3a918255562f4df1dcb7c53c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#aa66f45bb3a918255562f4df1dcb7c53c">ftvector_t</a> = ftvector</td></tr>
+<tr class="memdesc:aa66f45bb3a918255562f4df1dcb7c53c"><td class="mdescLeft">&#160;</td><td class="mdescRight">container type for fixation times  <a href="#aa66f45bb3a918255562f4df1dcb7c53c">More...</a><br /></td></tr>
+<tr class="separator:aa66f45bb3a918255562f4df1dcb7c53c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ee0fe850daf586e8b1f4a6220078024"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a9ee0fe850daf586e8b1f4a6220078024">popmodel_t</a> = tag_type</td></tr>
+<tr class="memdesc:a9ee0fe850daf586e8b1f4a6220078024"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispatch tag for other parts of sugar layer.  <a href="#a9ee0fe850daf586e8b1f4a6220078024">More...</a><br /></td></tr>
+<tr class="separator:a9ee0fe850daf586e8b1f4a6220078024"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04754474fe2ac7c653fd2f72916f9d34"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a04754474fe2ac7c653fd2f72916f9d34">mutation_t</a> = mutation_type</td></tr>
+<tr class="memdesc:a04754474fe2ac7c653fd2f72916f9d34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutation type.  <a href="#a04754474fe2ac7c653fd2f72916f9d34">More...</a><br /></td></tr>
+<tr class="separator:a04754474fe2ac7c653fd2f72916f9d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abedc264037fceb681447491a16efe4db"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#abedc264037fceb681447491a16efe4db">gamete_t</a> = typename gcont::value_type</td></tr>
+<tr class="memdesc:abedc264037fceb681447491a16efe4db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gamete type.  <a href="#abedc264037fceb681447491a16efe4db">More...</a><br /></td></tr>
+<tr class="separator:abedc264037fceb681447491a16efe4db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4196729ff067a1e2aa109bc57dd6f4b3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a4196729ff067a1e2aa109bc57dd6f4b3">mcont_t</a> = <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a></td></tr>
+<tr class="memdesc:a4196729ff067a1e2aa109bc57dd6f4b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutation vec type.  <a href="#a4196729ff067a1e2aa109bc57dd6f4b3">More...</a><br /></td></tr>
+<tr class="separator:a4196729ff067a1e2aa109bc57dd6f4b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a712b2710cf90116b051c605a06b5ebf0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a712b2710cf90116b051c605a06b5ebf0">mcount_t</a> = std::vector&lt; <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &gt;</td></tr>
+<tr class="memdesc:a712b2710cf90116b051c605a06b5ebf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutation count vector type.  <a href="#a712b2710cf90116b051c605a06b5ebf0">More...</a><br /></td></tr>
+<tr class="separator:a712b2710cf90116b051c605a06b5ebf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a1d20c01ef5aba90d7d06daa1dc94e3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a4a1d20c01ef5aba90d7d06daa1dc94e3">gcont_t</a> = <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a></td></tr>
+<tr class="memdesc:a4a1d20c01ef5aba90d7d06daa1dc94e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gamete vec type.  <a href="#a4a1d20c01ef5aba90d7d06daa1dc94e3">More...</a><br /></td></tr>
+<tr class="separator:a4a1d20c01ef5aba90d7d06daa1dc94e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd74d0e11691afa3381a0164b3376437"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#acd74d0e11691afa3381a0164b3376437">lookup_table_t</a> = lookup_table_type</td></tr>
+<tr class="memdesc:acd74d0e11691afa3381a0164b3376437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lookup table type for recording mutation positions, etc.  <a href="#acd74d0e11691afa3381a0164b3376437">More...</a><br /></td></tr>
+<tr class="separator:acd74d0e11691afa3381a0164b3376437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2a2c6ec4fc754b814e9afb4138a443a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#af2a2c6ec4fc754b814e9afb4138a443a">mvector_t</a> = <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a></td></tr>
+<tr class="memdesc:af2a2c6ec4fc754b814e9afb4138a443a"><td class="mdescLeft">&#160;</td><td class="mdescRight">container type for fixations  <a href="#af2a2c6ec4fc754b814e9afb4138a443a">More...</a><br /></td></tr>
+<tr class="separator:af2a2c6ec4fc754b814e9afb4138a443a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa66f45bb3a918255562f4df1dcb7c53c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#aa66f45bb3a918255562f4df1dcb7c53c">ftvector_t</a> = ftvector</td></tr>
+<tr class="memdesc:aa66f45bb3a918255562f4df1dcb7c53c"><td class="mdescLeft">&#160;</td><td class="mdescRight">container type for fixation times  <a href="#aa66f45bb3a918255562f4df1dcb7c53c">More...</a><br /></td></tr>
+<tr class="separator:aa66f45bb3a918255562f4df1dcb7c53c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8a97e852d99b28ea8cc6497d53085a80"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a8a97e852d99b28ea8cc6497d53085a80">popbase</a> (const <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &amp;popsize, typename gamete_t::mutation_container::size_type reserve_size=100)</td></tr>
-<tr class="memdesc:a8a97e852d99b28ea8cc6497d53085a80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a8a97e852d99b28ea8cc6497d53085a80">More...</a><br /></td></tr>
-<tr class="separator:a8a97e852d99b28ea8cc6497d53085a80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac55dc8499c118c5f9c70da384400da06"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#ac55dc8499c118c5f9c70da384400da06">popbase</a> (const <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">popbase</a> &amp;)=default</td></tr>
-<tr class="separator:ac55dc8499c118c5f9c70da384400da06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8af7d95f8af57e6bcb08e0c91d9678fa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a8af7d95f8af57e6bcb08e0c91d9678fa">popbase</a> (<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">popbase</a> &amp;&amp;)=default</td></tr>
-<tr class="separator:a8af7d95f8af57e6bcb08e0c91d9678fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17cf0afa492d18854c95912c263ea119"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a17cf0afa492d18854c95912c263ea119">operator==</a> (const <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">popbase</a> &amp;rhs) const </td></tr>
-<tr class="separator:a17cf0afa492d18854c95912c263ea119"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54823a2fde038e05b06d5b1b9cb1f70e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a54823a2fde038e05b06d5b1b9cb1f70e">clear</a> ()</td></tr>
-<tr class="memdesc:a54823a2fde038e05b06d5b1b9cb1f70e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty all the containers.  <a href="#a54823a2fde038e05b06d5b1b9cb1f70e">More...</a><br /></td></tr>
-<tr class="separator:a54823a2fde038e05b06d5b1b9cb1f70e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae732813103198dc635e0a66b22ab4985"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#ae732813103198dc635e0a66b22ab4985">popbase</a> (const <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &amp;popsize, typename gamete_t::mutation_container::size_type reserve_size=100)</td></tr>
+<tr class="memdesc:ae732813103198dc635e0a66b22ab4985"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#ae732813103198dc635e0a66b22ab4985">More...</a><br /></td></tr>
+<tr class="separator:ae732813103198dc635e0a66b22ab4985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af937f80a7286f192288e63d8c3c4f187"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#af937f80a7286f192288e63d8c3c4f187">is_equal</a> (const <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">popbase</a> &amp;rhs) const </td></tr>
+<tr class="separator:af937f80a7286f192288e63d8c3c4f187"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7424455b89f1de30d835da66052aacdf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a7424455b89f1de30d835da66052aacdf">clear_containers</a> ()</td></tr>
+<tr class="memdesc:a7424455b89f1de30d835da66052aacdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty all the containers.  <a href="#a7424455b89f1de30d835da66052aacdf">More...</a><br /></td></tr>
+<tr class="separator:a7424455b89f1de30d835da66052aacdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae732813103198dc635e0a66b22ab4985"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#ae732813103198dc635e0a66b22ab4985">popbase</a> (const <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &amp;popsize, typename gamete_t::mutation_container::size_type reserve_size=100)</td></tr>
+<tr class="memdesc:ae732813103198dc635e0a66b22ab4985"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#ae732813103198dc635e0a66b22ab4985">More...</a><br /></td></tr>
+<tr class="separator:ae732813103198dc635e0a66b22ab4985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a268c7f881d77759404a91d90d0b02fe4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a268c7f881d77759404a91d90d0b02fe4">popbase</a> (const <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">popbase</a> &amp;)=default</td></tr>
+<tr class="separator:a268c7f881d77759404a91d90d0b02fe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97ca1b6de78b1ee48929cab03130a9b1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a97ca1b6de78b1ee48929cab03130a9b1">popbase</a> (<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">popbase</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:a97ca1b6de78b1ee48929cab03130a9b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fcbd4610d9db110c7b3d5bcec480438"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a2fcbd4610d9db110c7b3d5bcec480438">operator==</a> (const <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">popbase</a> &amp;rhs) const </td></tr>
+<tr class="separator:a2fcbd4610d9db110c7b3d5bcec480438"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebc165dad0db13798f229067e7912e28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#aebc165dad0db13798f229067e7912e28">clear</a> ()</td></tr>
+<tr class="memdesc:aebc165dad0db13798f229067e7912e28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty all the containers.  <a href="#aebc165dad0db13798f229067e7912e28">More...</a><br /></td></tr>
+<tr class="separator:aebc165dad0db13798f229067e7912e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a83c62d6100f8ce171026ec54760c53c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a83c62d6100f8ce171026ec54760c53c0">N</a></td></tr>
-<tr class="separator:a83c62d6100f8ce171026ec54760c53c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93821f3daec5eed8ee20933416409fae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a93821f3daec5eed8ee20933416409fae">mutations</a></td></tr>
-<tr class="separator:a93821f3daec5eed8ee20933416409fae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4a6ee8091c0eff27ad502f6308359e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a7e16ee3ebe29453cd7a4e69155c9b22b">mcount_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#ac4a6ee8091c0eff27ad502f6308359e7">mcounts</a></td></tr>
-<tr class="separator:ac4a6ee8091c0eff27ad502f6308359e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8aa669cd92a028b59c32b8e9b68c3ce1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a8aa669cd92a028b59c32b8e9b68c3ce1">gametes</a></td></tr>
-<tr class="separator:a8aa669cd92a028b59c32b8e9b68c3ce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2566d2884596beb0eaa21141763c881b"><td class="memItemLeft" align="right" valign="top">gamete_t::mutation_container&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a2566d2884596beb0eaa21141763c881b">neutral</a></td></tr>
-<tr class="separator:a2566d2884596beb0eaa21141763c881b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60abe1c28dcb0ebacd8b15febeb52d8f"><td class="memItemLeft" align="right" valign="top">gamete_t::mutation_container&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a60abe1c28dcb0ebacd8b15febeb52d8f">selected</a></td></tr>
-<tr class="separator:a60abe1c28dcb0ebacd8b15febeb52d8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53dfa064487527bbbb7d7910e3b66cfd"><td class="memItemLeft" align="right" valign="top">lookup_table_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a53dfa064487527bbbb7d7910e3b66cfd">mut_lookup</a></td></tr>
-<tr class="memdesc:a53dfa064487527bbbb7d7910e3b66cfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be used to track positions of segregating mutations.  <a href="#a53dfa064487527bbbb7d7910e3b66cfd">More...</a><br /></td></tr>
-<tr class="separator:a53dfa064487527bbbb7d7910e3b66cfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a7a6b850744677f2a21d57530317be9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a9a7a6b850744677f2a21d57530317be9">fixations</a></td></tr>
-<tr class="memdesc:a9a7a6b850744677f2a21d57530317be9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of mutation_t to track fixations.  <a href="#a9a7a6b850744677f2a21d57530317be9">More...</a><br /></td></tr>
-<tr class="separator:a9a7a6b850744677f2a21d57530317be9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a572092cf1191867f07d164d3aa1b42eb"><td class="memItemLeft" align="right" valign="top">ftvector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a572092cf1191867f07d164d3aa1b42eb">fixation_times</a></td></tr>
-<tr class="memdesc:a572092cf1191867f07d164d3aa1b42eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector&lt;uint_t&gt; records times when mutation_ts were added to mut_lookup  <a href="#a572092cf1191867f07d164d3aa1b42eb">More...</a><br /></td></tr>
-<tr class="separator:a572092cf1191867f07d164d3aa1b42eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33bbaed793ed0921d558ca5c29870cc4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a4196729ff067a1e2aa109bc57dd6f4b3">mcont_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a33bbaed793ed0921d558ca5c29870cc4">mutations</a></td></tr>
+<tr class="separator:a33bbaed793ed0921d558ca5c29870cc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f8b5cf029a7cfc54c44a4818ac6ac60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a712b2710cf90116b051c605a06b5ebf0">mcount_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a2f8b5cf029a7cfc54c44a4818ac6ac60">mcounts</a></td></tr>
+<tr class="memdesc:a2f8b5cf029a7cfc54c44a4818ac6ac60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains number of times each mutation exists.  <a href="#a2f8b5cf029a7cfc54c44a4818ac6ac60">More...</a><br /></td></tr>
+<tr class="separator:a2f8b5cf029a7cfc54c44a4818ac6ac60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d2ea674ec1f37e01d3acac571a9a49a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a3d2ea674ec1f37e01d3acac571a9a49a">gametes</a></td></tr>
+<tr class="memdesc:a3d2ea674ec1f37e01d3acac571a9a49a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container of gametes.  <a href="#a3d2ea674ec1f37e01d3acac571a9a49a">More...</a><br /></td></tr>
+<tr class="separator:a3d2ea674ec1f37e01d3acac571a9a49a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d9f5c26325ef8103cfd86778ae664d6"><td class="memItemLeft" align="right" valign="top">gamete_t::mutation_container&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a7d9f5c26325ef8103cfd86778ae664d6">neutral</a></td></tr>
+<tr class="separator:a7d9f5c26325ef8103cfd86778ae664d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96b082820f87b4d9bd0f51e113cf0878"><td class="memItemLeft" align="right" valign="top">gamete_t::mutation_container&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a96b082820f87b4d9bd0f51e113cf0878">selected</a></td></tr>
+<tr class="separator:a96b082820f87b4d9bd0f51e113cf0878"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62a0bc8b0fe381350bf9fd32ffba843e"><td class="memItemLeft" align="right" valign="top">lookup_table_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a62a0bc8b0fe381350bf9fd32ffba843e">mut_lookup</a></td></tr>
+<tr class="memdesc:a62a0bc8b0fe381350bf9fd32ffba843e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be used to track positions of segregating mutations.  <a href="#a62a0bc8b0fe381350bf9fd32ffba843e">More...</a><br /></td></tr>
+<tr class="separator:a62a0bc8b0fe381350bf9fd32ffba843e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7dbedd1fa247feb96d58b14bdee9264"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#ae7dbedd1fa247feb96d58b14bdee9264">fixations</a></td></tr>
+<tr class="memdesc:ae7dbedd1fa247feb96d58b14bdee9264"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of mutation_t to track fixations.  <a href="#ae7dbedd1fa247feb96d58b14bdee9264">More...</a><br /></td></tr>
+<tr class="separator:ae7dbedd1fa247feb96d58b14bdee9264"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a774e8d738ac4e8f4a0a42eee4121e7ba"><td class="memItemLeft" align="right" valign="top">ftvector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a774e8d738ac4e8f4a0a42eee4121e7ba">fixation_times</a></td></tr>
+<tr class="memdesc:a774e8d738ac4e8f4a0a42eee4121e7ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector&lt;uint_t&gt; records times when mutation_ts were added to mut_lookup  <a href="#a774e8d738ac4e8f4a0a42eee4121e7ba">More...</a><br /></td></tr>
+<tr class="separator:a774e8d738ac4e8f4a0a42eee4121e7ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31e9e46414d1cde6096c61b6a62e718b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a31e9e46414d1cde6096c61b6a62e718b">N</a></td></tr>
+<tr class="separator:a31e9e46414d1cde6096c61b6a62e718b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1424fbb5de77babde4efd9d916918645"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a1424fbb5de77babde4efd9d916918645">mutations</a></td></tr>
+<tr class="separator:a1424fbb5de77babde4efd9d916918645"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename mutation_type, typename mcont, typename gcont, typename mvector, typename ftvector, typename lookup_table_type, typename tag_type&gt;<br />
-class KTfwd::sugar::popbase&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type, tag_type &gt;</h3>
+<div class="textblock"><h3>template&lt;typename mutation_type, typename mcont, typename gcont, typename dipvector, typename mvector, typename ftvector, typename lookup_table_type&gt;<br />
+class KTfwd::sugar::popbase&lt; mutation_type, mcont, gcont, dipvector, mvector, ftvector, lookup_table_type &gt;</h3>
 
-<p>Abstraction of what is needed to simulate a population using fwdpp using an individual-based sampler from fwdpp. </p>
+<p>Base class for population objects. </p>
+<p>Abstraction of what is needed to simulate a population using fwdpp using an individual-based sampler from fwdpp.</p>
+<dl class="section note"><dt>Note</dt><dd>Added in fwdpp 0.5.0</dd></dl>
 <p>All that is missing is the mutation_type and the container types.</p>
 <p>See <a class="el" href="../../db/dd8/md_md_sugar.html">Tutorial 5: the "sugar" layer on top of fwdpp</a> for rationale, etc. </p>
 
-<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00034">34</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00019">19</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a class="anchor" id="afc023df5def0b28951aca21b6ccf6b27"></a>
+<a class="anchor" id="ad844b9458b564c9ab2e5f8f74629b6d2"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type , typename tag_type &gt; </div>
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type, tag_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#afc023df5def0b28951aca21b6ccf6b27">ftvector_t</a> =  ftvector</td>
+          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#ad844b9458b564c9ab2e5f8f74629b6d2">diploid_t</a> =  typename dipvector_t::value_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Diploid type. </p>
+
+<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00039">39</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af3cc47c1d8a23d8c9b2cd44cad6b4965"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#af3cc47c1d8a23d8c9b2cd44cad6b4965">dipvector_t</a> =  dipvector</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Diploid vector type. </p>
+
+<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00037">37</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa66f45bb3a918255562f4df1dcb7c53c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#aa66f45bb3a918255562f4df1dcb7c53c">ftvector_t</a> =  ftvector</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>container type for fixation times </p>
 
-<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00060">60</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00051">51</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="acfddb0d44f0ea206a953c1bcddf7b240"></a>
+<a class="anchor" id="aa66f45bb3a918255562f4df1dcb7c53c"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type , typename tag_type &gt; </div>
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type, tag_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#acfddb0d44f0ea206a953c1bcddf7b240">gamete_t</a> =  typename gcont::value_type</td>
+          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#aa66f45bb3a918255562f4df1dcb7c53c">ftvector_t</a> =  ftvector</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>container type for fixation times </p>
+
+<p>Definition at line <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html#l00060">60</a> of file <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html">popbase.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abedc264037fceb681447491a16efe4db"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#abedc264037fceb681447491a16efe4db">gamete_t</a> =  typename gcont::value_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gamete type. </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a5">diploid_binaryIO_ind.cc</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00035">35</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abedc264037fceb681447491a16efe4db"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#abedc264037fceb681447491a16efe4db">gamete_t</a> =  typename gcont::value_type</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Gamete type. </p>
 
-<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00048">48</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html#l00048">48</a> of file <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ac7a4429042c95c197261407ff1cca7fa"></a>
+<a class="anchor" id="a4a1d20c01ef5aba90d7d06daa1dc94e3"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type , typename tag_type &gt; </div>
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type, tag_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#ac7a4429042c95c197261407ff1cca7fa">gcont_t</a> =  <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a></td>
+          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a4a1d20c01ef5aba90d7d06daa1dc94e3">gcont_t</a> =  <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gamete vec type. </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a2">diploid_binaryIO_ind.cc</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00045">45</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4a1d20c01ef5aba90d7d06daa1dc94e3"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a4a1d20c01ef5aba90d7d06daa1dc94e3">gcont_t</a> =  <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Gamete vec type. </p>
 
-<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00054">54</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html#l00054">54</a> of file <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a38fef016cd8ffa97a37cf9c328a23fc0"></a>
+<a class="anchor" id="acd74d0e11691afa3381a0164b3376437"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type , typename tag_type &gt; </div>
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type, tag_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a38fef016cd8ffa97a37cf9c328a23fc0">lookup_table_t</a> =  lookup_table_type</td>
+          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#acd74d0e11691afa3381a0164b3376437">lookup_table_t</a> =  lookup_table_type</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Lookup table type for recording mutation positions, etc. </p>
 
-<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00056">56</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00047">47</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a153523d07f3b9623412b3f6dd831ac79"></a>
+<a class="anchor" id="acd74d0e11691afa3381a0164b3376437"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type , typename tag_type &gt; </div>
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type, tag_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a153523d07f3b9623412b3f6dd831ac79">mcont_t</a> =  <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a></td>
+          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#acd74d0e11691afa3381a0164b3376437">lookup_table_t</a> =  lookup_table_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lookup table type for recording mutation positions, etc. </p>
+
+<p>Definition at line <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html#l00056">56</a> of file <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html">popbase.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4196729ff067a1e2aa109bc57dd6f4b3"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a4196729ff067a1e2aa109bc57dd6f4b3">mcont_t</a> =  <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mutation vec type. </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a1">diploid_binaryIO_ind.cc</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00041">41</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4196729ff067a1e2aa109bc57dd6f4b3"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a4196729ff067a1e2aa109bc57dd6f4b3">mcont_t</a> =  <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Mutation vec type. </p>
 
-<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00050">50</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html#l00050">50</a> of file <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a7e16ee3ebe29453cd7a4e69155c9b22b"></a>
+<a class="anchor" id="a712b2710cf90116b051c605a06b5ebf0"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type , typename tag_type &gt; </div>
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type, tag_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a7e16ee3ebe29453cd7a4e69155c9b22b">mcount_t</a> =  std::vector&lt;<a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a>&gt;</td>
+          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a712b2710cf90116b051c605a06b5ebf0">mcount_t</a> =  std::vector&lt;<a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Mutation count vector type. </p>
 
-<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00052">52</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00043">43</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ae35132365237a69f06cb5701ed448413"></a>
+<a class="anchor" id="a712b2710cf90116b051c605a06b5ebf0"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type , typename tag_type &gt; </div>
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type, tag_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#ae35132365237a69f06cb5701ed448413">mutation_t</a> =  mutation_type</td>
+          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a712b2710cf90116b051c605a06b5ebf0">mcount_t</a> =  std::vector&lt;<a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mutation count vector type. </p>
+
+<p>Definition at line <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html#l00052">52</a> of file <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html">popbase.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a04754474fe2ac7c653fd2f72916f9d34"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a04754474fe2ac7c653fd2f72916f9d34">mutation_t</a> =  mutation_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mutation type. </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a3">diploid_binaryIO_ind.cc</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00033">33</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a04754474fe2ac7c653fd2f72916f9d34"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a04754474fe2ac7c653fd2f72916f9d34">mutation_t</a> =  mutation_type</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Mutation type. </p>
 
-<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00046">46</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html#l00046">46</a> of file <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a2b89dd57cffc0b79ce974bab724420d3"></a>
+<a class="anchor" id="af2a2c6ec4fc754b814e9afb4138a443a"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type , typename tag_type &gt; </div>
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type, tag_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a2b89dd57cffc0b79ce974bab724420d3">mvector_t</a> =  <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a></td>
+          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#af2a2c6ec4fc754b814e9afb4138a443a">mvector_t</a> =  <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>container type for fixations </p>
 
-<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00058">58</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00049">49</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a5e720bc9845e4ed4aa6aba5bd7c61f7f"></a>
+<a class="anchor" id="af2a2c6ec4fc754b814e9afb4138a443a"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type , typename tag_type &gt; </div>
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type, tag_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a5e720bc9845e4ed4aa6aba5bd7c61f7f">popmodel_t</a> =  tag_type</td>
+          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#af2a2c6ec4fc754b814e9afb4138a443a">mvector_t</a> =  <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>container type for fixations </p>
+
+<p>Definition at line <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html#l00058">58</a> of file <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html">popbase.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9ee0fe850daf586e8b1f4a6220078024"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a9ee0fe850daf586e8b1f4a6220078024">popmodel_t</a> =  tag_type</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Dispatch tag for other parts of sugar layer. </p>
 
-<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00044">44</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html#l00044">44</a> of file <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a8a97e852d99b28ea8cc6497d53085a80"></a>
+<a class="anchor" id="ae732813103198dc635e0a66b22ab4985"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type , typename tag_type &gt; </div>
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type, tag_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">popbase</a> </td>
+          <td class="memname"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">popbase</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &amp;&#160;</td>
           <td class="paramname"><em>popsize</em>, </td>
@@ -382,23 +623,63 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 
 <p>Constructor. </p>
 
-<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00103">103</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00098">98</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ac55dc8499c118c5f9c70da384400da06"></a>
+<a class="anchor" id="ae732813103198dc635e0a66b22ab4985"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type , typename tag_type &gt; </div>
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type, tag_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">popbase</a> </td>
+          <td class="memname"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">popbase</a> </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type, tag_type &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>popsize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename gamete_t::mutation_container::size_type&#160;</td>
+          <td class="paramname"><em>reserve_size</em> = <code>100</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+
+<p>Definition at line <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html#l00103">103</a> of file <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html">popbase.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a268c7f881d77759404a91d90d0b02fe4"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">popbase</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt; &amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -412,19 +693,19 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 
 </div>
 </div>
-<a class="anchor" id="a8af7d95f8af57e6bcb08e0c91d9678fa"></a>
+<a class="anchor" id="a97ca1b6de78b1ee48929cab03130a9b1"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type , typename tag_type &gt; </div>
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type, tag_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">popbase</a> </td>
+          <td class="memname"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::<a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">popbase</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type, tag_type &gt; &amp;&amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt; &amp;&amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -439,17 +720,17 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a54823a2fde038e05b06d5b1b9cb1f70e"></a>
+<a class="anchor" id="aebc165dad0db13798f229067e7912e28"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type , typename tag_type &gt; </div>
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type, tag_type &gt;::clear </td>
+          <td class="memname">void <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::clear </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -464,23 +745,52 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 
 <p>Empty all the containers. </p>
 
-<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00137">137</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html#l00137">137</a> of file <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a17cf0afa492d18854c95912c263ea119"></a>
+<a class="anchor" id="a7424455b89f1de30d835da66052aacdf"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type , typename tag_type &gt; </div>
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type, tag_type &gt;::operator== </td>
+          <td class="memname">void <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::clear_containers </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type, tag_type &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Empty all the containers. </p>
+
+<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00129">129</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af937f80a7286f192288e63d8c3c4f187"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::is_equal </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt; &amp;&#160;</td>
           <td class="paramname"><em>rhs</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -492,140 +802,194 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00127">127</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00119">119</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2fcbd4610d9db110c7b3d5bcec480438"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html#l00127">127</a> of file <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Field Documentation</h2>
-<a class="anchor" id="a572092cf1191867f07d164d3aa1b42eb"></a>
+<a class="anchor" id="a774e8d738ac4e8f4a0a42eee4121e7ba"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type , typename tag_type &gt; </div>
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">ftvector <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type, tag_type &gt;::fixation_times</td>
+          <td class="memname">ftvector <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::fixation_times</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>vector&lt;uint_t&gt; records times when mutation_ts were added to mut_lookup </p>
-
-<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00100">100</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a23">bneck_selection_ind.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a25">diploid_binaryIO_ind.cc</a>, and <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a20">diploid_ind.cc</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00095">95</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a9a7a6b850744677f2a21d57530317be9"></a>
+<a class="anchor" id="ae7dbedd1fa247feb96d58b14bdee9264"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type , typename tag_type &gt; </div>
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a> <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type, tag_type &gt;::fixations</td>
+          <td class="memname"><a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a> <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::fixations</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Vector of mutation_t to track fixations. </p>
-
-<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00096">96</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a22">bneck_selection_ind.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a24">diploid_binaryIO_ind.cc</a>, and <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a19">diploid_ind.cc</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00091">91</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a8aa669cd92a028b59c32b8e9b68c3ce1"></a>
+<a class="anchor" id="a3d2ea674ec1f37e01d3acac571a9a49a"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type , typename tag_type &gt; </div>
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a> <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type, tag_type &gt;::gametes</td>
+          <td class="memname"><a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a> <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::gametes</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00069">69</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p>Container of gametes. </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a11">bneck_selection_ind.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a14">diploid_binaryIO_ind.cc</a>, and <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a9">diploid_ind.cc</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00064">64</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ac4a6ee8091c0eff27ad502f6308359e7"></a>
+<a class="anchor" id="a2f8b5cf029a7cfc54c44a4818ac6ac60"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type , typename tag_type &gt; </div>
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a7e16ee3ebe29453cd7a4e69155c9b22b">mcount_t</a> <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type, tag_type &gt;::mcounts</td>
+          <td class="memname"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a712b2710cf90116b051c605a06b5ebf0">mcount_t</a> <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::mcounts</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Contains number of times each mutation exists. </p>
 <p>Used to keep track of mutation frequencies.</p>
 <p>Should have memory reserved externally, based on some good guess. </p>
-
-<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00068">68</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a14">bneck_selection_ind.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a10">diploid_binaryIO_ind.cc</a>, and <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a11">diploid_ind.cc</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00062">62</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a53dfa064487527bbbb7d7910e3b66cfd"></a>
+<a class="anchor" id="a62a0bc8b0fe381350bf9fd32ffba843e"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type , typename tag_type &gt; </div>
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">lookup_table_type <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type, tag_type &gt;::mut_lookup</td>
+          <td class="memname">lookup_table_type <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::mut_lookup</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Can be used to track positions of segregating mutations. </p>
 <dl class="section note"><dt>Note</dt><dd>Must have interface like std::map or std::unordered_set </dd></dl>
-
-<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00094">94</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a16">bneck_selection_ind.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a18">diploid_binaryIO_ind.cc</a>, and <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a13">diploid_ind.cc</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00089">89</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a93821f3daec5eed8ee20933416409fae"></a>
+<a class="anchor" id="a33bbaed793ed0921d558ca5c29870cc4"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type , typename tag_type &gt; </div>
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a> <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type, tag_type &gt;::mutations</td>
+          <td class="memname"><a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#a4196729ff067a1e2aa109bc57dd6f4b3">mcont_t</a> <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::mutations</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a8">bneck_selection_ind.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a16">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a6">diploid_ind.cc</a>, and <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a14">migsel_ind.cc</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00053">53</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1424fbb5de77babde4efd9d916918645"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a> <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::mutations</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00061">61</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html#l00061">61</a> of file <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a83c62d6100f8ce171026ec54760c53c0"></a>
+<a class="anchor" id="a31e9e46414d1cde6096c61b6a62e718b"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type , typename tag_type &gt; </div>
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type, tag_type &gt;::N</td>
+          <td class="memname"><a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::N</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00037">37</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html#l00037">37</a> of file <a class="el" href="../../de/dde/poptypes_2popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a2566d2884596beb0eaa21141763c881b"></a>
+<a class="anchor" id="a7d9f5c26325ef8103cfd86778ae664d6"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type , typename tag_type &gt; </div>
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">gamete_t::mutation_container <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type, tag_type &gt;::neutral</td>
+          <td class="memname">gamete_t::mutation_container <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::neutral</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -634,29 +998,31 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 <p>Now, we create the vector once per replicate. Further, we will reserve memory here, to minimize reallocs, etc., within fwdpp.</p>
 <p>Internally, fwdpp's job is to make sure that this vector is appropriately and efficiently cleared, but only when needed.</p>
 <dl class="section note"><dt>Note</dt><dd>: if not using the sugar features, you can create these vectors only once per simulation... </dd></dl>
-
-<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00088">88</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a19">bneck_selection_ind.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a21">diploid_binaryIO_ind.cc</a>, and <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a16">diploid_ind.cc</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00083">83</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a60abe1c28dcb0ebacd8b15febeb52d8f"></a>
+<a class="anchor" id="a96b082820f87b4d9bd0f51e113cf0878"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type , typename tag_type &gt; </div>
+template&lt;typename mutation_type , typename mcont , typename gcont , typename dipvector , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">gamete_t::mutation_container <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type, tag_type &gt;::selected</td>
+          <td class="memname">gamete_t::mutation_container <a class="el" href="../../d7/d94/classKTfwd_1_1sugar_1_1popbase.html">KTfwd::sugar::popbase</a>&lt; mutation_type, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#ad0a2f8245b9bfd10986013623db3e02b">mcont</a>, <a class="el" href="../../d3/da9/diploid__binaryIO__ind_8cc.html#a136791af3e097b7e4fdb34b09cb28de9">gcont</a>, dipvector, <a class="el" href="../../dd/d6c/siteDepFitness_8cc.html#ac5c35fe6dfebf803bffa12a01af8e2ce">mvector</a>, ftvector, lookup_table_type &gt;::selected</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00088">88</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#a20">bneck_selection_ind.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#a22">diploid_binaryIO_ind.cc</a>, and <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a17">diploid_ind.cc</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00083">83</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/kevin/src/fwdpp/fwdpp/sugar/poptypes/<a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a></li>
+<li>/home/kevin/src/fwdpp/fwdpp/sugar/<a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

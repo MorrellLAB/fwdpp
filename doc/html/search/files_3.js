@@ -15,5 +15,6 @@ var searchData=
   ['diploid_5fgzbinaryio_5find_2ecc',['diploid_gzbinaryIO_ind.cc',['../d0/d03/diploid__gzbinaryIO__ind_8cc.html',1,'']]],
   ['diploid_5find_2ecc',['diploid_ind.cc',['../d9/de8/diploid__ind_8cc.html',1,'']]],
   ['diploid_5find_5f2locus_2ecc',['diploid_ind_2locus.cc',['../de/dce/diploid__ind__2locus_8cc.html',1,'']]],
-  ['diploid_5ftags_2ehpp',['diploid_tags.hpp',['../d9/d70/diploid__tags_8hpp.html',1,'']]]
+  ['diploid_5ftags_2ehpp',['diploid_tags.hpp',['../d9/d70/diploid__tags_8hpp.html',1,'']]],
+  ['dispatch_2ehpp',['dispatch.hpp',['../df/dff/dispatch_8hpp.html',1,'']]]
 ];

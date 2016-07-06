@@ -1,5 +1,17 @@
 # FWDPP RELEASE NOTES
 
+## 0.5.0
+
+* Example file examples/K_linked_regions_multilocus.cc added
+* Streamlined KTfwd::fwdpp_internal::multilocus_rec_mut
+* The sugar types KTfwd::singlepop, KTfwd::metapop, and KTfwd::multiloc were refactored to inerit from KTfwd::sugar::popbase.
+* Fixed error in KTfwd::multiloc where gametes were initialized with the incorrect count
+* KTfwd::gamete_data_sane_multiloc was added to fwdpp/debug.hpp
+* Issue #41 fixed. This issue affected simulations using the multi-locus API, and all simulations using that API need to be rerun. Sorry.
+* The experimental API to sample_diploid was made more flexible via a new header file, fwdpp/experimental/dispatch.hpp.  This addition allows better fine-tuning of "rules" classes
+* The experimental API now takes rvalue refrence (&&) instead of const reference (const &) for rules classes.  This allows the rules to be written and be more idiomatic, avoiding use of mutable variables.
+* Add overload of KTfwd::haplotype_dependent_fitness::operator() for custom diploids
+
 ## 0.4.9
 
 * Doxygen file changed so that all library source is browsable.

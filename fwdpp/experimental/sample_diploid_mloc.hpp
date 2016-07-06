@@ -5,6 +5,8 @@
 #ifndef __FWDPP_EXPERIMENTAL_SAMPLE_DIPLOID_MLOC_HPP__
 #define __FWDPP_EXPERIMENTAL_SAMPLE_DIPLOID_MLOC_HPP__
 
+#include <fwdpp/experimental/dispatch.hpp>
+
 namespace KTfwd
 {
   namespace experimental
@@ -14,10 +16,10 @@ namespace KTfwd
     */
     struct standardWFrules_mloc
     {
-      mutable double wbar;
-      mutable std::vector<double> fitnesses;
+      double wbar;
+      std::vector<double> fitnesses;
 
-      mutable fwdpp_internal::gsl_ran_discrete_t_ptr lookup;
+      fwdpp_internal::gsl_ran_discrete_t_ptr lookup;
       //! \brief Constructor
       standardWFrules_mloc() : wbar(0.),fitnesses(std::vector<double>()),lookup(fwdpp_internal::gsl_ran_discrete_t_ptr(nullptr))
       {
@@ -31,7 +33,7 @@ namespace KTfwd
       void w(const dipcont_t & diploids,
 	     gcont_t & gametes,
 	     const mcont_t & mutations,
-	     const fitness_func & ff) const
+	     const fitness_func & ff)
       {
 	using diploid_geno_t = typename dipcont_t::value_type;
 	unsigned N_curr = diploids.size();
@@ -122,7 +124,7 @@ namespace KTfwd
 			  typename gamete_type::mutation_container & neutral,
 			  typename gamete_type::mutation_container & selected,
 			  const double & f = 0,
-			  const rules_type & rules = rules_type(),
+			  rules_type && rules = rules_type(),
 			  const mutation_removal_policy & mp = mutation_removal_policy(),
 			  const gamete_insertion_policy & gpolicy_mut = gamete_insertion_policy())
     /*
@@ -132,7 +134,7 @@ namespace KTfwd
       auto gamete_recycling_bin = fwdpp_internal::make_gamete_queue(gametes);
       auto mutation_recycling_bin = fwdpp_internal::make_mut_queue(mcounts);
 
-      rules.w(diploids,gametes,mutations,ff);
+      dispatch_w(rules,diploids,gametes,mutations,ff);
 
       const auto parents(diploids); //copy the parents
 
@@ -157,7 +159,7 @@ namespace KTfwd
 						 ((gsl_rng_uniform(r)<0.5)?1:0),
 						 gametes,mutations,neutral,selected,mu,mmodel,gpolicy_mut
 						 );
-	  rules.update(r,dip,parents[p1],parents[p2],gametes,mutations);
+	  dispatch_update(rules,r,dip,parents[p1],parents[p2],gametes,mutations,ff);
 	}
       fwdpp_internal::process_gametes(gametes,mutations,mcounts);
       assert(popdata_sane(diploids,gametes,mutations,mcounts));
@@ -200,7 +202,7 @@ namespace KTfwd
 			  typename gamete_type::mutation_container & neutral,
 			  typename gamete_type::mutation_container & selected,
 			  const double & f = 0,
-			  const rules_type & rules = rules_type(),
+			  rules_type && rules = rules_type(),
 			  const mutation_removal_policy & mp = mutation_removal_policy(),
 			  const gamete_insertion_policy & gpolicy_mut = gamete_insertion_policy())
     /*
